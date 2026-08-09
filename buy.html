@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Buy a Home | S² Home Partners | Momentum Realty</title>
-  <meta name="description" content="Buying in Northeast Florida — county guides, new construction, MLS listings, and custom home search with S² Home Partners." />
+  <title>Buy &amp; Featured Listings | S² Home Partners</title>
+  <meta name="description" content="Northeast Florida buyer and county guide — featured MLS listings, school ratings, base commutes, new construction, and custom property matching with S² Home Partners." />
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -17,9 +17,10 @@
             momentum: {
               blue: '#1A4B6E',
               blueHover: '#133853',
+              blueDark: '#0F2C42',
               gray: '#718093',
               grayLight: '#E2E8F0',
-              bgLight: '#F8FAFC',
+              bgLight: '#F4F7FA',
             },
           },
           fontFamily: {
@@ -30,32 +31,18 @@
       },
     };
   </script>
-  <style>
-    html { scroll-behavior: smooth; }
-    .reveal {
-      opacity: 0;
-      transform: translateY(1.25rem);
-      transition: opacity 0.8s ease, transform 0.8s ease;
-    }
-    .reveal.is-visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
-    .reveal-delay-1 { transition-delay: 0.12s; }
-    .reveal-delay-2 { transition-delay: 0.24s; }
-    .reveal-delay-3 { transition-delay: 0.36s; }
-  </style>
 </head>
 <body class="bg-momentum-bgLight font-sans text-slate-800 antialiased">
 
-  <header id="site-nav" class="sticky top-0 z-50 border-b border-momentum-grayLight bg-white shadow-sm">
+  <!-- Top Navigation -->
+  <header class="sticky top-0 z-50 border-b border-momentum-grayLight bg-white/95 shadow-sm backdrop-blur-md">
     <div class="mx-auto flex h-24 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
-      <a href="index.html" class="flex items-center">
+      <a href="index.html">
         <img src="momentum-logo.png" alt="Momentum Realty" class="h-14 w-auto object-contain" />
       </a>
 
-      <nav class="hidden items-center space-x-5 text-xs font-semibold uppercase tracking-wider text-momentum-gray xl:flex" aria-label="Primary">
-        <a href="buy.html" class="transition-colors hover:text-momentum-blue">Buy</a>
+      <nav class="hidden items-center space-x-5 text-xs font-bold uppercase tracking-wider text-momentum-gray xl:flex" aria-label="Primary">
+        <a href="buy.html" class="border-b-2 border-momentum-blue pb-1 font-extrabold text-momentum-blue">Buy</a>
         <a href="sell.html" class="transition-colors hover:text-momentum-blue">Sell</a>
         <a href="buy.html#new-construction" class="transition-colors hover:text-momentum-blue">New Construction</a>
         <a href="military.html" class="transition-colors hover:text-momentum-blue">Military</a>
@@ -64,7 +51,6 @@
         <a href="referral.html" class="transition-colors hover:text-momentum-blue">Referral Program</a>
         <a href="about.html" class="transition-colors hover:text-momentum-blue">About Us</a>
         <a href="services.html" class="transition-colors hover:text-momentum-blue">Programs &amp; Services</a>
-        <a href="about.html#contact" class="rounded-lg bg-momentum-blue px-4 py-2.5 font-semibold normal-case tracking-normal text-white transition-colors hover:bg-momentum-blueHover">Contact</a>
       </nav>
 
       <button id="menu-toggle" type="button" class="inline-flex items-center justify-center text-momentum-blue xl:hidden" aria-expanded="false" aria-controls="mobile-menu" aria-label="Open menu">
@@ -76,7 +62,7 @@
 
     <div id="mobile-menu" class="hidden border-t border-momentum-grayLight bg-white px-4 py-4 xl:hidden">
       <nav class="flex flex-col gap-3 text-sm font-medium text-momentum-blue" aria-label="Mobile">
-        <a href="buy.html" class="mobile-link py-1">Buy</a>
+        <a href="buy.html" class="mobile-link py-1 font-bold">Buy</a>
         <a href="sell.html" class="mobile-link py-1">Sell</a>
         <a href="buy.html#new-construction" class="mobile-link py-1">New Construction</a>
         <a href="military.html" class="mobile-link py-1">Military</a>
@@ -85,162 +71,259 @@
         <a href="referral.html" class="mobile-link py-1">Referral Program</a>
         <a href="about.html" class="mobile-link py-1">About Us</a>
         <a href="services.html" class="mobile-link py-1">Programs &amp; Services</a>
-        <a href="about.html#contact" class="mobile-link py-1">Contact</a>
       </nav>
     </div>
   </header>
 
   <main>
-    <section id="listings" class="border-b border-momentum-grayLight bg-white py-16">
-      <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div class="reveal mb-10 text-center">
-          <span class="text-xs font-semibold uppercase tracking-wider text-momentum-gray">Our Portfolio</span>
-          <h2 class="mt-1 font-serif text-3xl font-bold text-momentum-blue sm:text-4xl">Featured Listings</h2>
-          <p class="mt-2 text-slate-600">Explore our current active listings across Northeast Florida.</p>
-        </div>
-        <div class="reveal rounded-2xl border border-momentum-grayLight bg-momentum-bgLight p-12 text-center">
-          <p class="mb-6 text-base text-slate-600">Viewing active properties or customized search alerts?</p>
-          <a href="http://link.flexmls.com/1zc0rq8cwbq2,15" target="_blank" rel="noopener noreferrer" class="inline-block rounded-xl bg-momentum-blue px-8 py-3.5 font-bold text-white shadow-md transition-colors hover:bg-momentum-blueHover">
-            View Active Listings on MLS
+    <!-- Page Hero -->
+    <section class="relative bg-momentum-blueDark py-20 text-white">
+      <div class="mx-auto max-w-7xl px-4 text-center sm:px-6 lg:px-8">
+        <h1 class="font-serif text-4xl font-bold">Northeast Florida Buyer &amp; County Guide</h1>
+        <p class="mx-auto mt-3 max-w-2xl text-sm text-slate-200">Explore Duval, Nassau, Clay, and St. Johns Counties through neighborhood profiles, school ratings, military base commutes, and custom property matching.</p>
+        <div class="mt-6 flex flex-wrap justify-center gap-4">
+          <a href="Buyers-Guide.pdf" download target="_blank" rel="noopener noreferrer" class="rounded-xl bg-white px-6 py-3 font-bold text-momentum-blue shadow-lg transition-all hover:bg-slate-100">
+            Download Buyer's Guide (PDF)
+          </a>
+          <a href="#home-search" class="rounded-xl bg-teal-600 px-6 py-3 font-bold text-white shadow-lg transition-all hover:bg-teal-700">
+            Tell Me What To Find
           </a>
         </div>
       </div>
     </section>
 
-    <section id="buy" class="bg-momentum-bgLight py-16">
+    <!-- Featured Listings -->
+    <section id="featured-listings" class="border-b border-momentum-grayLight bg-white py-16">
       <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div class="reveal mb-12 text-center">
-          <span class="text-xs font-semibold uppercase tracking-wider text-momentum-gray">Home Buyer Resource</span>
-          <h2 class="mt-1 font-serif text-3xl font-bold text-momentum-blue sm:text-4xl">Buying in Northeast Florida</h2>
-          <p class="mx-auto mt-3 max-w-2xl text-slate-600">Explore region breakdowns, school ratings, military commutes, and download our official Buyer's Guide.</p>
-          <div class="mt-6">
-            <a href="Buyers-Guide.pdf" download target="_blank" rel="noopener noreferrer" class="inline-flex items-center rounded-lg bg-momentum-blue px-6 py-3 font-bold text-white shadow transition-colors hover:bg-momentum-blueHover">
-              Download Free Buyer's Guide (PDF)
-            </a>
-          </div>
+        <div class="mb-12 text-center">
+          <span class="text-xs font-bold uppercase tracking-wider text-momentum-gray">Exclusive Homes</span>
+          <h2 class="mt-1 font-serif text-3xl font-bold text-momentum-blue">Featured Properties</h2>
+          <p class="mt-2 text-sm text-slate-600">Click any property below to view full MLS details and schedule a private showing.</p>
         </div>
 
-        <div class="space-y-12">
-          <div class="reveal rounded-2xl border border-momentum-grayLight bg-white p-8 shadow-sm">
-            <h3 class="mb-2 font-serif text-2xl font-bold text-momentum-blue">Duval County (Jacksonville &amp; Beaches)</h3>
-            <p class="mb-4 text-sm leading-relaxed text-slate-600">
-              Duval County features a vibrant downtown, historic neighborhoods, and miles of coastline.
-              <strong>Sought-after Neighborhoods:</strong> Riverside, Avondale, San Marco, East Arlington, and Jacksonville Beaches (Atlantic, Neptune, Jacksonville Beach).
-            </p>
-            <div class="mb-2 grid grid-cols-1 gap-4 rounded-xl border border-momentum-grayLight bg-momentum-bgLight p-4 text-xs md:grid-cols-2">
-              <div>
-                <strong class="mb-1 block text-momentum-blue">Top-Rated Schools:</strong>
-                • Stanton College Prep (A-Rated)<br />
-                • Julia Landon College Prep (A-Rated)<br />
-                • Jacksonville Beach Elementary (A-Rated)
-              </div>
-              <div>
-                <strong class="mb-1 block text-momentum-blue">Military Base Commutes:</strong>
-                • NAS Jacksonville: 15–25 mins<br />
-                • NS Mayport: 10–20 mins<br />
-                • NSB Kings Bay: 40–50 mins
+        <div class="grid grid-cols-1 gap-8 md:grid-cols-3">
+          <a href="https://www.flexmls.com/share/EQxum/75888-SAFFRON-LANE-Lane-Yulee-FL-32097" target="_blank" rel="noopener noreferrer" class="group overflow-hidden rounded-2xl border border-momentum-grayLight bg-momentum-bgLight shadow-md transition-all hover:shadow-xl">
+            <div class="relative h-56 bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=800&q=80');">
+              <span class="absolute left-3 top-3 rounded-full bg-momentum-blue px-3 py-1 text-xs font-bold text-white shadow">Active MLS</span>
+            </div>
+            <div class="p-6">
+              <h3 class="font-serif text-lg font-bold text-momentum-blue transition-colors group-hover:text-teal-600">75888 SAFFRON LANE</h3>
+              <p class="mt-1 text-xs font-semibold text-slate-500">Yulee, FL 32097</p>
+              <div class="mt-4 flex items-center justify-between border-t border-momentum-grayLight pt-4">
+                <span class="text-xl font-bold text-momentum-blue">View Pricing on MLS</span>
+                <span class="text-xs font-bold text-teal-600 transition-transform group-hover:translate-x-1">Details &rarr;</span>
               </div>
             </div>
-          </div>
+          </a>
 
-          <div class="reveal rounded-2xl border border-momentum-grayLight bg-white p-8 shadow-sm">
-            <h3 class="mb-2 font-serif text-2xl font-bold text-momentum-blue">Nassau County (Yulee &amp; Fernandina Beach)</h3>
-            <p class="mb-4 text-sm leading-relaxed text-slate-600">
-              Known for top-rated schools, tax-friendly living, acreage, and coastal charm on Amelia Island.
-              <strong>Sought-after Neighborhoods:</strong> Wildlight, Fernandina Beach Historic District, Amelia National, Timber Creek.
-            </p>
-            <div class="mb-2 grid grid-cols-1 gap-4 rounded-xl border border-momentum-grayLight bg-momentum-bgLight p-4 text-xs md:grid-cols-2">
-              <div>
-                <strong class="mb-1 block text-momentum-blue">Top-Rated Schools:</strong>
-                • Wildlight Elementary (A-Rated)<br />
-                • Yulee Middle &amp; High (A/B-Rated)<br />
-                • Fernandina Beach High (A-Rated)
-              </div>
-              <div>
-                <strong class="mb-1 block text-momentum-blue">Military Base Commutes:</strong>
-                • NAS Jacksonville: 35–45 mins<br />
-                • NS Mayport: 40–50 mins<br />
-                • NSB Kings Bay: 20–30 mins
+          <a href="https://www.flexmls.com/share/EQxv7/85645-STONEHURST-Parkway-Fernandina-Beach-FL-32034" target="_blank" rel="noopener noreferrer" class="group overflow-hidden rounded-2xl border border-momentum-grayLight bg-momentum-bgLight shadow-md transition-all hover:shadow-xl">
+            <div class="relative h-56 bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=800&q=80');">
+              <span class="absolute left-3 top-3 rounded-full bg-momentum-blue px-3 py-1 text-xs font-bold text-white shadow">Active MLS</span>
+            </div>
+            <div class="p-6">
+              <h3 class="font-serif text-lg font-bold text-momentum-blue transition-colors group-hover:text-teal-600">85645 STONEHURST Parkway</h3>
+              <p class="mt-1 text-xs font-semibold text-slate-500">Fernandina Beach, FL 32034</p>
+              <div class="mt-4 flex items-center justify-between border-t border-momentum-grayLight pt-4">
+                <span class="text-xl font-bold text-momentum-blue">View Pricing on MLS</span>
+                <span class="text-xs font-bold text-teal-600 transition-transform group-hover:translate-x-1">Details &rarr;</span>
               </div>
             </div>
-          </div>
+          </a>
 
-          <div class="reveal rounded-2xl border border-momentum-grayLight bg-white p-8 shadow-sm">
-            <h3 class="mb-2 font-serif text-2xl font-bold text-momentum-blue">Clay County (Orange Park &amp; Fleming Island)</h3>
-            <p class="mb-4 text-sm leading-relaxed text-slate-600">
-              A favorite for military families wanting suburban neighborhoods along the St. Johns River.
-              <strong>Sought-after Neighborhoods:</strong> Fleming Island Plantation, Eagle Harbor, Oakleaf Plantation.
-            </p>
-            <div class="mb-2 grid grid-cols-1 gap-4 rounded-xl border border-momentum-grayLight bg-momentum-bgLight p-4 text-xs md:grid-cols-2">
-              <div>
-                <strong class="mb-1 block text-momentum-blue">Top-Rated Schools:</strong>
-                • Fleming Island High (A-Rated)<br />
-                • Thunderbolt Elementary (A-Rated)<br />
-                • Green Cove Springs Junior High (A-Rated)
-              </div>
-              <div>
-                <strong class="mb-1 block text-momentum-blue">Military Base Commutes:</strong>
-                • NAS Jacksonville: 10–20 mins<br />
-                • NS Mayport: 45–55 mins<br />
-                • NSB Kings Bay: 55–65 mins
+          <a href="https://www.flexmls.com/share/EQy2B/75765-LILY-POND-Court-Yulee-FL-32097" target="_blank" rel="noopener noreferrer" class="group overflow-hidden rounded-2xl border border-momentum-grayLight bg-momentum-bgLight shadow-md transition-all hover:shadow-xl">
+            <div class="relative h-56 bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1564013799919-ab600027ffc6?auto=format&fit=crop&w=800&q=80');">
+              <span class="absolute left-3 top-3 rounded-full bg-momentum-blue px-3 py-1 text-xs font-bold text-white shadow">Active MLS</span>
+            </div>
+            <div class="p-6">
+              <h3 class="font-serif text-lg font-bold text-momentum-blue transition-colors group-hover:text-teal-600">75765 LILY POND Court</h3>
+              <p class="mt-1 text-xs font-semibold text-slate-500">Yulee, FL 32097</p>
+              <div class="mt-4 flex items-center justify-between border-t border-momentum-grayLight pt-4">
+                <span class="text-xl font-bold text-momentum-blue">View Pricing on MLS</span>
+                <span class="text-xs font-bold text-teal-600 transition-transform group-hover:translate-x-1">Details &rarr;</span>
               </div>
             </div>
-          </div>
+          </a>
+        </div>
+      </div>
+    </section>
 
-          <div class="reveal rounded-2xl border border-momentum-grayLight bg-white p-8 shadow-sm">
-            <h3 class="mb-2 font-serif text-2xl font-bold text-momentum-blue">St. Johns County &amp; St. Augustine</h3>
-            <p class="mb-4 text-sm leading-relaxed text-slate-600">
-              Consistently rated the #1 public school district in Florida, blending master-planned amenities with historic coastal living.
-              <strong>Sought-after Neighborhoods:</strong> Nocatee, Ponte Vedra Beach, Shearwater, Beachwalk, World Golf Village.
-            </p>
-            <div class="mb-2 grid grid-cols-1 gap-4 rounded-xl border border-momentum-grayLight bg-momentum-bgLight p-4 text-xs md:grid-cols-2">
-              <div>
-                <strong class="mb-1 block text-momentum-blue">Top-Rated Schools:</strong>
-                • Allen D. Nease High School (A-Rated)<br />
-                • Ponte Vedra High School (A-Rated)<br />
-                • Valley Ridge Academy (A-Rated)
-              </div>
-              <div>
-                <strong class="mb-1 block text-momentum-blue">Military Base Commutes:</strong>
-                • NAS Jacksonville: 30–40 mins<br />
-                • NS Mayport: 25–35 mins<br />
-                • NSB Kings Bay: 55–65 mins
-              </div>
+    <!-- County Breakdowns -->
+    <section class="bg-white py-16">
+      <div class="mx-auto max-w-7xl space-y-12 px-4 sm:px-6 lg:px-8">
+
+        <div class="rounded-2xl border border-momentum-grayLight bg-momentum-bgLight p-8 shadow-sm">
+          <h3 class="mb-2 font-serif text-2xl font-bold text-momentum-blue">Duval County (Jacksonville &amp; Beaches)</h3>
+          <p class="mb-4 text-sm text-slate-600"><strong>Sought-After Neighborhoods:</strong> Riverside, Avondale, San Marco, East Arlington, Atlantic Beach, Neptune Beach, and Jacksonville Beach.</p>
+          <div class="grid grid-cols-1 gap-4 rounded-xl border border-momentum-grayLight bg-white p-4 text-xs md:grid-cols-2">
+            <div>
+              <strong class="mb-2 block text-sm text-momentum-blue">Top-Rated Schools:</strong>
+              ? Stanton College Prep (A-Rated)<br />
+              ? Julia Landon College Prep (A-Rated)<br />
+              ? Jacksonville Beach Elementary (A-Rated)
+            </div>
+            <div>
+              <strong class="mb-2 block text-sm text-momentum-blue">Base Commutes:</strong>
+              ? NAS Jacksonville: 15 to 25 mins<br />
+              ? NS Mayport: 10 to 20 mins<br />
+              ? NSB Kings Bay: 40 to 50 mins
             </div>
           </div>
         </div>
 
-        <div id="home-search" class="reveal mt-16 rounded-2xl border border-momentum-grayLight bg-white p-8 shadow-lg lg:p-12">
-          <div class="mx-auto mb-8 max-w-3xl text-center">
+        <div class="rounded-2xl border border-momentum-grayLight bg-momentum-bgLight p-8 shadow-sm">
+          <h3 class="mb-2 font-serif text-2xl font-bold text-momentum-blue">Nassau County (Yulee &amp; Fernandina Beach)</h3>
+          <p class="mb-4 text-sm text-slate-600"><strong>Sought-After Neighborhoods:</strong> Wildlight, Fernandina Beach Historic District, Amelia National, Timber Creek.</p>
+          <div class="grid grid-cols-1 gap-4 rounded-xl border border-momentum-grayLight bg-white p-4 text-xs md:grid-cols-2">
+            <div>
+              <strong class="mb-2 block text-sm text-momentum-blue">Top-Rated Schools:</strong>
+              ? Wildlight Elementary (A-Rated)<br />
+              ? Yulee Middle &amp; High (A/B-Rated)<br />
+              ? Fernandina Beach High (A-Rated)
+            </div>
+            <div>
+              <strong class="mb-2 block text-sm text-momentum-blue">Base Commutes:</strong>
+              ? NAS Jacksonville: 35 to 45 mins<br />
+              ? NS Mayport: 40 to 50 mins<br />
+              ? NSB Kings Bay: 20 to 30 mins
+            </div>
+          </div>
+        </div>
+
+        <div class="rounded-2xl border border-momentum-grayLight bg-momentum-bgLight p-8 shadow-sm">
+          <h3 class="mb-2 font-serif text-2xl font-bold text-momentum-blue">Clay County (Orange Park &amp; Fleming Island)</h3>
+          <p class="mb-4 text-sm text-slate-600"><strong>Sought-After Neighborhoods:</strong> Fleming Island Plantation, Eagle Harbor, Oakleaf Plantation.</p>
+          <div class="grid grid-cols-1 gap-4 rounded-xl border border-momentum-grayLight bg-white p-4 text-xs md:grid-cols-2">
+            <div>
+              <strong class="mb-2 block text-sm text-momentum-blue">Top-Rated Schools:</strong>
+              ? Fleming Island High (A-Rated)<br />
+              ? Thunderbolt Elementary (A-Rated)<br />
+              ? Green Cove Springs Junior High (A-Rated)
+            </div>
+            <div>
+              <strong class="mb-2 block text-sm text-momentum-blue">Base Commutes:</strong>
+              ? NAS Jacksonville: 10 to 20 mins<br />
+              ? NS Mayport: 45 to 55 mins<br />
+              ? NSB Kings Bay: 55 to 65 mins
+            </div>
+          </div>
+        </div>
+
+        <div class="rounded-2xl border border-momentum-grayLight bg-momentum-bgLight p-8 shadow-sm">
+          <h3 class="mb-2 font-serif text-2xl font-bold text-momentum-blue">St. Johns County &amp; St. Augustine</h3>
+          <p class="mb-4 text-sm text-slate-600"><strong>Sought-After Neighborhoods:</strong> Nocatee, Ponte Vedra Beach, Shearwater, Beachwalk, World Golf Village.</p>
+          <div class="grid grid-cols-1 gap-4 rounded-xl border border-momentum-grayLight bg-white p-4 text-xs md:grid-cols-2">
+            <div>
+              <strong class="mb-2 block text-sm text-momentum-blue">Top-Rated Schools:</strong>
+              ? Allen D. Nease High School (A-Rated)<br />
+              ? Ponte Vedra High School (A-Rated)<br />
+              ? Valley Ridge Academy (A-Rated)
+            </div>
+            <div>
+              <strong class="mb-2 block text-sm text-momentum-blue">Base Commutes:</strong>
+              ? NAS Jacksonville: 30 to 40 mins<br />
+              ? NS Mayport: 25 to 35 mins<br />
+              ? NSB Kings Bay: 55 to 65 mins
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- New Construction -->
+    <section id="new-construction" class="border-b border-t border-momentum-grayLight bg-momentum-bgLight py-16">
+      <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+
+        <div class="mb-12 text-center">
+          <span class="text-xs font-semibold uppercase tracking-wider text-momentum-gray">Builder Directory</span>
+          <h2 class="mt-1 font-serif text-3xl font-bold text-momentum-blue sm:text-4xl">Northeast Florida New Construction</h2>
+        </div>
+
+        <div class="mb-12 rounded-r-xl border-l-4 border-amber-500 bg-amber-50 p-6 shadow-sm">
+          <h4 class="text-base font-bold text-amber-900">Important Buyer Representation Advisory:</h4>
+          <p class="mt-1 text-sm leading-relaxed text-amber-800">
+            Don’t ever visit or register at a new construction neighborhood without a realtor of your own! The site agents at the model homes are employed to represent the builder’s best interest and not yours. Having S² Home Partners represent you costs you nothing extra and ensures your financial interests, upgrade negotiations, and inspection rights are fully protected.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-4">
+          <div class="overflow-hidden rounded-2xl border border-momentum-grayLight bg-white shadow-sm transition-all hover:shadow-md">
+            <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=600&q=80" alt="Duval new construction community" class="h-40 w-full object-cover" />
+            <div class="p-5">
+              <span class="text-xs font-bold uppercase text-momentum-gray">Duval County</span>
+              <h4 class="mt-1 text-lg font-bold text-momentum-blue">eTown / Seven Pines</h4>
+              <p class="mt-2 text-xs text-slate-500"><strong>Builders:</strong> ICI Homes, Toll Brothers, David Weekley</p>
+              <p class="mt-2 text-xs font-bold text-momentum-blue">$450k to $1.2M+</p>
+            </div>
+          </div>
+
+          <div class="overflow-hidden rounded-2xl border border-momentum-grayLight bg-white shadow-sm transition-all hover:shadow-md">
+            <img src="https://images.unsplash.com/photo-1564013799919-ab600027ffc6?auto=format&fit=crop&w=600&q=80" alt="Nassau new construction community" class="h-40 w-full object-cover" />
+            <div class="p-5">
+              <span class="text-xs font-bold uppercase text-momentum-gray">Nassau County</span>
+              <h4 class="mt-1 text-lg font-bold text-momentum-blue">Wildlight / Tributary</h4>
+              <p class="mt-2 text-xs text-slate-500"><strong>Builders:</strong> Pulte Homes, Dream Finders, Mattamy</p>
+              <p class="mt-2 text-xs font-bold text-momentum-blue">$350k to $800k</p>
+            </div>
+          </div>
+
+          <div class="overflow-hidden rounded-2xl border border-momentum-grayLight bg-white shadow-sm transition-all hover:shadow-md">
+            <img src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=600&q=80" alt="Clay new construction community" class="h-40 w-full object-cover" />
+            <div class="p-5">
+              <span class="text-xs font-bold uppercase text-momentum-gray">Clay County</span>
+              <h4 class="mt-1 text-lg font-bold text-momentum-blue">Cross Creek / Eagle Landing</h4>
+              <p class="mt-2 text-xs text-slate-500"><strong>Builders:</strong> Dream Finders, D.R. Horton</p>
+              <p class="mt-2 text-xs font-bold text-momentum-blue">$320k to $650k</p>
+            </div>
+          </div>
+
+          <div class="overflow-hidden rounded-2xl border border-momentum-grayLight bg-white shadow-sm transition-all hover:shadow-md">
+            <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=600&q=80" alt="St. Johns new construction community" class="h-40 w-full object-cover" />
+            <div class="p-5">
+              <span class="text-xs font-bold uppercase text-momentum-gray">St. Johns County</span>
+              <h4 class="mt-1 text-lg font-bold text-momentum-blue">SilverLeaf / Beachwalk</h4>
+              <p class="mt-2 text-xs text-slate-500"><strong>Builders:</strong> MasterCraft, Riverside, Lennar</p>
+              <p class="mt-2 text-xs font-bold text-momentum-blue">$400k to $1.5M+</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Home Search Lead Form -->
+    <section id="home-search" class="bg-white py-16">
+      <div class="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
+        <div class="rounded-2xl border border-momentum-grayLight bg-momentum-bgLight p-8 shadow-xl lg:p-12">
+          <div class="mb-8 text-center">
             <span class="text-xs font-semibold uppercase tracking-wider text-momentum-gray">Custom Property Match</span>
             <h3 class="mt-1 font-serif text-3xl font-bold text-momentum-blue">Tell Me What to Find</h3>
-            <p class="mt-3 leading-relaxed text-slate-600">
-              Tell me what to find: beds, budget, neighborhoods, VA or assumable preferences. I search active MLS and off-market, then send matches straight to you.
+            <p class="mt-3 text-sm leading-relaxed text-slate-600">
+              Beds, budget, neighborhoods, VA or assumable preferences. I search active MLS and off-market, then send matches straight to you.
             </p>
           </div>
 
-          <form action="https://formsubmit.co/S2HomePartners@gmail.com" method="POST" class="mx-auto max-w-2xl space-y-4">
-            <input type="hidden" name="_next" value="https://buyjacksonvillefl.com/#submitted" />
-            <input type="hidden" name="_subject" value="New Home Search Request - BuyJacksonvilleFL" />
-            <input type="hidden" name="_captcha" value="false" />
+          <form action="https://formsubmit.co/S2HomePartners@gmail.com" method="POST" class="space-y-4">
+            <input type="hidden" name="_next" value="https://buyjacksonvillefl.com/buy.html#submitted" />
+            <input type="hidden" name="_subject" value="New Home Search Request - S2 Home Partners" />
 
             <div>
-              <label class="mb-1 block text-xs font-bold uppercase text-slate-700" for="buyer-name">Name</label>
-              <input id="buyer-name" type="text" name="Name" required placeholder="Your Full Name" class="w-full rounded-lg border border-momentum-grayLight px-4 py-2.5 text-sm focus:border-momentum-blue focus:outline-none" />
+              <label for="buyer-name" class="mb-1 block text-xs font-bold uppercase text-slate-700">Name</label>
+              <input id="buyer-name" type="text" name="Name" required placeholder="Your Full Name" class="w-full rounded-xl border border-momentum-grayLight px-4 py-3 text-sm focus:border-momentum-blue focus:outline-none" />
             </div>
             <div class="grid grid-cols-1 gap-4 md:grid-cols-2">
               <div>
-                <label class="mb-1 block text-xs font-bold uppercase text-slate-700" for="buyer-email">Email</label>
-                <input id="buyer-email" type="email" name="Email" required placeholder="you@example.com" class="w-full rounded-lg border border-momentum-grayLight px-4 py-2.5 text-sm focus:border-momentum-blue focus:outline-none" />
+                <label for="buyer-email" class="mb-1 block text-xs font-bold uppercase text-slate-700">Email</label>
+                <input id="buyer-email" type="email" name="Email" required placeholder="you@example.com" class="w-full rounded-xl border border-momentum-grayLight px-4 py-3 text-sm focus:border-momentum-blue focus:outline-none" />
               </div>
               <div>
-                <label class="mb-1 block text-xs font-bold uppercase text-slate-700" for="buyer-phone">Phone</label>
-                <input id="buyer-phone" type="tel" name="Phone" placeholder="(904) 000-0000" class="w-full rounded-lg border border-momentum-grayLight px-4 py-2.5 text-sm focus:border-momentum-blue focus:outline-none" />
+                <label for="buyer-phone" class="mb-1 block text-xs font-bold uppercase text-slate-700">Phone</label>
+                <input id="buyer-phone" type="tel" name="Phone" placeholder="(904) 000-0000" class="w-full rounded-xl border border-momentum-grayLight px-4 py-3 text-sm focus:border-momentum-blue focus:outline-none" />
               </div>
             </div>
             <div>
-              <label class="mb-1 block text-xs font-bold uppercase text-slate-700" for="buyer-interest">Interest</label>
-              <select id="buyer-interest" name="Interest" class="w-full rounded-lg border border-momentum-grayLight px-4 py-2.5 text-sm focus:border-momentum-blue focus:outline-none">
+              <label for="buyer-interest" class="mb-1 block text-xs font-bold uppercase text-slate-700">Interest</label>
+              <select id="buyer-interest" name="Interest" class="w-full rounded-lg border border-momentum-grayLight px-4 py-3 text-sm focus:border-momentum-blue focus:outline-none">
                 <option value="Buying Active MLS">Buying Active MLS Property</option>
                 <option value="Off-Market Listings">Looking for Off-Market Homes</option>
                 <option value="VA Assumable Loan">Seeking VA Assumable Mortgages</option>
@@ -248,67 +331,18 @@
               </select>
             </div>
             <div>
-              <label class="mb-1 block text-xs font-bold uppercase text-slate-700" for="buyer-message">Message (Beds, Budget, Preferred Neighborhoods)</label>
-              <textarea id="buyer-message" name="Message" rows="4" required placeholder="Tell us your desired bedrooms, bathrooms, budget, target areas, and any special requirements..." class="w-full rounded-lg border border-momentum-grayLight px-4 py-2.5 text-sm focus:border-momentum-blue focus:outline-none"></textarea>
+              <label for="buyer-message" class="mb-1 block text-xs font-bold uppercase text-slate-700">Message (Beds, Budget, Preferred Neighborhoods)</label>
+              <textarea id="buyer-message" name="Message" rows="4" required placeholder="Tell us your desired bedrooms, budget, preferred areas..." class="w-full rounded-xl border border-momentum-grayLight px-4 py-3 text-sm focus:border-momentum-blue focus:outline-none"></textarea>
             </div>
-            <button type="submit" class="w-full rounded-xl bg-momentum-blue py-3.5 text-base font-bold text-white shadow-md transition-colors hover:bg-momentum-blueHover">
+
+            <button type="submit" class="w-full rounded-xl bg-momentum-blue py-4 text-base font-bold text-white shadow-md transition-all hover:bg-momentum-blueHover">
               Send My Request
             </button>
           </form>
+
           <p class="mt-4 text-center text-xs italic text-slate-500">
-            * Please expect to hear back from our team within 24 hours.
+            * Please expect to hear back from our team in 24 hours.
           </p>
-        </div>
-      </div>
-    </section>
-
-    <section id="new-construction" class="border-t border-momentum-grayLight bg-white py-16">
-      <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div class="reveal mb-10 text-center">
-          <span class="text-xs font-semibold uppercase tracking-wider text-momentum-gray">Builder Directory</span>
-          <h2 class="mt-1 font-serif text-3xl font-bold text-momentum-blue sm:text-4xl">Northeast Florida New Construction</h2>
-        </div>
-
-        <div class="reveal mb-12 rounded-r-xl border-l-4 border-amber-500 bg-amber-50 p-6 shadow-sm">
-          <div class="flex items-start gap-3">
-            <div>
-              <h4 class="text-base font-bold text-amber-900">Important Buyer Representation Advisory:</h4>
-              <p class="mt-1 text-sm leading-relaxed text-amber-800">
-                Don’t ever visit or register at a new construction neighborhood without a realtor of your own! The site agents at the model homes are employed to represent the builder’s best interest—not yours. Having S² Home Partners represent you costs you nothing extra and ensures your financial interests, upgrade negotiations, and inspection rights are fully protected.
-              </p>
-            </div>
-          </div>
-        </div>
-
-        <div class="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-4">
-          <div class="reveal rounded-xl border border-momentum-grayLight bg-momentum-bgLight p-6 shadow-sm">
-            <span class="text-xs font-bold uppercase text-momentum-gray">Duval County</span>
-            <h4 class="mt-1 text-xl font-bold text-momentum-blue">eTown / Seven Pines</h4>
-            <p class="mt-2 text-xs text-slate-500"><strong>Builders:</strong> ICI Homes, Toll Brothers, David Weekley</p>
-            <p class="mt-1 text-xs text-slate-500"><strong>Home Types:</strong> Modern Single-Family &amp; Luxury Townhomes</p>
-            <p class="mt-2 text-xs font-bold text-momentum-blue">Price Point: $450k – $1.2M+</p>
-          </div>
-          <div class="reveal reveal-delay-1 rounded-xl border border-momentum-grayLight bg-momentum-bgLight p-6 shadow-sm">
-            <span class="text-xs font-bold uppercase text-momentum-gray">Nassau County</span>
-            <h4 class="mt-1 text-xl font-bold text-momentum-blue">Wildlight / Tributary</h4>
-            <p class="mt-2 text-xs text-slate-500"><strong>Builders:</strong> Pulte Homes, Dream Finders, Mattamy Homes</p>
-            <p class="mt-1 text-xs text-slate-500"><strong>Home Types:</strong> Lowcountry Single-Family &amp; Active Adult</p>
-            <p class="mt-2 text-xs font-bold text-momentum-blue">Price Point: $350k – $800k</p>
-          </div>
-          <div class="reveal reveal-delay-2 rounded-xl border border-momentum-grayLight bg-momentum-bgLight p-6 shadow-sm">
-            <span class="text-xs font-bold uppercase text-momentum-gray">Clay County</span>
-            <h4 class="mt-1 text-xl font-bold text-momentum-blue">Cross Creek / Eagle Landing</h4>
-            <p class="mt-2 text-xs text-slate-500"><strong>Builders:</strong> Dream Finders Homes, D.R. Horton</p>
-            <p class="mt-1 text-xs text-slate-500"><strong>Home Types:</strong> Single-Family Suburban Homes</p>
-            <p class="mt-2 text-xs font-bold text-momentum-blue">Price Point: $320k – $650k</p>
-          </div>
-          <div class="reveal reveal-delay-3 rounded-xl border border-momentum-grayLight bg-momentum-bgLight p-6 shadow-sm">
-            <span class="text-xs font-bold uppercase text-momentum-gray">St. Johns County</span>
-            <h4 class="mt-1 text-xl font-bold text-momentum-blue">SilverLeaf / Beachwalk</h4>
-            <p class="mt-2 text-xs text-slate-500"><strong>Builders:</strong> MasterCraft, Riverside Homes, Lennar</p>
-            <p class="mt-1 text-xs text-slate-500"><strong>Home Types:</strong> Resort-Style Master Planned Communities</p>
-            <p class="mt-2 text-xs font-bold text-momentum-blue">Price Point: $400k – $1.5M+</p>
-          </div>
         </div>
       </div>
     </section>
@@ -340,21 +374,6 @@
         menuToggle.setAttribute('aria-label', 'Open menu');
       });
     });
-
-    const revealObserver = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('is-visible');
-            revealObserver.unobserve(entry.target);
-          }
-        });
-      },
-      { threshold: 0.12, rootMargin: '0px 0px -40px 0px' }
-    );
-
-    document.querySelectorAll('#hero .reveal').forEach((el) => el.classList.add('is-visible'));
-    document.querySelectorAll('.reveal:not(.is-visible)').forEach((el) => revealObserver.observe(el));
   </script>
 </body>
 </html>

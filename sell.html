@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Sell Your Home | S² Home Partners | Momentum Realty</title>
-  <meta name="description" content="Sell your Northeast Florida home with S² Home Partners — Listing Guide, strategic marketing, and Fix It & List It program." />
+  <title>Sell Your Home | S² Home Partners</title>
+  <meta name="description" content="Sell your Northeast Florida home with S² Home Partners — Listing Guide, strategic marketing, and the Fix It & List It program." />
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -17,9 +17,10 @@
             momentum: {
               blue: '#1A4B6E',
               blueHover: '#133853',
+              blueDark: '#0F2C42',
               gray: '#718093',
               grayLight: '#E2E8F0',
-              bgLight: '#F8FAFC',
+              bgLight: '#F4F7FA',
             },
           },
           fontFamily: {
@@ -30,33 +31,19 @@
       },
     };
   </script>
-  <style>
-    html { scroll-behavior: smooth; }
-    .reveal {
-      opacity: 0;
-      transform: translateY(1.25rem);
-      transition: opacity 0.8s ease, transform 0.8s ease;
-    }
-    .reveal.is-visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
-    .reveal-delay-1 { transition-delay: 0.12s; }
-    .reveal-delay-2 { transition-delay: 0.24s; }
-    .reveal-delay-3 { transition-delay: 0.36s; }
-  </style>
 </head>
 <body class="bg-momentum-bgLight font-sans text-slate-800 antialiased">
 
-  <header id="site-nav" class="sticky top-0 z-50 border-b border-momentum-grayLight bg-white shadow-sm">
+  <!-- Top Navigation -->
+  <header class="sticky top-0 z-50 border-b border-momentum-grayLight bg-white/95 shadow-sm backdrop-blur-md">
     <div class="mx-auto flex h-24 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
-      <a href="index.html" class="flex items-center">
+      <a href="index.html">
         <img src="momentum-logo.png" alt="Momentum Realty" class="h-14 w-auto object-contain" />
       </a>
 
-      <nav class="hidden items-center space-x-5 text-xs font-semibold uppercase tracking-wider text-momentum-gray xl:flex" aria-label="Primary">
+      <nav class="hidden items-center space-x-5 text-xs font-bold uppercase tracking-wider text-momentum-gray xl:flex" aria-label="Primary">
         <a href="buy.html" class="transition-colors hover:text-momentum-blue">Buy</a>
-        <a href="sell.html" class="transition-colors hover:text-momentum-blue">Sell</a>
+        <a href="sell.html" class="border-b-2 border-momentum-blue pb-1 font-extrabold text-momentum-blue">Sell</a>
         <a href="buy.html#new-construction" class="transition-colors hover:text-momentum-blue">New Construction</a>
         <a href="military.html" class="transition-colors hover:text-momentum-blue">Military</a>
         <a href="success-stories.html" class="transition-colors hover:text-momentum-blue">Success Stories</a>
@@ -64,7 +51,6 @@
         <a href="referral.html" class="transition-colors hover:text-momentum-blue">Referral Program</a>
         <a href="about.html" class="transition-colors hover:text-momentum-blue">About Us</a>
         <a href="services.html" class="transition-colors hover:text-momentum-blue">Programs &amp; Services</a>
-        <a href="about.html#contact" class="rounded-lg bg-momentum-blue px-4 py-2.5 font-semibold normal-case tracking-normal text-white transition-colors hover:bg-momentum-blueHover">Contact</a>
       </nav>
 
       <button id="menu-toggle" type="button" class="inline-flex items-center justify-center text-momentum-blue xl:hidden" aria-expanded="false" aria-controls="mobile-menu" aria-label="Open menu">
@@ -77,7 +63,7 @@
     <div id="mobile-menu" class="hidden border-t border-momentum-grayLight bg-white px-4 py-4 xl:hidden">
       <nav class="flex flex-col gap-3 text-sm font-medium text-momentum-blue" aria-label="Mobile">
         <a href="buy.html" class="mobile-link py-1">Buy</a>
-        <a href="sell.html" class="mobile-link py-1">Sell</a>
+        <a href="sell.html" class="mobile-link py-1 font-bold">Sell</a>
         <a href="buy.html#new-construction" class="mobile-link py-1">New Construction</a>
         <a href="military.html" class="mobile-link py-1">Military</a>
         <a href="success-stories.html" class="mobile-link py-1">Success Stories</a>
@@ -85,38 +71,34 @@
         <a href="referral.html" class="mobile-link py-1">Referral Program</a>
         <a href="about.html" class="mobile-link py-1">About Us</a>
         <a href="services.html" class="mobile-link py-1">Programs &amp; Services</a>
-        <a href="about.html#contact" class="mobile-link py-1">Contact</a>
       </nav>
     </div>
   </header>
 
   <main>
-    <section id="sell" class="border-b border-momentum-grayLight bg-white py-16">
-      <div class="mx-auto max-w-7xl px-4 text-center sm:px-6 lg:px-8">
-        <div class="reveal">
-          <span class="text-xs font-semibold uppercase tracking-wider text-momentum-gray">Home Seller Resource</span>
-          <h2 class="mt-1 font-serif text-3xl font-bold text-momentum-blue sm:text-4xl">Sell Your Home With S² Home Partners</h2>
-          <p class="mx-auto mb-6 mt-3 max-w-2xl text-slate-600">
-            Discover our strategic marketing plans, home staging solutions, and dynamic listing programs designed to sell your property for top dollar.
-          </p>
-          <a href="Listing-Guide.pdf" download target="_blank" rel="noopener noreferrer" class="inline-flex items-center rounded-xl bg-momentum-blue px-8 py-3.5 font-bold text-white shadow-md transition-colors hover:bg-momentum-blueHover">
+    <!-- Hero -->
+    <section class="bg-momentum-blueDark py-20 text-center text-white">
+      <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <h1 class="font-serif text-4xl font-bold">Sell Your Home With S² Home Partners</h1>
+        <p class="mx-auto mt-3 max-w-2xl text-sm text-slate-200">Strategic marketing, professional staging, and zero-upfront renovation programs to maximize your net proceed equity.</p>
+        <div class="mt-8">
+          <a href="Listing-Guide.pdf" download target="_blank" rel="noopener noreferrer" class="inline-block rounded-xl bg-white px-8 py-3.5 font-bold text-momentum-blue shadow-lg transition-all hover:bg-slate-100">
             Download Our Official Listing Guide (PDF)
           </a>
         </div>
       </div>
     </section>
 
-    <section class="bg-momentum-bgLight py-16">
-      <div class="mx-auto max-w-3xl px-4 text-center sm:px-6 lg:px-8">
-        <div class="reveal rounded-2xl border border-momentum-grayLight bg-white p-8 shadow-sm lg:p-12">
-          <span class="text-xs font-semibold uppercase tracking-wider text-momentum-gray">Featured Program</span>
-          <h3 class="mt-1 font-serif text-2xl font-bold text-momentum-blue sm:text-3xl">Fix It &amp; List It</h3>
-          <p class="mx-auto mt-3 max-w-xl text-slate-600">
-            Maximize your property's equity without out-of-pocket stress. We handle the improvements — you keep the equity.
+    <!-- Fix It & List It -->
+    <section class="bg-white py-16">
+      <div class="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
+        <div class="rounded-2xl border border-momentum-grayLight bg-momentum-bgLight p-8 text-center shadow-lg lg:p-12">
+          <span class="text-xs font-bold uppercase tracking-wider text-momentum-gray">Exclusive Pre-Listing Concierge</span>
+          <h2 class="mt-1 font-serif text-3xl font-bold text-momentum-blue">Fix It &amp; List It Program</h2>
+          <p class="mt-2 text-lg font-semibold text-teal-600">Improvements, you keep the equity.</p>
+          <p class="mx-auto mt-4 max-w-3xl text-sm leading-relaxed text-slate-600">
+            We cover the upfront cost of high-ROI home improvements—from fresh paint and flooring to kitchen refreshes and staging—so your property commands top market value. No interest, no hidden fees, and zero out-of-pocket costs until closing.
           </p>
-          <a href="services.html" class="mt-6 inline-block rounded-xl bg-momentum-blue px-8 py-3.5 font-bold text-white shadow-md transition-colors hover:bg-momentum-blueHover">
-            Learn About Fix It &amp; List It
-          </a>
         </div>
       </div>
     </section>
@@ -148,21 +130,6 @@
         menuToggle.setAttribute('aria-label', 'Open menu');
       });
     });
-
-    const revealObserver = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('is-visible');
-            revealObserver.unobserve(entry.target);
-          }
-        });
-      },
-      { threshold: 0.12, rootMargin: '0px 0px -40px 0px' }
-    );
-
-    document.querySelectorAll('#hero .reveal').forEach((el) => el.classList.add('is-visible'));
-    document.querySelectorAll('.reveal:not(.is-visible)').forEach((el) => revealObserver.observe(el));
   </script>
 </body>
 </html>
