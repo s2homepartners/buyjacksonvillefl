@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About Us & Contact | Sù Home Partners | Momentum Realty</title>
+  <meta name="description" content="Meet Sarah Luther and Sarah Fuller of Sù Home Partners at Momentum Realty. Contact our Northeast Florida real estate team." />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            momentum: {
+              blue: '#1A4B6E',
+              blueHover: '#133853',
+              gray: '#718093',
+              grayLight: '#E2E8F0',
+              bgLight: '#F8FAFC',
+            },
+          },
+          fontFamily: {
+            sans: ['Outfit', 'sans-serif'],
+            serif: ['Fraunces', 'Georgia', 'serif'],
+          },
+        },
+      },
+    };
+  </script>
+  <style>
+    html { scroll-behavior: smooth; }
+    .reveal {
+      opacity: 0;
+      transform: translateY(1.25rem);
+      transition: opacity 0.8s ease, transform 0.8s ease;
+    }
+    .reveal.is-visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .reveal-delay-1 { transition-delay: 0.12s; }
+    .reveal-delay-2 { transition-delay: 0.24s; }
+    .reveal-delay-3 { transition-delay: 0.36s; }
+  </style>
+</head>
+<body class="bg-momentum-bgLight font-sans text-slate-800 antialiased">
+
+  <header id="site-nav" class="sticky top-0 z-50 border-b border-momentum-grayLight bg-white shadow-sm">
+    <div class="mx-auto flex h-24 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
+      <a href="index.html" class="flex items-center">
+        <img src="momentum-logo.png" alt="Momentum Realty" class="h-14 w-auto object-contain" />
+      </a>
+
+      <nav class="hidden items-center space-x-5 text-xs font-semibold uppercase tracking-wider text-momentum-gray xl:flex" aria-label="Primary">
+        <a href="buy.html" class="transition-colors hover:text-momentum-blue">Buy</a>
+        <a href="sell.html" class="transition-colors hover:text-momentum-blue">Sell</a>
+        <a href="buy.html#new-construction" class="transition-colors hover:text-momentum-blue">New Construction</a>
+        <a href="military.html" class="transition-colors hover:text-momentum-blue">Military</a>
+        <a href="success-stories.html" class="transition-colors hover:text-momentum-blue">Success Stories</a>
+        <a href="blog.html" class="transition-colors hover:text-momentum-blue">Blog</a>
+        <a href="referral.html" class="transition-colors hover:text-momentum-blue">Referral Program</a>
+        <a href="about.html" class="transition-colors hover:text-momentum-blue">About Us</a>
+        <a href="services.html" class="transition-colors hover:text-momentum-blue">Programs &amp; Services</a>
+        <a href="about.html#contact" class="rounded-lg bg-momentum-blue px-4 py-2.5 font-semibold normal-case tracking-normal text-white transition-colors hover:bg-momentum-blueHover">Contact</a>
+      </nav>
+
+      <button id="menu-toggle" type="button" class="inline-flex items-center justify-center text-momentum-blue xl:hidden" aria-expanded="false" aria-controls="mobile-menu" aria-label="Open menu">
+        <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M4 7h16M4 12h16M4 17h16" />
+        </svg>
+      </button>
+    </div>
+
+    <div id="mobile-menu" class="hidden border-t border-momentum-grayLight bg-white px-4 py-4 xl:hidden">
+      <nav class="flex flex-col gap-3 text-sm font-medium text-momentum-blue" aria-label="Mobile">
+        <a href="buy.html" class="mobile-link py-1">Buy</a>
+        <a href="sell.html" class="mobile-link py-1">Sell</a>
+        <a href="buy.html#new-construction" class="mobile-link py-1">New Construction</a>
+        <a href="military.html" class="mobile-link py-1">Military</a>
+        <a href="success-stories.html" class="mobile-link py-1">Success Stories</a>
+        <a href="blog.html" class="mobile-link py-1">Blog</a>
+        <a href="referral.html" class="mobile-link py-1">Referral Program</a>
+        <a href="about.html" class="mobile-link py-1">About Us</a>
+        <a href="services.html" class="mobile-link py-1">Programs &amp; Services</a>
+        <a href="about.html#contact" class="mobile-link py-1">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section id="about" class="bg-white py-16">
+      <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div class="reveal mb-12 text-center">
+          <span class="text-xs font-semibold uppercase tracking-wider text-momentum-gray">About Sù Home Partners</span>
+          <h2 class="mt-1 font-serif text-3xl font-bold text-momentum-blue sm:text-4xl">Sarah Luther &amp; Sarah Fuller</h2>
+          <p class="mx-auto mt-4 max-w-3xl leading-relaxed text-slate-600">
+            Sù Home Partners is a real estate partnership formed by Northeast Florida Realtorsù Sarah Luther and Sarah Fuller. Serving Jacksonville, Yulee, Fernandina Beach, and surrounding communities, the duo brings over 13 combined years of experience to every transaction.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 items-center gap-12 lg:grid-cols-12">
+          <div class="reveal flex justify-center lg:col-span-5">
+            <div class="w-full max-w-md overflow-hidden rounded-2xl border-4 border-momentum-bgLight shadow-xl">
+              <img src="team.jpg" alt="Sarah Luther and Sarah Fuller - S2 Home Partners" class="h-auto w-full object-cover" />
+            </div>
+          </div>
+          <div class="space-y-6 lg:col-span-7">
+            <div class="reveal rounded-xl border border-momentum-grayLight bg-momentum-bgLight p-6 shadow-sm">
+              <div class="mb-2 flex flex-wrap items-baseline justify-between gap-2">
+                <h3 class="font-serif text-2xl font-bold text-momentum-blue">Sarah Luther</h3>
+                <span class="text-sm font-semibold text-momentum-gray">Real Estate Advisor / Realtorù</span>
+              </div>
+              <p class="mb-3 text-xs font-medium text-slate-500">
+                <strong class="text-momentum-blue">Specialties:</strong> Strategic home marketing, first-time homebuyers, military moves, and buyer/seller representation.
+              </p>
+              <p class="text-sm leading-relaxed text-slate-600">
+                Real estate advisor and veteran spouse with personal experience navigating military relocations. Sarah is known for her detail-oriented approach to property evaluations, responsive communication, and commitment to building long-term relationships within the community.
+              </p>
+            </div>
+            <div class="reveal reveal-delay-1 rounded-xl border border-momentum-grayLight bg-momentum-bgLight p-6 shadow-sm">
+              <div class="mb-2 flex flex-wrap items-baseline justify-between gap-2">
+                <h3 class="font-serif text-2xl font-bold text-momentum-blue">Sarah Fuller</h3>
+                <span class="text-sm font-semibold text-momentum-gray">Real Estate Advisor / Realtorù</span>
+              </div>
+              <p class="mb-3 text-xs font-medium text-slate-500">
+                <strong class="text-momentum-blue">Specialties:</strong> Relocation specialist, first-time home buyers, and full-service buyer/seller advocacy.
+              </p>
+              <p class="text-sm leading-relaxed text-slate-600">
+                As a military spouse who has managed moves across the globe, Sarah brings empathy, adaptability, and firsthand relocation knowledge to her clients. She focuses on creating a seamless transaction experience, helping families find homes that match their specific lifestyle and financial goals.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="border-t border-momentum-grayLight bg-momentum-bgLight py-16">
+      <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div class="reveal mb-12 text-center">
+          <h2 class="font-serif text-3xl font-bold text-momentum-blue sm:text-4xl">Get In Touch With Sù Home Partners</h2>
+          <p class="mt-4 text-lg text-slate-600">Ready to buy, sell, or relocate? Contact our team today.</p>
+        </div>
+
+        <div class="reveal mx-auto mb-12 grid max-w-4xl grid-cols-1 gap-8 md:grid-cols-2">
+          <div class="flex flex-col justify-between rounded-xl border border-momentum-grayLight bg-white p-6 shadow-sm">
+            <div>
+              <span class="text-xs font-semibold uppercase tracking-wider text-momentum-gray">Real Estate Agent</span>
+              <h3 class="mt-1 font-serif text-2xl font-bold text-momentum-blue">Sarah Luther</h3>
+              <p class="mt-2 text-sm text-slate-600">Sù Home Partners | Momentum Realty</p>
+            </div>
+            <div class="mt-6 border-t border-momentum-grayLight pt-4">
+              <p class="text-sm text-slate-500">Direct Phone:</p>
+              <a href="tel:8503289800" class="text-lg font-semibold text-momentum-blue transition-colors hover:text-momentum-gray">(850) 328-9800</a>
+            </div>
+          </div>
+          <div class="flex flex-col justify-between rounded-xl border border-momentum-grayLight bg-white p-6 shadow-sm">
+            <div>
+              <span class="text-xs font-semibold uppercase tracking-wider text-momentum-gray">Real Estate Agent</span>
+              <h3 class="mt-1 font-serif text-2xl font-bold text-momentum-blue">Sarah Fuller</h3>
+              <p class="mt-2 text-sm text-slate-600">Sù Home Partners | Momentum Realty</p>
+            </div>
+            <div class="mt-6 border-t border-momentum-grayLight pt-4">
+              <p class="text-sm text-slate-500">Direct Phone:</p>
+              <a href="tel:4347131221" class="text-lg font-semibold text-momentum-blue transition-colors hover:text-momentum-gray">(434) 713-1221</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="reveal mx-auto max-w-4xl rounded-xl bg-momentum-blue p-8 text-center text-white shadow-md">
+          <h4 class="mb-2 font-serif text-xl font-bold">Have a question or ready to get started?</h4>
+          <p class="mb-4 text-sm text-slate-200">Email our entire team directly:</p>
+          <a href="mailto:S2HomePartners@gmail.com" class="inline-block rounded-lg bg-white px-6 py-3 font-bold text-momentum-blue transition-colors hover:bg-slate-100">
+            S2HomePartners@gmail.com
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="border-t border-slate-800 bg-slate-900 py-8 text-slate-400">
+    <div class="mx-auto max-w-7xl px-4 text-center text-sm sm:px-6 lg:px-8">
+      <p>&copy; <span id="year"></span> Sù Home Partners | Momentum Realty. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script>
+    const menuToggle = document.getElementById('menu-toggle');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const year = document.getElementById('year');
+
+    year.textContent = new Date().getFullYear();
+
+    menuToggle.addEventListener('click', () => {
+      const open = mobileMenu.classList.toggle('hidden') === false;
+      menuToggle.setAttribute('aria-expanded', String(open));
+      menuToggle.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+    });
+
+    document.querySelectorAll('.mobile-link').forEach((link) => {
+      link.addEventListener('click', () => {
+        mobileMenu.classList.add('hidden');
+        menuToggle.setAttribute('aria-expanded', 'false');
+        menuToggle.setAttribute('aria-label', 'Open menu');
+      });
+    });
+
+    const revealObserver = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('is-visible');
+            revealObserver.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.12, rootMargin: '0px 0px -40px 0px' }
+    );
+
+    document.querySelectorAll('#hero .reveal').forEach((el) => el.classList.add('is-visible'));
+    document.querySelectorAll('.reveal:not(.is-visible)').forEach((el) => revealObserver.observe(el));
+  </script>
+</body>
+</html>
