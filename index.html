@@ -1,18 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>S² Home Partners | Momentum Realty | Northeast Florida Real Estate</title>
-  <meta name="description"
-    content="S² Home Partners at Momentum Realty helps buyers and sellers across Jacksonville, Yulee, Fernandina Beach, and Northeast Florida." />
+  <meta name="description" content="S² Home Partners at Momentum Realty — buy, sell, new construction, and military PCS support across Duval, Nassau, Clay, and St. Johns Counties." />
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link
-    href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Outfit:wght@300;400;500;600;700&display=swap"
-    rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
   <script>
     tailwind.config = {
       theme: {
@@ -27,7 +23,6 @@
             },
           },
           fontFamily: {
-            display: ['Fraunces', 'Georgia', 'serif'],
             sans: ['Outfit', 'sans-serif'],
             serif: ['Fraunces', 'Georgia', 'serif'],
           },
@@ -36,35 +31,21 @@
     };
   </script>
   <style>
-    html {
-      scroll-behavior: smooth;
-    }
-
+    html { scroll-behavior: smooth; }
     .reveal {
       opacity: 0;
       transform: translateY(1.25rem);
       transition: opacity 0.8s ease, transform 0.8s ease;
     }
-
     .reveal.is-visible {
       opacity: 1;
       transform: translateY(0);
     }
-
-    .reveal-delay-1 {
-      transition-delay: 0.12s;
-    }
-
-    .reveal-delay-2 {
-      transition-delay: 0.24s;
-    }
-
-    .reveal-delay-3 {
-      transition-delay: 0.36s;
-    }
+    .reveal-delay-1 { transition-delay: 0.12s; }
+    .reveal-delay-2 { transition-delay: 0.24s; }
+    .reveal-delay-3 { transition-delay: 0.36s; }
   </style>
 </head>
-
 <body class="bg-momentum-bgLight font-sans text-slate-800 antialiased">
 
   <!-- Top Navigation -->
@@ -74,154 +55,464 @@
         <img src="momentum-logo.png" alt="Momentum Realty" class="h-14 w-auto object-contain" />
       </a>
 
-      <nav class="hidden items-center space-x-8 text-sm font-medium text-momentum-gray md:flex" aria-label="Primary">
+      <nav class="hidden items-center space-x-5 text-xs font-semibold uppercase tracking-wider text-momentum-gray xl:flex" aria-label="Primary">
+        <a href="#listings" class="transition-colors hover:text-momentum-blue">Listings</a>
+        <a href="#buy" class="transition-colors hover:text-momentum-blue">Buy</a>
+        <a href="#sell" class="transition-colors hover:text-momentum-blue">Sell</a>
+        <a href="#new-construction" class="transition-colors hover:text-momentum-blue">New Construction</a>
+        <a href="#military" class="transition-colors hover:text-momentum-blue">Military</a>
+        <a href="#success-stories" class="transition-colors hover:text-momentum-blue">Success Stories</a>
+        <a href="#blog" class="transition-colors hover:text-momentum-blue">Blog</a>
+        <a href="#referral" class="transition-colors hover:text-momentum-blue">Referral Program</a>
         <a href="#about" class="transition-colors hover:text-momentum-blue">About Us</a>
-        <a href="military-relocation.html" class="font-bold text-momentum-blue hover:underline">Military PCS</a>
-        <a href="#categories" class="transition-colors hover:text-momentum-blue">Communities</a>
         <a href="#services" class="transition-colors hover:text-momentum-blue">Programs &amp; Services</a>
-        <a href="#search-homes" class="font-bold text-momentum-blue hover:underline">Search Homes</a>
-        <a href="#contact"
-          class="rounded-lg bg-momentum-blue px-5 py-2.5 font-semibold text-white transition-colors hover:bg-momentum-blueHover">Contact
-          Us</a>
+        <a href="#contact" class="rounded-lg bg-momentum-blue px-4 py-2.5 font-semibold normal-case tracking-normal text-white transition-colors hover:bg-momentum-blueHover">Contact</a>
       </nav>
 
-      <button id="menu-toggle" type="button"
-        class="inline-flex items-center justify-center text-momentum-blue md:hidden" aria-expanded="false"
-        aria-controls="mobile-menu" aria-label="Open menu">
+      <button id="menu-toggle" type="button" class="inline-flex items-center justify-center text-momentum-blue xl:hidden" aria-expanded="false" aria-controls="mobile-menu" aria-label="Open menu">
         <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
           <path stroke-linecap="round" stroke-linejoin="round" d="M4 7h16M4 12h16M4 17h16" />
         </svg>
       </button>
     </div>
 
-    <div id="mobile-menu" class="hidden border-t border-momentum-grayLight bg-white px-4 py-4 md:hidden">
-      <nav class="flex flex-col gap-4 text-sm font-medium text-momentum-blue" aria-label="Mobile">
+    <div id="mobile-menu" class="hidden border-t border-momentum-grayLight bg-white px-4 py-4 xl:hidden">
+      <nav class="flex flex-col gap-3 text-sm font-medium text-momentum-blue" aria-label="Mobile">
+        <a href="#listings" class="mobile-link py-1">Listings</a>
+        <a href="#buy" class="mobile-link py-1">Buy</a>
+        <a href="#sell" class="mobile-link py-1">Sell</a>
+        <a href="#new-construction" class="mobile-link py-1">New Construction</a>
+        <a href="#military" class="mobile-link py-1">Military</a>
+        <a href="#success-stories" class="mobile-link py-1">Success Stories</a>
+        <a href="#blog" class="mobile-link py-1">Blog</a>
+        <a href="#referral" class="mobile-link py-1">Referral Program</a>
         <a href="#about" class="mobile-link py-1">About Us</a>
-        <a href="military-relocation.html" class="mobile-link py-1 font-bold">Military PCS</a>
-        <a href="#categories" class="mobile-link py-1">Communities</a>
         <a href="#services" class="mobile-link py-1">Programs &amp; Services</a>
-        <a href="#search-homes" class="mobile-link py-1 font-bold">Search Homes</a>
-        <a href="#contact" class="mobile-link py-1">Contact Us</a>
+        <a href="#contact" class="mobile-link py-1">Contact</a>
       </nav>
     </div>
   </header>
 
   <main id="top">
     <!-- Hero -->
-    <section id="hero" class="relative overflow-hidden bg-momentum-blue py-24 text-white lg:py-32">
-      <div class="absolute inset-0 bg-cover bg-center opacity-20"
+    <section id="hero" class="relative overflow-hidden bg-momentum-blue py-20 text-white lg:py-28">
+      <div
+        class="absolute inset-0 bg-cover bg-center opacity-20"
         style="background-image: url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1600&q=80');"
-        role="img" aria-label="Coastal Northeast Florida home"></div>
+        role="img"
+        aria-label="Coastal Northeast Florida home"
+      ></div>
       <div class="absolute inset-0 bg-gradient-to-r from-momentum-blue via-momentum-blue/90 to-transparent"></div>
 
       <div class="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div class="max-w-2xl">
-          <span
-            class="reveal mb-4 inline-block rounded-full border border-white/20 bg-momentum-gray/40 px-3 py-1 text-xs font-bold uppercase tracking-widest text-white">
+          <span class="reveal mb-4 inline-block rounded-full border border-white/20 bg-momentum-gray/40 px-3 py-1 text-xs font-bold uppercase tracking-widest text-white">
             Northeast Florida Real Estate Specialists
           </span>
-          <h1 class="reveal reveal-delay-1 font-serif text-4xl font-bold leading-tight sm:text-5xl lg:text-6xl">
+          <h1 class="reveal reveal-delay-1 font-serif text-4xl font-bold leading-tight sm:text-5xl">
             Welcome to <span class="text-white">S² Home Partners</span>
           </h1>
-          <p class="reveal reveal-delay-2 mt-6 text-lg leading-relaxed text-slate-200">
-            Expert guidance for buying, selling, and relocating across Jacksonville, Yulee, Fernandina Beach, and
-            surrounding coastal communities.
+          <p class="reveal reveal-delay-2 mt-4 text-lg leading-relaxed text-slate-200">
+            Your full-service team serving Duval, Nassau, Clay, and St. Johns Counties.
           </p>
           <div class="reveal reveal-delay-3 mt-8 flex flex-wrap gap-4">
-            <a href="#contact"
-              class="rounded-lg bg-white px-6 py-3 font-bold text-momentum-blue shadow-lg transition-colors hover:bg-slate-100">
-              Work With Us
+            <a href="#buy" class="rounded-lg bg-white px-6 py-3 font-bold text-momentum-blue shadow-lg transition-colors hover:bg-slate-100">
+              Explore Buyer Resources
             </a>
-            <a href="#services"
-              class="rounded-lg border border-white/30 bg-momentum-gray/30 px-6 py-3 font-semibold text-white transition-colors hover:bg-momentum-gray/50">
-              Explore Fix It &amp; List It
+            <a href="#sell" class="rounded-lg border border-white/30 bg-momentum-gray/30 px-6 py-3 font-semibold text-white transition-colors hover:bg-momentum-gray/50">
+              Sell Your Home
             </a>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- County & Regional Search -->
-    <section id="search-homes" class="border-b border-t border-momentum-grayLight bg-white py-16">
+    <!-- Featured Listings -->
+    <section id="listings" class="border-b border-momentum-grayLight bg-white py-16">
       <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div class="reveal mb-10 text-center">
-          <span class="text-xs font-semibold uppercase tracking-wider text-momentum-gray">Northeast Florida MLS
-            Search</span>
-          <h2 class="mt-1 font-serif text-3xl font-bold text-momentum-blue sm:text-4xl">
-            Search Homes Across All Counties
-          </h2>
-          <p class="mt-3 text-lg text-slate-600">
-            Browse active listings in Duval, Clay, Nassau, St. Johns County, and St. Augustine.
-          </p>
+          <span class="text-xs font-semibold uppercase tracking-wider text-momentum-gray">Our Portfolio</span>
+          <h2 class="mt-1 font-serif text-3xl font-bold text-momentum-blue sm:text-4xl">Featured Listings</h2>
+          <p class="mt-2 text-slate-600">Explore our current active listings across Northeast Florida.</p>
         </div>
-
-        <div class="reveal mb-10 grid grid-cols-2 gap-4 md:grid-cols-5">
-          <a href="http://link.flexmls.com/1zc0rq8cwbq2,15" target="_blank" rel="noopener noreferrer"
-            class="group rounded-xl border border-momentum-grayLight bg-momentum-bgLight p-4 text-center transition-all hover:border-momentum-blue hover:shadow-md">
-            <h3 class="font-bold text-momentum-blue">Duval County</h3>
-            <p class="mt-1 text-xs text-slate-500">Jacksonville &amp; Beaches</p>
-          </a>
-
-          <a href="http://link.flexmls.com/1zc0rq8cwbq2,15" target="_blank" rel="noopener noreferrer"
-            class="group rounded-xl border border-momentum-grayLight bg-momentum-bgLight p-4 text-center transition-all hover:border-momentum-blue hover:shadow-md">
-            <h3 class="font-bold text-momentum-blue">Clay County</h3>
-            <p class="mt-1 text-xs text-slate-500">Orange Park &amp; Fleming Island</p>
-          </a>
-
-          <a href="http://link.flexmls.com/1zc0rq8cwbq2,15" target="_blank" rel="noopener noreferrer"
-            class="group rounded-xl border border-momentum-grayLight bg-momentum-bgLight p-4 text-center transition-all hover:border-momentum-blue hover:shadow-md">
-            <h3 class="font-bold text-momentum-blue">Nassau County</h3>
-            <p class="mt-1 text-xs text-slate-500">Yulee &amp; Fernandina Beach</p>
-          </a>
-
-          <a href="http://link.flexmls.com/1zc0rq8cwbq2,15" target="_blank" rel="noopener noreferrer"
-            class="group rounded-xl border border-momentum-grayLight bg-momentum-bgLight p-4 text-center transition-all hover:border-momentum-blue hover:shadow-md">
-            <h3 class="font-bold text-momentum-blue">St. Johns County</h3>
-            <p class="mt-1 text-xs text-slate-500">Ponte Vedra &amp; Nocatee</p>
-          </a>
-
-          <a href="http://link.flexmls.com/1zc0rq8cwbq2,15" target="_blank" rel="noopener noreferrer"
-            class="group col-span-2 rounded-xl border border-momentum-grayLight bg-momentum-bgLight p-4 text-center transition-all hover:border-momentum-blue hover:shadow-md md:col-span-1">
-            <h3 class="font-bold text-momentum-blue">St. Augustine</h3>
-            <p class="mt-1 text-xs text-slate-500">Historic &amp; Coastal</p>
-          </a>
-        </div>
-
-        <div class="reveal text-center">
-          <a href="http://link.flexmls.com/1zc0rq8cwbq2,15" target="_blank" rel="noopener noreferrer"
-            class="inline-flex items-center justify-center rounded-xl bg-momentum-blue px-8 py-4 text-lg font-bold text-white shadow-lg transition-colors hover:bg-momentum-blueHover">
-            Open Full Northeast Florida MLS Search Portal
+        <div class="reveal rounded-2xl border border-momentum-grayLight bg-momentum-bgLight p-12 text-center">
+          <p class="mb-6 text-base text-slate-600">Viewing active properties or customized search alerts?</p>
+          <a href="http://link.flexmls.com/1zc0rq8cwbq2,15" target="_blank" rel="noopener noreferrer" class="inline-block rounded-xl bg-momentum-blue px-8 py-3.5 font-bold text-white shadow-md transition-colors hover:bg-momentum-blueHover">
+            View Active Listings on MLS
           </a>
         </div>
       </div>
     </section>
 
-    <!-- About & Team Bio -->
+    <!-- Buy -->
+    <section id="buy" class="bg-momentum-bgLight py-16">
+      <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div class="reveal mb-12 text-center">
+          <span class="text-xs font-semibold uppercase tracking-wider text-momentum-gray">Home Buyer Resource</span>
+          <h2 class="mt-1 font-serif text-3xl font-bold text-momentum-blue sm:text-4xl">Buying in Northeast Florida</h2>
+          <p class="mx-auto mt-3 max-w-2xl text-slate-600">Explore region breakdowns, school ratings, military commutes, and download our official Buyer's Guide.</p>
+          <div class="mt-6">
+            <a href="Buyers-Guide.pdf" download target="_blank" rel="noopener noreferrer" class="inline-flex items-center rounded-lg bg-momentum-blue px-6 py-3 font-bold text-white shadow transition-colors hover:bg-momentum-blueHover">
+              Download Free Buyer's Guide (PDF)
+            </a>
+          </div>
+        </div>
+
+        <div class="space-y-12">
+          <div class="reveal rounded-2xl border border-momentum-grayLight bg-white p-8 shadow-sm">
+            <h3 class="mb-2 font-serif text-2xl font-bold text-momentum-blue">Duval County (Jacksonville &amp; Beaches)</h3>
+            <p class="mb-4 text-sm leading-relaxed text-slate-600">
+              Duval County features a vibrant downtown, historic neighborhoods, and miles of coastline.
+              <strong>Sought-after Neighborhoods:</strong> Riverside, Avondale, San Marco, East Arlington, and Jacksonville Beaches (Atlantic, Neptune, Jacksonville Beach).
+            </p>
+            <div class="mb-2 grid grid-cols-1 gap-4 rounded-xl border border-momentum-grayLight bg-momentum-bgLight p-4 text-xs md:grid-cols-2">
+              <div>
+                <strong class="mb-1 block text-momentum-blue">Top-Rated Schools:</strong>
+                • Stanton College Prep (A-Rated)<br />
+                • Julia Landon College Prep (A-Rated)<br />
+                • Jacksonville Beach Elementary (A-Rated)
+              </div>
+              <div>
+                <strong class="mb-1 block text-momentum-blue">Military Base Commutes:</strong>
+                • NAS Jacksonville: 15–25 mins<br />
+                • NS Mayport: 10–20 mins<br />
+                • NSB Kings Bay: 40–50 mins
+              </div>
+            </div>
+          </div>
+
+          <div class="reveal rounded-2xl border border-momentum-grayLight bg-white p-8 shadow-sm">
+            <h3 class="mb-2 font-serif text-2xl font-bold text-momentum-blue">Nassau County (Yulee &amp; Fernandina Beach)</h3>
+            <p class="mb-4 text-sm leading-relaxed text-slate-600">
+              Known for top-rated schools, tax-friendly living, acreage, and coastal charm on Amelia Island.
+              <strong>Sought-after Neighborhoods:</strong> Wildlight, Fernandina Beach Historic District, Amelia National, Timber Creek.
+            </p>
+            <div class="mb-2 grid grid-cols-1 gap-4 rounded-xl border border-momentum-grayLight bg-momentum-bgLight p-4 text-xs md:grid-cols-2">
+              <div>
+                <strong class="mb-1 block text-momentum-blue">Top-Rated Schools:</strong>
+                • Wildlight Elementary (A-Rated)<br />
+                • Yulee Middle &amp; High (A/B-Rated)<br />
+                • Fernandina Beach High (A-Rated)
+              </div>
+              <div>
+                <strong class="mb-1 block text-momentum-blue">Military Base Commutes:</strong>
+                • NAS Jacksonville: 35–45 mins<br />
+                • NS Mayport: 40–50 mins<br />
+                • NSB Kings Bay: 20–30 mins
+              </div>
+            </div>
+          </div>
+
+          <div class="reveal rounded-2xl border border-momentum-grayLight bg-white p-8 shadow-sm">
+            <h3 class="mb-2 font-serif text-2xl font-bold text-momentum-blue">Clay County (Orange Park &amp; Fleming Island)</h3>
+            <p class="mb-4 text-sm leading-relaxed text-slate-600">
+              A favorite for military families wanting suburban neighborhoods along the St. Johns River.
+              <strong>Sought-after Neighborhoods:</strong> Fleming Island Plantation, Eagle Harbor, Oakleaf Plantation.
+            </p>
+            <div class="mb-2 grid grid-cols-1 gap-4 rounded-xl border border-momentum-grayLight bg-momentum-bgLight p-4 text-xs md:grid-cols-2">
+              <div>
+                <strong class="mb-1 block text-momentum-blue">Top-Rated Schools:</strong>
+                • Fleming Island High (A-Rated)<br />
+                • Thunderbolt Elementary (A-Rated)<br />
+                • Green Cove Springs Junior High (A-Rated)
+              </div>
+              <div>
+                <strong class="mb-1 block text-momentum-blue">Military Base Commutes:</strong>
+                • NAS Jacksonville: 10–20 mins<br />
+                • NS Mayport: 45–55 mins<br />
+                • NSB Kings Bay: 55–65 mins
+              </div>
+            </div>
+          </div>
+
+          <div class="reveal rounded-2xl border border-momentum-grayLight bg-white p-8 shadow-sm">
+            <h3 class="mb-2 font-serif text-2xl font-bold text-momentum-blue">St. Johns County &amp; St. Augustine</h3>
+            <p class="mb-4 text-sm leading-relaxed text-slate-600">
+              Consistently rated the #1 public school district in Florida, blending master-planned amenities with historic coastal living.
+              <strong>Sought-after Neighborhoods:</strong> Nocatee, Ponte Vedra Beach, Shearwater, Beachwalk, World Golf Village.
+            </p>
+            <div class="mb-2 grid grid-cols-1 gap-4 rounded-xl border border-momentum-grayLight bg-momentum-bgLight p-4 text-xs md:grid-cols-2">
+              <div>
+                <strong class="mb-1 block text-momentum-blue">Top-Rated Schools:</strong>
+                • Allen D. Nease High School (A-Rated)<br />
+                • Ponte Vedra High School (A-Rated)<br />
+                • Valley Ridge Academy (A-Rated)
+              </div>
+              <div>
+                <strong class="mb-1 block text-momentum-blue">Military Base Commutes:</strong>
+                • NAS Jacksonville: 30–40 mins<br />
+                • NS Mayport: 25–35 mins<br />
+                • NSB Kings Bay: 55–65 mins
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Tell Me What to Find -->
+        <div id="home-search" class="reveal mt-16 rounded-2xl border border-momentum-grayLight bg-white p-8 shadow-lg lg:p-12">
+          <div class="mx-auto mb-8 max-w-3xl text-center">
+            <span class="text-xs font-semibold uppercase tracking-wider text-momentum-gray">Custom Property Match</span>
+            <h3 class="mt-1 font-serif text-3xl font-bold text-momentum-blue">Tell Me What to Find</h3>
+            <p class="mt-3 leading-relaxed text-slate-600">
+              Tell me what to find: beds, budget, neighborhoods, VA or assumable preferences. I search active MLS and off-market, then send matches straight to you.
+            </p>
+          </div>
+
+          <form action="https://formsubmit.co/S2HomePartners@gmail.com" method="POST" class="mx-auto max-w-2xl space-y-4">
+            <input type="hidden" name="_next" value="https://buyjacksonvillefl.com/#submitted" />
+            <input type="hidden" name="_subject" value="New Home Search Request - BuyJacksonvilleFL" />
+            <input type="hidden" name="_captcha" value="false" />
+
+            <div>
+              <label class="mb-1 block text-xs font-bold uppercase text-slate-700" for="buyer-name">Name</label>
+              <input id="buyer-name" type="text" name="Name" required placeholder="Your Full Name" class="w-full rounded-lg border border-momentum-grayLight px-4 py-2.5 text-sm focus:border-momentum-blue focus:outline-none" />
+            </div>
+            <div class="grid grid-cols-1 gap-4 md:grid-cols-2">
+              <div>
+                <label class="mb-1 block text-xs font-bold uppercase text-slate-700" for="buyer-email">Email</label>
+                <input id="buyer-email" type="email" name="Email" required placeholder="you@example.com" class="w-full rounded-lg border border-momentum-grayLight px-4 py-2.5 text-sm focus:border-momentum-blue focus:outline-none" />
+              </div>
+              <div>
+                <label class="mb-1 block text-xs font-bold uppercase text-slate-700" for="buyer-phone">Phone</label>
+                <input id="buyer-phone" type="tel" name="Phone" placeholder="(904) 000-0000" class="w-full rounded-lg border border-momentum-grayLight px-4 py-2.5 text-sm focus:border-momentum-blue focus:outline-none" />
+              </div>
+            </div>
+            <div>
+              <label class="mb-1 block text-xs font-bold uppercase text-slate-700" for="buyer-interest">Interest</label>
+              <select id="buyer-interest" name="Interest" class="w-full rounded-lg border border-momentum-grayLight px-4 py-2.5 text-sm focus:border-momentum-blue focus:outline-none">
+                <option value="Buying Active MLS">Buying Active MLS Property</option>
+                <option value="Off-Market Listings">Looking for Off-Market Homes</option>
+                <option value="VA Assumable Loan">Seeking VA Assumable Mortgages</option>
+                <option value="New Construction">New Construction</option>
+              </select>
+            </div>
+            <div>
+              <label class="mb-1 block text-xs font-bold uppercase text-slate-700" for="buyer-message">Message (Beds, Budget, Preferred Neighborhoods)</label>
+              <textarea id="buyer-message" name="Message" rows="4" required placeholder="Tell us your desired bedrooms, bathrooms, budget, target areas, and any special requirements..." class="w-full rounded-lg border border-momentum-grayLight px-4 py-2.5 text-sm focus:border-momentum-blue focus:outline-none"></textarea>
+            </div>
+            <button type="submit" class="w-full rounded-xl bg-momentum-blue py-3.5 text-base font-bold text-white shadow-md transition-colors hover:bg-momentum-blueHover">
+              Send My Request
+            </button>
+          </form>
+          <p class="mt-4 text-center text-xs italic text-slate-500">
+            * Please expect to hear back from our team within 24 hours.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Sell -->
+    <section id="sell" class="border-b border-momentum-grayLight bg-white py-16">
+      <div class="mx-auto max-w-7xl px-4 text-center sm:px-6 lg:px-8">
+        <div class="reveal">
+          <span class="text-xs font-semibold uppercase tracking-wider text-momentum-gray">Home Seller Resource</span>
+          <h2 class="mt-1 font-serif text-3xl font-bold text-momentum-blue sm:text-4xl">Sell Your Home With S² Home Partners</h2>
+          <p class="mx-auto mb-6 mt-3 max-w-2xl text-slate-600">
+            Discover our strategic marketing plans, home staging solutions, and dynamic listing programs designed to sell your property for top dollar.
+          </p>
+          <a href="Listing-Guide.pdf" download target="_blank" rel="noopener noreferrer" class="inline-flex items-center rounded-xl bg-momentum-blue px-8 py-3.5 font-bold text-white shadow-md transition-colors hover:bg-momentum-blueHover">
+            Download Our Official Listing Guide (PDF)
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- New Construction -->
+    <section id="new-construction" class="bg-momentum-bgLight py-16">
+      <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div class="reveal mb-10 text-center">
+          <span class="text-xs font-semibold uppercase tracking-wider text-momentum-gray">Builder Directory</span>
+          <h2 class="mt-1 font-serif text-3xl font-bold text-momentum-blue sm:text-4xl">Northeast Florida New Construction</h2>
+        </div>
+
+        <div class="reveal mb-12 rounded-r-xl border-l-4 border-amber-500 bg-amber-50 p-6 shadow-sm">
+          <div class="flex items-start gap-3">
+            <div>
+              <h4 class="text-base font-bold text-amber-900">Important Buyer Representation Advisory:</h4>
+              <p class="mt-1 text-sm leading-relaxed text-amber-800">
+                Don’t ever visit or register at a new construction neighborhood without a realtor of your own! The site agents at the model homes are employed to represent the builder’s best interest—not yours. Having S² Home Partners represent you costs you nothing extra and ensures your financial interests, upgrade negotiations, and inspection rights are fully protected.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-4">
+          <div class="reveal rounded-xl border border-momentum-grayLight bg-white p-6 shadow-sm">
+            <span class="text-xs font-bold uppercase text-momentum-gray">Duval County</span>
+            <h4 class="mt-1 text-xl font-bold text-momentum-blue">eTown / Seven Pines</h4>
+            <p class="mt-2 text-xs text-slate-500"><strong>Builders:</strong> ICI Homes, Toll Brothers, David Weekley</p>
+            <p class="mt-1 text-xs text-slate-500"><strong>Home Types:</strong> Modern Single-Family &amp; Luxury Townhomes</p>
+            <p class="mt-2 text-xs font-bold text-momentum-blue">Price Point: $450k – $1.2M+</p>
+          </div>
+          <div class="reveal reveal-delay-1 rounded-xl border border-momentum-grayLight bg-white p-6 shadow-sm">
+            <span class="text-xs font-bold uppercase text-momentum-gray">Nassau County</span>
+            <h4 class="mt-1 text-xl font-bold text-momentum-blue">Wildlight / Tributary</h4>
+            <p class="mt-2 text-xs text-slate-500"><strong>Builders:</strong> Pulte Homes, Dream Finders, Mattamy Homes</p>
+            <p class="mt-1 text-xs text-slate-500"><strong>Home Types:</strong> Lowcountry Single-Family &amp; Active Adult</p>
+            <p class="mt-2 text-xs font-bold text-momentum-blue">Price Point: $350k – $800k</p>
+          </div>
+          <div class="reveal reveal-delay-2 rounded-xl border border-momentum-grayLight bg-white p-6 shadow-sm">
+            <span class="text-xs font-bold uppercase text-momentum-gray">Clay County</span>
+            <h4 class="mt-1 text-xl font-bold text-momentum-blue">Cross Creek / Eagle Landing</h4>
+            <p class="mt-2 text-xs text-slate-500"><strong>Builders:</strong> Dream Finders Homes, D.R. Horton</p>
+            <p class="mt-1 text-xs text-slate-500"><strong>Home Types:</strong> Single-Family Suburban Homes</p>
+            <p class="mt-2 text-xs font-bold text-momentum-blue">Price Point: $320k – $650k</p>
+          </div>
+          <div class="reveal reveal-delay-3 rounded-xl border border-momentum-grayLight bg-white p-6 shadow-sm">
+            <span class="text-xs font-bold uppercase text-momentum-gray">St. Johns County</span>
+            <h4 class="mt-1 text-xl font-bold text-momentum-blue">SilverLeaf / Beachwalk</h4>
+            <p class="mt-2 text-xs text-slate-500"><strong>Builders:</strong> MasterCraft, Riverside Homes, Lennar</p>
+            <p class="mt-1 text-xs text-slate-500"><strong>Home Types:</strong> Resort-Style Master Planned Communities</p>
+            <p class="mt-2 text-xs font-bold text-momentum-blue">Price Point: $400k – $1.5M+</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Military -->
+    <section id="military" class="border-b border-momentum-grayLight bg-white py-16">
+      <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div class="reveal mb-10 text-center">
+          <span class="text-xs font-semibold uppercase tracking-wider text-momentum-gray">Military PCS Hub</span>
+          <h2 class="mt-1 font-serif text-3xl font-bold text-momentum-blue sm:text-4xl">Your Military PCS Pro Program</h2>
+          <p class="mx-auto mt-3 max-w-2xl text-slate-600">
+            While NAS Jacksonville, NS Mayport, and NSB Kings Bay are our primary local focus, our program connects military families receiving orders to any military installation across the United States.
+          </p>
+          <div class="mt-6 flex flex-wrap items-center justify-center gap-4">
+            <a href="PCS-Guide.pdf" download target="_blank" rel="noopener noreferrer" class="inline-flex items-center rounded-lg bg-momentum-blue px-6 py-3 font-bold text-white shadow transition-colors hover:bg-momentum-blueHover">
+              Download Free Military PCS Guide (PDF)
+            </a>
+            <a href="military-relocation.html" class="inline-flex items-center rounded-lg border border-momentum-blue px-6 py-3 font-bold text-momentum-blue transition-colors hover:bg-momentum-bgLight">
+              View Full PCS Relocation Guide
+            </a>
+          </div>
+        </div>
+
+        <div class="reveal mx-auto max-w-4xl rounded-2xl bg-momentum-blue p-8 text-center text-white shadow-xl lg:p-12">
+          <h3 class="mb-3 font-serif text-2xl font-bold">PCSing Outside Northeast Florida?</h3>
+          <p class="mb-6 text-sm leading-relaxed text-slate-200">
+            Through our national military network, we personally match you with trusted, vetted real estate professionals at every installation nationwide—from San Diego and Norfolk to San Antonio and Joint Base Lewis-McChord.
+          </p>
+          <a href="#contact" class="inline-block rounded-xl bg-white px-8 py-3.5 font-bold text-momentum-blue transition-colors hover:bg-slate-100">
+            Connect With A PCS Pro At Your Next Base
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Success Stories -->
+    <section id="success-stories" class="bg-momentum-bgLight py-16">
+      <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div class="reveal mb-12 text-center">
+          <span class="text-xs font-semibold uppercase tracking-wider text-momentum-gray">Client Reviews</span>
+          <h2 class="mt-1 font-serif text-3xl font-bold text-momentum-blue sm:text-4xl">Amazing Success Stories</h2>
+          <p class="mt-2 text-slate-600">Read verified client testimonials from our Zillow and Facebook profiles.</p>
+        </div>
+
+        <div class="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
+          <div class="reveal rounded-xl border border-momentum-grayLight bg-white p-6 shadow-sm">
+            <div class="mb-2 text-lg text-amber-400">★★★★★</div>
+            <p class="text-xs italic leading-relaxed text-slate-600">"Sarah was incredible during our military PCS move! She toured homes on video, negotiated repairs, and made buying sight-unseen completely stress-free."</p>
+            <span class="mt-4 block text-xs font-bold text-momentum-blue">— Verified Zillow Review</span>
+          </div>
+          <div class="reveal reveal-delay-1 rounded-xl border border-momentum-grayLight bg-white p-6 shadow-sm">
+            <div class="mb-2 text-lg text-amber-400">★★★★★</div>
+            <p class="text-xs italic leading-relaxed text-slate-600">"The S² Home Partners team handled our home listing with complete professionalism. The marketing was top-notch and we went under contract in days."</p>
+            <span class="mt-4 block text-xs font-bold text-momentum-blue">— Verified Facebook Review</span>
+          </div>
+          <div class="reveal reveal-delay-2 rounded-xl border border-momentum-grayLight bg-white p-6 shadow-sm">
+            <div class="mb-2 text-lg text-amber-400">★★★★★</div>
+            <p class="text-xs italic leading-relaxed text-slate-600">"Knowledgeable, attentive, and deeply connected across Jacksonville and Yulee. Highly recommend them to anyone buying or selling!"</p>
+            <span class="mt-4 block text-xs font-bold text-momentum-blue">— Client Testimonial</span>
+          </div>
+        </div>
+
+        <div class="reveal mt-8 space-x-4 text-center">
+          <a href="https://www.zillow.com/profile/sarahfullerrealtor" target="_blank" rel="noopener noreferrer" class="inline-block text-xs font-bold text-momentum-blue hover:underline">View All Zillow Reviews ↗</a>
+          <a href="https://www.facebook.com/sarahlutherrealtor/reviews/?id=100089851006965&amp;sk=reviews" target="_blank" rel="noopener noreferrer" class="inline-block text-xs font-bold text-momentum-blue hover:underline">View All Facebook Reviews ↗</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Blog -->
+    <section id="blog" class="border-b border-momentum-grayLight bg-white py-16">
+      <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div class="reveal mb-12 text-center">
+          <span class="text-xs font-semibold uppercase tracking-wider text-momentum-gray">Latest Insights</span>
+          <h2 class="mt-1 font-serif text-3xl font-bold text-momentum-blue sm:text-4xl">Real Estate Blog &amp; Guides</h2>
+          <p class="mt-2 text-slate-600">Local market updates, relocation tips, and home seller strategies.</p>
+        </div>
+
+        <div class="mb-16 grid grid-cols-1 gap-8 md:grid-cols-3">
+          <article class="reveal overflow-hidden rounded-xl border border-momentum-grayLight bg-momentum-bgLight shadow-sm">
+            <div class="p-6">
+              <span class="text-xs font-semibold uppercase text-momentum-gray">Relocation Guide</span>
+              <h3 class="mt-1 font-serif text-lg font-bold text-momentum-blue">Navigating a Military PCS to NAS Jax or Kings Bay</h3>
+              <p class="mt-2 text-xs text-slate-600">Essential steps for finding a home, preserved BAH budgets, and managing long-distance moves...</p>
+              <a href="military-relocation.html" class="mt-3 inline-block text-xs font-bold text-momentum-blue hover:underline">Read more →</a>
+            </div>
+          </article>
+          <article class="reveal reveal-delay-1 overflow-hidden rounded-xl border border-momentum-grayLight bg-momentum-bgLight shadow-sm">
+            <div class="p-6">
+              <span class="text-xs font-semibold uppercase text-momentum-gray">Home Selling</span>
+              <h3 class="mt-1 font-serif text-lg font-bold text-momentum-blue">How Fix It &amp; List It Maximizes Home Equity</h3>
+              <p class="mt-2 text-xs text-slate-600">Discover how pre-listing home improvements drive higher offers with zero out-of-pocket costs...</p>
+              <a href="#services" class="mt-3 inline-block text-xs font-bold text-momentum-blue hover:underline">Learn more →</a>
+            </div>
+          </article>
+          <article class="reveal reveal-delay-2 overflow-hidden rounded-xl border border-momentum-grayLight bg-momentum-bgLight shadow-sm">
+            <div class="p-6">
+              <span class="text-xs font-semibold uppercase text-momentum-gray">Community Spotlight</span>
+              <h3 class="mt-1 font-serif text-lg font-bold text-momentum-blue">Why Families Are Moving to Nassau County</h3>
+              <p class="mt-2 text-xs text-slate-600">Exploring Yulee, Fernandina Beach, top-rated schools, and master-planned growth...</p>
+              <a href="#buy" class="mt-3 inline-block text-xs font-bold text-momentum-blue hover:underline">Explore Nassau →</a>
+            </div>
+          </article>
+        </div>
+
+        <div class="reveal border-t border-momentum-grayLight pt-8 text-center">
+          <span class="text-xs font-semibold uppercase tracking-wider text-momentum-gray">Follow Our Journey</span>
+          <h3 class="mb-4 mt-1 font-serif text-2xl font-bold text-momentum-blue">Instagram Updates</h3>
+          <a href="https://www.instagram.com/fuller_living/?hl=en" target="_blank" rel="noopener noreferrer" class="inline-flex items-center rounded-lg bg-momentum-blue px-6 py-3 font-bold text-white shadow transition-colors hover:bg-momentum-blueHover">
+            Follow @fuller_living on Instagram
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Referral -->
+    <section id="referral" class="bg-momentum-bgLight py-16">
+      <div class="mx-auto max-w-7xl px-4 text-center sm:px-6 lg:px-8">
+        <div class="reveal">
+          <span class="text-xs font-semibold uppercase tracking-wider text-momentum-gray">Nationwide Agent Network</span>
+          <h2 class="mt-1 font-serif text-3xl font-bold text-momentum-blue sm:text-4xl">National Referral Program</h2>
+          <p class="mx-auto mt-4 max-w-3xl leading-relaxed text-slate-600">
+            Moving outside Northeast Florida or buying a home in another state? You don't have to spend hours searching for a trustworthy agent. We are connected with vetted top-producing real estate professionals all over the country and can personally connect you with a qualified realtor—saving you time, stress, and guesswork.
+          </p>
+          <a href="#contact" class="mt-8 inline-block rounded-xl bg-momentum-blue px-8 py-3.5 font-bold text-white shadow-md transition-colors hover:bg-momentum-blueHover">
+            Request a Realtor Connection Nationwide
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- About & Team -->
     <section id="about" class="bg-white py-16">
       <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div class="reveal mb-12 text-center">
           <span class="text-xs font-semibold uppercase tracking-wider text-momentum-gray">About S² Home Partners</span>
-          <h2 class="mt-1 font-serif text-3xl font-bold text-momentum-blue sm:text-4xl">
-            Sarah Luther &amp; Sarah Fuller
-          </h2>
-          <p class="mx-auto mt-4 max-w-3xl text-lg leading-relaxed text-slate-600">
-            S² Home Partners is a real estate partnership formed by Northeast Florida Realtors® Sarah Luther and Sarah
-            Fuller. Serving Jacksonville, Yulee, Fernandina Beach, and surrounding communities, the duo brings over 13
-            combined years of experience to every transaction. They combine strategic marketing, strong local knowledge,
-            dynamic listing solutions, and client-first guidance to help buyers and sellers navigate every step of the
-            real estate process.
+          <h2 class="mt-1 font-serif text-3xl font-bold text-momentum-blue sm:text-4xl">Sarah Luther &amp; Sarah Fuller</h2>
+          <p class="mx-auto mt-4 max-w-3xl leading-relaxed text-slate-600">
+            S² Home Partners is a real estate partnership formed by Northeast Florida Realtors® Sarah Luther and Sarah Fuller. Serving Jacksonville, Yulee, Fernandina Beach, and surrounding communities, the duo brings over 13 combined years of experience to every transaction.
           </p>
         </div>
 
-        <div class="mb-16 grid grid-cols-1 items-center gap-12 lg:grid-cols-12">
+        <div class="grid grid-cols-1 items-center gap-12 lg:grid-cols-12">
           <div class="reveal flex justify-center lg:col-span-5">
-            <div
-              class="relative w-full max-w-md overflow-hidden rounded-2xl border-4 border-momentum-bgLight shadow-xl">
-              <img src="team.jpg" alt="Sarah Luther and Sarah Fuller - S² Home Partners"
-                class="h-auto w-full object-cover" />
+            <div class="w-full max-w-md overflow-hidden rounded-2xl border-4 border-momentum-bgLight shadow-xl">
+              <img src="team.jpg" alt="Sarah Luther and Sarah Fuller — S² Home Partners" class="h-auto w-full object-cover" />
             </div>
           </div>
-
           <div class="space-y-6 lg:col-span-7">
             <div class="reveal rounded-xl border border-momentum-grayLight bg-momentum-bgLight p-6 shadow-sm">
               <div class="mb-2 flex flex-wrap items-baseline justify-between gap-2">
@@ -229,30 +520,22 @@
                 <span class="text-sm font-semibold text-momentum-gray">Real Estate Advisor / Realtor®</span>
               </div>
               <p class="mb-3 text-xs font-medium text-slate-500">
-                <strong class="text-momentum-blue">Specialties:</strong> Strategic home marketing, first-time
-                homebuyers, military moves, and buyer/seller representation.
+                <strong class="text-momentum-blue">Specialties:</strong> Strategic home marketing, first-time homebuyers, military moves, and buyer/seller representation.
               </p>
               <p class="text-sm leading-relaxed text-slate-600">
-                Real estate advisor and veteran spouse with personal experience navigating military relocations. Sarah
-                is known for her detail-oriented approach to property evaluations, responsive communication, and
-                commitment to building long-term relationships within the community.
+                Real estate advisor and veteran spouse with personal experience navigating military relocations. Sarah is known for her detail-oriented approach to property evaluations, responsive communication, and commitment to building long-term relationships within the community.
               </p>
             </div>
-
-            <div
-              class="reveal reveal-delay-1 rounded-xl border border-momentum-grayLight bg-momentum-bgLight p-6 shadow-sm">
+            <div class="reveal reveal-delay-1 rounded-xl border border-momentum-grayLight bg-momentum-bgLight p-6 shadow-sm">
               <div class="mb-2 flex flex-wrap items-baseline justify-between gap-2">
                 <h3 class="font-serif text-2xl font-bold text-momentum-blue">Sarah Fuller</h3>
                 <span class="text-sm font-semibold text-momentum-gray">Real Estate Advisor / Realtor®</span>
               </div>
               <p class="mb-3 text-xs font-medium text-slate-500">
-                <strong class="text-momentum-blue">Specialties:</strong> Relocation specialist, first-time home buyers,
-                and full-service buyer/seller advocacy.
+                <strong class="text-momentum-blue">Specialties:</strong> Relocation specialist, first-time home buyers, and full-service buyer/seller advocacy.
               </p>
               <p class="text-sm leading-relaxed text-slate-600">
-                As a military spouse who has managed moves across the globe, Sarah brings empathy, adaptability, and
-                firsthand relocation knowledge to her clients. She focuses on creating a seamless transaction
-                experience, helping families find homes that match their specific lifestyle and financial goals.
+                As a military spouse who has managed moves across the globe, Sarah brings empathy, adaptability, and firsthand relocation knowledge to her clients. She focuses on creating a seamless transaction experience, helping families find homes that match their specific lifestyle and financial goals.
               </p>
             </div>
           </div>
@@ -260,166 +543,73 @@
       </div>
     </section>
 
-    <!-- Categories & Lifestyles -->
-    <section id="categories" class="bg-momentum-bgLight py-16">
-      <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div class="reveal mb-12 text-center">
-          <span class="text-xs font-semibold uppercase tracking-wider text-momentum-gray">Communities</span>
-          <h2 class="mt-1 font-serif text-3xl font-bold text-momentum-blue sm:text-4xl">
-            Explore Northeast Florida Communities
-          </h2>
-          <p class="mt-4 text-lg text-slate-600">
-            Filter homes by lifestyle, geographic region, or architectural style.
-          </p>
-        </div>
-
-        <div class="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-4">
-          <a href="#contact"
-            class="group relative overflow-hidden rounded-xl shadow-md transition-all duration-300 hover:shadow-xl">
-            <div class="h-64 bg-cover bg-center transition-transform duration-500 group-hover:scale-105"
-              style="background-image: url('https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=800&q=80');">
-            </div>
-            <div class="absolute inset-0 bg-gradient-to-t from-momentum-blue via-momentum-blue/40 to-transparent"></div>
-            <div class="absolute bottom-0 p-6 text-white">
-              <span class="text-xs font-semibold uppercase tracking-wider text-slate-300">Historic &amp; Urban</span>
-              <h3 class="mt-1 font-serif text-xl font-bold">Riverside &amp; Avondale</h3>
-              <p class="mt-2 text-xs text-slate-200 opacity-0 transition-opacity group-hover:opacity-100">Historic
-                charm, walkable streets, local dining.</p>
-            </div>
-          </a>
-
-          <a href="#contact"
-            class="group relative overflow-hidden rounded-xl shadow-md transition-all duration-300 hover:shadow-xl">
-            <div class="h-64 bg-cover bg-center transition-transform duration-500 group-hover:scale-105"
-              style="background-image: url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=800&q=80');">
-            </div>
-            <div class="absolute inset-0 bg-gradient-to-t from-momentum-blue via-momentum-blue/40 to-transparent"></div>
-            <div class="absolute bottom-0 p-6 text-white">
-              <span class="text-xs font-semibold uppercase tracking-wider text-slate-300">Coastal Living</span>
-              <h3 class="mt-1 font-serif text-xl font-bold">Jacksonville Beaches</h3>
-              <p class="mt-2 text-xs text-slate-200 opacity-0 transition-opacity group-hover:opacity-100">Oceanfront
-                condos, beach bungalows, resort style.</p>
-            </div>
-          </a>
-
-          <a href="#contact"
-            class="group relative overflow-hidden rounded-xl shadow-md transition-all duration-300 hover:shadow-xl">
-            <div class="h-64 bg-cover bg-center transition-transform duration-500 group-hover:scale-105"
-              style="background-image: url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=800&q=80');">
-            </div>
-            <div class="absolute inset-0 bg-gradient-to-t from-momentum-blue via-momentum-blue/40 to-transparent"></div>
-            <div class="absolute bottom-0 p-6 text-white">
-              <span class="text-xs font-semibold uppercase tracking-wider text-slate-300">Family &amp; Golf</span>
-              <h3 class="mt-1 font-serif text-xl font-bold">Ponte Vedra &amp; Nocatee</h3>
-              <p class="mt-2 text-xs text-slate-200 opacity-0 transition-opacity group-hover:opacity-100">Master-planned
-                amenities, top-rated schools.</p>
-            </div>
-          </a>
-
-          <a href="#contact"
-            class="group relative overflow-hidden rounded-xl shadow-md transition-all duration-300 hover:shadow-xl">
-            <div class="h-64 bg-cover bg-center transition-transform duration-500 group-hover:scale-105"
-              style="background-image: url('https://images.unsplash.com/photo-1564013799919-ab600027ffc6?auto=format&fit=crop&w=800&q=80');">
-            </div>
-            <div class="absolute inset-0 bg-gradient-to-t from-momentum-blue via-momentum-blue/40 to-transparent"></div>
-            <div class="absolute bottom-0 p-6 text-white">
-              <span class="text-xs font-semibold uppercase tracking-wider text-slate-300">Suburbs &amp; Growth</span>
-              <h3 class="mt-1 font-serif text-xl font-bold">Yulee &amp; Fernandina</h3>
-              <p class="mt-2 text-xs text-slate-200 opacity-0 transition-opacity group-hover:opacity-100">Acreage, new
-                builds, coastal island feel.</p>
-            </div>
-          </a>
-        </div>
-      </div>
-    </section>
-
-    <!-- Services & Fix It List It -->
-    <section id="services" class="bg-white py-16">
+    <!-- Programs & Services -->
+    <section id="services" class="bg-momentum-bgLight py-16">
       <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div class="reveal mb-12 text-center">
           <span class="text-xs font-semibold uppercase tracking-wider text-momentum-gray">Programs &amp; Services</span>
-          <h2 class="mt-1 font-serif text-3xl font-bold text-momentum-blue sm:text-4xl">
-            Tailored Real Estate Solutions
-          </h2>
-          <p class="mt-4 text-lg text-slate-600">
-            Innovative listing programs and collaborative representation designed to maximize your value.
-          </p>
+          <h2 class="mt-1 font-serif text-3xl font-bold text-momentum-blue sm:text-4xl">Tailored Real Estate Solutions</h2>
+          <p class="mt-4 text-lg text-slate-600">Innovative listing programs and collaborative representation designed to maximize your value.</p>
         </div>
 
         <div class="reveal mb-12 rounded-2xl bg-momentum-blue p-8 text-white shadow-xl lg:p-12">
           <div class="max-w-3xl">
-            <span
-              class="mb-4 inline-block rounded-full bg-momentum-gray px-3 py-1 text-xs font-bold uppercase text-white">Featured
-              Program</span>
+            <span class="mb-4 inline-block rounded-full bg-momentum-gray px-3 py-1 text-xs font-bold uppercase text-white">Featured Program</span>
             <h3 class="mb-3 font-serif text-3xl font-bold">Fix It &amp; List It Program</h3>
             <p class="mb-6 text-base leading-relaxed text-slate-200">
-              Designed for sellers who want to maximize their property's equity without out-of-pocket stress. We handle
-              the improvements, you keep the equity.
+              Designed for sellers who want to maximize their property's equity without out-of-pocket stress. We handle the improvements, you keep the equity.
             </p>
           </div>
-
           <div class="mt-8 grid grid-cols-1 gap-6 border-t border-white/20 pt-8 md:grid-cols-2 lg:grid-cols-4">
             <div>
               <h4 class="mb-1 text-lg font-bold text-white">Upfront Capital</h4>
-              <p class="text-xs leading-relaxed text-slate-200">Upgrades, repairs, and cosmetic touch-ups are funded
-                before hitting the market—no upfront costs required from the seller.</p>
+              <p class="text-xs leading-relaxed text-slate-200">Upgrades, repairs, and cosmetic touch-ups are funded before hitting the market—no upfront costs required from the seller.</p>
             </div>
             <div>
               <h4 class="mb-1 text-lg font-bold text-white">Project Management</h4>
-              <p class="text-xs leading-relaxed text-slate-200">S² Home Partners coordinates trustworthy vendors and
-                contractors to handle the improvements efficiently.</p>
+              <p class="text-xs leading-relaxed text-slate-200">S² Home Partners coordinates trustworthy vendors and contractors to handle the improvements efficiently.</p>
             </div>
             <div>
               <h4 class="mb-1 text-lg font-bold text-white">Maximum ROI</h4>
-              <p class="text-xs leading-relaxed text-slate-200">Focuses on high-impact updates (kitchens, bathrooms,
-                flooring, curb appeal) to help the home sell faster and for top dollar.</p>
+              <p class="text-xs leading-relaxed text-slate-200">Focuses on high-impact updates (kitchens, bathrooms, flooring, curb appeal) to help the home sell faster and for top dollar.</p>
             </div>
             <div>
               <h4 class="mb-1 text-lg font-bold text-white">Repayment at Closing</h4>
-              <p class="text-xs leading-relaxed text-slate-200">All renovation expenses are reimbursed directly from the
-                home’s proceeds at closing.</p>
+              <p class="text-xs leading-relaxed text-slate-200">All renovation expenses are reimbursed directly from the home’s proceeds at closing.</p>
             </div>
           </div>
         </div>
 
-        <div class="reveal rounded-2xl border border-momentum-grayLight bg-momentum-bgLight p-8 shadow-sm">
-          <h3 class="mb-4 font-serif text-2xl font-bold text-momentum-blue">Full-Service Buyer &amp; Seller
-            Representation</h3>
+        <div class="reveal rounded-2xl border border-momentum-grayLight bg-white p-8 shadow-sm">
+          <h3 class="mb-4 font-serif text-2xl font-bold text-momentum-blue">Full-Service Buyer &amp; Seller Representation</h3>
           <div class="grid grid-cols-1 gap-6 md:grid-cols-3">
             <div class="border-l-4 border-momentum-blue pl-4">
               <h4 class="mb-1 font-bold text-slate-900">Expert Market Analysis</h4>
-              <p class="text-xs text-slate-600">Expert negotiation, local market analysis, and tailored strategies
-                backed by over 13 years of combined industry expertise.</p>
+              <p class="text-xs text-slate-600">Expert negotiation, local market analysis, and tailored strategies backed by over 13 years of combined industry expertise.</p>
             </div>
             <div class="border-l-4 border-momentum-blue pl-4">
               <h4 class="mb-1 font-bold text-slate-900">Military &amp; Relocation Focus</h4>
-              <p class="text-xs text-slate-600">Specialized guidance for military families and clients relocating to or
-                within Northeast Florida.</p>
+              <p class="text-xs text-slate-600">Specialized guidance for military families and clients relocating to or within Northeast Florida.</p>
             </div>
             <div class="border-l-4 border-momentum-blue pl-4">
               <h4 class="mb-1 font-bold text-slate-900">Dual-Agent Advantage</h4>
-              <p class="text-xs text-slate-600">A collaborative dual-agent approach ensuring continuous communication,
-                hands-on support, and enhanced marketing reach.</p>
+              <p class="text-xs text-slate-600">A collaborative dual-agent approach ensuring continuous communication, hands-on support, and enhanced marketing reach.</p>
             </div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Contact & Team -->
-    <section id="contact" class="bg-momentum-bgLight py-16">
+    <!-- Contact -->
+    <section id="contact" class="bg-white py-16">
       <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div class="reveal mb-12 text-center">
-          <h2 class="font-serif text-3xl font-bold text-momentum-blue sm:text-4xl">
-            Get In Touch With S² Home Partners
-          </h2>
-          <p class="mt-4 text-lg text-slate-600">
-            Dedicated 2-agent team serving Northeast Florida real estate buyers and sellers.
-          </p>
+          <h2 class="font-serif text-3xl font-bold text-momentum-blue sm:text-4xl">Get In Touch With S² Home Partners</h2>
+          <p class="mt-4 text-lg text-slate-600">Ready to buy, sell, or relocate? Contact our team today.</p>
         </div>
 
         <div class="reveal mx-auto mb-12 grid max-w-4xl grid-cols-1 gap-8 md:grid-cols-2">
-          <div class="flex flex-col justify-between rounded-xl border border-momentum-grayLight bg-white p-6 shadow-sm">
+          <div class="flex flex-col justify-between rounded-xl border border-momentum-grayLight bg-momentum-bgLight p-6 shadow-sm">
             <div>
               <span class="text-xs font-semibold uppercase tracking-wider text-momentum-gray">Real Estate Agent</span>
               <h3 class="mt-1 font-serif text-2xl font-bold text-momentum-blue">Sarah Luther</h3>
@@ -427,14 +617,10 @@
             </div>
             <div class="mt-6 border-t border-momentum-grayLight pt-4">
               <p class="text-sm text-slate-500">Direct Phone:</p>
-              <a href="tel:8503289800"
-                class="text-lg font-semibold text-momentum-blue transition-colors hover:text-momentum-gray">
-                (850) 328-9800
-              </a>
+              <a href="tel:8503289800" class="text-lg font-semibold text-momentum-blue transition-colors hover:text-momentum-gray">(850) 328-9800</a>
             </div>
           </div>
-
-          <div class="flex flex-col justify-between rounded-xl border border-momentum-grayLight bg-white p-6 shadow-sm">
+          <div class="flex flex-col justify-between rounded-xl border border-momentum-grayLight bg-momentum-bgLight p-6 shadow-sm">
             <div>
               <span class="text-xs font-semibold uppercase tracking-wider text-momentum-gray">Real Estate Agent</span>
               <h3 class="mt-1 font-serif text-2xl font-bold text-momentum-blue">Sarah Fuller</h3>
@@ -442,10 +628,7 @@
             </div>
             <div class="mt-6 border-t border-momentum-grayLight pt-4">
               <p class="text-sm text-slate-500">Direct Phone:</p>
-              <a href="tel:4347131221"
-                class="text-lg font-semibold text-momentum-blue transition-colors hover:text-momentum-gray">
-                (434) 713-1221
-              </a>
+              <a href="tel:4347131221" class="text-lg font-semibold text-momentum-blue transition-colors hover:text-momentum-gray">(434) 713-1221</a>
             </div>
           </div>
         </div>
@@ -453,8 +636,7 @@
         <div class="reveal mx-auto max-w-4xl rounded-xl bg-momentum-blue p-8 text-center text-white shadow-md">
           <h4 class="mb-2 font-serif text-xl font-bold">Have a question or ready to get started?</h4>
           <p class="mb-4 text-sm text-slate-200">Email our entire team directly:</p>
-          <a href="mailto:S2HomePartners@gmail.com"
-            class="inline-block rounded-lg bg-white px-6 py-3 font-bold text-momentum-blue transition-colors hover:bg-slate-100">
+          <a href="mailto:S2HomePartners@gmail.com" class="inline-block rounded-lg bg-white px-6 py-3 font-bold text-momentum-blue transition-colors hover:bg-slate-100">
             S2HomePartners@gmail.com
           </a>
         </div>
@@ -498,12 +680,11 @@
           }
         });
       },
-      { threshold: 0.15, rootMargin: '0px 0px -40px 0px' }
+      { threshold: 0.12, rootMargin: '0px 0px -40px 0px' }
     );
 
     document.querySelectorAll('#hero .reveal').forEach((el) => el.classList.add('is-visible'));
     document.querySelectorAll('.reveal:not(.is-visible)').forEach((el) => revealObserver.observe(el));
   </script>
 </body>
-
 </html>
