@@ -1,0 +1,149 @@
+<!--
+================================================================
+REUSABLE LEAD FORM COMPONENT
+================================================================
+Drop this block into any page (footer, sidebar, or dedicated
+section) to get a working lead form everywhere, not just /buy.
+
+WHY THIS MATTERS: right now your only form lives on one page.
+Every other page -- homepage, blog posts, future area guides --
+is a dead end for anyone ready to reach out.
+
+--------------------------------------------------------------
+STEP 1: Pick where the form submits to (you need a real backend
+or service since plain HTML can't send email on its own)
+--------------------------------------------------------------
+
+OPTION A -- Easiest, no code (recommended to start):
+  Use Formspree (formspree.io) or Web3Forms (web3forms.com).
+  Both have free tiers, work with plain HTML forms, and email
+  you submissions instantly. Sign up, get an endpoint/access key,
+  and put it in the form's "action" or fetch URL below.
+
+OPTION B -- Native to your stack (since you're on Cloudflare):
+  Use a Cloudflare Pages Function. Create a file at
+  /functions/api/lead.js in your repo that receives the POST,
+  then emails you (via Resend, SendGrid, or Mailchannels) or
+  writes to a database/spreadsheet. More setup, but no
+  third-party form service and full control of the data.
+  Docs: https://developers.cloudflare.com/pages/functions/
+
+Start with Option A to get something live today; migrate to
+Option B later if you want full control or a CRM integration.
+
+--------------------------------------------------------------
+STEP 2: Replace YOUR_ENDPOINT_HERE below with your real endpoint
+--------------------------------------------------------------
+
+--------------------------------------------------------------
+STEP 3 (recommended): Add spam protection
+--------------------------------------------------------------
+Both Formspree and Web3Forms include basic spam filtering.
+For extra protection with no user friction, add a honeypot field
+(included below, hidden via CSS) -- bots fill it in, humans don't,
+and you silently ignore any submission where it's filled.
+================================================================
+-->
+
+<style>
+  /* Scope these styles or move into your shared stylesheet */
+  .s2-lead-form{
+    background:#F5F0E6;
+    border:1px solid #E3DCC9;
+    border-radius:10px;
+    padding:28px;
+    max-width:480px;
+  }
+  .s2-lead-form h3{margin-top:0;color:#0B2545;font-family:'Fraunces',Georgia,serif;}
+  .s2-lead-form label{display:block;font-size:0.85rem;font-weight:600;margin:12px 0 6px;color:#0B2545;}
+  .s2-lead-form input, .s2-lead-form select, .s2-lead-form textarea{
+    width:100%;padding:10px 12px;border:1px solid #E3DCC9;border-radius:6px;font-family:inherit;font-size:0.95rem;
+  }
+  .s2-lead-form button{
+    margin-top:18px;background:#B8863B;color:#0B2545;border:none;font-weight:700;
+    padding:12px 22px;border-radius:6px;cursor:pointer;font-size:1rem;width:100%;
+  }
+  .s2-lead-form button:hover{background:#D9AE6F;}
+  .s2-lead-form .hp-field{position:absolute;left:-9999px;}
+  .s2-lead-form .status-msg{margin-top:12px;font-size:0.9rem;}
+  .s2-lead-form .status-msg.success{color:#2f7a4d;}
+  .s2-lead-form .status-msg.error{color:#c0392b;}
+</style>
+
+<div class="s2-lead-form">
+  <h3>Let's Find Your Home</h3>
+  <form id="s2LeadForm">
+    <!-- Honeypot: leave this field, just keep it hidden via CSS above -->
+    <input type="text" name="company" class="hp-field" tabindex="-1" autocomplete="off">
+
+    <label for="s2-name">Name</label>
+    <input type="text" id="s2-name" name="name" required>
+
+    <label for="s2-email">Email</label>
+    <input type="email" id="s2-email" name="email" required>
+
+    <label for="s2-phone">Phone</label>
+    <input type="tel" id="s2-phone" name="phone">
+
+    <label for="s2-interest">I'm interested in</label>
+    <select id="s2-interest" name="interest">
+      <option>Buying</option>
+      <option>Selling</option>
+      <option>New Construction</option>
+      <option>Military PCS</option>
+      <option>Just browsing / not sure yet</option>
+    </select>
+
+    <label for="s2-message">Anything specific? (neighborhood, budget, timeline)</label>
+    <textarea id="s2-message" name="message" rows="3"></textarea>
+
+    <!-- Optional: pre-fill this via JS with the current page's neighborhood
+         name so you know which page generated the lead. -->
+    <input type="hidden" name="source_page" id="s2-source-page">
+
+    <button type="submit">Send My Request</button>
+    <div class="status-msg" id="s2FormStatus"></div>
+  </form>
+</div>
+
+<script>
+(function(){
+  var form = document.getElementById('s2LeadForm');
+  var statusEl = document.getElementById('s2FormStatus');
+  document.getElementById('s2-source-page').value = window.location.pathname;
+
+  // === REPLACE WITH YOUR REAL ENDPOINT (see setup notes above) ===
+  var ENDPOINT = 'YOUR_ENDPOINT_HERE'; // e.g. 'https://formspree.io/f/xxxxxxx'
+
+  form.addEventListener('submit', function(e){
+    e.preventDefault();
+
+    // Honeypot check -- if this hidden field got filled, silently drop it
+    if (form.company.value) { return; }
+
+    if (ENDPOINT === 'YOUR_ENDPOINT_HERE') {
+      statusEl.textContent = 'Form not connected yet -- set ENDPOINT in the script before going live.';
+      statusEl.className = 'status-msg error';
+      return;
+    }
+
+    var data = new FormData(form);
+    fetch(ENDPOINT, {
+      method: 'POST',
+      body: data,
+      headers: { 'Accept': 'application/json' }
+    }).then(function(res){
+      if (res.ok) {
+        statusEl.textContent = "Thanks -- we'll be in touch within 24 hours.";
+        statusEl.className = 'status-msg success';
+        form.reset();
+      } else {
+        throw new Error('Submit failed');
+      }
+    }).catch(function(){
+      statusEl.textContent = 'Something went wrong. Please call/text us directly, or try again.';
+      statusEl.className = 'status-msg error';
+    });
+  });
+})();
+</script>
