@@ -88,14 +88,220 @@
   <main>
     <!-- Hero -->
     <section class="bg-momentum-blueDark py-20 text-center text-white">
-      <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <h1 class="font-serif text-4xl font-bold">Nationwide Referral Program</h1>
-        <p class="mx-auto mt-4 max-w-3xl text-sm leading-relaxed text-slate-200">
-          We are connected with realtors all over the country and are able to connect you with a realtor, saving you time so you don't have to do the work to find out.
+      <div class="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
+        <h1 class="font-serif text-4xl font-bold md:text-5xl">Nationwide Referral Program</h1>
+        <p class="mx-auto mt-4 max-w-2xl text-base leading-relaxed text-slate-200">
+          Moving out of Northeast Florida? We'll connect you with a vetted agent wherever you're headed. Real estate agent elsewhere? Join our referral network and we'll send business your way.
         </p>
-        <a href="mailto:S2HomePartners@gmail.com" class="mt-8 inline-block rounded-xl bg-white px-8 py-3.5 font-bold text-momentum-blue shadow-lg transition-all hover:bg-slate-100">
-          Request A Realtor Connection
-        </a>
+        <div class="mt-8 flex flex-wrap items-center justify-center gap-4">
+          <a href="#request-referral" class="inline-block rounded-xl bg-white px-8 py-3.5 font-bold text-momentum-blue shadow-lg transition-all hover:bg-slate-100">
+            Request a Referral
+          </a>
+          <a href="#become-partner" class="inline-block rounded-xl border-2 border-white px-8 py-3.5 font-bold text-white transition-all hover:bg-white hover:text-momentum-blue">
+            Become a Referral Partner
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Request a Referral (Buyers/Sellers) -->
+    <section id="request-referral" class="scroll-mt-24 border-b border-momentum-grayLight bg-white py-16">
+      <div class="mx-auto grid max-w-6xl gap-10 px-4 sm:px-6 lg:grid-cols-2 lg:px-8">
+        <div>
+          <span class="text-xs font-semibold uppercase tracking-wider text-momentum-gray">For Buyers &amp; Sellers</span>
+          <h2 class="mt-1 font-serif text-3xl font-bold text-momentum-blue sm:text-4xl">Request a Realtor Referral</h2>
+          <p class="mt-4 text-base leading-relaxed text-slate-600">
+            Relocating outside of Northeast Florida? Tell us where you're headed and what you need, and we'll personally match you with a vetted, trusted agent in our nationwide network — at no cost to you.
+          </p>
+          <ul class="mt-6 space-y-3 text-sm text-slate-600">
+            <li class="flex items-start gap-2"><span class="mt-0.5 text-teal-600">&check;</span> Vetted, experienced agents in every network we refer to</li>
+            <li class="flex items-start gap-2"><span class="mt-0.5 text-teal-600">&check;</span> No cost or obligation to you as the buyer or seller</li>
+            <li class="flex items-start gap-2"><span class="mt-0.5 text-teal-600">&check;</span> We stay in the loop to make sure you're taken care of</li>
+          </ul>
+        </div>
+
+        <div class="rounded-2xl border border-momentum-grayLight bg-momentum-bgLight p-6 shadow-md sm:p-8">
+          <form id="referralRequestForm" action="https://formsubmit.co/S2HomePartners@gmail.com" method="POST" class="space-y-4">
+            <input type="hidden" name="formType" value="referral-request" />
+            <input type="hidden" name="_subject" value="Referral Request — S2 Home Partners" />
+            <input type="hidden" name="_next" value="https://buyjacksonvillefl.com/referral.html#submitted" />
+            <input type="text" name="_honey" class="hidden" tabindex="-1" autocomplete="off" />
+
+            <div>
+              <label for="ref-name" class="mb-1 block text-xs font-bold uppercase text-slate-700">Name</label>
+              <input id="ref-name" type="text" name="name" required class="w-full rounded-xl border border-momentum-grayLight bg-white px-4 py-3 text-sm focus:border-momentum-blue focus:outline-none" />
+            </div>
+            <div class="grid grid-cols-1 gap-4 sm:grid-cols-2">
+              <div>
+                <label for="ref-email" class="mb-1 block text-xs font-bold uppercase text-slate-700">Email</label>
+                <input id="ref-email" type="email" name="email" required class="w-full rounded-xl border border-momentum-grayLight bg-white px-4 py-3 text-sm focus:border-momentum-blue focus:outline-none" />
+              </div>
+              <div>
+                <label for="ref-phone" class="mb-1 block text-xs font-bold uppercase text-slate-700">Phone</label>
+                <input id="ref-phone" type="tel" name="phone" required class="w-full rounded-xl border border-momentum-grayLight bg-white px-4 py-3 text-sm focus:border-momentum-blue focus:outline-none" />
+              </div>
+            </div>
+            <div class="grid grid-cols-1 gap-4 sm:grid-cols-2">
+              <div>
+                <label for="ref-city" class="mb-1 block text-xs font-bold uppercase text-slate-700">Destination City</label>
+                <input id="ref-city" type="text" name="destCity" required class="w-full rounded-xl border border-momentum-grayLight bg-white px-4 py-3 text-sm focus:border-momentum-blue focus:outline-none" />
+              </div>
+              <div>
+                <label for="ref-state" class="mb-1 block text-xs font-bold uppercase text-slate-700">Destination State</label>
+                <select id="ref-state" name="destState" required class="state-select w-full rounded-xl border border-momentum-grayLight bg-white px-4 py-3 text-sm focus:border-momentum-blue focus:outline-none">
+                  <option value="">Select a state&hellip;</option>
+                </select>
+              </div>
+            </div>
+            <div class="grid grid-cols-1 gap-4 sm:grid-cols-2">
+              <div>
+                <label for="ref-buysell" class="mb-1 block text-xs font-bold uppercase text-slate-700">I am</label>
+                <select id="ref-buysell" name="buyingOrSelling" class="w-full rounded-xl border border-momentum-grayLight bg-white px-4 py-3 text-sm focus:border-momentum-blue focus:outline-none">
+                  <option>Buying</option>
+                  <option>Selling</option>
+                  <option>Both</option>
+                  <option>Not sure yet</option>
+                </select>
+              </div>
+              <div>
+                <label for="ref-timeline" class="mb-1 block text-xs font-bold uppercase text-slate-700">Timeline</label>
+                <select id="ref-timeline" name="timeline" class="w-full rounded-xl border border-momentum-grayLight bg-white px-4 py-3 text-sm focus:border-momentum-blue focus:outline-none">
+                  <option>ASAP</option>
+                  <option>1-3 months</option>
+                  <option>3-6 months</option>
+                  <option>6-12 months</option>
+                  <option>Just researching</option>
+                </select>
+              </div>
+            </div>
+            <div>
+              <label for="ref-message" class="mb-1 block text-xs font-bold uppercase text-slate-700">Anything else?</label>
+              <textarea id="ref-message" name="message" rows="3" class="w-full rounded-xl border border-momentum-grayLight bg-white px-4 py-3 text-sm focus:border-momentum-blue focus:outline-none"></textarea>
+            </div>
+            <button type="submit" class="w-full rounded-xl bg-momentum-blue py-4 text-sm font-bold text-white transition hover:bg-momentum-blueHover">Request My Referral</button>
+            <p class="text-center text-xs text-slate-500">We reply within 24 hours. No spam, no obligation.</p>
+          </form>
+          <div id="referralRequestSuccess" class="hidden text-center">
+            <p class="font-serif text-2xl font-bold text-momentum-blue">Thank you!</p>
+            <p class="mt-2 text-sm text-slate-600">We've received your request and will be in touch with a trusted agent match soon.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Partner Map -->
+    <section class="border-b border-momentum-grayLight bg-momentum-bgLight py-16">
+      <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+        <div class="mb-10 text-center">
+          <span class="text-xs font-semibold uppercase tracking-wider text-momentum-gray">Our Network</span>
+          <h2 class="mt-1 font-serif text-3xl font-bold text-momentum-blue sm:text-4xl">Referral Partners Nationwide</h2>
+          <p class="mx-auto mt-3 max-w-2xl text-base text-slate-600">
+            <span id="partner-state-count">0</span> states covered by <span id="partner-total-count">0</span> vetted referral partners — and growing. Hover a highlighted state to see who's there.
+          </p>
+        </div>
+        <div class="overflow-hidden rounded-2xl border border-momentum-grayLight bg-white p-4 shadow-md sm:p-8">
+          <object id="us-map-object" data="us-partner-map.svg" type="image/svg+xml" class="mx-auto w-full max-w-4xl" aria-label="Map of the United States showing states with S2 Home Partners referral partners">
+            Your browser does not support inline SVG. A map of referral partner states would appear here.
+          </object>
+        </div>
+        <div class="mt-4 flex items-center justify-center gap-2 text-xs text-slate-500">
+          <span class="inline-block h-3 w-3 rounded-sm bg-momentum-blue"></span> State with a referral partner
+          <span class="ml-4 inline-block h-3 w-3 rounded-sm bg-momentum-grayLight"></span> No partner yet
+        </div>
+      </div>
+    </section>
+
+    <!-- Become a Referral Partner (Agents) -->
+    <section id="become-partner" class="scroll-mt-24 bg-white py-16">
+      <div class="mx-auto grid max-w-6xl gap-10 px-4 sm:px-6 lg:grid-cols-2 lg:px-8">
+        <div>
+          <span class="text-xs font-semibold uppercase tracking-wider text-momentum-gray">For Real Estate Agents</span>
+          <h2 class="mt-1 font-serif text-3xl font-bold text-momentum-blue sm:text-4xl">Become a Referral Partner</h2>
+          <p class="mt-4 text-base leading-relaxed text-slate-600">
+            We regularly work with buyers and sellers relocating in and out of Northeast Florida. Join our nationwide referral network and we'll send qualified, ready-to-move clients your way.
+          </p>
+          <ul class="mt-6 space-y-3 text-sm text-slate-600">
+            <li class="flex items-start gap-2"><span class="mt-0.5 text-teal-600">&check;</span> Warm, pre-qualified client introductions</li>
+            <li class="flex items-start gap-2"><span class="mt-0.5 text-teal-600">&check;</span> Standard referral fee agreement, no upfront cost</li>
+            <li class="flex items-start gap-2"><span class="mt-0.5 text-teal-600">&check;</span> Your brokerage listed on our live partner map</li>
+          </ul>
+        </div>
+
+        <div class="rounded-2xl border border-momentum-grayLight bg-momentum-bgLight p-6 shadow-md sm:p-8">
+          <form id="partnerSignupForm" action="https://formsubmit.co/S2HomePartners@gmail.com" method="POST" class="space-y-4">
+            <input type="hidden" name="formType" value="partner-signup" />
+            <input type="hidden" name="_subject" value="Referral Partner Signup — S2 Home Partners" />
+            <input type="hidden" name="_next" value="https://buyjacksonvillefl.com/referral.html#submitted" />
+            <input type="text" name="_honey" class="hidden" tabindex="-1" autocomplete="off" />
+
+            <div class="grid grid-cols-1 gap-4 sm:grid-cols-2">
+              <div>
+                <label for="pnr-name" class="mb-1 block text-xs font-bold uppercase text-slate-700">Name</label>
+                <input id="pnr-name" type="text" name="name" required class="w-full rounded-xl border border-momentum-grayLight bg-white px-4 py-3 text-sm focus:border-momentum-blue focus:outline-none" />
+              </div>
+              <div>
+                <label for="pnr-brokerage" class="mb-1 block text-xs font-bold uppercase text-slate-700">Brokerage</label>
+                <input id="pnr-brokerage" type="text" name="brokerage" required class="w-full rounded-xl border border-momentum-grayLight bg-white px-4 py-3 text-sm focus:border-momentum-blue focus:outline-none" />
+              </div>
+            </div>
+            <div class="grid grid-cols-1 gap-4 sm:grid-cols-2">
+              <div>
+                <label for="pnr-email" class="mb-1 block text-xs font-bold uppercase text-slate-700">Email</label>
+                <input id="pnr-email" type="email" name="email" required class="w-full rounded-xl border border-momentum-grayLight bg-white px-4 py-3 text-sm focus:border-momentum-blue focus:outline-none" />
+              </div>
+              <div>
+                <label for="pnr-phone" class="mb-1 block text-xs font-bold uppercase text-slate-700">Phone</label>
+                <input id="pnr-phone" type="tel" name="phone" required class="w-full rounded-xl border border-momentum-grayLight bg-white px-4 py-3 text-sm focus:border-momentum-blue focus:outline-none" />
+              </div>
+            </div>
+            <div class="grid grid-cols-1 gap-4 sm:grid-cols-2">
+              <div>
+                <label for="pnr-city" class="mb-1 block text-xs font-bold uppercase text-slate-700">City</label>
+                <input id="pnr-city" type="text" name="city" required class="w-full rounded-xl border border-momentum-grayLight bg-white px-4 py-3 text-sm focus:border-momentum-blue focus:outline-none" />
+              </div>
+              <div>
+                <label for="pnr-state" class="mb-1 block text-xs font-bold uppercase text-slate-700">State</label>
+                <select id="pnr-state" name="state" required class="state-select w-full rounded-xl border border-momentum-grayLight bg-white px-4 py-3 text-sm focus:border-momentum-blue focus:outline-none">
+                  <option value="">Select a state&hellip;</option>
+                </select>
+              </div>
+            </div>
+            <div>
+              <label for="pnr-license" class="mb-1 block text-xs font-bold uppercase text-slate-700">License Number</label>
+              <input id="pnr-license" type="text" name="license" class="w-full rounded-xl border border-momentum-grayLight bg-white px-4 py-3 text-sm focus:border-momentum-blue focus:outline-none" />
+            </div>
+            <div>
+              <label for="pnr-areas" class="mb-1 block text-xs font-bold uppercase text-slate-700">Areas Served</label>
+              <input id="pnr-areas" type="text" name="areas" placeholder="e.g. Dallas-Fort Worth metro" class="w-full rounded-xl border border-momentum-grayLight bg-white px-4 py-3 text-sm focus:border-momentum-blue focus:outline-none" />
+            </div>
+            <div>
+              <label for="pnr-message" class="mb-1 block text-xs font-bold uppercase text-slate-700">Tell us about your business</label>
+              <textarea id="pnr-message" name="message" rows="3" class="w-full rounded-xl border border-momentum-grayLight bg-white px-4 py-3 text-sm focus:border-momentum-blue focus:outline-none"></textarea>
+            </div>
+            <button type="submit" class="w-full rounded-xl bg-momentum-blue py-4 text-sm font-bold text-white transition hover:bg-momentum-blueHover">Apply to Become a Partner</button>
+            <p class="text-center text-xs text-slate-500">We review every application personally. No spam.</p>
+          </form>
+          <div id="partnerSignupSuccess" class="hidden text-center">
+            <p class="font-serif text-2xl font-bold text-momentum-blue">Thank you!</p>
+            <p class="mt-2 text-sm text-slate-600">We've received your application and will follow up soon. Welcome to the network.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Flodesk newsletter opt-in -->
+    <section class="border-t border-momentum-grayLight bg-momentum-blueDark py-14 text-center text-white">
+      <div class="mx-auto max-w-2xl px-4 sm:px-6 lg:px-8">
+        <h2 class="font-serif text-2xl font-bold sm:text-3xl">Stay in the Loop</h2>
+        <p class="mt-2 text-sm text-slate-200">Market updates and relocation tips, straight to your inbox.</p>
+        <!--
+          FLODESK EMBED GOES HERE.
+          Paste the embed <script>/<div> snippet from your Flodesk form's
+          Share tab in place of this comment.
+        -->
+        <div id="flodesk-embed-placeholder" class="mt-6 rounded-xl border border-dashed border-white/30 bg-white/5 p-6 text-xs text-slate-300">
+          Flodesk signup form goes here once the embed code is added.
+        </div>
       </div>
     </section>
   </main>
@@ -126,6 +332,103 @@
         menuToggle.setAttribute('aria-label', 'Open menu');
       });
     });
+
+    // ============================================================
+    // REFERRAL PROGRAM BACKEND CONFIG
+    // Paste the Google Apps Script Web App URL here once deployed
+    // (see referral-backend/SETUP.md). Until this is set, both forms
+    // fall back to emailing through FormSubmit like the rest of the
+    // site, and the map stays empty.
+    // ============================================================
+    const REFERRAL_BACKEND_URL = 'PASTE_YOUR_APPS_SCRIPT_URL_HERE';
+    const backendConfigured = !REFERRAL_BACKEND_URL.includes('PASTE_YOUR');
+
+    // --- Populate the two state dropdowns ---
+    const US_STATES = [
+      ['AL', 'Alabama'], ['AK', 'Alaska'], ['AZ', 'Arizona'], ['AR', 'Arkansas'],
+      ['CA', 'California'], ['CO', 'Colorado'], ['CT', 'Connecticut'], ['DE', 'Delaware'],
+      ['DC', 'District of Columbia'], ['FL', 'Florida'], ['GA', 'Georgia'], ['HI', 'Hawaii'],
+      ['ID', 'Idaho'], ['IL', 'Illinois'], ['IN', 'Indiana'], ['IA', 'Iowa'],
+      ['KS', 'Kansas'], ['KY', 'Kentucky'], ['LA', 'Louisiana'], ['ME', 'Maine'],
+      ['MD', 'Maryland'], ['MA', 'Massachusetts'], ['MI', 'Michigan'], ['MN', 'Minnesota'],
+      ['MS', 'Mississippi'], ['MO', 'Missouri'], ['MT', 'Montana'], ['NE', 'Nebraska'],
+      ['NV', 'Nevada'], ['NH', 'New Hampshire'], ['NJ', 'New Jersey'], ['NM', 'New Mexico'],
+      ['NY', 'New York'], ['NC', 'North Carolina'], ['ND', 'North Dakota'], ['OH', 'Ohio'],
+      ['OK', 'Oklahoma'], ['OR', 'Oregon'], ['PA', 'Pennsylvania'], ['RI', 'Rhode Island'],
+      ['SC', 'South Carolina'], ['SD', 'South Dakota'], ['TN', 'Tennessee'], ['TX', 'Texas'],
+      ['UT', 'Utah'], ['VT', 'Vermont'], ['VA', 'Virginia'], ['WA', 'Washington'],
+      ['WV', 'West Virginia'], ['WI', 'Wisconsin'], ['WY', 'Wyoming'],
+    ];
+    document.querySelectorAll('select.state-select').forEach((select) => {
+      US_STATES.forEach(([abbr, name]) => {
+        const opt = document.createElement('option');
+        opt.value = abbr;
+        opt.textContent = name;
+        select.appendChild(opt);
+      });
+    });
+
+    // --- Progressive-enhancement form submission ---
+    function wireForm(formId, successId) {
+      const form = document.getElementById(formId);
+      const success = document.getElementById(successId);
+      if (!form) return;
+      form.addEventListener('submit', (event) => {
+        if (!backendConfigured) return; // let it submit to FormSubmit normally
+        event.preventDefault();
+        const formData = new FormData(form);
+        fetch(REFERRAL_BACKEND_URL, { method: 'POST', mode: 'no-cors', body: formData })
+          .then(() => {
+            form.classList.add('hidden');
+            success.classList.remove('hidden');
+          })
+          .catch(() => {
+            alert("Something went wrong submitting your request. Please email us directly at S2HomePartners@gmail.com.");
+          });
+      });
+    }
+    wireForm('referralRequestForm', 'referralRequestSuccess');
+    wireForm('partnerSignupForm', 'partnerSignupSuccess');
+
+    // --- Live partner map ---
+    const mapObject = document.getElementById('us-map-object');
+    if (mapObject) {
+      mapObject.addEventListener('load', loadPartnerMap);
+    }
+
+    function loadPartnerMap() {
+      if (!backendConfigured) return;
+      fetch(REFERRAL_BACKEND_URL + '?action=partners')
+        .then((res) => res.json())
+        .then((data) => {
+          const svgDoc = mapObject.contentDocument;
+          if (!svgDoc) return;
+          const counts = {};
+          const namesByState = {};
+          (data.partners || []).forEach((p) => {
+            const st = (p.state || '').toLowerCase().trim();
+            if (!st) return;
+            counts[st] = (counts[st] || 0) + 1;
+            namesByState[st] = namesByState[st] || [];
+            namesByState[st].push(p.city ? `${p.name} (${p.city})` : p.name);
+          });
+          Object.keys(counts).forEach((st) => {
+            svgDoc.querySelectorAll('.' + st).forEach((el) => {
+              el.classList.add('has-partner');
+              const title = el.querySelector('title');
+              if (title) {
+                const count = counts[st];
+                title.textContent += ` — ${count} partner${count > 1 ? 's' : ''}: ${namesByState[st].join(', ')}`;
+              }
+            });
+          });
+          const stateCountEl = document.getElementById('partner-state-count');
+          const totalCountEl = document.getElementById('partner-total-count');
+          if (stateCountEl) stateCountEl.textContent = Object.keys(counts).length;
+          if (totalCountEl) totalCountEl.textContent = (data.partners || []).length;
+        })
+        .catch((err) => console.error('Could not load referral partner map data', err));
+    }
   </script>
 </body>
 </html>
