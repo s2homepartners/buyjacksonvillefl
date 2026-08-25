@@ -26,12 +26,36 @@ sheet also feeds the live partner map.
 The exact tab names matter (the script looks them up by name) — the column
 order matters too.
 
+**Copy the Sheet's ID before moving on.** Look at the address bar while
+the Sheet is open — the URL looks like:
+`https://docs.google.com/spreadsheets/d/1AbCdEfGhIjKlmNoPQRsTuVwxyz/edit`
+The long string between `/d/` and `/edit` is the Sheet ID. Copy it
+somewhere handy, you'll need it in the next step.
+
 ## 2. Add the script
 
-1. In the Sheet, go to **Extensions > Apps Script**.
+Two ways to do this — use whichever one actually opens for you:
+
+**Option A — from inside the Sheet:**
+1. Go to **Extensions > Apps Script**.
 2. Delete anything in the editor and paste in the full contents of
    `Code.gs` (in this same folder).
-3. Click the disk icon (or Ctrl+S) to save. Name the project anything,
+
+**Option B — if Option A gives a "can't open this file" error:**
+1. Go straight to [script.google.com](https://script.google.com) instead.
+2. Click **New Project**.
+3. Delete anything in the editor and paste in the full contents of
+   `Code.gs` (in this same folder).
+
+Either way, once the code is pasted in:
+
+3. Near the top of the script, find this line:
+   ```
+   var SHEET_ID = 'PASTE_YOUR_SHEET_ID_HERE';
+   ```
+   Replace `PASTE_YOUR_SHEET_ID_HERE` with the Sheet ID you copied in
+   step 1 (keep the quote marks around it).
+4. Click the disk icon (or Ctrl+S) to save. Name the project anything,
    e.g. "Referral Backend".
 
 ## 3. Deploy it as a Web App

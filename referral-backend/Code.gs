@@ -1,19 +1,28 @@
 /**
  * S2 Home Partners — Referral Program backend.
- * Paste this into a Google Sheet's Extensions > Apps Script editor,
- * then deploy as a Web App. See SETUP.md in this folder for the
- * full step-by-step.
+ * Paste this into an Apps Script project (either via script.google.com
+ * directly, or Extensions > Apps Script inside the Sheet), then deploy
+ * as a Web App. See SETUP.md in this folder for the full step-by-step.
  */
+
+// Paste your Google Sheet's ID here — it's the long string of letters
+// and numbers in the Sheet's URL, between /d/ and /edit:
+// https://docs.google.com/spreadsheets/d/PASTE_THIS_PART/edit
+var SHEET_ID = 'PASTE_YOUR_SHEET_ID_HERE';
 
 var NOTIFY_EMAIL = 'S2HomePartners@gmail.com';
 
 var REFERRAL_SHEET_NAME = 'Buyer-Seller Referrals';
 var PARTNER_SHEET_NAME = 'Realtor Partners';
 
+function getSpreadsheet() {
+  return SpreadsheetApp.openById(SHEET_ID);
+}
+
 function doPost(e) {
   var params = e.parameter;
   var formType = params.formType;
-  var ss = SpreadsheetApp.getActiveSpreadsheet();
+  var ss = getSpreadsheet();
   var timestamp = new Date();
 
   if (formType === 'referral-request') {
@@ -71,7 +80,7 @@ function doPost(e) {
 
 function doGet(e) {
   if (e.parameter && e.parameter.action === 'partners') {
-    var ss = SpreadsheetApp.getActiveSpreadsheet();
+    var ss = getSpreadsheet();
     var sheet = ss.getSheetByName(PARTNER_SHEET_NAME);
     var data = sheet.getDataRange().getValues();
     var rows = data.slice(1); // skip header row
