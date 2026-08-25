@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Military PCS Pro Program | S� Home Partners | Momentum Realty</title>
-  <meta name="description" content="Military PCS support for NAS Jacksonville, NS Mayport, NSB Kings Bay, and nationwide relocation with S� Home Partners." />
+  <title>Military PCS Pro Program | S&sup2; Home Partners | Momentum Realty</title>
+  <meta name="description" content="Military PCS support for NAS Jacksonville, NS Mayport, NSB Kings Bay, and nationwide relocation with S&sup2; Home Partners." />
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -55,10 +55,18 @@
       </a>
 
       <nav class="hidden items-center space-x-5 text-xs font-semibold uppercase tracking-wider text-momentum-gray xl:flex" aria-label="Primary">
-        <a href="buy.html" class="transition-colors hover:text-momentum-blue">Buy</a>
-        <a href="area-guides.html" class="transition-colors hover:text-momentum-blue">Area Guides</a>
+        <div class="group relative">
+          <button type="button" class="flex items-center gap-1 transition-colors hover:text-momentum-blue" aria-haspopup="true">
+            Buy
+            <svg class="h-3 w-3 transition-transform duration-200 group-hover:rotate-180" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" /></svg>
+          </button>
+          <div class="invisible absolute left-0 top-full z-50 w-56 rounded-xl border border-momentum-grayLight bg-white py-2 opacity-0 shadow-lg transition-all duration-150 group-hover:visible group-hover:opacity-100 group-focus-within:visible group-focus-within:opacity-100">
+            <a href="buy.html" class="block px-4 py-2.5 text-sm normal-case tracking-normal text-momentum-gray hover:bg-momentum-bgLight hover:text-momentum-blue">Buy Overview</a>
+            <a href="area-guides.html" class="block px-4 py-2.5 text-sm normal-case tracking-normal text-momentum-gray hover:bg-momentum-bgLight hover:text-momentum-blue">Area Guides</a>
+            <a href="buy.html#new-construction" class="block px-4 py-2.5 text-sm normal-case tracking-normal text-momentum-gray hover:bg-momentum-bgLight hover:text-momentum-blue">New Construction</a>
+          </div>
+        </div>
         <a href="sell.html" class="transition-colors hover:text-momentum-blue">Sell</a>
-        <a href="buy.html#new-construction" class="transition-colors hover:text-momentum-blue">New Construction</a>
         <a href="military.html" class="transition-colors hover:text-momentum-blue">Military</a>
         <a href="success-stories.html" class="transition-colors hover:text-momentum-blue">Success Stories</a>
         <a href="blog.html" class="transition-colors hover:text-momentum-blue">Blog</a>
@@ -77,10 +85,10 @@
 
     <div id="mobile-menu" class="hidden border-t border-momentum-grayLight bg-white px-4 py-4 xl:hidden">
       <nav class="flex flex-col gap-3 text-sm font-medium text-momentum-blue" aria-label="Mobile">
-        <a href="buy.html" class="mobile-link py-1">Buy</a>
-        <a href="area-guides.html" class="mobile-link py-1">Area Guides</a>
+        <a href="buy.html" class="mobile-link py-1 font-bold">Buy</a>
+        <a href="area-guides.html" class="mobile-link py-1 pl-4 text-sm text-momentum-gray">Area Guides</a>
+        <a href="buy.html#new-construction" class="mobile-link py-1 pl-4 text-sm text-momentum-gray">New Construction</a>
         <a href="sell.html" class="mobile-link py-1">Sell</a>
-        <a href="buy.html#new-construction" class="mobile-link py-1">New Construction</a>
         <a href="military.html" class="mobile-link py-1">Military</a>
         <a href="success-stories.html" class="mobile-link py-1">Success Stories</a>
         <a href="blog.html" class="mobile-link py-1">Blog</a>
@@ -114,7 +122,7 @@
         <div class="reveal mx-auto max-w-4xl rounded-2xl bg-momentum-blue p-8 text-center text-white shadow-xl lg:p-12">
           <h3 class="mb-3 font-serif text-2xl font-bold">PCSing Outside Northeast Florida?</h3>
           <p class="mb-6 text-sm leading-relaxed text-slate-200">
-            Through our national military network, we personally match you with trusted, vetted real estate professionals at every installation nationwide�from San Diego and Norfolk to San Antonio and Joint Base Lewis-McChord.
+            Through our national military network, we personally match you with trusted, vetted real estate professionals at every installation nationwide — from San Diego and Norfolk to San Antonio and Joint Base Lewis-McChord.
           </p>
           <a href="about.html#contact" class="inline-block rounded-xl bg-white px-8 py-3.5 font-bold text-momentum-blue transition-colors hover:bg-slate-100">
             Connect With A PCS Pro At Your Next Base
@@ -126,7 +134,7 @@
 
   <footer class="border-t border-slate-800 bg-slate-900 py-8 text-slate-400">
     <div class="mx-auto max-w-7xl px-4 text-center text-sm sm:px-6 lg:px-8">
-      <p>&copy; <span id="year"></span> S� Home Partners | Momentum Realty. All rights reserved.</p>
+      <p>&copy; <span id="year"></span> S&sup2; Home Partners | Momentum Realty. All rights reserved.</p>
     </div>
   </footer>
 

@@ -9,6 +9,11 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    .guide-card summary::-webkit-details-marker { display: none; }
+    .guide-card summary { list-style: none; }
+    .guide-card[open] .guide-chevron { transform: rotate(180deg); }
+  </style>
   <script>
     tailwind.config = {
       theme: {
@@ -37,10 +42,18 @@
     <div class="mx-auto flex h-24 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
       <a href="index.html"><img src="momentum-logo.png" alt="Momentum Realty" class="h-14 w-auto object-contain" /></a>
       <nav class="hidden items-center space-x-5 text-xs font-bold uppercase tracking-wider text-momentum-gray xl:flex" aria-label="Primary">
-        <a href="buy.html" class="transition-colors hover:text-momentum-blue">Buy</a>
-        <a href="area-guides.html" class="border-b-2 border-momentum-blue pb-1 font-extrabold text-momentum-blue">Area Guides</a>
+        <div class="group relative">
+          <button type="button" class="flex items-center gap-1 border-b-2 border-momentum-blue pb-1 font-extrabold text-momentum-blue" aria-haspopup="true">
+            Buy
+            <svg class="h-3 w-3 transition-transform duration-200 group-hover:rotate-180" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" /></svg>
+          </button>
+          <div class="invisible absolute left-0 top-full z-50 w-56 rounded-xl border border-momentum-grayLight bg-white py-2 opacity-0 shadow-lg transition-all duration-150 group-hover:visible group-hover:opacity-100 group-focus-within:visible group-focus-within:opacity-100">
+            <a href="buy.html" class="block px-4 py-2.5 text-sm normal-case tracking-normal text-momentum-gray hover:bg-momentum-bgLight hover:text-momentum-blue">Buy Overview</a>
+            <a href="area-guides.html" class="block px-4 py-2.5 text-sm normal-case tracking-normal text-momentum-gray hover:bg-momentum-bgLight hover:text-momentum-blue">Area Guides</a>
+            <a href="buy.html#new-construction" class="block px-4 py-2.5 text-sm normal-case tracking-normal text-momentum-gray hover:bg-momentum-bgLight hover:text-momentum-blue">New Construction</a>
+          </div>
+        </div>
         <a href="sell.html" class="transition-colors hover:text-momentum-blue">Sell</a>
-        <a href="buy.html#new-construction" class="transition-colors hover:text-momentum-blue">New Construction</a>
         <a href="military.html" class="transition-colors hover:text-momentum-blue">Military</a>
         <a href="success-stories.html" class="transition-colors hover:text-momentum-blue">Success Stories</a>
         <a href="blog.html" class="transition-colors hover:text-momentum-blue">Blog</a>
@@ -54,10 +67,10 @@
     </div>
     <div id="mobile-menu" class="hidden border-t border-momentum-grayLight bg-white px-4 py-4 xl:hidden">
       <nav class="flex flex-col gap-3 text-sm font-medium text-momentum-blue" aria-label="Mobile">
-        <a href="buy.html" class="mobile-link py-1">Buy</a>
-        <a href="area-guides.html" class="mobile-link py-1 font-bold">Area Guides</a>
+        <a href="buy.html" class="mobile-link py-1 font-bold">Buy</a>
+        <a href="area-guides.html" class="mobile-link py-1 pl-4 text-sm text-momentum-gray">Area Guides</a>
+        <a href="buy.html#new-construction" class="mobile-link py-1 pl-4 text-sm text-momentum-gray">New Construction</a>
         <a href="sell.html" class="mobile-link py-1">Sell</a>
-        <a href="buy.html#new-construction" class="mobile-link py-1">New Construction</a>
         <a href="military.html" class="mobile-link py-1">Military</a>
         <a href="success-stories.html" class="mobile-link py-1">Success Stories</a>
         <a href="blog.html" class="mobile-link py-1">Blog</a>
@@ -75,8 +88,14 @@
         <p class="mx-auto mt-4 max-w-2xl text-sm font-light text-slate-200 md:text-base">Momentum publishes the live market data. These guides answer what the numbers cannot: why work with S&sup2; Home Partners in this neighborhood.</p>
       </div>
     </section>
+
     <section class="py-16">
-      <div class="mx-auto grid max-w-7xl gap-6 px-4 sm:grid-cols-2 sm:px-6 lg:grid-cols-3 lg:px-8">
+      <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div class="mb-10 text-center">
+          <span class="text-xs font-semibold uppercase tracking-wider text-momentum-gray">Start Here</span>
+          <h2 class="mt-1 font-serif text-2xl font-bold text-momentum-blue sm:text-3xl">Featured In-Depth Guides</h2>
+        </div>
+      <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           <a href="nocatee.html" class="rounded-2xl border border-momentum-grayLight bg-white p-6 shadow-sm transition hover:border-momentum-blue hover:shadow-md">
             <p class="text-xs font-bold uppercase tracking-wider text-momentum-gray">St. Johns County</p>
             <h2 class="mt-2 font-serif text-xl font-bold text-momentum-blue">Nocatee</h2>
@@ -150,8 +169,821 @@
             <span class="mt-4 inline-block text-xs font-bold text-teal-600">Read guide &rarr;</span>
           </a>
       </div>
+      </div>
+    </section>
+
+    <!-- Every Neighborhood, By County -->
+    <section class="border-t border-momentum-grayLight bg-white py-16">
+      <div class="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
+        <div class="mb-14 text-center">
+          <span class="text-sm font-bold uppercase tracking-wider text-teal-600">The Complete Resource</span>
+          <h2 class="mt-2 font-serif text-4xl font-bold text-momentum-blue sm:text-5xl">Every Neighborhood, County by County</h2>
+          <p class="mx-auto mt-4 max-w-2xl text-base leading-relaxed text-slate-600 sm:text-lg">Tap any neighborhood to see what it's like to live there — home types, schools, commute times to Mayport, NAS Jax, and Kings Bay, and the shopping, dining, and things to do nearby. Drive times are estimates and vary by exact address and traffic.</p>
+        </div>
+
+        <!-- DUVAL COUNTY -->
+        <div class="mb-20">
+          <div class="relative mb-8 overflow-hidden rounded-3xl shadow-lg">
+            <img src="https://commons.wikimedia.org/wiki/Special:FilePath/DuvalCountyCourthouse.JPG?width=1600" alt="Duval County Courthouse, Jacksonville" class="h-56 w-full object-cover sm:h-72" />
+            <div class="absolute inset-0 bg-gradient-to-r from-sky-950/90 via-sky-950/60 to-transparent"></div>
+            <div class="absolute inset-0 flex flex-col justify-center px-6 sm:px-10">
+              <p class="text-sm font-bold uppercase tracking-[0.2em] text-sky-200">Northeast Florida</p>
+              <h3 class="mt-1 font-serif text-4xl font-bold text-white drop-shadow-md sm:text-6xl">Duval County</h3>
+              <p class="mt-2 max-w-md text-base font-medium text-white/90 drop-shadow sm:text-lg">Historic urban neighborhoods, laid-back beach towns, and everything between downtown and the Atlantic.</p>
+            </div>
+          </div>
+          <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+
+            <details class="guide-card group overflow-hidden rounded-3xl border border-momentum-grayLight bg-white shadow-md transition hover:shadow-xl">
+              <summary class="relative block cursor-pointer">
+                <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Jacksonville_San_Marco_Square.JPG?width=900" alt="San Marco Square, Jacksonville" class="h-56 w-full object-cover transition duration-500 group-hover:scale-105 sm:h-64" />
+                <div class="absolute inset-0 bg-gradient-to-t from-black/85 via-black/10 to-transparent"></div>
+                <span class="absolute left-4 top-4 rounded-full bg-sky-600 px-3 py-1 text-xs font-bold uppercase tracking-wider text-white shadow">Duval County</span>
+                <svg class="guide-chevron absolute right-4 top-4 h-8 w-8 rounded-full bg-white/90 p-1.5 text-momentum-blue shadow transition-transform duration-200" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" /></svg>
+                <div class="absolute inset-x-0 bottom-0 p-5">
+                  <h3 class="font-serif text-2xl font-bold text-white drop-shadow-md">San Marco</h3>
+                  <p class="mt-1 text-sm font-medium text-white/90 drop-shadow">Walkable riverside squares, historic bungalows, and a downtown-adjacent address.</p>
+                </div>
+              </summary>
+              <div class="border-t border-momentum-grayLight bg-white px-5 pb-7 pt-6 sm:px-6">
+                <p class="text-base leading-relaxed text-slate-700"><strong class="text-momentum-blue">Why people love it:</strong> San Marco is Jacksonville's most walkable urban neighborhood — brick-paved streets radiate out from San Marco Square, where neighbors linger over coffee, catch a film at the classic San Marco Theatre, or grab dinner within stumbling distance of home. It's a tight-knit, front-porch community that still feels like a small town a few minutes from downtown.</p>
+                <p class="mt-3 text-base leading-relaxed text-slate-700"><strong class="text-momentum-blue">Homes you'll find:</strong> 1920s Mediterranean and Colonial Revival homes, Craftsman bungalows, and a growing number of luxury townhomes and riverfront condos.</p>
+                <div class="mt-4 grid grid-cols-3 gap-3 rounded-xl bg-momentum-bgLight p-4 text-center">
+                  <div><p class="text-xs font-bold uppercase text-momentum-gray">Mayport</p><p class="mt-1 text-lg font-bold text-momentum-blue">~25 min</p></div>
+                  <div><p class="text-xs font-bold uppercase text-momentum-gray">NAS Jax</p><p class="mt-1 text-lg font-bold text-momentum-blue">~20 min</p></div>
+                  <div><p class="text-xs font-bold uppercase text-momentum-gray">Kings Bay</p><p class="mt-1 text-lg font-bold text-momentum-blue">~50 min</p></div>
+                </div>
+                <p class="mt-4 text-base leading-relaxed text-slate-700"><strong class="text-momentum-blue">Schools:</strong> Zoned Duval County Public Schools, with San Jose Elementary and Alfred I. duPont Middle nearby, plus magnet access to Stanton College Prep and Douglas Anderson School of the Arts.</p>
+                <p class="mt-3 text-base leading-relaxed text-slate-700"><strong class="text-momentum-blue">Shopping, dining &amp; fun:</strong> San Marco Square anchors it all — Bistro Aix, The Grotto, and Southern Grounds &amp; Co., plus independent boutiques, the San Marco Theatre, and Balis Park's weekend farmers market.</p>
+                <div class="mt-6 flex flex-wrap items-center gap-4">
+                  <button type="button" onclick="openLeadModal('San Marco', 'Duval County')" class="inline-flex items-center justify-center rounded-xl bg-momentum-blue px-6 py-3.5 text-base font-bold text-white transition hover:bg-momentum-blueHover">Ask About San Marco &rarr;</button>
+                  <a href="san-marco.html" class="text-sm font-bold text-teal-600 hover:underline">Read the full guide &rarr;</a>
+                </div>
+              </div>
+            </details>
+
+            <details class="guide-card group overflow-hidden rounded-3xl border border-momentum-grayLight bg-white shadow-md transition hover:shadow-xl">
+              <summary class="relative block cursor-pointer">
+                <img src="https://commons.wikimedia.org/wiki/Special:FilePath/MemParkJaxLife.jpg?width=900" alt="Memorial Park, Riverside, Jacksonville" class="h-56 w-full object-cover transition duration-500 group-hover:scale-105 sm:h-64" />
+                <div class="absolute inset-0 bg-gradient-to-t from-black/85 via-black/10 to-transparent"></div>
+                <span class="absolute left-4 top-4 rounded-full bg-sky-600 px-3 py-1 text-xs font-bold uppercase tracking-wider text-white shadow">Duval County</span>
+                <svg class="guide-chevron absolute right-4 top-4 h-8 w-8 rounded-full bg-white/90 p-1.5 text-momentum-blue shadow transition-transform duration-200" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" /></svg>
+                <div class="absolute inset-x-0 bottom-0 p-5">
+                  <h3 class="font-serif text-2xl font-bold text-white drop-shadow-md">Riverside</h3>
+                  <p class="mt-1 text-sm font-medium text-white/90 drop-shadow">Historic arts district — Five Points energy, brick streets, riverfront parks.</p>
+                </div>
+              </summary>
+              <div class="border-t border-momentum-grayLight bg-white px-5 pb-7 pt-6 sm:px-6">
+                <p class="text-base leading-relaxed text-slate-700"><strong class="text-momentum-blue">Why people love it:</strong> Riverside is Jacksonville's original "it" neighborhood — a dense, walkable grid of historic homes anchored by Five Points' indie shops and nightlife, Memorial Park's riverfront lawns, and the weekly Riverside Arts Market under the Fuller Warren Bridge. It draws buyers who want character, culture, and a genuine sense of community.</p>
+                <p class="mt-3 text-base leading-relaxed text-slate-700"><strong class="text-momentum-blue">Homes you'll find:</strong> Grand early-1900s mansions, Craftsman and Prairie-style bungalows, and renovated cottages, protected by active historic preservation guidelines.</p>
+                <div class="mt-4 grid grid-cols-3 gap-3 rounded-xl bg-momentum-bgLight p-4 text-center">
+                  <div><p class="text-xs font-bold uppercase text-momentum-gray">Mayport</p><p class="mt-1 text-lg font-bold text-momentum-blue">~25 min</p></div>
+                  <div><p class="text-xs font-bold uppercase text-momentum-gray">NAS Jax</p><p class="mt-1 text-lg font-bold text-momentum-blue">~20 min</p></div>
+                  <div><p class="text-xs font-bold uppercase text-momentum-gray">Kings Bay</p><p class="mt-1 text-lg font-bold text-momentum-blue">~50 min</p></div>
+                </div>
+                <p class="mt-4 text-base leading-relaxed text-slate-700"><strong class="text-momentum-blue">Schools:</strong> Zoned Duval County Public Schools, with Riverside Elementary nearby and magnet access to Stanton College Prep and Douglas Anderson School of the Arts.</p>
+                <p class="mt-3 text-base leading-relaxed text-slate-700"><strong class="text-momentum-blue">Shopping, dining &amp; fun:</strong> Five Points' boutiques and bars, Sun-Ray Cinema, the weekly Riverside Arts Market, and Memorial Park's river views.</p>
+                <div class="mt-6 flex flex-wrap items-center gap-4">
+                  <button type="button" onclick="openLeadModal('Riverside', 'Duval County')" class="inline-flex items-center justify-center rounded-xl bg-momentum-blue px-6 py-3.5 text-base font-bold text-white transition hover:bg-momentum-blueHover">Ask About Riverside &rarr;</button>
+                  <a href="riverside-avondale.html" class="text-sm font-bold text-teal-600 hover:underline">Read the full guide &rarr;</a>
+                </div>
+              </div>
+            </details>
+
+            <details class="guide-card group overflow-hidden rounded-3xl border border-momentum-grayLight bg-white shadow-md transition hover:shadow-xl">
+              <summary class="relative block cursor-pointer">
+                <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Jax_FL_Avondale_HD02.jpg?width=900" alt="Historic home in Avondale, Jacksonville" class="h-56 w-full object-cover transition duration-500 group-hover:scale-105 sm:h-64" />
+                <div class="absolute inset-0 bg-gradient-to-t from-black/85 via-black/10 to-transparent"></div>
+                <span class="absolute left-4 top-4 rounded-full bg-sky-600 px-3 py-1 text-xs font-bold uppercase tracking-wider text-white shadow">Duval County</span>
+                <svg class="guide-chevron absolute right-4 top-4 h-8 w-8 rounded-full bg-white/90 p-1.5 text-momentum-blue shadow transition-transform duration-200" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" /></svg>
+                <div class="absolute inset-x-0 bottom-0 p-5">
+                  <h3 class="font-serif text-2xl font-bold text-white drop-shadow-md">Avondale</h3>
+                  <p class="mt-1 text-sm font-medium text-white/90 drop-shadow">Boutique shopping street, historic architecture, tight-knit feel.</p>
+                </div>
+              </summary>
+              <div class="border-t border-momentum-grayLight bg-white px-5 pb-7 pt-6 sm:px-6">
+                <p class="text-base leading-relaxed text-slate-700"><strong class="text-momentum-blue">Why people love it:</strong> Avondale is Riverside's polished neighbor — the same historic charm with a more boutique, curated retail strip along St. Johns Avenue. It's popular with families and professionals who want walkable shopping and dining without leaving their own zip code.</p>
+                <p class="mt-3 text-base leading-relaxed text-slate-700"><strong class="text-momentum-blue">Homes you'll find:</strong> Historic bungalows, Tudor Revival cottages, and Colonial-style homes beneath a mature oak canopy.</p>
+                <div class="mt-4 grid grid-cols-3 gap-3 rounded-xl bg-momentum-bgLight p-4 text-center">
+                  <div><p class="text-xs font-bold uppercase text-momentum-gray">Mayport</p><p class="mt-1 text-lg font-bold text-momentum-blue">~28 min</p></div>
+                  <div><p class="text-xs font-bold uppercase text-momentum-gray">NAS Jax</p><p class="mt-1 text-lg font-bold text-momentum-blue">~18 min</p></div>
+                  <div><p class="text-xs font-bold uppercase text-momentum-gray">Kings Bay</p><p class="mt-1 text-lg font-bold text-momentum-blue">~50 min</p></div>
+                </div>
+                <p class="mt-4 text-base leading-relaxed text-slate-700"><strong class="text-momentum-blue">Schools:</strong> Zoned Duval County Public Schools, with John N.C. Stockton Elementary nearby and magnet access to Stanton College Prep and Douglas Anderson.</p>
+                <p class="mt-3 text-base leading-relaxed text-slate-700"><strong class="text-momentum-blue">Shopping, dining &amp; fun:</strong> St. Johns Avenue's independent boutiques, coffee shops, and restaurants, with Willowbranch Park nearby for green space and community events.</p>
+                <div class="mt-6 flex flex-wrap items-center gap-4">
+                  <button type="button" onclick="openLeadModal('Avondale', 'Duval County')" class="inline-flex items-center justify-center rounded-xl bg-momentum-blue px-6 py-3.5 text-base font-bold text-white transition hover:bg-momentum-blueHover">Ask About Avondale &rarr;</button>
+                  <a href="riverside-avondale.html" class="text-sm font-bold text-teal-600 hover:underline">Read the full guide &rarr;</a>
+                </div>
+              </div>
+            </details>
+
+            <details class="guide-card group overflow-hidden rounded-3xl border border-momentum-grayLight bg-white shadow-md transition hover:shadow-xl">
+              <summary class="relative block cursor-pointer">
+                <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Mainspringjax.jpg?width=900" alt="Main Street, Springfield Historic District, Jacksonville" class="h-56 w-full object-cover transition duration-500 group-hover:scale-105 sm:h-64" />
+                <div class="absolute inset-0 bg-gradient-to-t from-black/85 via-black/10 to-transparent"></div>
+                <span class="absolute left-4 top-4 rounded-full bg-sky-600 px-3 py-1 text-xs font-bold uppercase tracking-wider text-white shadow">Duval County</span>
+                <svg class="guide-chevron absolute right-4 top-4 h-8 w-8 rounded-full bg-white/90 p-1.5 text-momentum-blue shadow transition-transform duration-200" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" /></svg>
+                <div class="absolute inset-x-0 bottom-0 p-5">
+                  <h3 class="font-serif text-2xl font-bold text-white drop-shadow-md">Springfield</h3>
+                  <p class="mt-1 text-sm font-medium text-white/90 drop-shadow">Jacksonville's oldest suburb — Victorian architecture, a fast-growing arts scene.</p>
+                </div>
+              </summary>
+              <div class="border-t border-momentum-grayLight bg-white px-5 pb-7 pt-6 sm:px-6">
+                <p class="text-base leading-relaxed text-slate-700"><strong class="text-momentum-blue">Why people love it:</strong> Springfield is Jacksonville's original streetcar suburb, and it's in the middle of a genuine renaissance — Victorian and Queen Anne homes are being restored block by block, and Klutho Park anchors a growing community of young professionals and creatives drawn to the architecture and downtown-adjacent location.</p>
+                <p class="mt-3 text-base leading-relaxed text-slate-700"><strong class="text-momentum-blue">Homes you'll find:</strong> Historic Victorian, Queen Anne, and Colonial Revival homes from the late 1800s and early 1900s, many mid-renovation — a more affordable entry into historic homeownership than Riverside or Avondale.</p>
+                <div class="mt-4 grid grid-cols-3 gap-3 rounded-xl bg-momentum-bgLight p-4 text-center">
+                  <div><p class="text-xs font-bold uppercase text-momentum-gray">Mayport</p><p class="mt-1 text-lg font-bold text-momentum-blue">~25 min</p></div>
+                  <div><p class="text-xs font-bold uppercase text-momentum-gray">NAS Jax</p><p class="mt-1 text-lg font-bold text-momentum-blue">~22 min</p></div>
+                  <div><p class="text-xs font-bold uppercase text-momentum-gray">Kings Bay</p><p class="mt-1 text-lg font-bold text-momentum-blue">~48 min</p></div>
+                </div>
+                <p class="mt-4 text-base leading-relaxed text-slate-700"><strong class="text-momentum-blue">Schools:</strong> Zoned Duval County Public Schools, with magnet options nearby including Stanton College Prep and LaVilla School of the Arts.</p>
+                <p class="mt-3 text-base leading-relaxed text-slate-700"><strong class="text-momentum-blue">Shopping, dining &amp; fun:</strong> Hyperion Brewing Co., a growing Main Street restaurant scene, and Klutho Park's green space, with downtown Jacksonville's full dining and entertainment district minutes away.</p>
+                <div class="mt-6">
+                  <button type="button" onclick="openLeadModal('Springfield', 'Duval County')" class="inline-flex items-center justify-center rounded-xl bg-momentum-blue px-6 py-3.5 text-base font-bold text-white transition hover:bg-momentum-blueHover">Ask About Springfield &rarr;</button>
+                </div>
+              </div>
+            </details>
+
+            <details class="guide-card group overflow-hidden rounded-3xl border border-momentum-grayLight bg-white shadow-md transition hover:shadow-xl">
+              <summary class="relative block cursor-pointer">
+                <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Jax_Beach_2024_Pier.jpg?width=900" alt="Jacksonville Beach Pier" class="h-56 w-full object-cover transition duration-500 group-hover:scale-105 sm:h-64" />
+                <div class="absolute inset-0 bg-gradient-to-t from-black/85 via-black/10 to-transparent"></div>
+                <span class="absolute left-4 top-4 rounded-full bg-sky-600 px-3 py-1 text-xs font-bold uppercase tracking-wider text-white shadow">Duval County</span>
+                <svg class="guide-chevron absolute right-4 top-4 h-8 w-8 rounded-full bg-white/90 p-1.5 text-momentum-blue shadow transition-transform duration-200" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" /></svg>
+                <div class="absolute inset-x-0 bottom-0 p-5">
+                  <h3 class="font-serif text-2xl font-bold text-white drop-shadow-md">Jacksonville Beach</h3>
+                  <p class="mt-1 text-sm font-medium text-white/90 drop-shadow">Oceanfront living, a lively boardwalk, true beach-town energy.</p>
+                </div>
+              </summary>
+              <div class="border-t border-momentum-grayLight bg-white px-5 pb-7 pt-6 sm:px-6">
+                <p class="text-base leading-relaxed text-slate-700"><strong class="text-momentum-blue">Why people love it:</strong> Jacksonville Beach is the region's liveliest beach town — a walkable Beaches Town Center, an active pier, and a boardwalk lined with restaurants and bars. It draws buyers chasing an oceanfront lifestyle with year-round energy, from surfers to young professionals to retirees.</p>
+                <p class="mt-3 text-base leading-relaxed text-slate-700"><strong class="text-momentum-blue">Homes you'll find:</strong> Classic beach cottages and mid-century bungalows alongside luxury oceanfront condos and new-construction coastal homes.</p>
+                <div class="mt-4 grid grid-cols-3 gap-3 rounded-xl bg-momentum-bgLight p-4 text-center">
+                  <div><p class="text-xs font-bold uppercase text-momentum-gray">Mayport</p><p class="mt-1 text-lg font-bold text-momentum-blue">~12 min</p></div>
+                  <div><p class="text-xs font-bold uppercase text-momentum-gray">NAS Jax</p><p class="mt-1 text-lg font-bold text-momentum-blue">~32 min</p></div>
+                  <div><p class="text-xs font-bold uppercase text-momentum-gray">Kings Bay</p><p class="mt-1 text-lg font-bold text-momentum-blue">~58 min</p></div>
+                </div>
+                <p class="mt-4 text-base leading-relaxed text-slate-700"><strong class="text-momentum-blue">Schools:</strong> Zoned Duval County Public Schools, with Seabreeze Elementary nearby and magnet access to Terry Parker's programs and Douglas Anderson.</p>
+                <p class="mt-3 text-base leading-relaxed text-slate-700"><strong class="text-momentum-blue">Shopping, dining &amp; fun:</strong> Beaches Town Center's restaurants and boutiques, the SeaWalk Pavilion for events, the Jacksonville Beach Pier, and a boardwalk full of bars and live music.</p>
+                <div class="mt-6">
+                  <button type="button" onclick="openLeadModal('Jacksonville Beach', 'Duval County')" class="inline-flex items-center justify-center rounded-xl bg-momentum-blue px-6 py-3.5 text-base font-bold text-white transition hover:bg-momentum-blueHover">Ask About Jacksonville Beach &rarr;</button>
+                </div>
+              </div>
+            </details>
+
+            <details class="guide-card group overflow-hidden rounded-3xl border border-momentum-grayLight bg-white shadow-md transition hover:shadow-xl">
+              <summary class="relative block cursor-pointer">
+                <img src="https://commons.wikimedia.org/wiki/Special:FilePath/NeptuneBeachColl.png?width=900" alt="Neptune Beach, Florida" class="h-56 w-full object-cover transition duration-500 group-hover:scale-105 sm:h-64" />
+                <div class="absolute inset-0 bg-gradient-to-t from-black/85 via-black/10 to-transparent"></div>
+                <span class="absolute left-4 top-4 rounded-full bg-sky-600 px-3 py-1 text-xs font-bold uppercase tracking-wider text-white shadow">Duval County</span>
+                <svg class="guide-chevron absolute right-4 top-4 h-8 w-8 rounded-full bg-white/90 p-1.5 text-momentum-blue shadow transition-transform duration-200" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" /></svg>
+                <div class="absolute inset-x-0 bottom-0 p-5">
+                  <h3 class="font-serif text-2xl font-bold text-white drop-shadow-md">Neptune Beach</h3>
+                  <p class="mt-1 text-sm font-medium text-white/90 drop-shadow">A quieter, walkable beach town between Jax Beach and Atlantic Beach.</p>
+                </div>
+              </summary>
+              <div class="border-t border-momentum-grayLight bg-white px-5 pb-7 pt-6 sm:px-6">
+                <p class="text-base leading-relaxed text-slate-700"><strong class="text-momentum-blue">Why people love it:</strong> Neptune Beach trades some of Jacksonville Beach's nightlife energy for a calmer, more residential feel while staying just as walkable — Third Street's shops and cafes and a short stroll to the sand make it a favorite for families and buyers who want beach living without the crowds.</p>
+                <p class="mt-3 text-base leading-relaxed text-slate-700"><strong class="text-momentum-blue">Homes you'll find:</strong> Beach cottages, mid-century bungalows, and a growing number of newer coastal builds on smaller, walkable lots.</p>
+                <div class="mt-4 grid grid-cols-3 gap-3 rounded-xl bg-momentum-bgLight p-4 text-center">
+                  <div><p class="text-xs font-bold uppercase text-momentum-gray">Mayport</p><p class="mt-1 text-lg font-bold text-momentum-blue">~10 min</p></div>
+                  <div><p class="text-xs font-bold uppercase text-momentum-gray">NAS Jax</p><p class="mt-1 text-lg font-bold text-momentum-blue">~30 min</p></div>
+                  <div><p class="text-xs font-bold uppercase text-momentum-gray">Kings Bay</p><p class="mt-1 text-lg font-bold text-momentum-blue">~55 min</p></div>
+                </div>
+                <p class="mt-4 text-base leading-relaxed text-slate-700"><strong class="text-momentum-blue">Schools:</strong> Zoned Duval County Public Schools, with Neptune Beach Elementary in the neighborhood and magnet access to Douglas Anderson and Terry Parker.</p>
+                <p class="mt-3 text-base leading-relaxed text-slate-700"><strong class="text-momentum-blue">Shopping, dining &amp; fun:</strong> Third Street's boutiques and casual restaurants, quick access to the Beaches Town Center just south, and easy oceanfront walks or bike rides.</p>
+                <div class="mt-6 flex flex-wrap items-center gap-4">
+                  <button type="button" onclick="openLeadModal('Neptune Beach', 'Duval County')" class="inline-flex items-center justify-center rounded-xl bg-momentum-blue px-6 py-3.5 text-base font-bold text-white transition hover:bg-momentum-blueHover">Ask About Neptune Beach &rarr;</button>
+                  <a href="atlantic-neptune-beach.html" class="text-sm font-bold text-teal-600 hover:underline">Read the full guide &rarr;</a>
+                </div>
+              </div>
+            </details>
+
+            <details class="guide-card group overflow-hidden rounded-3xl border border-momentum-grayLight bg-white shadow-md transition hover:shadow-xl">
+              <summary class="relative block cursor-pointer">
+                <img src="https://commons.wikimedia.org/wiki/Special:FilePath/AtlanticBeachFLColl.png?width=900" alt="Atlantic Beach, Florida" class="h-56 w-full object-cover transition duration-500 group-hover:scale-105 sm:h-64" />
+                <div class="absolute inset-0 bg-gradient-to-t from-black/85 via-black/10 to-transparent"></div>
+                <span class="absolute left-4 top-4 rounded-full bg-sky-600 px-3 py-1 text-xs font-bold uppercase tracking-wider text-white shadow">Duval County</span>
+                <svg class="guide-chevron absolute right-4 top-4 h-8 w-8 rounded-full bg-white/90 p-1.5 text-momentum-blue shadow transition-transform duration-200" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" /></svg>
+                <div class="absolute inset-x-0 bottom-0 p-5">
+                  <h3 class="font-serif text-2xl font-bold text-white drop-shadow-md">Atlantic Beach</h3>
+                  <p class="mt-1 text-sm font-medium text-white/90 drop-shadow">Laid-back coastal charm, the shortest commute to Mayport.</p>
+                </div>
+              </summary>
+              <div class="border-t border-momentum-grayLight bg-white px-5 pb-7 pt-6 sm:px-6">
+                <p class="text-base leading-relaxed text-slate-700"><strong class="text-momentum-blue">Why people love it:</strong> Atlantic Beach has a slower, more residential pace than its beach-town neighbors, with a genuine small-town feel, mature tree canopy, and easy access to Dutton Island Preserve for kayaking and nature trails. It's a natural fit for Mayport-based families who want to live minutes from the gate.</p>
+                <p class="mt-3 text-base leading-relaxed text-slate-700"><strong class="text-momentum-blue">Homes you'll find:</strong> A mix of historic beach cottages, mid-century homes, and newer construction — some of the shortest commutes to Mayport in the entire region.</p>
+                <div class="mt-4 grid grid-cols-3 gap-3 rounded-xl bg-momentum-bgLight p-4 text-center">
+                  <div><p class="text-xs font-bold uppercase text-momentum-gray">Mayport</p><p class="mt-1 text-lg font-bold text-momentum-blue">~7 min</p></div>
+                  <div><p class="text-xs font-bold uppercase text-momentum-gray">NAS Jax</p><p class="mt-1 text-lg font-bold text-momentum-blue">~32 min</p></div>
+                  <div><p class="text-xs font-bold uppercase text-momentum-gray">Kings Bay</p><p class="mt-1 text-lg font-bold text-momentum-blue">~55 min</p></div>
+                </div>
+                <p class="mt-4 text-base leading-relaxed text-slate-700"><strong class="text-momentum-blue">Schools:</strong> Zoned Duval County Public Schools, with Atlantic Beach Elementary in the neighborhood and magnet access to Douglas Anderson.</p>
+                <p class="mt-3 text-base leading-relaxed text-slate-700"><strong class="text-momentum-blue">Shopping, dining &amp; fun:</strong> Atlantic Beach Town Center's shops and restaurants, Dutton Island Preserve's trails and paddling, and quick access to the Jacksonville Beach boardwalk just south.</p>
+                <div class="mt-6 flex flex-wrap items-center gap-4">
+                  <button type="button" onclick="openLeadModal('Atlantic Beach', 'Duval County')" class="inline-flex items-center justify-center rounded-xl bg-momentum-blue px-6 py-3.5 text-base font-bold text-white transition hover:bg-momentum-blueHover">Ask About Atlantic Beach &rarr;</button>
+                  <a href="atlantic-neptune-beach.html" class="text-sm font-bold text-teal-600 hover:underline">Read the full guide &rarr;</a>
+                </div>
+              </div>
+            </details>
+
+            <details class="guide-card group overflow-hidden rounded-3xl border border-momentum-grayLight bg-white shadow-md transition hover:shadow-xl">
+              <summary class="relative block cursor-pointer bg-gradient-to-br from-sky-800 to-sky-950 p-5">
+                <span class="rounded-full bg-sky-600 px-3 py-1 text-xs font-bold uppercase tracking-wider text-white shadow">Duval County</span>
+                <svg class="guide-chevron absolute right-4 top-4 h-8 w-8 rounded-full bg-white/90 p-1.5 text-momentum-blue shadow transition-transform duration-200" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" /></svg>
+                <div class="mt-16">
+                  <h3 class="font-serif text-2xl font-bold text-white drop-shadow-md">Mandarin</h3>
+                  <p class="mt-1 text-sm font-medium text-white/90 drop-shadow">Riverside suburbia with mature oaks, top schools, small-town roots.</p>
+                </div>
+              </summary>
+              <div class="border-t border-momentum-grayLight bg-white px-5 pb-7 pt-6 sm:px-6">
+                <p class="text-base leading-relaxed text-slate-700"><strong class="text-momentum-blue">Why people love it:</strong> Mandarin is one of Jacksonville's most established family suburbs — moss-draped oaks, riverfront parks, and a genuine community feel anchored by the Mandarin Museum and Walter Jones Historical Park. It's popular with families who want space, good schools, and river access without leaving the city.</p>
+                <p class="mt-3 text-base leading-relaxed text-slate-700"><strong class="text-momentum-blue">Homes you'll find:</strong> Established ranch and split-level homes from the 1970s-90s alongside newer subdivisions and riverfront estates along the St. Johns River.</p>
+                <div class="mt-4 grid grid-cols-3 gap-3 rounded-xl bg-momentum-bgLight p-4 text-center">
+                  <div><p class="text-xs font-bold uppercase text-momentum-gray">Mayport</p><p class="mt-1 text-lg font-bold text-momentum-blue">~38 min</p></div>
+                  <div><p class="text-xs font-bold uppercase text-momentum-gray">NAS Jax</p><p class="mt-1 text-lg font-bold text-momentum-blue">~28 min</p></div>
+                  <div><p class="text-xs font-bold uppercase text-momentum-gray">Kings Bay</p><p class="mt-1 text-lg font-bold text-momentum-blue">~62 min</p></div>
+                </div>
+                <p class="mt-4 text-base leading-relaxed text-slate-700"><strong class="text-momentum-blue">Schools:</strong> Zoned Duval County Public Schools, with several highly rated elementary and middle schools in the Mandarin feeder pattern and magnet access to Stanton and Douglas Anderson.</p>
+                <p class="mt-3 text-base leading-relaxed text-slate-700"><strong class="text-momentum-blue">Shopping, dining &amp; fun:</strong> Mandarin Landing and the San Jose Boulevard retail corridor for shopping and dining, plus Walter Jones Historical Park and the Mandarin Museum for outdoor history and river views.</p>
+                <div class="mt-6">
+                  <button type="button" onclick="openLeadModal('Mandarin', 'Duval County')" class="inline-flex items-center justify-center rounded-xl bg-momentum-blue px-6 py-3.5 text-base font-bold text-white transition hover:bg-momentum-blueHover">Ask About Mandarin &rarr;</button>
+                </div>
+              </div>
+            </details>
+
+            <details class="guide-card group overflow-hidden rounded-3xl border border-momentum-grayLight bg-white shadow-md transition hover:shadow-xl">
+              <summary class="relative block cursor-pointer bg-gradient-to-br from-sky-800 to-sky-950 p-5">
+                <span class="rounded-full bg-sky-600 px-3 py-1 text-xs font-bold uppercase tracking-wider text-white shadow">Duval County</span>
+                <svg class="guide-chevron absolute right-4 top-4 h-8 w-8 rounded-full bg-white/90 p-1.5 text-momentum-blue shadow transition-transform duration-200" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" /></svg>
+                <div class="mt-16">
+                  <h3 class="font-serif text-2xl font-bold text-white drop-shadow-md">Southside / Deerwood</h3>
+                  <p class="mt-1 text-sm font-medium text-white/90 drop-shadow">Executive homes and gated golf communities near the Town Center.</p>
+                </div>
+              </summary>
+              <div class="border-t border-momentum-grayLight bg-white px-5 pb-7 pt-6 sm:px-6">
+                <p class="text-base leading-relaxed text-slate-700"><strong class="text-momentum-blue">Why people love it:</strong> Southside and Deerwood offer an established, convenient suburban lifestyle centered around the St. Johns Town Center corridor — gated golf communities like Deerwood Country Club sit minutes from major employers, shopping, and the highway network, making it a favorite for professionals who want convenience without sacrificing space.</p>
+                <p class="mt-3 text-base leading-relaxed text-slate-700"><strong class="text-momentum-blue">Homes you'll find:</strong> Executive single-family homes, gated golf-course communities, and low-maintenance townhomes, generally on the higher end of the Duval County price range.</p>
+                <div class="mt-4 grid grid-cols-3 gap-3 rounded-xl bg-momentum-bgLight p-4 text-center">
+                  <div><p class="text-xs font-bold uppercase text-momentum-gray">Mayport</p><p class="mt-1 text-lg font-bold text-momentum-blue">~22 min</p></div>
+                  <div><p class="text-xs font-bold uppercase text-momentum-gray">NAS Jax</p><p class="mt-1 text-lg font-bold text-momentum-blue">~28 min</p></div>
+                  <div><p class="text-xs font-bold uppercase text-momentum-gray">Kings Bay</p><p class="mt-1 text-lg font-bold text-momentum-blue">~55 min</p></div>
+                </div>
+                <p class="mt-4 text-base leading-relaxed text-slate-700"><strong class="text-momentum-blue">Schools:</strong> Zoned Duval County Public Schools, with Twin Lakes Academy and Kernan Trail Elementary among nearby options.</p>
+                <p class="mt-3 text-base leading-relaxed text-slate-700"><strong class="text-momentum-blue">Shopping, dining &amp; fun:</strong> St. Johns Town Center's shopping and dining, Tinseltown's entertainment complex, and the Baymeadows/Butler Boulevard restaurant corridor all within a short drive.</p>
+                <div class="mt-6">
+                  <button type="button" onclick="openLeadModal('Southside / Deerwood', 'Duval County')" class="inline-flex items-center justify-center rounded-xl bg-momentum-blue px-6 py-3.5 text-base font-bold text-white transition hover:bg-momentum-blueHover">Ask About Southside / Deerwood &rarr;</button>
+                </div>
+              </div>
+            </details>
+
+          </div>
+        </div>
+        <!-- END DUVAL COUNTY -->
+
+        <!-- NASSAU COUNTY -->
+        <div class="mb-20">
+          <div class="relative mb-8 overflow-hidden rounded-3xl shadow-lg">
+            <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Fernandina_Beach,_FL,_Courthouse,_Nassau_County,_08-09-2010_(7).JPG?width=1600" alt="Nassau County Courthouse, Fernandina Beach" class="h-56 w-full object-cover sm:h-72" />
+            <div class="absolute inset-0 bg-gradient-to-r from-amber-950/90 via-amber-950/60 to-transparent"></div>
+            <div class="absolute inset-0 flex flex-col justify-center px-6 sm:px-10">
+              <p class="text-sm font-bold uppercase tracking-[0.2em] text-amber-200">Northeast Florida</p>
+              <h3 class="mt-1 font-serif text-4xl font-bold text-white drop-shadow-md sm:text-6xl">Nassau County</h3>
+              <p class="mt-2 max-w-md text-base font-medium text-white/90 drop-shadow sm:text-lg">Amelia Island charm, new-construction value, and the shortest commute to Kings Bay.</p>
+            </div>
+          </div>
+          <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+
+            <details class="guide-card group overflow-hidden rounded-3xl border border-momentum-grayLight bg-white shadow-md transition hover:shadow-xl">
+              <summary class="relative block cursor-pointer">
+                <img src="https://commons.wikimedia.org/wiki/Special:FilePath/FernandinaBeachMontage1.png?width=900" alt="Historic Downtown Fernandina Beach" class="h-56 w-full object-cover transition duration-500 group-hover:scale-105 sm:h-64" />
+                <div class="absolute inset-0 bg-gradient-to-t from-black/85 via-black/10 to-transparent"></div>
+                <span class="absolute left-4 top-4 rounded-full bg-amber-600 px-3 py-1 text-xs font-bold uppercase tracking-wider text-white shadow">Nassau County</span>
+                <svg class="guide-chevron absolute right-4 top-4 h-8 w-8 rounded-full bg-white/90 p-1.5 text-momentum-blue shadow transition-transform duration-200" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" /></svg>
+                <div class="absolute inset-x-0 bottom-0 p-5">
+                  <h3 class="font-serif text-2xl font-bold text-white drop-shadow-md">Historic Downtown Fernandina Beach</h3>
+                  <p class="mt-1 text-sm font-medium text-white/90 drop-shadow">Victorian waterfront charm on Amelia Island, a short hop to Kings Bay.</p>
+                </div>
+              </summary>
+              <div class="border-t border-momentum-grayLight bg-white px-5 pb-7 pt-6 sm:px-6">
+                <p class="text-base leading-relaxed text-slate-700"><strong class="text-momentum-blue">Why people love it:</strong> Fernandina Beach's historic downtown is one of the most charming waterfront districts in Northeast Florida — Centre Street's Victorian storefronts, a working shrimp-boat marina, and a walkable grid of preserved 19th-century homes give it a genuine small-town, island-life character that draws both retirees and Kings Bay families.</p>
+                <p class="mt-3 text-base leading-relaxed text-slate-700"><strong class="text-momentum-blue">Homes you'll find:</strong> Historic Victorian, Queen Anne, and shotgun-style homes in the historic district, with condos and newer construction available closer to the island's outskirts.</p>
+                <div class="mt-4 grid grid-cols-3 gap-3 rounded-xl bg-momentum-bgLight p-4 text-center">
+                  <div><p class="text-xs font-bold uppercase text-momentum-gray">Kings Bay</p><p class="mt-1 text-lg font-bold text-momentum-blue">~22 min</p></div>
+                  <div><p class="text-xs font-bold uppercase text-momentum-gray">NAS Jax</p><p class="mt-1 text-lg font-bold text-momentum-blue">~42 min</p></div>
+                  <div><p class="text-xs font-bold uppercase text-momentum-gray">Mayport</p><p class="mt-1 text-lg font-bold text-momentum-blue">~42 min</p></div>
+                </div>
+                <p class="mt-4 text-base leading-relaxed text-slate-700"><strong class="text-momentum-blue">Schools:</strong> Zoned Nassau County School District, with Fernandina Beach Elementary, Middle, and High School all serving the historic district.</p>
+                <p class="mt-3 text-base leading-relaxed text-slate-700"><strong class="text-momentum-blue">Shopping, dining &amp; fun:</strong> Centre Street's boutiques, galleries, and restaurants, the Fernandina Harbor Marina, Fort Clinch State Park, and Amelia Island's beaches all within walking or short driving distance.</p>
+                <div class="mt-6">
+                  <button type="button" onclick="openLeadModal('Historic Downtown Fernandina Beach', 'Nassau County')" class="inline-flex items-center justify-center rounded-xl bg-momentum-blue px-6 py-3.5 text-base font-bold text-white transition hover:bg-momentum-blueHover">Ask About Fernandina Beach &rarr;</button>
+                </div>
+              </div>
+            </details>
+
+            <details class="guide-card group overflow-hidden rounded-3xl border border-momentum-grayLight bg-white shadow-md transition hover:shadow-xl">
+              <summary class="relative block cursor-pointer">
+                <img src="https://wildlight.com/wp-content/uploads/2026/03/wildlight-neighborhood-768x579-1.png" alt="Wildlight neighborhood, Yulee" class="h-56 w-full object-cover transition duration-500 group-hover:scale-105 sm:h-64" />
+                <div class="absolute inset-0 bg-gradient-to-t from-black/85 via-black/10 to-transparent"></div>
+                <span class="absolute left-4 top-4 rounded-full bg-amber-600 px-3 py-1 text-xs font-bold uppercase tracking-wider text-white shadow">Nassau County</span>
+                <svg class="guide-chevron absolute right-4 top-4 h-8 w-8 rounded-full bg-white/90 p-1.5 text-momentum-blue shadow transition-transform duration-200" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" /></svg>
+                <div class="absolute inset-x-0 bottom-0 p-5">
+                  <h3 class="font-serif text-2xl font-bold text-white drop-shadow-md">Wildlight</h3>
+                  <p class="mt-1 text-sm font-medium text-white/90 drop-shadow">Master-planned new construction with an on-site K-8 school.</p>
+                </div>
+              </summary>
+              <div class="border-t border-momentum-grayLight bg-white px-5 pb-7 pt-6 sm:px-6">
+                <p class="text-base leading-relaxed text-slate-700"><strong class="text-momentum-blue">Why people love it:</strong> Wildlight is the community we point most Kings Bay PCS families toward — new construction, an on-site public K-8 school, and miles of greenway trails, all inside a short drive of the base and Fernandina Beach.</p>
+                <p class="mt-3 text-base leading-relaxed text-slate-700"><strong class="text-momentum-blue">Homes you'll find:</strong> New construction from multiple builders, ranging from starter single-family homes to larger executive floor plans.</p>
+                <div class="mt-4 grid grid-cols-3 gap-3 rounded-xl bg-momentum-bgLight p-4 text-center">
+                  <div><p class="text-xs font-bold uppercase text-momentum-gray">Kings Bay</p><p class="mt-1 text-lg font-bold text-momentum-blue">~17 min</p></div>
+                  <div><p class="text-xs font-bold uppercase text-momentum-gray">NAS Jax</p><p class="mt-1 text-lg font-bold text-momentum-blue">~37 min</p></div>
+                  <div><p class="text-xs font-bold uppercase text-momentum-gray">Mayport</p><p class="mt-1 text-lg font-bold text-momentum-blue">~40 min</p></div>
+                </div>
+                <p class="mt-4 text-base leading-relaxed text-slate-700"><strong class="text-momentum-blue">Schools:</strong> Zoned Nassau County School District, including Wildlight Elementary, located inside the community.</p>
+                <p class="mt-3 text-base leading-relaxed text-slate-700"><strong class="text-momentum-blue">Shopping, dining &amp; fun:</strong> The Wildlight Village Center's shops and restaurants, plus quick access to Fernandina Beach's historic downtown and Amelia Island's beaches.</p>
+                <div class="mt-6 flex flex-wrap items-center gap-4">
+                  <button type="button" onclick="openLeadModal('Wildlight', 'Nassau County')" class="inline-flex items-center justify-center rounded-xl bg-momentum-blue px-6 py-3.5 text-base font-bold text-white transition hover:bg-momentum-blueHover">Ask About Wildlight &rarr;</button>
+                  <a href="wildlight.html" class="text-sm font-bold text-teal-600 hover:underline">Read the full guide &rarr;</a>
+                </div>
+              </div>
+            </details>
+
+            <details class="guide-card group overflow-hidden rounded-3xl border border-momentum-grayLight bg-white shadow-md transition hover:shadow-xl">
+              <summary class="relative block cursor-pointer">
+                <img src="https://tributaryliving.com/wp-content/uploads/2025/09/tributary-hp-home-search-exterior-left-2025-min.jpg" alt="Tributary community, Yulee" class="h-56 w-full object-cover transition duration-500 group-hover:scale-105 sm:h-64" />
+                <div class="absolute inset-0 bg-gradient-to-t from-black/85 via-black/10 to-transparent"></div>
+                <span class="absolute left-4 top-4 rounded-full bg-amber-600 px-3 py-1 text-xs font-bold uppercase tracking-wider text-white shadow">Nassau County</span>
+                <svg class="guide-chevron absolute right-4 top-4 h-8 w-8 rounded-full bg-white/90 p-1.5 text-momentum-blue shadow transition-transform duration-200" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" /></svg>
+                <div class="absolute inset-x-0 bottom-0 p-5">
+                  <h3 class="font-serif text-2xl font-bold text-white drop-shadow-md">Tributary</h3>
+                  <p class="mt-1 text-sm font-medium text-white/90 drop-shadow">A newer resort-style master plan in Yulee.</p>
+                </div>
+              </summary>
+              <div class="border-t border-momentum-grayLight bg-white px-5 pb-7 pt-6 sm:px-6">
+                <p class="text-base leading-relaxed text-slate-700"><strong class="text-momentum-blue">Why people love it:</strong> Tributary is one of Yulee's newer master-planned communities, built around resort-style amenities — pools, fitness centers, and community events — that appeal to families who want a built-in social calendar along with new construction.</p>
+                <p class="mt-3 text-base leading-relaxed text-slate-700"><strong class="text-momentum-blue">Homes you'll find:</strong> New single-family construction across a range of builders and floor plans, generally similar in scale to Wildlight.</p>
+                <div class="mt-4 grid grid-cols-3 gap-3 rounded-xl bg-momentum-bgLight p-4 text-center">
+                  <div><p class="text-xs font-bold uppercase text-momentum-gray">Kings Bay</p><p class="mt-1 text-lg font-bold text-momentum-blue">~17 min</p></div>
+                  <div><p class="text-xs font-bold uppercase text-momentum-gray">NAS Jax</p><p class="mt-1 text-lg font-bold text-momentum-blue">~37 min</p></div>
+                  <div><p class="text-xs font-bold uppercase text-momentum-gray">Mayport</p><p class="mt-1 text-lg font-bold text-momentum-blue">~40 min</p></div>
+                </div>
+                <p class="mt-4 text-base leading-relaxed text-slate-700"><strong class="text-momentum-blue">Schools:</strong> Zoned Nassau County School District, with Yulee Elementary, Middle, and High School serving the area.</p>
+                <p class="mt-3 text-base leading-relaxed text-slate-700"><strong class="text-momentum-blue">Shopping, dining &amp; fun:</strong> Growing retail along the SR 200/A1A corridor, with quick access to Wildlight's village center and Fernandina Beach's downtown and beaches.</p>
+                <div class="mt-6">
+                  <button type="button" onclick="openLeadModal('Tributary', 'Nassau County')" class="inline-flex items-center justify-center rounded-xl bg-momentum-blue px-6 py-3.5 text-base font-bold text-white transition hover:bg-momentum-blueHover">Ask About Tributary &rarr;</button>
+                </div>
+              </div>
+            </details>
+
+            <details class="guide-card group overflow-hidden rounded-3xl border border-momentum-grayLight bg-white shadow-md transition hover:shadow-xl">
+              <summary class="relative block cursor-pointer">
+                <img src="https://sedaconstruction.com/wp-content/uploads/2024/08/Sandy-Ridge-featured-community-image.jpg" alt="Sandy Ridge community, Yulee" class="h-56 w-full object-cover transition duration-500 group-hover:scale-105 sm:h-64" />
+                <div class="absolute inset-0 bg-gradient-to-t from-black/85 via-black/10 to-transparent"></div>
+                <span class="absolute left-4 top-4 rounded-full bg-amber-600 px-3 py-1 text-xs font-bold uppercase tracking-wider text-white shadow">Nassau County</span>
+                <svg class="guide-chevron absolute right-4 top-4 h-8 w-8 rounded-full bg-white/90 p-1.5 text-momentum-blue shadow transition-transform duration-200" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" /></svg>
+                <div class="absolute inset-x-0 bottom-0 p-5">
+                  <h3 class="font-serif text-2xl font-bold text-white drop-shadow-md">Sandy Ridge (Yulee)</h3>
+                  <p class="mt-1 text-sm font-medium text-white/90 drop-shadow">A more affordable new-construction entry point.</p>
+                </div>
+              </summary>
+              <div class="border-t border-momentum-grayLight bg-white px-5 pb-7 pt-6 sm:px-6">
+                <p class="text-base leading-relaxed text-slate-700"><strong class="text-momentum-blue">Why people love it:</strong> Sandy Ridge gives Yulee buyers a more affordable new-construction option than Wildlight or Tributary, while staying just as close to Kings Bay and I-95 — a practical choice for PCS families working with a tighter BAH budget.</p>
+                <p class="mt-3 text-base leading-relaxed text-slate-700"><strong class="text-momentum-blue">Homes you'll find:</strong> New single-family construction, generally at a lower price point than neighboring Yulee communities.</p>
+                <div class="mt-4 grid grid-cols-3 gap-3 rounded-xl bg-momentum-bgLight p-4 text-center">
+                  <div><p class="text-xs font-bold uppercase text-momentum-gray">Kings Bay</p><p class="mt-1 text-lg font-bold text-momentum-blue">~15 min</p></div>
+                  <div><p class="text-xs font-bold uppercase text-momentum-gray">NAS Jax</p><p class="mt-1 text-lg font-bold text-momentum-blue">~35 min</p></div>
+                  <div><p class="text-xs font-bold uppercase text-momentum-gray">Mayport</p><p class="mt-1 text-lg font-bold text-momentum-blue">~40 min</p></div>
+                </div>
+                <p class="mt-4 text-base leading-relaxed text-slate-700"><strong class="text-momentum-blue">Schools:</strong> Zoned Nassau County School District, with Yulee Elementary, Middle, and High School serving the area.</p>
+                <p class="mt-3 text-base leading-relaxed text-slate-700"><strong class="text-momentum-blue">Shopping, dining &amp; fun:</strong> Close to the same Wildlight Village Center and Fernandina Beach amenities as neighboring communities, with quick I-95 access for day trips.</p>
+                <div class="mt-6">
+                  <button type="button" onclick="openLeadModal('Sandy Ridge (Yulee)', 'Nassau County')" class="inline-flex items-center justify-center rounded-xl bg-momentum-blue px-6 py-3.5 text-base font-bold text-white transition hover:bg-momentum-blueHover">Ask About Sandy Ridge &rarr;</button>
+                </div>
+              </div>
+            </details>
+
+          </div>
+        </div>
+        <!-- END NASSAU COUNTY -->
+
+        <!-- CLAY COUNTY -->
+        <div class="mb-20">
+          <div class="relative mb-8 overflow-hidden rounded-3xl shadow-lg">
+            <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Clay_County_Courthouse_New.jpg?width=1600" alt="Clay County Courthouse, Green Cove Springs" class="h-56 w-full object-cover sm:h-72" />
+            <div class="absolute inset-0 bg-gradient-to-r from-emerald-950/90 via-emerald-950/60 to-transparent"></div>
+            <div class="absolute inset-0 flex flex-col justify-center px-6 sm:px-10">
+              <p class="text-sm font-bold uppercase tracking-[0.2em] text-emerald-200">Northeast Florida</p>
+              <h3 class="mt-1 font-serif text-4xl font-bold text-white drop-shadow-md sm:text-6xl">Clay County</h3>
+              <p class="mt-2 max-w-md text-base font-medium text-white/90 drop-shadow sm:text-lg">Riverside suburbs, top-rated schools, and some of the region's best home-value stretch.</p>
+            </div>
+          </div>
+          <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+
+            <details class="guide-card group overflow-hidden rounded-3xl border border-momentum-grayLight bg-white shadow-md transition hover:shadow-xl">
+              <summary class="relative block cursor-pointer">
+                <img src="https://commons.wikimedia.org/wiki/Special:FilePath/DoctorsLakeOP2.jpg?width=900" alt="Doctors Lake, Fleming Island, Clay County" class="h-56 w-full object-cover transition duration-500 group-hover:scale-105 sm:h-64" />
+                <div class="absolute inset-0 bg-gradient-to-t from-black/85 via-black/10 to-transparent"></div>
+                <span class="absolute left-4 top-4 rounded-full bg-emerald-600 px-3 py-1 text-xs font-bold uppercase tracking-wider text-white shadow">Clay County</span>
+                <svg class="guide-chevron absolute right-4 top-4 h-8 w-8 rounded-full bg-white/90 p-1.5 text-momentum-blue shadow transition-transform duration-200" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" /></svg>
+                <div class="absolute inset-x-0 bottom-0 p-5">
+                  <h3 class="font-serif text-2xl font-bold text-white drop-shadow-md">Fleming Island</h3>
+                  <p class="mt-1 text-sm font-medium text-white/90 drop-shadow">Riverside suburb on Doctors Lake with top Clay County schools.</p>
+                </div>
+              </summary>
+              <div class="border-t border-momentum-grayLight bg-white px-5 pb-7 pt-6 sm:px-6">
+                <p class="text-base leading-relaxed text-slate-700"><strong class="text-momentum-blue">Why people love it:</strong> Fleming Island is the broader Clay County community built along Doctors Lake and the St. Johns River — top-rated schools, a well-established Town Center, and a short commute to NAS Jax make it one of the most requested addresses for military and civilian buyers alike.</p>
+                <p class="mt-3 text-base leading-relaxed text-slate-700"><strong class="text-momentum-blue">Homes you'll find:</strong> A wide range from established 1990s-2000s neighborhoods to newer construction and riverfront estates, including the well-known Fleming Island Plantation community.</p>
+                <div class="mt-4 grid grid-cols-3 gap-3 rounded-xl bg-momentum-bgLight p-4 text-center">
+                  <div><p class="text-xs font-bold uppercase text-momentum-gray">NAS Jax</p><p class="mt-1 text-lg font-bold text-momentum-blue">~13 min</p></div>
+                  <div><p class="text-xs font-bold uppercase text-momentum-gray">Mayport</p><p class="mt-1 text-lg font-bold text-momentum-blue">~42 min</p></div>
+                  <div><p class="text-xs font-bold uppercase text-momentum-gray">Kings Bay</p><p class="mt-1 text-lg font-bold text-momentum-blue">~58 min</p></div>
+                </div>
+                <p class="mt-4 text-base leading-relaxed text-slate-700"><strong class="text-momentum-blue">Schools:</strong> Zoned Clay County School District, including Fleming Island High School, consistently one of the top-rated high schools in the region.</p>
+                <p class="mt-3 text-base leading-relaxed text-slate-700"><strong class="text-momentum-blue">Shopping, dining &amp; fun:</strong> Fleming Island Town Center's shopping and dining, plus boating and fishing on Doctors Lake and the St. Johns River.</p>
+                <div class="mt-6 flex flex-wrap items-center gap-4">
+                  <button type="button" onclick="openLeadModal('Fleming Island', 'Clay County')" class="inline-flex items-center justify-center rounded-xl bg-momentum-blue px-6 py-3.5 text-base font-bold text-white transition hover:bg-momentum-blueHover">Ask About Fleming Island &rarr;</button>
+                  <a href="fleming-island-plantation.html" class="text-sm font-bold text-teal-600 hover:underline">Read the full guide &rarr;</a>
+                </div>
+              </div>
+            </details>
+
+            <details class="guide-card group overflow-hidden rounded-3xl border border-momentum-grayLight bg-white shadow-md transition hover:shadow-xl">
+              <summary class="relative block cursor-pointer">
+                <img src="https://www.oakleafresidents.com/s/img/emotionheader.jpg" alt="Oakleaf Plantation, Clay County" class="h-56 w-full object-cover transition duration-500 group-hover:scale-105 sm:h-64" />
+                <div class="absolute inset-0 bg-gradient-to-t from-black/85 via-black/10 to-transparent"></div>
+                <span class="absolute left-4 top-4 rounded-full bg-emerald-600 px-3 py-1 text-xs font-bold uppercase tracking-wider text-white shadow">Clay County</span>
+                <svg class="guide-chevron absolute right-4 top-4 h-8 w-8 rounded-full bg-white/90 p-1.5 text-momentum-blue shadow transition-transform duration-200" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" /></svg>
+                <div class="absolute inset-x-0 bottom-0 p-5">
+                  <h3 class="font-serif text-2xl font-bold text-white drop-shadow-md">Oakleaf Plantation</h3>
+                  <p class="mt-1 text-sm font-medium text-white/90 drop-shadow">Value-focused new construction with amenities and VA-friendly pricing.</p>
+                </div>
+              </summary>
+              <div class="border-t border-momentum-grayLight bg-white px-5 pb-7 pt-6 sm:px-6">
+                <p class="text-base leading-relaxed text-slate-700"><strong class="text-momentum-blue">Why people love it:</strong> Oakleaf is where we send buyers who want Clay County schools and a full amenity package — pools, trails, a town center — without stretching into Nocatee or Ponte Vedra pricing.</p>
+                <p class="mt-3 text-base leading-relaxed text-slate-700"><strong class="text-momentum-blue">Homes you'll find:</strong> Predominantly new and near-new single-family construction across a wide range of price points and floor plans.</p>
+                <div class="mt-4 grid grid-cols-3 gap-3 rounded-xl bg-momentum-bgLight p-4 text-center">
+                  <div><p class="text-xs font-bold uppercase text-momentum-gray">NAS Jax</p><p class="mt-1 text-lg font-bold text-momentum-blue">~18 min</p></div>
+                  <div><p class="text-xs font-bold uppercase text-momentum-gray">Mayport</p><p class="mt-1 text-lg font-bold text-momentum-blue">~42 min</p></div>
+                  <div><p class="text-xs font-bold uppercase text-momentum-gray">Kings Bay</p><p class="mt-1 text-lg font-bold text-momentum-blue">~60 min</p></div>
+                </div>
+                <p class="mt-4 text-base leading-relaxed text-slate-700"><strong class="text-momentum-blue">Schools:</strong> Zoned Clay County School District, including Oakleaf High School and Oakleaf Village Elementary.</p>
+                <p class="mt-3 text-base leading-relaxed text-slate-700"><strong class="text-momentum-blue">Shopping, dining &amp; fun:</strong> Oakleaf Town Center's shops and restaurants, plus community pools, trails, and Campfire Park within the neighborhood.</p>
+                <div class="mt-6 flex flex-wrap items-center gap-4">
+                  <button type="button" onclick="openLeadModal('Oakleaf Plantation', 'Clay County')" class="inline-flex items-center justify-center rounded-xl bg-momentum-blue px-6 py-3.5 text-base font-bold text-white transition hover:bg-momentum-blueHover">Ask About Oakleaf Plantation &rarr;</button>
+                  <a href="oakleaf-plantation.html" class="text-sm font-bold text-teal-600 hover:underline">Read the full guide &rarr;</a>
+                </div>
+              </div>
+            </details>
+
+            <details class="guide-card group overflow-hidden rounded-3xl border border-momentum-grayLight bg-white shadow-md transition hover:shadow-xl">
+              <summary class="relative block cursor-pointer">
+                <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Orange_Park_FL_Club_Continental_St_Johns01.jpg?width=900" alt="St. Johns River at Club Continental, Orange Park" class="h-56 w-full object-cover transition duration-500 group-hover:scale-105 sm:h-64" />
+                <div class="absolute inset-0 bg-gradient-to-t from-black/85 via-black/10 to-transparent"></div>
+                <span class="absolute left-4 top-4 rounded-full bg-emerald-600 px-3 py-1 text-xs font-bold uppercase tracking-wider text-white shadow">Clay County</span>
+                <svg class="guide-chevron absolute right-4 top-4 h-8 w-8 rounded-full bg-white/90 p-1.5 text-momentum-blue shadow transition-transform duration-200" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" /></svg>
+                <div class="absolute inset-x-0 bottom-0 p-5">
+                  <h3 class="font-serif text-2xl font-bold text-white drop-shadow-md">Orange Park</h3>
+                  <p class="mt-1 text-sm font-medium text-white/90 drop-shadow">Established Clay County town with an easy NAS Jax commute.</p>
+                </div>
+              </summary>
+              <div class="border-t border-momentum-grayLight bg-white px-5 pb-7 pt-6 sm:px-6">
+                <p class="text-base leading-relaxed text-slate-700"><strong class="text-momentum-blue">Why people love it:</strong> Orange Park is one of Clay County's most established communities — a mix of legacy neighborhoods and steady redevelopment centered around the Orange Park Mall corridor, popular with NAS Jax families who want an easy commute and a full range of housing options.</p>
+                <p class="mt-3 text-base leading-relaxed text-slate-700"><strong class="text-momentum-blue">Homes you'll find:</strong> Mid-century and 1980s-2000s single-family homes throughout established neighborhoods, with newer construction filling in along the outskirts.</p>
+                <div class="mt-4 grid grid-cols-3 gap-3 rounded-xl bg-momentum-bgLight p-4 text-center">
+                  <div><p class="text-xs font-bold uppercase text-momentum-gray">NAS Jax</p><p class="mt-1 text-lg font-bold text-momentum-blue">~12 min</p></div>
+                  <div><p class="text-xs font-bold uppercase text-momentum-gray">Mayport</p><p class="mt-1 text-lg font-bold text-momentum-blue">~40 min</p></div>
+                  <div><p class="text-xs font-bold uppercase text-momentum-gray">Kings Bay</p><p class="mt-1 text-lg font-bold text-momentum-blue">~58 min</p></div>
+                </div>
+                <p class="mt-4 text-base leading-relaxed text-slate-700"><strong class="text-momentum-blue">Schools:</strong> Zoned Clay County School District, including Orange Park High School and Grove Park Elementary.</p>
+                <p class="mt-3 text-base leading-relaxed text-slate-700"><strong class="text-momentum-blue">Shopping, dining &amp; fun:</strong> Orange Park Mall and The Grove shopping district, the Thrasher-Horne Center for performing arts, and a wide range of casual dining along Blanding Boulevard.</p>
+                <div class="mt-6">
+                  <button type="button" onclick="openLeadModal('Orange Park', 'Clay County')" class="inline-flex items-center justify-center rounded-xl bg-momentum-blue px-6 py-3.5 text-base font-bold text-white transition hover:bg-momentum-blueHover">Ask About Orange Park &rarr;</button>
+                </div>
+              </div>
+            </details>
+
+            <details class="guide-card group overflow-hidden rounded-3xl border border-momentum-grayLight bg-white shadow-md transition hover:shadow-xl">
+              <summary class="relative block cursor-pointer">
+                <img src="https://commons.wikimedia.org/wiki/Special:FilePath/GreenCoveCollection.png?width=900" alt="Green Cove Springs, Clay County" class="h-56 w-full object-cover transition duration-500 group-hover:scale-105 sm:h-64" />
+                <div class="absolute inset-0 bg-gradient-to-t from-black/85 via-black/10 to-transparent"></div>
+                <span class="absolute left-4 top-4 rounded-full bg-emerald-600 px-3 py-1 text-xs font-bold uppercase tracking-wider text-white shadow">Clay County</span>
+                <svg class="guide-chevron absolute right-4 top-4 h-8 w-8 rounded-full bg-white/90 p-1.5 text-momentum-blue shadow transition-transform duration-200" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" /></svg>
+                <div class="absolute inset-x-0 bottom-0 p-5">
+                  <h3 class="font-serif text-2xl font-bold text-white drop-shadow-md">Green Cove Springs</h3>
+                  <p class="mt-1 text-sm font-medium text-white/90 drop-shadow">Small-town riverfront charm with growing new construction.</p>
+                </div>
+              </summary>
+              <div class="border-t border-momentum-grayLight bg-white px-5 pb-7 pt-6 sm:px-6">
+                <p class="text-base leading-relaxed text-slate-700"><strong class="text-momentum-blue">Why people love it:</strong> Green Cove Springs keeps a genuine small-town feel — a historic downtown along Walnut Street, a namesake spring-fed pool park, and riverfront access on the St. Johns River — while new construction communities on its outskirts bring more affordable entry points to Clay County.</p>
+                <p class="mt-3 text-base leading-relaxed text-slate-700"><strong class="text-momentum-blue">Homes you'll find:</strong> Historic homes in the downtown core, with a growing supply of new single-family construction in surrounding developments.</p>
+                <div class="mt-4 grid grid-cols-3 gap-3 rounded-xl bg-momentum-bgLight p-4 text-center">
+                  <div><p class="text-xs font-bold uppercase text-momentum-gray">NAS Jax</p><p class="mt-1 text-lg font-bold text-momentum-blue">~23 min</p></div>
+                  <div><p class="text-xs font-bold uppercase text-momentum-gray">Mayport</p><p class="mt-1 text-lg font-bold text-momentum-blue">~50 min</p></div>
+                  <div><p class="text-xs font-bold uppercase text-momentum-gray">Kings Bay</p><p class="mt-1 text-lg font-bold text-momentum-blue">~65 min</p></div>
+                </div>
+                <p class="mt-4 text-base leading-relaxed text-slate-700"><strong class="text-momentum-blue">Schools:</strong> Zoned Clay County School District, including Charles E. Bennett Elementary and Clay High School.</p>
+                <p class="mt-3 text-base leading-relaxed text-slate-700"><strong class="text-momentum-blue">Shopping, dining &amp; fun:</strong> Walnut Street's small-town shops and restaurants, the Spring Park pool and green space, and Reynolds Park Marina for boating.</p>
+                <div class="mt-6">
+                  <button type="button" onclick="openLeadModal('Green Cove Springs', 'Clay County')" class="inline-flex items-center justify-center rounded-xl bg-momentum-blue px-6 py-3.5 text-base font-bold text-white transition hover:bg-momentum-blueHover">Ask About Green Cove Springs &rarr;</button>
+                </div>
+              </div>
+            </details>
+
+            <details class="guide-card group overflow-hidden rounded-3xl border border-momentum-grayLight bg-white shadow-md transition hover:shadow-xl">
+              <summary class="relative block cursor-pointer">
+                <img src="https://commons.wikimedia.org/wiki/Special:FilePath/MiddleburgFLMontage.png?width=900" alt="Middleburg, Clay County" class="h-56 w-full object-cover transition duration-500 group-hover:scale-105 sm:h-64" />
+                <div class="absolute inset-0 bg-gradient-to-t from-black/85 via-black/10 to-transparent"></div>
+                <span class="absolute left-4 top-4 rounded-full bg-emerald-600 px-3 py-1 text-xs font-bold uppercase tracking-wider text-white shadow">Clay County</span>
+                <svg class="guide-chevron absolute right-4 top-4 h-8 w-8 rounded-full bg-white/90 p-1.5 text-momentum-blue shadow transition-transform duration-200" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" /></svg>
+                <div class="absolute inset-x-0 bottom-0 p-5">
+                  <h3 class="font-serif text-2xl font-bold text-white drop-shadow-md">Middleburg</h3>
+                  <p class="mt-1 text-sm font-medium text-white/90 drop-shadow">Room to breathe — larger lots and a rural-suburban feel.</p>
+                </div>
+              </summary>
+              <div class="border-t border-momentum-grayLight bg-white px-5 pb-7 pt-6 sm:px-6">
+                <p class="text-base leading-relaxed text-slate-700"><strong class="text-momentum-blue">Why people love it:</strong> Middleburg is the choice for buyers who want more land and a quieter, rural-suburban pace without leaving Clay County's school district — larger lots, Black Creek access, and a genuine country feel, all still within a reasonable NAS Jax commute.</p>
+                <p class="mt-3 text-base leading-relaxed text-slate-700"><strong class="text-momentum-blue">Homes you'll find:</strong> Larger-lot single-family homes, some with acreage, alongside a growing number of new-construction subdivisions.</p>
+                <div class="mt-4 grid grid-cols-3 gap-3 rounded-xl bg-momentum-bgLight p-4 text-center">
+                  <div><p class="text-xs font-bold uppercase text-momentum-gray">NAS Jax</p><p class="mt-1 text-lg font-bold text-momentum-blue">~23 min</p></div>
+                  <div><p class="text-xs font-bold uppercase text-momentum-gray">Mayport</p><p class="mt-1 text-lg font-bold text-momentum-blue">~52 min</p></div>
+                  <div><p class="text-xs font-bold uppercase text-momentum-gray">Kings Bay</p><p class="mt-1 text-lg font-bold text-momentum-blue">~68 min</p></div>
+                </div>
+                <p class="mt-4 text-base leading-relaxed text-slate-700"><strong class="text-momentum-blue">Schools:</strong> Zoned Clay County School District, including Middleburg High School and Lake Asbury Elementary.</p>
+                <p class="mt-3 text-base leading-relaxed text-slate-700"><strong class="text-momentum-blue">Shopping, dining &amp; fun:</strong> Casual dining along the Blanding Boulevard corridor and Black Creek for kayaking, fishing, and boating.</p>
+                <div class="mt-6">
+                  <button type="button" onclick="openLeadModal('Middleburg', 'Clay County')" class="inline-flex items-center justify-center rounded-xl bg-momentum-blue px-6 py-3.5 text-base font-bold text-white transition hover:bg-momentum-blueHover">Ask About Middleburg &rarr;</button>
+                </div>
+              </div>
+            </details>
+
+          </div>
+        </div>
+        <!-- END CLAY COUNTY -->
+
+        <!-- ST. JOHNS COUNTY -->
+        <div class="mb-6">
+          <div class="relative mb-8 overflow-hidden rounded-3xl shadow-lg">
+            <img src="https://commons.wikimedia.org/wiki/Special:FilePath/St._Augustine,_FL,_Courthouse,_St._Johns_County,_08-09-2010_(3).JPG?width=1600" alt="St. Johns County Courthouse, St. Augustine" class="h-56 w-full object-cover sm:h-72" />
+            <div class="absolute inset-0 bg-gradient-to-r from-indigo-950/90 via-indigo-950/60 to-transparent"></div>
+            <div class="absolute inset-0 flex flex-col justify-center px-6 sm:px-10">
+              <p class="text-sm font-bold uppercase tracking-[0.2em] text-indigo-200">Northeast Florida</p>
+              <h3 class="mt-1 font-serif text-4xl font-bold text-white drop-shadow-md sm:text-6xl">St. Johns County</h3>
+              <p class="mt-2 max-w-md text-base font-medium text-white/90 drop-shadow sm:text-lg">Luxury coast, historic St. Augustine, and Florida's most-decorated public schools.</p>
+            </div>
+          </div>
+          <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+
+            <details class="guide-card group overflow-hidden rounded-3xl border border-momentum-grayLight bg-white shadow-md transition hover:shadow-xl">
+              <summary class="relative block cursor-pointer">
+                <img src="https://commons.wikimedia.org/wiki/Special:FilePath/New_Palm_Valley_Bridge.jpg?width=900" alt="Palm Valley Bridge, Ponte Vedra Beach" class="h-56 w-full object-cover transition duration-500 group-hover:scale-105 sm:h-64" />
+                <div class="absolute inset-0 bg-gradient-to-t from-black/85 via-black/10 to-transparent"></div>
+                <span class="absolute left-4 top-4 rounded-full bg-indigo-600 px-3 py-1 text-xs font-bold uppercase tracking-wider text-white shadow">St. Johns County</span>
+                <svg class="guide-chevron absolute right-4 top-4 h-8 w-8 rounded-full bg-white/90 p-1.5 text-momentum-blue shadow transition-transform duration-200" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" /></svg>
+                <div class="absolute inset-x-0 bottom-0 p-5">
+                  <h3 class="font-serif text-2xl font-bold text-white drop-shadow-md">Ponte Vedra Beach</h3>
+                  <p class="mt-1 text-sm font-medium text-white/90 drop-shadow">Luxury coastal living, top schools, and TPC Sawgrass golf.</p>
+                </div>
+              </summary>
+              <div class="border-t border-momentum-grayLight bg-white px-5 pb-7 pt-6 sm:px-6">
+                <p class="text-base leading-relaxed text-slate-700"><strong class="text-momentum-blue">Why people love it:</strong> Ponte Vedra Beach is Northeast Florida's premier luxury coastal market — home to TPC Sawgrass and the PGA Tour headquarters, top-rated St. Johns County schools, and an upscale beach lifestyle that draws move-up buyers from across the country.</p>
+                <p class="mt-3 text-base leading-relaxed text-slate-700"><strong class="text-momentum-blue">Homes you'll find:</strong> Luxury single-family estates, golf-course homes, and oceanfront condos, generally at the top of the Northeast Florida price range.</p>
+                <div class="mt-4 grid grid-cols-3 gap-3 rounded-xl bg-momentum-bgLight p-4 text-center">
+                  <div><p class="text-xs font-bold uppercase text-momentum-gray">Mayport</p><p class="mt-1 text-lg font-bold text-momentum-blue">~22 min</p></div>
+                  <div><p class="text-xs font-bold uppercase text-momentum-gray">NAS Jax</p><p class="mt-1 text-lg font-bold text-momentum-blue">~38 min</p></div>
+                  <div><p class="text-xs font-bold uppercase text-momentum-gray">Kings Bay</p><p class="mt-1 text-lg font-bold text-momentum-blue">~62 min</p></div>
+                </div>
+                <p class="mt-4 text-base leading-relaxed text-slate-700"><strong class="text-momentum-blue">Schools:</strong> Zoned St. Johns County School District, including Ponte Vedra High School and Allen D. Nease High School, consistently among the state's top-rated schools.</p>
+                <p class="mt-3 text-base leading-relaxed text-slate-700"><strong class="text-momentum-blue">Shopping, dining &amp; fun:</strong> Sawgrass Village's upscale shopping and dining, TPC Sawgrass golf, and miles of pristine beach.</p>
+                <div class="mt-6 flex flex-wrap items-center gap-4">
+                  <button type="button" onclick="openLeadModal('Ponte Vedra Beach', 'St. Johns County')" class="inline-flex items-center justify-center rounded-xl bg-momentum-blue px-6 py-3.5 text-base font-bold text-white transition hover:bg-momentum-blueHover">Ask About Ponte Vedra Beach &rarr;</button>
+                  <a href="ponte-vedra-beach.html" class="text-sm font-bold text-teal-600 hover:underline">Read the full guide &rarr;</a>
+                </div>
+              </div>
+            </details>
+
+            <details class="guide-card group overflow-hidden rounded-3xl border border-momentum-grayLight bg-white shadow-md transition hover:shadow-xl">
+              <summary class="relative block cursor-pointer">
+                <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Aerial_view_of_the_Castillo_de_San_Marcos,_St._Augustine,_FL_2025-05-20.jpg?width=900" alt="Castillo de San Marcos, St. Augustine" class="h-56 w-full object-cover transition duration-500 group-hover:scale-105 sm:h-64" />
+                <div class="absolute inset-0 bg-gradient-to-t from-black/85 via-black/10 to-transparent"></div>
+                <span class="absolute left-4 top-4 rounded-full bg-indigo-600 px-3 py-1 text-xs font-bold uppercase tracking-wider text-white shadow">St. Johns County</span>
+                <svg class="guide-chevron absolute right-4 top-4 h-8 w-8 rounded-full bg-white/90 p-1.5 text-momentum-blue shadow transition-transform duration-200" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" /></svg>
+                <div class="absolute inset-x-0 bottom-0 p-5">
+                  <h3 class="font-serif text-2xl font-bold text-white drop-shadow-md">St. Augustine</h3>
+                  <p class="mt-1 text-sm font-medium text-white/90 drop-shadow">The nation's oldest city — historic streets, year-round energy.</p>
+                </div>
+              </summary>
+              <div class="border-t border-momentum-grayLight bg-white px-5 pb-7 pt-6 sm:px-6">
+                <p class="text-base leading-relaxed text-slate-700"><strong class="text-momentum-blue">Why people love it:</strong> St. Augustine offers a lifestyle you can't find anywhere else in Northeast Florida — Spanish colonial architecture, cobblestone streets, and a genuinely historic downtown, wrapped in a vibrant food, arts, and tourism scene that keeps the area lively year-round.</p>
+                <p class="mt-3 text-base leading-relaxed text-slate-700"><strong class="text-momentum-blue">Homes you'll find:</strong> Historic homes and cottages downtown, with a wide range of newer subdivisions and new construction in the surrounding areas.</p>
+                <div class="mt-4 grid grid-cols-3 gap-3 rounded-xl bg-momentum-bgLight p-4 text-center">
+                  <div><p class="text-xs font-bold uppercase text-momentum-gray">Mayport</p><p class="mt-1 text-lg font-bold text-momentum-blue">~38 min</p></div>
+                  <div><p class="text-xs font-bold uppercase text-momentum-gray">NAS Jax</p><p class="mt-1 text-lg font-bold text-momentum-blue">~42 min</p></div>
+                  <div><p class="text-xs font-bold uppercase text-momentum-gray">Kings Bay</p><p class="mt-1 text-lg font-bold text-momentum-blue">~70 min</p></div>
+                </div>
+                <p class="mt-4 text-base leading-relaxed text-slate-700"><strong class="text-momentum-blue">Schools:</strong> Zoned St. Johns County School District, including St. Augustine High School and consistently top-ranked St. Johns County elementary and middle schools.</p>
+                <p class="mt-3 text-base leading-relaxed text-slate-700"><strong class="text-momentum-blue">Shopping, dining &amp; fun:</strong> St. George Street's shops and restaurants, the Castillo de San Marcos, San Sebastian Winery, and Anastasia Island's beaches and nightlife.</p>
+                <div class="mt-6">
+                  <button type="button" onclick="openLeadModal('St. Augustine', 'St. Johns County')" class="inline-flex items-center justify-center rounded-xl bg-momentum-blue px-6 py-3.5 text-base font-bold text-white transition hover:bg-momentum-blueHover">Ask About St. Augustine &rarr;</button>
+                </div>
+              </div>
+            </details>
+
+            <details class="guide-card group overflow-hidden rounded-3xl border border-momentum-grayLight bg-white shadow-md transition hover:shadow-xl">
+              <summary class="relative block cursor-pointer">
+                <img src="https://commons.wikimedia.org/wiki/Special:FilePath/VilanoBeachCFL.png?width=900" alt="Vilano Beach, Florida" class="h-56 w-full object-cover transition duration-500 group-hover:scale-105 sm:h-64" />
+                <div class="absolute inset-0 bg-gradient-to-t from-black/85 via-black/10 to-transparent"></div>
+                <span class="absolute left-4 top-4 rounded-full bg-indigo-600 px-3 py-1 text-xs font-bold uppercase tracking-wider text-white shadow">St. Johns County</span>
+                <svg class="guide-chevron absolute right-4 top-4 h-8 w-8 rounded-full bg-white/90 p-1.5 text-momentum-blue shadow transition-transform duration-200" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" /></svg>
+                <div class="absolute inset-x-0 bottom-0 p-5">
+                  <h3 class="font-serif text-2xl font-bold text-white drop-shadow-md">Vilano Beach &amp; St. Augustine Beach</h3>
+                  <p class="mt-1 text-sm font-medium text-white/90 drop-shadow">Laid-back barrier-island beach towns.</p>
+                </div>
+              </summary>
+              <div class="border-t border-momentum-grayLight bg-white px-5 pb-7 pt-6 sm:px-6">
+                <p class="text-base leading-relaxed text-slate-700"><strong class="text-momentum-blue">Why people love it:</strong> Vilano Beach and St. Augustine Beach offer a quieter, more residential coastal lifestyle than St. Augustine's tourist core — beachfront restaurants, a relaxed surf-town feel, and easy access to both the ocean and historic downtown.</p>
+                <p class="mt-3 text-base leading-relaxed text-slate-700"><strong class="text-momentum-blue">Homes you'll find:</strong> Beach cottages, condos, and a growing number of new-construction coastal homes across both barrier-island communities.</p>
+                <div class="mt-4 grid grid-cols-3 gap-3 rounded-xl bg-momentum-bgLight p-4 text-center">
+                  <div><p class="text-xs font-bold uppercase text-momentum-gray">Mayport</p><p class="mt-1 text-lg font-bold text-momentum-blue">~32 min</p></div>
+                  <div><p class="text-xs font-bold uppercase text-momentum-gray">NAS Jax</p><p class="mt-1 text-lg font-bold text-momentum-blue">~42 min</p></div>
+                  <div><p class="text-xs font-bold uppercase text-momentum-gray">Kings Bay</p><p class="mt-1 text-lg font-bold text-momentum-blue">~70 min</p></div>
+                </div>
+                <p class="mt-4 text-base leading-relaxed text-slate-700"><strong class="text-momentum-blue">Schools:</strong> Zoned St. Johns County School District, including R.B. Hunt Elementary and St. Augustine High School.</p>
+                <p class="mt-3 text-base leading-relaxed text-slate-700"><strong class="text-momentum-blue">Shopping, dining &amp; fun:</strong> Oceanfront restaurants and tiki bars, the St. Johns County Pier, and Anastasia State Park's beaches and trails.</p>
+                <div class="mt-6">
+                  <button type="button" onclick="openLeadModal('Vilano Beach / St. Augustine Beach', 'St. Johns County')" class="inline-flex items-center justify-center rounded-xl bg-momentum-blue px-6 py-3.5 text-base font-bold text-white transition hover:bg-momentum-blueHover">Ask About Vilano / St. Augustine Beach &rarr;</button>
+                </div>
+              </div>
+            </details>
+
+            <details class="guide-card group overflow-hidden rounded-3xl border border-momentum-grayLight bg-white shadow-md transition hover:shadow-xl">
+              <summary class="relative block cursor-pointer">
+                <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Allen_D._Nease_High_School.jpg?width=900" alt="Allen D. Nease High School in Nocatee" class="h-56 w-full object-cover transition duration-500 group-hover:scale-105 sm:h-64" />
+                <div class="absolute inset-0 bg-gradient-to-t from-black/85 via-black/10 to-transparent"></div>
+                <span class="absolute left-4 top-4 rounded-full bg-indigo-600 px-3 py-1 text-xs font-bold uppercase tracking-wider text-white shadow">St. Johns County</span>
+                <svg class="guide-chevron absolute right-4 top-4 h-8 w-8 rounded-full bg-white/90 p-1.5 text-momentum-blue shadow transition-transform duration-200" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" /></svg>
+                <div class="absolute inset-x-0 bottom-0 p-5">
+                  <h3 class="font-serif text-2xl font-bold text-white drop-shadow-md">Nocatee</h3>
+                  <p class="mt-1 text-sm font-medium text-white/90 drop-shadow">Northeast Florida's largest master-planned community.</p>
+                </div>
+              </summary>
+              <div class="border-t border-momentum-grayLight bg-white px-5 pb-7 pt-6 sm:px-6">
+                <p class="text-base leading-relaxed text-slate-700"><strong class="text-momentum-blue">Why people love it:</strong> Nocatee is the community most families and PCS buyers ask about first — an enormous, amenity-rich master plan spanning the St. Johns/Duval line, with water parks, splash pads, and miles of trails built in from the start.</p>
+                <p class="mt-3 text-base leading-relaxed text-slate-700"><strong class="text-momentum-blue">Homes you'll find:</strong> New construction across a huge range of builders, price points, and floor plans, from starter homes to luxury estates.</p>
+                <div class="mt-4 grid grid-cols-3 gap-3 rounded-xl bg-momentum-bgLight p-4 text-center">
+                  <div><p class="text-xs font-bold uppercase text-momentum-gray">Mayport</p><p class="mt-1 text-lg font-bold text-momentum-blue">~27 min</p></div>
+                  <div><p class="text-xs font-bold uppercase text-momentum-gray">NAS Jax</p><p class="mt-1 text-lg font-bold text-momentum-blue">~32 min</p></div>
+                  <div><p class="text-xs font-bold uppercase text-momentum-gray">Kings Bay</p><p class="mt-1 text-lg font-bold text-momentum-blue">~60 min</p></div>
+                </div>
+                <p class="mt-4 text-base leading-relaxed text-slate-700"><strong class="text-momentum-blue">Schools:</strong> Zoned St. Johns County School District, consistently among the top-rated in Florida, including Valley Ridge Academy and Allen D. Nease High School.</p>
+                <p class="mt-3 text-base leading-relaxed text-slate-700"><strong class="text-momentum-blue">Shopping, dining &amp; fun:</strong> Nocatee Town Center's shops and restaurants, the Spray Park and Splash Water Park, and an extensive greenway and trail system.</p>
+                <div class="mt-6 flex flex-wrap items-center gap-4">
+                  <button type="button" onclick="openLeadModal('Nocatee', 'St. Johns County')" class="inline-flex items-center justify-center rounded-xl bg-momentum-blue px-6 py-3.5 text-base font-bold text-white transition hover:bg-momentum-blueHover">Ask About Nocatee &rarr;</button>
+                  <a href="nocatee.html" class="text-sm font-bold text-teal-600 hover:underline">Read the full guide &rarr;</a>
+                </div>
+              </div>
+            </details>
+
+            <details class="guide-card group overflow-hidden rounded-3xl border border-momentum-grayLight bg-white shadow-md transition hover:shadow-xl">
+              <summary class="relative block cursor-pointer">
+                <img src="https://commons.wikimedia.org/wiki/Special:FilePath/JulingtonCreekFL.JPG?width=900" alt="Julington Creek, St. Johns County" class="h-56 w-full object-cover transition duration-500 group-hover:scale-105 sm:h-64" />
+                <div class="absolute inset-0 bg-gradient-to-t from-black/85 via-black/10 to-transparent"></div>
+                <span class="absolute left-4 top-4 rounded-full bg-indigo-600 px-3 py-1 text-xs font-bold uppercase tracking-wider text-white shadow">St. Johns County</span>
+                <svg class="guide-chevron absolute right-4 top-4 h-8 w-8 rounded-full bg-white/90 p-1.5 text-momentum-blue shadow transition-transform duration-200" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" /></svg>
+                <div class="absolute inset-x-0 bottom-0 p-5">
+                  <h3 class="font-serif text-2xl font-bold text-white drop-shadow-md">Julington Creek Plantation</h3>
+                  <p class="mt-1 text-sm font-medium text-white/90 drop-shadow">Established, mature, top-school community.</p>
+                </div>
+              </summary>
+              <div class="border-t border-momentum-grayLight bg-white px-5 pb-7 pt-6 sm:px-6">
+                <p class="text-base leading-relaxed text-slate-700"><strong class="text-momentum-blue">Why people love it:</strong> Julington Creek Plantation is one of St. Johns County's most established master-planned communities — mature tree canopy, community pools and tennis, and top-rated schools give it a settled, family-first feel that's hard to find in newer developments.</p>
+                <p class="mt-3 text-base leading-relaxed text-slate-700"><strong class="text-momentum-blue">Homes you'll find:</strong> Resale single-family homes built primarily in the 1990s and 2000s, with mature landscaping throughout.</p>
+                <div class="mt-4 grid grid-cols-3 gap-3 rounded-xl bg-momentum-bgLight p-4 text-center">
+                  <div><p class="text-xs font-bold uppercase text-momentum-gray">NAS Jax</p><p class="mt-1 text-lg font-bold text-momentum-blue">~27 min</p></div>
+                  <div><p class="text-xs font-bold uppercase text-momentum-gray">Mayport</p><p class="mt-1 text-lg font-bold text-momentum-blue">~33 min</p></div>
+                  <div><p class="text-xs font-bold uppercase text-momentum-gray">Kings Bay</p><p class="mt-1 text-lg font-bold text-momentum-blue">~60 min</p></div>
+                </div>
+                <p class="mt-4 text-base leading-relaxed text-slate-700"><strong class="text-momentum-blue">Schools:</strong> Zoned St. Johns County School District, including Julington Creek Elementary and Creekside High School.</p>
+                <p class="mt-3 text-base leading-relaxed text-slate-700"><strong class="text-momentum-blue">Shopping, dining &amp; fun:</strong> Shopping plazas along SR 13, plus Julington Creek Park for kayaking, fishing, and boat access.</p>
+                <div class="mt-6">
+                  <button type="button" onclick="openLeadModal('Julington Creek Plantation', 'St. Johns County')" class="inline-flex items-center justify-center rounded-xl bg-momentum-blue px-6 py-3.5 text-base font-bold text-white transition hover:bg-momentum-blueHover">Ask About Julington Creek Plantation &rarr;</button>
+                </div>
+              </div>
+            </details>
+
+            <details class="guide-card group overflow-hidden rounded-3xl border border-momentum-grayLight bg-white shadow-md transition hover:shadow-xl">
+              <summary class="relative block cursor-pointer">
+                <img src="https://rivertownflorida.com/wp-content/uploads/2022/10/pool-14v-pool-slide.jpg" alt="RiverClub pool at RiverTown, St. Johns County" class="h-56 w-full object-cover transition duration-500 group-hover:scale-105 sm:h-64" />
+                <div class="absolute inset-0 bg-gradient-to-t from-black/85 via-black/10 to-transparent"></div>
+                <span class="absolute left-4 top-4 rounded-full bg-indigo-600 px-3 py-1 text-xs font-bold uppercase tracking-wider text-white shadow">St. Johns County</span>
+                <svg class="guide-chevron absolute right-4 top-4 h-8 w-8 rounded-full bg-white/90 p-1.5 text-momentum-blue shadow transition-transform duration-200" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" /></svg>
+                <div class="absolute inset-x-0 bottom-0 p-5">
+                  <h3 class="font-serif text-2xl font-bold text-white drop-shadow-md">SilverLeaf &amp; RiverTown</h3>
+                  <p class="mt-1 text-sm font-medium text-white/90 drop-shadow">Newer master plans with resort-style, riverfront amenities.</p>
+                </div>
+              </summary>
+              <div class="border-t border-momentum-grayLight bg-white px-5 pb-7 pt-6 sm:px-6">
+                <p class="text-base leading-relaxed text-slate-700"><strong class="text-momentum-blue">Why people love it:</strong> SilverLeaf and RiverTown are two of St. Johns County's newest master plans, both built around resort-style amenities — RiverTown's riverfront RiverHouse club on the St. Johns River is a particular draw — appealing to families who want brand-new construction with a full amenity package from day one.</p>
+                <p class="mt-3 text-base leading-relaxed text-slate-700"><strong class="text-momentum-blue">Homes you'll find:</strong> New single-family construction from multiple builders, with a range of floor plans and price points.</p>
+                <div class="mt-4 grid grid-cols-3 gap-3 rounded-xl bg-momentum-bgLight p-4 text-center">
+                  <div><p class="text-xs font-bold uppercase text-momentum-gray">NAS Jax</p><p class="mt-1 text-lg font-bold text-momentum-blue">~32 min</p></div>
+                  <div><p class="text-xs font-bold uppercase text-momentum-gray">Mayport</p><p class="mt-1 text-lg font-bold text-momentum-blue">~32 min</p></div>
+                  <div><p class="text-xs font-bold uppercase text-momentum-gray">Kings Bay</p><p class="mt-1 text-lg font-bold text-momentum-blue">~63 min</p></div>
+                </div>
+                <p class="mt-4 text-base leading-relaxed text-slate-700"><strong class="text-momentum-blue">Schools:</strong> Zoned St. Johns County School District, with new schools added as the area continues to grow.</p>
+                <p class="mt-3 text-base leading-relaxed text-slate-700"><strong class="text-momentum-blue">Shopping, dining &amp; fun:</strong> Growing retail along CR 210, plus RiverTown's RiverHouse amenity center for boating and river access.</p>
+                <div class="mt-6">
+                  <button type="button" onclick="openLeadModal('SilverLeaf / RiverTown', 'St. Johns County')" class="inline-flex items-center justify-center rounded-xl bg-momentum-blue px-6 py-3.5 text-base font-bold text-white transition hover:bg-momentum-blueHover">Ask About SilverLeaf / RiverTown &rarr;</button>
+                </div>
+              </div>
+            </details>
+
+            <details class="guide-card group overflow-hidden rounded-3xl border border-momentum-grayLight bg-white shadow-md transition hover:shadow-xl">
+              <summary class="relative block cursor-pointer">
+                <img src="https://commons.wikimedia.org/wiki/Special:FilePath/FruitCoveCFL.png?width=900" alt="Fruit Cove, St. Johns County" class="h-56 w-full object-cover transition duration-500 group-hover:scale-105 sm:h-64" />
+                <div class="absolute inset-0 bg-gradient-to-t from-black/85 via-black/10 to-transparent"></div>
+                <span class="absolute left-4 top-4 rounded-full bg-indigo-600 px-3 py-1 text-xs font-bold uppercase tracking-wider text-white shadow">St. Johns County</span>
+                <svg class="guide-chevron absolute right-4 top-4 h-8 w-8 rounded-full bg-white/90 p-1.5 text-momentum-blue shadow transition-transform duration-200" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" /></svg>
+                <div class="absolute inset-x-0 bottom-0 p-5">
+                  <h3 class="font-serif text-2xl font-bold text-white drop-shadow-md">Fruit Cove</h3>
+                  <p class="mt-1 text-sm font-medium text-white/90 drop-shadow">Suburban St. Johns living along the St. Johns River.</p>
+                </div>
+              </summary>
+              <div class="border-t border-momentum-grayLight bg-white px-5 pb-7 pt-6 sm:px-6">
+                <p class="text-base leading-relaxed text-slate-700"><strong class="text-momentum-blue">Why people love it:</strong> Fruit Cove offers an established, family-friendly suburban feel along the St. Johns River, with top-rated schools and easy access to both Julington Creek Plantation's amenities and the San Jose Boulevard retail corridor just across the county line.</p>
+                <p class="mt-3 text-base leading-relaxed text-slate-700"><strong class="text-momentum-blue">Homes you'll find:</strong> A mix of established single-family neighborhoods and riverfront estates, with some newer construction infill.</p>
+                <div class="mt-4 grid grid-cols-3 gap-3 rounded-xl bg-momentum-bgLight p-4 text-center">
+                  <div><p class="text-xs font-bold uppercase text-momentum-gray">NAS Jax</p><p class="mt-1 text-lg font-bold text-momentum-blue">~25 min</p></div>
+                  <div><p class="text-xs font-bold uppercase text-momentum-gray">Mayport</p><p class="mt-1 text-lg font-bold text-momentum-blue">~30 min</p></div>
+                  <div><p class="text-xs font-bold uppercase text-momentum-gray">Kings Bay</p><p class="mt-1 text-lg font-bold text-momentum-blue">~60 min</p></div>
+                </div>
+                <p class="mt-4 text-base leading-relaxed text-slate-700"><strong class="text-momentum-blue">Schools:</strong> Zoned St. Johns County School District, including Fruit Cove Middle School and Creekside High School.</p>
+                <p class="mt-3 text-base leading-relaxed text-slate-700"><strong class="text-momentum-blue">Shopping, dining &amp; fun:</strong> The San Jose Boulevard retail corridor just over the county line, plus Julington-Durbin Creek Preserve for hiking and paddling.</p>
+                <div class="mt-6">
+                  <button type="button" onclick="openLeadModal('Fruit Cove', 'St. Johns County')" class="inline-flex items-center justify-center rounded-xl bg-momentum-blue px-6 py-3.5 text-base font-bold text-white transition hover:bg-momentum-blueHover">Ask About Fruit Cove &rarr;</button>
+                </div>
+              </div>
+            </details>
+
+          </div>
+        </div>
+        <!-- END ST. JOHNS COUNTY -->
+      </div>
     </section>
   </main>
+
+  <!-- Shared Neighborhood Lead-Capture Modal -->
+  <div id="leadModal" class="fixed inset-0 z-[70] hidden items-center justify-center bg-slate-900/60 p-4">
+    <div class="max-h-[90vh] w-full max-w-lg overflow-y-auto rounded-2xl bg-white p-6 shadow-2xl sm:p-8">
+      <div class="flex items-start justify-between gap-4">
+        <div>
+          <p class="text-xs font-bold uppercase tracking-wider text-teal-600">Free, No-Obligation Info</p>
+          <h3 class="mt-1 font-serif text-2xl font-bold text-momentum-blue">Tell us about <span id="leadModalArea">this area</span></h3>
+        </div>
+        <button type="button" onclick="closeLeadModal()" aria-label="Close" class="shrink-0 text-2xl leading-none text-momentum-gray hover:text-momentum-blue">&times;</button>
+      </div>
+      <p class="mt-2 text-sm text-slate-600">Get current market data, available homes, and new construction options in <span id="leadModalAreaInline">this area</span> — sent straight to your inbox.</p>
+
+      <form action="https://formsubmit.co/S2HomePartners@gmail.com" method="POST" class="mt-6 space-y-4" id="areaLeadForm">
+        <input type="hidden" name="_subject" id="leadModalSubject" value="Neighborhood Guide Lead — S2 Home Partners" />
+        <input type="hidden" name="_next" value="https://buyjacksonvillefl.com/area-guides.html#submitted" />
+        <input type="hidden" name="source_page" value="area-guides.html" />
+        <input type="hidden" name="Area of Interest" id="leadModalAreaField" value="" />
+        <input type="text" name="_honey" class="hidden" tabindex="-1" autocomplete="off" />
+
+        <div>
+          <label for="leadModal-name" class="mb-1 block text-xs font-bold uppercase text-slate-700">Name</label>
+          <input id="leadModal-name" type="text" name="Name" required class="w-full rounded-xl border border-momentum-grayLight px-4 py-3 text-sm focus:border-momentum-blue focus:outline-none" />
+        </div>
+        <div class="grid grid-cols-1 gap-4 sm:grid-cols-2">
+          <div>
+            <label for="leadModal-phone" class="mb-1 block text-xs font-bold uppercase text-slate-700">Phone</label>
+            <input id="leadModal-phone" type="tel" name="Phone" required class="w-full rounded-xl border border-momentum-grayLight px-4 py-3 text-sm focus:border-momentum-blue focus:outline-none" />
+          </div>
+          <div>
+            <label for="leadModal-email" class="mb-1 block text-xs font-bold uppercase text-slate-700">Email</label>
+            <input id="leadModal-email" type="email" name="Email" required class="w-full rounded-xl border border-momentum-grayLight px-4 py-3 text-sm focus:border-momentum-blue focus:outline-none" />
+          </div>
+        </div>
+        <div>
+          <label for="leadModal-interest" class="mb-1 block text-xs font-bold uppercase text-slate-700">I'm interested in</label>
+          <select id="leadModal-interest" name="Interest" class="w-full rounded-xl border border-momentum-grayLight px-4 py-3 text-sm focus:border-momentum-blue focus:outline-none">
+            <option>Buying a home</option>
+            <option>Selling a home</option>
+            <option>New construction</option>
+            <option>Just researching the market</option>
+          </select>
+        </div>
+        <div>
+          <label for="leadModal-message" class="mb-1 block text-xs font-bold uppercase text-slate-700">Anything else? (budget, timeline, must-haves)</label>
+          <textarea id="leadModal-message" name="Message" rows="3" class="w-full rounded-xl border border-momentum-grayLight px-4 py-3 text-sm focus:border-momentum-blue focus:outline-none"></textarea>
+        </div>
+        <button type="submit" class="w-full rounded-xl bg-momentum-blue py-4 text-sm font-bold text-white transition hover:bg-momentum-blueHover">Send My Request</button>
+        <p class="text-center text-xs text-slate-500">We reply within 24 hours. No spam.</p>
+      </form>
+    </div>
+  </div>
 
   <footer class="border-t border-slate-800 bg-slate-900 py-8 text-slate-400">
     <div class="mx-auto max-w-7xl px-4 text-center text-sm sm:px-6 lg:px-8">
@@ -172,6 +1004,28 @@
         mobileMenu.classList.add('hidden');
         menuToggle.setAttribute('aria-expanded', 'false');
       });
+    });
+
+    const leadModal = document.getElementById('leadModal');
+    function openLeadModal(areaName, countyName) {
+      document.getElementById('leadModalArea').textContent = areaName;
+      document.getElementById('leadModalAreaInline').textContent = areaName;
+      document.getElementById('leadModalAreaField').value = areaName + ' (' + countyName + ')';
+      document.getElementById('leadModalSubject').value = 'Neighborhood Guide Lead — ' + areaName + ' — S2 Home Partners';
+      leadModal.classList.remove('hidden');
+      leadModal.classList.add('flex');
+      document.body.classList.add('overflow-hidden');
+    }
+    function closeLeadModal() {
+      leadModal.classList.add('hidden');
+      leadModal.classList.remove('flex');
+      document.body.classList.remove('overflow-hidden');
+    }
+    leadModal.addEventListener('click', (event) => {
+      if (event.target === leadModal) closeLeadModal();
+    });
+    document.addEventListener('keydown', (event) => {
+      if (event.key === 'Escape') closeLeadModal();
     });
   </script>
 </body>
