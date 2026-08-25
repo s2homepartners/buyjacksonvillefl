@@ -31,6 +31,28 @@
       },
     };
   </script>
+  <!-- Flodesk header code (loads the SDK that window.fd() calls below rely on) -->
+  <script>
+    (function(w, d, t, h, s, n) {
+      w.FlodeskObject = n;
+      var fn = function() {
+        (w[n].q = w[n].q || []).push(arguments);
+      };
+      w[n] = w[n] || fn;
+      var f = d.getElementsByTagName(t)[0];
+      var v = '?v=' + Math.floor(new Date().getTime() / (120 * 1000)) * 60;
+      var sm = d.createElement(t);
+      sm.async = true;
+      sm.type = 'module';
+      sm.src = h + s + '.mjs' + v;
+      f.parentNode.insertBefore(sm, f);
+      var sn = d.createElement(t);
+      sn.async = true;
+      sn.noModule = true;
+      sn.src = h + s + '.js' + v;
+      f.parentNode.insertBefore(sn, f);
+    })(window, document, 'script', 'https://assets.flodesk.com', '/universal', 'fd');
+  </script>
 </head>
 <body class="bg-momentum-bgLight font-sans text-slate-800 antialiased">
 
@@ -118,6 +140,17 @@
             <li class="flex items-start gap-2"><span class="mt-0.5 text-teal-600">&check;</span> No cost or obligation to you as the buyer or seller</li>
             <li class="flex items-start gap-2"><span class="mt-0.5 text-teal-600">&check;</span> We stay in the loop to make sure you're taken care of</li>
           </ul>
+
+          <div class="mt-8 rounded-2xl border border-momentum-grayLight bg-momentum-bgLight p-6">
+            <p class="mb-3 text-sm font-bold text-momentum-blue">Not ready to request a referral yet?</p>
+            <div id="fd-form-6a8dc65cb8123dcfc8c0d9c1"></div>
+            <script>
+              window.fd('form', {
+                formId: '6a8dc65cb8123dcfc8c0d9c1',
+                containerEl: '#fd-form-6a8dc65cb8123dcfc8c0d9c1'
+              });
+            </script>
+          </div>
         </div>
 
         <div class="rounded-2xl border border-momentum-grayLight bg-momentum-bgLight p-6 shadow-md sm:p-8">
@@ -225,6 +258,17 @@
             <li class="flex items-start gap-2"><span class="mt-0.5 text-teal-600">&check;</span> Standard referral fee agreement, no upfront cost</li>
             <li class="flex items-start gap-2"><span class="mt-0.5 text-teal-600">&check;</span> Your brokerage listed on our live partner map</li>
           </ul>
+
+          <div class="mt-8 rounded-2xl border border-momentum-grayLight bg-momentum-bgLight p-6">
+            <p class="mb-3 text-sm font-bold text-momentum-blue">Not ready to apply yet?</p>
+            <div id="fd-form-6a8dc89ef09380a7989114a1"></div>
+            <script>
+              window.fd('form', {
+                formId: '6a8dc89ef09380a7989114a1',
+                containerEl: '#fd-form-6a8dc89ef09380a7989114a1'
+              });
+            </script>
+          </div>
         </div>
 
         <div class="rounded-2xl border border-momentum-grayLight bg-momentum-bgLight p-6 shadow-md sm:p-8">
@@ -285,22 +329,6 @@
             <p class="font-serif text-2xl font-bold text-momentum-blue">Thank you!</p>
             <p class="mt-2 text-sm text-slate-600">We've received your application and will follow up soon. Welcome to the network.</p>
           </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Flodesk newsletter opt-in -->
-    <section class="border-t border-momentum-grayLight bg-momentum-blueDark py-14 text-center text-white">
-      <div class="mx-auto max-w-2xl px-4 sm:px-6 lg:px-8">
-        <h2 class="font-serif text-2xl font-bold sm:text-3xl">Stay in the Loop</h2>
-        <p class="mt-2 text-sm text-slate-200">Market updates and relocation tips, straight to your inbox.</p>
-        <!--
-          FLODESK EMBED GOES HERE.
-          Paste the embed <script>/<div> snippet from your Flodesk form's
-          Share tab in place of this comment.
-        -->
-        <div id="flodesk-embed-placeholder" class="mt-6 rounded-xl border border-dashed border-white/30 bg-white/5 p-6 text-xs text-slate-300">
-          Flodesk signup form goes here once the embed code is added.
         </div>
       </div>
     </section>
