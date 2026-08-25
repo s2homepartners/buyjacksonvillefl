@@ -48,6 +48,9 @@
       background: rgba(255, 255, 255, 0.92);
       backdrop-filter: blur(12px);
     }
+    .hero-slide {
+      transition: opacity 2s ease-in-out;
+    }
   </style>
 </head>
 <body class="bg-momentum-bgLight font-sans text-slate-800 antialiased">
@@ -110,14 +113,16 @@
   </header>
 
   <main>
-    <!-- Hero — Downtown Jacksonville skyline -->
+    <!-- Hero — rotating Jacksonville-area photos -->
     <section class="relative flex min-h-[85vh] items-center overflow-hidden bg-momentum-blueDark text-white">
-      <div
-        class="absolute inset-0 bg-cover bg-center opacity-40"
-        style="background-image: url('Downtown-Jacksonville-Rich-Estrada.jpg.avif');"
-        role="img"
-        aria-label="Downtown Jacksonville skyline by Rich Estrada"
-      ></div>
+      <div class="absolute inset-0" aria-hidden="true">
+        <div class="hero-slide absolute inset-0 bg-cover bg-center opacity-100" style="background-image: url('Downtown-Jacksonville-Rich-Estrada.jpg.avif');"></div>
+        <div class="hero-slide absolute inset-0 bg-cover bg-center opacity-0" style="background-image: url('https://commons.wikimedia.org/wiki/Special:FilePath/Jacksonville_skyline.jpg?width=1600');"></div>
+        <div class="hero-slide absolute inset-0 bg-cover bg-center opacity-0" style="background-image: url('https://commons.wikimedia.org/wiki/Special:FilePath/Jax_Beach_2024_Pier.jpg?width=1600');"></div>
+        <div class="hero-slide absolute inset-0 bg-cover bg-center opacity-0" style="background-image: url('https://commons.wikimedia.org/wiki/Special:FilePath/Jacksonville_San_Marco_Square.JPG?width=1600');"></div>
+        <div class="hero-slide absolute inset-0 bg-cover bg-center opacity-0" style="background-image: url('https://commons.wikimedia.org/wiki/Special:FilePath/MemParkJaxLife.jpg?width=1600');"></div>
+      </div>
+      <div class="absolute inset-0 bg-momentum-blueDark/40"></div>
       <div class="absolute inset-0 bg-gradient-to-r from-momentum-blueDark via-momentum-blueDark/80 to-transparent"></div>
 
       <div class="relative mx-auto max-w-7xl px-4 py-24 sm:px-6 lg:px-8">
@@ -145,6 +150,23 @@
       </div>
     </section>
 
+    <!-- Meet Your Agents -->
+    <section class="bg-white py-16">
+      <div class="mx-auto grid max-w-6xl items-center gap-10 px-4 sm:px-6 md:grid-cols-2 lg:px-8">
+        <img src="team.jpg" alt="Sarah Luther and Sarah Fuller, S² Home Partners" class="mx-auto w-full max-w-md rounded-2xl shadow-3d" />
+        <div>
+          <span class="text-xs font-bold uppercase tracking-widest text-momentum-gray">Meet Your Agents</span>
+          <h2 class="mt-2 font-serif text-3xl font-bold text-momentum-blue sm:text-4xl">Sarah Luther &amp; Sarah Fuller</h2>
+          <p class="mt-4 text-base leading-relaxed text-slate-600">
+            Two dedicated Real Estate Advisors, double the availability and expertise. Whether you're buying, selling, or navigating a military PCS move, we bring hands-on guidance and strategic marketing to every step of your Northeast Florida real estate journey.
+          </p>
+          <a href="about.html" class="mt-6 inline-block rounded-xl bg-momentum-blue px-6 py-3.5 text-sm font-bold uppercase tracking-wider text-white shadow-md transition-all hover:bg-momentum-blueHover">
+            Meet the Team &rarr;
+          </a>
+        </div>
+      </div>
+    </section>
+
     <!-- Category Grid -->
     <section class="bg-momentum-bgLight py-24">
       <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
@@ -155,7 +177,7 @@
 
         <div class="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
           <a href="buy.html" class="card-3d group overflow-hidden rounded-2xl border border-slate-100 bg-white shadow-3d">
-            <div class="relative h-56 bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=800&q=80');">
+            <div class="relative h-56 bg-cover bg-center" style="background-image: url('https://commons.wikimedia.org/wiki/Special:FilePath/Jax_FL_Avondale_HD02.jpg?width=900');">
               <div class="absolute inset-0 bg-gradient-to-t from-momentum-blueDark/80 via-transparent to-transparent"></div>
             </div>
             <div class="p-8">
@@ -165,7 +187,7 @@
           </a>
 
           <a href="sell.html" class="card-3d group overflow-hidden rounded-2xl border border-slate-100 bg-white shadow-3d">
-            <div class="relative h-56 bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=800&q=80');">
+            <div class="relative h-56 bg-cover bg-center" style="background-image: url('https://commons.wikimedia.org/wiki/Special:FilePath/Mainspringjax.jpg?width=900');">
               <div class="absolute inset-0 bg-gradient-to-t from-momentum-blueDark/80 via-transparent to-transparent"></div>
             </div>
             <div class="p-8">
@@ -175,7 +197,7 @@
           </a>
 
           <a href="military.html" class="card-3d group overflow-hidden rounded-2xl border border-slate-100 bg-white shadow-3d">
-            <div class="relative h-56 bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1508873696983-2df515122519?auto=format&fit=crop&w=800&q=80');">
+            <div class="relative h-56 bg-cover bg-center" style="background-image: url('https://commons.wikimedia.org/wiki/Special:FilePath/Aerial_view_of_Naval_Air_Station_Jacksonville_(180520-N-BO384-001).jpg?width=900');">
               <div class="absolute inset-0 bg-gradient-to-t from-momentum-blueDark/80 via-transparent to-transparent"></div>
             </div>
             <div class="p-8">
@@ -214,6 +236,19 @@
         menuToggle.setAttribute('aria-label', 'Open menu');
       });
     });
+
+    // Rotating hero background
+    const heroSlides = document.querySelectorAll('.hero-slide');
+    if (heroSlides.length > 1) {
+      let currentSlide = 0;
+      setInterval(() => {
+        heroSlides[currentSlide].classList.remove('opacity-100');
+        heroSlides[currentSlide].classList.add('opacity-0');
+        currentSlide = (currentSlide + 1) % heroSlides.length;
+        heroSlides[currentSlide].classList.remove('opacity-0');
+        heroSlides[currentSlide].classList.add('opacity-100');
+      }, 5000);
+    }
   </script>
 </body>
 </html>
