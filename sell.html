@@ -277,6 +277,118 @@
         </div>
       </div>
     </section>
+
+    <!-- Seller Net Proceeds Calculator -->
+    <section class="bg-momentum-bgLight py-16">
+      <div class="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
+        <div class="mx-auto overflow-hidden rounded-2xl border border-momentum-grayLight bg-white shadow-xl">
+          <div class="relative bg-momentum-blueDark p-6 text-white sm:p-8">
+            <span class="mb-3 inline-block rounded-full bg-teal-500 px-3 py-1 text-xs font-bold uppercase tracking-wider text-momentum-blueDark">
+              Seller Equity Tool
+            </span>
+            <h2 class="font-serif text-2xl font-bold tracking-tight sm:text-3xl">Seller Net Proceeds Calculator</h2>
+            <p class="mt-2 max-w-2xl text-sm text-slate-200 sm:text-base">
+              Estimate your actual cash in hand at the closing table after paying off existing loans, commissions, and seller fees.
+            </p>
+          </div>
+
+          <div class="grid grid-cols-1 gap-8 p-6 sm:p-8 lg:grid-cols-12">
+
+            <div class="space-y-5 lg:col-span-7">
+              <div>
+                <div class="mb-1 flex items-center justify-between">
+                  <label for="netSalePrice" class="text-sm font-semibold text-slate-700">Estimated Sale Price</label>
+                  <span id="netSalePriceDisplay" class="text-base font-bold text-momentum-blue">$500,000</span>
+                </div>
+                <input type="range" id="netSalePrice" min="150000" max="1500000" step="5000" value="500000"
+                  class="h-2 w-full cursor-pointer appearance-none rounded-lg bg-momentum-grayLight accent-teal-600">
+              </div>
+
+              <div>
+                <label for="mortgagePayoff" class="mb-1 block text-sm font-semibold text-slate-700">Estimated Mortgage Payoff</label>
+                <div class="relative">
+                  <span class="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-3 font-medium text-momentum-gray">$</span>
+                  <input type="number" id="mortgagePayoff" value="250000" step="1000"
+                    class="w-full rounded-lg border border-momentum-grayLight py-2 pl-8 pr-4 text-sm text-slate-800 focus:border-momentum-blue focus:outline-none focus:ring-1 focus:ring-momentum-blue">
+                </div>
+              </div>
+
+              <div class="grid grid-cols-2 gap-4">
+                <div>
+                  <label for="commissionRate" class="mb-1 block text-sm font-semibold text-slate-700">Total Brokerage Fee (%)</label>
+                  <input type="number" id="commissionRate" value="5.5" step="0.1" min="0" max="10"
+                    class="w-full rounded-lg border border-momentum-grayLight px-3 py-2 text-sm text-slate-800 focus:border-momentum-blue focus:outline-none focus:ring-1 focus:ring-momentum-blue">
+                </div>
+                <div>
+                  <label for="closingCostsRate" class="mb-1 block text-sm font-semibold text-slate-700">Estimated Seller Fees (%)</label>
+                  <input type="number" id="closingCostsRate" value="1.5" step="0.1" min="0" max="5"
+                    class="w-full rounded-lg border border-momentum-grayLight px-3 py-2 text-sm text-slate-800 focus:border-momentum-blue focus:outline-none focus:ring-1 focus:ring-momentum-blue">
+                </div>
+              </div>
+              <p class="text-[11px] text-momentum-gray">Seller fees include title insurance, documentary stamps, escrow, and closing agent fees typical in FL.</p>
+            </div>
+
+            <div class="flex flex-col justify-between rounded-xl border border-momentum-grayLight bg-momentum-bgLight p-6 lg:col-span-5">
+              <div>
+                <h3 class="mb-3 text-xs font-bold uppercase tracking-wider text-momentum-gray">Proceeds Summary</h3>
+
+                <div class="space-y-2.5 text-sm">
+                  <div class="flex justify-between text-slate-600">
+                    <span>Gross Sale Price:</span>
+                    <span id="grossDisplay" class="font-semibold text-slate-800">$500,000</span>
+                  </div>
+                  <div class="flex justify-between text-slate-600">
+                    <span>Mortgage Payoff:</span>
+                    <span id="payoffDisplay" class="font-semibold text-rose-600">-$250,000</span>
+                  </div>
+                  <div class="flex justify-between text-slate-600">
+                    <span>Brokerage Commission:</span>
+                    <span id="commissionDisplay" class="font-semibold text-rose-600">-$27,500</span>
+                  </div>
+                  <div class="flex justify-between text-slate-600">
+                    <span>Closing Fees &amp; Stamps:</span>
+                    <span id="feesDisplay" class="font-semibold text-rose-600">-$7,500</span>
+                  </div>
+                </div>
+
+                <div class="mt-4 rounded-xl border border-teal-200 bg-teal-50 p-4 text-center">
+                  <span class="text-xs font-semibold uppercase tracking-wide text-teal-800">Estimated Net Cash at Closing</span>
+                  <div id="netProceedsDisplay" class="mt-1 text-3xl font-extrabold text-teal-700">$215,000</div>
+                </div>
+              </div>
+
+              <div class="mt-6 border-t border-momentum-grayLight pt-5">
+                <h4 class="mb-1 text-sm font-bold text-slate-800">Want a Professional CMA &amp; Line-Item Net Sheet?</h4>
+                <p class="mb-3 text-xs text-momentum-gray">We'll email you the detailed breakdown and a full comparative market analysis.</p>
+
+                <form id="netProceedsForm" class="space-y-2.5">
+                  <input type="hidden" name="FormType" value="Net Proceeds Calculator Lead" />
+                  <input type="hidden" name="_subject" value="New Seller Net Proceeds Calculator Lead - S2 Home Partners" />
+                  <input type="hidden" name="SalePrice" id="netField-salePrice" value="" />
+                  <input type="hidden" name="MortgagePayoff" id="netField-payoff" value="" />
+                  <input type="hidden" name="CommissionRate" id="netField-commissionRate" value="" />
+                  <input type="hidden" name="ClosingCostsRate" id="netField-closingRate" value="" />
+                  <input type="hidden" name="EstimatedNetProceeds" id="netField-netProceeds" value="" />
+                  <label for="net-address" class="sr-only">Property Address</label>
+                  <input id="net-address" type="text" name="Address" placeholder="Property Address" required
+                    class="w-full rounded-lg border border-momentum-grayLight p-2.5 text-xs focus:border-momentum-blue focus:outline-none focus:ring-1 focus:ring-momentum-blue">
+                  <label for="net-email" class="sr-only">Email</label>
+                  <input id="net-email" type="email" name="Email" placeholder="Your Email Address" required
+                    class="w-full rounded-lg border border-momentum-grayLight p-2.5 text-xs focus:border-momentum-blue focus:outline-none focus:ring-1 focus:ring-momentum-blue">
+                  <button type="submit" class="w-full rounded-lg bg-momentum-blueDark px-4 py-2.5 text-xs font-bold text-white shadow transition hover:bg-momentum-blue">
+                    Send Me My Detailed Net Sheet &rarr;
+                  </button>
+                </form>
+
+                <div id="netProceedsForm-success" class="mt-3 hidden rounded-lg bg-teal-100 p-3 text-center text-xs font-bold text-teal-700">
+                  &#10003; Request sent! We'll prepare your precise net sheet shortly.
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
   </main>
 
   <footer class="border-t border-slate-800 bg-slate-900 py-8 text-slate-400">
@@ -539,6 +651,72 @@
               .then(() => {
                 equityLeadForm.classList.add('hidden');
                 equityLeadSuccess.classList.remove('hidden');
+              })
+              .catch(() => {
+                alert('Something went wrong submitting your request. Please email us directly at S2HomePartners@gmail.com.');
+              });
+          });
+        }
+      }
+
+      // --- Seller Net Proceeds Calculator ---
+      const netSalePriceInput = document.getElementById('netSalePrice');
+      if (netSalePriceInput) {
+        const netSalePriceDisplay = document.getElementById('netSalePriceDisplay');
+        const mortgagePayoffInput = document.getElementById('mortgagePayoff');
+        const commissionRateInput = document.getElementById('commissionRate');
+        const closingCostsRateInput = document.getElementById('closingCostsRate');
+        const grossDisplay = document.getElementById('grossDisplay');
+        const payoffDisplay = document.getElementById('payoffDisplay');
+        const commissionDisplay = document.getElementById('commissionDisplay');
+        const feesDisplay = document.getElementById('feesDisplay');
+        const netProceedsDisplay = document.getElementById('netProceedsDisplay');
+
+        function formatNetCurrency(amount) {
+          return '$' + Math.round(amount).toLocaleString();
+        }
+
+        function updateNetProceeds() {
+          const salePrice = parseFloat(netSalePriceInput.value) || 0;
+          const payoff = parseFloat(mortgagePayoffInput.value) || 0;
+          const commPct = (parseFloat(commissionRateInput.value) || 0) / 100;
+          const feePct = (parseFloat(closingCostsRateInput.value) || 0) / 100;
+
+          const commission = salePrice * commPct;
+          const fees = salePrice * feePct;
+          const netProceeds = salePrice - payoff - commission - fees;
+
+          netSalePriceDisplay.textContent = formatNetCurrency(salePrice);
+          grossDisplay.textContent = formatNetCurrency(salePrice);
+          payoffDisplay.textContent = '-' + formatNetCurrency(payoff);
+          commissionDisplay.textContent = '-' + formatNetCurrency(commission);
+          feesDisplay.textContent = '-' + formatNetCurrency(fees);
+          netProceedsDisplay.textContent = formatNetCurrency(netProceeds);
+
+          document.getElementById('netField-salePrice').value = formatNetCurrency(salePrice);
+          document.getElementById('netField-payoff').value = formatNetCurrency(payoff);
+          document.getElementById('netField-commissionRate').value = commissionRateInput.value + '%';
+          document.getElementById('netField-closingRate').value = closingCostsRateInput.value + '%';
+          document.getElementById('netField-netProceeds').value = formatNetCurrency(netProceeds);
+        }
+
+        netSalePriceInput.addEventListener('input', updateNetProceeds);
+        mortgagePayoffInput.addEventListener('input', updateNetProceeds);
+        commissionRateInput.addEventListener('input', updateNetProceeds);
+        closingCostsRateInput.addEventListener('input', updateNetProceeds);
+        updateNetProceeds();
+
+        const netProceedsForm = document.getElementById('netProceedsForm');
+        const netProceedsSuccess = document.getElementById('netProceedsForm-success');
+        if (netProceedsForm) {
+          netProceedsForm.addEventListener('submit', (event) => {
+            event.preventDefault();
+            updateNetProceeds();
+            const formData = new FormData(netProceedsForm);
+            fetch(LEAD_BACKEND_URL, { method: 'POST', mode: 'no-cors', body: formData })
+              .then(() => {
+                netProceedsForm.classList.add('hidden');
+                netProceedsSuccess.classList.remove('hidden');
               })
               .catch(() => {
                 alert('Something went wrong submitting your request. Please email us directly at S2HomePartners@gmail.com.');
