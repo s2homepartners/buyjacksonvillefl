@@ -99,7 +99,7 @@
       </div>
     </section>
 
-    <!-- Fix It & List It: Pre-Listing Equity & ROI Calculator -->
+    <!-- Fix It & List It: Pre-Listing Equity & Financing Calculator -->
     <section class="bg-white py-16">
       <div class="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
         <div class="mb-8 text-center">
@@ -116,9 +116,9 @@
             <span class="mb-3 inline-block rounded-full bg-teal-500 px-3 py-1 text-xs font-bold uppercase tracking-wider text-momentum-blueDark">
               Fix It &amp; List It Program
             </span>
-            <h3 class="font-serif text-2xl font-bold tracking-tight sm:text-3xl">Pre-Listing Equity &amp; ROI Calculator</h3>
+            <h3 class="font-serif text-2xl font-bold tracking-tight sm:text-3xl">Pre-Listing Equity &amp; Financing Calculator</h3>
             <p class="mt-2 max-w-2xl text-sm text-slate-200 sm:text-base">
-              See how strategic listing preparation can increase your home's sale price and maximize your net proceeds before you go to market.
+              Calculate how prep upgrades increase your home value and see how you can complete upgrades with <strong>$0 out-of-pocket costs until closing</strong>.
             </p>
           </div>
 
@@ -140,6 +140,17 @@
               </div>
 
               <hr class="border-momentum-grayLight">
+
+              <div class="flex items-center justify-between rounded-xl border border-teal-200 bg-teal-50 p-4">
+                <div>
+                  <span class="block text-sm font-bold text-teal-900">Defer Upgrade Costs to Closing?</span>
+                  <span class="mt-0.5 block text-xs text-teal-700">Pay $0 today. Capital is reimbursed directly from escrow.</span>
+                </div>
+                <label class="relative inline-flex shrink-0 cursor-pointer items-center">
+                  <input type="checkbox" id="payAtClosingToggle" class="peer sr-only" checked>
+                  <div class="peer h-6 w-11 rounded-full bg-slate-300 after:absolute after:left-[2px] after:top-[2px] after:h-5 after:w-5 after:rounded-full after:border after:border-slate-300 after:bg-white after:transition-all after:content-[''] peer-checked:bg-teal-600 peer-checked:after:translate-x-full peer-checked:after:border-white peer-focus:outline-none"></div>
+                </label>
+              </div>
 
               <div>
                 <h4 class="mb-3 text-sm font-semibold text-slate-700">Select Planned Pre-Listing Upgrades:</h4>
@@ -201,9 +212,14 @@
               <div>
                 <h4 class="mb-4 text-xs font-bold uppercase tracking-wider text-momentum-gray">Estimated Equity Breakdown</h4>
 
-                <div class="space-y-4">
+                <div class="space-y-3">
                   <div class="flex items-center justify-between border-b border-momentum-grayLight pb-2">
-                    <span class="text-sm text-slate-600">Total Prep Budget:</span>
+                    <span class="text-sm text-slate-600">Upfront Out-of-Pocket:</span>
+                    <span id="outOfPocketCost" class="text-sm font-bold text-teal-600">$0</span>
+                  </div>
+
+                  <div class="flex items-center justify-between border-b border-momentum-grayLight pb-2">
+                    <span class="text-sm text-slate-600">Total Prep Capital:</span>
                     <span id="totalCost" class="text-sm font-bold text-slate-800">$6,500</span>
                   </div>
 
@@ -218,75 +234,49 @@
                   </div>
                 </div>
 
-                <div class="mt-6 rounded-xl border border-teal-200 bg-teal-50 p-4 text-center">
-                  <span class="text-xs font-semibold uppercase tracking-wide text-teal-800">Net Additional Seller Profit</span>
+                <div class="mt-5 rounded-xl border border-teal-200 bg-teal-50 p-4 text-center">
+                  <span class="text-xs font-semibold uppercase tracking-wide text-teal-800">Net Additional Seller Equity</span>
                   <div id="netGain" class="mt-1 text-3xl font-extrabold text-teal-700">+$5,950</div>
                   <span id="roiPercentage" class="mt-1 block text-xs font-medium text-teal-600">191.5% Estimated Return</span>
                 </div>
               </div>
 
-              <div class="mt-6">
-                <button type="button" id="roiLeadOpenBtn" class="w-full rounded-xl bg-teal-600 px-4 py-3 text-center text-sm font-bold text-white shadow-md transition duration-150 ease-in-out hover:bg-teal-700">
-                  Get Your Custom Fix It &amp; List It Analysis &rarr;
-                </button>
-                <p class="mt-2 text-center text-[10px] text-momentum-gray">
-                  Estimates are based on Northeast Florida market averages. Zero out-of-pocket options available.
-                </p>
+              <div class="mt-6 border-t border-momentum-grayLight pt-5">
+                <h4 class="mb-1 text-sm font-bold text-slate-800">Lock In Your Custom Analysis</h4>
+                <p class="mb-3 text-xs text-momentum-gray">Get a precise, line-item evaluation for your home address.</p>
+
+                <form id="equityLeadForm" class="space-y-2.5">
+                  <input type="hidden" name="FormType" value="Fix It List It ROI Lead" />
+                  <input type="hidden" name="_subject" value="New Fix It &amp; List It Financing Calculator Lead - S2 Home Partners" />
+                  <input type="hidden" name="AsIsValue" id="roiField-asIsValue" value="" />
+                  <input type="hidden" name="SelectedUpgrades" id="roiField-upgrades" value="" />
+                  <input type="hidden" name="PayAtClosing" id="roiField-payAtClosing" value="" />
+                  <input type="hidden" name="OutOfPocketCost" id="roiField-outOfPocket" value="" />
+                  <input type="hidden" name="EstimatedNetGain" id="roiField-netGain" value="" />
+                  <input type="hidden" name="EstimatedROI" id="roiField-roi" value="" />
+                  <label for="equity-address" class="sr-only">Property Address</label>
+                  <input id="equity-address" type="text" name="Address" placeholder="Property Address (e.g. Yulee, Jax, Beaches)" required
+                    class="w-full rounded-lg border border-momentum-grayLight p-2.5 text-xs focus:border-momentum-blue focus:outline-none focus:ring-1 focus:ring-momentum-blue">
+                  <label for="equity-email" class="sr-only">Email</label>
+                  <input id="equity-email" type="email" name="Email" placeholder="Your Email Address" required
+                    class="w-full rounded-lg border border-momentum-grayLight p-2.5 text-xs focus:border-momentum-blue focus:outline-none focus:ring-1 focus:ring-momentum-blue">
+                  <label for="equity-phone" class="sr-only">Phone</label>
+                  <input id="equity-phone" type="tel" name="Phone" placeholder="Phone Number (Optional)"
+                    class="w-full rounded-lg border border-momentum-grayLight p-2.5 text-xs focus:border-momentum-blue focus:outline-none focus:ring-1 focus:ring-momentum-blue">
+                  <button type="submit" class="w-full rounded-lg bg-teal-600 px-4 py-2.5 text-xs font-bold text-white shadow transition hover:bg-teal-700">
+                    Request Custom Fix It &amp; List It Report &rarr;
+                  </button>
+                </form>
+
+                <div id="equityLeadForm-success" class="mt-3 hidden rounded-lg bg-teal-100 p-3 text-center text-xs font-bold text-teal-700">
+                  &#10003; Thank you! The S&sup2; Home Partners team will review your property details and reach out shortly.
+                </div>
               </div>
             </div>
           </div>
         </div>
       </div>
     </section>
-
-    <!-- ROI Calculator Lead Capture Modal -->
-    <div id="roiLeadModal" class="fixed inset-0 z-[80] hidden items-center justify-center bg-slate-900/60 p-4">
-      <div class="w-full max-w-md rounded-2xl bg-white p-6 shadow-2xl sm:p-8">
-        <div class="flex items-start justify-between gap-4">
-          <div>
-            <p class="text-xs font-bold uppercase tracking-wider text-teal-600">Free, No-Obligation</p>
-            <h3 class="mt-1 font-serif text-2xl font-bold text-momentum-blue">Your Custom Analysis</h3>
-          </div>
-          <button type="button" id="roiLeadCloseBtn" aria-label="Close" class="shrink-0 text-2xl leading-none text-momentum-gray transition-colors hover:text-momentum-blue">&times;</button>
-        </div>
-        <p class="mt-2 text-sm text-slate-600">Tell us your address and we'll turn these estimates into a real, agent-reviewed Fix It &amp; List It plan for your home.</p>
-
-        <form id="roiLeadForm" class="mt-6 space-y-3">
-          <input type="hidden" name="FormType" value="Fix It List It ROI Lead" />
-          <input type="hidden" name="_subject" value="New Fix It &amp; List It ROI Calculator Lead - S2 Home Partners" />
-          <input type="hidden" name="AsIsValue" id="roiField-asIsValue" value="" />
-          <input type="hidden" name="SelectedUpgrades" id="roiField-upgrades" value="" />
-          <input type="hidden" name="EstimatedNetGain" id="roiField-netGain" value="" />
-          <input type="hidden" name="EstimatedROI" id="roiField-roi" value="" />
-          <div>
-            <label for="roi-address" class="sr-only">Property Address</label>
-            <input id="roi-address" type="text" name="Address" required placeholder="Property Address" class="h-14 w-full rounded-xl border border-momentum-grayLight px-4 text-base text-slate-800 placeholder:text-momentum-gray transition-colors focus:border-momentum-blue focus:outline-none focus:ring-2 focus:ring-momentum-blue/30" />
-          </div>
-          <div>
-            <label for="roi-name" class="sr-only">Name</label>
-            <input id="roi-name" type="text" name="Name" required placeholder="Full Name" class="h-14 w-full rounded-xl border border-momentum-grayLight px-4 text-base text-slate-800 placeholder:text-momentum-gray transition-colors focus:border-momentum-blue focus:outline-none focus:ring-2 focus:ring-momentum-blue/30" />
-          </div>
-          <div class="grid grid-cols-1 gap-3 sm:grid-cols-2">
-            <div>
-              <label for="roi-email" class="sr-only">Email</label>
-              <input id="roi-email" type="email" name="Email" required placeholder="Email" class="h-14 w-full rounded-xl border border-momentum-grayLight px-4 text-base text-slate-800 placeholder:text-momentum-gray transition-colors focus:border-momentum-blue focus:outline-none focus:ring-2 focus:ring-momentum-blue/30" />
-            </div>
-            <div>
-              <label for="roi-phone" class="sr-only">Phone</label>
-              <input id="roi-phone" type="tel" name="Phone" placeholder="Phone" class="h-14 w-full rounded-xl border border-momentum-grayLight px-4 text-base text-slate-800 placeholder:text-momentum-gray transition-colors focus:border-momentum-blue focus:outline-none focus:ring-2 focus:ring-momentum-blue/30" />
-            </div>
-          </div>
-          <button type="submit" class="flex h-14 w-full items-center justify-center rounded-xl bg-teal-600 text-base font-bold text-white shadow-md transition-all hover:bg-teal-700">
-            Send Me My Analysis
-          </button>
-          <p class="text-center text-[11px] text-slate-500">We respect your privacy and never share your info outside our vetted network.</p>
-        </form>
-        <div id="roiLeadForm-success" class="hidden py-6 text-center">
-          <p class="font-serif text-lg font-bold text-momentum-blue">Thanks &mdash; request received!</p>
-          <p class="mt-1 text-sm text-slate-600">Sarah will follow up with your custom Fix It &amp; List It plan within 24 hours.</p>
-        </div>
-      </div>
-    </div>
   </main>
 
   <footer class="border-t border-slate-800 bg-slate-900 py-8 text-slate-400">
@@ -476,19 +466,18 @@
         });
       }
 
-      // --- Pre-Listing Equity & ROI Calculator ---
+      // --- Pre-Listing Equity & Financing Calculator ---
       const asIsValueInput = document.getElementById('asIsValue');
       if (asIsValueInput) {
         const asIsValueDisplay = document.getElementById('asIsValueDisplay');
+        const payAtClosingToggle = document.getElementById('payAtClosingToggle');
         const upgradeCheckboxes = document.querySelectorAll('.upgrade-checkbox');
+        const outOfPocketEl = document.getElementById('outOfPocketCost');
         const totalCostEl = document.getElementById('totalCost');
         const valueIncreaseEl = document.getElementById('valueIncrease');
         const arvDisplayEl = document.getElementById('arvDisplay');
         const netGainEl = document.getElementById('netGain');
         const roiPercentageEl = document.getElementById('roiPercentage');
-
-        let lastNetGain = 0;
-        let lastRoiPercentage = '0';
 
         function formatCurrency(amount) {
           return '$' + Math.round(amount).toLocaleString();
@@ -496,6 +485,7 @@
 
         function calculateROI() {
           const asIsValue = parseFloat(asIsValueInput.value);
+          const payAtClosing = payAtClosingToggle.checked;
           let totalCost = 0;
           let totalValueIncrease = 0;
           const selectedLabels = [];
@@ -514,65 +504,41 @@
           const netGain = totalValueIncrease - totalCost;
           const arv = asIsValue + totalValueIncrease;
           const roiPercentage = totalCost > 0 ? ((totalValueIncrease / totalCost) * 100).toFixed(1) : '0';
+          const outOfPocket = payAtClosing ? 0 : totalCost;
 
           asIsValueDisplay.textContent = formatCurrency(asIsValue);
+          outOfPocketEl.textContent = formatCurrency(outOfPocket);
           totalCostEl.textContent = formatCurrency(totalCost);
           valueIncreaseEl.textContent = '+' + formatCurrency(totalValueIncrease);
           arvDisplayEl.textContent = formatCurrency(arv);
           netGainEl.textContent = (netGain >= 0 ? '+' : '') + formatCurrency(netGain);
           roiPercentageEl.textContent = roiPercentage + '% Estimated Return';
 
-          lastNetGain = netGain;
-          lastRoiPercentage = roiPercentage;
-
           document.getElementById('roiField-asIsValue').value = formatCurrency(asIsValue);
           document.getElementById('roiField-upgrades').value = selectedLabels.join(', ') || 'None selected';
+          document.getElementById('roiField-payAtClosing').value = payAtClosing ? 'Yes' : 'No';
+          document.getElementById('roiField-outOfPocket').value = formatCurrency(outOfPocket);
           document.getElementById('roiField-netGain').value = (netGain >= 0 ? '+' : '') + formatCurrency(netGain);
           document.getElementById('roiField-roi').value = roiPercentage + '%';
         }
 
         asIsValueInput.addEventListener('input', calculateROI);
+        payAtClosingToggle.addEventListener('change', calculateROI);
         upgradeCheckboxes.forEach((cb) => cb.addEventListener('change', calculateROI));
         calculateROI();
 
-        // --- ROI Calculator lead capture modal ---
-        const roiLeadOpenBtn = document.getElementById('roiLeadOpenBtn');
-        const roiLeadModal = document.getElementById('roiLeadModal');
-        const roiLeadCloseBtn = document.getElementById('roiLeadCloseBtn');
-        const roiLeadForm = document.getElementById('roiLeadForm');
-        const roiLeadSuccess = document.getElementById('roiLeadForm-success');
-
-        function openRoiLeadModal() {
-          calculateROI();
-          roiLeadForm.reset();
-          roiLeadForm.classList.remove('hidden');
-          roiLeadSuccess.classList.add('hidden');
-          roiLeadModal.classList.remove('hidden');
-          roiLeadModal.classList.add('flex');
-          document.body.classList.add('overflow-hidden');
-          calculateROI();
-        }
-        function closeRoiLeadModal() {
-          roiLeadModal.classList.add('hidden');
-          roiLeadModal.classList.remove('flex');
-          document.body.classList.remove('overflow-hidden');
-        }
-        if (roiLeadOpenBtn && roiLeadModal) {
-          roiLeadOpenBtn.addEventListener('click', openRoiLeadModal);
-          roiLeadCloseBtn.addEventListener('click', closeRoiLeadModal);
-          roiLeadModal.addEventListener('click', (event) => {
-            if (event.target === roiLeadModal) closeRoiLeadModal();
-          });
-          document.addEventListener('keydown', (event) => {
-            if (event.key === 'Escape' && !roiLeadModal.classList.contains('hidden')) closeRoiLeadModal();
-          });
-          roiLeadForm.addEventListener('submit', (event) => {
+        // --- Inline lead capture form ---
+        const equityLeadForm = document.getElementById('equityLeadForm');
+        const equityLeadSuccess = document.getElementById('equityLeadForm-success');
+        if (equityLeadForm) {
+          equityLeadForm.addEventListener('submit', (event) => {
             event.preventDefault();
-            const formData = new FormData(roiLeadForm);
+            calculateROI();
+            const formData = new FormData(equityLeadForm);
             fetch(LEAD_BACKEND_URL, { method: 'POST', mode: 'no-cors', body: formData })
               .then(() => {
-                roiLeadForm.classList.add('hidden');
-                roiLeadSuccess.classList.remove('hidden');
+                equityLeadForm.classList.add('hidden');
+                equityLeadSuccess.classList.remove('hidden');
               })
               .catch(() => {
                 alert('Something went wrong submitting your request. Please email us directly at S2HomePartners@gmail.com.');
