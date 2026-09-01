@@ -99,19 +99,194 @@
       </div>
     </section>
 
-    <!-- Fix It & List It -->
+    <!-- Fix It & List It: Pre-Listing Equity & ROI Calculator -->
     <section class="bg-white py-16">
       <div class="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
-        <div class="rounded-2xl border border-momentum-grayLight bg-momentum-bgLight p-8 text-center shadow-lg lg:p-12">
+        <div class="mb-8 text-center">
           <span class="text-xs font-bold uppercase tracking-wider text-momentum-gray">Exclusive Pre-Listing Concierge</span>
           <h2 class="mt-1 font-serif text-3xl font-bold text-momentum-blue">Fix It &amp; List It Program</h2>
           <p class="mt-2 text-lg font-semibold text-teal-600">Improvements, you keep the equity.</p>
-          <p class="mx-auto mt-4 max-w-3xl text-sm leading-relaxed text-slate-600">
-            We cover the upfront cost of high-ROI home improvements — from fresh paint and flooring to kitchen refreshes and staging — so your property commands top market value. No interest, no hidden fees, and zero out-of-pocket costs until closing.
+          <p class="mx-auto mt-3 max-w-3xl text-sm leading-relaxed text-slate-600">
+            We cover the upfront cost of high-ROI home improvements &mdash; from fresh paint and flooring to kitchen refreshes and staging &mdash; so your property commands top market value. No interest, no hidden fees, and zero out-of-pocket costs until closing.
           </p>
+        </div>
+
+        <div class="mx-auto overflow-hidden rounded-2xl border border-momentum-grayLight bg-white shadow-xl">
+          <div class="relative bg-momentum-blueDark p-6 text-white sm:p-8">
+            <span class="mb-3 inline-block rounded-full bg-teal-500 px-3 py-1 text-xs font-bold uppercase tracking-wider text-momentum-blueDark">
+              Fix It &amp; List It Program
+            </span>
+            <h3 class="font-serif text-2xl font-bold tracking-tight sm:text-3xl">Pre-Listing Equity &amp; ROI Calculator</h3>
+            <p class="mt-2 max-w-2xl text-sm text-slate-200 sm:text-base">
+              See how strategic listing preparation can increase your home's sale price and maximize your net proceeds before you go to market.
+            </p>
+          </div>
+
+          <div class="grid grid-cols-1 gap-8 p-6 sm:p-8 lg:grid-cols-12">
+
+            <div class="space-y-6 lg:col-span-7">
+
+              <div>
+                <div class="mb-2 flex items-center justify-between">
+                  <label for="asIsValue" class="text-sm font-semibold text-slate-700">Estimated Current "As-Is" Value</label>
+                  <span id="asIsValueDisplay" class="text-lg font-bold text-momentum-blue">$450,000</span>
+                </div>
+                <input type="range" id="asIsValue" min="150000" max="1500000" step="10000" value="450000"
+                  class="h-2 w-full cursor-pointer appearance-none rounded-lg bg-momentum-grayLight accent-teal-600">
+                <div class="mt-1 flex justify-between text-xs text-momentum-gray">
+                  <span>$150k</span>
+                  <span>$1.5M+</span>
+                </div>
+              </div>
+
+              <hr class="border-momentum-grayLight">
+
+              <div>
+                <h4 class="mb-3 text-sm font-semibold text-slate-700">Select Planned Pre-Listing Upgrades:</h4>
+                <div class="space-y-3">
+
+                  <label class="group flex items-center rounded-xl border border-momentum-grayLight p-3 transition hover:bg-momentum-bgLight cursor-pointer">
+                    <input type="checkbox" class="upgrade-checkbox h-5 w-5 rounded border-momentum-grayLight text-teal-600 focus:ring-teal-500"
+                      data-cost="2500" data-roi="2.1" checked>
+                    <div class="ml-3 flex-1">
+                      <div class="flex items-center justify-between">
+                        <span class="text-sm font-medium text-slate-800 group-hover:text-teal-700">Fresh Interior Neutral Paint</span>
+                        <span class="text-xs font-semibold text-momentum-gray">~$2,500</span>
+                      </div>
+                      <p class="mt-0.5 text-xs text-momentum-gray">Estimated ROI: ~210% (High buyer appeal)</p>
+                    </div>
+                  </label>
+
+                  <label class="group flex items-center rounded-xl border border-momentum-grayLight p-3 transition hover:bg-momentum-bgLight cursor-pointer">
+                    <input type="checkbox" class="upgrade-checkbox h-5 w-5 rounded border-momentum-grayLight text-teal-600 focus:ring-teal-500"
+                      data-cost="4000" data-roi="1.8" checked>
+                    <div class="ml-3 flex-1">
+                      <div class="flex items-center justify-between">
+                        <span class="text-sm font-medium text-slate-800 group-hover:text-teal-700">Professional Staging &amp; Deep Clean</span>
+                        <span class="text-xs font-semibold text-momentum-gray">~$4,000</span>
+                      </div>
+                      <p class="mt-0.5 text-xs text-momentum-gray">Estimated ROI: ~180% (Faster sale speed)</p>
+                    </div>
+                  </label>
+
+                  <label class="group flex items-center rounded-xl border border-momentum-grayLight p-3 transition hover:bg-momentum-bgLight cursor-pointer">
+                    <input type="checkbox" class="upgrade-checkbox h-5 w-5 rounded border-momentum-grayLight text-teal-600 focus:ring-teal-500"
+                      data-cost="3500" data-roi="2.3">
+                    <div class="ml-3 flex-1">
+                      <div class="flex items-center justify-between">
+                        <span class="text-sm font-medium text-slate-800 group-hover:text-teal-700">Curb Appeal &amp; Exterior Touch-ups</span>
+                        <span class="text-xs font-semibold text-momentum-gray">~$3,500</span>
+                      </div>
+                      <p class="mt-0.5 text-xs text-momentum-gray">Estimated ROI: ~230% (First impression boost)</p>
+                    </div>
+                  </label>
+
+                  <label class="group flex items-center rounded-xl border border-momentum-grayLight p-3 transition hover:bg-momentum-bgLight cursor-pointer">
+                    <input type="checkbox" class="upgrade-checkbox h-5 w-5 rounded border-momentum-grayLight text-teal-600 focus:ring-teal-500"
+                      data-cost="8500" data-roi="1.5">
+                    <div class="ml-3 flex-1">
+                      <div class="flex items-center justify-between">
+                        <span class="text-sm font-medium text-slate-800 group-hover:text-teal-700">Minor Kitchen &amp; Fixture Refresh</span>
+                        <span class="text-xs font-semibold text-momentum-gray">~$8,500</span>
+                      </div>
+                      <p class="mt-0.5 text-xs text-momentum-gray">Estimated ROI: ~150% (Counters, hardware, lighting)</p>
+                    </div>
+                  </label>
+
+                </div>
+              </div>
+            </div>
+
+            <div class="flex flex-col justify-between rounded-xl border border-momentum-grayLight bg-momentum-bgLight p-6 lg:col-span-5">
+              <div>
+                <h4 class="mb-4 text-xs font-bold uppercase tracking-wider text-momentum-gray">Estimated Equity Breakdown</h4>
+
+                <div class="space-y-4">
+                  <div class="flex items-center justify-between border-b border-momentum-grayLight pb-2">
+                    <span class="text-sm text-slate-600">Total Prep Budget:</span>
+                    <span id="totalCost" class="text-sm font-bold text-slate-800">$6,500</span>
+                  </div>
+
+                  <div class="flex items-center justify-between border-b border-momentum-grayLight pb-2">
+                    <span class="text-sm text-slate-600">Estimated Value Increase:</span>
+                    <span id="valueIncrease" class="text-sm font-bold text-teal-600">+$12,450</span>
+                  </div>
+
+                  <div class="flex items-center justify-between border-b border-momentum-grayLight pb-2">
+                    <span class="text-sm text-slate-600">New Estimated Sale Price:</span>
+                    <span id="arvDisplay" class="text-sm font-bold text-momentum-blue">$462,450</span>
+                  </div>
+                </div>
+
+                <div class="mt-6 rounded-xl border border-teal-200 bg-teal-50 p-4 text-center">
+                  <span class="text-xs font-semibold uppercase tracking-wide text-teal-800">Net Additional Seller Profit</span>
+                  <div id="netGain" class="mt-1 text-3xl font-extrabold text-teal-700">+$5,950</div>
+                  <span id="roiPercentage" class="mt-1 block text-xs font-medium text-teal-600">191.5% Estimated Return</span>
+                </div>
+              </div>
+
+              <div class="mt-6">
+                <button type="button" id="roiLeadOpenBtn" class="w-full rounded-xl bg-teal-600 px-4 py-3 text-center text-sm font-bold text-white shadow-md transition duration-150 ease-in-out hover:bg-teal-700">
+                  Get Your Custom Fix It &amp; List It Analysis &rarr;
+                </button>
+                <p class="mt-2 text-center text-[10px] text-momentum-gray">
+                  Estimates are based on Northeast Florida market averages. Zero out-of-pocket options available.
+                </p>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </section>
+
+    <!-- ROI Calculator Lead Capture Modal -->
+    <div id="roiLeadModal" class="fixed inset-0 z-[80] hidden items-center justify-center bg-slate-900/60 p-4">
+      <div class="w-full max-w-md rounded-2xl bg-white p-6 shadow-2xl sm:p-8">
+        <div class="flex items-start justify-between gap-4">
+          <div>
+            <p class="text-xs font-bold uppercase tracking-wider text-teal-600">Free, No-Obligation</p>
+            <h3 class="mt-1 font-serif text-2xl font-bold text-momentum-blue">Your Custom Analysis</h3>
+          </div>
+          <button type="button" id="roiLeadCloseBtn" aria-label="Close" class="shrink-0 text-2xl leading-none text-momentum-gray transition-colors hover:text-momentum-blue">&times;</button>
+        </div>
+        <p class="mt-2 text-sm text-slate-600">Tell us your address and we'll turn these estimates into a real, agent-reviewed Fix It &amp; List It plan for your home.</p>
+
+        <form id="roiLeadForm" class="mt-6 space-y-3">
+          <input type="hidden" name="FormType" value="Fix It List It ROI Lead" />
+          <input type="hidden" name="_subject" value="New Fix It &amp; List It ROI Calculator Lead - S2 Home Partners" />
+          <input type="hidden" name="AsIsValue" id="roiField-asIsValue" value="" />
+          <input type="hidden" name="SelectedUpgrades" id="roiField-upgrades" value="" />
+          <input type="hidden" name="EstimatedNetGain" id="roiField-netGain" value="" />
+          <input type="hidden" name="EstimatedROI" id="roiField-roi" value="" />
+          <div>
+            <label for="roi-address" class="sr-only">Property Address</label>
+            <input id="roi-address" type="text" name="Address" required placeholder="Property Address" class="h-14 w-full rounded-xl border border-momentum-grayLight px-4 text-base text-slate-800 placeholder:text-momentum-gray transition-colors focus:border-momentum-blue focus:outline-none focus:ring-2 focus:ring-momentum-blue/30" />
+          </div>
+          <div>
+            <label for="roi-name" class="sr-only">Name</label>
+            <input id="roi-name" type="text" name="Name" required placeholder="Full Name" class="h-14 w-full rounded-xl border border-momentum-grayLight px-4 text-base text-slate-800 placeholder:text-momentum-gray transition-colors focus:border-momentum-blue focus:outline-none focus:ring-2 focus:ring-momentum-blue/30" />
+          </div>
+          <div class="grid grid-cols-1 gap-3 sm:grid-cols-2">
+            <div>
+              <label for="roi-email" class="sr-only">Email</label>
+              <input id="roi-email" type="email" name="Email" required placeholder="Email" class="h-14 w-full rounded-xl border border-momentum-grayLight px-4 text-base text-slate-800 placeholder:text-momentum-gray transition-colors focus:border-momentum-blue focus:outline-none focus:ring-2 focus:ring-momentum-blue/30" />
+            </div>
+            <div>
+              <label for="roi-phone" class="sr-only">Phone</label>
+              <input id="roi-phone" type="tel" name="Phone" placeholder="Phone" class="h-14 w-full rounded-xl border border-momentum-grayLight px-4 text-base text-slate-800 placeholder:text-momentum-gray transition-colors focus:border-momentum-blue focus:outline-none focus:ring-2 focus:ring-momentum-blue/30" />
+            </div>
+          </div>
+          <button type="submit" class="flex h-14 w-full items-center justify-center rounded-xl bg-teal-600 text-base font-bold text-white shadow-md transition-all hover:bg-teal-700">
+            Send Me My Analysis
+          </button>
+          <p class="text-center text-[11px] text-slate-500">We respect your privacy and never share your info outside our vetted network.</p>
+        </form>
+        <div id="roiLeadForm-success" class="hidden py-6 text-center">
+          <p class="font-serif text-lg font-bold text-momentum-blue">Thanks &mdash; request received!</p>
+          <p class="mt-1 text-sm text-slate-600">Sarah will follow up with your custom Fix It &amp; List It plan within 24 hours.</p>
+        </div>
+      </div>
+    </div>
   </main>
 
   <footer class="border-t border-slate-800 bg-slate-900 py-8 text-slate-400">
@@ -299,6 +474,111 @@
               alert('Something went wrong submitting your request. Please email us directly at S2HomePartners@gmail.com.');
             });
         });
+      }
+
+      // --- Pre-Listing Equity & ROI Calculator ---
+      const asIsValueInput = document.getElementById('asIsValue');
+      if (asIsValueInput) {
+        const asIsValueDisplay = document.getElementById('asIsValueDisplay');
+        const upgradeCheckboxes = document.querySelectorAll('.upgrade-checkbox');
+        const totalCostEl = document.getElementById('totalCost');
+        const valueIncreaseEl = document.getElementById('valueIncrease');
+        const arvDisplayEl = document.getElementById('arvDisplay');
+        const netGainEl = document.getElementById('netGain');
+        const roiPercentageEl = document.getElementById('roiPercentage');
+
+        let lastNetGain = 0;
+        let lastRoiPercentage = '0';
+
+        function formatCurrency(amount) {
+          return '$' + Math.round(amount).toLocaleString();
+        }
+
+        function calculateROI() {
+          const asIsValue = parseFloat(asIsValueInput.value);
+          let totalCost = 0;
+          let totalValueIncrease = 0;
+          const selectedLabels = [];
+
+          upgradeCheckboxes.forEach((cb) => {
+            if (cb.checked) {
+              const cost = parseFloat(cb.dataset.cost);
+              const roiMultiplier = parseFloat(cb.dataset.roi);
+              totalCost += cost;
+              totalValueIncrease += cost * roiMultiplier;
+              const labelEl = cb.closest('label').querySelector('span.text-slate-800');
+              if (labelEl) selectedLabels.push(labelEl.textContent.trim());
+            }
+          });
+
+          const netGain = totalValueIncrease - totalCost;
+          const arv = asIsValue + totalValueIncrease;
+          const roiPercentage = totalCost > 0 ? ((totalValueIncrease / totalCost) * 100).toFixed(1) : '0';
+
+          asIsValueDisplay.textContent = formatCurrency(asIsValue);
+          totalCostEl.textContent = formatCurrency(totalCost);
+          valueIncreaseEl.textContent = '+' + formatCurrency(totalValueIncrease);
+          arvDisplayEl.textContent = formatCurrency(arv);
+          netGainEl.textContent = (netGain >= 0 ? '+' : '') + formatCurrency(netGain);
+          roiPercentageEl.textContent = roiPercentage + '% Estimated Return';
+
+          lastNetGain = netGain;
+          lastRoiPercentage = roiPercentage;
+
+          document.getElementById('roiField-asIsValue').value = formatCurrency(asIsValue);
+          document.getElementById('roiField-upgrades').value = selectedLabels.join(', ') || 'None selected';
+          document.getElementById('roiField-netGain').value = (netGain >= 0 ? '+' : '') + formatCurrency(netGain);
+          document.getElementById('roiField-roi').value = roiPercentage + '%';
+        }
+
+        asIsValueInput.addEventListener('input', calculateROI);
+        upgradeCheckboxes.forEach((cb) => cb.addEventListener('change', calculateROI));
+        calculateROI();
+
+        // --- ROI Calculator lead capture modal ---
+        const roiLeadOpenBtn = document.getElementById('roiLeadOpenBtn');
+        const roiLeadModal = document.getElementById('roiLeadModal');
+        const roiLeadCloseBtn = document.getElementById('roiLeadCloseBtn');
+        const roiLeadForm = document.getElementById('roiLeadForm');
+        const roiLeadSuccess = document.getElementById('roiLeadForm-success');
+
+        function openRoiLeadModal() {
+          calculateROI();
+          roiLeadForm.reset();
+          roiLeadForm.classList.remove('hidden');
+          roiLeadSuccess.classList.add('hidden');
+          roiLeadModal.classList.remove('hidden');
+          roiLeadModal.classList.add('flex');
+          document.body.classList.add('overflow-hidden');
+          calculateROI();
+        }
+        function closeRoiLeadModal() {
+          roiLeadModal.classList.add('hidden');
+          roiLeadModal.classList.remove('flex');
+          document.body.classList.remove('overflow-hidden');
+        }
+        if (roiLeadOpenBtn && roiLeadModal) {
+          roiLeadOpenBtn.addEventListener('click', openRoiLeadModal);
+          roiLeadCloseBtn.addEventListener('click', closeRoiLeadModal);
+          roiLeadModal.addEventListener('click', (event) => {
+            if (event.target === roiLeadModal) closeRoiLeadModal();
+          });
+          document.addEventListener('keydown', (event) => {
+            if (event.key === 'Escape' && !roiLeadModal.classList.contains('hidden')) closeRoiLeadModal();
+          });
+          roiLeadForm.addEventListener('submit', (event) => {
+            event.preventDefault();
+            const formData = new FormData(roiLeadForm);
+            fetch(LEAD_BACKEND_URL, { method: 'POST', mode: 'no-cors', body: formData })
+              .then(() => {
+                roiLeadForm.classList.add('hidden');
+                roiLeadSuccess.classList.remove('hidden');
+              })
+              .catch(() => {
+                alert('Something went wrong submitting your request. Please email us directly at S2HomePartners@gmail.com.');
+              });
+          });
+        }
       }
     })();
   </script>
