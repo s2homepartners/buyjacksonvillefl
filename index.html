@@ -1074,9 +1074,9 @@
         askSarahModal.classList.remove('hidden');
         askSarahModal.setAttribute('aria-hidden', 'false');
         document.body.classList.add('overflow-hidden');
-        requestAnimationFrame(() => {
+        setTimeout(() => {
           askSarahPanel.classList.remove('translate-y-full', 'md:translate-y-4', 'md:opacity-0');
-        });
+        }, 10);
       }
       function closeAskSarahModal() {
         askSarahPanel.classList.add('translate-y-full', 'md:translate-y-4', 'md:opacity-0');
