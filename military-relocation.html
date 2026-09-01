@@ -1,373 +1,527 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="en" class="scroll-smooth">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Northeast Florida & Kings Bay Military PCS Guide | S&sup2; Home Partners</title>
-    <!-- Tailwind CSS CDN -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        momentum: {
-                            blue: '#1A4B6E',
-                            blueHover: '#133853',
-                            gray: '#718093',
-                            grayLight: '#E2E8F0',
-                            bgLight: '#F8FAFC',
-                        }
-                    }
-                }
-            }
-        }
-    </script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Northeast Florida &amp; Kings Bay Military PCS Guide | S&sup2; Home Partners</title>
+  <meta name="description" content="Your complete PCS guide to NAS Jacksonville, NS Mayport, and NSB Kings Bay — base housing, off-base neighborhoods, commute times, schools, shopping, and a free PCS relocation kit." />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            momentum: {
+              blue: '#1A4B6E',
+              blueHover: '#133853',
+              blueDark: '#0F2C42',
+              gray: '#718093',
+              grayLight: '#E2E8F0',
+              bgLight: '#F8FAFC',
+            },
+          },
+          fontFamily: {
+            sans: ['Outfit', 'sans-serif'],
+            serif: ['Fraunces', 'Georgia', 'serif'],
+          },
+        },
+      },
+    };
+  </script>
+  <style>
+    .guide-card summary::-webkit-details-marker { display: none; }
+    .guide-card summary { list-style: none; }
+    .guide-card[open] .guide-chevron { transform: rotate(180deg); }
+  </style>
 </head>
 
 <body class="bg-momentum-bgLight text-slate-800 font-sans antialiased">
 
-    <!-- TOP NAVIGATION BAR -->
-    <nav class="bg-white sticky top-0 z-50 border-b border-momentum-grayLight shadow-sm">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between items-center h-24">
+  <!-- TOP NAVIGATION BAR -->
+  <header class="sticky top-0 z-50 border-b border-momentum-grayLight bg-white/95 shadow-sm backdrop-blur-md">
+    <div class="mx-auto flex h-24 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
+      <a href="index.html" class="flex items-center">
+        <img src="s2-logo.png" alt="S&sup2; Home Partners" class="h-20 w-52 object-cover object-[50%_46%]" />
+      </a>
 
-                <!-- Brokerage Logo -->
-                <a href="index.html" class="flex items-center">
-                    <img src="s2-logo.png" alt="S² Home Partners" class="h-20 w-52 object-cover object-[50%_46%]">
-                </a>
-
-                <!-- Navigation Links -->
-                <div class="hidden md:flex items-center space-x-6 text-xs font-semibold uppercase tracking-wider text-momentum-gray">
-                    <div class="group relative">
-                        <button type="button" class="flex items-center gap-1 hover:text-momentum-blue transition-colors" aria-haspopup="true">
-                            Buy
-                            <svg class="h-3 w-3 transition-transform duration-200 group-hover:rotate-180" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" /></svg>
-                        </button>
-                        <div class="invisible absolute left-0 top-full z-50 w-56 rounded-xl border border-momentum-grayLight bg-white py-2 opacity-0 shadow-lg transition-all duration-150 group-hover:visible group-hover:opacity-100 group-focus-within:visible group-focus-within:opacity-100">
-                            <a href="buy.html" class="block px-4 py-2.5 text-sm normal-case tracking-normal text-momentum-gray hover:bg-momentum-bgLight hover:text-momentum-blue">Buy Overview</a>
-                            <a href="area-guides.html" class="block px-4 py-2.5 text-sm normal-case tracking-normal text-momentum-gray hover:bg-momentum-bgLight hover:text-momentum-blue">Area Guides</a>
-                            <a href="buy.html#new-construction" class="block px-4 py-2.5 text-sm normal-case tracking-normal text-momentum-gray hover:bg-momentum-bgLight hover:text-momentum-blue">New Construction</a>
-                        </div>
-                    </div>
-                    <a href="sell.html" class="hover:text-momentum-blue transition-colors">Sell</a>
-                    <a href="military.html" class="text-momentum-blue border-b-2 border-momentum-blue pb-1">Military</a>
-                    <a href="about.html" class="hover:text-momentum-blue transition-colors">About Us</a>
-                    <a href="services.html" class="hover:text-momentum-blue transition-colors">Programs &amp; Services</a>
-                    <a href="about.html#contact"
-                        class="bg-momentum-blue hover:bg-momentum-blueHover text-white px-4 py-2.5 rounded-lg transition-colors font-semibold normal-case tracking-normal">Contact</a>
-                </div>
-
-            </div>
+      <nav class="hidden items-center space-x-5 text-xs font-bold uppercase tracking-wider text-momentum-gray xl:flex" aria-label="Primary">
+        <div class="group relative">
+          <button type="button" class="flex items-center gap-1 transition-colors hover:text-momentum-blue" aria-haspopup="true">
+            Buy
+            <svg class="h-3 w-3 transition-transform duration-200 group-hover:rotate-180" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" /></svg>
+          </button>
+          <div class="invisible absolute left-0 top-full z-50 w-56 rounded-xl border border-momentum-grayLight bg-white py-2 opacity-0 shadow-lg transition-all duration-150 group-hover:visible group-hover:opacity-100 group-focus-within:visible group-focus-within:opacity-100">
+            <a href="buy.html" class="block px-4 py-2.5 text-sm normal-case tracking-normal text-momentum-gray hover:bg-momentum-bgLight hover:text-momentum-blue">Buy Overview</a>
+            <a href="area-guides.html" class="block px-4 py-2.5 text-sm normal-case tracking-normal text-momentum-gray hover:bg-momentum-bgLight hover:text-momentum-blue">Area Guides</a>
+            <a href="buy.html#new-construction" class="block px-4 py-2.5 text-sm normal-case tracking-normal text-momentum-gray hover:bg-momentum-bgLight hover:text-momentum-blue">New Construction</a>
+          </div>
         </div>
-    </nav>
+        <a href="sell.html" class="transition-colors hover:text-momentum-blue">Sell</a>
+        <a href="military.html" class="border-b-2 border-momentum-blue pb-1 font-extrabold text-momentum-blue">Military</a>
+        <a href="success-stories.html" class="transition-colors hover:text-momentum-blue">Success Stories</a>
+        <a href="blog.html" class="transition-colors hover:text-momentum-blue">Blog</a>
+        <a href="referral.html" class="transition-colors hover:text-momentum-blue">Referral Program</a>
+        <a href="about.html" class="transition-colors hover:text-momentum-blue">About Us</a>
+        <a href="services.html" class="transition-colors hover:text-momentum-blue">Programs &amp; Services</a>
+        <a href="about.html#contact" class="rounded-lg bg-momentum-blue px-4 py-2.5 font-semibold normal-case tracking-normal text-white transition-colors hover:bg-momentum-blueHover">Contact</a>
+      </nav>
 
-    <!-- MILITARY HERO BANNER -->
-    <section class="relative bg-momentum-blue text-white py-20 lg:py-28 overflow-hidden">
-        <div class="absolute inset-0 opacity-25 bg-cover bg-center"
-            style="background-image: url('https://images.unsplash.com/photo-1541872703-74c5e44368f9?auto=format&fit=crop&w=1600&q=80');">
+      <button id="menu-toggle" type="button" class="inline-flex items-center justify-center text-momentum-blue xl:hidden" aria-expanded="false" aria-controls="mobile-menu" aria-label="Open menu">
+        <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M4 7h16M4 12h16M4 17h16" />
+        </svg>
+      </button>
+    </div>
+
+    <div id="mobile-menu" class="hidden border-t border-momentum-grayLight bg-white px-4 py-4 xl:hidden">
+      <nav class="flex flex-col gap-3 text-sm font-medium text-momentum-blue" aria-label="Mobile">
+        <a href="buy.html" class="mobile-link py-1 font-bold">Buy</a>
+        <a href="area-guides.html" class="mobile-link py-1 pl-4 text-sm text-momentum-gray">Area Guides</a>
+        <a href="buy.html#new-construction" class="mobile-link py-1 pl-4 text-sm text-momentum-gray">New Construction</a>
+        <a href="sell.html" class="mobile-link py-1">Sell</a>
+        <a href="military.html" class="mobile-link py-1 font-bold">Military</a>
+        <a href="success-stories.html" class="mobile-link py-1">Success Stories</a>
+        <a href="blog.html" class="mobile-link py-1">Blog</a>
+        <a href="referral.html" class="mobile-link py-1">Referral Program</a>
+        <a href="about.html" class="mobile-link py-1">About Us</a>
+        <a href="services.html" class="mobile-link py-1">Programs &amp; Services</a>
+        <a href="about.html#contact" class="mobile-link py-1">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- MILITARY HERO BANNER -->
+  <section class="relative overflow-hidden bg-momentum-blue py-20 text-white lg:py-28">
+    <div class="absolute inset-0 bg-cover bg-center opacity-25" style="background-image: url('https://upload.wikimedia.org/wikipedia/commons/6/6c/Aerial_view_of_Naval_Air_Station_Jacksonville_%28180520-N-BO384-001%29.jpg');"></div>
+    <div class="absolute inset-0 bg-gradient-to-r from-momentum-blue via-momentum-blue/90 to-transparent"></div>
+
+    <div class="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div class="max-w-3xl">
+        <span class="mb-4 inline-block rounded-full border border-white/20 bg-momentum-gray/40 px-3 py-1 text-xs font-bold uppercase tracking-widest text-white">
+          Your Nationwide PCS Relocation Team
+        </span>
+        <h1 class="font-serif text-4xl font-bold leading-tight sm:text-5xl">
+          Wherever Your Orders Take You, We're Your Go-To.
+        </h1>
+        <p class="mt-4 text-lg leading-relaxed text-slate-200">
+          We're based in Northeast Florida and Kings Bay, GA &mdash; and we personally handle every buyer and seller stationed at NAS Jacksonville, NS Mayport, and NSB Kings Bay. For every other base in the country, we've already interviewed and vetted a trusted local agent for you, so you never have to gamble on a stranger.
+        </p>
+        <div class="mt-8 flex flex-wrap gap-4">
+          <a href="#guide-download" class="rounded-lg bg-white px-6 py-3 font-bold text-momentum-blue shadow-lg transition-colors hover:bg-slate-100">
+            Get Your Free PCS Guide
+          </a>
+          <a href="military-bases.html" class="rounded-lg border border-white/30 bg-momentum-gray/30 px-6 py-3 font-semibold text-white transition-colors hover:bg-white/10">
+            Find Any Base Nationwide &rarr;
+          </a>
         </div>
-        <div class="absolute inset-0 bg-gradient-to-r from-momentum-blue via-momentum-blue/90 to-transparent"></div>
+      </div>
+    </div>
+  </section>
 
-        <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="max-w-3xl">
-                <span
-                    class="text-xs font-bold uppercase tracking-widest text-white bg-momentum-gray/40 border border-white/20 px-3 py-1 rounded-full inline-block mb-4">
-                    Ultimate PCS & Relocation Resource
-                </span>
-                <h1 class="text-4xl sm:text-5xl font-bold font-serif leading-tight">
-                    Military Relocation to Northeast Florida & Kings Bay
-                </h1>
-                <p class="mt-4 text-lg text-slate-200 leading-relaxed">
-                    Your complete guide for active duty service members, veterans, and military families PCSing to NAS
-                    Jacksonville, NS Mayport, and NSB Kings Bay.
-                </p>
-                <div class="mt-8 flex flex-wrap gap-4">
-                    <a href="#guide-download"
-                        class="bg-white hover:bg-slate-100 text-momentum-blue font-bold px-6 py-3 rounded-lg shadow-lg transition-colors">
-                        Get Your Free PCS Guide
-                    </a>
-                    <a href="#bases"
-                        class="bg-momentum-gray/30 hover:bg-momentum-gray/50 text-white border border-white/30 font-semibold px-6 py-3 rounded-lg transition-colors">
-                        Explore Installations
-                    </a>
-                </div>
-            </div>
+  <!-- QUICK STATS BAR -->
+  <section class="border-b border-momentum-grayLight bg-white py-8">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-2 gap-6 text-center md:grid-cols-4">
+        <div>
+          <span class="block font-serif text-3xl font-bold text-momentum-blue">161+</span>
+          <span class="text-xs font-semibold uppercase text-momentum-gray">Bases In Our Referral Network</span>
         </div>
-    </section>
-
-    <!-- QUICK STATS BAR -->
-    <section class="bg-white border-b border-momentum-grayLight py-8">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
-                <div>
-                    <span class="block text-3xl font-bold text-momentum-blue font-serif">13+ Years</span>
-                    <span class="text-xs text-momentum-gray uppercase font-semibold">Combined Experience</span>
-                </div>
-                <div>
-                    <span class="block text-3xl font-bold text-momentum-blue font-serif">100%</span>
-                    <span class="text-xs text-momentum-gray uppercase font-semibold">Military Spouse Owned</span>
-                </div>
-                <div>
-                    <span class="block text-3xl font-bold text-momentum-blue font-serif">3 Major</span>
-                    <span class="text-xs text-momentum-gray uppercase font-semibold">Bases Covered</span>
-                </div>
-                <div>
-                    <span class="block text-3xl font-bold text-momentum-blue font-serif">VA Loan</span>
-                    <span class="text-xs text-momentum-gray uppercase font-semibold">Certified Experts</span>
-                </div>
-            </div>
+        <div>
+          <span class="block font-serif text-3xl font-bold text-momentum-blue">100%</span>
+          <span class="text-xs font-semibold uppercase text-momentum-gray">Military Spouse Owned</span>
         </div>
-    </section>
-
-    <!-- COMPREHENSIVE INSTALLATION BREAKDOWN -->
-    <section id="bases" class="py-16 bg-momentum-bgLight">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-
-            <div class="text-center mb-12">
-                <span class="text-xs font-semibold uppercase tracking-wider text-momentum-gray">Regional Duty
-                    Stations</span>
-                <h2 class="text-3xl font-bold text-momentum-blue font-serif sm:text-4xl mt-1">
-                    Northeast Florida & Southeast Georgia Bases
-                </h2>
-                <p class="mt-3 text-lg text-slate-600">
-                    Detailed community spotlights, commute profiles, and housing dynamics for each local installation.
-                </p>
-            </div>
-
-            <div class="space-y-12">
-
-                <!-- NAS Jacksonville -->
-                <div
-                    class="bg-white border border-momentum-grayLight rounded-2xl p-8 shadow-sm grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
-                    <div class="lg:col-span-5">
-                        <img src="https://images.unsplash.com/photo-1508873696983-2df515122519?auto=format&fit=crop&w=800&q=80"
-                            alt="NAS Jacksonville" class="rounded-xl shadow-md w-full h-64 object-cover">
-                    </div>
-                    <div class="lg:col-span-7">
-                        <span class="text-xs font-bold uppercase text-momentum-gray">Naval Aviation Hub</span>
-                        <h3 class="text-2xl font-bold font-serif text-momentum-blue mt-1">Naval Air Station Jacksonville
-                            (NAS Jax)</h3>
-                        <p class="text-sm text-slate-600 mt-3 leading-relaxed">
-                            NAS Jacksonville is located along the St. Johns River in West Jacksonville. It is the
-                            largest Navy base in the region and home to patrol wings, squadron operations, and naval
-                            hospital facilities.
-                        </p>
-                        <div class="mt-4 grid grid-cols-2 gap-4 text-xs font-medium text-slate-700">
-                            <div class="bg-momentum-bgLight p-3 rounded-lg border border-momentum-grayLight">
-                                <strong class="text-momentum-blue block">Top Communities:</strong> Fleming Island,
-                                Orange Park, Oakleaf Plantation, West Jacksonville
-                            </div>
-                            <div class="bg-momentum-bgLight p-3 rounded-lg border border-momentum-grayLight">
-                                <strong class="text-momentum-blue block">Average Commute:</strong> 15 – 30 Minutes
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- NS Mayport -->
-                <div
-                    class="bg-white border border-momentum-grayLight rounded-2xl p-8 shadow-sm grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
-                    <div class="lg:col-span-5">
-                        <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=800&q=80"
-                            alt="NS Mayport" class="rounded-xl shadow-md w-full h-64 object-cover">
-                    </div>
-                    <div class="lg:col-span-7">
-                        <span class="text-xs font-bold uppercase text-momentum-gray">Surface & Tactical Station</span>
-                        <h3 class="text-2xl font-bold font-serif text-momentum-blue mt-1">Naval Station Mayport (NS
-                            Mayport)</h3>
-                        <p class="text-sm text-slate-600 mt-3 leading-relaxed">
-                            Situated at the mouth of the St. Johns River near the Atlantic Ocean, Mayport hosts
-                            destroyer squadrons, helicopter maritime strike wings, and coast guard operations.
-                        </p>
-                        <div class="mt-4 grid grid-cols-2 gap-4 text-xs font-medium text-slate-700">
-                            <div class="bg-momentum-bgLight p-3 rounded-lg border border-momentum-grayLight">
-                                <strong class="text-momentum-blue block">Top Communities:</strong> Atlantic Beach,
-                                Neptune Beach, Jacksonville Beach, East Arlington
-                            </div>
-                            <div class="bg-momentum-bgLight p-3 rounded-lg border border-momentum-grayLight">
-                                <strong class="text-momentum-blue block">Average Commute:</strong> 10 – 25 Minutes
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- NSB Kings Bay -->
-                <div
-                    class="bg-white border border-momentum-grayLight rounded-2xl p-8 shadow-sm grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
-                    <div class="lg:col-span-5">
-                        <img src="https://images.unsplash.com/photo-1564013799919-ab600027ffc6?auto=format&fit=crop&w=800&q=80"
-                            alt="NSB Kings Bay" class="rounded-xl shadow-md w-full h-64 object-cover">
-                    </div>
-                    <div class="lg:col-span-7">
-                        <span class="text-xs font-bold uppercase text-momentum-gray">Submarine Base</span>
-                        <h3 class="text-2xl font-bold font-serif text-momentum-blue mt-1">Naval Submarine Base Kings Bay
-                            (NSB Kings Bay)</h3>
-                        <p class="text-sm text-slate-600 mt-3 leading-relaxed">
-                            Located just across the Georgia border, Kings Bay is the East Coast homeport for Ohio-class
-                            submarines. Many families stationed here choose to live in Nassau County, FL for top-rated
-                            schools and zero state income tax.
-                        </p>
-                        <div class="mt-4 grid grid-cols-2 gap-4 text-xs font-medium text-slate-700">
-                            <div class="bg-momentum-bgLight p-3 rounded-lg border border-momentum-grayLight">
-                                <strong class="text-momentum-blue block">Top Communities:</strong> Yulee, Fernandina
-                                Beach / Amelia Island, St. Marys (GA)
-                            </div>
-                            <div class="bg-momentum-bgLight p-3 rounded-lg border border-momentum-grayLight">
-                                <strong class="text-momentum-blue block">Average Commute:</strong> 20 – 35 Minutes
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-
+        <div>
+          <span class="block font-serif text-3xl font-bold text-momentum-blue">3 Local</span>
+          <span class="text-xs font-semibold uppercase text-momentum-gray">Bases We Service Directly</span>
         </div>
-    </section>
-
-    <!-- STEP-BY-STEP PCS TIMELINE & GUIDES -->
-    <section class="py-16 bg-white">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-
-            <div class="text-center mb-12">
-                <span class="text-xs font-semibold uppercase tracking-wider text-momentum-gray">Step-By-Step
-                    Assistance</span>
-                <h2 class="text-3xl font-bold text-momentum-blue font-serif sm:text-4xl mt-1">
-                    Your Step-by-Step PCS Roadmap
-                </h2>
-                <p class="mt-3 text-lg text-slate-600">
-                    How we help military families transition seamlessly from orders to move-in day.
-                </p>
-            </div>
-
-            <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
-
-                <div class="p-6 bg-momentum-bgLight border border-momentum-grayLight rounded-xl text-center">
-                    <div
-                        class="w-10 h-10 bg-momentum-blue text-white font-bold rounded-full flex items-center justify-center mx-auto mb-4">
-                        1</div>
-                    <h4 class="font-bold text-momentum-blue text-lg mb-2">Pre-PCS Consultation</h4>
-                    <p class="text-xs text-slate-600 leading-relaxed">We evaluate your BAH budget, school preferences,
-                        commute limits, and pet needs long before you arrive.</p>
-                </div>
-
-                <div class="p-6 bg-momentum-bgLight border border-momentum-grayLight rounded-xl text-center">
-                    <div
-                        class="w-10 h-10 bg-momentum-blue text-white font-bold rounded-full flex items-center justify-center mx-auto mb-4">
-                        2</div>
-                    <h4 class="font-bold text-momentum-blue text-lg mb-2">Sight-Unseen Video Tours</h4>
-                    <p class="text-xs text-slate-600 leading-relaxed">HD video walkthroughs highlighting house details,
-                        street condition, and surrounding neighborhood noise levels.</p>
-                </div>
-
-                <div class="p-6 bg-momentum-bgLight border border-momentum-grayLight rounded-xl text-center">
-                    <div
-                        class="w-10 h-10 bg-momentum-blue text-white font-bold rounded-full flex items-center justify-center mx-auto mb-4">
-                        3</div>
-                    <h4 class="font-bold text-momentum-blue text-lg mb-2">VA Loan Execution</h4>
-                    <p class="text-xs text-slate-600 leading-relaxed">Fast-tracked VA loan approvals with trusted local
-                        lenders who specialize in military turnarounds.</p>
-                </div>
-
-                <div class="p-6 bg-momentum-bgLight border border-momentum-grayLight rounded-xl text-center">
-                    <div
-                        class="w-10 h-10 bg-momentum-blue text-white font-bold rounded-full flex items-center justify-center mx-auto mb-4">
-                        4</div>
-                    <h4 class="font-bold text-momentum-blue text-lg mb-2">Remote Closing & Key Handoff</h4>
-                    <p class="text-xs text-slate-600 leading-relaxed">Remote notary coordination and power-of-attorney
-                        execution so your keys are ready when your truck arrives.</p>
-                </div>
-
-            </div>
-
+        <div>
+          <span class="block font-serif text-3xl font-bold text-momentum-blue">VA Loan</span>
+          <span class="text-xs font-semibold uppercase text-momentum-gray">Certified Experts</span>
         </div>
-    </section>
+      </div>
+    </div>
+  </section>
 
-    <!-- PCS GUIDE DOWNLOAD & FORM CTA -->
-    <section id="guide-download" class="py-16 bg-momentum-blue text-white">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+  <!-- WHY US / VETTED NETWORK -->
+  <section class="bg-momentum-bgLight py-14">
+    <div class="mx-auto max-w-5xl px-4 text-center sm:px-6 lg:px-8">
+      <h2 class="font-serif text-2xl font-bold text-momentum-blue sm:text-3xl">One Point Of Contact, Anywhere You PCS</h2>
+      <p class="mx-auto mt-4 max-w-3xl text-base leading-relaxed text-slate-600">
+        Every family stationed at NAS Jacksonville, NS Mayport, or NSB Kings Bay works directly with us, start to finish. If your orders send you somewhere else, we don't just hand you a phone book &mdash; we've personally interviewed real estate agents at installations across the country and built a nationwide referral network of people who understand PCS timelines, VA loans, and military life. It's always free, and it's always in your best interest, not ours.
+      </p>
+      <a href="military-bases.html" class="mt-6 inline-block rounded-lg bg-momentum-blue px-6 py-3 font-bold text-white shadow transition-colors hover:bg-momentum-blueHover">Browse The Full Base Directory &rarr;</a>
+    </div>
+  </section>
 
-                <div class="lg:col-span-6">
-                    <span
-                        class="bg-momentum-gray text-white font-bold text-xs uppercase px-3 py-1 rounded-full inline-block mb-4">Free
-                        PCS Relocation Kit</span>
-                    <h2 class="text-3xl font-bold font-serif sm:text-4xl mb-4">
-                        Request Your Northeast Florida PCS Relocation Package
-                    </h2>
-                    <p class="text-slate-200 text-base leading-relaxed mb-6">
-                        Get instant access to local school comparison charts, current BAH rates, neighborhood maps, and
-                        military housing FAQs compiled by military spouses who live here.
-                    </p>
-                    <ul class="space-y-3 text-sm text-slate-200">
-                        <li class="flex items-center"><span class="text-teal-300 font-bold mr-2">✓</span> Complete BAH
-                            breakdowns for NAS Jax, Mayport & Kings Bay</li>
-                        <li class="flex items-center"><span class="text-teal-300 font-bold mr-2">✓</span> Florida vs.
-                            Georgia tax advantage comparison for military</li>
-                        <li class="flex items-center"><span class="text-teal-300 font-bold mr-2">✓</span> Rental market
-                            trends & VA loan buying strategies</li>
-                    </ul>
-                </div>
+  <!-- LOCAL BASES DEEP DIVE -->
+  <section id="bases" class="bg-white py-16">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
 
-                <div class="lg:col-span-6 bg-white rounded-2xl p-8 text-slate-800 shadow-2xl">
-                    <h3 class="text-2xl font-bold font-serif text-momentum-blue mb-2">Get Your Free Military PCS Guide
-                    </h3>
-                    <p class="text-xs text-slate-600 mb-6">Fill out the quick form below and our team will email you the
-                        package immediately.</p>
+      <div class="mb-12 text-center">
+        <span class="text-xs font-semibold uppercase tracking-wider text-momentum-gray">Regional Duty Stations We Service Directly</span>
+        <h2 class="mt-1 font-serif text-3xl font-bold text-momentum-blue sm:text-4xl">
+          Northeast Florida &amp; Southeast Georgia Bases
+        </h2>
+        <p class="mx-auto mt-3 max-w-2xl text-lg text-slate-600">
+          Base housing options, off-base neighborhoods, commute times, schools, and shopping &mdash; everything you need to decide where to live.
+        </p>
+      </div>
 
-                    <form action="https://formsubmit.co/S2HomePartners@gmail.com" method="POST" class="space-y-4">
-                        <!-- Hidden Configuration Fields -->
-                        <input type="hidden" name="_next" value="https://buyjacksonvillefl.com/military-relocation.html#submitted" />
-                        <input type="hidden" name="_subject" value="New Military PCS Guide Request - S2 Home Partners" />
-                        <div>
-                            <label class="block text-xs font-bold text-slate-700 uppercase mb-1">Full Name</label>
-                            <input type="text" name="Name" required placeholder="John Doe"
-                                class="w-full px-4 py-2.5 border border-momentum-grayLight rounded-lg text-sm focus:outline-none focus:border-momentum-blue">
-                        </div>
-                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                            <div>
-                                <label class="block text-xs font-bold text-slate-700 uppercase mb-1">Email
-                                    Address</label>
-                                <input type="email" name="Email" required placeholder="john@example.com"
-                                    class="w-full px-4 py-2.5 border border-momentum-grayLight rounded-lg text-sm focus:outline-none focus:border-momentum-blue">
-                            </div>
-                            <div>
-                                <label class="block text-xs font-bold text-slate-700 uppercase mb-1">Phone
-                                    Number</label>
-                                <input type="tel" name="Phone" placeholder="(904) 000-0000"
-                                    class="w-full px-4 py-2.5 border border-momentum-grayLight rounded-lg text-sm focus:outline-none focus:border-momentum-blue">
-                            </div>
-                        </div>
-                        <div>
-                            <label class="block text-xs font-bold text-slate-700 uppercase mb-1">Target Base / Duty
-                                Station</label>
-                            <select name="Target_Base"
-                                class="w-full px-4 py-2.5 border border-momentum-grayLight rounded-lg text-sm focus:outline-none focus:border-momentum-blue">
-                                <option value="NAS Jacksonville">NAS Jacksonville</option>
-                                <option value="Naval Station Mayport">Naval Station Mayport</option>
-                                <option value="NSB Kings Bay">NSB Kings Bay</option>
-                                <option value="Undecided / Exploring">Undecided / Exploring Options</option>
-                            </select>
-                        </div>
-                        <button type="submit"
-                            class="w-full bg-momentum-blue hover:bg-momentum-blueHover text-white font-bold py-3 rounded-lg transition-colors shadow-md text-sm">
-                            Send Me The Free PCS Package
-                        </button>
-                    </form>
-                </div>
+      <!-- =========================== NAS JACKSONVILLE =========================== -->
+      <div id="nas-jacksonville" class="scroll-mt-24 mb-16 overflow-hidden rounded-3xl border border-momentum-grayLight shadow-md">
+        <div class="relative h-64 w-full sm:h-80">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/6/6c/Aerial_view_of_Naval_Air_Station_Jacksonville_%28180520-N-BO384-001%29.jpg" alt="NAS Jacksonville" class="h-full w-full object-cover" />
+          <div class="absolute inset-0 bg-gradient-to-t from-black/85 via-black/20 to-transparent"></div>
+          <div class="absolute inset-x-0 bottom-0 p-6 sm:p-8">
+            <span class="rounded-full bg-teal-500 px-3 py-1 text-xs font-bold uppercase tracking-wider text-white shadow">Naval Aviation Hub &middot; We Service This Base</span>
+            <h3 class="mt-2 font-serif text-3xl font-bold text-white drop-shadow-md">Naval Air Station Jacksonville (NAS Jax)</h3>
+          </div>
+        </div>
+        <div class="bg-white p-6 sm:p-8">
+          <p class="text-base leading-relaxed text-slate-700">NAS Jacksonville sits along the St. Johns River in West Jacksonville and is the largest Navy base in the region &mdash; home to Maritime Patrol squadrons, Fleet Readiness Center Southeast, and Naval Hospital Jacksonville.</p>
 
+          <!-- Housing -->
+          <h4 class="mt-6 font-serif text-xl font-bold text-momentum-blue">On-Base Housing</h4>
+          <p class="mt-1 text-sm text-slate-600">NAS Jacksonville Homes is professionally managed by Balfour Beatty Communities and made up of two neighborhoods, exclusively for active-duty military. Eligibility varies based on total number of dependents &mdash; contact the leasing office at (904) 908-0821 for specifics.</p>
+          <div class="mt-4 grid grid-cols-1 gap-4 sm:grid-cols-2">
+            <div class="rounded-xl border border-momentum-grayLight bg-momentum-bgLight p-4">
+              <h5 class="font-bold text-momentum-blue">Patriots Point</h5>
+              <p class="mt-1 text-sm text-slate-600">3&ndash;4 bedrooms &middot; 2.5 baths &middot; laundry room, master suite, screened-in porch, garage, community basketball court &amp; playground.</p>
+              <p class="mt-2 text-xs font-bold uppercase text-momentum-gray">Eligibility: E1&ndash;E9; O1&ndash;O5</p>
             </div>
-        </div>
-    </section>
+            <div class="rounded-xl border border-momentum-grayLight bg-momentum-bgLight p-4">
+              <h5 class="font-bold text-momentum-blue">River Oaks</h5>
+              <p class="mt-1 text-sm text-slate-600">3&ndash;5 bedrooms &middot; 2&ndash;4.5 baths &middot; near the NAS Jax Golf Club and Officers' Club.</p>
+              <p class="mt-2 text-xs font-bold uppercase text-momentum-gray">Eligibility: E7&ndash;E9; O1&ndash;O7</p>
+            </div>
+          </div>
 
-    <!-- FOOTER -->
-    <footer class="bg-slate-900 text-slate-400 py-8 border-t border-slate-800">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-sm">
-            <p>&copy; 2026 S&sup2; Home Partners | Momentum Realty. All rights reserved.</p>
+          <!-- Off base -->
+          <h4 class="mt-8 font-serif text-xl font-bold text-momentum-blue">Popular Off-Base Neighborhoods &amp; Commute</h4>
+          <div class="mt-4 grid grid-cols-1 gap-4 sm:grid-cols-3">
+            <div class="rounded-xl border border-momentum-grayLight bg-momentum-bgLight p-4">
+              <h5 class="font-bold text-momentum-blue">Orange Park</h5>
+              <p class="mt-1 text-sm text-slate-600">Established Clay County community, closest civilian option to the base.</p>
+              <p class="mt-2 text-xs font-bold text-teal-700">~10&ndash;15 min commute</p>
+            </div>
+            <div class="rounded-xl border border-momentum-grayLight bg-momentum-bgLight p-4">
+              <h5 class="font-bold text-momentum-blue">Fleming Island</h5>
+              <p class="mt-1 text-sm text-slate-600">Doctors Lake &amp; St. Johns River living, top-rated Clay schools.</p>
+              <p class="mt-2 text-xs font-bold text-teal-700">~15&ndash;20 min commute</p>
+            </div>
+            <div class="rounded-xl border border-momentum-grayLight bg-momentum-bgLight p-4">
+              <h5 class="font-bold text-momentum-blue">Oakleaf Plantation</h5>
+              <p class="mt-1 text-sm text-slate-600">New-construction amenity community, Clay County schools.</p>
+              <p class="mt-2 text-xs font-bold text-teal-700">~15&ndash;20 min commute</p>
+            </div>
+          </div>
+
+          <!-- Schools / shopping -->
+          <div class="mt-6 grid grid-cols-1 gap-4 sm:grid-cols-2">
+            <div class="rounded-xl border border-momentum-grayLight p-4">
+              <h5 class="font-bold text-momentum-blue">Schools</h5>
+              <p class="mt-1 text-sm text-slate-600">Clay County Schools (Fleming Island, Oakleaf, Orange Park) are consistently among Florida's top-rated districts; on-base families are zoned to Duval County Schools.</p>
+            </div>
+            <div class="rounded-xl border border-momentum-grayLight p-4">
+              <h5 class="font-bold text-momentum-blue">Shopping &amp; Dining</h5>
+              <p class="mt-1 text-sm text-slate-600">Orange Park Mall &amp; The Grove, Fleming Island Town Center, Oakleaf Town Center, plus casual dining along Blanding Boulevard.</p>
+            </div>
+          </div>
+
+          <div class="mt-8 text-center">
+            <a href="about.html#contact" class="inline-flex items-center justify-center rounded-xl bg-momentum-blue px-6 py-3.5 text-base font-bold text-white transition hover:bg-momentum-blueHover">Ask Us About NAS Jacksonville &rarr;</a>
+          </div>
         </div>
-    </footer>
+      </div>
+
+      <!-- =========================== NS MAYPORT =========================== -->
+      <div id="ns-mayport" class="scroll-mt-24 mb-16 overflow-hidden rounded-3xl border border-momentum-grayLight shadow-md">
+        <div class="relative h-64 w-full sm:h-80">
+          <img src="https://commons.wikimedia.org/wiki/Special:FilePath/P082212CK-0211_(8000542789).jpg?width=1600" alt="NS Mayport" class="h-full w-full object-cover" />
+          <div class="absolute inset-0 bg-gradient-to-t from-black/85 via-black/20 to-transparent"></div>
+          <div class="absolute inset-x-0 bottom-0 p-6 sm:p-8">
+            <span class="rounded-full bg-teal-500 px-3 py-1 text-xs font-bold uppercase tracking-wider text-white shadow">Surface &amp; Tactical Station &middot; We Service This Base</span>
+            <h3 class="mt-2 font-serif text-3xl font-bold text-white drop-shadow-md">Naval Station Mayport (NS Mayport)</h3>
+          </div>
+        </div>
+        <div class="bg-white p-6 sm:p-8">
+          <p class="text-base leading-relaxed text-slate-700">Situated at the mouth of the St. Johns River, minutes from the Atlantic Ocean, Mayport is homeport to destroyer squadrons, Helicopter Maritime Strike Wing Atlantic, and Coast Guard Sector Jacksonville.</p>
+
+          <h4 class="mt-6 font-serif text-xl font-bold text-momentum-blue">On-Base Housing</h4>
+          <p class="mt-1 text-sm text-slate-600">NS Mayport Homes (Balfour Beatty Communities) has four neighborhoods, open to all ranks, retirees, DOD personnel, and civilians. Contact leasing at (904) 270-8870.</p>
+          <div class="mt-4 grid grid-cols-1 gap-4 sm:grid-cols-2">
+            <div class="rounded-xl border border-momentum-grayLight bg-momentum-bgLight p-4">
+              <h5 class="font-bold text-momentum-blue">Bennett Shores East</h5>
+              <p class="mt-1 text-sm text-slate-600">3&ndash;4 bedrooms &middot; 2.5 baths &middot; laundry room, screened-in porch.</p>
+              <p class="mt-2 text-xs font-bold uppercase text-momentum-gray">Eligibility: E7&ndash;E9; O1&ndash;O9</p>
+            </div>
+            <div class="rounded-xl border border-momentum-grayLight bg-momentum-bgLight p-4">
+              <h5 class="font-bold text-momentum-blue">Bennett Shores West</h5>
+              <p class="mt-1 text-sm text-slate-600">2&ndash;4 bedrooms &middot; 1&ndash;2 baths &middot; near the main gate and Joseph Finegan Elementary.</p>
+              <p class="mt-2 text-xs font-bold uppercase text-momentum-gray">Eligibility: All ranks</p>
+            </div>
+            <div class="rounded-xl border border-momentum-grayLight bg-momentum-bgLight p-4">
+              <h5 class="font-bold text-momentum-blue">Marsh Cove</h5>
+              <p class="mt-1 text-sm text-slate-600">2-bedroom townhomes &middot; 1.5 baths &middot; fully-equipped kitchen, garage, screened porch.</p>
+              <p class="mt-2 text-xs font-bold uppercase text-momentum-gray">Eligibility: All ranks</p>
+            </div>
+            <div class="rounded-xl border border-momentum-grayLight bg-momentum-bgLight p-4">
+              <h5 class="font-bold text-momentum-blue">Ribault Bay</h5>
+              <p class="mt-1 text-sm text-slate-600">2&ndash;5 bedrooms &middot; 1&ndash;3 baths &middot; patios, some with garages.</p>
+              <p class="mt-2 text-xs font-bold uppercase text-momentum-gray">Eligibility: All ranks</p>
+            </div>
+          </div>
+
+          <h4 class="mt-8 font-serif text-xl font-bold text-momentum-blue">Popular Off-Base Neighborhoods &amp; Commute</h4>
+          <div class="mt-4 grid grid-cols-1 gap-4 sm:grid-cols-3">
+            <div class="rounded-xl border border-momentum-grayLight bg-momentum-bgLight p-4">
+              <h5 class="font-bold text-momentum-blue">Atlantic Beach</h5>
+              <p class="mt-1 text-sm text-slate-600">Quiet, residential, minutes from the gate.</p>
+              <p class="mt-2 text-xs font-bold text-teal-700">~10&ndash;15 min commute</p>
+            </div>
+            <div class="rounded-xl border border-momentum-grayLight bg-momentum-bgLight p-4">
+              <h5 class="font-bold text-momentum-blue">Neptune Beach</h5>
+              <p class="mt-1 text-sm text-slate-600">Walkable, calmer beach town, Third Street shops.</p>
+              <p class="mt-2 text-xs font-bold text-teal-700">~10&ndash;18 min commute</p>
+            </div>
+            <div class="rounded-xl border border-momentum-grayLight bg-momentum-bgLight p-4">
+              <h5 class="font-bold text-momentum-blue">Jacksonville Beach</h5>
+              <p class="mt-1 text-sm text-slate-600">Liveliest beach town, Beaches Town Center, pier.</p>
+              <p class="mt-2 text-xs font-bold text-teal-700">~15&ndash;20 min commute</p>
+            </div>
+          </div>
+
+          <div class="mt-6 grid grid-cols-1 gap-4 sm:grid-cols-2">
+            <div class="rounded-xl border border-momentum-grayLight p-4">
+              <h5 class="font-bold text-momentum-blue">Schools</h5>
+              <p class="mt-1 text-sm text-slate-600">Duval County Schools, including Atlantic Beach Elementary, Neptune Beach Elementary, and magnet access to Douglas Anderson School of the Arts.</p>
+            </div>
+            <div class="rounded-xl border border-momentum-grayLight p-4">
+              <h5 class="font-bold text-momentum-blue">Shopping &amp; Dining</h5>
+              <p class="mt-1 text-sm text-slate-600">Atlantic Beach Town Center, Beaches Town Center's restaurants and boutiques, the SeaWalk Pavilion, and the Jacksonville Beach boardwalk.</p>
+            </div>
+          </div>
+
+          <div class="mt-8 text-center">
+            <a href="about.html#contact" class="inline-flex items-center justify-center rounded-xl bg-momentum-blue px-6 py-3.5 text-base font-bold text-white transition hover:bg-momentum-blueHover">Ask Us About NS Mayport &rarr;</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- =========================== NSB KINGS BAY =========================== -->
+      <div id="nsb-kings-bay" class="scroll-mt-24 overflow-hidden rounded-3xl border border-momentum-grayLight shadow-md">
+        <div class="relative h-64 w-full sm:h-80">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/5/53/Kingsbay.jpg" alt="NSB Kings Bay" class="h-full w-full object-cover" />
+          <div class="absolute inset-0 bg-gradient-to-t from-black/85 via-black/20 to-transparent"></div>
+          <div class="absolute inset-x-0 bottom-0 p-6 sm:p-8">
+            <span class="rounded-full bg-teal-500 px-3 py-1 text-xs font-bold uppercase tracking-wider text-white shadow">Submarine Base &middot; We Service This Base</span>
+            <h3 class="mt-2 font-serif text-3xl font-bold text-white drop-shadow-md">Naval Submarine Base Kings Bay (NSB Kings Bay)</h3>
+          </div>
+        </div>
+        <div class="bg-white p-6 sm:p-8">
+          <p class="text-base leading-relaxed text-slate-700">Just across the Georgia border, Kings Bay is the East Coast homeport for Ohio-class ballistic missile submarines. Many families choose to live on the Florida side, in Nassau County, for zero state income tax and top-rated schools &mdash; while St. Marys and Kingsland, GA sit right outside the gate.</p>
+
+          <h4 class="mt-6 font-serif text-xl font-bold text-momentum-blue">On-Base Housing</h4>
+          <p class="mt-1 text-sm text-slate-600">NSB Kings Bay Homes (Balfour Beatty Communities) has three neighborhoods. Contact leasing at (912) 882-1211.</p>
+          <div class="mt-4 grid grid-cols-1 gap-4 sm:grid-cols-3">
+            <div class="rounded-xl border border-momentum-grayLight bg-momentum-bgLight p-4">
+              <h5 class="font-bold text-momentum-blue">Eagle Estates</h5>
+              <p class="mt-1 text-sm text-slate-600">2&ndash;4 bedrooms &middot; 1&ndash;2.5 baths &middot; single-family homes &amp; townhouses.</p>
+              <p class="mt-2 text-xs font-bold uppercase text-momentum-gray">All ranks/retirees/DOD/public; single-family homes: Active Duty E7+</p>
+            </div>
+            <div class="rounded-xl border border-momentum-grayLight bg-momentum-bgLight p-4">
+              <h5 class="font-bold text-momentum-blue">Polaris Point</h5>
+              <p class="mt-1 text-sm text-slate-600">2&ndash;4 bedrooms &middot; 1&ndash;2.5 baths &middot; fully-equipped kitchens, garage/carport.</p>
+              <p class="mt-2 text-xs font-bold uppercase text-momentum-gray">All ranks, retirees, DOD, public</p>
+            </div>
+            <div class="rounded-xl border border-momentum-grayLight bg-momentum-bgLight p-4">
+              <h5 class="font-bold text-momentum-blue">Trident Terrace</h5>
+              <p class="mt-1 text-sm text-slate-600">2&ndash;4 bedrooms &middot; 1&ndash;2.5 baths.</p>
+              <p class="mt-2 text-xs font-bold uppercase text-momentum-gray">All ranks, retirees, DOD, public</p>
+            </div>
+          </div>
+
+          <h4 class="mt-8 font-serif text-xl font-bold text-momentum-blue">Popular Off-Base Neighborhoods &amp; Commute</h4>
+          <div class="mt-4 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
+            <div class="rounded-xl border border-momentum-grayLight bg-momentum-bgLight p-4">
+              <h5 class="font-bold text-momentum-blue">St. Marys, GA</h5>
+              <p class="mt-1 text-sm text-slate-600">Closest civilian town, right outside the gate.</p>
+              <p class="mt-2 text-xs font-bold text-teal-700">~5&ndash;10 min commute</p>
+            </div>
+            <div class="rounded-xl border border-momentum-grayLight bg-momentum-bgLight p-4">
+              <h5 class="font-bold text-momentum-blue">Kingsland, GA</h5>
+              <p class="mt-1 text-sm text-slate-600">Camden County's commercial hub, I-95 access.</p>
+              <p class="mt-2 text-xs font-bold text-teal-700">~10&ndash;15 min commute</p>
+            </div>
+            <div class="rounded-xl border border-momentum-grayLight bg-momentum-bgLight p-4">
+              <h5 class="font-bold text-momentum-blue">Wildlight / Yulee, FL</h5>
+              <p class="mt-1 text-sm text-slate-600">New construction, no FL state income tax, Nassau schools.</p>
+              <p class="mt-2 text-xs font-bold text-teal-700">~20&ndash;25 min commute</p>
+            </div>
+            <div class="rounded-xl border border-momentum-grayLight bg-momentum-bgLight p-4">
+              <h5 class="font-bold text-momentum-blue">Fernandina Beach / Amelia Island</h5>
+              <p class="mt-1 text-sm text-slate-600">Historic waterfront charm, island living.</p>
+              <p class="mt-2 text-xs font-bold text-teal-700">~25&ndash;30 min commute</p>
+            </div>
+          </div>
+
+          <div class="mt-6 grid grid-cols-1 gap-4 sm:grid-cols-2">
+            <div class="rounded-xl border border-momentum-grayLight p-4">
+              <h5 class="font-bold text-momentum-blue">Schools</h5>
+              <p class="mt-1 text-sm text-slate-600">Nassau County Schools (FL side) including Wildlight Elementary and Fernandina Beach Elementary/Middle/High; Camden County Schools (GA side) for St. Marys and Kingsland families.</p>
+            </div>
+            <div class="rounded-xl border border-momentum-grayLight p-4">
+              <h5 class="font-bold text-momentum-blue">Shopping &amp; Dining</h5>
+              <p class="mt-1 text-sm text-slate-600">Wildlight Village Center, historic Fernandina Beach's Centre Street shops &amp; restaurants, and downtown St. Marys along the waterfront.</p>
+            </div>
+          </div>
+
+          <div class="mt-8 text-center">
+            <a href="about.html#contact" class="inline-flex items-center justify-center rounded-xl bg-momentum-blue px-6 py-3.5 text-base font-bold text-white transition hover:bg-momentum-blueHover">Ask Us About NSB Kings Bay &rarr;</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- STEP-BY-STEP PCS TIMELINE -->
+  <section class="bg-momentum-bgLight py-16">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div class="mb-12 text-center">
+        <span class="text-xs font-semibold uppercase tracking-wider text-momentum-gray">Step-By-Step Assistance</span>
+        <h2 class="mt-1 font-serif text-3xl font-bold text-momentum-blue sm:text-4xl">Your Step-by-Step PCS Roadmap</h2>
+        <p class="mt-3 text-lg text-slate-600">How we help military families transition seamlessly from orders to move-in day &mdash; anywhere in the country.</p>
+      </div>
+
+      <div class="grid grid-cols-1 gap-6 md:grid-cols-4">
+        <div class="rounded-xl border border-momentum-grayLight bg-white p-6 text-center">
+          <div class="mx-auto mb-4 flex h-10 w-10 items-center justify-center rounded-full bg-momentum-blue font-bold text-white">1</div>
+          <h4 class="mb-2 text-lg font-bold text-momentum-blue">Pre-PCS Consultation</h4>
+          <p class="text-xs leading-relaxed text-slate-600">We evaluate your BAH budget, school preferences, commute limits, and pet needs long before you arrive &mdash; local or anywhere in our network.</p>
+        </div>
+        <div class="rounded-xl border border-momentum-grayLight bg-white p-6 text-center">
+          <div class="mx-auto mb-4 flex h-10 w-10 items-center justify-center rounded-full bg-momentum-blue font-bold text-white">2</div>
+          <h4 class="mb-2 text-lg font-bold text-momentum-blue">Sight-Unseen Video Tours</h4>
+          <p class="text-xs leading-relaxed text-slate-600">HD video walkthroughs highlighting house details, street condition, and surrounding neighborhood noise levels.</p>
+        </div>
+        <div class="rounded-xl border border-momentum-grayLight bg-white p-6 text-center">
+          <div class="mx-auto mb-4 flex h-10 w-10 items-center justify-center rounded-full bg-momentum-blue font-bold text-white">3</div>
+          <h4 class="mb-2 text-lg font-bold text-momentum-blue">VA Loan Execution</h4>
+          <p class="text-xs leading-relaxed text-slate-600">Fast-tracked VA loan approvals with trusted local lenders who specialize in military turnarounds.</p>
+        </div>
+        <div class="rounded-xl border border-momentum-grayLight bg-white p-6 text-center">
+          <div class="mx-auto mb-4 flex h-10 w-10 items-center justify-center rounded-full bg-momentum-blue font-bold text-white">4</div>
+          <h4 class="mb-2 text-lg font-bold text-momentum-blue">Remote Closing &amp; Key Handoff</h4>
+          <p class="text-xs leading-relaxed text-slate-600">Remote notary coordination and power-of-attorney execution so your keys are ready when your truck arrives.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- NATIONWIDE CTA -->
+  <section class="bg-white py-16">
+    <div class="mx-auto max-w-4xl px-4 text-center sm:px-6 lg:px-8">
+      <div class="rounded-2xl bg-momentum-blue p-8 text-white shadow-xl lg:p-12">
+        <h3 class="mb-3 font-serif text-2xl font-bold">PCSing Outside Northeast Florida?</h3>
+        <p class="mb-6 text-sm leading-relaxed text-slate-200">
+          Search our full nationwide directory of 161+ installations &mdash; from San Diego and Norfolk to San Antonio and Joint Base Lewis-McChord &mdash; and request your personally vetted local agent in seconds.
+        </p>
+        <a href="military-bases.html" class="inline-block rounded-xl bg-white px-8 py-3.5 font-bold text-momentum-blue transition-colors hover:bg-slate-100">
+          Find Your Base &amp; Request A Referral Agent &rarr;
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- PCS GUIDE DOWNLOAD & FORM CTA -->
+  <section id="guide-download" class="scroll-mt-24 bg-momentum-blueDark py-16 text-white">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 items-center gap-12 lg:grid-cols-12">
+
+        <div class="lg:col-span-6">
+          <span class="mb-4 inline-block rounded-full bg-momentum-gray px-3 py-1 text-xs font-bold uppercase text-white">Free PCS Relocation Kit</span>
+          <h2 class="mb-4 font-serif text-3xl font-bold sm:text-4xl">
+            Request Your Free Military PCS Guide
+          </h2>
+          <p class="mb-6 text-base leading-relaxed text-slate-200">
+            Get instant access to local school comparison charts, current BAH rates, neighborhood maps, and military housing FAQs compiled by military spouses who live here &mdash; for your specific base, anywhere in the country.
+          </p>
+          <ul class="space-y-3 text-sm text-slate-200">
+            <li class="flex items-center"><span class="mr-2 font-bold text-teal-300">&check;</span> Complete BAH &amp; housing breakdowns for NAS Jax, Mayport &amp; Kings Bay</li>
+            <li class="flex items-center"><span class="mr-2 font-bold text-teal-300">&check;</span> Florida vs. Georgia tax advantage comparison for military</li>
+            <li class="flex items-center"><span class="mr-2 font-bold text-teal-300">&check;</span> Rental market trends &amp; VA loan buying strategies</li>
+          </ul>
+        </div>
+
+        <div class="rounded-2xl bg-white p-8 text-slate-800 shadow-2xl lg:col-span-6">
+          <h3 class="mb-2 font-serif text-2xl font-bold text-momentum-blue">Get Your Free Military PCS Guide</h3>
+          <p class="mb-6 text-xs text-slate-600">Fill out the quick form below and our team will email you the package immediately.</p>
+
+          <form action="https://formsubmit.co/S2HomePartners@gmail.com" method="POST" class="space-y-4">
+            <input type="hidden" name="_next" value="https://buyjacksonvillefl.com/military-relocation.html#submitted" />
+            <input type="hidden" name="_subject" value="New Military PCS Guide Request - S2 Home Partners" />
+            <input type="hidden" name="_template" value="table" />
+            <input type="hidden" name="Lead_Source" value="Military PCS Guide" />
+            <input type="hidden" name="Tag" value="Military website" />
+            <div>
+              <label class="mb-1 block text-xs font-bold uppercase text-slate-700">Full Name</label>
+              <input type="text" name="Name" required placeholder="John Doe" class="w-full rounded-lg border border-momentum-grayLight px-4 py-2.5 text-sm focus:border-momentum-blue focus:outline-none" />
+            </div>
+            <div class="grid grid-cols-1 gap-4 md:grid-cols-2">
+              <div>
+                <label class="mb-1 block text-xs font-bold uppercase text-slate-700">Email Address</label>
+                <input type="email" name="Email" required placeholder="john@example.com" class="w-full rounded-lg border border-momentum-grayLight px-4 py-2.5 text-sm focus:border-momentum-blue focus:outline-none" />
+              </div>
+              <div>
+                <label class="mb-1 block text-xs font-bold uppercase text-slate-700">Phone Number</label>
+                <input type="tel" name="Phone" placeholder="(904) 000-0000" class="w-full rounded-lg border border-momentum-grayLight px-4 py-2.5 text-sm focus:border-momentum-blue focus:outline-none" />
+              </div>
+            </div>
+            <div>
+              <label class="mb-1 block text-xs font-bold uppercase text-slate-700">Target Base / Duty Station</label>
+              <input type="text" name="Target_Base" required placeholder="e.g. NAS Jacksonville, or any base nationwide" class="w-full rounded-lg border border-momentum-grayLight px-4 py-2.5 text-sm focus:border-momentum-blue focus:outline-none" />
+            </div>
+            <button type="submit" class="w-full rounded-lg bg-momentum-blue px-6 py-3 text-sm font-bold text-white shadow-md transition-colors hover:bg-momentum-blueHover">
+              Send Me The Free PCS Package
+            </button>
+            <p class="text-center text-[11px] text-slate-500">We respect your privacy and never share your info outside our vetted network.</p>
+          </form>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="border-t border-slate-800 bg-slate-900 py-8 text-slate-400">
+    <div class="mx-auto max-w-7xl px-4 text-center text-sm sm:px-6 lg:px-8">
+      <p>&copy; <span id="year"></span> S&sup2; Home Partners | Momentum Realty. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script>
+    const menuToggle = document.getElementById('menu-toggle');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const year = document.getElementById('year');
+    year.textContent = new Date().getFullYear();
+
+    menuToggle.addEventListener('click', () => {
+      const open = mobileMenu.classList.toggle('hidden') === false;
+      menuToggle.setAttribute('aria-expanded', String(open));
+      menuToggle.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+    });
+    document.querySelectorAll('.mobile-link').forEach((link) => {
+      link.addEventListener('click', () => {
+        mobileMenu.classList.add('hidden');
+        menuToggle.setAttribute('aria-expanded', 'false');
+        menuToggle.setAttribute('aria-label', 'Open menu');
+      });
+    });
+  </script>
 
 </body>
-
 </html>
