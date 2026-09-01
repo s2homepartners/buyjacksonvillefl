@@ -234,7 +234,67 @@
     </button>
   </div>
 
-  <!-- Call/Text popover: two agents (position adapts: sheet on mobile, card near desktop widget) -->
+    <!-- Ask Sarah & Sarah: floating chat FAB (stacked above the quick-actions widget/nav) -->
+  <button type="button" id="ask-sarah-fab" aria-label="Ask Sarah &amp; Sarah a question" class="group fixed bottom-24 right-4 z-40 flex items-center gap-3 md:bottom-[15.5rem] md:right-6">
+    <span class="hidden whitespace-nowrap rounded-lg bg-momentum-blueDark px-3 py-1.5 text-xs font-bold text-white opacity-0 shadow-md transition-opacity group-hover:opacity-100 md:inline-block">Ask Sarah &amp; Sarah</span>
+    <span class="flex h-14 w-14 items-center justify-center rounded-full bg-teal-600 text-white shadow-lg transition-all hover:-translate-y-0.5 hover:bg-teal-700 hover:shadow-xl">
+      <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" /></svg>
+    </span>
+  </button>
+
+  <!-- Ask Sarah & Sarah: slide-up modal -->
+  <div id="ask-sarah-modal" class="fixed inset-0 z-[85] hidden bg-slate-900/60" aria-hidden="true">
+    <div id="ask-sarah-panel" class="fixed inset-x-0 bottom-0 max-h-[85vh] translate-y-full overflow-y-auto rounded-t-2xl bg-white p-6 shadow-2xl transition-transform duration-300 ease-out sm:p-8 md:inset-x-auto md:bottom-6 md:right-6 md:w-96 md:translate-y-4 md:rounded-2xl md:opacity-0 md:transition-all">
+      <div class="flex items-start justify-between gap-4">
+        <div>
+          <p class="text-xs font-bold uppercase tracking-wider text-teal-600">Ask Us Anything</p>
+          <h3 class="mt-1 font-serif text-2xl font-bold text-momentum-blue">Ask Sarah &amp; Sarah</h3>
+        </div>
+        <button type="button" id="ask-sarah-close-btn" aria-label="Close" class="shrink-0 text-2xl leading-none text-momentum-gray transition-colors hover:text-momentum-blue">&times;</button>
+      </div>
+      <p class="mt-2 text-sm text-slate-600">Tap a common question below, or type your own &mdash; we'll get back to you fast.</p>
+
+      <div class="mt-4 flex flex-wrap gap-2">
+        <button type="button" class="ask-sarah-chip rounded-full border border-momentum-grayLight px-3 py-2 text-left text-xs font-medium text-momentum-blue transition-colors hover:bg-momentum-bgLight" data-question="Should I sell my house before buying another?">Should I sell my house before buying another?</button>
+        <button type="button" class="ask-sarah-chip rounded-full border border-momentum-grayLight px-3 py-2 text-left text-xs font-medium text-momentum-blue transition-colors hover:bg-momentum-bgLight" data-question="How does the Military PCS relocation process work?">How does the Military PCS relocation process work?</button>
+        <button type="button" class="ask-sarah-chip rounded-full border border-momentum-grayLight px-3 py-2 text-left text-xs font-medium text-momentum-blue transition-colors hover:bg-momentum-bgLight" data-question="How much money do I actually need saved for closing costs?">How much money do I actually need saved for closing costs?</button>
+        <button type="button" class="ask-sarah-chip rounded-full border border-momentum-grayLight px-3 py-2 text-left text-xs font-medium text-momentum-blue transition-colors hover:bg-momentum-bgLight" data-question="What is my home worth in today's market?">What is my home worth in today's market?</button>
+      </div>
+
+      <form id="askSarahForm" class="mt-5 space-y-3">
+        <input type="hidden" name="FormType" value="Ask Sarah Chat Lead" />
+        <input type="hidden" name="_subject" value="New Ask Sarah &amp; Sarah Question - S2 Home Partners" />
+        <div>
+          <label for="ask-sarah-message" class="sr-only">Your Question</label>
+          <textarea id="ask-sarah-message" name="Message" rows="3" required placeholder="Type your question here..." class="w-full rounded-xl border border-momentum-grayLight px-4 py-3 text-sm text-slate-800 placeholder:text-momentum-gray focus:border-momentum-blue focus:outline-none focus:ring-2 focus:ring-momentum-blue/30"></textarea>
+        </div>
+        <div>
+          <label for="ask-sarah-name" class="sr-only">Name</label>
+          <input id="ask-sarah-name" type="text" name="Name" required placeholder="Full Name" class="h-12 w-full rounded-xl border border-momentum-grayLight px-4 text-sm text-slate-800 placeholder:text-momentum-gray focus:border-momentum-blue focus:outline-none focus:ring-2 focus:ring-momentum-blue/30" />
+        </div>
+        <div class="grid grid-cols-1 gap-3 sm:grid-cols-2">
+          <div>
+            <label for="ask-sarah-email" class="sr-only">Email</label>
+            <input id="ask-sarah-email" type="email" name="Email" required placeholder="Email" class="h-12 w-full rounded-xl border border-momentum-grayLight px-4 text-sm text-slate-800 placeholder:text-momentum-gray focus:border-momentum-blue focus:outline-none focus:ring-2 focus:ring-momentum-blue/30" />
+          </div>
+          <div>
+            <label for="ask-sarah-phone" class="sr-only">Phone</label>
+            <input id="ask-sarah-phone" type="tel" name="Phone" placeholder="Phone (Optional)" class="h-12 w-full rounded-xl border border-momentum-grayLight px-4 text-sm text-slate-800 placeholder:text-momentum-gray focus:border-momentum-blue focus:outline-none focus:ring-2 focus:ring-momentum-blue/30" />
+          </div>
+        </div>
+        <button type="submit" class="flex h-12 w-full items-center justify-center rounded-xl bg-teal-600 text-sm font-bold text-white shadow-md transition-all hover:bg-teal-700">
+          Send My Question
+        </button>
+        <p class="text-center text-[11px] text-slate-500">We respect your privacy and never share your info outside our vetted network.</p>
+      </form>
+      <div id="askSarahForm-success" class="hidden py-6 text-center">
+        <p class="font-serif text-lg font-bold text-momentum-blue">Thanks &mdash; question received!</p>
+        <p class="mt-1 text-sm text-slate-600">Sarah will get back to you fast, usually within a few hours.</p>
+      </div>
+    </div>
+  </div>
+
+<!-- Call/Text popover: two agents (position adapts: sheet on mobile, card near desktop widget) -->
   <div id="mobile-call-popover" class="fixed inset-x-4 bottom-24 z-50 hidden rounded-2xl bg-white p-4 shadow-3d md:inset-x-auto md:bottom-24 md:right-6 md:w-72">
     <p class="mb-3 text-center text-xs font-bold uppercase tracking-wide text-momentum-gray">Call or Text an Advisor</p>
     <a href="tel:+18503289800" class="mb-2 flex min-h-[56px] items-center justify-between rounded-xl border border-momentum-grayLight px-4 py-3 transition-colors hover:bg-momentum-bgLight active:bg-momentum-bgLight">
@@ -348,7 +408,60 @@
             });
         });
       }
+    
+      // --- Ask Sarah & Sarah: floating chat FAB ---
+      const askSarahFab = document.getElementById('ask-sarah-fab');
+      const askSarahModal = document.getElementById('ask-sarah-modal');
+      const askSarahPanel = document.getElementById('ask-sarah-panel');
+      const askSarahCloseBtn = document.getElementById('ask-sarah-close-btn');
+      const askSarahForm = document.getElementById('askSarahForm');
+      const askSarahSuccess = document.getElementById('askSarahForm-success');
+      const askSarahMessage = document.getElementById('ask-sarah-message');
+      function openAskSarahModal() {
+        if (callPopover) callPopover.classList.add('hidden');
+        askSarahModal.classList.remove('hidden');
+        askSarahModal.setAttribute('aria-hidden', 'false');
+        document.body.classList.add('overflow-hidden');
+        requestAnimationFrame(() => {
+          askSarahPanel.classList.remove('translate-y-full', 'md:translate-y-4', 'md:opacity-0');
+        });
+      }
+      function closeAskSarahModal() {
+        askSarahPanel.classList.add('translate-y-full', 'md:translate-y-4', 'md:opacity-0');
+        askSarahModal.setAttribute('aria-hidden', 'true');
+        document.body.classList.remove('overflow-hidden');
+        setTimeout(() => askSarahModal.classList.add('hidden'), 300);
+      }
+      if (askSarahFab && askSarahModal) {
+        askSarahFab.addEventListener('click', openAskSarahModal);
+        askSarahCloseBtn.addEventListener('click', closeAskSarahModal);
+        askSarahModal.addEventListener('click', (event) => {
+          if (event.target === askSarahModal) closeAskSarahModal();
+        });
+        document.addEventListener('keydown', (event) => {
+          if (event.key === 'Escape' && !askSarahModal.classList.contains('hidden')) closeAskSarahModal();
+        });
+        document.querySelectorAll('.ask-sarah-chip').forEach((chip) => {
+          chip.addEventListener('click', () => {
+            askSarahMessage.value = chip.getAttribute('data-question');
+            askSarahMessage.focus();
+          });
+        });
+        askSarahForm.addEventListener('submit', (event) => {
+          event.preventDefault();
+          const formData = new FormData(askSarahForm);
+          fetch(LEAD_BACKEND_URL, { method: 'POST', mode: 'no-cors', body: formData })
+            .then(() => {
+              askSarahForm.classList.add('hidden');
+              askSarahSuccess.classList.remove('hidden');
+            })
+            .catch(() => {
+              alert('Something went wrong submitting your question. Please email us directly at S2HomePartners@gmail.com.');
+            });
+        });
+      }
     })();
+
   </script>
 </body>
 </html>
