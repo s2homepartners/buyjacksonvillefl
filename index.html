@@ -267,6 +267,14 @@
             </div>
           </div>
         </div>
+
+        <!-- Neighborhood Quiz trigger -->
+        <div class="mt-6 text-center">
+          <button type="button" id="quiz-open-btn" class="inline-flex min-h-[44px] items-center gap-2 rounded-full border border-white/30 bg-white/10 px-5 py-2.5 text-sm font-semibold text-white backdrop-blur-md transition-all hover:border-white hover:bg-white/20">
+            <span aria-hidden="true">&#x1F3E1;</span>
+            Not sure where to start? Take the 60-Second Neighborhood Match Quiz &rarr;
+          </button>
+        </div>
       </div>
     </section>
 
@@ -418,6 +426,102 @@
     </section>
   </main>
 
+  <!-- ==========================================================================
+       NEIGHBORHOOD MATCH QUIZ MODAL
+       Answers post to the same live lead backend every other form on the site
+       uses (email + Follow Up Boss where applicable) — nothing to configure.
+     ========================================================================== -->
+  <div id="quiz-modal" class="fixed inset-0 z-[80] hidden items-center justify-center bg-slate-900/60 p-4">
+    <div class="relative max-h-[90vh] w-full max-w-lg overflow-y-auto rounded-2xl bg-white shadow-3d">
+      <button type="button" id="quiz-close-btn" aria-label="Close" class="absolute right-4 top-4 z-10 flex h-9 w-9 items-center justify-center rounded-full bg-white text-2xl leading-none text-momentum-gray shadow-sm transition-colors hover:text-momentum-blue">&times;</button>
+
+      <div class="p-6 sm:p-8">
+        <p class="text-xs font-bold uppercase tracking-widest text-teal-600">Find Your Ideal Northeast Florida Neighborhood</p>
+
+        <!-- Progress bar -->
+        <div class="mt-4 h-1.5 w-full overflow-hidden rounded-full bg-momentum-bgLight" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-label="Quiz progress">
+          <div id="quiz-progress-bar" class="h-full rounded-full bg-momentum-blue transition-all duration-500 ease-out" style="width: 25%;"></div>
+        </div>
+
+        <!-- STEP 1: Goal -->
+        <div data-quiz-step="1" class="quiz-step mt-6">
+          <h3 class="font-serif text-xl font-bold text-momentum-blue sm:text-2xl">What's your primary goal?</h3>
+          <div class="mt-5 grid grid-cols-1 gap-3 sm:grid-cols-2">
+            <button type="button" data-quiz-field="goal" data-quiz-value="Buying First Home" class="quiz-option min-h-[56px] rounded-xl border-2 border-momentum-grayLight bg-white px-4 py-3.5 text-left text-sm font-semibold text-slate-700 transition-all hover:border-momentum-blue/50">Buying First Home</button>
+            <button type="button" data-quiz-field="goal" data-quiz-value="Relocating / Military PCS" class="quiz-option min-h-[56px] rounded-xl border-2 border-momentum-grayLight bg-white px-4 py-3.5 text-left text-sm font-semibold text-slate-700 transition-all hover:border-momentum-blue/50">Relocating / Military PCS</button>
+            <button type="button" data-quiz-field="goal" data-quiz-value="Selling & Upgrading" class="quiz-option min-h-[56px] rounded-xl border-2 border-momentum-grayLight bg-white px-4 py-3.5 text-left text-sm font-semibold text-slate-700 transition-all hover:border-momentum-blue/50">Selling &amp; Upgrading</button>
+            <button type="button" data-quiz-field="goal" data-quiz-value="Investing" class="quiz-option min-h-[56px] rounded-xl border-2 border-momentum-grayLight bg-white px-4 py-3.5 text-left text-sm font-semibold text-slate-700 transition-all hover:border-momentum-blue/50">Investing</button>
+          </div>
+        </div>
+
+        <!-- STEP 2: Vibe / Location -->
+        <div data-quiz-step="2" class="quiz-step mt-6 hidden">
+          <h3 class="font-serif text-xl font-bold text-momentum-blue sm:text-2xl">What vibe or location matters most?</h3>
+          <div class="mt-5 grid grid-cols-1 gap-3 sm:grid-cols-2">
+            <button type="button" data-quiz-field="vibe" data-quiz-value="Beach Life" class="quiz-option min-h-[56px] rounded-xl border-2 border-momentum-grayLight bg-white px-4 py-3.5 text-left text-sm font-semibold text-slate-700 transition-all hover:border-momentum-blue/50">Beach Life</button>
+            <button type="button" data-quiz-field="vibe" data-quiz-value="Top School Districts" class="quiz-option min-h-[56px] rounded-xl border-2 border-momentum-grayLight bg-white px-4 py-3.5 text-left text-sm font-semibold text-slate-700 transition-all hover:border-momentum-blue/50">Top School Districts</button>
+            <button type="button" data-quiz-field="vibe" data-quiz-value="Quick Military Base Commute" class="quiz-option min-h-[56px] rounded-xl border-2 border-momentum-grayLight bg-white px-4 py-3.5 text-left text-sm font-semibold text-slate-700 transition-all hover:border-momentum-blue/50">Quick Military Base Commute</button>
+            <button type="button" data-quiz-field="vibe" data-quiz-value="Historic / Downtown Vibe" class="quiz-option min-h-[56px] rounded-xl border-2 border-momentum-grayLight bg-white px-4 py-3.5 text-left text-sm font-semibold text-slate-700 transition-all hover:border-momentum-blue/50">Historic / Downtown Vibe</button>
+          </div>
+        </div>
+
+        <!-- STEP 3: Timeframe -->
+        <div data-quiz-step="3" class="quiz-step mt-6 hidden">
+          <h3 class="font-serif text-xl font-bold text-momentum-blue sm:text-2xl">What's your target timeframe?</h3>
+          <div class="mt-5 grid grid-cols-1 gap-3 sm:grid-cols-2">
+            <button type="button" data-quiz-field="timeframe" data-quiz-value="Immediate / 0-30 days" class="quiz-option min-h-[56px] rounded-xl border-2 border-momentum-grayLight bg-white px-4 py-3.5 text-left text-sm font-semibold text-slate-700 transition-all hover:border-momentum-blue/50">Immediate / 0&ndash;30 days</button>
+            <button type="button" data-quiz-field="timeframe" data-quiz-value="1-3 months" class="quiz-option min-h-[56px] rounded-xl border-2 border-momentum-grayLight bg-white px-4 py-3.5 text-left text-sm font-semibold text-slate-700 transition-all hover:border-momentum-blue/50">1&ndash;3 months</button>
+            <button type="button" data-quiz-field="timeframe" data-quiz-value="3-6 months" class="quiz-option min-h-[56px] rounded-xl border-2 border-momentum-grayLight bg-white px-4 py-3.5 text-left text-sm font-semibold text-slate-700 transition-all hover:border-momentum-blue/50">3&ndash;6 months</button>
+            <button type="button" data-quiz-field="timeframe" data-quiz-value="Just Exploring" class="quiz-option min-h-[56px] rounded-xl border-2 border-momentum-grayLight bg-white px-4 py-3.5 text-left text-sm font-semibold text-slate-700 transition-all hover:border-momentum-blue/50">Just Exploring</button>
+          </div>
+        </div>
+
+        <!-- STEP 4: Results capture -->
+        <div data-quiz-step="4" class="quiz-step mt-6 hidden">
+          <h3 class="font-serif text-xl font-bold text-momentum-blue sm:text-2xl">Almost there!</h3>
+          <p class="mt-1 text-sm text-slate-600">Enter your info to unlock your personalized Northeast Florida Area Guide &amp; listing match.</p>
+          <form id="quizLeadForm" class="mt-5 space-y-3">
+            <input type="hidden" name="FormType" value="Neighborhood Quiz Lead" />
+            <input type="hidden" name="_subject" value="New Neighborhood Match Quiz Lead - S2 Home Partners" />
+            <input type="hidden" name="Goal" id="quiz-field-goal" value="" />
+            <input type="hidden" name="Vibe" id="quiz-field-vibe" value="" />
+            <input type="hidden" name="Timeframe" id="quiz-field-timeframe" value="" />
+            <div>
+              <label for="quiz-name" class="sr-only">Name</label>
+              <input id="quiz-name" type="text" name="Name" required placeholder="Full Name" class="h-14 w-full rounded-xl border border-momentum-grayLight px-4 text-base text-slate-800 placeholder:text-momentum-gray transition-colors focus:border-momentum-blue focus:outline-none focus:ring-2 focus:ring-momentum-blue/30" />
+            </div>
+            <div>
+              <label for="quiz-email" class="sr-only">Email</label>
+              <input id="quiz-email" type="email" name="Email" required placeholder="Email Address" class="h-14 w-full rounded-xl border border-momentum-grayLight px-4 text-base text-slate-800 placeholder:text-momentum-gray transition-colors focus:border-momentum-blue focus:outline-none focus:ring-2 focus:ring-momentum-blue/30" />
+            </div>
+            <div>
+              <label for="quiz-phone" class="sr-only">Phone</label>
+              <input id="quiz-phone" type="tel" name="Phone" required placeholder="Phone Number" class="h-14 w-full rounded-xl border border-momentum-grayLight px-4 text-base text-slate-800 placeholder:text-momentum-gray transition-colors focus:border-momentum-blue focus:outline-none focus:ring-2 focus:ring-momentum-blue/30" />
+            </div>
+            <button type="submit" class="flex h-14 w-full items-center justify-center rounded-xl bg-momentum-blue text-base font-bold text-white shadow-md transition-all hover:-translate-y-0.5 hover:bg-momentum-blueHover active:translate-y-0">
+              Unlock My Personalized Guide
+            </button>
+            <p class="text-center text-[11px] text-slate-500">We respect your privacy and never share your info outside our vetted network.</p>
+          </form>
+        </div>
+
+        <!-- STEP 5: Personalized match reveal -->
+        <div data-quiz-step="5" class="quiz-step mt-6 hidden text-center">
+          <span class="text-3xl" aria-hidden="true">&#x1F3E1;</span>
+          <h3 class="mt-2 font-serif text-xl font-bold text-momentum-blue sm:text-2xl">Your Match Is Ready!</h3>
+          <p id="quiz-result-text" class="mt-2 text-sm leading-relaxed text-slate-600">Based on your answers, we think you'll love it here.</p>
+          <a id="quiz-result-link" href="area-guides.html" class="mt-6 inline-flex w-full items-center justify-center rounded-xl bg-momentum-blue px-6 py-4 text-base font-bold text-white shadow-md transition-all hover:bg-momentum-blueHover">
+            View My Neighborhood Guide &rarr;
+          </a>
+          <p class="mt-3 text-xs text-slate-500">We've also emailed a copy to you &mdash; our team will follow up within 24 hours.</p>
+        </div>
+
+        <!-- Back button (hidden on steps 1, 4, 5) -->
+        <button type="button" id="quiz-back-btn" class="mt-5 text-xs font-bold uppercase tracking-wide text-momentum-gray transition-colors hover:text-momentum-blue">&larr; Back</button>
+      </div>
+    </div>
+  </div>
+
   <footer class="border-t border-slate-800 bg-slate-900 py-8 text-slate-400">
     <div class="mx-auto max-w-7xl px-4 text-center text-sm sm:px-6 lg:px-8">
       <p>&copy; <span id="year"></span> S&sup2; Home Partners | Momentum Realty. All rights reserved.</p>
@@ -532,6 +636,149 @@
       }
       wireHeroLeadForm('heroSellForm', 'heroSellForm-success');
       wireHeroLeadForm('heroMilitaryForm', 'heroMilitaryForm-success');
+    })();
+
+    // ==========================================================================
+    // NEIGHBORHOOD MATCH QUIZ
+    // ==========================================================================
+    (function () {
+      const LEAD_BACKEND_URL = 'https://script.google.com/macros/s/AKfycbybi0InSUyh5Rw45uFUlwg2t29wzsYxWrcKXWuf9NqH9Nprlf_YZ3htq-x4n0pr_I5p_w/exec';
+      const TOTAL_STEPS = 4; // progress bar reflects the 4 input steps; step 5 (reveal) shows 100%
+
+      // Maps each "vibe" answer to a real, already-built neighborhood guide page.
+      const VIBE_MATCHES = {
+        'Beach Life': {
+          name: 'Atlantic Beach &amp; Neptune Beach',
+          blurb: "You're all about salt air and sand. We matched you with Atlantic &amp; Neptune Beach &mdash; walkable, laid-back, and close to everything.",
+          url: 'atlantic-neptune-beach.html',
+        },
+        'Top School Districts': {
+          name: 'Fleming Island Plantation',
+          blurb: 'Top-rated Clay County schools and a family-first amenity package &mdash; Fleming Island Plantation is your match.',
+          url: 'fleming-island-plantation.html',
+        },
+        'Quick Military Base Commute': {
+          name: 'Wildlight',
+          blurb: 'New construction, Nassau County schools, and a short drive to Kings Bay &mdash; Wildlight is where most PCS families land.',
+          url: 'wildlight.html',
+        },
+        'Historic / Downtown Vibe': {
+          name: 'Riverside &amp; Avondale',
+          blurb: 'Historic charm, walkable streets, and Jacksonville\'s best restaurant scene &mdash; Riverside &amp; Avondale is your match.',
+          url: 'riverside-avondale.html',
+        },
+      };
+      const DEFAULT_MATCH = {
+        name: 'Northeast Florida',
+        blurb: "We're putting together a shortlist across every county based on your answers.",
+        url: 'area-guides.html',
+      };
+
+      const quizModal = document.getElementById('quiz-modal');
+      const quizOpenBtn = document.getElementById('quiz-open-btn');
+      const quizCloseBtn = document.getElementById('quiz-close-btn');
+      const quizBackBtn = document.getElementById('quiz-back-btn');
+      const quizProgressBar = document.getElementById('quiz-progress-bar');
+      const quizSteps = document.querySelectorAll('.quiz-step');
+      if (!quizModal || !quizOpenBtn) return;
+
+      let currentStep = 1;
+      const answers = { goal: '', vibe: '', timeframe: '' };
+
+      function showStep(step) {
+        currentStep = step;
+        quizSteps.forEach((panel) => {
+          panel.classList.toggle('hidden', Number(panel.dataset.quizStep) !== step);
+        });
+        quizProgressBar.style.width = Math.min(step, TOTAL_STEPS) / TOTAL_STEPS * 100 + '%';
+        quizBackBtn.classList.toggle('hidden', step === 1 || step === 5);
+      }
+
+      function resetQuiz() {
+        answers.goal = '';
+        answers.vibe = '';
+        answers.timeframe = '';
+        document.querySelectorAll('.quiz-option').forEach((btn) => {
+          btn.classList.remove('border-momentum-blue', 'bg-momentum-blue/5', 'text-momentum-blue');
+          btn.classList.add('border-momentum-grayLight', 'text-slate-700');
+        });
+        const form = document.getElementById('quizLeadForm');
+        if (form) {
+          form.reset();
+          form.classList.remove('hidden');
+        }
+        showStep(1);
+      }
+
+      function openQuiz() {
+        resetQuiz();
+        quizModal.classList.remove('hidden');
+        quizModal.classList.add('flex');
+        document.body.classList.add('overflow-hidden');
+      }
+      function closeQuiz() {
+        quizModal.classList.add('hidden');
+        quizModal.classList.remove('flex');
+        document.body.classList.remove('overflow-hidden');
+      }
+
+      quizOpenBtn.addEventListener('click', openQuiz);
+      quizCloseBtn.addEventListener('click', closeQuiz);
+      quizModal.addEventListener('click', (event) => {
+        if (event.target === quizModal) closeQuiz();
+      });
+      document.addEventListener('keydown', (event) => {
+        if (event.key === 'Escape' && !quizModal.classList.contains('hidden')) closeQuiz();
+      });
+
+      quizBackBtn.addEventListener('click', () => {
+        if (currentStep > 1) showStep(currentStep - 1);
+      });
+
+      // Answer selection: highlight choice, save it, smoothly advance to the next step.
+      document.querySelectorAll('.quiz-option').forEach((btn) => {
+        btn.addEventListener('click', () => {
+          const field = btn.dataset.quizField;
+          const value = btn.dataset.quizValue;
+          answers[field] = value;
+
+          // Reset styling for sibling options in this step, then highlight the pick.
+          btn.closest('.quiz-step').querySelectorAll('.quiz-option').forEach((sib) => {
+            sib.classList.remove('border-momentum-blue', 'bg-momentum-blue/5', 'text-momentum-blue');
+            sib.classList.add('border-momentum-grayLight', 'text-slate-700');
+          });
+          btn.classList.remove('border-momentum-grayLight', 'text-slate-700');
+          btn.classList.add('border-momentum-blue', 'bg-momentum-blue/5', 'text-momentum-blue');
+
+          const hiddenField = document.getElementById('quiz-field-' + field);
+          if (hiddenField) hiddenField.value = value;
+
+          setTimeout(() => {
+            if (currentStep < 4) showStep(currentStep + 1);
+          }, 350);
+        });
+      });
+
+      // Step 4: lead capture submit — reveal the personalized match on success.
+      const quizLeadForm = document.getElementById('quizLeadForm');
+      if (quizLeadForm) {
+        quizLeadForm.addEventListener('submit', (event) => {
+          event.preventDefault();
+          const formData = new FormData(quizLeadForm);
+          fetch(LEAD_BACKEND_URL, { method: 'POST', mode: 'no-cors', body: formData })
+            .then(() => {
+              const match = VIBE_MATCHES[answers.vibe] || DEFAULT_MATCH;
+              document.getElementById('quiz-result-text').innerHTML = match.blurb;
+              const link = document.getElementById('quiz-result-link');
+              link.href = match.url;
+              link.textContent = 'View ' + match.name.replace(/&amp;/g, '&') + ' Guide →';
+              showStep(5);
+            })
+            .catch(() => {
+              alert('Something went wrong submitting your request. Please email us directly at S2HomePartners@gmail.com.');
+            });
+        });
+      }
     })();
   </script>
 </body>
