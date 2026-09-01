@@ -461,12 +461,11 @@
           <h3 class="mb-2 font-serif text-2xl font-bold text-momentum-blue">Get Your Free Military PCS Guide</h3>
           <p class="mb-6 text-xs text-slate-600">Fill out the quick form below and our team will email you the package immediately.</p>
 
-          <form action="https://formsubmit.co/S2HomePartners@gmail.com" method="POST" class="space-y-4">
+          <form id="pcs-guide-form" action="https://formsubmit.co/S2HomePartners@gmail.com" method="POST" class="space-y-4">
             <input type="hidden" name="_next" value="https://buyjacksonvillefl.com/military-relocation.html#submitted" />
             <input type="hidden" name="_subject" value="New Military PCS Guide Request - S2 Home Partners" />
             <input type="hidden" name="_template" value="table" />
-            <input type="hidden" name="Lead_Source" value="Military PCS Guide" />
-            <input type="hidden" name="Tag" value="Military website" />
+            <input type="hidden" name="FormType" value="PCS Guide Request" />
             <div>
               <label class="mb-1 block text-xs font-bold uppercase text-slate-700">Full Name</label>
               <input type="text" name="Name" required placeholder="John Doe" class="w-full rounded-lg border border-momentum-grayLight px-4 py-2.5 text-sm focus:border-momentum-blue focus:outline-none" />
@@ -483,13 +482,17 @@
             </div>
             <div>
               <label class="mb-1 block text-xs font-bold uppercase text-slate-700">Target Base / Duty Station</label>
-              <input type="text" name="Target_Base" required placeholder="e.g. NAS Jacksonville, or any base nationwide" class="w-full rounded-lg border border-momentum-grayLight px-4 py-2.5 text-sm focus:border-momentum-blue focus:outline-none" />
+              <input type="text" name="Base" required placeholder="e.g. NAS Jacksonville, or any base nationwide" class="w-full rounded-lg border border-momentum-grayLight px-4 py-2.5 text-sm focus:border-momentum-blue focus:outline-none" />
             </div>
             <button type="submit" class="w-full rounded-lg bg-momentum-blue px-6 py-3 text-sm font-bold text-white shadow-md transition-colors hover:bg-momentum-blueHover">
               Send Me The Free PCS Package
             </button>
             <p class="text-center text-[11px] text-slate-500">We respect your privacy and never share your info outside our vetted network.</p>
           </form>
+          <div id="pcs-guide-success" class="hidden py-8 text-center">
+            <p class="font-serif text-2xl font-bold text-momentum-blue">You're all set!</p>
+            <p class="mt-2 text-sm text-slate-600">Your PCS Guide request came through &mdash; our team will email your package shortly.</p>
+          </div>
         </div>
 
       </div>
@@ -521,6 +524,25 @@
         menuToggle.setAttribute('aria-label', 'Open menu');
       });
     });
+
+    // --- PCS Guide form: submit to the Military lead backend (email + Follow Up Boss) ---
+    const MILITARY_BACKEND_URL = 'https://script.google.com/macros/s/AKfycbybi0InSUyh5Rw45uFUlwg2t29wzsYxWrcKXWuf9NqH9Nprlf_YZ3htq-x4n0pr_I5p_w/exec';
+    const pcsGuideForm = document.getElementById('pcs-guide-form');
+    const pcsGuideSuccess = document.getElementById('pcs-guide-success');
+    if (pcsGuideForm) {
+      pcsGuideForm.addEventListener('submit', (event) => {
+        event.preventDefault();
+        const formData = new FormData(pcsGuideForm);
+        fetch(MILITARY_BACKEND_URL, { method: 'POST', mode: 'no-cors', body: formData })
+          .then(() => {
+            pcsGuideForm.classList.add('hidden');
+            pcsGuideSuccess.classList.remove('hidden');
+          })
+          .catch(() => {
+            alert('Something went wrong submitting your request. Please email us directly at S2HomePartners@gmail.com.');
+          });
+      });
+    }
   </script>
 
 </body>

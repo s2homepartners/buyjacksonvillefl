@@ -2741,8 +2741,7 @@
             <input type="hidden" name="_subject" value="New Base Referral Agent Request - S2 Home Partners" />
             <input type="hidden" name="_next" value="https://buyjacksonvillefl.com/military-bases.html#submitted" />
             <input type="hidden" name="_template" value="table" />
-            <input type="hidden" name="Lead_Source" value="Military Base Directory" />
-            <input type="hidden" name="Tag" value="Military website" />
+            <input type="hidden" name="FormType" value="Base Referral Agent Request" />
             <div class="grid grid-cols-1 gap-4 sm:grid-cols-2">
               <div>
                 <label class="mb-1 block text-xs font-bold uppercase text-slate-700">Full Name</label>
@@ -2781,6 +2780,10 @@
             </button>
             <p class="text-center text-[11px] text-slate-500">By submitting, you agree to be contacted by S&sup2; Home Partners about your relocation. We respect your privacy and never share your info outside our vetted network.</p>
           </form>
+          <div id="referral-request-success" class="hidden py-8 text-center">
+            <p class="font-serif text-2xl font-bold text-momentum-blue">Request received!</p>
+            <p class="mt-2 text-sm text-slate-600">We're matching you with your vetted local agent now &mdash; expect to hear from our team shortly.</p>
+          </div>
         </div>
       </div>
     </section>
@@ -2827,6 +2830,25 @@
       document.querySelectorAll('.branch-group').forEach((group) => {
         const anyVisible = Array.from(group.querySelectorAll('.base-card')).some((c) => c.style.display !== 'none');
         group.style.display = anyVisible ? '' : 'none';
+      });
+    }
+
+    // --- Referral Agent form: submit to the Military lead backend (email + Follow Up Boss) ---
+    const MILITARY_BACKEND_URL = 'https://script.google.com/macros/s/AKfycbybi0InSUyh5Rw45uFUlwg2t29wzsYxWrcKXWuf9NqH9Nprlf_YZ3htq-x4n0pr_I5p_w/exec';
+    const referralForm = document.getElementById('referral-request-form');
+    const referralSuccess = document.getElementById('referral-request-success');
+    if (referralForm) {
+      referralForm.addEventListener('submit', (event) => {
+        event.preventDefault();
+        const formData = new FormData(referralForm);
+        fetch(MILITARY_BACKEND_URL, { method: 'POST', mode: 'no-cors', body: formData })
+          .then(() => {
+            referralForm.classList.add('hidden');
+            referralSuccess.classList.remove('hidden');
+          })
+          .catch(() => {
+            alert('Something went wrong submitting your request. Please email us directly at S2HomePartners@gmail.com.');
+          });
       });
     }
   </script>
