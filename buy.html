@@ -313,7 +313,7 @@
             </p>
           </div>
 
-          <form action="https://formsubmit.co/S2HomePartners@gmail.com" method="POST" class="space-y-4">
+          <form id="homeSearchLeadForm" action="https://formsubmit.co/S2HomePartners@gmail.com" method="POST" class="space-y-4">
             <input type="hidden" name="_captcha" value="false" />
             <input type="hidden" name="_next" value="https://buyjacksonvillefl.com/buy.html#submitted" />
             <input type="hidden" name="_subject" value="New Home Search Request - S2 Home Partners" />
@@ -350,6 +350,10 @@
               Send My Request
             </button>
           </form>
+          <div id="homeSearchLeadForm-success" class="hidden rounded-2xl border border-momentum-grayLight bg-white p-8 text-center shadow-md">
+            <p class="font-serif text-2xl font-bold text-momentum-blue">Thanks &mdash; request received!</p>
+            <p class="mt-2 text-sm text-slate-600">We'll be in touch within 24 hours.</p>
+          </div>
 
           <p class="mt-4 text-center text-xs italic text-slate-500">
             * Please expect to hear back from our team in 24 hours.
@@ -385,6 +389,27 @@
         menuToggle.setAttribute('aria-label', 'Open menu');
       });
     });
+
+    // --- Lead form: submit to the site-wide lead backend ---
+    (function() {
+      const SITE_BACKEND_URL = 'https://script.google.com/macros/s/AKfycbybi0InSUyh5Rw45uFUlwg2t29wzsYxWrcKXWuf9NqH9Nprlf_YZ3htq-x4n0pr_I5p_w/exec';
+      const form = document.getElementById('homeSearchLeadForm');
+      const success = document.getElementById('homeSearchLeadForm-success');
+      if (form) {
+        form.addEventListener('submit', (event) => {
+          event.preventDefault();
+          const formData = new FormData(form);
+          fetch(SITE_BACKEND_URL, { method: 'POST', mode: 'no-cors', body: formData })
+            .then(() => {
+              form.classList.add('hidden');
+              if (success) success.classList.remove('hidden');
+            })
+            .catch(() => {
+              alert('Something went wrong submitting your request. Please email us directly at S2HomePartners@gmail.com.');
+            });
+        });
+      }
+    })();
   </script>
 </body>
 </html>

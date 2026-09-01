@@ -987,6 +987,10 @@
         <button type="submit" class="w-full rounded-xl bg-momentum-blue py-4 text-sm font-bold text-white transition hover:bg-momentum-blueHover">Send My Request</button>
         <p class="text-center text-xs text-slate-500">We reply within 24 hours. No spam.</p>
       </form>
+      <div id="areaLeadForm-success" class="hidden py-8 text-center">
+        <p class="font-serif text-2xl font-bold text-momentum-blue">Thanks &mdash; request received!</p>
+        <p class="mt-2 text-sm text-slate-600">We'll be in touch within 24 hours.</p>
+      </div>
     </div>
   </div>
 
@@ -1012,11 +1016,16 @@
     });
 
     const leadModal = document.getElementById('leadModal');
+    const areaLeadForm = document.getElementById('areaLeadForm');
+    const areaLeadFormSuccess = document.getElementById('areaLeadForm-success');
     function openLeadModal(areaName, countyName) {
       document.getElementById('leadModalArea').textContent = areaName;
       document.getElementById('leadModalAreaInline').textContent = areaName;
       document.getElementById('leadModalAreaField').value = areaName + ' (' + countyName + ')';
       document.getElementById('leadModalSubject').value = 'Neighborhood Guide Lead — ' + areaName + ' — S2 Home Partners';
+      areaLeadForm.reset();
+      areaLeadForm.classList.remove('hidden');
+      areaLeadFormSuccess.classList.add('hidden');
       leadModal.classList.remove('hidden');
       leadModal.classList.add('flex');
       document.body.classList.add('overflow-hidden');
@@ -1032,6 +1041,23 @@
     document.addEventListener('keydown', (event) => {
       if (event.key === 'Escape') closeLeadModal();
     });
+
+    // --- Lead form: submit to the site-wide lead backend ---
+    (function() {
+      const SITE_BACKEND_URL = 'https://script.google.com/macros/s/AKfycbybi0InSUyh5Rw45uFUlwg2t29wzsYxWrcKXWuf9NqH9Nprlf_YZ3htq-x4n0pr_I5p_w/exec';
+      areaLeadForm.addEventListener('submit', (event) => {
+        event.preventDefault();
+        const formData = new FormData(areaLeadForm);
+        fetch(SITE_BACKEND_URL, { method: 'POST', mode: 'no-cors', body: formData })
+          .then(() => {
+            areaLeadForm.classList.add('hidden');
+            areaLeadFormSuccess.classList.remove('hidden');
+          })
+          .catch(() => {
+            alert('Something went wrong submitting your request. Please email us directly at S2HomePartners@gmail.com.');
+          });
+      });
+    })();
   </script>
 </body>
 </html>
