@@ -523,6 +523,132 @@
       </div>
     </section>
 
+    <!-- Estimated Monthly Payment Calculator -->
+    <section class="border-t border-momentum-grayLight bg-white py-16">
+      <div class="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
+        <div class="mx-auto overflow-hidden rounded-2xl border border-momentum-grayLight bg-white shadow-xl">
+          <div class="bg-momentum-blueDark p-6 text-white sm:p-8">
+            <span class="mb-3 inline-block rounded-full bg-teal-500 px-3 py-1 text-xs font-bold uppercase tracking-wider text-momentum-blueDark">
+              Buyer Financial Tool
+            </span>
+            <h2 class="font-serif text-2xl font-bold tracking-tight sm:text-3xl">Estimated Monthly Payment Calculator</h2>
+            <p class="mt-2 max-w-2xl text-sm text-slate-200 sm:text-base">
+              Calculate your complete monthly housing budget including principal, interest, Florida taxes, insurance, and HOA fees.
+            </p>
+          </div>
+
+          <div class="grid grid-cols-1 gap-8 p-6 sm:p-8 lg:grid-cols-12">
+
+            <div class="space-y-5 lg:col-span-7">
+              <div>
+                <div class="mb-1 flex items-center justify-between">
+                  <label for="calcHomePrice" class="text-sm font-semibold text-slate-700">Home Purchase Price</label>
+                  <span id="calcHomePriceDisplay" class="text-base font-bold text-momentum-blue">$450,000</span>
+                </div>
+                <input type="range" id="calcHomePrice" min="150000" max="1500000" step="5000" value="450000"
+                  class="h-2 w-full cursor-pointer appearance-none rounded-lg bg-momentum-grayLight accent-teal-600">
+              </div>
+
+              <div>
+                <div class="mb-1 flex items-center justify-between">
+                  <label for="calcDownPercent" class="text-sm font-semibold text-slate-700">Down Payment</label>
+                  <span class="text-sm font-bold text-slate-900">
+                    <span id="calcDownPercentDisplay">5</span>%
+                    (<span id="calcDownAmountDisplay" class="text-teal-600">$22,500</span>)
+                  </span>
+                </div>
+                <input type="range" id="calcDownPercent" min="0" max="30" step="1" value="5"
+                  class="h-2 w-full cursor-pointer appearance-none rounded-lg bg-momentum-grayLight accent-teal-600">
+              </div>
+
+              <div class="grid grid-cols-2 gap-4">
+                <div>
+                  <label for="calcInterestRate" class="mb-1 block text-xs font-semibold text-slate-700">Interest Rate (%)</label>
+                  <input type="number" id="calcInterestRate" value="6.5" step="0.125" min="1" max="15"
+                    class="w-full rounded-lg border border-momentum-grayLight px-3 py-2 text-sm text-slate-800 focus:border-momentum-blue focus:outline-none focus:ring-1 focus:ring-momentum-blue">
+                </div>
+                <div>
+                  <label for="calcLoanTerm" class="mb-1 block text-xs font-semibold text-slate-700">Loan Term</label>
+                  <select id="calcLoanTerm" class="w-full rounded-lg border border-momentum-grayLight px-3 py-2 text-sm text-slate-800 focus:border-momentum-blue focus:outline-none focus:ring-1 focus:ring-momentum-blue">
+                    <option value="30" selected>30-Year Fixed</option>
+                    <option value="15">15-Year Fixed</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="grid grid-cols-3 gap-3 border-t border-momentum-grayLight pt-4">
+                <div>
+                  <label for="calcAnnualTaxes" class="mb-1 block text-[11px] font-semibold text-slate-600">Annual Taxes ($)</label>
+                  <input type="number" id="calcAnnualTaxes" value="4500" step="100"
+                    class="w-full rounded-lg border border-momentum-grayLight p-2 text-xs text-slate-800 focus:border-momentum-blue focus:outline-none focus:ring-1 focus:ring-momentum-blue">
+                </div>
+                <div>
+                  <label for="calcAnnualInsurance" class="mb-1 block text-[11px] font-semibold text-slate-600">Home Ins. ($/yr)</label>
+                  <input type="number" id="calcAnnualInsurance" value="2400" step="100"
+                    class="w-full rounded-lg border border-momentum-grayLight p-2 text-xs text-slate-800 focus:border-momentum-blue focus:outline-none focus:ring-1 focus:ring-momentum-blue">
+                </div>
+                <div>
+                  <label for="calcMonthlyHOA" class="mb-1 block text-[11px] font-semibold text-slate-600">HOA ($/mo)</label>
+                  <input type="number" id="calcMonthlyHOA" value="75" step="25"
+                    class="w-full rounded-lg border border-momentum-grayLight p-2 text-xs text-slate-800 focus:border-momentum-blue focus:outline-none focus:ring-1 focus:ring-momentum-blue">
+                </div>
+              </div>
+              <p class="text-[10px] text-momentum-gray">Defaults reflect typical Northeast Florida insurance, tax, and HOA averages.</p>
+            </div>
+
+            <div class="flex flex-col justify-between rounded-xl border border-momentum-grayLight bg-momentum-bgLight p-6 lg:col-span-5">
+              <div>
+                <h3 class="mb-2 text-xs font-bold uppercase tracking-wider text-momentum-gray">Estimated Payment</h3>
+
+                <div class="mb-5 rounded-xl border border-teal-200 bg-teal-50 p-4 text-center">
+                  <span class="text-xs font-semibold uppercase tracking-wide text-teal-800">Total Monthly Payment</span>
+                  <div id="calcTotalPaymentDisplay" class="mt-1 text-3xl font-extrabold text-teal-700">$3,382</div>
+                  <span class="mt-0.5 block text-[10px] text-teal-600">Includes P&amp;I, Taxes, Ins., PMI &amp; HOA</span>
+                </div>
+
+                <div class="mb-4 flex h-3 w-full overflow-hidden rounded-full bg-momentum-grayLight">
+                  <div id="barPI" class="h-full bg-momentum-blueDark" style="width: 70%"></div>
+                  <div id="barTaxes" class="h-full bg-teal-500" style="width: 12%"></div>
+                  <div id="barIns" class="h-full bg-teal-300" style="width: 8%"></div>
+                  <div id="barPMI" class="h-full bg-amber-400" style="width: 5%"></div>
+                  <div id="barHOA" class="h-full bg-momentum-gray" style="width: 5%"></div>
+                </div>
+
+                <div class="space-y-2 text-xs">
+                  <div class="flex items-center justify-between text-slate-700">
+                    <span class="flex items-center"><span class="mr-2 h-2.5 w-2.5 rounded-full bg-momentum-blueDark"></span>Principal &amp; Interest:</span>
+                    <span id="dispPI" class="font-bold text-slate-900">$2,702</span>
+                  </div>
+                  <div class="flex items-center justify-between text-slate-700">
+                    <span class="flex items-center"><span class="mr-2 h-2.5 w-2.5 rounded-full bg-teal-500"></span>Property Taxes:</span>
+                    <span id="dispTaxes" class="font-bold text-slate-900">$375</span>
+                  </div>
+                  <div class="flex items-center justify-between text-slate-700">
+                    <span class="flex items-center"><span class="mr-2 h-2.5 w-2.5 rounded-full bg-teal-300"></span>Homeowners Insurance:</span>
+                    <span id="dispIns" class="font-bold text-slate-900">$200</span>
+                  </div>
+                  <div id="pmiRow" class="flex items-center justify-between text-slate-700">
+                    <span class="flex items-center"><span class="mr-2 h-2.5 w-2.5 rounded-full bg-amber-400"></span>PMI (Under 20% Down):</span>
+                    <span id="dispPMI" class="font-bold text-slate-900">$178</span>
+                  </div>
+                  <div class="flex items-center justify-between text-slate-700">
+                    <span class="flex items-center"><span class="mr-2 h-2.5 w-2.5 rounded-full bg-momentum-gray"></span>HOA Dues:</span>
+                    <span id="dispHOA" class="font-bold text-slate-900">$75</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="mt-6">
+                <a href="get-started.html" class="block w-full rounded-xl bg-teal-600 px-4 py-3 text-center text-xs font-bold text-white shadow-md transition hover:bg-teal-700">
+                  Get Pre-Approved for This Amount &rarr;
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <!-- Financing & Loan Guide -->
     <section class="border-t border-momentum-grayLight bg-momentum-bgLight py-16">
       <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
@@ -889,6 +1015,82 @@
             });
         });
       }
+    })();
+
+    // --- Estimated Monthly Payment Calculator ---
+    (function () {
+      const homePriceInput = document.getElementById('calcHomePrice');
+      if (!homePriceInput) return;
+
+      const downPercentInput = document.getElementById('calcDownPercent');
+      const interestRateInput = document.getElementById('calcInterestRate');
+      const loanTermSelect = document.getElementById('calcLoanTerm');
+      const annualTaxesInput = document.getElementById('calcAnnualTaxes');
+      const annualInsuranceInput = document.getElementById('calcAnnualInsurance');
+      const monthlyHOAInput = document.getElementById('calcMonthlyHOA');
+
+      function runMortgageCalc() {
+        const homePrice = parseFloat(homePriceInput.value) || 0;
+        const downPercent = parseFloat(downPercentInput.value) || 0;
+        const rate = (parseFloat(interestRateInput.value) || 0) / 100 / 12;
+        const termYears = parseInt(loanTermSelect.value, 10) || 30;
+        const n = termYears * 12;
+
+        const annualTaxes = parseFloat(annualTaxesInput.value) || 0;
+        const annualIns = parseFloat(annualInsuranceInput.value) || 0;
+        const monthlyHOA = parseFloat(monthlyHOAInput.value) || 0;
+
+        const downAmount = homePrice * (downPercent / 100);
+        const loanAmount = homePrice - downAmount;
+
+        let monthlyPI = 0;
+        if (rate > 0 && loanAmount > 0) {
+          monthlyPI = (loanAmount * (rate * Math.pow(1 + rate, n))) / (Math.pow(1 + rate, n) - 1);
+        }
+
+        const monthlyTaxes = annualTaxes / 12;
+        const monthlyIns = annualIns / 12;
+
+        let monthlyPMI = 0;
+        const pmiRow = document.getElementById('pmiRow');
+        if (downPercent < 20 && loanAmount > 0) {
+          monthlyPMI = (loanAmount * 0.005) / 12;
+          pmiRow.classList.remove('hidden');
+        } else {
+          pmiRow.classList.add('hidden');
+        }
+
+        const totalMonthly = monthlyPI + monthlyTaxes + monthlyIns + monthlyPMI + monthlyHOA;
+
+        document.getElementById('calcHomePriceDisplay').textContent = '$' + homePrice.toLocaleString();
+        document.getElementById('calcDownPercentDisplay').textContent = downPercent;
+        document.getElementById('calcDownAmountDisplay').textContent = '$' + Math.round(downAmount).toLocaleString();
+
+        document.getElementById('calcTotalPaymentDisplay').textContent = '$' + Math.round(totalMonthly).toLocaleString();
+        document.getElementById('dispPI').textContent = '$' + Math.round(monthlyPI).toLocaleString();
+        document.getElementById('dispTaxes').textContent = '$' + Math.round(monthlyTaxes).toLocaleString();
+        document.getElementById('dispIns').textContent = '$' + Math.round(monthlyIns).toLocaleString();
+        document.getElementById('dispPMI').textContent = '$' + Math.round(monthlyPMI).toLocaleString();
+        document.getElementById('dispHOA').textContent = '$' + Math.round(monthlyHOA).toLocaleString();
+
+        if (totalMonthly > 0) {
+          document.getElementById('barPI').style.width = ((monthlyPI / totalMonthly) * 100) + '%';
+          document.getElementById('barTaxes').style.width = ((monthlyTaxes / totalMonthly) * 100) + '%';
+          document.getElementById('barIns').style.width = ((monthlyIns / totalMonthly) * 100) + '%';
+          document.getElementById('barPMI').style.width = ((monthlyPMI / totalMonthly) * 100) + '%';
+          document.getElementById('barHOA').style.width = ((monthlyHOA / totalMonthly) * 100) + '%';
+        }
+      }
+
+      homePriceInput.addEventListener('input', runMortgageCalc);
+      downPercentInput.addEventListener('input', runMortgageCalc);
+      interestRateInput.addEventListener('input', runMortgageCalc);
+      loanTermSelect.addEventListener('change', runMortgageCalc);
+      annualTaxesInput.addEventListener('input', runMortgageCalc);
+      annualInsuranceInput.addEventListener('input', runMortgageCalc);
+      monthlyHOAInput.addEventListener('input', runMortgageCalc);
+
+      runMortgageCalc();
     })();
   </script>
   <!-- ==========================================================================
