@@ -178,16 +178,10 @@
   <main>
     <!-- Hero — rotating Jacksonville-area photos -->
     <!-- ==========================================================================
-         HERO BANNER + SEARCH CTA
-         - "Find Homes" (Buying tab) currently routes to buy.html with the
-           selected filters as query params. Swap IDX_SEARCH_BASE_URL below
-           for your MLS/IDX provider's search-results URL once it's live, and
-           update buildBuyingSearchUrl() to match that provider's param names.
-         - "Get My Home Value" (Selling) and "Connect With My PCS Pro"
-           (Military PCS) already POST to the site's real lead backend
-           (LEAD_BACKEND_URL) — same one every other form on the site uses —
-           so those two are live and will email S2HomePartners@gmail.com
-           the moment this ships. No extra wiring needed for those.
+         HERO BANNER
+         - Three CTA cards route straight to buy.html / sell.html / military.html.
+         - Neighborhood Quiz trigger preserved from the previous hero (still
+           wired to the existing quiz modal further down in this file).
        ========================================================================== -->
     <section class="relative overflow-hidden bg-momentum-blueDark text-white">
       <div class="absolute inset-0" aria-hidden="true">
@@ -200,135 +194,29 @@
       <div class="absolute inset-0 bg-momentum-blueDark/50"></div>
       <div class="absolute inset-0 bg-gradient-to-b from-momentum-blueDark/30 via-momentum-blueDark/70 to-momentum-blueDark"></div>
 
-      <div class="relative mx-auto max-w-4xl px-4 py-16 sm:px-6 sm:py-24 lg:px-8">
-        <div class="text-center">
-          <span class="mb-5 inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-4 py-1.5 text-xs font-bold uppercase tracking-widest text-teal-300 backdrop-blur-md">
-            <span class="h-2 w-2 animate-pulse rounded-full bg-teal-400"></span>
-            Northeast Florida Real Estate Specialists
-          </span>
-          <h1 class="font-serif text-4xl font-extrabold leading-tight text-white drop-shadow-md sm:text-6xl">
-            Find Your Place in <span class="bg-gradient-to-r from-teal-200 to-white bg-clip-text text-transparent">Northeast Florida</span>
-          </h1>
-          <p class="mx-auto mt-4 max-w-2xl text-base font-light leading-relaxed text-slate-200 sm:text-lg">
-            One search. Every county. A team that knows Jacksonville, the Beaches, Yulee, Fernandina, Ponte Vedra, and St. Augustine inside and out.
-          </p>
-        </div>
+      <div class="relative mx-auto max-w-4xl px-4 py-16 text-center sm:px-6 sm:py-24 lg:px-8">
+        <span class="mb-5 inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-4 py-1.5 text-xs font-bold uppercase tracking-widest text-teal-300 backdrop-blur-md">
+          <span class="h-2 w-2 animate-pulse rounded-full bg-teal-400"></span>
+          Northeast Florida Real Estate Advisors
+        </span>
+        <h1 class="font-serif text-4xl font-extrabold leading-tight text-white drop-shadow-md sm:text-6xl">
+          Buying or Selling in Northeast Florida?
+        </h1>
+        <p class="mx-auto mt-4 max-w-2xl text-base font-light leading-relaxed text-slate-200 sm:text-lg">
+          Get local guidance from two dedicated advisors who actually know the area. From Jacksonville and the Beaches to Yulee, Fernandina, St. Augustine &amp; beyond, Sarah &amp; Sarah help you make confident real estate decisions without the pressure.
+        </p>
 
-        <!-- Search / Lead Card -->
-        <div class="mt-8 rounded-2xl bg-white p-3 shadow-3d sm:mt-10 sm:p-5">
-          <!-- Buying / Selling / Military PCS tabs -->
-          <div role="tablist" aria-label="I am" class="mb-4 grid grid-cols-3 gap-1.5 rounded-xl bg-momentum-bgLight p-1.5 sm:mb-5">
-            <button type="button" role="tab" aria-selected="true" aria-controls="hero-panel-buying" data-hero-tab="buying" class="hero-tab-btn min-h-[44px] rounded-lg px-2 py-3 text-xs font-bold uppercase tracking-wide text-momentum-gray transition-all sm:text-sm">
-              Buying
-            </button>
-            <button type="button" role="tab" aria-selected="false" aria-controls="hero-panel-selling" data-hero-tab="selling" class="hero-tab-btn min-h-[44px] rounded-lg px-2 py-3 text-xs font-bold uppercase tracking-wide text-momentum-gray transition-all sm:text-sm">
-              Selling
-            </button>
-            <button type="button" role="tab" aria-selected="false" aria-controls="hero-panel-military" data-hero-tab="military" class="hero-tab-btn min-h-[44px] rounded-lg px-2 py-3 text-xs font-bold uppercase tracking-wide text-momentum-gray transition-all sm:text-sm">
-              Military PCS
-            </button>
-          </div>
-
-          <!-- BUYING panel -->
-          <div id="hero-panel-buying" role="tabpanel" aria-labelledby="hero-tab-buying" data-hero-panel="buying" class="hero-tab-panel">
-            <form id="heroBuyForm" class="grid grid-cols-1 gap-3 sm:grid-cols-12">
-              <div class="sm:col-span-4">
-                <label for="hero-location" class="sr-only">Location</label>
-                <select id="hero-location" name="Location" class="h-14 w-full rounded-xl border border-momentum-grayLight bg-white px-4 text-base text-slate-800 transition-colors focus:border-momentum-blue focus:outline-none focus:ring-2 focus:ring-momentum-blue/30">
-                  <option value="">Any Area</option>
-                  <option value="Jacksonville">Jacksonville</option>
-                  <option value="Yulee">Yulee</option>
-                  <option value="Fernandina Beach">Fernandina Beach</option>
-                  <option value="Ponte Vedra">Ponte Vedra</option>
-                  <option value="St. Augustine">St. Augustine</option>
-                </select>
-              </div>
-              <div class="sm:col-span-3">
-                <label for="hero-property-type" class="sr-only">Property Type</label>
-                <select id="hero-property-type" name="PropertyType" class="h-14 w-full rounded-xl border border-momentum-grayLight bg-white px-4 text-base text-slate-800 transition-colors focus:border-momentum-blue focus:outline-none focus:ring-2 focus:ring-momentum-blue/30">
-                  <option value="">Any Type</option>
-                  <option value="Single Family">Single Family</option>
-                  <option value="Condo/Townhome">Condo / Townhome</option>
-                  <option value="New Construction">New Construction</option>
-                  <option value="Land">Land</option>
-                </select>
-              </div>
-              <div class="sm:col-span-3">
-                <label for="hero-price-range" class="sr-only">Price Range</label>
-                <select id="hero-price-range" name="PriceRange" class="h-14 w-full rounded-xl border border-momentum-grayLight bg-white px-4 text-base text-slate-800 transition-colors focus:border-momentum-blue focus:outline-none focus:ring-2 focus:ring-momentum-blue/30">
-                  <option value="">Any Price</option>
-                  <option value="0-300000">Under $300k</option>
-                  <option value="300000-500000">$300k &ndash; $500k</option>
-                  <option value="500000-750000">$500k &ndash; $750k</option>
-                  <option value="750000-1000000">$750k &ndash; $1M</option>
-                  <option value="1000000-">$1M+</option>
-                </select>
-              </div>
-              <button type="submit" class="flex h-14 items-center justify-center rounded-xl bg-momentum-blue px-4 text-base font-bold text-white shadow-md transition-all hover:-translate-y-0.5 hover:bg-momentum-blueHover active:translate-y-0 sm:col-span-2">
-                Find Homes
-              </button>
-            </form>
-          </div>
-
-          <!-- SELLING panel -->
-          <div id="hero-panel-selling" role="tabpanel" aria-labelledby="hero-tab-selling" data-hero-panel="selling" class="hero-tab-panel hidden">
-            <form id="heroSellForm" class="grid grid-cols-1 gap-3 sm:grid-cols-12">
-              <input type="hidden" name="FormType" value="Hero Seller Lead" />
-              <input type="hidden" name="_subject" value="New Seller Lead (Hero Search) - S2 Home Partners" />
-              <div class="sm:col-span-5">
-                <label for="hero-sell-address" class="sr-only">Property Address</label>
-                <input id="hero-sell-address" type="text" name="Address" required placeholder="Property Address" class="h-14 w-full rounded-xl border border-momentum-grayLight bg-white px-4 text-base text-slate-800 placeholder:text-momentum-gray transition-colors focus:border-momentum-blue focus:outline-none focus:ring-2 focus:ring-momentum-blue/30" />
-              </div>
-              <div class="sm:col-span-3">
-                <label for="hero-sell-email" class="sr-only">Email</label>
-                <input id="hero-sell-email" type="email" name="Email" required placeholder="Email" class="h-14 w-full rounded-xl border border-momentum-grayLight bg-white px-4 text-base text-slate-800 placeholder:text-momentum-gray transition-colors focus:border-momentum-blue focus:outline-none focus:ring-2 focus:ring-momentum-blue/30" />
-              </div>
-              <div class="sm:col-span-2">
-                <label for="hero-sell-phone" class="sr-only">Phone</label>
-                <input id="hero-sell-phone" type="tel" name="Phone" placeholder="Phone" class="h-14 w-full rounded-xl border border-momentum-grayLight bg-white px-4 text-base text-slate-800 placeholder:text-momentum-gray transition-colors focus:border-momentum-blue focus:outline-none focus:ring-2 focus:ring-momentum-blue/30" />
-              </div>
-              <button type="submit" class="flex h-14 items-center justify-center rounded-xl bg-teal-600 px-4 text-base font-bold text-white shadow-md transition-all hover:-translate-y-0.5 hover:bg-teal-700 active:translate-y-0 sm:col-span-2">
-                Get My Home Value
-              </button>
-            </form>
-            <div id="heroSellForm-success" class="hidden rounded-xl bg-teal-50 p-6 text-center">
-              <p class="font-serif text-lg font-bold text-momentum-blue">Thanks &mdash; request received!</p>
-              <p class="mt-1 text-sm text-slate-600">We'll follow up with your home value within 24 hours.</p>
-            </div>
-          </div>
-
-          <!-- MILITARY PCS panel -->
-          <div id="hero-panel-military" role="tabpanel" aria-labelledby="hero-tab-military" data-hero-panel="military" class="hero-tab-panel hidden">
-            <form id="heroMilitaryForm" class="grid grid-cols-1 gap-3 sm:grid-cols-12">
-              <input type="hidden" name="FormType" value="Base Referral Agent Request" />
-              <input type="hidden" name="_subject" value="New Military PCS Lead (Hero Search) - S2 Home Partners" />
-              <div class="sm:col-span-5">
-                <label for="hero-mil-base" class="sr-only">Base / Duty Station</label>
-                <select id="hero-mil-base" name="Base" class="h-14 w-full rounded-xl border border-momentum-grayLight bg-white px-4 text-base text-slate-800 transition-colors focus:border-momentum-blue focus:outline-none focus:ring-2 focus:ring-momentum-blue/30">
-                  <option value="">Select Your Base</option>
-                  <option value="NAS Jacksonville">NAS Jacksonville</option>
-                  <option value="NS Mayport">NS Mayport</option>
-                  <option value="NSB Kings Bay">NSB Kings Bay</option>
-                  <option value="Other / Nationwide">Other / Nationwide</option>
-                </select>
-              </div>
-              <div class="sm:col-span-3">
-                <label for="hero-mil-name" class="sr-only">Name</label>
-                <input id="hero-mil-name" type="text" name="Name" required placeholder="Name" class="h-14 w-full rounded-xl border border-momentum-grayLight bg-white px-4 text-base text-slate-800 placeholder:text-momentum-gray transition-colors focus:border-momentum-blue focus:outline-none focus:ring-2 focus:ring-momentum-blue/30" />
-              </div>
-              <div class="sm:col-span-2">
-                <label for="hero-mil-email" class="sr-only">Email</label>
-                <input id="hero-mil-email" type="email" name="Email" required placeholder="Email" class="h-14 w-full rounded-xl border border-momentum-grayLight bg-white px-4 text-base text-slate-800 placeholder:text-momentum-gray transition-colors focus:border-momentum-blue focus:outline-none focus:ring-2 focus:ring-momentum-blue/30" />
-              </div>
-              <button type="submit" class="flex h-14 items-center justify-center rounded-xl bg-momentum-blue px-4 text-center text-sm font-bold leading-tight text-white shadow-md transition-all hover:-translate-y-0.5 hover:bg-momentum-blueHover active:translate-y-0 sm:col-span-2">
-                Connect With My PCS Pro
-              </button>
-            </form>
-            <div id="heroMilitaryForm-success" class="hidden rounded-xl bg-momentum-bgLight p-6 text-center">
-              <p class="font-serif text-lg font-bold text-momentum-blue">Thanks &mdash; request received!</p>
-              <p class="mt-1 text-sm text-slate-600">We'll connect you with your PCS Pro within 24 hours.</p>
-            </div>
-          </div>
+        <!-- Primary CTA cards -->
+        <div class="mx-auto mt-8 grid max-w-3xl grid-cols-1 gap-4 sm:mt-10 sm:grid-cols-3">
+          <a href="buy.html" class="min-h-[44px] rounded-2xl bg-teal-500 px-6 py-4 text-center text-sm font-black text-momentum-blueDark shadow-lg transition-all hover:-translate-y-1 hover:bg-teal-400 sm:text-base">
+            &#127968; BUY A HOME
+          </a>
+          <a href="sell.html" class="min-h-[44px] rounded-2xl bg-white px-6 py-4 text-center text-sm font-black text-momentum-blueDark shadow-lg transition-all hover:-translate-y-1 hover:bg-slate-100 sm:text-base">
+            &#128176; SELL MY HOME
+          </a>
+          <a href="military.html" class="min-h-[44px] rounded-2xl border border-teal-500/30 bg-momentum-blue px-6 py-4 text-center text-sm font-black text-teal-300 shadow-lg transition-all hover:-translate-y-1 hover:bg-momentum-blueHover sm:text-base">
+            &#9875; MILITARY PCS
+          </a>
         </div>
 
         <!-- Neighborhood Quiz trigger -->
@@ -355,20 +243,20 @@
         <!-- Stat Bar -->
         <div class="mt-10 grid grid-cols-2 gap-4 sm:mt-12 sm:gap-6 lg:grid-cols-4">
           <div class="rounded-2xl border border-momentum-grayLight bg-white p-5 text-center shadow-sm transition-shadow hover:shadow-md sm:p-6">
-            <p class="font-serif text-3xl font-extrabold text-momentum-blue sm:text-4xl">2x</p>
-            <p class="mt-1.5 text-xs font-bold uppercase leading-snug tracking-wide text-momentum-gray sm:text-sm">The Availability &amp; Expertise</p>
-          </div>
-          <div class="rounded-2xl border border-momentum-grayLight bg-white p-5 text-center shadow-sm transition-shadow hover:shadow-md sm:p-6">
             <p class="font-serif text-3xl font-extrabold text-momentum-blue sm:text-4xl">100+</p>
-            <p class="mt-1.5 text-xs font-bold uppercase leading-snug tracking-wide text-momentum-gray sm:text-sm">Military Families Served</p>
-          </div>
-          <div class="rounded-2xl border border-momentum-grayLight bg-white p-5 text-center shadow-sm transition-shadow hover:shadow-md sm:p-6">
-            <p class="font-serif text-3xl font-extrabold text-momentum-blue sm:text-4xl">15+</p>
-            <p class="mt-1.5 text-xs font-bold uppercase leading-snug tracking-wide text-momentum-gray sm:text-sm">Days Faster Avg. Closing</p>
+            <p class="mt-1.5 text-xs font-bold uppercase leading-snug tracking-wide text-momentum-gray sm:text-sm">Military &amp; Relocation Families Helped</p>
           </div>
           <div class="rounded-2xl border border-momentum-grayLight bg-white p-5 text-center shadow-sm transition-shadow hover:shadow-md sm:p-6">
             <p class="font-serif text-3xl font-extrabold text-momentum-blue sm:text-4xl">5.0 <span class="text-amber-400">&starf;</span></p>
-            <p class="mt-1.5 text-xs font-bold uppercase leading-snug tracking-wide text-momentum-gray sm:text-sm">Top-Rated Advisors</p>
+            <p class="mt-1.5 text-xs font-bold uppercase leading-snug tracking-wide text-momentum-gray sm:text-sm">Top-Rated Client Satisfaction</p>
+          </div>
+          <div class="rounded-2xl border border-momentum-grayLight bg-white p-5 text-center shadow-sm transition-shadow hover:shadow-md sm:p-6">
+            <p class="font-serif text-3xl font-extrabold text-momentum-blue sm:text-4xl">2</p>
+            <p class="mt-1.5 text-xs font-bold uppercase leading-snug tracking-wide text-momentum-gray sm:text-sm">Dedicated Real Estate Advisors</p>
+          </div>
+          <div class="rounded-2xl border border-momentum-grayLight bg-white p-5 text-center shadow-sm transition-shadow hover:shadow-md sm:p-6">
+            <p class="font-serif text-3xl font-extrabold text-momentum-blue sm:text-4xl">NE FL</p>
+            <p class="mt-1.5 text-xs font-bold uppercase leading-snug tracking-wide text-momentum-gray sm:text-sm">Local Market Specialists</p>
           </div>
         </div>
 
@@ -429,16 +317,23 @@
       </div>
     </section>
 
-    <!-- Meet Your Agents -->
+    <!-- Meet Sarah & Sarah -->
     <section class="bg-white py-16">
       <div class="mx-auto grid max-w-6xl items-center gap-10 px-4 sm:px-6 md:grid-cols-2 lg:px-8">
         <img src="team.jpg" alt="Sarah Luther and Sarah Fuller, S² Home Partners" class="mx-auto w-full max-w-md rounded-2xl shadow-3d" />
         <div>
-          <span class="text-xs font-bold uppercase tracking-widest text-momentum-gray">Meet Your Agents</span>
-          <h2 class="mt-2 font-serif text-3xl font-bold text-momentum-blue sm:text-4xl">Sarah Luther &amp; Sarah Fuller</h2>
+          <span class="text-xs font-bold uppercase tracking-widest text-momentum-gray">Meet Your Advisors</span>
+          <h2 class="mt-2 font-serif text-3xl font-bold text-momentum-blue sm:text-4xl">Two Agents. One Team. Twice the Availability.</h2>
           <p class="mt-4 text-base leading-relaxed text-slate-600">
-            Two dedicated Real Estate Advisors, double the availability and expertise. Whether you're buying, selling, or navigating a military PCS move, we bring hands-on guidance and strategic marketing to every step of your Northeast Florida real estate journey.
+            Buying or selling a home is a major financial and life decision &mdash; and you shouldn't have to navigate it alone or wonder if your agent will pick up the phone.
           </p>
+          <p class="mt-4 text-base leading-relaxed text-slate-600">
+            Sarah Luther and Sarah Fuller combined forces at Momentum Realty to deliver seamless, responsive guidance across Northeast Florida. Whether you are navigating a military PCS move, buying your first home, or preparing to sell for top equity, we bring hands-on coordination and zero-pressure advice from first talk to closing day.
+          </p>
+          <div class="mt-5 flex flex-wrap gap-3 text-xs font-bold text-momentum-blue">
+            <span class="rounded-lg border border-momentum-grayLight bg-momentum-bgLight px-3 py-1.5">&check; Military Spouse Owned</span>
+            <span class="rounded-lg border border-momentum-grayLight bg-momentum-bgLight px-3 py-1.5">&check; Momentum Realty</span>
+          </div>
           <a href="about.html" class="mt-6 inline-block rounded-xl bg-momentum-blue px-6 py-3.5 text-sm font-bold uppercase tracking-wider text-white shadow-md transition-all hover:bg-momentum-blueHover">
             Meet the Team &rarr;
           </a>
@@ -624,82 +519,6 @@
         heroSlides[currentSlide].classList.add('opacity-100');
       }, 5000);
     }
-
-    // ==========================================================================
-    // HERO SEARCH / LEAD CARD
-    // ==========================================================================
-    (function () {
-      // --- CONFIG: connect these to your real IDX/MLS + backend -----------------
-      // Selling & Military PCS already point at the site's real, working lead
-      // backend (same one every other form on the site uses) — nothing to change
-      // there. Buying is the one placeholder: swap this for your IDX provider's
-      // search-results URL once it's live, and adjust buildBuyingSearchUrl()
-      // below to match that provider's expected query-param names.
-      const IDX_SEARCH_BASE_URL = 'buy.html'; // TODO: replace with real IDX/MLS search URL
-      const LEAD_BACKEND_URL = 'https://script.google.com/macros/s/AKfycbybi0InSUyh5Rw45uFUlwg2t29wzsYxWrcKXWuf9NqH9Nprlf_YZ3htq-x4n0pr_I5p_w/exec';
-
-      // --- Tabs: Buying / Selling / Military PCS --------------------------------
-      const tabButtons = document.querySelectorAll('.hero-tab-btn');
-      const tabPanels = document.querySelectorAll('.hero-tab-panel');
-      function activateHeroTab(name) {
-        tabButtons.forEach((btn) => {
-          const isActive = btn.dataset.heroTab === name;
-          btn.setAttribute('aria-selected', String(isActive));
-          btn.classList.toggle('bg-white', isActive);
-          btn.classList.toggle('shadow-sm', isActive);
-          btn.classList.toggle('text-momentum-blue', isActive);
-          btn.classList.toggle('text-momentum-gray', !isActive);
-        });
-        tabPanels.forEach((panel) => {
-          panel.classList.toggle('hidden', panel.dataset.heroPanel !== name);
-        });
-      }
-      tabButtons.forEach((btn) => {
-        btn.addEventListener('click', () => activateHeroTab(btn.dataset.heroTab));
-      });
-      activateHeroTab('buying'); // default tab + sets initial active-state styling
-
-      // --- Buying: redirect to IDX/MLS search with selected filters -------------
-      function buildBuyingSearchUrl(formData) {
-        const params = new URLSearchParams();
-        const location = formData.get('Location');
-        const propertyType = formData.get('PropertyType');
-        const priceRange = formData.get('PriceRange');
-        if (location) params.set('location', location);
-        if (propertyType) params.set('type', propertyType);
-        if (priceRange) params.set('price', priceRange);
-        const query = params.toString();
-        return IDX_SEARCH_BASE_URL + (query ? '?' + query : '');
-      }
-      const heroBuyForm = document.getElementById('heroBuyForm');
-      if (heroBuyForm) {
-        heroBuyForm.addEventListener('submit', (event) => {
-          event.preventDefault();
-          window.location.href = buildBuyingSearchUrl(new FormData(heroBuyForm));
-        });
-      }
-
-      // --- Selling & Military PCS: submit to the real lead backend --------------
-      function wireHeroLeadForm(formId, successId) {
-        const form = document.getElementById(formId);
-        const success = document.getElementById(successId);
-        if (!form) return;
-        form.addEventListener('submit', (event) => {
-          event.preventDefault();
-          const formData = new FormData(form);
-          fetch(LEAD_BACKEND_URL, { method: 'POST', mode: 'no-cors', body: formData })
-            .then(() => {
-              form.classList.add('hidden');
-              if (success) success.classList.remove('hidden');
-            })
-            .catch(() => {
-              alert('Something went wrong submitting your request. Please email us directly at S2HomePartners@gmail.com.');
-            });
-        });
-      }
-      wireHeroLeadForm('heroSellForm', 'heroSellForm-success');
-      wireHeroLeadForm('heroMilitaryForm', 'heroMilitaryForm-success');
-    })();
 
     // ==========================================================================
     // NEIGHBORHOOD MATCH QUIZ
