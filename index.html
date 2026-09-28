@@ -58,23 +58,64 @@
   {
     "@context": "https://schema.org",
     "@type": "RealEstateAgent",
+    "@id": "https://www.buyjacksonvillefl.com/#organization",
     "name": "S² Home Partners | Momentum Realty",
     "alternateName": "S² Home Partners",
+    "description": "S² Home Partners is a two-agent Northeast Florida real estate team, brokered by Momentum Realty, helping buyers, sellers, first-time buyers, and military families relocating to or from NAS Jacksonville, Naval Station Mayport, and NSB Kings Bay.",
     "url": "https://www.buyjacksonvillefl.com",
-    "image": "https://www.buyjacksonvillefl.com/s2-logo.png",
-    "logo": "https://www.buyjacksonvillefl.com/s2-logo.png",
+    "image": "https://www.buyjacksonvillefl.com/s2-logo-header.png",
+    "logo": "https://www.buyjacksonvillefl.com/s2-logo-header.png",
+    "telephone": "+1-434-713-1221",
+    "email": "S2HomePartners@gmail.com",
     "priceRange": "$$",
+
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Jacksonville",
+      "addressRegion": "FL",
+      "addressCountry": "US"
+    },
 
     "parentOrganization": {
       "@type": "Organization",
       "name": "Momentum Realty"
     },
 
+    "employee": [
+      {
+        "@type": "Person",
+        "@id": "https://www.buyjacksonvillefl.com/sarah-fuller.html#person",
+        "name": "Sarah Fuller",
+        "jobTitle": "Realtor®",
+        "url": "https://www.buyjacksonvillefl.com/sarah-fuller.html",
+        "image": "https://www.buyjacksonvillefl.com/sarah-fuller.jpg",
+        "telephone": "+1-434-713-1221",
+        "worksFor": { "@id": "https://www.buyjacksonvillefl.com/#organization" },
+        "memberOf": { "@type": "Organization", "name": "Momentum Realty" },
+        "knowsAbout": ["Military PCS Relocation", "VA Home Buying", "Residential Real Estate", "Northeast Florida Real Estate"]
+      },
+      {
+        "@type": "Person",
+        "@id": "https://www.buyjacksonvillefl.com/sarah-luther.html#person",
+        "name": "Sarah Luther",
+        "jobTitle": "Realtor®",
+        "url": "https://www.buyjacksonvillefl.com/sarah-luther.html",
+        "image": "https://www.buyjacksonvillefl.com/sarah-luther.jpg",
+        "telephone": "+1-850-328-9800",
+        "worksFor": { "@id": "https://www.buyjacksonvillefl.com/#organization" },
+        "memberOf": { "@type": "Organization", "name": "Momentum Realty" },
+        "knowsAbout": ["Military PCS Relocation", "First-Time Home Buyers", "New Construction", "Northeast Florida Real Estate"]
+      }
+    ],
+
     "areaServed": [
-      { "@type": "Place", "name": "Downtown Jacksonville, FL" },
+      { "@type": "Place", "name": "Jacksonville, FL" },
       { "@type": "Place", "name": "Jacksonville Beaches, FL" },
       { "@type": "Place", "name": "Yulee, FL" },
       { "@type": "Place", "name": "Fernandina Beach, FL" },
+      { "@type": "Place", "name": "Amelia Island, FL" },
+      { "@type": "Place", "name": "Nassau County, FL" },
+      { "@type": "Place", "name": "Duval County, FL" },
       { "@type": "Place", "name": "Orange Park, FL" },
       { "@type": "Place", "name": "Ponte Vedra, FL" },
       { "@type": "Place", "name": "St. Augustine, FL" }
@@ -98,6 +139,10 @@
         },
         {
           "@type": "Offer",
+          "itemOffered": { "@type": "Service", "name": "VA Home Buyer Guidance" }
+        },
+        {
+          "@type": "Offer",
           "itemOffered": { "@type": "Service", "name": "Home Equity Analysis" }
         }
       ]
@@ -109,6 +154,16 @@
       "https://www.zillow.com/profile/sarahfullerrealtor",
       "https://www.zillow.com/profile/SarahLutherFlRealtor"
     ]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "@id": "https://www.buyjacksonvillefl.com/#website",
+    "name": "S² Home Partners | Momentum Realty",
+    "url": "https://www.buyjacksonvillefl.com",
+    "publisher": { "@id": "https://www.buyjacksonvillefl.com/#organization" }
   }
   </script>
 </head>
