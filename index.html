@@ -9,25 +9,25 @@
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;0,6..72,700;1,6..72,400;1,6..72,500&family=Source+Sans+3:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
   <script>
     tailwind.config = {
       theme: {
         extend: {
           colors: {
-            momentum: {
-              blue: '#1A4B6E',
-              blueHover: '#133853',
-              blueDark: '#0F2C42',
-              gray: '#718093',
-              grayLight: '#E2E8F0',
-              bgLight: '#F4F7FA',
-              accentGold: '#D4AF37',
+            teal: { 50:'#F0F6F3',100:'#DDEBE5',200:'#BFD9CF',300:'#9CC4B7',400:'#78AA9B',500:'#5A917F',600:'#3F7A68',700:'#33685A',800:'#2A5249',900:'#223F39',950:'#15292B' }, slate: { 50:'#F7F4EC',100:'#EFEADF',200:'#E2DACB',300:'#CBC3B2',400:'#9AA5A8',500:'#6D7B80',600:'#53636A',700:'#3D4D55',800:'#293A43',900:'#16303B',950:'#0E2029' }, sky: { 200:'#BEDDE4',600:'#3B7A8F',700:'#2F6578',950:'#12303A' }, indigo: { 200:'#C9D5E0',600:'#4A6580',950:'#14202D' }, amber: { 50:'#FBF5E8',200:'#EBD6A6',400:'#D9B35F',500:'#C99A4D',600:'#A87635',700:'#8F6229',800:'#76501F',900:'#5C3E18',950:'#33220D' }, orange: { 600:'#BC5A40',700:'#9F4A33',950:'#3A1A12' }, rose: { 50:'#FBEFEA',100:'#F6DDD3',600:'#B5503F',700:'#9A4234',800:'#7C352A' }, emerald: { 200:'#BFD9CF',600:'#3F7A68',950:'#15292B' },  momentum: {
+              blue: '#1E4A5C',
+              blueHover: '#153746',
+              blueDark: '#112B37',
+              gray: '#6B7A80',
+              grayLight: '#E6DFD2',
+              bgLight: '#F6F1E7',
+              accentGold: '#B8894A',
             },
           },
           fontFamily: {
-            sans: ['Outfit', 'sans-serif'],
-            serif: ['Fraunces', 'Georgia', 'serif'],
+            sans: ["'Source Sans 3'", 'sans-serif'],
+            serif: ['Newsreader', 'Georgia', 'serif'],
           },
           boxShadow: {
             '3d': '0 20px 30px -10px rgba(26, 75, 110, 0.25), 0 10px 15px -5px rgba(0, 0, 0, 0.05)',
@@ -167,7 +167,7 @@
     "publisher": { "@id": "https://www.buyjacksonvillefl.com/#organization" }
   }
   </script>
-</head>
+<link rel="stylesheet" href="coastal.css?v=1" /></head>
 <body class="bg-momentum-bgLight font-sans text-slate-800 antialiased">
 
   <!-- Top Navigation -->
@@ -280,47 +280,49 @@
        ========================================================================== -->
     <section class="relative overflow-hidden bg-momentum-blueDark text-white">
       <div class="absolute inset-0" aria-hidden="true">
-        <div class="hero-slide absolute inset-0 bg-cover bg-center opacity-100" style="background-image: url('Downtown-Jacksonville-Rich-Estrada.jpg.avif');"></div>
+        <div class="hero-slide absolute inset-0 bg-cover bg-center opacity-100" style="background-image: url('https://commons.wikimedia.org/wiki/Special:FilePath/Jax_Beach_2024_Pier.jpg?width=1600');"></div>
         <div class="hero-slide absolute inset-0 bg-cover bg-center opacity-0" style="background-image: url('https://commons.wikimedia.org/wiki/Special:FilePath/Jacksonville_skyline.jpg?width=1600');"></div>
-        <div class="hero-slide absolute inset-0 bg-cover bg-center opacity-0" style="background-image: url('https://commons.wikimedia.org/wiki/Special:FilePath/Jax_Beach_2024_Pier.jpg?width=1600');"></div>
+        <div class="hero-slide absolute inset-0 bg-cover bg-center opacity-0" style="background-image: url('Downtown-Jacksonville-Rich-Estrada.jpg.avif');"></div>
         <div class="hero-slide absolute inset-0 bg-cover bg-center opacity-0" style="background-image: url('https://commons.wikimedia.org/wiki/Special:FilePath/Jacksonville_San_Marco_Square.JPG?width=1600');"></div>
         <div class="hero-slide absolute inset-0 bg-cover bg-center opacity-0" style="background-image: url('https://commons.wikimedia.org/wiki/Special:FilePath/MemParkJaxLife.jpg?width=1600');"></div>
       </div>
-      <div class="absolute inset-0 bg-momentum-blueDark/50"></div>
-      <div class="absolute inset-0 bg-gradient-to-b from-momentum-blueDark/30 via-momentum-blueDark/70 to-momentum-blueDark"></div>
+      <div class="absolute inset-0 bg-momentum-blueDark/35"></div>
+      <div class="absolute inset-0 bg-gradient-to-r from-momentum-blueDark/90 via-momentum-blueDark/55 to-transparent"></div>
+      <div class="hero-wave" aria-hidden="true"></div>
 
-      <div class="relative mx-auto max-w-4xl px-4 py-16 text-center sm:px-6 sm:py-24 lg:px-8">
-        <span class="mb-5 inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-4 py-1.5 text-xs font-bold uppercase tracking-widest text-teal-300 backdrop-blur-md">
-          <span class="h-2 w-2 animate-pulse rounded-full bg-teal-400"></span>
-          Northeast Florida Real Estate Advisors
-        </span>
-        <h1 class="font-serif text-4xl font-extrabold leading-tight text-white drop-shadow-md sm:text-6xl">
-          Buying or Selling in Northeast Florida?
+      <div class="relative mx-auto max-w-6xl px-4 pb-24 pt-16 text-left sm:px-6 sm:pb-32 sm:pt-24 lg:px-8">
+       <div class="max-w-2xl">
+        <p class="mb-5 flex items-center gap-3 text-xs font-semibold uppercase tracking-widest text-teal-200">
+          <span class="h-px w-10 bg-teal-300"></span>
+          Northeast Florida Real Estate
+        </p>
+        <h1 class="font-serif text-4xl font-semibold leading-tight text-white sm:text-6xl">
+          Buying or selling in Northeast Florida?
         </h1>
-        <p class="mx-auto mt-4 max-w-2xl text-base font-light leading-relaxed text-slate-200 sm:text-lg">
+        <p class="mt-5 max-w-xl text-base leading-relaxed text-slate-100 sm:text-lg">
           Get local guidance from two dedicated advisors who actually know the area. From Jacksonville and the Beaches to Yulee, Fernandina, St. Augustine &amp; beyond, Sarah &amp; Sarah help you make confident real estate decisions without the pressure.
         </p>
 
         <!-- Primary CTA cards -->
-        <div class="mx-auto mt-8 grid max-w-3xl grid-cols-1 gap-4 sm:mt-10 sm:grid-cols-3">
-          <a href="buy.html" class="min-h-[44px] rounded-2xl bg-teal-500 px-6 py-4 text-center text-sm font-black text-momentum-blueDark shadow-lg transition-all hover:-translate-y-1 hover:bg-teal-400 sm:text-base">
-            &#127968; BUY A HOME
+        <div class="mt-8 flex flex-col gap-3 sm:mt-10 sm:flex-row">
+          <a href="buy.html" class="min-h-[44px] rounded-md bg-teal-300 px-7 py-3.5 text-center text-sm font-semibold uppercase tracking-wider text-momentum-blueDark transition-colors hover:bg-teal-200">
+            Buy a home
           </a>
-          <a href="sell.html" class="min-h-[44px] rounded-2xl bg-white px-6 py-4 text-center text-sm font-black text-momentum-blueDark shadow-lg transition-all hover:-translate-y-1 hover:bg-slate-100 sm:text-base">
-            &#128176; SELL MY HOME
+          <a href="sell.html" class="min-h-[44px] rounded-md bg-white px-7 py-3.5 text-center text-sm font-semibold uppercase tracking-wider text-momentum-blueDark transition-colors hover:bg-slate-100">
+            Sell my home
           </a>
-          <a href="military.html" class="min-h-[44px] rounded-2xl border border-teal-500/30 bg-momentum-blue px-6 py-4 text-center text-sm font-black text-teal-300 shadow-lg transition-all hover:-translate-y-1 hover:bg-momentum-blueHover sm:text-base">
-            &#9875; MILITARY PCS
+          <a href="military.html" class="min-h-[44px] rounded-md border border-white/60 px-7 py-3.5 text-center text-sm font-semibold uppercase tracking-wider text-white transition-colors hover:bg-white/10">
+            Military PCS
           </a>
         </div>
 
         <!-- Neighborhood Quiz trigger -->
-        <div class="mt-6 text-center">
-          <button type="button" id="quiz-open-btn" class="inline-flex min-h-[44px] items-center gap-2 rounded-full border border-white/30 bg-white/10 px-5 py-2.5 text-sm font-semibold text-white backdrop-blur-md transition-all hover:border-white hover:bg-white/20">
-            <span aria-hidden="true">&#x1F3E1;</span>
-            Not sure where to start? Take the 60-Second Neighborhood Match Quiz &rarr;
+        <div class="mt-6">
+          <button type="button" id="quiz-open-btn" class="min-h-[44px] border-b border-white/50 pb-1 text-left text-sm font-medium text-white transition-colors hover:border-white">
+            Not sure where to start? Take the 60-second neighborhood match quiz &rarr;
           </button>
         </div>
+       </div>
       </div>
     </section>
 
@@ -330,26 +332,26 @@
     <section class="bg-momentum-bgLight py-16 sm:py-20">
       <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div class="mx-auto max-w-2xl text-center">
-          <span class="text-xs font-bold uppercase tracking-widest text-momentum-gray">Social Proof &amp; Local Impact</span>
-          <h2 class="mt-2 font-serif text-3xl font-bold text-momentum-blue sm:text-4xl">Trusted By Northeast Florida Families</h2>
+          <span class="text-xs font-semibold uppercase tracking-widest text-teal-600">From our clients</span>
+          <h2 class="mt-2 font-serif text-3xl font-bold text-momentum-blue sm:text-4xl">Trusted across Northeast Florida</h2>
           <p class="mt-3 text-base leading-relaxed text-slate-600">Real results, real reviews, from real buyers and sellers across Duval, Nassau, Clay, and St. Johns Counties.</p>
         </div>
 
         <!-- Stat Bar -->
         <div class="mt-10 grid grid-cols-2 gap-4 sm:mt-12 sm:gap-6 lg:grid-cols-4">
-          <div class="rounded-2xl border border-momentum-grayLight bg-white p-5 text-center shadow-sm transition-shadow hover:shadow-md sm:p-6">
+          <div class="border-l-2 border-teal-300 px-5 py-3 text-left">
             <p class="font-serif text-3xl font-extrabold text-momentum-blue sm:text-4xl">100+</p>
             <p class="mt-1.5 text-xs font-bold uppercase leading-snug tracking-wide text-momentum-gray sm:text-sm">Military &amp; Relocation Families Helped</p>
           </div>
-          <div class="rounded-2xl border border-momentum-grayLight bg-white p-5 text-center shadow-sm transition-shadow hover:shadow-md sm:p-6">
+          <div class="border-l-2 border-teal-300 px-5 py-3 text-left">
             <p class="font-serif text-3xl font-extrabold text-momentum-blue sm:text-4xl">5.0 <span class="text-amber-400">&starf;</span></p>
             <p class="mt-1.5 text-xs font-bold uppercase leading-snug tracking-wide text-momentum-gray sm:text-sm">Top-Rated Client Satisfaction</p>
           </div>
-          <div class="rounded-2xl border border-momentum-grayLight bg-white p-5 text-center shadow-sm transition-shadow hover:shadow-md sm:p-6">
+          <div class="border-l-2 border-teal-300 px-5 py-3 text-left">
             <p class="font-serif text-3xl font-extrabold text-momentum-blue sm:text-4xl">2</p>
             <p class="mt-1.5 text-xs font-bold uppercase leading-snug tracking-wide text-momentum-gray sm:text-sm">Dedicated Real Estate Advisors</p>
           </div>
-          <div class="rounded-2xl border border-momentum-grayLight bg-white p-5 text-center shadow-sm transition-shadow hover:shadow-md sm:p-6">
+          <div class="border-l-2 border-teal-300 px-5 py-3 text-left">
             <p class="font-serif text-3xl font-extrabold text-momentum-blue sm:text-4xl">NE FL</p>
             <p class="mt-1.5 text-xs font-bold uppercase leading-snug tracking-wide text-momentum-gray sm:text-sm">Local Market Specialists</p>
           </div>
@@ -417,7 +419,7 @@
       <div class="mx-auto grid max-w-6xl items-center gap-10 px-4 sm:px-6 md:grid-cols-2 lg:px-8">
         <img src="team.jpg" alt="Sarah Luther and Sarah Fuller, S² Home Partners" class="mx-auto w-full max-w-md rounded-2xl shadow-3d" />
         <div>
-          <span class="text-xs font-bold uppercase tracking-widest text-momentum-gray">Meet Your Advisors</span>
+          <span class="text-xs font-bold uppercase tracking-widest text-momentum-gray">Your advisors</span>
           <h2 class="mt-2 font-serif text-3xl font-bold text-momentum-blue sm:text-4xl">Two Agents. One Team. Twice the Availability.</h2>
           <p class="mt-4 text-base leading-relaxed text-slate-600">
             Buying or selling a home is a major financial and life decision &mdash; and you shouldn't have to navigate it alone or wonder if your agent will pick up the phone.
@@ -441,8 +443,8 @@
     <section class="bg-momentum-bgLight py-24">
       <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div class="mx-auto mb-16 max-w-3xl text-center">
-          <span class="text-xs font-bold uppercase tracking-widest text-momentum-gray">Explore Our Specialty Divisions</span>
-          <h2 class="mt-2 font-serif text-3xl font-bold text-momentum-blue sm:text-5xl">Tailored Real Estate Services</h2>
+          <span class="text-xs font-bold uppercase tracking-widest text-momentum-gray">Where we can help</span>
+          <h2 class="mt-2 font-serif text-3xl font-bold text-momentum-blue sm:text-5xl">How we help</h2>
         </div>
 
         <div class="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">

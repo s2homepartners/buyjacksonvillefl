@@ -9,24 +9,24 @@
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;0,6..72,700;1,6..72,400;1,6..72,500&family=Source+Sans+3:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
   <script>
     tailwind.config = {
       theme: {
         extend: {
           colors: {
-            momentum: {
-              blue: '#1A4B6E',
-              blueHover: '#133853',
-              blueDark: '#0F2C42',
-              gray: '#718093',
-              grayLight: '#E2E8F0',
+            teal: { 50:'#F0F6F3',100:'#DDEBE5',200:'#BFD9CF',300:'#9CC4B7',400:'#78AA9B',500:'#5A917F',600:'#3F7A68',700:'#33685A',800:'#2A5249',900:'#223F39',950:'#15292B' }, slate: { 50:'#F7F4EC',100:'#EFEADF',200:'#E2DACB',300:'#CBC3B2',400:'#9AA5A8',500:'#6D7B80',600:'#53636A',700:'#3D4D55',800:'#293A43',900:'#16303B',950:'#0E2029' }, sky: { 200:'#BEDDE4',600:'#3B7A8F',700:'#2F6578',950:'#12303A' }, indigo: { 200:'#C9D5E0',600:'#4A6580',950:'#14202D' }, amber: { 50:'#FBF5E8',200:'#EBD6A6',400:'#D9B35F',500:'#C99A4D',600:'#A87635',700:'#8F6229',800:'#76501F',900:'#5C3E18',950:'#33220D' }, orange: { 600:'#BC5A40',700:'#9F4A33',950:'#3A1A12' }, rose: { 50:'#FBEFEA',100:'#F6DDD3',600:'#B5503F',700:'#9A4234',800:'#7C352A' }, emerald: { 200:'#BFD9CF',600:'#3F7A68',950:'#15292B' },  momentum: {
+              blue: '#1E4A5C',
+              blueHover: '#153746',
+              blueDark: '#112B37',
+              gray: '#6B7A80',
+              grayLight: '#E6DFD2',
               bgLight: '#F8FAFC',
             },
           },
           fontFamily: {
-            sans: ['Outfit', 'sans-serif'],
-            serif: ['Fraunces', 'Georgia', 'serif'],
+            sans: ["'Source Sans 3'", 'sans-serif'],
+            serif: ['Newsreader', 'Georgia', 'serif'],
           },
         },
       },
@@ -37,7 +37,7 @@
     .guide-card summary { list-style: none; }
     .guide-card[open] .guide-chevron { transform: rotate(180deg); }
   </style>
-</head>
+<link rel="stylesheet" href="coastal.css?v=1" /></head>
 <body class="bg-momentum-bgLight font-sans text-slate-800 antialiased">
 
   <header class="sticky top-0 z-50 border-b border-momentum-grayLight bg-white/95 shadow-sm backdrop-blur-md">

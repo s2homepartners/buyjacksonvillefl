@@ -1,0 +1,112 @@
+/* Coastal theme layer for S² Home Partners.
+   Loaded after the Tailwind CDN on every page. Colors and fonts come from each page's
+   tailwind.config; this file softens the generic "app" feel (tilting cards, heavy
+   shadows, pill badges) into something calmer and more editorial. */
+
+:root {
+  --sand: #F6F1E7;
+  --sand-deep: #EBE3D3;
+  --paper: #FFFDF9;
+  --harbor: #112B37;
+  --tide: #1E4A5C;
+  --seaglass: #CFE3DB;
+  --coral: #D9785B;
+  --brass: #B8894A;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  background-color: var(--paper);
+  color: #3D4D55;
+  font-feature-settings: "kern", "liga";
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Headings: calmer weight, tighter tracking, a serif that reads like a magazine, not a SaaS page */
+body .font-serif {
+  letter-spacing: -0.012em;
+  font-weight: 600;
+}
+body .font-serif.font-extrabold,
+body .font-serif.font-black { font-weight: 600; }
+body h1.font-serif { line-height: 1.08; }
+
+/* Surfaces: warm paper instead of stark white */
+body .bg-white { background-color: var(--paper); }
+body .bg-momentum-bgLight { background-color: var(--sand); }
+
+/* Softer geometry */
+body .rounded-3xl { border-radius: 1rem; }
+body .rounded-2xl { border-radius: 0.75rem; }
+body .rounded-xl  { border-radius: 0.5rem; }
+body .rounded-lg  { border-radius: 0.375rem; }
+
+/* Shadows: low, warm, tide-tinted */
+body .shadow-sm  { box-shadow: 0 1px 2px rgba(17, 43, 55, 0.06); }
+body .shadow-md  { box-shadow: 0 4px 14px -6px rgba(17, 43, 55, 0.16); }
+body .shadow-lg  { box-shadow: 0 10px 24px -12px rgba(17, 43, 55, 0.22); }
+body .shadow-3d  { box-shadow: 0 14px 30px -16px rgba(17, 43, 55, 0.28); }
+body .shadow-3d-hover { box-shadow: 0 18px 34px -16px rgba(17, 43, 55, 0.32); }
+
+/* No tilting / bouncing cards, no lifting buttons */
+body .card-3d { transition: box-shadow 0.25s ease, border-color 0.25s ease; transform: none; }
+body .card-3d:hover { transform: none; box-shadow: 0 18px 34px -16px rgba(17, 43, 55, 0.32); }
+body .hover\:-translate-y-1:hover,
+body .hover\:-translate-y-0\.5:hover { transform: none; }
+
+/* Borders pick up the sand tone */
+body .border-slate-100 { border-color: var(--sand-deep); }
+
+/* Small caps eyebrows: quieter */
+body .tracking-widest { letter-spacing: 0.14em; }
+
+/* Links inside running copy */
+body main p a:not([class]) { color: #3F7A68; text-decoration: underline; text-underline-offset: 3px; }
+
+/* Focus ring in sea glass */
+body :focus-visible { outline: 2px solid #5A917F; outline-offset: 2px; }
+
+::selection { background: var(--seaglass); color: var(--harbor); }
+
+/* ---- Wave edge under the first (dark) hero band on inner pages ---- */
+main > section:first-child.bg-momentum-blueDark {
+  position: relative;
+  --wave: var(--paper);
+}
+main > section:first-child.bg-momentum-blueDark:has(+ section.bg-momentum-bgLight) { --wave: var(--sand); }
+main > section:first-child.bg-momentum-blueDark::after {
+  content: "";
+  position: absolute;
+  left: 0; right: 0; bottom: -1px;
+  height: 34px;
+  background: var(--wave);
+  -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 40' preserveAspectRatio='none'%3E%3Cpath d='M0 40V24C120 6 240 4 360 16s240 22 360 8 300-20 480-6V40Z'/%3E%3C/svg%3E") bottom / 100% 100% no-repeat;
+          mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 40' preserveAspectRatio='none'%3E%3Cpath d='M0 40V24C120 6 240 4 360 16s240 22 360 8 300-20 480-6V40Z'/%3E%3C/svg%3E") bottom / 100% 100% no-repeat;
+  pointer-events: none;
+}
+
+/* Homepage hero uses its own wave element */
+.hero-wave {
+  position: absolute; left: 0; right: 0; bottom: -1px; height: 44px; background: var(--sand);
+  -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 40' preserveAspectRatio='none'%3E%3Cpath d='M0 40V24C120 6 240 4 360 16s240 22 360 8 300-20 480-6V40Z'/%3E%3C/svg%3E") bottom / 100% 100% no-repeat;
+          mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 40' preserveAspectRatio='none'%3E%3Cpath d='M0 40V24C120 6 240 4 360 16s240 22 360 8 300-20 480-6V40Z'/%3E%3C/svg%3E") bottom / 100% 100% no-repeat;
+}
+
+/* ---- Neighborhood guide cards: editorial notes rather than icon tiles ---- */
+.guide-card-note {
+  border: 0;
+  border-top: 2px solid #9CC4B7;
+  border-radius: 0;
+  background: transparent;
+  padding: 1rem 0.25rem 0.25rem;
+  box-shadow: none;
+}
+.guide-card-note .guide-label {
+  font-size: 0.68rem; letter-spacing: 0.14em; text-transform: uppercase; font-weight: 700; color: #6D7B80;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  * { transition-duration: 0.01ms !important; animation-duration: 0.01ms !important; }
+}
