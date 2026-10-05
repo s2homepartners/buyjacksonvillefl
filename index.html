@@ -150,6 +150,9 @@
     },
 
     "sameAs": [
+      "https://www.youtube.com/@S2HomePartners",
+      "https://www.facebook.com/s2homepartners",
+      "https://www.tiktok.com/@s2homepartners",
       "https://www.facebook.com/sarahlutherrealtor",
       "https://www.instagram.com/fuller_living",
       "https://www.zillow.com/profile/sarahfullerrealtor",
@@ -439,6 +442,146 @@
       </div>
     </section>
 
+    <!-- ==========================================================================
+         FOLLOW ALONG: YouTube scroller + live Facebook and TikTok feeds.
+         YouTube cards are pre-filled below and refreshed from the channel feed
+         when the browser can reach it. Facebook and TikTok use their own embeds,
+         which always show the latest posts.
+       ========================================================================== -->
+    <section id="follow-along" class="border-t border-momentum-grayLight bg-white py-16 sm:py-20">
+      <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div class="flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
+          <div class="max-w-2xl">
+            <span class="text-xs font-semibold uppercase tracking-widest text-teal-600">Follow along</span>
+            <h2 class="mt-2 font-serif text-3xl font-semibold text-momentum-blue sm:text-4xl">Home tours, closings and local finds</h2>
+            <p class="mt-3 text-base leading-relaxed text-slate-600">New videos and posts from Sarah &amp; Sarah, straight from our channels.</p>
+          </div>
+          <div class="flex flex-wrap gap-x-5 gap-y-2 text-sm font-semibold text-momentum-blue">
+            <a href="https://www.youtube.com/@S2HomePartners" target="_blank" rel="noopener noreferrer" class="border-b border-teal-300 pb-0.5 hover:border-momentum-blue">YouTube</a>
+            <a href="https://www.facebook.com/s2homepartners" target="_blank" rel="noopener noreferrer" class="border-b border-teal-300 pb-0.5 hover:border-momentum-blue">Facebook</a>
+            <a href="https://www.tiktok.com/@s2homepartners" target="_blank" rel="noopener noreferrer" class="border-b border-teal-300 pb-0.5 hover:border-momentum-blue">TikTok</a>
+          </div>
+        </div>
+
+        <!-- YouTube scroller -->
+        <div class="mt-10 flex items-center justify-between">
+          <h3 class="font-serif text-xl font-semibold text-momentum-blue">Latest on YouTube</h3>
+          <div class="flex gap-2">
+            <button type="button" id="yt-prev" aria-label="Scroll videos left" class="flex h-10 w-10 items-center justify-center rounded-md border border-momentum-grayLight text-momentum-blue transition-colors hover:bg-momentum-bgLight">&larr;</button>
+            <button type="button" id="yt-next" aria-label="Scroll videos right" class="flex h-10 w-10 items-center justify-center rounded-md border border-momentum-grayLight text-momentum-blue transition-colors hover:bg-momentum-bgLight">&rarr;</button>
+          </div>
+        </div>
+        <div id="yt-track" class="mt-4 -mx-4 flex snap-x snap-mandatory gap-4 overflow-x-auto scroll-smooth px-4 pb-3 [scrollbar-width:thin] sm:mx-0 sm:px-0">
+          <noscript><a href="https://www.youtube.com/@S2HomePartners" class="text-sm font-semibold text-momentum-blue underline">Watch on YouTube</a></noscript>
+        </div>
+
+        <!-- Facebook + TikTok -->
+        <div class="mt-14 grid gap-10 lg:grid-cols-2">
+          <div>
+            <h3 class="font-serif text-xl font-semibold text-momentum-blue">On Facebook</h3>
+            <div class="mt-4 overflow-hidden rounded-lg border border-momentum-grayLight bg-white">
+              <iframe title="S2 Home Partners on Facebook" src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Fs2homepartners&amp;tabs=timeline&amp;width=500&amp;height=600&amp;small_header=true&amp;adapt_container_width=true&amp;hide_cover=true&amp;show_facepile=false" width="100%" height="600" style="border:none;overflow:hidden;display:block;max-width:500px;margin:0 auto" loading="lazy" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
+            </div>
+            <p class="mt-3 text-sm"><a href="https://www.facebook.com/s2homepartners" target="_blank" rel="noopener noreferrer" class="font-semibold text-momentum-blue underline underline-offset-4">Open our Facebook page &rarr;</a></p>
+          </div>
+          <div>
+            <h3 class="font-serif text-xl font-semibold text-momentum-blue">On TikTok</h3>
+            <div id="tiktok-slot" class="mt-4 max-h-[640px] overflow-y-auto rounded-lg border border-momentum-grayLight bg-white p-2">
+              <blockquote class="tiktok-embed" cite="https://www.tiktok.com/@s2homepartners" data-unique-id="s2homepartners" data-embed-type="creator" style="max-width:780px; min-width:288px;">
+                <section><a target="_blank" rel="noopener noreferrer" href="https://www.tiktok.com/@s2homepartners?refer=creator_embed">@s2homepartners</a></section>
+              </blockquote>
+            </div>
+            <p class="mt-3 text-sm"><a href="https://www.tiktok.com/@s2homepartners" target="_blank" rel="noopener noreferrer" class="font-semibold text-momentum-blue underline underline-offset-4">Open our TikTok profile &rarr;</a></p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <script>
+      (function () {
+        var CHANNEL_ID = 'UCUBMW5nFvtlPWNBJqYZF2tQ';
+        // Fallback list, newest first. Replaced automatically by the live channel feed when available.
+        var videos = [
+          { id: 'nqJ5HBdMds0', title: 'Closed in Bartram Meadows!', date: '2026-10-02' },
+          { id: 'juTUxwWvMQg', title: 'How We Negotiated Our Buyers Into a Practically Brand-New Home', date: '2026-09-29' },
+          { id: 'wslKWgdfmtk', title: 'Oceanfront Penthouse in Jacksonville Beach', date: '2026-09-29' },
+          { id: 'XxyNDvIhFlc', title: 'The Brasher by David Weekly Homes | Tributary, Yulee', date: '2026-09-29' },
+          { id: 'aiPUFrWAwH4', title: 'Your beach lifestyle is calling!', date: '2026-09-22' },
+          { id: '8wFkpUuooIo', title: 'Tributary House Tour: Don’t Wait 6 Months for a Build', date: '2026-09-16' },
+          { id: 'xXYE7s2aLg0', title: 'Our newest listing is live on Chandelier Circle W', date: '2026-08-21' }
+        ];
+        var track = document.getElementById('yt-track');
+        if (!track) return;
+
+        function clean(t) {
+          return String(t).replace(/#\S+/g, '').replace(/[\u{1F000}-\u{1FFFF}\u{2600}-\u{27BF}\u{FE0F}]/gu, '').replace(/\s+/g, ' ').trim();
+        }
+        function esc(s) { return s.replace(/[&<>"]/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]; }); }
+        function fmt(d) {
+          var dt = new Date(d); if (isNaN(dt)) return '';
+          return dt.toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' });
+        }
+        function render(list) {
+          var lead = '<article class="w-[78%] shrink-0 snap-start sm:w-[320px]"><span class="relative block aspect-video overflow-hidden rounded-lg bg-slate-200"><iframe class="h-full w-full" loading="lazy" src="https://www.youtube-nocookie.com/embed/videoseries?list=UU' + CHANNEL_ID.slice(2) + '&rel=0" title="S2 Home Partners latest uploads" allow="encrypted-media; picture-in-picture; fullscreen" allowfullscreen></iframe></span><span class="mt-3 block text-xs font-semibold uppercase tracking-wider text-momentum-gray">Always current</span><span class="mt-1 block font-serif text-lg font-semibold leading-snug text-momentum-blue">Play the latest uploads</span></article>';
+          track.innerHTML = lead + list.map(function (v) {
+            var title = esc(clean(v.title)) || 'Watch on YouTube';
+            return '<article class="w-[78%] shrink-0 snap-start sm:w-[320px]">' +
+              '<button type="button" class="yt-card group block w-full text-left" data-id="' + v.id + '" aria-label="Play: ' + title + '">' +
+              '<span class="relative block aspect-video overflow-hidden rounded-lg bg-slate-200">' +
+              '<img src="https://i.ytimg.com/vi/' + v.id + '/hqdefault.jpg" alt="" loading="lazy" class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-[1.03]" />' +
+              '<span class="absolute inset-0 flex items-center justify-center bg-momentum-blueDark/20 transition-colors group-hover:bg-momentum-blueDark/35">' +
+              '<span class="flex h-12 w-12 items-center justify-center rounded-full bg-white/95 text-momentum-blue shadow-md" aria-hidden="true">&#9654;</span></span></span>' +
+              '<span class="mt-3 block text-xs font-semibold uppercase tracking-wider text-momentum-gray">' + fmt(v.date) + '</span>' +
+              '<span class="mt-1 block font-serif text-lg font-semibold leading-snug text-momentum-blue">' + title + '</span>' +
+              '</button></article>';
+          }).join('');
+        }
+        render(videos);
+
+        track.addEventListener('click', function (e) {
+          var btn = e.target.closest('.yt-card'); if (!btn) return;
+          var frame = btn.querySelector('span.relative');
+          frame.innerHTML = '<iframe class="h-full w-full" src="https://www.youtube-nocookie.com/embed/' + btn.getAttribute('data-id') + '?autoplay=1&rel=0" title="S2 Home Partners video" allow="autoplay; encrypted-media; picture-in-picture; fullscreen" allowfullscreen></iframe>';
+        });
+        function step(dir) { track.scrollBy({ left: dir * Math.max(300, track.clientWidth * 0.8), behavior: 'smooth' }); }
+        document.getElementById('yt-prev').addEventListener('click', function () { step(-1); });
+        document.getElementById('yt-next').addEventListener('click', function () { step(1); });
+
+        // Live refresh from the channel's public feed (falls back silently to the list above).
+        try {
+          var feed = 'https://www.youtube.com/feeds/videos.xml?channel_id=' + CHANNEL_ID;
+          fetch('https://api.rss2json.com/v1/api.json?rss_url=' + encodeURIComponent(feed))
+            .then(function (r) { return r.ok ? r.json() : Promise.reject(); })
+            .then(function (j) {
+              if (!j || j.status !== 'ok' || !j.items || !j.items.length) return;
+              var live = j.items.slice(0, 10).map(function (it) {
+                var m = /[?&]v=([\w-]{11})/.exec(it.link || '') || /\/([\w-]{11})(?:\?|$)/.exec(it.guid || '');
+                return m ? { id: m[1], title: it.title, date: it.pubDate } : null;
+              }).filter(Boolean);
+              if (!live.length) return;
+              var seen = {}; var merged = [];
+              live.concat(videos).forEach(function (v) { if (!seen[v.id]) { seen[v.id] = 1; merged.push(v); } });
+              merged.sort(function (a, b) { return new Date(String(b.date).replace(' ', 'T')) - new Date(String(a.date).replace(' ', 'T')); });
+              videos = merged.slice(0, 12); render(videos);
+            })
+            .catch(function () {});
+        } catch (err) {}
+
+        // Load the TikTok embed script only once the section is near the viewport.
+        var slot = document.getElementById('tiktok-slot');
+        function loadTikTok() {
+          if (document.getElementById('tiktok-embed-js')) return;
+          var s = document.createElement('script'); s.id = 'tiktok-embed-js'; s.async = true; s.src = 'https://www.tiktok.com/embed.js';
+          document.body.appendChild(s);
+        }
+        if (slot && 'IntersectionObserver' in window) {
+          var io = new IntersectionObserver(function (entries) {
+            if (entries[0].isIntersecting) { loadTikTok(); io.disconnect(); }
+          }, { rootMargin: '400px' });
+          io.observe(slot);
+        } else { loadTikTok(); }
+      })();
+    </script>
+
     <!-- Category Grid -->
     <section class="bg-momentum-bgLight py-24">
       <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
@@ -584,7 +727,7 @@
       <p class="mt-3 flex flex-wrap justify-center gap-x-4 gap-y-1 text-xs">
         <a href="blog.html" class="text-slate-300 hover:text-white">Blog</a>
         <a href="referral.html" class="text-slate-300 hover:text-white">Referral Program</a>
-        <a href="services.html" class="text-slate-300 hover:text-white">Programs &amp; Services</a>
+        <a href="services.html" class="text-slate-300 hover:text-white">Programs &amp; Services</a> <a href="https://www.youtube.com/@S2HomePartners" target="_blank" rel="noopener noreferrer" class="text-slate-300 hover:text-white">YouTube</a> <a href="https://www.facebook.com/s2homepartners" target="_blank" rel="noopener noreferrer" class="text-slate-300 hover:text-white">Facebook</a> <a href="https://www.tiktok.com/@s2homepartners" target="_blank" rel="noopener noreferrer" class="text-slate-300 hover:text-white">TikTok</a>
       </p>
     </div>
   </footer>
