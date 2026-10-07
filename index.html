@@ -170,7 +170,7 @@
     "publisher": { "@id": "https://www.buyjacksonvillefl.com/#organization" }
   }
   </script>
-<link rel="stylesheet" href="coastal.css?v=1" /></head>
+<link rel="stylesheet" href="coastal.css?v=2" /></head>
 <body class="bg-momentum-bgLight font-sans text-slate-800 antialiased">
 
   <!-- Top Navigation -->
@@ -316,57 +316,126 @@
         <div class="hero-slide absolute inset-0 bg-cover bg-center opacity-0" style="background-image: url('https://commons.wikimedia.org/wiki/Special:FilePath/MemParkJaxLife.jpg?width=1600');"></div>
         <div id="hero-video" class="absolute inset-0 overflow-hidden opacity-0 transition-opacity duration-1000"></div>
       </div>
-      <div class="absolute inset-0 bg-momentum-blueDark/35"></div>
-      <div class="absolute inset-0 bg-gradient-to-r from-momentum-blueDark/90 via-momentum-blueDark/55 to-transparent"></div>
+      <div class="absolute inset-0 bg-momentum-blueDark/45"></div>
+      <div class="absolute inset-0 bg-gradient-to-b from-momentum-blueDark/55 via-transparent to-momentum-blueDark/60"></div>
       <div class="hero-wave" aria-hidden="true"></div>
 
-      <div class="relative mx-auto max-w-6xl px-4 pb-24 pt-16 text-left sm:px-6 sm:pb-32 sm:pt-24 lg:px-8">
-       <div class="max-w-2xl">
-        <p class="mb-5 flex items-center gap-3 text-xs font-semibold uppercase tracking-widest text-teal-200">
-          <span class="h-px w-10 bg-teal-300"></span>
-          Northeast Florida Real Estate
-        </p>
-        <h1 class="font-serif text-4xl font-semibold leading-tight text-white sm:text-6xl">
-          Buying or selling in Northeast Florida?
+      <div class="relative mx-auto flex min-h-[600px] max-w-4xl flex-col items-center justify-center px-4 pb-28 pt-14 text-center sm:px-6 sm:pb-32 sm:pt-20 lg:min-h-[700px] lg:px-8">
+        <p class="text-xs font-semibold uppercase tracking-[0.2em] text-teal-100">S&sup2; Home Partners &middot; Brokered by Momentum Realty</p>
+        <h1 class="mt-5 font-serif text-4xl font-medium leading-[1.05] text-white sm:text-6xl lg:text-7xl">
+          Buying or selling in <em class="font-normal">Northeast Florida?</em>
         </h1>
         <p class="mt-5 max-w-xl text-base leading-relaxed text-slate-100 sm:text-lg">
-          Get local guidance from two dedicated advisors who actually know the area. From Jacksonville and the Beaches to Yulee, Fernandina, St. Augustine &amp; beyond, Sarah &amp; Sarah help you make confident real estate decisions without the pressure.
+          Two local advisors for Jacksonville, the Beaches, Yulee, St. Johns and Clay County.
         </p>
 
-        <!-- Primary CTA cards -->
-        <div class="mt-8 flex flex-col gap-3 sm:mt-10 sm:flex-row">
-          <a href="buy.html" class="min-h-[44px] rounded-md bg-teal-300 px-7 py-3.5 text-center text-sm font-semibold uppercase tracking-wider text-momentum-blueDark transition-colors hover:bg-teal-200">
-            Buy a home
-          </a>
-          <a href="sell.html" class="min-h-[44px] rounded-md bg-white px-7 py-3.5 text-center text-sm font-semibold uppercase tracking-wider text-momentum-blueDark transition-colors hover:bg-slate-100">
-            Sell my home
-          </a>
-          <a href="military.html" class="min-h-[44px] rounded-md border border-white/60 px-7 py-3.5 text-center text-sm font-semibold uppercase tracking-wider text-white transition-colors hover:bg-white/10">
-            Military PCS
-          </a>
+        <!-- Search / agent / valuation panel -->
+        <div id="hero-panel" class="mt-9 w-full max-w-2xl text-left">
+          <div role="tablist" aria-label="What would you like to do?" class="flex flex-wrap gap-1">
+            <button type="button" role="tab" data-tab="search" aria-selected="true" class="hero-tab min-h-[40px] rounded-t-md px-4 text-xs font-semibold uppercase tracking-wider">Search homes</button>
+            <button type="button" role="tab" data-tab="agent" aria-selected="false" class="hero-tab min-h-[40px] rounded-t-md px-4 text-xs font-semibold uppercase tracking-wider">Find an agent</button>
+            <button type="button" role="tab" data-tab="value" aria-selected="false" class="hero-tab min-h-[40px] rounded-t-md px-4 text-xs font-semibold uppercase tracking-wider">What&rsquo;s my home worth?</button>
+          </div>
+          <div class="rounded-b-md rounded-tr-md bg-white p-2.5 shadow-lg">
+            <form data-panel="search" id="hero-search-form" class="flex flex-col gap-2 sm:flex-row">
+              <label for="hero-search-input" class="sr-only">City, neighborhood or ZIP</label>
+              <input id="hero-search-input" type="text" placeholder="City, neighborhood or ZIP code" class="h-12 w-full min-w-0 flex-1 rounded-md border border-momentum-grayLight px-4 text-base text-slate-800 placeholder:text-momentum-gray focus:border-momentum-blue focus:outline-none focus:ring-2 focus:ring-momentum-blue/20" />
+              <button type="submit" class="h-12 shrink-0 rounded-md bg-momentum-blue px-7 text-sm font-semibold uppercase tracking-wider text-white transition-colors hover:bg-momentum-blueHover">Search</button>
+            </form>
+            <div data-panel="agent" hidden class="grid gap-2 sm:grid-cols-2">
+              <a href="sarah-fuller.html" class="flex h-12 items-center justify-center rounded-md border border-momentum-grayLight text-sm font-semibold text-momentum-blue hover:bg-momentum-bgLight">Sarah Fuller</a>
+              <a href="sarah-luther.html" class="flex h-12 items-center justify-center rounded-md border border-momentum-grayLight text-sm font-semibold text-momentum-blue hover:bg-momentum-bgLight">Sarah Luther</a>
+            </div>
+            <form data-panel="value" id="hero-value-form" hidden class="flex flex-col gap-2 sm:flex-row">
+              <label for="hero-value-address" class="sr-only">Property address</label>
+              <input id="hero-value-address" type="text" placeholder="Enter your property address" class="h-12 w-full min-w-0 flex-1 rounded-md border border-momentum-grayLight px-4 text-base text-slate-800 placeholder:text-momentum-gray focus:border-momentum-blue focus:outline-none focus:ring-2 focus:ring-momentum-blue/20" />
+              <button type="submit" class="h-12 shrink-0 rounded-md bg-teal-600 px-7 text-sm font-semibold uppercase tracking-wider text-white transition-colors hover:bg-teal-700">Get my estimate</button>
+            </form>
+          </div>
         </div>
 
-        <!-- Neighborhood Quiz trigger -->
-        <div class="mt-6">
-          <button type="button" id="quiz-open-btn" class="min-h-[44px] border-b border-white/50 pb-1 text-left text-sm font-medium text-white transition-colors hover:border-white">
-            Not sure where to start? Take the 60-second neighborhood match quiz &rarr;
-          </button>
-        </div>
-       </div>
+        <p class="mt-6 flex flex-wrap items-center justify-center gap-x-5 gap-y-2 text-sm font-semibold text-white">
+          <a href="buy.html" class="border-b border-white/40 pb-0.5 hover:border-white">Buy</a>
+          <a href="sell.html" class="border-b border-white/40 pb-0.5 hover:border-white">Sell</a>
+          <a href="military-relocation.html" class="border-b border-white/40 pb-0.5 hover:border-white">Military PCS</a>
+          <button type="button" id="quiz-open-btn" class="border-b border-white/40 pb-0.5 hover:border-white">Take the 60-second neighborhood quiz</button>
+        </p>
       </div>
     </section>
 
-    <!-- ==========================================================================
-         SOCIAL PROOF & LOCAL IMPACT
-       ========================================================================== -->
-    <section class="bg-momentum-bgLight pb-4 sm:pb-6">
-      <div class="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
-        <form id="home-value-teaser" class="flex flex-col items-stretch gap-3 border-y border-momentum-grayLight py-4 sm:flex-row sm:items-center sm:gap-5">
-          <p class="font-serif text-lg font-semibold text-momentum-blue sm:shrink-0">What is your home worth?</p>
-          <label for="teaser-address" class="sr-only">Property address</label>
-          <input id="teaser-address" type="text" placeholder="Enter your property address" class="h-11 w-full min-w-0 flex-1 rounded-md border border-momentum-grayLight bg-white px-4 text-sm text-slate-800 placeholder:text-momentum-gray focus:border-momentum-blue focus:outline-none focus:ring-2 focus:ring-momentum-blue/20" />
-          <button type="submit" class="h-11 shrink-0 rounded-md bg-teal-600 px-6 text-sm font-semibold uppercase tracking-wider text-white transition-colors hover:bg-teal-700">Get my estimate</button>
-        </form>
+    <!-- Featured communities -->
+    <section id="communities" class="bg-momentum-bgLight pb-16 pt-6 sm:pb-20">
+      <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div class="flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
+          <div>
+            <span class="text-xs font-semibold uppercase tracking-widest text-teal-600">Neighborhood guides</span>
+            <h2 class="mt-2 font-serif text-3xl font-semibold text-momentum-blue sm:text-4xl">Featured communities</h2>
+          </div>
+          <a href="area-guides.html" class="text-sm font-semibold text-momentum-blue underline underline-offset-4">View all area guides &rarr;</a>
+        </div>
+        <div class="mt-8 grid grid-cols-2 gap-3 sm:gap-4 md:grid-cols-3 lg:grid-cols-4">
+          <a href="san-marco.html" class="group relative block aspect-[4/5] overflow-hidden rounded-md bg-momentum-blue">
+            <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Jacksonville_San_Marco_Square.JPG?width=800" alt="San Marco Square" loading="lazy" decoding="async" class="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-105" />
+            <span class="absolute inset-0 bg-gradient-to-t from-momentum-blueDark/85 via-momentum-blueDark/10 to-transparent" aria-hidden="true"></span>
+            <span class="absolute inset-x-0 bottom-0 block p-4"><span class="block text-[11px] font-semibold uppercase tracking-widest text-teal-200">Duval County</span><span class="mt-1 block font-serif text-xl font-semibold leading-tight text-white">San Marco</span><span class="mt-2 block text-xs font-semibold uppercase tracking-wider text-white/80 group-hover:text-white">Explore &rarr;</span></span>
+          </a>
+          <a href="riverside-avondale.html" class="group relative block aspect-[4/5] overflow-hidden rounded-md bg-momentum-blue">
+            <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Jax_FL_Avondale_HD02.jpg?width=800" alt="Historic Avondale" loading="lazy" decoding="async" class="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-105" />
+            <span class="absolute inset-0 bg-gradient-to-t from-momentum-blueDark/85 via-momentum-blueDark/10 to-transparent" aria-hidden="true"></span>
+            <span class="absolute inset-x-0 bottom-0 block p-4"><span class="block text-[11px] font-semibold uppercase tracking-widest text-teal-200">Duval County</span><span class="mt-1 block font-serif text-xl font-semibold leading-tight text-white">Riverside &amp; Avondale</span><span class="mt-2 block text-xs font-semibold uppercase tracking-wider text-white/80 group-hover:text-white">Explore &rarr;</span></span>
+          </a>
+          <a href="atlantic-neptune-beach.html" class="group relative block aspect-[4/5] overflow-hidden rounded-md bg-momentum-blue">
+            <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Atlantic_Beach_(Florida).jpg?width=800" alt="Atlantic Beach" loading="lazy" decoding="async" class="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-105" />
+            <span class="absolute inset-0 bg-gradient-to-t from-momentum-blueDark/85 via-momentum-blueDark/10 to-transparent" aria-hidden="true"></span>
+            <span class="absolute inset-x-0 bottom-0 block p-4"><span class="block text-[11px] font-semibold uppercase tracking-widest text-teal-200">Duval County</span><span class="mt-1 block font-serif text-xl font-semibold leading-tight text-white">Atlantic &amp; Neptune Beach</span><span class="mt-2 block text-xs font-semibold uppercase tracking-wider text-white/80 group-hover:text-white">Explore &rarr;</span></span>
+          </a>
+          <a href="east-arlington.html" class="group relative block aspect-[4/5] overflow-hidden rounded-md bg-momentum-blue">
+            <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Jacksonville_FL_Fort_Caroline_Natl_Mem_St_Johns_pano01.jpg?width=800" alt="The St. Johns River at Fort Caroline" loading="lazy" decoding="async" class="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-105" />
+            <span class="absolute inset-0 bg-gradient-to-t from-momentum-blueDark/85 via-momentum-blueDark/10 to-transparent" aria-hidden="true"></span>
+            <span class="absolute inset-x-0 bottom-0 block p-4"><span class="block text-[11px] font-semibold uppercase tracking-widest text-teal-200">Duval County</span><span class="mt-1 block font-serif text-xl font-semibold leading-tight text-white">East Arlington</span><span class="mt-2 block text-xs font-semibold uppercase tracking-wider text-white/80 group-hover:text-white">Explore &rarr;</span></span>
+          </a>
+          <a href="fleming-island-plantation.html" class="group relative block aspect-[4/5] overflow-hidden rounded-md bg-momentum-blue">
+            <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Doctors_Lake.jpg?width=800" alt="Doctors Lake" loading="lazy" decoding="async" class="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-105" />
+            <span class="absolute inset-0 bg-gradient-to-t from-momentum-blueDark/85 via-momentum-blueDark/10 to-transparent" aria-hidden="true"></span>
+            <span class="absolute inset-x-0 bottom-0 block p-4"><span class="block text-[11px] font-semibold uppercase tracking-widest text-teal-200">Clay County</span><span class="mt-1 block font-serif text-xl font-semibold leading-tight text-white">Fleming Island</span><span class="mt-2 block text-xs font-semibold uppercase tracking-wider text-white/80 group-hover:text-white">Explore &rarr;</span></span>
+          </a>
+          <a href="oakleaf-plantation.html" class="group relative block aspect-[4/5] overflow-hidden rounded-md bg-momentum-blue">
+            <span class="absolute inset-0 bg-gradient-to-br from-momentum-blue via-teal-800 to-momentum-blueDark" aria-hidden="true"></span>
+            <span class="absolute inset-0 bg-gradient-to-t from-momentum-blueDark/85 via-momentum-blueDark/10 to-transparent" aria-hidden="true"></span>
+            <span class="absolute inset-x-0 bottom-0 block p-4"><span class="block text-[11px] font-semibold uppercase tracking-widest text-teal-200">Clay County</span><span class="mt-1 block font-serif text-xl font-semibold leading-tight text-white">Oakleaf Plantation</span><span class="mt-2 block text-xs font-semibold uppercase tracking-wider text-white/80 group-hover:text-white">Explore &rarr;</span></span>
+          </a>
+          <a href="eagle-harbor.html" class="group relative block aspect-[4/5] overflow-hidden rounded-md bg-momentum-blue">
+            <span class="absolute inset-0 bg-gradient-to-br from-momentum-blue via-teal-800 to-momentum-blueDark" aria-hidden="true"></span>
+            <span class="absolute inset-0 bg-gradient-to-t from-momentum-blueDark/85 via-momentum-blueDark/10 to-transparent" aria-hidden="true"></span>
+            <span class="absolute inset-x-0 bottom-0 block p-4"><span class="block text-[11px] font-semibold uppercase tracking-widest text-teal-200">Clay County</span><span class="mt-1 block font-serif text-xl font-semibold leading-tight text-white">Eagle Harbor</span><span class="mt-2 block text-xs font-semibold uppercase tracking-wider text-white/80 group-hover:text-white">Explore &rarr;</span></span>
+          </a>
+          <a href="wildlight.html" class="group relative block aspect-[4/5] overflow-hidden rounded-md bg-momentum-blue">
+            <span class="absolute inset-0 bg-gradient-to-br from-momentum-blue via-teal-800 to-momentum-blueDark" aria-hidden="true"></span>
+            <span class="absolute inset-0 bg-gradient-to-t from-momentum-blueDark/85 via-momentum-blueDark/10 to-transparent" aria-hidden="true"></span>
+            <span class="absolute inset-x-0 bottom-0 block p-4"><span class="block text-[11px] font-semibold uppercase tracking-widest text-teal-200">Nassau County</span><span class="mt-1 block font-serif text-xl font-semibold leading-tight text-white">Wildlight</span><span class="mt-2 block text-xs font-semibold uppercase tracking-wider text-white/80 group-hover:text-white">Explore &rarr;</span></span>
+          </a>
+          <a href="amelia-national.html" class="group relative block aspect-[4/5] overflow-hidden rounded-md bg-momentum-blue">
+            <span class="absolute inset-0 bg-gradient-to-br from-momentum-blue via-teal-800 to-momentum-blueDark" aria-hidden="true"></span>
+            <span class="absolute inset-0 bg-gradient-to-t from-momentum-blueDark/85 via-momentum-blueDark/10 to-transparent" aria-hidden="true"></span>
+            <span class="absolute inset-x-0 bottom-0 block p-4"><span class="block text-[11px] font-semibold uppercase tracking-widest text-teal-200">Nassau County</span><span class="mt-1 block font-serif text-xl font-semibold leading-tight text-white">Amelia National</span><span class="mt-2 block text-xs font-semibold uppercase tracking-wider text-white/80 group-hover:text-white">Explore &rarr;</span></span>
+          </a>
+          <a href="nocatee.html" class="group relative block aspect-[4/5] overflow-hidden rounded-md bg-momentum-blue">
+            <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Nocatee_Parkway_EB_Nocatee_Town_Center.jpg?width=800" alt="Nocatee Parkway" loading="lazy" decoding="async" class="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-105" />
+            <span class="absolute inset-0 bg-gradient-to-t from-momentum-blueDark/85 via-momentum-blueDark/10 to-transparent" aria-hidden="true"></span>
+            <span class="absolute inset-x-0 bottom-0 block p-4"><span class="block text-[11px] font-semibold uppercase tracking-widest text-teal-200">St. Johns County</span><span class="mt-1 block font-serif text-xl font-semibold leading-tight text-white">Nocatee</span><span class="mt-2 block text-xs font-semibold uppercase tracking-wider text-white/80 group-hover:text-white">Explore &rarr;</span></span>
+          </a>
+          <a href="ponte-vedra-beach.html" class="group relative block aspect-[4/5] overflow-hidden rounded-md bg-momentum-blue">
+            <img src="https://commons.wikimedia.org/wiki/Special:FilePath/FL_Ponte_Vedra_Beach_ocean01.jpg?width=800" alt="Ponte Vedra Beach" loading="lazy" decoding="async" class="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-105" />
+            <span class="absolute inset-0 bg-gradient-to-t from-momentum-blueDark/85 via-momentum-blueDark/10 to-transparent" aria-hidden="true"></span>
+            <span class="absolute inset-x-0 bottom-0 block p-4"><span class="block text-[11px] font-semibold uppercase tracking-widest text-teal-200">St. Johns County</span><span class="mt-1 block font-serif text-xl font-semibold leading-tight text-white">Ponte Vedra Beach</span><span class="mt-2 block text-xs font-semibold uppercase tracking-wider text-white/80 group-hover:text-white">Explore &rarr;</span></span>
+          </a>
+          <a href="world-golf-village.html" class="group relative block aspect-[4/5] overflow-hidden rounded-md bg-momentum-blue">
+            <img src="https://commons.wikimedia.org/wiki/Special:FilePath/World_Golf_Village,_World_Golf_Hall_of_Fame.jpg?width=800" alt="World Golf Village" loading="lazy" decoding="async" class="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-105" />
+            <span class="absolute inset-0 bg-gradient-to-t from-momentum-blueDark/85 via-momentum-blueDark/10 to-transparent" aria-hidden="true"></span>
+            <span class="absolute inset-x-0 bottom-0 block p-4"><span class="block text-[11px] font-semibold uppercase tracking-widest text-teal-200">St. Johns County</span><span class="mt-1 block font-serif text-xl font-semibold leading-tight text-white">World Golf Village</span><span class="mt-2 block text-xs font-semibold uppercase tracking-wider text-white/80 group-hover:text-white">Explore &rarr;</span></span>
+          </a>
+        </div>
+        <p class="mt-4 text-[11px] leading-relaxed text-momentum-gray">Photos from Wikimedia Commons contributors under Creative Commons licenses; individual credits are listed at the bottom of each area guide.</p>
       </div>
     </section>
 
@@ -716,6 +785,25 @@
             if (state === 1) wrap.style.opacity = '1';
           });
         }, 1500);
+      });
+    })();
+
+    // Hero panel: tabs and home search hand-off
+    (function () {
+      var panel = document.getElementById('hero-panel'); if (!panel) return;
+      var tabs = panel.querySelectorAll('.hero-tab'), panes = panel.querySelectorAll('[data-panel]');
+      tabs.forEach(function (t) {
+        t.addEventListener('click', function () {
+          var key = t.getAttribute('data-tab');
+          tabs.forEach(function (x) { x.setAttribute('aria-selected', x === t ? 'true' : 'false'); });
+          panes.forEach(function (p) { p.hidden = p.getAttribute('data-panel') !== key; });
+        });
+      });
+      var sf = document.getElementById('hero-search-form');
+      if (sf) sf.addEventListener('submit', function (e) {
+        e.preventDefault();
+        var q = document.getElementById('hero-search-input').value.trim();
+        window.location.href = 'buy.html' + (q ? '?area=' + encodeURIComponent(q) : '') + '#home-search';
       });
     })();
 
@@ -1077,12 +1165,12 @@
         valueModal.classList.remove('flex');
         document.body.classList.remove('overflow-hidden');
       }
-      const teaser = document.getElementById('home-value-teaser');
+      const teaser = document.getElementById('hero-value-form');
       if (teaser && valueModal) {
         teaser.addEventListener('submit', (event) => {
           event.preventDefault();
           const modalAddress = document.getElementById('mobile-value-address');
-          if (modalAddress) modalAddress.value = document.getElementById('teaser-address').value;
+          if (modalAddress) modalAddress.value = document.getElementById('hero-value-address').value;
           openValueModal();
         });
       }

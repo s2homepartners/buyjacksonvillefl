@@ -32,7 +32,7 @@
       },
     };
   </script>
-<link rel="stylesheet" href="coastal.css?v=1" /></head>
+<link rel="stylesheet" href="coastal.css?v=2" /></head>
 <body class="bg-momentum-bgLight font-sans text-slate-800 antialiased">
 
   <!-- Top Navigation -->
@@ -1452,5 +1452,12 @@
     })();
 
   </script>
+<script>
+  (function () {
+    var a = new URLSearchParams(window.location.search).get("area");
+    var m = document.getElementById("buyer-message");
+    if (a && m && !m.value) m.value = "I am looking for homes in: " + a;
+  })();
+</script>
 </body>
 </html>

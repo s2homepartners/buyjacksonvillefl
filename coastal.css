@@ -110,3 +110,9 @@ main > section:first-child.bg-momentum-blueDark::after {
   html { scroll-behavior: auto; }
   * { transition-duration: 0.01ms !important; animation-duration: 0.01ms !important; }
 }
+
+/* Homepage hero panel tabs */
+.hero-tab { background: rgba(255, 253, 249, 0.28); color: #fff; transition: background-color 0.2s ease, color 0.2s ease; }
+.hero-tab:hover { background: rgba(255, 253, 249, 0.45); }
+.hero-tab[aria-selected="true"] { background: #fff; color: #1E4A5C; }
+[data-panel][hidden] { display: none !important; }
