@@ -26,6 +26,27 @@
     { name: 'NSB Kings Bay', lat: 30.7817, lng: -81.5350 }
   ];
   var COUNTIES = ['All', 'Duval', 'Clay', 'Nassau', 'St. Johns'];
+  // Homes closed by S\u00b2 Home Partners, shown at city or ZIP level. b = buyer side, s = seller side.
+  var SOLD = [
+    { name: 'Jacksonville 32206', lat: 30.3500, lng: -81.6400, homes: [['2023-12', 'b', 130000]] },
+    { name: 'Jacksonville 32224', lat: 30.2850, lng: -81.4300, homes: [['2023-11', 'b', 267000]] },
+    { name: 'Jacksonville 32218', lat: 30.4450, lng: -81.6150, homes: [['2023-11', 'b', 180000], ['2023-05', 'b', 330000]] },
+    { name: 'Jacksonville 32219', lat: 30.3900, lng: -81.8300, homes: [['2022-05', 's', 320000]] },
+    { name: 'Jacksonville (other areas)', lat: 30.3320, lng: -81.6550, homes: [['2026-09', 'b', 412000], ['2026-09', 'b', 345898], ['2023-08', 's', 460000], ['2023-05', 'b', 369900], ['2023-03', 'b', 172000], ['2023-02', 'b', 255000], ['2022-10', 'b', 300000], ['2022-08', 's', 444250]] },
+    { name: 'Yulee', lat: 30.6350, lng: -81.5800, homes: [['2023-03', 'b', 345990], ['2022-09', 'b', 344990], ['2022-08', 'b', 320990]] },
+    { name: 'Bryceville', lat: 30.4069, lng: -81.9072, homes: [['2022-12', 'b', 365000]] },
+    { name: 'Keystone Heights', lat: 29.7866, lng: -82.0348, homes: [['2024-02', 'b', 289643]] },
+    { name: 'Lake City', lat: 30.1897, lng: -82.6393, homes: [['2022-06', 'b', 145000]] }
+  ];
+  var MONTHS = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+  function money(n) { return '$' + String(n).replace(/\B(?=(\d{3})+(?!\d))/g, ','); }
+  function when(ym) { var p = ym.split('-'); return MONTHS[parseInt(p[1], 10) - 1] + ' ' + p[0]; }
+  function soldPopup(a) {
+    var rows = a.homes.slice().sort(function (x, y) { return x[0] < y[0] ? 1 : -1; }).map(function (h) {
+      return '<li style="margin:0 0 4px">' + when(h[0]) + ' &middot; ' + (h[1] === 's' ? 'Seller side' : 'Buyer side') + ' &middot; <b>' + money(h[2]) + '</b></li>';
+    }).join('');
+    return '<div class="s2m-pop"><h4>' + a.name + '</h4><small>' + a.homes.length + (a.homes.length === 1 ? ' home sold' : ' homes sold') + '</small><ul style="margin:0;padding:0;list-style:none;font-size:13px">' + rows + '</ul></div>';
+  }
 
   function css() {
     var s = document.createElement('style');
@@ -40,7 +61,7 @@
       '.s2m-item b{display:block;font-family:Newsreader,Georgia,serif;font-size:17px;font-weight:600}.s2m-item span{font-size:12px;color:#53636A}' +
       '.s2m-item:hover b{text-decoration:underline}' +
       '.s2m-dot{width:18px;height:18px;border-radius:50%;background:#3F7A68;border:3px solid #fff;box-shadow:0 2px 6px rgba(17,43,55,.45)}' +
-      '.s2m-base{width:22px;height:22px;border-radius:4px;background:#1E4A5C;border:3px solid #fff;box-shadow:0 2px 6px rgba(17,43,55,.45);transform:rotate(45deg)}' +
+      '.s2m-sold{background:#C4654A}.s2m-base{width:22px;height:22px;border-radius:4px;background:#1E4A5C;border:3px solid #fff;box-shadow:0 2px 6px rgba(17,43,55,.45);transform:rotate(45deg)}' +
       '.s2m-pop{font-family:"Source Sans 3",system-ui,sans-serif;color:#3D4D55;min-width:190px}.s2m-pop h4{font-family:Newsreader,Georgia,serif;font-size:19px;font-weight:600;color:#1E4A5C;margin:0}' +
       '.s2m-pop small{display:block;color:#6B7A80;text-transform:uppercase;letter-spacing:.1em;font-size:10px;font-weight:700;margin:2px 0 6px}' +
       '.s2m-pop p{margin:0 0 8px;font-size:13px;line-height:1.4}' +
@@ -70,7 +91,8 @@
   }
 
   function build(el) {
-    var mode = el.getAttribute('data-mode') === 'seller' ? 'seller' : 'buyer';
+    var mode = el.getAttribute('data-mode') === 'seller' ? 'seller' : (el.getAttribute('data-mode') === 'sold' ? 'sold' : 'buyer');
+    var DATA = mode === 'sold' ? SOLD : AREAS;
     el.innerHTML = '<div class="s2m-chips" role="group" aria-label="Filter map by county"></div><div class="s2m-wrap"><div><div class="s2m-map" role="application" aria-label="Map of Northeast Florida neighborhoods"></div><p class="s2m-note">Marker positions are approximate neighborhood centers. Drive times are rounded, off-peak estimates.</p></div><div class="s2m-list" role="list"></div></div>';
     var chips = el.querySelector('.s2m-chips'), mapDiv = el.querySelector('.s2m-map'), list = el.querySelector('.s2m-list');
 
@@ -80,10 +102,10 @@
     mapDiv.addEventListener('mouseleave', function () { map.scrollWheelZoom.disable(); });
 
     var markers = [];
-    AREAS.forEach(function (a, i) {
-      var m = L.marker([a.lat, a.lng], { icon: L.divIcon({ className: '', html: '<div class="s2m-dot"></div>', iconSize: [18, 18], iconAnchor: [9, 9] }), title: a.name, keyboard: true });
-      m.bindPopup(popup(a, mode)); m.__a = a; m.addTo(map); markers.push(m);
-      var b = document.createElement('button'); b.type = 'button'; b.className = 's2m-item'; b.setAttribute('role', 'listitem'); b.innerHTML = '<b>' + a.name + '</b><span>' + a.county + ' County</span>'; b.__a = a;
+    DATA.forEach(function (a, i) {
+      var m = L.marker([a.lat, a.lng], { icon: L.divIcon({ className: '', html: '<div class="s2m-dot' + (mode === 'sold' ? ' s2m-sold' : '') + '"></div>', iconSize: [18, 18], iconAnchor: [9, 9] }), title: a.name, keyboard: true });
+      m.bindPopup(mode === 'sold' ? soldPopup(a) : popup(a, mode)); m.__a = a; m.addTo(map); markers.push(m);
+      var b = document.createElement('button'); b.type = 'button'; b.className = 's2m-item'; b.setAttribute('role', 'listitem'); b.innerHTML = '<b>' + a.name + '</b><span>' + (mode === 'sold' ? a.homes.length + (a.homes.length === 1 ? ' home sold' : ' homes sold') : a.county + ' County') + '</span>'; b.__a = a;
       b.addEventListener('click', function () { map.flyTo([a.lat, a.lng], 11, { duration: 0.8 }); m.openPopup(); mapDiv.scrollIntoView({ block: 'nearest', behavior: 'smooth' }); });
       list.appendChild(b);
     });
@@ -110,7 +132,7 @@
       [].forEach.call(list.children, function (b) { b.style.display = (county === 'All' || b.__a.county === county) ? '' : 'none'; });
       fit(shown);
     }
-    COUNTIES.forEach(function (c) {
+    if (mode !== 'sold') COUNTIES.forEach(function (c) {
       var b = document.createElement('button'); b.type = 'button'; b.className = 's2m-chip'; b.setAttribute('data-k', c); b.setAttribute('aria-pressed', 'false'); b.textContent = c === 'All' ? 'All areas' : c + ' County';
       b.addEventListener('click', function () { apply(c); }); chips.appendChild(b);
     });
@@ -119,6 +141,7 @@
       t.addEventListener('click', function () { var on = t.getAttribute('aria-pressed') !== 'true'; t.setAttribute('aria-pressed', on ? 'true' : 'false'); if (on) baseLayer.addTo(map); else map.removeLayer(baseLayer); });
       chips.appendChild(t);
     }
+    if (mode === 'sold') { chips.style.display = 'none'; el.querySelector('.s2m-note').textContent = 'Pins show the city or ZIP area, not street addresses. Prices are final sale prices.'; }
     apply('All');
     setTimeout(function () { map.invalidateSize(); }, 200);
 
