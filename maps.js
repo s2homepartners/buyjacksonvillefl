@@ -32,20 +32,33 @@
     { name: 'Jacksonville 32224', lat: 30.2850, lng: -81.4300, homes: [['2023-11', 'b', 267000]] },
     { name: 'Jacksonville 32218', lat: 30.4450, lng: -81.6150, homes: [['2023-11', 'b', 180000], ['2023-05', 'b', 330000]] },
     { name: 'Jacksonville 32219', lat: 30.3900, lng: -81.8300, homes: [['2022-05', 's', 320000]] },
-    { name: 'Jacksonville (other areas)', lat: 30.3320, lng: -81.6550, homes: [['2026-09', 'b', 412000], ['2026-09', 'b', 345898], ['2023-08', 's', 460000], ['2023-05', 'b', 369900], ['2023-03', 'b', 172000], ['2023-02', 'b', 255000], ['2022-10', 'b', 300000], ['2022-08', 's', 444250]] },
-    { name: 'Yulee', lat: 30.6350, lng: -81.5800, homes: [['2023-03', 'b', 345990], ['2022-09', 'b', 344990], ['2022-08', 'b', 320990]] },
+    { name: 'Jacksonville (other areas)', lat: 30.3320, lng: -81.6550, homes: [
+      ['2026-09', 'b', 412000], ['2026-09', 'b', 345898], ['2024-05', 's', 290000], ['2024-04', 's', 320000], ['2024-03', 's', 373000],
+      ['2024-02', 'b', 104000], ['2024-01', 'b', 290000], ['2024-01', 'b', 135000], ['2023-12', 'b', 255000], ['2023-12', 's', 325000],
+      ['2023-10', 'b', 180000], ['2023-09', 'b', 224490], ['2023-09', 's', 324868], ['2023-08', 's', 460000], ['2023-07', 's', 270000],
+      ['2023-07', 'b', 175000], ['2023-06', 's', 620000], ['2023-05', 'b', 369900], ['2023-03', 'b', 172000], ['2023-02', 'b', 255000],
+      ['2022-12', 'b', 363000], ['2022-10', 'b', 300000], ['2022-08', 's', 444250], ['2022-08', 's', 280000], ['2022-08', 'b', 335900],
+      ['2022-08', 'b', 310000], ['2022-07', 's', 415000], ['2022-07', 's', 361500], ['2022-07', 'b', 129000], ['2022-05', 'b', 245000],
+      ['2022-04', 'b', 273000], ['2022-02', 's', 250000], ['2022-02', 'b', 165000] ] },
+    { name: 'Yulee', lat: 30.6350, lng: -81.5800, homes: [
+      ['2024-04', 'b', 383979], ['2024-02', 'b', 410000], ['2024-00', 'b', 455000], ['2023-03', 'b', 345990], ['2022-09', 'b', 344990],
+      ['2022-08', 'b', 455985], ['2022-08', 'b', 331990], ['2022-08', 'b', 320990], ['2022-05', 'b', 349000], ['2022-05', 's', 469000],
+      ['2022-04', 'b', 250000] ] },
+    { name: 'Orange Park', lat: 30.1660, lng: -81.7060, homes: [['2024-01', 's', 240300], ['2022-11', 'b', 390000], ['2022-08', 'b', 521400]] },
+    { name: 'Green Cove Springs', lat: 29.9919, lng: -81.6781, homes: [['2022-04', 'b', 380000], ['2022-02', 'b', 395000]] },
+    { name: 'Middleburg', lat: 30.0680, lng: -81.8590, homes: [['2023-10', 'b', 445000]] },
     { name: 'Bryceville', lat: 30.4069, lng: -81.9072, homes: [['2022-12', 'b', 365000]] },
     { name: 'Keystone Heights', lat: 29.7866, lng: -82.0348, homes: [['2024-02', 'b', 289643]] },
     { name: 'Lake City', lat: 30.1897, lng: -82.6393, homes: [['2022-06', 'b', 145000]] }
   ];
   var MONTHS = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
   function money(n) { return '$' + String(n).replace(/\B(?=(\d{3})+(?!\d))/g, ','); }
-  function when(ym) { var p = ym.split('-'); return MONTHS[parseInt(p[1], 10) - 1] + ' ' + p[0]; }
+  function when(ym) { var p = ym.split('-'), m = parseInt(p[1], 10); return (m ? MONTHS[m - 1] + ' ' : '') + p[0]; }
   function soldPopup(a) {
     var rows = a.homes.slice().sort(function (x, y) { return x[0] < y[0] ? 1 : -1; }).map(function (h) {
       return '<li style="margin:0 0 4px">' + when(h[0]) + ' &middot; ' + (h[1] === 's' ? 'Seller side' : 'Buyer side') + ' &middot; <b>' + money(h[2]) + '</b></li>';
     }).join('');
-    return '<div class="s2m-pop"><h4>' + a.name + '</h4><small>' + a.homes.length + (a.homes.length === 1 ? ' home sold' : ' homes sold') + '</small><ul style="margin:0;padding:0;list-style:none;font-size:13px">' + rows + '</ul></div>';
+    return '<div class="s2m-pop"><h4>' + a.name + '</h4><small>' + a.homes.length + (a.homes.length === 1 ? ' home sold' : ' homes sold') + '</small><ul style="margin:0;padding:0 6px 0 0;list-style:none;font-size:13px;max-height:210px;overflow:auto">' + rows + '</ul></div>';
   }
 
   function css() {
@@ -141,7 +154,7 @@
       t.addEventListener('click', function () { var on = t.getAttribute('aria-pressed') !== 'true'; t.setAttribute('aria-pressed', on ? 'true' : 'false'); if (on) baseLayer.addTo(map); else map.removeLayer(baseLayer); });
       chips.appendChild(t);
     }
-    if (mode === 'sold') { chips.style.display = 'none'; el.querySelector('.s2m-note').textContent = 'Pins show the city or ZIP area, not street addresses. Prices are final sale prices.'; }
+    if (mode === 'sold') { chips.style.display = 'none'; var total = SOLD.reduce(function (t, p) { return t + p.homes.length; }, 0); el.querySelector('.s2m-note').textContent = total + ' homes shown. Pins show the city or ZIP area, not street addresses. Prices are final sale prices.'; }
     apply('All');
     setTimeout(function () { map.invalidateSize(); }, 200);
 
