@@ -220,6 +220,21 @@
         </div>
         <div class="group relative">
           <button type="button" class="flex items-center gap-1 transition-colors hover:text-momentum-blue" aria-haspopup="true">
+            Resources
+            <svg class="h-3 w-3 transition-transform duration-200 group-hover:rotate-180" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" /></svg>
+          </button>
+          <div class="invisible absolute left-0 top-full z-50 w-60 rounded-xl border border-momentum-grayLight bg-white py-2 opacity-0 shadow-lg transition-all duration-150 group-hover:visible group-hover:opacity-100 group-focus-within:visible group-focus-within:opacity-100">
+            <a href="Listing-Guide.pdf?v=20261007" download class="block px-4 py-2.5 text-sm normal-case tracking-normal text-momentum-gray hover:bg-momentum-bgLight hover:text-momentum-blue">Listing Guide (PDF)</a>
+            <a href="Buyers-Guide.pdf" download class="block px-4 py-2.5 text-sm normal-case tracking-normal text-momentum-gray hover:bg-momentum-bgLight hover:text-momentum-blue">Buyer&rsquo;s Guide (PDF)</a>
+            <a href="military-relocation.html#guide-download" class="block px-4 py-2.5 text-sm normal-case tracking-normal text-momentum-gray hover:bg-momentum-bgLight hover:text-momentum-blue">Free PCS Guide</a>
+            <a href="sell.html#net-sheet" class="block px-4 py-2.5 text-sm normal-case tracking-normal text-momentum-gray hover:bg-momentum-bgLight hover:text-momentum-blue">Seller Net Sheet</a>
+            <a href="sell.html#fix-it-list-it" class="block px-4 py-2.5 text-sm normal-case tracking-normal text-momentum-gray hover:bg-momentum-bgLight hover:text-momentum-blue">Equity Calculator</a>
+            <a href="buy.html#payment-calculator" class="block px-4 py-2.5 text-sm normal-case tracking-normal text-momentum-gray hover:bg-momentum-bgLight hover:text-momentum-blue">Monthly Payment Calculator</a>
+            <a href="resources.html" class="block px-4 py-2.5 text-sm normal-case tracking-normal text-momentum-gray hover:bg-momentum-bgLight hover:text-momentum-blue">All Guides &amp; Tools</a>
+          </div>
+        </div>
+        <div class="group relative">
+          <button type="button" class="flex items-center gap-1 transition-colors hover:text-momentum-blue" aria-haspopup="true">
             About
             <svg class="h-3 w-3 transition-transform duration-200 group-hover:rotate-180" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" /></svg>
           </button>
@@ -263,6 +278,15 @@
         <a href="area-guides.html#st-johns-county" class="mobile-link py-1 pl-4 text-sm text-momentum-gray">St. Johns</a>
         <a href="area-guides.html#clay-county" class="mobile-link py-1 pl-4 text-sm text-momentum-gray">Clay County</a>
 
+        <span class="pt-2 text-xs font-bold uppercase tracking-widest text-momentum-gray">Resources</span>
+        <a href="Listing-Guide.pdf?v=20261007" download class="mobile-link py-1 pl-4 text-sm text-momentum-gray">Listing Guide (PDF)</a>
+        <a href="Buyers-Guide.pdf" download class="mobile-link py-1 pl-4 text-sm text-momentum-gray">Buyer&rsquo;s Guide (PDF)</a>
+        <a href="military-relocation.html#guide-download" class="mobile-link py-1 pl-4 text-sm text-momentum-gray">Free PCS Guide</a>
+        <a href="sell.html#net-sheet" class="mobile-link py-1 pl-4 text-sm text-momentum-gray">Seller Net Sheet</a>
+        <a href="sell.html#fix-it-list-it" class="mobile-link py-1 pl-4 text-sm text-momentum-gray">Equity Calculator</a>
+        <a href="buy.html#payment-calculator" class="mobile-link py-1 pl-4 text-sm text-momentum-gray">Monthly Payment Calculator</a>
+        <a href="resources.html" class="mobile-link py-1 pl-4 text-sm text-momentum-gray">All Guides &amp; Tools</a>
+
         <span class="pt-2 text-xs font-bold uppercase tracking-widest text-momentum-gray">About</span>
         <a href="about.html" class="mobile-link py-1 pl-4 text-sm text-momentum-gray">Meet Sarah &amp; Sarah</a>
         <a href="sarah-fuller.html" class="mobile-link py-1 pl-8 text-xs text-momentum-gray">Sarah Fuller</a>
@@ -290,6 +314,7 @@
         <div class="hero-slide absolute inset-0 bg-cover bg-center opacity-0" style="background-image: url('Downtown-Jacksonville-Rich-Estrada.jpg.avif');"></div>
         <div class="hero-slide absolute inset-0 bg-cover bg-center opacity-0" style="background-image: url('https://commons.wikimedia.org/wiki/Special:FilePath/Jacksonville_San_Marco_Square.JPG?width=1600');"></div>
         <div class="hero-slide absolute inset-0 bg-cover bg-center opacity-0" style="background-image: url('https://commons.wikimedia.org/wiki/Special:FilePath/MemParkJaxLife.jpg?width=1600');"></div>
+        <div id="hero-video" class="absolute inset-0 overflow-hidden opacity-0 transition-opacity duration-1000"></div>
       </div>
       <div class="absolute inset-0 bg-momentum-blueDark/35"></div>
       <div class="absolute inset-0 bg-gradient-to-r from-momentum-blueDark/90 via-momentum-blueDark/55 to-transparent"></div>
@@ -334,6 +359,17 @@
     <!-- ==========================================================================
          SOCIAL PROOF & LOCAL IMPACT
        ========================================================================== -->
+    <section class="bg-momentum-bgLight pb-4 sm:pb-6">
+      <div class="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
+        <form id="home-value-teaser" class="flex flex-col items-stretch gap-3 border-y border-momentum-grayLight py-4 sm:flex-row sm:items-center sm:gap-5">
+          <p class="font-serif text-lg font-semibold text-momentum-blue sm:shrink-0">What is your home worth?</p>
+          <label for="teaser-address" class="sr-only">Property address</label>
+          <input id="teaser-address" type="text" placeholder="Enter your property address" class="h-11 w-full min-w-0 flex-1 rounded-md border border-momentum-grayLight bg-white px-4 text-sm text-slate-800 placeholder:text-momentum-gray focus:border-momentum-blue focus:outline-none focus:ring-2 focus:ring-momentum-blue/20" />
+          <button type="submit" class="h-11 shrink-0 rounded-md bg-teal-600 px-6 text-sm font-semibold uppercase tracking-wider text-white transition-colors hover:bg-teal-700">Get my estimate</button>
+        </form>
+      </div>
+    </section>
+
     <section class="bg-momentum-bgLight py-16 sm:py-20">
       <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div class="mx-auto max-w-2xl text-center">
@@ -620,7 +656,7 @@
       <p class="mt-3 flex flex-wrap justify-center gap-x-4 gap-y-1 text-xs">
         <a href="blog.html" class="text-slate-300 hover:text-white">Blog</a>
         <a href="referral.html" class="text-slate-300 hover:text-white">Referral Program</a>
-        <a href="services.html" class="text-slate-300 hover:text-white">Programs &amp; Services</a> <a href="https://www.youtube.com/@S2HomePartners" target="_blank" rel="noopener noreferrer" class="text-slate-300 hover:text-white">YouTube</a> <a href="https://www.facebook.com/s2homepartners" target="_blank" rel="noopener noreferrer" class="text-slate-300 hover:text-white">Facebook</a> <a href="https://www.tiktok.com/@s2homepartners" target="_blank" rel="noopener noreferrer" class="text-slate-300 hover:text-white">TikTok</a> <a href="https://www.instagram.com/sarahfullerjax/" target="_blank" rel="noopener noreferrer" class="text-slate-300 hover:text-white">Instagram</a> <a href="social.html" class="text-slate-300 hover:text-white">Watch &amp; Follow</a>
+        <a href="services.html" class="text-slate-300 hover:text-white">Programs &amp; Services</a> <a href="https://www.youtube.com/@S2HomePartners" target="_blank" rel="noopener noreferrer" class="text-slate-300 hover:text-white">YouTube</a> <a href="https://www.facebook.com/s2homepartners" target="_blank" rel="noopener noreferrer" class="text-slate-300 hover:text-white">Facebook</a> <a href="https://www.tiktok.com/@s2homepartners" target="_blank" rel="noopener noreferrer" class="text-slate-300 hover:text-white">TikTok</a> <a href="https://www.instagram.com/sarahfullerjax/" target="_blank" rel="noopener noreferrer" class="text-slate-300 hover:text-white">Instagram</a> <a href="resources.html" class="text-slate-300 hover:text-white">Guides &amp; Tools</a> <a href="social.html" class="text-slate-300 hover:text-white">Watch &amp; Follow</a>
       </p>
     </div>
   </footer>
@@ -645,6 +681,43 @@
         menuToggle.setAttribute('aria-label', 'Open menu');
       });
     });
+
+    // Cinematic hero video: the photo slides show first (instant), then a muted looping
+    // YouTube clip fades in on large screens. Change HERO_VIDEO_ID to swap the clip.
+    (function () {
+      var HERO_VIDEO_ID = '8wFkpUuooIo';
+      var HERO_START = 6;
+      var wrap = document.getElementById('hero-video');
+      if (!wrap) return;
+      var conn = navigator.connection || {};
+      if (!window.matchMedia('(min-width: 1024px)').matches || window.matchMedia('(prefers-reduced-motion: reduce)').matches || conn.saveData) return;
+      function fit(f) {
+        var w = wrap.clientWidth, h = wrap.clientHeight, vw = Math.max(w, h * 16 / 9), vh = vw * 9 / 16;
+        f.style.width = vw + 'px'; f.style.height = vh + 'px';
+        f.style.left = ((w - vw) / 2) + 'px'; f.style.top = ((h - vh) / 2) + 'px';
+      }
+      window.addEventListener('load', function () {
+        setTimeout(function () {
+          var f = document.createElement('iframe');
+          f.src = 'https://www.youtube-nocookie.com/embed/' + HERO_VIDEO_ID + '?autoplay=1&mute=1&controls=0&loop=1&playlist=' + HERO_VIDEO_ID + '&start=' + HERO_START + '&playsinline=1&modestbranding=1&rel=0&disablekb=1&iv_load_policy=3&enablejsapi=1&origin=' + encodeURIComponent(location.origin);
+          f.allow = 'autoplay; encrypted-media';
+          f.tabIndex = -1; f.setAttribute('aria-hidden', 'true'); f.title = '';
+          f.style.cssText = 'position:absolute;border:0;pointer-events:none';
+          fit(f); wrap.appendChild(f);
+          window.addEventListener('resize', function () { fit(f); });
+          f.addEventListener('load', function () {
+            try { f.contentWindow.postMessage(JSON.stringify({ event: 'listening', id: 1, channel: 'widget' }), '*'); } catch (e) {}
+          });
+          window.addEventListener('message', function (e) {
+            if (e.source !== f.contentWindow) return;
+            var d = e.data; if (typeof d === 'string') { try { d = JSON.parse(d); } catch (err) { return; } }
+            if (!d) return;
+            var state = d.event === 'onStateChange' ? d.info : (d.info && d.info.playerState);
+            if (state === 1) wrap.style.opacity = '1';
+          });
+        }, 1500);
+      });
+    })();
 
     // Rotating hero background
     const heroSlides = document.querySelectorAll('.hero-slide');
@@ -1003,6 +1076,15 @@
         valueModal.classList.add('hidden');
         valueModal.classList.remove('flex');
         document.body.classList.remove('overflow-hidden');
+      }
+      const teaser = document.getElementById('home-value-teaser');
+      if (teaser && valueModal) {
+        teaser.addEventListener('submit', (event) => {
+          event.preventDefault();
+          const modalAddress = document.getElementById('mobile-value-address');
+          if (modalAddress) modalAddress.value = document.getElementById('teaser-address').value;
+          openValueModal();
+        });
       }
       if (valueTriggers.length && valueModal) {
         valueTriggers.forEach((btn) => btn.addEventListener('click', openValueModal));
