@@ -528,7 +528,13 @@
     <!-- Meet Sarah & Sarah -->
     <section class="bg-white py-16">
       <div class="mx-auto grid max-w-6xl items-center gap-10 px-4 sm:px-6 md:grid-cols-2 lg:px-8">
-        <img src="team.jpg" alt="Sarah Luther and Sarah Fuller, S² Home Partners" class="mx-auto w-full max-w-md rounded-2xl shadow-3d" />
+        <div class="relative mx-auto w-full max-w-xl overflow-hidden rounded-lg shadow-3d" style="container-type:inline-size">
+          <img src="images/team/holding-sign.jpg" alt="Sarah Luther and Sarah Fuller of S&sup2; Home Partners holding a sign" width="1600" height="1120" loading="lazy" decoding="async" class="block w-full" />
+          <div class="absolute flex flex-col items-center justify-center text-center" style="left:29%;top:39.5%;width:55%;height:22%;transform:rotate(1.7deg)">
+            <span class="font-serif font-semibold leading-none text-momentum-blue" style="font-size:7cqw">Sarah &amp; Sarah</span>
+            <span class="mt-[1.2cqw] font-semibold uppercase text-momentum-gray" style="font-size:2.3cqw;letter-spacing:.14em">S&sup2; Home Partners</span>
+          </div>
+        </div>
         <div>
           <span class="text-xs font-bold uppercase tracking-widest text-momentum-gray">Your advisors</span>
           <h2 class="mt-2 font-serif text-3xl font-bold text-momentum-blue sm:text-4xl">Two Agents. One Team. Twice the Availability.</h2>
@@ -620,6 +626,22 @@
             </div>
           </a>
         </div>
+      </div>
+    </section>
+    <!-- Talk to us: photo band -->
+    <section class="bg-momentum-bgLight">
+      <div class="relative" style="container-type:inline-size">
+        <img src="images/team/pointing-inward.jpg" alt="Sarah Fuller and Sarah Luther pointing toward the center of the frame" width="1600" height="1066" loading="lazy" decoding="async" class="block aspect-[4/3] w-full object-cover md:aspect-[2/1]" style="object-position:50% 40%" />
+        <div class="absolute inset-0 hidden items-center justify-center md:flex">
+          <div class="text-center" style="width:21cqw;margin-left:-1cqw">
+            <p class="font-serif font-semibold leading-tight text-momentum-blue" style="font-size:1.9cqw">Let&rsquo;s find your place</p>
+            <a href="get-started.html" class="mt-[1.2cqw] inline-block rounded-md bg-teal-600 font-semibold uppercase tracking-wider text-white transition-colors hover:bg-teal-700" style="font-size:.95cqw;padding:.8cqw 1.8cqw">Let&rsquo;s talk</a>
+          </div>
+        </div>
+      </div>
+      <div class="px-4 py-8 text-center md:hidden">
+        <p class="font-serif text-2xl font-semibold text-momentum-blue">Let&rsquo;s find your place</p>
+        <a href="get-started.html" class="mt-4 inline-block rounded-md bg-teal-600 px-7 py-3.5 text-sm font-semibold uppercase tracking-wider text-white hover:bg-teal-700">Let&rsquo;s talk</a>
       </div>
     </section>
   </main>
