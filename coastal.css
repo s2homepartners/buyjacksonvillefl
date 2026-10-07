@@ -116,3 +116,21 @@ main > section:first-child.bg-momentum-blueDark::after {
 .hero-tab:hover { background: rgba(255, 253, 249, 0.45); }
 .hero-tab[aria-selected="true"] { background: #fff; color: #1E4A5C; }
 [data-panel][hidden] { display: none !important; }
+
+/* ---- Overlay header (set up by site.js on pages with a dark hero) ---- */
+html.has-overlay-header body > header {
+  position: fixed; top: 0; left: 0; right: 0;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+}
+html.has-overlay-header body > header:not(.is-solid):not(.menu-open) {
+  background-color: transparent;
+  border-color: transparent;
+  box-shadow: none;
+  -webkit-backdrop-filter: none; backdrop-filter: none;
+}
+html.has-overlay-header body > header:not(.is-solid):not(.menu-open) a img { filter: brightness(0) invert(1); }
+html.has-overlay-header body > header:not(.is-solid):not(.menu-open) nav[aria-label="Primary"] > a:not(.bg-teal-600),
+html.has-overlay-header body > header:not(.is-solid):not(.menu-open) nav[aria-label="Primary"] > div > button { color: #fff; }
+html.has-overlay-header body > header:not(.is-solid):not(.menu-open) #menu-toggle { color: #fff; }
+html.has-overlay-header main > section:first-child { padding-top: calc(var(--hdr, 96px) + 2rem); }
+html.has-overlay-header main > section:first-child > .relative.flex { padding-top: 3.5rem; }
