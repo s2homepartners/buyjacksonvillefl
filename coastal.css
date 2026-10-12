@@ -134,3 +134,13 @@ html.has-overlay-header body > header:not(.is-solid):not(.menu-open) nav[aria-la
 html.has-overlay-header body > header:not(.is-solid):not(.menu-open) #menu-toggle { color: #fff; }
 html.has-overlay-header main > section:first-child { padding-top: calc(var(--hdr, 96px) + 2rem); }
 html.has-overlay-header main > section:first-child > .relative.flex { padding-top: 3.5rem; }
+
+/* Mobile menu: let the open menu scroll when it is taller than the screen */
+#mobile-menu {
+  max-height: calc(100vh - 100px);
+  max-height: calc(100dvh - 100px);
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  -webkit-overflow-scrolling: touch;
+  padding-bottom: 6rem;
+}
