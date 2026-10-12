@@ -1,5 +1,5 @@
 # S² Home Partners | Momentum Realty
-# https://www.buyjacksonvillefl.com
+# https://buyjacksonvillefl.com
 
 User-agent: *
 Allow: /
@@ -54,4 +54,4 @@ Allow: /
 User-agent: CCBot
 Allow: /
 
-Sitemap: https://www.buyjacksonvillefl.com/sitemap.xml
+Sitemap: https://buyjacksonvillefl.com/sitemap.xml
