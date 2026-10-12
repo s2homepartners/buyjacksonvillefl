@@ -157,3 +157,8 @@ html.has-overlay-header main > section:first-child > .relative.flex { padding-to
 .faq-item summary:hover { color: #153746; }
 .faq-a { padding: 0 0 1.25rem; color: #3D4D55; line-height: 1.65; }
 .faq-a p { margin: 0 0 .75rem; }
+.faq-a .faq-list { margin: 0 0 .85rem; padding-left: 1.25rem; }
+.faq-a ul.faq-list { list-style: disc; }
+.faq-a ol.faq-list { list-style: decimal; }
+.faq-a .faq-list li { margin: 0 0 .35rem; }
+.faq-item { scroll-margin-top: 6rem; }
