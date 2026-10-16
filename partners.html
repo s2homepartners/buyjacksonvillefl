@@ -177,178 +177,250 @@
       </div>
     </section>
 
-    <!-- Partner Directory -->
-    <section class="bg-white py-16">
-      <div class="mx-auto grid max-w-6xl grid-cols-1 gap-6 px-4 sm:px-6 md:grid-cols-2 lg:grid-cols-3 lg:px-8">
+    <!-- Partner Directory: grouped by what each partner helps with.
+         Every card has the same shape: a brand band on top (logo image, or the company name when there is no logo),
+         then trade, optional round headshot, name, company and contact links. Images live in images/partners/. -->
+    <section class="bg-momentum-bgLight py-16">
+      <div class="mx-auto max-w-6xl space-y-14 px-4 sm:px-6 lg:px-8">
 
-        <!-- Each card: logo strip (hidden if the logo file is missing) and a round headshot (hidden if the photo is missing).
-             Images live in images/partners/: <company>-logo.png and <first-last>.jpg -->
-
-        <article class="flex flex-col rounded-2xl border border-momentum-grayLight bg-momentum-bgLight p-6 shadow-sm sm:p-8">
-          <div class="flex h-24 items-center justify-center rounded-xl bg-white px-4 py-2">
-            <img src="images/partners/fender-insurance-logo.png" alt="Fender Insurance Agency logo" class="max-h-20 w-auto max-w-full object-contain" loading="lazy" onerror="this.parentElement.hidden=true" />
+        <!-- Financing & Closing -->
+        <div>
+          <div class="flex items-center gap-4">
+            <h2 class="font-serif text-2xl font-bold text-momentum-blue sm:text-3xl">Financing &amp; Closing</h2>
+            <span class="h-px flex-1 bg-momentum-grayLight" aria-hidden="true"></span>
           </div>
-          <div class="mt-5 flex items-start gap-4">
-            <img src="images/partners/beth-anne-taylor.jpg" alt="Beth Anne Taylor" class="h-20 w-20 shrink-0 rounded-full object-cover shadow ring-2 ring-white" loading="lazy" onerror="this.hidden=true" />
-            <div class="min-w-0">
-              <p class="text-xs font-bold uppercase tracking-widest text-teal-600">Home Insurance</p>
-              <h2 class="mt-1 font-serif text-2xl font-bold leading-tight text-momentum-blue">Beth Anne Taylor</h2>
-              <p class="mt-1 text-sm font-semibold text-slate-600">Fender Insurance Agency</p>
-              <ul class="mt-3 space-y-1.5 text-sm">
-                <li><a href="tel:+19044957305" class="text-momentum-blue hover:text-teal-700 hover:underline">904-495-7305</a></li>
-                <li><a href="mailto:beth@fenderagency.com" class="break-all text-momentum-blue hover:text-teal-700 hover:underline">beth@fenderagency.com</a></li>
-                <li><a href="https://fenderagency.com/" target="_blank" rel="noopener noreferrer" class="text-momentum-blue hover:text-teal-700 hover:underline">fenderagency.com</a></li>
-              </ul>
-            </div>
-          </div>
-        </article>
+          <p class="mt-2 text-sm text-slate-600">Get pre-approved and get to the closing table.</p>
+          <div class="mt-6 grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
 
-        <article class="flex flex-col rounded-2xl border border-momentum-grayLight bg-momentum-bgLight p-6 shadow-sm sm:p-8">
-          <div class="flex h-24 items-center justify-center rounded-xl bg-white px-4 py-2">
-            <img src="images/partners/2-10-home-warranty-logo.png" alt="2-10 Home Warranty logo" class="max-h-20 w-auto max-w-full object-contain" loading="lazy" onerror="this.parentElement.hidden=true" />
-          </div>
-          <div class="mt-5 flex items-start gap-4">
-            <img src="images/partners/pedro-lopez.jpg" alt="Pedro Lopez" class="h-20 w-20 shrink-0 rounded-full object-cover shadow ring-2 ring-white" loading="lazy" onerror="this.hidden=true" />
-            <div class="min-w-0">
-              <p class="text-xs font-bold uppercase tracking-widest text-teal-600">Home Warranty</p>
-              <h2 class="mt-1 font-serif text-2xl font-bold leading-tight text-momentum-blue">Pedro Lopez</h2>
-              <p class="mt-1 text-sm font-semibold text-slate-600">2-10 Home Warranty</p>
-              <ul class="mt-3 space-y-1.5 text-sm">
-                <li><a href="tel:+19046525931" class="text-momentum-blue hover:text-teal-700 hover:underline">904-652-5931</a></li>
-                <li><a href="https://www.2-10.com/" target="_blank" rel="noopener noreferrer" class="text-momentum-blue hover:text-teal-700 hover:underline">2-10.com</a></li>
-              </ul>
-            </div>
-          </div>
-        </article>
+            <article class="flex flex-col overflow-hidden rounded-2xl border border-momentum-grayLight bg-white shadow-sm transition-shadow hover:shadow-md">
+              <div class="flex h-28 items-center justify-center border-b border-momentum-grayLight px-6">
+                <img src="images/partners/premier-lending-logo.png" alt="Premier Lending logo" class="max-h-20 w-auto max-w-full object-contain" loading="lazy" />
+              </div>
+              <div class="flex flex-1 flex-col p-6">
+                <p class="text-xs font-bold uppercase tracking-widest text-teal-600">Mortgage Lending</p>
+                <div class="mt-3 flex items-start gap-4">
+                  <img src="images/partners/alex-digioia.jpg" alt="Alex DiGioia" class="h-20 w-20 shrink-0 rounded-full object-cover shadow ring-2 ring-white" loading="lazy" onerror="this.hidden=true" />
+                  <div class="min-w-0">
+                    <h3 class="font-serif text-2xl font-bold leading-tight text-momentum-blue">Alex DiGioia</h3>
+                    <p class="mt-1 text-sm font-semibold text-slate-600">Premier Lending</p>
+                    <ul class="mt-3 space-y-1.5 text-sm">
+                      <li><a href="tel:+15612681129" class="text-momentum-blue hover:text-teal-700 hover:underline">561-268-1129</a></li>
+                      <li><a href="mailto:adigioia@plcorp.net" class="break-all text-momentum-blue hover:text-teal-700 hover:underline">adigioia@plcorp.net</a></li>
+                      <li><a href="https://www.plcorp.net/" target="_blank" rel="noopener noreferrer" class="text-momentum-blue hover:text-teal-700 hover:underline">plcorp.net</a></li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="mt-auto pt-6"><a href="https://plcorp.my1003app.com/1368653/register" target="_blank" rel="noopener noreferrer" class="flex h-11 items-center justify-center rounded-xl bg-teal-600 px-4 text-sm font-bold text-white shadow-md transition-colors hover:bg-teal-700">Apply for Pre-Approval</a></div>
+              </div>
+            </article>
 
-        <article class="flex flex-col rounded-2xl border border-momentum-grayLight bg-momentum-bgLight p-6 shadow-sm sm:p-8">
-          <div class="flex h-24 items-center justify-center rounded-xl bg-white px-4 py-2">
-            <img src="images/partners/southern-capital-title-logo.webp" alt="Southern Capital Title logo" class="max-h-20 w-auto max-w-full object-contain" loading="lazy" onerror="this.parentElement.hidden=true" />
+            <article class="flex flex-col overflow-hidden rounded-2xl border border-momentum-grayLight bg-white shadow-sm transition-shadow hover:shadow-md">
+              <div class="flex h-28 items-center justify-center border-b border-momentum-grayLight px-6">
+                <img src="images/partners/premier-lending-logo.png" alt="Premier Lending logo" class="max-h-20 w-auto max-w-full object-contain" loading="lazy" />
+              </div>
+              <div class="flex flex-1 flex-col p-6">
+                <p class="text-xs font-bold uppercase tracking-widest text-teal-600">Mortgage Lending</p>
+                <div class="mt-3 flex items-start gap-4">
+                  <img src="images/partners/jaime-rincon.jpg" alt="Jaime Rincon" class="h-20 w-20 shrink-0 rounded-full object-cover shadow ring-2 ring-white" loading="lazy" onerror="this.hidden=true" />
+                  <div class="min-w-0">
+                    <h3 class="font-serif text-2xl font-bold leading-tight text-momentum-blue">Jaime Rincon</h3>
+                    <p class="mt-1 text-sm font-semibold text-slate-600">Premier Lending</p>
+                    <ul class="mt-3 space-y-1.5 text-sm">
+                      <li><a href="tel:+17542141458" class="text-momentum-blue hover:text-teal-700 hover:underline">754-214-1458</a></li>
+                      <li><a href="mailto:jrincon@lokationmtg.com" class="break-all text-momentum-blue hover:text-teal-700 hover:underline">jrincon@lokationmtg.com</a></li>
+                      <li><a href="https://www.plcorp.net/" target="_blank" rel="noopener noreferrer" class="text-momentum-blue hover:text-teal-700 hover:underline">plcorp.net</a></li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="mt-auto pt-6"><a href="https://plcorp.my1003app.com/2682974/register" target="_blank" rel="noopener noreferrer" class="flex h-11 items-center justify-center rounded-xl bg-teal-600 px-4 text-sm font-bold text-white shadow-md transition-colors hover:bg-teal-700">Apply for Pre-Approval</a></div>
+              </div>
+            </article>
+
+            <article class="flex flex-col overflow-hidden rounded-2xl border border-momentum-grayLight bg-white shadow-sm transition-shadow hover:shadow-md">
+              <div class="flex h-28 items-center justify-center border-b border-momentum-grayLight px-6">
+                <img src="images/partners/southern-capital-title-logo.webp" alt="Southern Capital Title logo" class="max-h-20 w-auto max-w-full object-contain" loading="lazy" />
+              </div>
+              <div class="flex flex-1 flex-col p-6">
+                <p class="text-xs font-bold uppercase tracking-widest text-teal-600">Title &amp; Closing</p>
+                <div class="mt-3 flex items-start gap-4">
+                  <img src="images/partners/brandy-martin.jpg" alt="Brandy Martin" class="h-20 w-20 shrink-0 rounded-full object-cover shadow ring-2 ring-white" loading="lazy" onerror="this.hidden=true" />
+                  <div class="min-w-0">
+                    <h3 class="font-serif text-2xl font-bold leading-tight text-momentum-blue">Brandy Martin</h3>
+                    <p class="mt-1 text-sm font-semibold text-slate-600">Southern Capital Title</p>
+                    <ul class="mt-3 space-y-1.5 text-sm">
+                      <li><a href="tel:+19045246281" class="text-momentum-blue hover:text-teal-700 hover:underline">904-524-6281</a></li>
+                      <li><a href="mailto:brandy@southerncapitaltitle.com" class="break-all text-momentum-blue hover:text-teal-700 hover:underline">brandy@southerncapitaltitle.com</a></li>
+                      <li><a href="https://www.southerncapitaltitle.com/" target="_blank" rel="noopener noreferrer" class="text-momentum-blue hover:text-teal-700 hover:underline">southerncapitaltitle.com</a></li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </article>
+
           </div>
-          <div class="mt-5 flex items-start gap-4">
-            <img src="images/partners/brandy-martin.jpg" alt="Brandy Martin" class="h-20 w-20 shrink-0 rounded-full object-cover shadow ring-2 ring-white" loading="lazy" onerror="this.hidden=true" />
-            <div class="min-w-0">
-              <p class="text-xs font-bold uppercase tracking-widest text-teal-600">Title &amp; Closing</p>
-              <h2 class="mt-1 font-serif text-2xl font-bold leading-tight text-momentum-blue">Brandy Martin</h2>
-              <p class="mt-1 text-sm font-semibold text-slate-600">Southern Capital Title</p>
-              <ul class="mt-3 space-y-1.5 text-sm">
-                <li><a href="tel:+19045246281" class="text-momentum-blue hover:text-teal-700 hover:underline">904-524-6281</a></li>
-                <li><a href="mailto:brandy@southerncapitaltitle.com" class="break-all text-momentum-blue hover:text-teal-700 hover:underline">brandy@southerncapitaltitle.com</a></li>
-                <li><a href="https://www.southerncapitaltitle.com/" target="_blank" rel="noopener noreferrer" class="text-momentum-blue hover:text-teal-700 hover:underline">southerncapitaltitle.com</a></li>
-              </ul>
-            </div>
+        </div>
+
+        <!-- Insurance & Protection -->
+        <div>
+          <div class="flex items-center gap-4">
+            <h2 class="font-serif text-2xl font-bold text-momentum-blue sm:text-3xl">Insurance &amp; Protection</h2>
+            <span class="h-px flex-1 bg-momentum-grayLight" aria-hidden="true"></span>
           </div>
-        </article>
+          <p class="mt-2 text-sm text-slate-600">Cover your home from day one.</p>
+          <div class="mt-6 grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
 
-        <article class="flex flex-col rounded-2xl border border-momentum-grayLight bg-momentum-bgLight p-6 shadow-sm sm:p-8">
-          <div class="flex h-24 items-center justify-center rounded-xl bg-white px-4 py-2">
-            <img src="images/partners/premier-lending-logo.png" alt="Premier Lending logo" class="max-h-20 w-auto max-w-full object-contain" loading="lazy" onerror="this.parentElement.hidden=true" />
+            <article class="flex flex-col overflow-hidden rounded-2xl border border-momentum-grayLight bg-white shadow-sm transition-shadow hover:shadow-md">
+              <div class="flex h-28 items-center justify-center border-b border-momentum-grayLight px-6">
+                <img src="images/partners/fender-insurance-logo.png" alt="Fender Insurance Agency logo" class="max-h-20 w-auto max-w-full object-contain" loading="lazy" />
+              </div>
+              <div class="flex flex-1 flex-col p-6">
+                <p class="text-xs font-bold uppercase tracking-widest text-teal-600">Home Insurance</p>
+                <div class="mt-3 flex items-start gap-4">
+                  <img src="images/partners/beth-anne-taylor.jpg" alt="Beth Anne Taylor" class="h-20 w-20 shrink-0 rounded-full object-cover shadow ring-2 ring-white" loading="lazy" onerror="this.hidden=true" />
+                  <div class="min-w-0">
+                    <h3 class="font-serif text-2xl font-bold leading-tight text-momentum-blue">Beth Anne Taylor</h3>
+                    <p class="mt-1 text-sm font-semibold text-slate-600">Fender Insurance Agency</p>
+                    <ul class="mt-3 space-y-1.5 text-sm">
+                      <li><a href="tel:+19044957305" class="text-momentum-blue hover:text-teal-700 hover:underline">904-495-7305</a></li>
+                      <li><a href="mailto:beth@fenderagency.com" class="break-all text-momentum-blue hover:text-teal-700 hover:underline">beth@fenderagency.com</a></li>
+                      <li><a href="https://fenderagency.com/" target="_blank" rel="noopener noreferrer" class="text-momentum-blue hover:text-teal-700 hover:underline">fenderagency.com</a></li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <article class="flex flex-col overflow-hidden rounded-2xl border border-momentum-grayLight bg-white shadow-sm transition-shadow hover:shadow-md">
+              <div class="flex h-28 items-center justify-center border-b border-momentum-grayLight px-6">
+                <img src="images/partners/2-10-home-warranty-logo.png" alt="2-10 Home Warranty logo" class="max-h-20 w-auto max-w-full object-contain" loading="lazy" />
+              </div>
+              <div class="flex flex-1 flex-col p-6">
+                <p class="text-xs font-bold uppercase tracking-widest text-teal-600">Home Warranty</p>
+                <div class="mt-3 flex items-start gap-4">
+                  <img src="images/partners/pedro-lopez.jpg" alt="Pedro Lopez" class="h-20 w-20 shrink-0 rounded-full object-cover shadow ring-2 ring-white" loading="lazy" onerror="this.hidden=true" />
+                  <div class="min-w-0">
+                    <h3 class="font-serif text-2xl font-bold leading-tight text-momentum-blue">Pedro Lopez</h3>
+                    <p class="mt-1 text-sm font-semibold text-slate-600">2-10 Home Warranty</p>
+                    <ul class="mt-3 space-y-1.5 text-sm">
+                      <li><a href="tel:+19046525931" class="text-momentum-blue hover:text-teal-700 hover:underline">904-652-5931</a></li>
+                      <li><a href="https://www.2-10.com/" target="_blank" rel="noopener noreferrer" class="text-momentum-blue hover:text-teal-700 hover:underline">2-10.com</a></li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </article>
+
           </div>
-          <div class="mt-5 flex items-start gap-4">
-            <img src="images/partners/alex-digioia.jpg" alt="Alex DiGioia" class="h-20 w-20 shrink-0 rounded-full object-cover shadow ring-2 ring-white" loading="lazy" onerror="this.hidden=true" />
-            <div class="min-w-0">
-              <p class="text-xs font-bold uppercase tracking-widest text-teal-600">Mortgage Lending</p>
-              <h2 class="mt-1 font-serif text-2xl font-bold leading-tight text-momentum-blue">Alex DiGioia</h2>
-              <p class="mt-1 text-sm font-semibold text-slate-600">Premier Lending</p>
-              <ul class="mt-3 space-y-1.5 text-sm">
-                <li><a href="tel:+15612681129" class="text-momentum-blue hover:text-teal-700 hover:underline">561-268-1129</a></li>
-                <li><a href="mailto:adigioia@plcorp.net" class="break-all text-momentum-blue hover:text-teal-700 hover:underline">adigioia@plcorp.net</a></li>
-                <li><a href="https://www.plcorp.net/" target="_blank" rel="noopener noreferrer" class="text-momentum-blue hover:text-teal-700 hover:underline">plcorp.net</a></li>
-              </ul>
-            </div>
+        </div>
+
+        <!-- Home Services -->
+        <div>
+          <div class="flex items-center gap-4">
+            <h2 class="font-serif text-2xl font-bold text-momentum-blue sm:text-3xl">Home Services</h2>
+            <span class="h-px flex-1 bg-momentum-grayLight" aria-hidden="true"></span>
           </div>
-          <a href="https://plcorp.my1003app.com/1368653/register" target="_blank" rel="noopener noreferrer" class="mt-6 flex h-11 items-center justify-center rounded-xl bg-teal-600 px-4 text-sm font-bold text-white shadow-md transition-colors hover:bg-teal-700">Apply for Pre-Approval</a>
-        </article>
+          <p class="mt-2 text-sm text-slate-600">Repairs, upgrades and upkeep, before you list or after you move in.</p>
+          <div class="mt-6 grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
 
-        <article class="flex flex-col rounded-2xl border border-momentum-grayLight bg-momentum-bgLight p-6 shadow-sm sm:p-8">
-          <div class="flex h-24 items-center justify-center rounded-xl bg-white px-4 py-2">
-            <img src="images/partners/premier-lending-logo.png" alt="Premier Lending logo" class="max-h-20 w-auto max-w-full object-contain" loading="lazy" onerror="this.parentElement.hidden=true" />
+            <article class="flex flex-col overflow-hidden rounded-2xl border border-momentum-grayLight bg-white shadow-sm transition-shadow hover:shadow-md">
+              <div class="flex h-28 items-center justify-center border-b border-momentum-grayLight px-6">
+                <img src="images/partners/haleforce-water-solutions-logo.png" alt="Haleforce Water Solutions logo" class="max-h-20 w-auto max-w-full object-contain" loading="lazy" />
+              </div>
+              <div class="flex flex-1 flex-col p-6">
+                <p class="text-xs font-bold uppercase tracking-widest text-teal-600">Water Treatment</p>
+                <div class="mt-3 flex items-start gap-4">
+                  <img src="images/partners/danny-hale.jpg" alt="Danny Hale" class="h-20 w-20 shrink-0 rounded-full object-cover shadow ring-2 ring-white" loading="lazy" onerror="this.hidden=true" />
+                  <div class="min-w-0">
+                    <h3 class="font-serif text-2xl font-bold leading-tight text-momentum-blue">Danny Hale</h3>
+                    <p class="mt-1 text-sm font-semibold text-slate-600">Haleforce Water Solutions</p>
+                    <ul class="mt-3 space-y-1.5 text-sm">
+                      <li><a href="tel:+15613889414" class="text-momentum-blue hover:text-teal-700 hover:underline">561-388-9414</a></li>
+                      <li><a href="mailto:danielhale.8727@gmail.com" class="break-all text-momentum-blue hover:text-teal-700 hover:underline">danielhale.8727@gmail.com</a></li>
+                      <li><a href="mailto:haleforcewater@gmail.com" class="break-all text-momentum-blue hover:text-teal-700 hover:underline">haleforcewater@gmail.com</a></li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <article class="flex flex-col overflow-hidden rounded-2xl border border-momentum-grayLight bg-white shadow-sm transition-shadow hover:shadow-md">
+              <div class="flex h-28 items-center justify-center border-b border-momentum-grayLight px-6">
+                <p class="text-center font-serif text-2xl font-bold leading-tight text-momentum-blue">Interstate Roofing</p>
+              </div>
+              <div class="flex flex-1 flex-col p-6">
+                <p class="text-xs font-bold uppercase tracking-widest text-teal-600">Roofing</p>
+                <div class="mt-3 min-w-0">
+                  <h3 class="font-serif text-2xl font-bold leading-tight text-momentum-blue">Jeff Thiel</h3>
+                  <p class="mt-1 text-sm font-semibold text-slate-600">Interstate Roofing</p>
+                  <ul class="mt-3 space-y-1.5 text-sm">
+                    <li><a href="tel:+19045202350" class="text-momentum-blue hover:text-teal-700 hover:underline">904-520-2350</a></li>
+                    <li><a href="mailto:jeff.thiel@interstateroof.com" class="break-all text-momentum-blue hover:text-teal-700 hover:underline">jeff.thiel@interstateroof.com</a></li>
+                  </ul>
+                </div>
+              </div>
+            </article>
+
+            <article class="flex flex-col overflow-hidden rounded-2xl border border-momentum-grayLight bg-white shadow-sm transition-shadow hover:shadow-md">
+              <div class="flex h-28 items-center justify-center border-b border-momentum-grayLight px-6">
+                <p class="text-center font-serif text-2xl font-bold leading-tight text-momentum-blue">Complete Comfort Specialists</p>
+              </div>
+              <div class="flex flex-1 flex-col p-6">
+                <p class="text-xs font-bold uppercase tracking-widest text-teal-600">Heating &amp; Air</p>
+                <div class="mt-3 min-w-0">
+                  <h3 class="font-serif text-2xl font-bold leading-tight text-momentum-blue">HVAC Services</h3>
+                  <p class="mt-1 text-sm font-semibold text-slate-600">Complete Comfort Specialists</p>
+                  <ul class="mt-3 space-y-1.5 text-sm">
+                    <li><a href="tel:+19046759295" class="text-momentum-blue hover:text-teal-700 hover:underline">904-675-9295</a></li>
+                    <li><a href="mailto:admin@ccsfla.com" class="break-all text-momentum-blue hover:text-teal-700 hover:underline">admin@ccsfla.com</a></li>
+                    <li><a href="https://ccsfla.com/" target="_blank" rel="noopener noreferrer" class="text-momentum-blue hover:text-teal-700 hover:underline">ccsfla.com</a></li>
+                  </ul>
+                </div>
+              </div>
+            </article>
+
+            <article class="flex flex-col overflow-hidden rounded-2xl border border-momentum-grayLight bg-white shadow-sm transition-shadow hover:shadow-md">
+              <div class="flex h-28 items-center justify-center border-b border-momentum-grayLight px-6">
+                <p class="text-center font-serif text-2xl font-bold leading-tight text-momentum-blue">Adam Cover Construction</p>
+              </div>
+              <div class="flex flex-1 flex-col p-6">
+                <p class="text-xs font-bold uppercase tracking-widest text-teal-600">Construction</p>
+                <div class="mt-3 min-w-0">
+                  <h3 class="font-serif text-2xl font-bold leading-tight text-momentum-blue">Adam Cover</h3>
+                  <p class="mt-1 text-sm font-semibold text-slate-600">Adam Cover Construction LLC</p>
+                  <ul class="mt-3 space-y-1.5 text-sm">
+                    <li><a href="tel:+19044630791" class="text-momentum-blue hover:text-teal-700 hover:underline">904-463-0791</a></li>
+                    <li><a href="mailto:adamcover@yahoo.com" class="break-all text-momentum-blue hover:text-teal-700 hover:underline">adamcover@yahoo.com</a></li>
+                  </ul>
+                </div>
+              </div>
+            </article>
+
+            <article class="flex flex-col overflow-hidden rounded-2xl border border-momentum-grayLight bg-white shadow-sm transition-shadow hover:shadow-md">
+              <div class="flex h-28 items-center justify-center border-b border-momentum-grayLight px-6">
+                <p class="text-center font-serif text-2xl font-bold leading-tight text-momentum-blue">Bullard Fence</p>
+              </div>
+              <div class="flex flex-1 flex-col p-6">
+                <p class="text-xs font-bold uppercase tracking-widest text-teal-600">Fencing</p>
+                <div class="mt-3 min-w-0">
+                  <h3 class="font-serif text-2xl font-bold leading-tight text-momentum-blue">Brant Bullard</h3>
+                  <p class="mt-1 text-sm font-semibold text-slate-600">Bullard Fence</p>
+                  <ul class="mt-3 space-y-1.5 text-sm">
+                    <li><a href="tel:+19047040454" class="text-momentum-blue hover:text-teal-700 hover:underline">904-704-0454</a></li>
+                    <li><a href="tel:+19047812397" class="text-momentum-blue hover:text-teal-700 hover:underline">904-781-2397</a></li>
+                    <li><a href="mailto:info@bullardfence.com" class="break-all text-momentum-blue hover:text-teal-700 hover:underline">info@bullardfence.com</a></li>
+                    <li><a href="https://bullardfence.com/" target="_blank" rel="noopener noreferrer" class="text-momentum-blue hover:text-teal-700 hover:underline">bullardfence.com</a></li>
+                  </ul>
+                </div>
+              </div>
+            </article>
+
           </div>
-          <div class="mt-5 flex items-start gap-4">
-            <img src="images/partners/jaime-rincon.jpg" alt="Jaime Rincon" class="h-20 w-20 shrink-0 rounded-full object-cover shadow ring-2 ring-white" loading="lazy" onerror="this.hidden=true" />
-            <div class="min-w-0">
-              <p class="text-xs font-bold uppercase tracking-widest text-teal-600">Mortgage Lending</p>
-              <h2 class="mt-1 font-serif text-2xl font-bold leading-tight text-momentum-blue">Jaime Rincon</h2>
-              <p class="mt-1 text-sm font-semibold text-slate-600">Premier Lending</p>
-              <ul class="mt-3 space-y-1.5 text-sm">
-                <li><a href="tel:+17542141458" class="text-momentum-blue hover:text-teal-700 hover:underline">754-214-1458</a></li>
-                <li><a href="mailto:jrincon@lokationmtg.com" class="break-all text-momentum-blue hover:text-teal-700 hover:underline">jrincon@lokationmtg.com</a></li>
-                <li><a href="https://www.plcorp.net/" target="_blank" rel="noopener noreferrer" class="text-momentum-blue hover:text-teal-700 hover:underline">plcorp.net</a></li>
-              </ul>
-            </div>
-          </div>
-          <a href="https://plcorp.my1003app.com/2682974/register" target="_blank" rel="noopener noreferrer" class="mt-6 flex h-11 items-center justify-center rounded-xl bg-teal-600 px-4 text-sm font-bold text-white shadow-md transition-colors hover:bg-teal-700">Apply for Pre-Approval</a>
-        </article>
+        </div>
 
-        <article class="flex flex-col rounded-2xl border border-momentum-grayLight bg-momentum-bgLight p-6 shadow-sm sm:p-8">
-          <div class="flex h-24 items-center justify-center rounded-xl bg-white px-4 py-2">
-            <img src="images/partners/haleforce-water-solutions-logo.png" alt="Haleforce Water Solutions logo" class="max-h-20 w-auto max-w-full object-contain" loading="lazy" onerror="this.parentElement.hidden=true" />
-          </div>
-          <div class="mt-5 flex items-start gap-4">
-            <img src="images/partners/danny-hale.jpg" alt="Danny Hale" class="h-20 w-20 shrink-0 rounded-full object-cover shadow ring-2 ring-white" loading="lazy" onerror="this.hidden=true" />
-            <div class="min-w-0">
-              <p class="text-xs font-bold uppercase tracking-widest text-teal-600">Water Treatment</p>
-              <h2 class="mt-1 font-serif text-2xl font-bold leading-tight text-momentum-blue">Danny Hale</h2>
-              <p class="mt-1 text-sm font-semibold text-slate-600">Haleforce Water Solutions</p>
-              <ul class="mt-3 space-y-1.5 text-sm">
-                <li><a href="tel:+15613889414" class="text-momentum-blue hover:text-teal-700 hover:underline">561-388-9414</a></li>
-                <li><a href="mailto:danielhale.8727@gmail.com" class="break-all text-momentum-blue hover:text-teal-700 hover:underline">danielhale.8727@gmail.com</a></li>
-                <li><a href="mailto:haleforcewater@gmail.com" class="break-all text-momentum-blue hover:text-teal-700 hover:underline">haleforcewater@gmail.com</a></li>
-              </ul>
-            </div>
-          </div>
-        </article>
-
-        <!-- Partners without a logo or headshot yet -->
-
-        <article class="flex flex-col rounded-2xl border border-momentum-grayLight bg-momentum-bgLight p-6 shadow-sm sm:p-8">
-          <p class="text-xs font-bold uppercase tracking-widest text-teal-600">Roofing</p>
-          <h2 class="mt-1 font-serif text-2xl font-bold leading-tight text-momentum-blue">Jeff Thiel</h2>
-          <p class="mt-1 text-sm font-semibold text-slate-600">Interstate Roofing</p>
-          <ul class="mt-3 space-y-1.5 text-sm">
-            <li><a href="tel:+19045202350" class="text-momentum-blue hover:text-teal-700 hover:underline">904-520-2350</a></li>
-            <li><a href="mailto:jeff.thiel@interstateroof.com" class="break-all text-momentum-blue hover:text-teal-700 hover:underline">jeff.thiel@interstateroof.com</a></li>
-          </ul>
-        </article>
-
-        <article class="flex flex-col rounded-2xl border border-momentum-grayLight bg-momentum-bgLight p-6 shadow-sm sm:p-8">
-          <p class="text-xs font-bold uppercase tracking-widest text-teal-600">Construction</p>
-          <h2 class="mt-1 font-serif text-2xl font-bold leading-tight text-momentum-blue">Adam Cover</h2>
-          <p class="mt-1 text-sm font-semibold text-slate-600">Adam Cover Construction LLC</p>
-          <ul class="mt-3 space-y-1.5 text-sm">
-            <li><a href="tel:+19044630791" class="text-momentum-blue hover:text-teal-700 hover:underline">904-463-0791</a></li>
-            <li><a href="mailto:adamcover@yahoo.com" class="break-all text-momentum-blue hover:text-teal-700 hover:underline">adamcover@yahoo.com</a></li>
-          </ul>
-        </article>
-
-        <article class="flex flex-col rounded-2xl border border-momentum-grayLight bg-momentum-bgLight p-6 shadow-sm sm:p-8">
-          <p class="text-xs font-bold uppercase tracking-widest text-teal-600">Heating &amp; Air</p>
-          <h2 class="mt-1 font-serif text-2xl font-bold leading-tight text-momentum-blue">Complete Comfort Specialists</h2>
-          <p class="mt-1 text-sm font-semibold text-slate-600">HVAC Services</p>
-          <ul class="mt-3 space-y-1.5 text-sm">
-            <li><a href="tel:+19046759295" class="text-momentum-blue hover:text-teal-700 hover:underline">904-675-9295</a></li>
-            <li><a href="mailto:admin@ccsfla.com" class="break-all text-momentum-blue hover:text-teal-700 hover:underline">admin@ccsfla.com</a></li>
-            <li><a href="https://ccsfla.com/" target="_blank" rel="noopener noreferrer" class="text-momentum-blue hover:text-teal-700 hover:underline">ccsfla.com</a></li>
-          </ul>
-        </article>
-
-        <article class="flex flex-col rounded-2xl border border-momentum-grayLight bg-momentum-bgLight p-6 shadow-sm sm:p-8">
-          <p class="text-xs font-bold uppercase tracking-widest text-teal-600">Fencing</p>
-          <h2 class="mt-1 font-serif text-2xl font-bold leading-tight text-momentum-blue">Brant Bullard</h2>
-          <p class="mt-1 text-sm font-semibold text-slate-600">Bullard Fence</p>
-          <ul class="mt-3 space-y-1.5 text-sm">
-            <li><a href="tel:+19047040454" class="text-momentum-blue hover:text-teal-700 hover:underline">904-704-0454</a></li>
-            <li><a href="tel:+19047812397" class="text-momentum-blue hover:text-teal-700 hover:underline">904-781-2397</a></li>
-            <li><a href="mailto:info@bullardfence.com" class="break-all text-momentum-blue hover:text-teal-700 hover:underline">info@bullardfence.com</a></li>
-            <li><a href="https://bullardfence.com/" target="_blank" rel="noopener noreferrer" class="text-momentum-blue hover:text-teal-700 hover:underline">bullardfence.com</a></li>
-          </ul>
-        </article>
-
+        <p class="mx-auto max-w-3xl text-center text-xs leading-relaxed text-slate-500">
+          Home Partners are independent businesses that sponsor or work alongside S&sup2; Home Partners. You are always free to choose any provider for these services.
+        </p>
       </div>
-
-      <p class="mx-auto mt-12 max-w-3xl px-4 text-center text-xs leading-relaxed text-slate-500 sm:px-6 lg:px-8">
-        Home Partners are independent businesses that sponsor or work alongside S&sup2; Home Partners. You are always free to choose any provider for these services.
-      </p>
     </section>
   </main>
 
