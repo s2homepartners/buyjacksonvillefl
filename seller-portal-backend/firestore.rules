@@ -1,0 +1,22 @@
+rules_version = '2';
+
+// Seller Portal access rules. Paste these into Firebase console > Firestore Database > Rules.
+// Sellers can only read their own index document and the listings that name their email.
+// Nobody can write from the website; only the nightly updater (service account) writes.
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    function signedInEmail() {
+      return request.auth != null && request.auth.token.email_verified == true
+        ? request.auth.token.email.lower() : '';
+    }
+
+    match /sellers/{email} {
+      allow get: if signedInEmail() != '' && signedInEmail() == email;
+    }
+
+    match /listings/{listingId} {
+      allow get: if signedInEmail() != '' && signedInEmail() in resource.data.sellerEmails;
+    }
+  }
+}
