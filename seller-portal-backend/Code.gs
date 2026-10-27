@@ -73,7 +73,9 @@ function setup() {
 
   var folderUrl = DriveApp.getFolderById(props.getProperty('EXPORTS_FOLDER_ID')).getUrl();
   var ready = props.getProperty('SERVICE_ACCOUNT_JSON') ? 'The Firebase key is saved.' : 'Next: add the Firebase key (see SETUP.md, step 4).';
-  SpreadsheetApp.getUi().alert('Seller Portal is set up.\n\nFlexmls exports folder:\n' + folderUrl + '\n\nThe portal will update every morning around 5 AM.\n' + ready);
+  // A toast and the execution log, not a pop-up: a pop-up would leave the run waiting when started from the editor.
+  Logger.log('Seller Portal is set up. Flexmls exports folder: ' + folderUrl + ' . Updates every morning around 5 AM. ' + ready);
+  ss.toast('Updates every morning around 5 AM. ' + ready, 'Seller Portal is set up', 15);
 }
 
 /** Adds the standard marketing checklist for the listing in the selected row of the Listings tab. */

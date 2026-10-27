@@ -73,8 +73,9 @@ The pieces:
    Because this is your own script, Google shows "Google hasn't verified this app": click
    **Advanced > Go to Seller Portal (unsafe)** > **Allow**. It asks for Sheets, Drive, Gmail
    (to read ShowingTime emails) and outside connections (rates and Firebase).
-8. Back in the Sheet, a message confirms setup and shows the link to the new Drive folder
-   **Seller Portal - Flexmls Exports**. Bookmark it. A **Seller Portal** menu now appears in the Sheet.
+8. The run finishes in a few seconds. The **Execution log** shows the link to the new Drive folder
+   **Seller Portal - Flexmls Exports** (also findable in Google Drive); bookmark it. Back in the
+   Sheet, the new tabs appear and a **Seller Portal** menu is at the top (refresh if you don't see it).
 
 ## 6. Make sure ShowingTime feedback reaches this inbox
 
