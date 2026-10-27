@@ -337,16 +337,30 @@ async function main() {
     };
     const saved = recall(EMAIL_KEY);
     if (saved) {
-      try { await finish(saved); } catch (e) { show('portal-signin'); showError('portal-signin-error', 'That sign-in link has expired or was already used. Please request a new one.'); return; }
+      try { await finish(saved); } catch (err) { linkFailed(err); }
     } else {
       show('portal-confirm-email');
       $('portal-confirm-form').addEventListener('submit', async (e) => {
         e.preventDefault();
         const email = $('portal-confirm-input').value.trim().toLowerCase();
-        try { await finish(email); } catch (err) { showError('portal-confirm-error', 'That email doesn’t match the link, or the link has expired. Please request a new one.'); }
+        try { await finish(email); } catch (err) { linkFailed(err); }
       });
-      return;
     }
+  }
+
+  // A link that can't be used: explain why (with Firebase's reason code) and offer a fresh link on the same screen.
+  function linkFailed(err) {
+    const code = (err && err.code) || 'unknown';
+    console.error('Seller portal sign-in failed:', code, err);
+    history.replaceState(null, '', location.pathname);
+    const why = {
+      'auth/invalid-action-code': 'That sign-in link has already been used or is no longer valid.',
+      'auth/expired-action-code': 'That sign-in link has expired.',
+      'auth/invalid-email': 'That email doesn’t match the one the link was sent to.',
+      'auth/network-request-failed': 'We couldn’t reach the sign-in service. Check your connection and try again.',
+    }[code] || 'Something went wrong signing you in.';
+    show('portal-signin');
+    showError('portal-signin-error', why + ' Enter your email below for a new link. (Code: ' + code + ')');
   }
 
   $('portal-signin-form').addEventListener('submit', async (e) => {
