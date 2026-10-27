@@ -109,6 +109,10 @@ function nightlyUpdate() {
   var market = fetchRates_();
   market.note = settings['Market Note'] && !/^Write a short note/.test(settings['Market Note']) ? String(settings['Market Note']) : '';
 
+  var zipTrends = fetchZipTrends_(listings.map(function (l) { return String(l.ZIP || '').trim(); }));
+  var photosFolder = ensureFolder_('PHOTOS_FOLDER_ID', 'Seller Portal - Photos');
+  recordFolderLinks_(ss, photosFolder);
+
   var sellers = {};
   var log = [];
   listings.forEach(function (l) {
@@ -119,7 +123,7 @@ function nightlyUpdate() {
       log.push(id + ': hidden');
       return;
     }
-    var report = buildReport_(id, l, marketing, feedback, stats, market);
+    var report = buildReport_(id, l, marketing, feedback, stats, market, zipTrends, photosFolder);
     firestore_('patch', 'listings/' + id, {
       sellerEmails: { arrayValue: { values: emails.map(function (e) { return { stringValue: e }; }) } },
       report: { stringValue: JSON.stringify(report) },
@@ -137,27 +141,55 @@ function nightlyUpdate() {
   Logger.log(log.join('\n'));
 }
 
-function buildReport_(id, l, marketing, feedback, stats, market) {
-  var sqft = toNum_(l['Sq Ft']);
-  var price = toNum_(l['List Price']);
-  var listDate = toDate_(l['List Date']);
+function buildReport_(id, l, marketing, feedback, stats, market, zipTrends, photosFolder) {
+  var zip = String(l.ZIP || '').trim();
+  var address = String(l.Address || '');
+  var mls = String(l['MLS #'] || '').trim();
+
+  // The newest Flexmls export: comps + ZIP stats, and the seller's own row (status, price, list date, DOM...).
+  var exp = loadExport_(id, zip);
+  var comps = analyzeComps_(exp.rows, { address: address, mls: mls, sqft: toNum_(l['Sq Ft']) });
+  var own = comps.own || {};
+
+  // Sheet values win when filled in; otherwise the export fills them, so nothing has to be typed.
+  var pickVal = function (sheetVal, exportVal) { return sheetVal !== '' && sheetVal !== null && sheetVal !== undefined ? sheetVal : exportVal; };
+  var price = toNum_(pickVal(l['List Price'], own.price));
+  var sqft = toNum_(pickVal(l['Sq Ft'], own.sqft));
+  var listDate = toDate_(pickVal(l['List Date'], own.listDate));
+  var status = String(pickVal(l.Status, own.status) || 'Active');
+
+  // Days on market: the MLS figure from the export plus days since the export, else counted from the list date.
+  var dom = null;
+  if (own.dom !== null && own.dom !== undefined && exp.asOfMs) {
+    dom = own.dom + (/active|coming/i.test(status) ? Math.max(0, Math.floor((Date.now() - exp.asOfMs) / 864e5)) : 0);
+  } else if (listDate) {
+    dom = Math.max(0, Math.floor((Date.now() - listDate.getTime()) / 864e5));
+  }
+
+  var photos = listingPhotos_(photosFolder, id);
+  var sheetPhoto = String(l['Photo URL'] || '').trim();
+  if (sheetPhoto) photos.unshift(sheetPhoto);
+  else if (!photos.length && own.photo) photos.push(String(own.photo));
+
   var listing = {
     id: id,
-    address: String(l.Address || ''),
-    zip: String(l.ZIP || '').trim(),
-    status: String(l.Status || 'Active'),
+    address: address,
+    zip: zip,
+    status: status,
     price: price,
     listDate: listDate ? isoDate_(listDate) : '',
-    daysOnMarket: listDate ? Math.max(0, Math.floor((Date.now() - listDate.getTime()) / 864e5)) : null,
-    mls: String(l['MLS #'] || ''),
-    beds: toNum_(l.Beds),
-    baths: toNum_(l.Baths),
+    daysOnMarket: dom,
+    mls: mls || String(own.mls || ''),
+    beds: toNum_(pickVal(l.Beds, own.beds)),
+    baths: toNum_(pickVal(l.Baths, own.baths)),
     sqft: sqft,
     pricePerSqft: price && sqft ? price / sqft : null,
-    photo: String(l['Photo URL'] || ''),
+    photo: photos[0] || '',
+    photos: photos.slice(0, 40),
     link: String(l['Listing Link'] || ''),
     agentNote: String(l['Agent Note'] || '')
   };
+  comps.compare.yourPricePerSqft = listing.pricePerSqft;
 
   var mine = function (rows) { return rows.filter(function (r) { return cleanId_(r['Listing ID']) === id; }); };
 
@@ -179,9 +211,6 @@ function buildReport_(id, l, marketing, feedback, stats, market) {
     return w;
   }).sort(function (a, b) { return a.week < b.week ? -1 : 1; });
 
-  var exp = loadExport_(id, listing.zip);
-  var comps = analyzeComps_(exp.rows, listing);
-
   return {
     updatedAt: new Date().toISOString(),
     listing: listing,
@@ -191,6 +220,7 @@ function buildReport_(id, l, marketing, feedback, stats, market) {
     comps: { asOf: exp.asOf, active: comps.active, pending: comps.pending, sold: comps.sold },
     compare: comps.compare,
     zip: comps.zip,
+    zipTrends: zipTrends[zip] || null,
     market: market
   };
 }
@@ -223,7 +253,7 @@ function loadExport_(id, zip) {
     head.forEach(function (h, i) { o[h] = r[i]; });
     return o;
   });
-  return { rows: rows, asOf: isoDate_(file.getLastUpdated()) };
+  return { rows: rows, asOf: isoDate_(file.getLastUpdated()), asOfMs: file.getLastUpdated().getTime() };
 }
 
 // Flexmls column names vary by export view; each field accepts any of these (lowercase, letters/digits only).
@@ -239,7 +269,10 @@ var FIELDS = {
   sqft: ['sqft', 'livingarea', 'heatedsqft', 'sqftheated', 'heatedarea', 'sqftliving', 'livingsqft', 'approxsqft', 'squarefeet', 'totalsqft', 'buildingareatotal'],
   dom: ['dom', 'daysonmarket', 'cdom', 'cumulativedaysonmarket', 'adom'],
   closeDate: ['closedate', 'solddate', 'closingdate', 'closeddate', 'saledate'],
-  newConstruction: ['newconstruction', 'newconstructionyn', 'propertycondition', 'constructionstatus', 'newconstructionyesno']
+  newConstruction: ['newconstruction', 'newconstructionyn', 'propertycondition', 'constructionstatus', 'newconstructionyesno'],
+  mls: ['mls', 'mlsnumber', 'mlsno', 'mlsid', 'listingid', 'listnumber', 'listingnumber', 'mlslistingnumber'],
+  listDate: ['listdate', 'listingdate', 'listingcontractdate', 'onmarketdate', 'datelisted', 'originallistdate'],
+  photo: ['photourl', 'primaryphoto', 'primaryphotourl', 'mainphoto', 'photo', 'imageurl', 'picture', 'photo1']
 };
 
 function pick_(row, field) {
@@ -248,8 +281,15 @@ function pick_(row, field) {
   return '';
 }
 
+/**
+ * listing = { address, mls, sqft } for the seller's home. Returns comps (excluding the seller's home), ZIP stats,
+ * a $/sq ft comparison, and `own`: the seller's own row from the export (status, price, list date, DOM, photo...).
+ */
 function analyzeComps_(rows, listing) {
   var now = Date.now();
+  var ownMls = normalize_(listing.mls);
+  var ownStreet = normalize_(String(listing.address || '').split(',')[0]);
+  var ownRow = null;
   var all = rows.map(function (r) {
     var sqft = toNum_(pick_(r, 'sqft'));
     var price = toNum_(pick_(r, 'price'));
@@ -257,6 +297,17 @@ function analyzeComps_(rows, listing) {
     var address = String(pick_(r, 'address') || (pick_(r, 'streetNumber') + ' ' + pick_(r, 'streetName'))).trim();
     var status = String(pick_(r, 'status'));
     var close = toDate_(pick_(r, 'closeDate'));
+    var mls = String(pick_(r, 'mls')).trim();
+    // The seller's own home (matched by MLS # or street address): counted in ZIP totals, never shown as its own competition.
+    var isOwn = (ownMls && normalize_(mls) === ownMls) || (ownStreet && normalize_(address.split(',')[0]) === ownStreet);
+    if (isOwn && !ownRow) {
+      var listed = toDate_(pick_(r, 'listDate'));
+      ownRow = {
+        status: status, price: price, sqft: sqft, mls: mls,
+        beds: toNum_(pick_(r, 'beds')), baths: toNum_(pick_(r, 'baths')),
+        dom: toNum_(pick_(r, 'dom')), listDate: listed || '', photo: String(pick_(r, 'photo') || '')
+      };
+    }
     return {
       address: address,
       group: /sold|closed/i.test(status) ? 'sold' : /pend|contract|contingent|under/i.test(status) ? 'pending' : /active|coming|new/i.test(status) ? 'active' : '',
@@ -270,8 +321,7 @@ function analyzeComps_(rows, listing) {
       closeDate: close ? isoDate_(close) : '',
       closeMs: close ? close.getTime() : null,
       newConstruction: /^(y|yes|true|new)/i.test(String(pick_(r, 'newConstruction')).trim()),
-      // The seller's own home: counted in ZIP totals, but never shown as its own competition.
-      own: normalize_(address.split(',')[0]) === normalize_(listing.address.split(',')[0])
+      own: isOwn
     };
   }).filter(function (c) { return c.address && c.group; });
 
@@ -301,11 +351,102 @@ function analyzeComps_(rows, listing) {
     saleToList: withRatio.length ? median_(withRatio.map(function (c) { return (c.soldPrice / c.price) * 100; })) : null
   };
   var compare = {
-    yourPricePerSqft: listing.pricePerSqft,
+    yourPricePerSqft: null, // filled in by buildReport_ once the listing's price and size are known
     activeMedianPricePerSqft: median_(others(active).map(function (c) { return c.pricePerSqft; })),
     soldMedianPricePerSqft: zip.medianSoldPricePerSqft
   };
-  return { active: top(active, 6), pending: top(pending, 6), sold: top(recentSold.sort(function (a, b) { return (b.closeMs || 0) - (a.closeMs || 0); }).slice(0, 12), 6), zip: zip, compare: compare };
+  return { active: top(active, 6), pending: top(pending, 6), sold: top(recentSold.sort(function (a, b) { return (b.closeMs || 0) - (a.closeMs || 0); }).slice(0, 12), 6), zip: zip, compare: compare, own: ownRow };
+}
+
+/* ------------------------------------------------------------------ Realtor.com ZIP trends */
+
+var RDC_ZIP_URL = 'https://econdata.s3-us-west-2.amazonaws.com/Reports/Core/RDC_Inventory_Core_Metrics_Zip.csv';
+
+/**
+ * Realtor.com's free monthly ZIP-level market data (listing side: inventory, list prices, days on market,
+ * price cuts, pendings, with month-over-month and year-over-year change). Returns { '32097': {...}, ... }.
+ */
+function fetchZipTrends_(zips) {
+  var wanted = {};
+  zips.forEach(function (z) { if (/^\d{5}$/.test(z)) wanted[z] = true; });
+  if (!Object.keys(wanted).length) return {};
+  try {
+    var res = UrlFetchApp.fetch(RDC_ZIP_URL, { muteHttpExceptions: true });
+    if (res.getResponseCode() !== 200) { Logger.log('Realtor.com ZIP data unavailable: HTTP ' + res.getResponseCode()); return {}; }
+    return parseZipTrends_(res.getContentText(), wanted);
+  } catch (e) {
+    Logger.log('Realtor.com ZIP data unavailable: ' + e);
+    return {};
+  }
+}
+
+/** Pulls only the wanted ZIPs out of the (large) CSV without parsing every row. */
+function parseZipTrends_(text, wanted) {
+  var lines = text.split('\n');
+  var head = Utilities.parseCsv(lines[0])[0];
+  var out = {};
+  for (var i = 1; i < lines.length; i++) {
+    var m = lines[i].match(/^\d{6},(\d{5}),/);
+    if (!m || !wanted[m[1]]) continue;
+    var cells = Utilities.parseCsv(lines[i])[0];
+    var r = {};
+    head.forEach(function (h, j) { r[h] = cells[j]; });
+    var n = function (k) { var v = parseFloat(r[k]); return isNaN(v) ? null : v; };
+    var ym = String(r.month_date_yyyymm);
+    out[m[1]] = {
+      month: ym.slice(0, 4) + '-' + ym.slice(4, 6) + '-01',
+      area: String(r.zip_name || ''),
+      medianListPrice: n('median_listing_price'), medianListPriceYoY: n('median_listing_price_yy'),
+      pricePerSqft: n('median_listing_price_per_square_foot'), pricePerSqftYoY: n('median_listing_price_per_square_foot_yy'),
+      activeListings: n('active_listing_count'), activeListingsYoY: n('active_listing_count_yy'), activeListingsMoM: n('active_listing_count_mm'),
+      medianDom: n('median_days_on_market'), medianDomYoY: n('median_days_on_market_yy'),
+      newListings: n('new_listing_count'), newListingsYoY: n('new_listing_count_yy'),
+      pendingListings: n('pending_listing_count'), pendingRatio: n('pending_ratio'),
+      priceReducedShare: n('price_reduced_share'), priceReducedShareYoY: n('price_reduced_share_yy')
+    };
+  }
+  return out;
+}
+
+/* ------------------------------------------------------------------ listing photos (Drive) */
+
+/** Returns the saved folder, creating it (and remembering its ID) the first time. */
+function ensureFolder_(propKey, name) {
+  var props = PropertiesService.getScriptProperties();
+  var id = props.getProperty(propKey);
+  if (id) { try { return DriveApp.getFolderById(id); } catch (e) { /* deleted: make a new one */ } }
+  var folder = DriveApp.createFolder(name);
+  props.setProperty(propKey, folder.getId());
+  return folder;
+}
+
+/** Photos in the Photos folder whose names start with the Listing ID (e.g. "TEST1 01 front.jpg"), in name order. */
+function listingPhotos_(folder, id) {
+  var found = [];
+  var files = folder.getFiles();
+  while (files.hasNext()) {
+    var f = files.next();
+    if (!/^image\//.test(f.getMimeType()) || f.getName().toLowerCase().indexOf(id.toLowerCase()) !== 0) continue;
+    // Sellers need to see the photo without a Google login.
+    if (f.getSharingAccess() !== DriveApp.Access.ANYONE_WITH_LINK) f.setSharing(DriveApp.Access.ANYONE_WITH_LINK, DriveApp.Permission.VIEW);
+    found.push({ name: f.getName(), url: 'https://drive.google.com/thumbnail?id=' + f.getId() + '&sz=w1600' });
+  }
+  return found.sort(function (a, b) { return a.name < b.name ? -1 : 1; }).map(function (p) { return p.url; });
+}
+
+/** Keeps links to the Drive folders on the Settings tab so they're easy to find. */
+function recordFolderLinks_(ss, photosFolder) {
+  var sh = ss.getSheetByName('Settings');
+  if (!sh) return;
+  var props = PropertiesService.getScriptProperties();
+  var links = { 'Photos Folder': photosFolder.getUrl() };
+  var exportsId = props.getProperty('EXPORTS_FOLDER_ID');
+  if (exportsId) { try { links['Flexmls Exports Folder'] = DriveApp.getFolderById(exportsId).getUrl(); } catch (e) {} }
+  var rows = sh.getDataRange().getValues();
+  Object.keys(links).forEach(function (key) {
+    for (var i = 1; i < rows.length; i++) if (rows[i][0] === key) { sh.getRange(i + 1, 2).setValue(links[key]); return; }
+    sh.appendRow([key, links[key]]);
+  });
 }
 
 /* ------------------------------------------------------------------ ShowingTime feedback */

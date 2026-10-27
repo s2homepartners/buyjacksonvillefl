@@ -93,17 +93,31 @@ are picked out more precisely.
 
 ## Using it
 
+### What fills itself in
+
+| On the seller's page | Where it comes from |
+|---|---|
+| Status, price, list date, beds/baths, sq ft, MLS # | The seller's own row in the newest Flexmls export (anything you type on the Listings tab wins) |
+| Days on market | MLS days on market from the export, plus the days since the export; or counted from the List Date |
+| Comps and ZIP stats from the MLS | The Flexmls export |
+| ZIP market trends | Realtor.com's free monthly ZIP data, fetched automatically (homes for sale, new listings, pendings, days on market, list prices, price cuts, vs. last year) |
+| Photos | Images in the **Seller Portal - Photos** Drive folder named with the Listing ID, or a photo column in the export, or the Photo URL column |
+| Mortgage rates | Freddie Mac weekly averages, fetched automatically |
+
+Links to both Drive folders are kept on the **Settings** tab.
+
 ### Add a listing (Listings tab)
 
 | Column | What to enter |
 |---|---|
 | Listing ID | Any short ID, e.g. the MLS number. Used to link every other tab. |
 | Show In Portal | `Yes` (set `No` to take it down, e.g. after closing) |
-| Address | Full address, e.g. `75888 Saffron Lane, Yulee, FL 32097` |
+| Address | Full address, e.g. `75888 Saffron Lane, Yulee, FL 32097` (used to find the home in the export) |
 | ZIP | `32097` |
-| Status, List Price, List Date, MLS #, Beds, Baths, Sq Ft | From the listing |
+| MLS # | Recommended: the surest way to find the home in the export |
+| Status, List Price, List Date, Beds, Baths, Sq Ft | Optional: filled in from the Flexmls export when blank |
 | Seller Emails | Each seller's email, separated by commas. Only these emails can see this listing. |
-| Photo URL | Link to the main photo (e.g. the Flexmls photo link) |
+| Photo URL | Optional link to a main photo. Easier: drop photos in the **Seller Portal - Photos** folder named starting with the Listing ID, e.g. `TEST1 01 front.jpg`, `TEST1 02 kitchen.jpg` (shown in name order). |
 | Listing Link | Your Flexmls share link |
 | Agent Note | A short personal update shown at the top of their page |
 
@@ -116,9 +130,10 @@ date or note) as you go. Add or delete steps freely.
 1. **Weekly Stats tab:** one row per listing per week: Listing ID, Week Of, Showings, and
    views/saves from your Zillow, Realtor.com and Homes.com agent dashboards.
 2. **Flexmls export:** run a search for the listing's ZIP code covering Active, Pending and
-   Sold in the last 90 days (similar size and price range works best). Export to CSV with
-   these columns if available: Address, Status, List Price, Sold/Close Price, Beds, Baths,
-   Heated Sq Ft, DOM, Close Date, New Construction. Name the file starting with the
+   Sold in the last 90 days (similar size and price range works best), **including the
+   seller's own listing**. Export to CSV with these columns if available: MLS #, Address,
+   Status, List Price, Sold/Close Price, Beds, Baths, Heated Sq Ft, DOM, List Date,
+   Close Date, New Construction (and a photo link column if your export view has one). Name the file starting with the
    **Listing ID** (e.g. `0000000 comps.csv`), or with the **ZIP** to share one export across
    listings in the same ZIP, and upload it to the **Seller Portal - Flexmls Exports** folder.
    The newest file wins. Send Claude your first export so the column names can be checked.

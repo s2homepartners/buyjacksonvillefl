@@ -65,8 +65,13 @@ function renderHeader(r) {
     ['Sq ft', num(l.sqft)],
     ['Price / sq ft', money(l.pricePerSqft)],
   ];
+  const photos = (l.photos && l.photos.length ? l.photos : (l.photo ? [l.photo] : []));
+  const gallery = photos.length > 1 ? `<section class="${CARD}">
+    <p class="${EYEBROW}">Your listing photos</p>
+    <div class="mt-4 flex snap-x gap-3 overflow-x-auto pb-2">${photos.map((p, i) => `<a href="${esc(p)}" target="_blank" rel="noopener noreferrer" class="shrink-0 snap-start"><img src="${esc(p)}" alt="Listing photo ${i + 1}" loading="lazy" class="h-40 w-60 rounded-xl object-cover" /></a>`).join('')}</div>
+  </section>` : '';
   return `<section class="overflow-hidden rounded-2xl border border-momentum-grayLight bg-white shadow-sm md:flex">
-    ${l.photo ? `<img src="${esc(l.photo)}" alt="${esc(l.address)}" class="h-56 w-full object-cover md:h-auto md:w-2/5" />` : ''}
+    ${photos[0] ? `<img src="${esc(photos[0])}" alt="${esc(l.address)}" class="h-56 w-full object-cover md:h-auto md:w-2/5" />` : ''}
     <div class="flex-1 p-6 sm:p-8">
       <div class="flex flex-wrap items-center gap-3">
         <span class="rounded-full bg-teal-600 px-3 py-1 text-xs font-bold uppercase tracking-wide text-white">${esc(l.status || 'Active')}</span>
@@ -81,7 +86,7 @@ function renderHeader(r) {
         <span class="text-slate-500">Updated ${date(r.updatedAt, { month: 'short', day: 'numeric', hour: 'numeric', minute: '2-digit' })}</span>
       </div>
     </div>
-  </section>`;
+  </section>${gallery}`;
 }
 
 function renderNote(r) {
@@ -191,11 +196,18 @@ function marketLabel(months) {
   return "Buyer's market";
 }
 
+// Realtor.com changes are fractions (0.12 = +12%); shown as "+12% vs last year".
+function trend(v, label = 'vs last year') {
+  if (!has(v)) return '';
+  const p = Math.round(v * 100);
+  return `${p > 0 ? '+' : ''}${p}% ${label}`;
+}
+
 function renderZip(r) {
   const z = r.zip || {};
+  const t = r.zipTrends;
   const zipCode = r.listing.zip || '';
-  if (!has(z.active) && !has(z.soldLast90)) return section('Your neighborhood', `ZIP Code ${zipCode}`, empty('ZIP code statistics will appear here after our next market update.'));
-  const tiles = `<div class="grid grid-cols-2 gap-3 md:grid-cols-4">
+  const mlsTiles = has(z.active) || has(z.soldLast90) ? `<div class="grid grid-cols-2 gap-3 md:grid-cols-4">
     ${tile('Active listings', num(z.active), has(z.newConstructionActive) ? `${num(z.newConstructionActive)} new construction` : '')}
     ${tile('Under contract', num(z.pending))}
     ${tile('Sold (90 days)', num(z.soldLast90))}
@@ -204,8 +216,22 @@ function renderZip(r) {
     ${tile('Median $ / sq ft', money(z.medianSoldPricePerSqft))}
     ${tile('Median days on market', num(z.medianDom))}
     ${tile('Sale-to-list price', pct(z.saleToList))}
-  </div>`;
-  return section('Your neighborhood', `ZIP Code ${zipCode}`, tiles, 'How the whole market in your ZIP code is moving, including new construction you are competing with.');
+  </div>${r.comps?.asOf ? `<p class="mt-2 text-xs text-slate-500">From the MLS as of ${date(r.comps.asOf)}.</p>` : ''}` : '';
+  const trendTiles = t ? `<div class="${mlsTiles ? 'mt-8' : ''}">
+    <h3 class="font-serif text-lg font-bold text-momentum-blue">Market trends &middot; ${date(t.month, { month: 'long', year: 'numeric' })}</h3>
+    <div class="mt-3 grid grid-cols-2 gap-3 md:grid-cols-4">
+      ${tile('Homes for sale', num(t.activeListings), trend(t.activeListingsYoY))}
+      ${tile('New listings this month', num(t.newListings), trend(t.newListingsYoY))}
+      ${tile('Pending sales', num(t.pendingListings), has(t.pendingRatio) ? `${num(t.pendingRatio, 2)} pending per active listing` : '')}
+      ${tile('Median days on market', num(t.medianDom), trend(t.medianDomYoY))}
+      ${tile('Median list price', money(t.medianListPrice), trend(t.medianListPriceYoY))}
+      ${tile('Median list $ / sq ft', money(t.pricePerSqft), trend(t.pricePerSqftYoY))}
+      ${tile('Listings with a price cut', has(t.priceReducedShare) ? pct(t.priceReducedShare * 100, 0) : '—', has(t.priceReducedShareYoY) ? `${t.priceReducedShareYoY > 0 ? '+' : ''}${Math.round(t.priceReducedShareYoY * 100)} pts vs last year` : '')}
+    </div>
+    <p class="mt-2 text-xs text-slate-500">Source: Realtor.com monthly ZIP code data, updated automatically each month.</p>
+  </div>` : '';
+  if (!mlsTiles && !trendTiles) return section('Your neighborhood', `ZIP Code ${zipCode}`, empty('ZIP code statistics will appear here after our next market update.'));
+  return section('Your neighborhood', `ZIP Code ${zipCode}`, mlsTiles + trendTiles, 'How the whole market in your ZIP code is moving, including new construction you are competing with.');
 }
 
 function sparkline(points) {
@@ -272,7 +298,7 @@ function sampleReport() {
   const series = Array.from({ length: 26 }, (_, i) => ({ date: ago((25 - i) * 7), value: +(6.9 - i * 0.03 + Math.sin(i / 3) * 0.06).toFixed(2) }));
   return {
     updatedAt: today.toISOString(),
-    listing: { address: '123 Sample Lane, Yulee, FL 32097', zip: '32097', status: 'Active', price: 449900, listDate: ago(24), daysOnMarket: 24, mls: '0000000', beds: 4, baths: 2.5, sqft: 2210, pricePerSqft: 203.6, photo: 'images/eagle-harbor.webp', link: '', agentNote: 'Sample note: Great turnout at Saturday’s open house. Two agents asked for disclosures, so we expect a second showing this week.' },
+    listing: { address: '123 Sample Lane, Yulee, FL 32097', zip: '32097', status: 'Active', price: 449900, listDate: ago(24), daysOnMarket: 24, mls: '0000000', beds: 4, baths: 2.5, sqft: 2210, pricePerSqft: 203.6, photo: 'images/eagle-harbor.webp', photos: ['images/eagle-harbor.webp', 'images/wildlight.webp', 'images/amelia-national.jpg', 'images/oakleaf-plantation.webp'], link: '', agentNote: 'Sample note: Great turnout at Saturday’s open house. Two agents asked for disclosures, so we expect a second showing this week.' },
     marketing: [
       { step: 'Pricing strategy & market analysis', status: 'Done', date: ago(30) },
       { step: 'Professional photography', status: 'Done', date: ago(27) },
@@ -309,6 +335,7 @@ function sampleReport() {
     },
     compare: { yourPricePerSqft: 203.6, activeMedianPricePerSqft: 207.3, soldMedianPricePerSqft: 200.9 },
     zip: { active: 142, newConstructionActive: 38, pending: 61, soldLast90: 118, monthsOfSupply: 3.6, medianSoldPrice: 412000, medianSoldPricePerSqft: 198, medianDom: 39, saleToList: 97.6 },
+    zipTrends: { month: ago(30).slice(0, 8) + '01', activeListings: 448, activeListingsYoY: 0.12, newListings: 121, newListingsYoY: -0.04, pendingListings: 210, pendingRatio: 0.47, medianDom: 58, medianDomYoY: 0.09, medianListPrice: 429900, medianListPriceYoY: -0.02, pricePerSqft: 205, pricePerSqftYoY: -0.01, priceReducedShare: 0.24, priceReducedShareYoY: 0.03 },
     market: { rate30: series[25].value, rate30WeekAgo: series[24].value, rate30YearAgo: 6.95, rate15: 5.62, rate15WeekAgo: 5.66, rate15YearAgo: 6.1, rateDate: ago(3), rate30Series: series, note: 'Sample note: Rates have eased this fall, bringing more buyers back. New construction incentives remain the main competition in this ZIP.' },
   };
 }
