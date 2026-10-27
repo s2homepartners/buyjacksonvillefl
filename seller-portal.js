@@ -384,15 +384,21 @@ async function main() {
     if (!user) { if (!authMod.isSignInWithEmailLink(auth, location.href)) show('portal-signin'); return; }
     const email = (user.email || '').toLowerCase();
     show('portal-loading');
+    // Reason shown in small print if nothing is found, so we can tell "not published yet" from "blocked".
+    let reason = 'no-seller-record';
     try {
       const seller = await fsMod.getDoc(fsMod.doc(db, 'sellers', email));
       const ids = seller.exists() ? seller.data().listingIds || [] : [];
+      if (seller.exists()) reason = ids.length ? 'listing-not-found' : 'no-listings-linked';
       for (const id of ids) {
-        const snap = await fsMod.getDoc(fsMod.doc(db, 'listings', id)).catch(() => null);
-        if (snap && snap.exists()) { renderDashboard(JSON.parse(snap.data().report), email, signOutNow); return; }
+        try {
+          const snap = await fsMod.getDoc(fsMod.doc(db, 'listings', id));
+          if (snap.exists()) { renderDashboard(JSON.parse(snap.data().report), email, signOutNow); return; }
+        } catch (err) { reason = 'listing-' + (err.code || 'error'); }
       }
-    } catch (err) { /* treated as no listing below */ }
+    } catch (err) { reason = 'seller-' + (err.code || 'error'); console.error('Seller portal lookup failed:', err); }
     document.querySelectorAll('[data-portal-email]').forEach((el) => { el.textContent = email; });
+    $('portal-nolisting-reason').textContent = '(Code: ' + reason + ')';
     show('portal-nolisting');
   });
 }
