@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Home Search | S&sup2; Home Partners</title>
+  <meta name="description" content="Search Northeast Florida homes for sale with S&sup2; Home Partners | Momentum Realty." />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;0,6..72,700;1,6..72,400;1,6..72,500&family=Source+Sans+3:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <script>
+    tailwind.config = {
+      corePlugins: { preflight: false }, // keep IDX Broker's own page styles intact
+      theme: {
+        extend: {
+          colors: {
+            teal: { 50:'#F0F6F3',100:'#DDEBE5',200:'#BFD9CF',300:'#9CC4B7',400:'#78AA9B',500:'#5A917F',600:'#3F7A68',700:'#33685A',800:'#2A5249',900:'#223F39',950:'#15292B' }, slate: { 50:'#F7F4EC',100:'#EFEADF',200:'#E2DACB',300:'#CBC3B2',400:'#9AA5A8',500:'#6D7B80',600:'#53636A',700:'#3D4D55',800:'#293A43',900:'#16303B',950:'#0E2029' }, sky: { 200:'#BEDDE4',600:'#3B7A8F',700:'#2F6578',950:'#12303A' }, indigo: { 200:'#C9D5E0',600:'#4A6580',950:'#14202D' }, amber: { 50:'#FBF5E8',200:'#EBD6A6',400:'#D9B35F',500:'#C99A4D',600:'#A87635',700:'#8F6229',800:'#76501F',900:'#5C3E18',950:'#33220D' }, orange: { 600:'#BC5A40',700:'#9F4A33',950:'#3A1A12' }, rose: { 50:'#FBEFEA',100:'#F6DDD3',600:'#B5503F',700:'#9A4234',800:'#7C352A' }, emerald: { 200:'#BFD9CF',600:'#3F7A68',950:'#15292B' },  momentum: {
+              blue: '#1E4A5C',
+              blueHover: '#153746',
+              blueDark: '#112B37',
+              gray: '#6B7A80',
+              grayLight: '#E6DFD2',
+              bgLight: '#F6F1E7',
+            },
+          },
+          fontFamily: {
+            sans: ["'Source Sans 3'", 'sans-serif'],
+            serif: ['Newsreader', 'Georgia', 'serif'],
+          },
+        },
+      },
+    };
+  </script>
+<link rel="stylesheet" href="https://buyjacksonvillefl.com/coastal.css?v=6" />
+  <style>
+    /* Tailwind's page reset is off (it would restyle IDX Broker's pages), so reset just our header and footer. */
+    body { margin: 0; }
+    body > header *, body > footer * { box-sizing: border-box; }
+    body > header button, body > footer button { background: none; border: 0; padding: 0; margin: 0; font: inherit; color: inherit; cursor: pointer; }
+    body > header a, body > footer a { text-decoration: none; color: inherit; }
+    body > header img { display: block; max-width: 100%; }
+    body > header p, body > footer p { margin: 0; }
+    body > header svg { display: block; }
+  </style>
+  <script src="https://buyjacksonvillefl.com/site.js" defer></script>
+</head>
+<body class="bg-momentum-bgLight font-sans text-slate-800 antialiased">
+
+  <!-- Top Navigation -->
+  <header class="sticky top-0 z-50 border-b border-momentum-grayLight bg-white/95 shadow-sm backdrop-blur-md">
+    <div class="mx-auto flex h-24 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
+      <a href="https://buyjacksonvillefl.com/index.html">
+        <img src="https://buyjacksonvillefl.com/s2-home-partners-logo.png" alt="S² Home Partners | Momentum Realty" class="h-12 w-auto max-w-[72vw] object-contain sm:h-16 lg:h-20" />
+      </a>
+
+      <nav class="hidden items-center space-x-5 text-xs font-bold uppercase tracking-wider text-momentum-gray xl:flex" aria-label="Primary">
+        <div class="group relative">
+          <button type="button" class="flex items-center gap-1 transition-colors hover:text-momentum-blue" aria-haspopup="true">
+            Buy
+            <svg class="h-3 w-3 transition-transform duration-200 group-hover:rotate-180" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" /></svg>
+          </button>
+          <div class="invisible absolute left-0 top-full z-50 w-56 rounded-xl border border-momentum-grayLight bg-white py-2 opacity-0 shadow-lg transition-all duration-150 group-hover:visible group-hover:opacity-100 group-focus-within:visible group-focus-within:opacity-100">
+            <a href="https://buyjacksonvillefl.com/buy.html#home-search" class="block px-4 py-2.5 text-sm normal-case tracking-normal text-momentum-gray hover:bg-momentum-bgLight hover:text-momentum-blue">Search Homes</a>
+            <a href="https://buyjacksonvillefl.com/get-started.html" class="block px-4 py-2.5 text-sm normal-case tracking-normal text-momentum-gray hover:bg-momentum-bgLight hover:text-momentum-blue">Buyer Intake Form</a>
+            <a href="https://buyjacksonvillefl.com/financing-guide.html" class="block px-4 py-2.5 text-sm normal-case tracking-normal text-momentum-gray hover:bg-momentum-bgLight hover:text-momentum-blue">First-Time Buyer Guide</a>
+            <a href="https://buyjacksonvillefl.com/va-home-buying-guide.html" class="block px-4 py-2.5 text-sm normal-case tracking-normal text-momentum-gray hover:bg-momentum-bgLight hover:text-momentum-blue">VA Home Buying Guide</a>
+          </div>
+        </div>
+        <div class="group relative">
+          <button type="button" class="flex items-center gap-1 transition-colors hover:text-momentum-blue" aria-haspopup="true">
+            Sell
+            <svg class="h-3 w-3 transition-transform duration-200 group-hover:rotate-180" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" /></svg>
+          </button>
+          <div class="invisible absolute left-0 top-full z-50 w-56 rounded-xl border border-momentum-grayLight bg-white py-2 opacity-0 shadow-lg transition-all duration-150 group-hover:visible group-hover:opacity-100 group-focus-within:visible group-focus-within:opacity-100">
+            <a href="https://buyjacksonvillefl.com/sell.html" class="block w-full px-4 py-2.5 text-left text-sm normal-case tracking-normal text-momentum-gray hover:bg-momentum-bgLight hover:text-momentum-blue">Home Valuation</a>
+            <a href="https://buyjacksonvillefl.com/sell.html#net-sheet" class="block px-4 py-2.5 text-sm normal-case tracking-normal text-momentum-gray hover:bg-momentum-bgLight hover:text-momentum-blue">Seller Net Sheet</a>
+            <a href="https://buyjacksonvillefl.com/sell.html#fix-it-list-it" class="block px-4 py-2.5 text-sm normal-case tracking-normal text-momentum-gray hover:bg-momentum-bgLight hover:text-momentum-blue">Fix It &amp; List It</a>
+            <a href="https://buyjacksonvillefl.com/seller-portal.html" class="block px-4 py-2.5 text-sm normal-case tracking-normal text-momentum-gray hover:bg-momentum-bgLight hover:text-momentum-blue">Seller Portal Login</a>
+          </div>
+        </div>
+        <a href="https://buyjacksonvillefl.com/military-relocation.html" class="transition-colors hover:text-momentum-blue">Military PCS</a>
+        <div class="group relative">
+          <button type="button" class="flex items-center gap-1 transition-colors hover:text-momentum-blue" aria-haspopup="true">
+            Areas
+            <svg class="h-3 w-3 transition-transform duration-200 group-hover:rotate-180" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" /></svg>
+          </button>
+          <div class="invisible absolute left-0 top-full z-50 w-56 rounded-xl border border-momentum-grayLight bg-white py-2 opacity-0 shadow-lg transition-all duration-150 group-hover:visible group-hover:opacity-100 group-focus-within:visible group-focus-within:opacity-100">
+            <a href="https://buyjacksonvillefl.com/area-guides.html#duval-county" class="block px-4 py-2.5 text-sm normal-case tracking-normal text-momentum-gray hover:bg-momentum-bgLight hover:text-momentum-blue">Jacksonville</a>
+            <a href="https://buyjacksonvillefl.com/atlantic-neptune-beach.html" class="block px-4 py-2.5 text-sm normal-case tracking-normal text-momentum-gray hover:bg-momentum-bgLight hover:text-momentum-blue">Beaches</a>
+            <a href="https://buyjacksonvillefl.com/area-guides.html#nassau-county" class="block px-4 py-2.5 text-sm normal-case tracking-normal text-momentum-gray hover:bg-momentum-bgLight hover:text-momentum-blue">Yulee &amp; Amelia Island</a>
+            <a href="https://buyjacksonvillefl.com/area-guides.html#st-johns-county" class="block px-4 py-2.5 text-sm normal-case tracking-normal text-momentum-gray hover:bg-momentum-bgLight hover:text-momentum-blue">St. Johns</a>
+            <a href="https://buyjacksonvillefl.com/area-guides.html#clay-county" class="block px-4 py-2.5 text-sm normal-case tracking-normal text-momentum-gray hover:bg-momentum-bgLight hover:text-momentum-blue">Clay County</a>
+          </div>
+        </div>
+        <div class="group relative">
+          <button type="button" class="flex items-center gap-1 transition-colors hover:text-momentum-blue" aria-haspopup="true">
+            Resources
+            <svg class="h-3 w-3 transition-transform duration-200 group-hover:rotate-180" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" /></svg>
+          </button>
+          <div class="invisible absolute left-0 top-full z-50 w-60 rounded-xl border border-momentum-grayLight bg-white py-2 opacity-0 shadow-lg transition-all duration-150 group-hover:visible group-hover:opacity-100 group-focus-within:visible group-focus-within:opacity-100">
+            <a href="https://buyjacksonvillefl.com/Listing-Guide.pdf?v=20261021" download class="block px-4 py-2.5 text-sm normal-case tracking-normal text-momentum-gray hover:bg-momentum-bgLight hover:text-momentum-blue">Listing Guide (PDF)</a>
+            <a href="https://buyjacksonvillefl.com/Buyers-Guide.pdf" download class="block px-4 py-2.5 text-sm normal-case tracking-normal text-momentum-gray hover:bg-momentum-bgLight hover:text-momentum-blue">Buyer&rsquo;s Guide (PDF)</a>
+            <a href="https://buyjacksonvillefl.com/military-relocation.html#guide-download" class="block px-4 py-2.5 text-sm normal-case tracking-normal text-momentum-gray hover:bg-momentum-bgLight hover:text-momentum-blue">Free PCS Guide</a>
+            <a href="https://buyjacksonvillefl.com/sell.html#net-sheet" class="block px-4 py-2.5 text-sm normal-case tracking-normal text-momentum-gray hover:bg-momentum-bgLight hover:text-momentum-blue">Seller Net Sheet</a>
+            <a href="https://buyjacksonvillefl.com/sell.html#fix-it-list-it" class="block px-4 py-2.5 text-sm normal-case tracking-normal text-momentum-gray hover:bg-momentum-bgLight hover:text-momentum-blue">Equity Calculator</a>
+            <a href="https://buyjacksonvillefl.com/buy.html#payment-calculator" class="block px-4 py-2.5 text-sm normal-case tracking-normal text-momentum-gray hover:bg-momentum-bgLight hover:text-momentum-blue">Monthly Payment Calculator</a>
+            <a href="https://buyjacksonvillefl.com/resources.html" class="block px-4 py-2.5 text-sm normal-case tracking-normal text-momentum-gray hover:bg-momentum-bgLight hover:text-momentum-blue">All Guides &amp; Tools</a>
+            <a href="https://buyjacksonvillefl.com/faq.html" class="block px-4 py-2.5 text-sm normal-case tracking-normal text-momentum-gray hover:bg-momentum-bgLight hover:text-momentum-blue">FAQs</a>
+          </div>
+        </div>
+        <div class="group relative">
+          <button type="button" class="flex items-center gap-1 transition-colors hover:text-momentum-blue" aria-haspopup="true">
+            About
+            <svg class="h-3 w-3 transition-transform duration-200 group-hover:rotate-180" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" /></svg>
+          </button>
+          <div class="invisible absolute left-0 top-full z-50 w-56 rounded-xl border border-momentum-grayLight bg-white py-2 opacity-0 shadow-lg transition-all duration-150 group-hover:visible group-hover:opacity-100 group-focus-within:visible group-focus-within:opacity-100">
+            <a href="https://buyjacksonvillefl.com/about.html" class="block px-4 py-2.5 text-sm normal-case tracking-normal text-momentum-gray hover:bg-momentum-bgLight hover:text-momentum-blue">Meet Sarah &amp; Sarah</a>
+            <a href="https://buyjacksonvillefl.com/sarah-fuller.html" class="block px-4 py-2.5 text-sm normal-case tracking-normal text-momentum-gray hover:bg-momentum-bgLight hover:text-momentum-blue">Sarah Fuller</a>
+            <a href="https://buyjacksonvillefl.com/sarah-luther.html" class="block px-4 py-2.5 text-sm normal-case tracking-normal text-momentum-gray hover:bg-momentum-bgLight hover:text-momentum-blue">Sarah Luther</a>
+            <a href="https://buyjacksonvillefl.com/success-stories.html" class="block px-4 py-2.5 text-sm normal-case tracking-normal text-momentum-gray hover:bg-momentum-bgLight hover:text-momentum-blue">Client Success Stories</a>
+            <a href="https://buyjacksonvillefl.com/social.html" class="block px-4 py-2.5 text-sm normal-case tracking-normal text-momentum-gray hover:bg-momentum-bgLight hover:text-momentum-blue">Watch &amp; Follow</a>
+            <a href="https://buyjacksonvillefl.com/partners.html" class="block px-4 py-2.5 text-sm normal-case tracking-normal text-momentum-gray hover:bg-momentum-bgLight hover:text-momentum-blue">Home Partners</a>
+          </div>
+        </div>
+        <a href="https://buyjacksonvillefl.com/get-started.html" class="rounded-lg bg-teal-600 px-4 py-2 normal-case tracking-normal text-white transition-colors hover:bg-teal-700">Let's Talk</a>
+      </nav>
+
+      <button id="menu-toggle" type="button" class="inline-flex items-center justify-center text-momentum-blue xl:hidden" aria-expanded="false" aria-controls="mobile-menu" aria-label="Open menu">
+        <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M4 7h16M4 12h16M4 17h16" />
+        </svg>
+      </button>
+    </div>
+
+    <div id="mobile-menu" class="hidden border-t border-momentum-grayLight bg-white px-4 py-4 xl:hidden">
+      <nav class="flex flex-col gap-3 text-sm font-medium text-momentum-blue" aria-label="Mobile">
+        <span class="pt-1 text-xs font-bold uppercase tracking-widest text-momentum-gray">Buy</span>
+        <a href="https://buyjacksonvillefl.com/buy.html#home-search" class="mobile-link py-1 pl-4 text-sm text-momentum-gray">Search Homes</a>
+        <a href="https://buyjacksonvillefl.com/get-started.html" class="mobile-link py-1 pl-4 text-sm text-momentum-gray">Buyer Intake Form</a>
+        <a href="https://buyjacksonvillefl.com/financing-guide.html" class="mobile-link py-1 pl-4 text-sm text-momentum-gray">First-Time Buyer Guide</a>
+        <a href="https://buyjacksonvillefl.com/va-home-buying-guide.html" class="mobile-link py-1 pl-4 text-sm text-momentum-gray">VA Home Buying Guide</a>
+
+        <span class="pt-2 text-xs font-bold uppercase tracking-widest text-momentum-gray">Sell</span>
+        <a href="https://buyjacksonvillefl.com/sell.html" class="mobile-link py-1 pl-4 text-left text-sm text-momentum-gray">Home Valuation</a>
+        <a href="https://buyjacksonvillefl.com/sell.html#net-sheet" class="mobile-link py-1 pl-4 text-sm text-momentum-gray">Seller Net Sheet</a>
+        <a href="https://buyjacksonvillefl.com/sell.html#fix-it-list-it" class="mobile-link py-1 pl-4 text-sm text-momentum-gray">Fix It &amp; List It</a>
+        <a href="https://buyjacksonvillefl.com/seller-portal.html" class="mobile-link py-1 pl-4 text-sm text-momentum-gray">Seller Portal Login</a>
+
+        <a href="https://buyjacksonvillefl.com/military-relocation.html" class="mobile-link pt-2 py-1 font-bold">Military PCS</a>
+
+        <span class="pt-2 text-xs font-bold uppercase tracking-widest text-momentum-gray">Areas</span>
+        <a href="https://buyjacksonvillefl.com/area-guides.html#duval-county" class="mobile-link py-1 pl-4 text-sm text-momentum-gray">Jacksonville</a>
+        <a href="https://buyjacksonvillefl.com/atlantic-neptune-beach.html" class="mobile-link py-1 pl-4 text-sm text-momentum-gray">Beaches</a>
+        <a href="https://buyjacksonvillefl.com/area-guides.html#nassau-county" class="mobile-link py-1 pl-4 text-sm text-momentum-gray">Yulee &amp; Amelia Island</a>
+        <a href="https://buyjacksonvillefl.com/area-guides.html#st-johns-county" class="mobile-link py-1 pl-4 text-sm text-momentum-gray">St. Johns</a>
+        <a href="https://buyjacksonvillefl.com/area-guides.html#clay-county" class="mobile-link py-1 pl-4 text-sm text-momentum-gray">Clay County</a>
+
+        <span class="pt-2 text-xs font-bold uppercase tracking-widest text-momentum-gray">Resources</span>
+        <a href="https://buyjacksonvillefl.com/Listing-Guide.pdf?v=20261021" download class="mobile-link py-1 pl-4 text-sm text-momentum-gray">Listing Guide (PDF)</a>
+        <a href="https://buyjacksonvillefl.com/Buyers-Guide.pdf" download class="mobile-link py-1 pl-4 text-sm text-momentum-gray">Buyer&rsquo;s Guide (PDF)</a>
+        <a href="https://buyjacksonvillefl.com/military-relocation.html#guide-download" class="mobile-link py-1 pl-4 text-sm text-momentum-gray">Free PCS Guide</a>
+        <a href="https://buyjacksonvillefl.com/sell.html#net-sheet" class="mobile-link py-1 pl-4 text-sm text-momentum-gray">Seller Net Sheet</a>
+        <a href="https://buyjacksonvillefl.com/sell.html#fix-it-list-it" class="mobile-link py-1 pl-4 text-sm text-momentum-gray">Equity Calculator</a>
+        <a href="https://buyjacksonvillefl.com/buy.html#payment-calculator" class="mobile-link py-1 pl-4 text-sm text-momentum-gray">Monthly Payment Calculator</a>
+        <a href="https://buyjacksonvillefl.com/resources.html" class="mobile-link py-1 pl-4 text-sm text-momentum-gray">All Guides &amp; Tools</a>
+        <a href="https://buyjacksonvillefl.com/faq.html" class="mobile-link py-1 pl-4 text-sm text-momentum-gray">FAQs</a>
+
+        <span class="pt-2 text-xs font-bold uppercase tracking-widest text-momentum-gray">About</span>
+        <a href="https://buyjacksonvillefl.com/about.html" class="mobile-link py-1 pl-4 text-sm text-momentum-gray">Meet Sarah &amp; Sarah</a>
+        <a href="https://buyjacksonvillefl.com/sarah-fuller.html" class="mobile-link py-1 pl-8 text-xs text-momentum-gray">Sarah Fuller</a>
+        <a href="https://buyjacksonvillefl.com/sarah-luther.html" class="mobile-link py-1 pl-8 text-xs text-momentum-gray">Sarah Luther</a>
+        <a href="https://buyjacksonvillefl.com/success-stories.html" class="mobile-link py-1 pl-4 text-sm text-momentum-gray">Client Success Stories</a>
+        <a href="https://buyjacksonvillefl.com/social.html" class="mobile-link py-1 pl-4 text-sm text-momentum-gray">Watch &amp; Follow</a>
+        <a href="https://buyjacksonvillefl.com/partners.html" class="mobile-link py-1 pl-4 text-sm text-momentum-gray">Home Partners</a>
+
+        <a href="https://buyjacksonvillefl.com/get-started.html" class="mobile-link py-1 pt-3 font-bold text-teal-700">Let's Talk</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- IDX Broker content goes between these two markers (IDX Broker "dynamic wrapper"). Do not remove them. -->
+  <main class="mx-auto max-w-7xl px-4 py-10 sm:px-6 lg:px-8">
+    <div id="idxStart"></div>
+    <div id="idxStop"></div>
+  </main>
+
+  <footer class="border-t border-slate-800 bg-slate-900 py-8 text-slate-400">
+    <div class="mx-auto max-w-7xl px-4 text-center text-sm sm:px-6 lg:px-8">
+      <p>&copy; <span id="year"></span> S&sup2; Home Partners | Momentum Realty. All rights reserved.</p>
+      <p class="mt-3 flex flex-wrap justify-center gap-x-4 gap-y-1 text-xs">
+        <a href="https://buyjacksonvillefl.com/blog.html" class="text-slate-300 hover:text-white">Blog</a>
+        <a href="https://buyjacksonvillefl.com/referral.html" class="text-slate-300 hover:text-white">Referral Program</a>
+        <a href="https://buyjacksonvillefl.com/services.html" class="text-slate-300 hover:text-white">Programs &amp; Services</a> <a href="https://buyjacksonvillefl.com/partners.html" class="text-slate-300 hover:text-white">Home Partners</a> <a href="https://buyjacksonvillefl.com/seller-portal.html" class="text-slate-300 hover:text-white">Seller Login</a> <a href="https://www.youtube.com/@S2HomePartners" target="_blank" rel="noopener noreferrer" class="text-slate-300 hover:text-white">YouTube</a> <a href="https://www.facebook.com/s2homepartners" target="_blank" rel="noopener noreferrer" class="text-slate-300 hover:text-white">Facebook</a> <a href="https://www.tiktok.com/@s2homepartners" target="_blank" rel="noopener noreferrer" class="text-slate-300 hover:text-white">TikTok</a> <a href="https://www.instagram.com/sarahfullerjax/" target="_blank" rel="noopener noreferrer" class="text-slate-300 hover:text-white">Instagram</a> <a href="https://buyjacksonvillefl.com/resources.html" class="text-slate-300 hover:text-white">Guides &amp; Tools</a> <a href="https://buyjacksonvillefl.com/faq.html" class="text-slate-300 hover:text-white">FAQs</a> <a href="https://buyjacksonvillefl.com/social.html" class="text-slate-300 hover:text-white">Watch &amp; Follow</a>
+      </p>
+    </div>
+  </footer>
+
+  <script>
+    const menuToggle = document.getElementById('menu-toggle');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const year = document.getElementById('year');
+
+    year.textContent = new Date().getFullYear();
+
+    menuToggle.addEventListener('click', () => {
+      const open = mobileMenu.classList.toggle('hidden') === false;
+      menuToggle.setAttribute('aria-expanded', String(open));
+      menuToggle.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+    });
+
+    document.querySelectorAll('.mobile-link').forEach((link) => {
+      link.addEventListener('click', () => {
+        mobileMenu.classList.add('hidden');
+        menuToggle.setAttribute('aria-expanded', 'false');
+        menuToggle.setAttribute('aria-label', 'Open menu');
+      });
+    });
+  </script>
+</body>
+</html>
