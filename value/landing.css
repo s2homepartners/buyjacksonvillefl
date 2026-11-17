@@ -81,7 +81,8 @@ p { margin: 0 0 1em; }
 .lp-topbar__call svg { width: 16px; height: 16px; }
 
 /* ---------- Hero ---------- */
-.lp-hero { background: var(--lp-primary); color: #fff; position: relative; overflow: hidden; }
+.lp-hero { background: var(--lp-hero-bg, var(--lp-primary)); color: var(--lp-hero-ink, #fff); position: relative; overflow: hidden; }
+body.lp-loading main, body.lp-loading [data-lp-team] { visibility: hidden; }
 /* Phone order: headline, form, artwork. Desktop: headline + artwork left, form right. */
 .lp-hero__grid {
   display: grid; gap: 28px; padding-top: 36px; padding-bottom: 44px;
@@ -102,19 +103,28 @@ p { margin: 0 0 1em; }
 .lp-eyebrow {
   display: inline-block; margin: 0 0 14px;
   font-size: 13px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase;
-  color: var(--lp-accent);
+  color: var(--lp-eyebrow, var(--lp-accent));
 }
 .lp-title {
   margin: 0; font-family: var(--lp-display); font-weight: 800;
-  font-size: clamp(2.3rem, 7vw, 3.9rem); line-height: 1.02; letter-spacing: -0.01em;
+  font-size: clamp(2.3rem, 7vw, 3.9rem); line-height: 1.04; letter-spacing: -0.01em;
   text-wrap: balance;
 }
 .lp-subtitle {
   margin: 14px 0 0; font-family: var(--lp-display); font-weight: 700;
-  font-size: clamp(1.35rem, 3.6vw, 1.9rem); line-height: 1.15; color: var(--lp-cream);
+  font-size: clamp(1.35rem, 3.6vw, 1.9rem); line-height: 1.15; color: var(--lp-hero-sub, var(--lp-cream));
 }
-.lp-subtitle em { font-style: normal; color: var(--lp-accent); }
-.lp-lead { margin: 18px 0 0; font-size: 1.1rem; color: rgba(255, 255, 255, 0.88); max-width: 34em; }
+.lp-subtitle em { font-style: normal; color: var(--lp-eyebrow, var(--lp-accent)); }
+.lp-lead { margin: 18px 0 0; font-size: 1.1rem; color: var(--lp-hero-muted, rgba(255, 255, 255, 0.88)); max-width: 34em; }
+.lp-upper .lp-title, .lp-upper .lp-subtitle, .lp-upper .lp-card__title, .lp-upper .lp-h2, .lp-upper .lp-perk h3, .lp-upper .lp-success h3 {
+  text-transform: uppercase; letter-spacing: 0.01em;
+}
+
+/* Mailer-front artwork image */
+.lp-art-img {
+  width: 100%; max-width: 440px; height: auto; margin: 0 auto;
+  border-radius: 10px; box-shadow: 0 18px 40px rgba(0, 0, 0, 0.22);
+}
 
 /* ---------- Form card ---------- */
 .lp-card {
@@ -196,15 +206,47 @@ p { margin: 0 0 1em; }
 }
 @media (min-width: 640px) { .lp-letter { padding: 44px 48px; } }
 .lp-letter p { font-size: 1.12rem; line-height: 1.75; }
-.lp-signoff { margin: 8px 0 6px; font-family: var(--lp-script); font-size: 2.6rem; line-height: 1; color: var(--lp-primary); }
-.lp-ps { font-size: 1rem !important; color: var(--lp-muted); margin: 0; }
+.lp-letter .lp-signoff { margin: 8px 0 6px; font-family: var(--lp-script); font-size: 2.6rem; line-height: 1; color: var(--lp-primary); }
+.lp-letter .lp-ps { font-size: 1rem; color: var(--lp-muted); margin: 0; }
 .lp-ps strong { color: var(--lp-ink); }
+.lp-letter__eyebrow { color: var(--lp-primary); }
+.lp-greeting { margin: 0 0 10px !important; font-family: var(--lp-script); font-size: 2.8rem !important; line-height: 1.1 !important; color: var(--lp-primary); }
+.lp-closing { margin: 4px 0 10px !important; font-weight: 700; color: var(--lp-ink); }
+.lp-highlight { background: linear-gradient(transparent 60%, color-mix(in srgb, var(--lp-accent) 45%, transparent) 60%); font-weight: 600; }
+
+/* Lists inside the letter: recipe, report-card grades, checklist, guest check */
+.lp-list { margin: 0 0 1em; padding-left: 1.3em; font-size: 1.08rem; line-height: 1.7; }
+.lp-grades, .lp-checklist { list-style: none; margin: 0 0 1.2em; padding: 0; font-size: 1.05rem; }
+.lp-grades li { display: flex; justify-content: space-between; gap: 12px; padding: 7px 0; border-bottom: 1px dotted #C9C3B6; }
+.lp-grades b { color: var(--lp-primary); text-align: right; }
+.lp-grades small { font-weight: 400; color: var(--lp-muted); }
+.lp-checklist li { position: relative; padding: 5px 0 5px 30px; line-height: 1.5; }
+.lp-checklist li::before {
+  content: ""; position: absolute; left: 2px; top: 9px; width: 16px; height: 16px;
+  border: 2px solid var(--lp-primary); border-radius: 3px;
+}
+.lp-check {
+  margin: 8px 0 1.2em; padding: 18px 20px; border-radius: 6px;
+  background: #E9F1E6; border: 1px solid #B9C9B3; color: #22302A;
+  font-family: 'Patrick Hand', 'Source Sans 3', sans-serif; transform: rotate(-1deg);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+}
+.lp-check .lp-check__title { margin: 0 0 8px; font-family: Georgia, serif; font-size: 1.7rem !important; font-weight: 700; letter-spacing: 0.02em; color: #2F2A26; }
+.lp-check ul { list-style: none; margin: 0; padding: 0; }
+.lp-check li { display: flex; justify-content: space-between; gap: 12px; padding: 6px 0; border-bottom: 1px solid #C7D6C1; font-size: 1.05rem; }
+.lp-check li b { color: #1F3A5F; }
+.lp-check .lp-check__total { margin: 10px 0 4px; font-size: 1.1rem; }
+.lp-check .lp-check__total span { font-weight: 700; text-transform: uppercase; }
+.lp-check .lp-check__fine { margin: 0; font-size: 0.85rem !important; color: #4D5A52; }
 
 /* "What's in your report" cards */
 .lp-perks { display: grid; gap: 18px; grid-template-columns: minmax(0, 1fr); margin-top: 28px; }
 @media (min-width: 760px) { .lp-perks { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
 .lp-perk { background: var(--lp-paper); border: 1px solid var(--lp-site-line); border-radius: 10px; overflow: hidden; }
 .lp-perk__band { height: 14px; background: var(--lp-primary); }
+.lp-perk:nth-child(2) .lp-perk__band { background: var(--lp-accent); }
+.lp-perk:nth-child(3) .lp-perk__band { background: var(--lp-eyebrow, var(--lp-primary-deep)); }
+.lp-perk__body { text-align: center; }
 .lp-perk__body { padding: 18px 20px 20px; }
 .lp-perk h3 { margin: 0 0 6px; font-family: var(--lp-display); font-size: 1.25rem; color: var(--lp-primary); }
 .lp-perk p { margin: 0; font-size: 1rem; color: var(--lp-muted); }
@@ -236,6 +278,55 @@ p { margin: 0 0 1em; }
 .lp-footer nav { margin-top: 10px; display: flex; flex-wrap: wrap; justify-content: center; gap: 4px 16px; font-size: 0.8rem; }
 .lp-footer a { color: #CBC3B2; text-decoration: none; }
 .lp-footer a:hover { color: #fff; }
+
+/* ---------- January artwork: Monopoly-style board (drawn, no images) ---------- */
+.lp-board-edge {
+  height: 18px;
+  background: repeating-linear-gradient(90deg,
+    #5B2C83 0 56px, #F5EEDC 56px 60px, #2E8B57 60px 116px, #F5EEDC 116px 120px,
+    #E4C243 120px 176px, #F5EEDC 176px 180px, #C8373B 180px 236px, #F5EEDC 236px 240px,
+    #E5873A 240px 296px, #F5EEDC 296px 300px, #D96BA6 300px 356px, #F5EEDC 356px 360px,
+    #7DC3E8 360px 416px, #F5EEDC 416px 420px, #7A4A2B 420px 476px, #F5EEDC 476px 480px);
+}
+.mono-art { position: relative; max-width: 520px; margin: 0 auto; padding: 8px 0 24px; }
+.mono-board {
+  position: relative; border-radius: 18px; padding: 22px 18px 18px;
+  background: #F5EEDC; border: 6px solid #0F1A5E;
+  box-shadow: inset 0 0 0 3px #D9A441, 0 18px 40px rgba(0, 0, 0, .28);
+}
+.mono-house { width: 78%; margin: 0 0 0 auto; }
+.mono-deed {
+  position: absolute; left: 6px; top: 34%; width: 47%; min-width: 170px;
+  background: #FFFCF4; color: #1F2440; border: 2px solid #1F2440; border-radius: 4px;
+  padding: 6px; transform: rotate(-7deg); box-shadow: 0 10px 24px rgba(0, 0, 0, .25);
+}
+.mono-deed__band { background: #1A2A8C; color: #fff; text-align: center; padding: 6px 4px 7px; border: 1.5px solid #1F2440; }
+.mono-deed__band small { display: block; font-size: 9px; font-weight: 700; letter-spacing: .2em; }
+.mono-deed__band b { display: block; font-family: 'League Spartan', sans-serif; font-weight: 800; font-size: 17px; letter-spacing: .04em; line-height: 1.1; }
+.mono-deed ul { list-style: none; margin: 6px 4px 0; padding: 0; font-size: 12px; line-height: 1.55; }
+.mono-deed li { display: flex; justify-content: space-between; gap: 6px; }
+.mono-deed li span:last-child { font-weight: 700; color: #1A2A8C; }
+.mono-deed__foot { margin: 5px 4px 2px; padding-top: 4px; border-top: 1px solid #1F2440; text-align: center; font-size: 11px; font-weight: 700; }
+.mono-money { position: absolute; right: -4px; bottom: 0; display: flex; gap: 6px; transform: rotate(4deg); }
+.mono-stack { position: relative; width: 74px; height: 44px; }
+.mono-bill {
+  position: absolute; inset: 0; border-radius: 3px; border: 1.5px solid rgba(0, 0, 0, .25);
+  display: grid; place-items: center; font-family: 'League Spartan', sans-serif; font-weight: 800; color: #3A3320;
+  box-shadow: inset 0 0 0 4px rgba(255, 255, 255, .45);
+}
+.mono-bill:nth-child(1) { transform: translate(4px, 6px); }
+.mono-bill:nth-child(2) { transform: translate(2px, 3px); }
+.mono-bill span { background: rgba(255, 255, 255, .7); border-radius: 50%; width: 30px; height: 30px; display: grid; place-items: center; font-size: 12px; }
+.mono-stack--500 .mono-bill { background: #E9C98E; }
+.mono-stack--100 .mono-bill { background: #CFE0B4; }
+.mono-stack--50 .mono-bill { background: #BCD6EA; }
+@media (max-width: 420px) {
+  .mono-art { padding-bottom: 40px; }
+  .mono-deed { min-width: 150px; top: 40%; }
+  .mono-deed ul { font-size: 11px; }
+  .mono-deed__foot { font-size: 9.5px; }
+  .mono-stack { width: 60px; height: 36px; }
+}
 
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { animation: none !important; transition: none !important; scroll-behavior: auto !important; }
