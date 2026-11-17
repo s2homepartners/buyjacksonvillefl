@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- MONTHLY LANDING PAGE TEMPLATE. Copy this whole folder to /value/YYYY-MM/ and
+       replace every [[...]] placeholder. See /value/README.md.
+       QR code URL: https://buyjacksonvillefl.com/value/YYYY-MM/?src=mailer  (pop-bys: ?src=popby) -->
+  <title>[[Headline]] | S&sup2; Home Partners</title>
+  <meta name="description" content="Get a free Home Value Report for your Jacksonville-area home from Sarah Fuller &amp; Sarah Luther, S&sup2; Home Partners | Momentum Realty." />
+  <meta name="robots" content="noindex" />
+  <meta property="og:title" content="[[Subheadline]]" />
+  <meta property="og:description" content="Get a free Home Value Report from S&sup2; Home Partners | Momentum Realty." />
+  <meta property="og:image" content="https://buyjacksonvillefl.com/s2-home-partners-logo.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <!-- Add this month's display font to the Google Fonts link if you change --lp-display -->
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Newsreader:opsz,wght@6..72,600;6..72,700;6..72,800&family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../landing.css?v=1" />
+  <script src="../landing.js?v=1" defer></script>
+
+  <style>
+    /* ---------- [[Month YYYY]] theme: [[Theme]] ---------- */
+    :root {
+      --lp-primary: #1E4A5C;      /* hero background, main button */
+      --lp-primary-deep: #112B37; /* button hover */
+      --lp-accent: #B8894A;       /* form header, highlights */
+      --lp-accent-ink: #112B37;   /* text on the accent color */
+      --lp-paper: #FFFDF9;        /* cards */
+      --lp-cream: #F6F1E7;        /* page background */
+      --lp-display: 'Newsreader', Georgia, serif; /* headline font */
+    }
+    /* Theme artwork styles go here (see /value/2027-01/ for an example). */
+  </style>
+</head>
+<body>
+  <header data-lp-header></header>
+
+  <main>
+    <section class="lp-hero">
+      <div class="lp-wrap lp-hero__grid">
+        <div class="lp-hero__copy">
+          <p class="lp-eyebrow">Free Home Value Report &middot; [[Month YYYY]]</p>
+          <h1 class="lp-title">[[Headline]]</h1>
+          <p class="lp-subtitle">[[Subheadline, wrap a word in <em> to color it]]</p>
+          <p class="lp-lead">[[One or two sentences from the mailer]]</p>
+        </div>
+
+        <div class="lp-hero__form" id="home-value">
+          <div class="lp-card" data-lp-form-card>
+            <div class="lp-card__head">
+              <p class="lp-card__kicker">Free &middot; No Obligation</p>
+              <h2 class="lp-card__title">Your Home Value Report</h2>
+            </div>
+            <div class="lp-card__body">
+              <!-- data-campaign shows up in the lead email subject and in Follow Up Boss -->
+              <form class="lp-form" data-lp-form data-campaign="[[Month YYYY - Theme]]" novalidate>
+                <p class="lp-card__intro" style="margin:0">Tell us where to send it. We&rsquo;ll pull the numbers on your home and send your report personally.</p>
+                <div class="lp-form__row lp-form__row--2">
+                  <div class="lp-field">
+                    <label for="lp-first">First name</label>
+                    <input id="lp-first" name="FirstName" type="text" autocomplete="given-name" required />
+                  </div>
+                  <div class="lp-field">
+                    <label for="lp-last">Last name</label>
+                    <input id="lp-last" name="LastName" type="text" autocomplete="family-name" required />
+                  </div>
+                </div>
+                <div class="lp-field">
+                  <label for="lp-address">Property address</label>
+                  <input id="lp-address" name="Address" type="text" autocomplete="street-address" placeholder="123 Main St, Jacksonville, FL" required />
+                </div>
+                <div class="lp-form__row lp-form__row--2">
+                  <div class="lp-field">
+                    <label for="lp-phone">Phone number</label>
+                    <input id="lp-phone" name="Phone" type="tel" autocomplete="tel" inputmode="tel" required />
+                  </div>
+                  <div class="lp-field">
+                    <label for="lp-email">Email</label>
+                    <input id="lp-email" name="Email" type="email" autocomplete="email" inputmode="email" required />
+                  </div>
+                </div>
+                <div class="lp-hp" aria-hidden="true">
+                  <label for="lp-honey">Leave this empty</label>
+                  <input id="lp-honey" name="_honey" type="text" tabindex="-1" autocomplete="off" />
+                </div>
+                <p class="lp-form__error" data-lp-error role="alert" hidden></p>
+                <button type="submit" class="lp-btn">Get My Free Home Value Report</button>
+                <p class="lp-form__fine">No pressure, no spam. Your info stays with Sarah &amp; Sarah.</p>
+              </form>
+
+              <div class="lp-success" data-lp-success hidden aria-live="polite">
+                <div class="lp-success__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg></div>
+                <h3>[[Themed thank-you]], <span data-lp-first-name></span>!</h3>
+                <p>Your request is in. Sarah &amp; Sarah will put together your Home Value Report and reach out within 24 hours.</p>
+                <p style="margin:0">Questions sooner? Call <a href="tel:+18503289800">850-328-9800</a> or <a href="tel:+14347131221">434-713-1221</a>.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="lp-hero__art" aria-hidden="true">
+          <!-- [[Theme artwork: inline SVG/CSS, or an image in this folder, e.g. <img src="art.png" alt=""> ]] -->
+        </div>
+      </div>
+    </section>
+
+    <section class="lp-section">
+      <div class="lp-wrap">
+        <article class="lp-letter">
+          <p class="lp-eyebrow" style="color:var(--lp-primary)">A note from Sarah &amp; Sarah</p>
+          <p>[[Mailer letter, paragraph 1]]</p>
+          <p>[[Mailer letter, paragraph 2]]</p>
+          <p class="lp-signoff">-The Sarah&rsquo;s</p>
+          <p class="lp-ps"><strong>P.S.</strong> [[Mailer P.S.]]</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="lp-section lp-section--paper">
+      <div class="lp-wrap">
+        <h2 class="lp-h2" style="text-align:center">What&rsquo;s in your free report</h2>
+        <div class="lp-perks">
+          <div class="lp-perk"><div class="lp-perk__band"></div><div class="lp-perk__body">
+            <h3>Today&rsquo;s value</h3>
+            <p>A real number for your home based on recent sales near you &mdash; not a generic online estimate.</p>
+          </div></div>
+          <div class="lp-perk"><div class="lp-perk__band"></div><div class="lp-perk__body">
+            <h3>What&rsquo;s selling nearby</h3>
+            <p>The homes that sold around you, what they went for, and how quickly they went under contract.</p>
+          </div></div>
+          <div class="lp-perk"><div class="lp-perk__band"></div><div class="lp-perk__body">
+            <h3>Your next-move plan</h3>
+            <p>What you could walk away with after a sale, and what that could mean for your next home.</p>
+          </div></div>
+        </div>
+        <div class="lp-cta-row">
+          <a href="#home-value" class="lp-btn lp-btn--accent lp-btn--inline">Get My Free Home Value Report</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <section data-lp-team aria-label="Contact the team"></section>
+  <footer data-lp-footer></footer>
+</body>
+</html>

@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- January 2027 mailer + pop-by landing page (Monopoly theme).
+       QR code URL: https://buyjacksonvillefl.com/value/2027-01/?src=mailer  (pop-bys: ?src=popby)
+       To make a new month, copy /value/_template/ (see /value/README.md). -->
+  <title>New Year, New Square on the Board | S&sup2; Home Partners</title>
+  <meta name="description" content="Thinking about your next move in 2027? Get a free Home Value Report for your Jacksonville-area home from Sarah Fuller &amp; Sarah Luther, S&sup2; Home Partners | Momentum Realty." />
+  <meta name="robots" content="noindex" />
+  <meta property="og:title" content="Let's Find Your Park Place in 2027" />
+  <meta property="og:description" content="Get a free Home Value Report from S&sup2; Home Partners | Momentum Realty." />
+  <meta property="og:image" content="https://buyjacksonvillefl.com/s2-home-partners-logo.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=League+Spartan:wght@600;700;800&family=Newsreader:opsz,wght@6..72,600;6..72,700&family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../landing.css?v=1" />
+  <script src="../landing.js?v=1" defer></script>
+
+  <style>
+    /* ---------- January 2027 theme: Monopoly (navy, cream, gold) ---------- */
+    :root {
+      --lp-primary: #1A2A8C;
+      --lp-primary-deep: #0F1A5E;
+      --lp-accent: #D9A441;
+      --lp-accent-ink: #1A1A2E;
+      --lp-paper: #FFFCF4;
+      --lp-cream: #F5EEDC;
+      --lp-ink: #1F2440;
+      --lp-muted: #4F5470;
+      --lp-display: 'League Spartan', 'Source Sans 3', sans-serif;
+    }
+    .lp-title { text-transform: uppercase; letter-spacing: 0.005em; }
+    .lp-subtitle { text-transform: uppercase; letter-spacing: 0.02em; }
+    .lp-card__title, .lp-h2, .lp-perk h3, .lp-success h3 { text-transform: uppercase; letter-spacing: 0.01em; }
+
+    /* Board-edge stripe under the hero, in property-group colors */
+    .mono-board-edge {
+      height: 18px;
+      background: repeating-linear-gradient(90deg,
+        #5B2C83 0 56px, #F5EEDC 56px 60px,
+        #2E8B57 60px 116px, #F5EEDC 116px 120px,
+        #E4C243 120px 176px, #F5EEDC 176px 180px,
+        #C8373B 180px 236px, #F5EEDC 236px 240px,
+        #E5873A 240px 296px, #F5EEDC 296px 300px,
+        #D96BA6 300px 356px, #F5EEDC 356px 360px,
+        #7DC3E8 360px 416px, #F5EEDC 416px 420px,
+        #7A4A2B 420px 476px, #F5EEDC 476px 480px);
+    }
+
+    /* Hero artwork: house + key, title deed, play money */
+    .mono-art { position: relative; max-width: 520px; margin: 0 auto; padding: 8px 0 24px; }
+    .mono-board {
+      position: relative; border-radius: 18px; padding: 22px 18px 18px;
+      background: #F5EEDC; border: 6px solid #0F1A5E;
+      box-shadow: inset 0 0 0 3px #D9A441, 0 18px 40px rgba(0,0,0,.28);
+    }
+    .mono-house { width: 78%; margin: 0 0 0 auto; }
+
+    .mono-deed {
+      position: absolute; left: 6px; top: 34%; width: 47%; min-width: 170px;
+      background: #FFFCF4; color: #1F2440; border: 2px solid #1F2440; border-radius: 4px;
+      padding: 6px; transform: rotate(-7deg); box-shadow: 0 10px 24px rgba(0,0,0,.25);
+      font-family: 'Source Sans 3', sans-serif;
+    }
+    .mono-deed__band { background: #1A2A8C; color: #fff; text-align: center; padding: 6px 4px 7px; border: 1.5px solid #1F2440; }
+    .mono-deed__band small { display: block; font-size: 9px; font-weight: 700; letter-spacing: .2em; }
+    .mono-deed__band b { display: block; font-family: 'League Spartan', sans-serif; font-weight: 800; font-size: 17px; letter-spacing: .04em; line-height: 1.1; }
+    .mono-deed ul { list-style: none; margin: 6px 4px 0; padding: 0; font-size: 12px; line-height: 1.55; }
+    .mono-deed li { display: flex; justify-content: space-between; gap: 6px; }
+    .mono-deed li span:last-child { font-weight: 700; color: #1A2A8C; }
+    .mono-deed__foot { margin: 5px 4px 2px; padding-top: 4px; border-top: 1px solid #1F2440; text-align: center; font-size: 11px; font-weight: 700; }
+
+    .mono-money { position: absolute; right: -4px; bottom: 0; display: flex; gap: 6px; transform: rotate(4deg); }
+    .mono-stack { position: relative; width: 74px; height: 44px; }
+    .mono-bill {
+      position: absolute; inset: 0; border-radius: 3px; border: 1.5px solid rgba(0,0,0,.25);
+      display: grid; place-items: center; font-family: 'League Spartan', sans-serif; font-weight: 800; font-size: 15px; color: #3A3320;
+      box-shadow: inset 0 0 0 4px rgba(255,255,255,.45);
+    }
+    .mono-bill:nth-child(1) { transform: translate(4px, 6px); }
+    .mono-bill:nth-child(2) { transform: translate(2px, 3px); }
+    .mono-bill span { background: rgba(255,255,255,.7); border-radius: 50%; width: 30px; height: 30px; display: grid; place-items: center; font-size: 12px; }
+    .mono-stack--500 .mono-bill { background: #E9C98E; }
+    .mono-stack--100 .mono-bill { background: #CFE0B4; }
+    .mono-stack--50 .mono-bill { background: #BCD6EA; }
+
+    @media (max-width: 420px) {
+      .mono-deed { min-width: 150px; top: 40%; }
+      .mono-deed ul { font-size: 11px; }
+      .mono-deed__foot { font-size: 9.5px; }
+      .mono-art { padding-bottom: 40px; }
+      .mono-stack { width: 60px; height: 36px; }
+    }
+
+    /* "Spoiler" highlight in the letter */
+    .mono-spoiler { background: linear-gradient(transparent 60%, rgba(217,164,65,.45) 60%); font-weight: 600; }
+
+    /* Perk cards get Monopoly property-group color bands */
+    .lp-perk:nth-child(1) .lp-perk__band { background: #1A2A8C; }
+    .lp-perk:nth-child(2) .lp-perk__band { background: #2E8B57; }
+    .lp-perk:nth-child(3) .lp-perk__band { background: #D9A441; }
+    .lp-perk__body { text-align: center; }
+  </style>
+</head>
+<body>
+  <header data-lp-header></header>
+
+  <main>
+    <!-- ===== Hero: headline, form, artwork ===== -->
+    <section class="lp-hero">
+      <div class="lp-wrap lp-hero__grid">
+        <div class="lp-hero__copy">
+          <p class="lp-eyebrow">Free Home Value Report &middot; January 2027</p>
+          <h1 class="lp-title">New Year, New Square on the Board.</h1>
+          <p class="lp-subtitle">Let&rsquo;s Find Your Park Place in <em>2027</em>.</p>
+          <p class="lp-lead">Outgrowing the house you love? Find out what it&rsquo;s worth in today&rsquo;s market. (Spoiler: it might surprise you.)</p>
+        </div>
+
+        <div class="lp-hero__form" id="home-value">
+          <div class="lp-card" data-lp-form-card>
+            <div class="lp-card__head">
+              <p class="lp-card__kicker">Free &middot; No Obligation</p>
+              <h2 class="lp-card__title">Your Home Value Report</h2>
+            </div>
+            <div class="lp-card__body">
+              <form class="lp-form" data-lp-form data-campaign="January 2027 - Monopoly" novalidate>
+                <p class="lp-card__intro" style="margin:0">Tell us where to send it. We&rsquo;ll pull the numbers on your home and send your report personally.</p>
+                <div class="lp-form__row lp-form__row--2">
+                  <div class="lp-field">
+                    <label for="lp-first">First name</label>
+                    <input id="lp-first" name="FirstName" type="text" autocomplete="given-name" required />
+                  </div>
+                  <div class="lp-field">
+                    <label for="lp-last">Last name</label>
+                    <input id="lp-last" name="LastName" type="text" autocomplete="family-name" required />
+                  </div>
+                </div>
+                <div class="lp-field">
+                  <label for="lp-address">Property address</label>
+                  <input id="lp-address" name="Address" type="text" autocomplete="street-address" placeholder="123 Main St, Jacksonville, FL" required />
+                </div>
+                <div class="lp-form__row lp-form__row--2">
+                  <div class="lp-field">
+                    <label for="lp-phone">Phone number</label>
+                    <input id="lp-phone" name="Phone" type="tel" autocomplete="tel" inputmode="tel" required />
+                  </div>
+                  <div class="lp-field">
+                    <label for="lp-email">Email</label>
+                    <input id="lp-email" name="Email" type="email" autocomplete="email" inputmode="email" required />
+                  </div>
+                </div>
+                <div class="lp-hp" aria-hidden="true">
+                  <label for="lp-honey">Leave this empty</label>
+                  <input id="lp-honey" name="_honey" type="text" tabindex="-1" autocomplete="off" />
+                </div>
+                <p class="lp-form__error" data-lp-error role="alert" hidden></p>
+                <button type="submit" class="lp-btn">Get My Free Home Value Report</button>
+                <p class="lp-form__fine">No pressure, no spam. Your info stays with Sarah &amp; Sarah.</p>
+              </form>
+
+              <div class="lp-success" data-lp-success hidden aria-live="polite">
+                <div class="lp-success__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg></div>
+                <h3>You&rsquo;re on the board, <span data-lp-first-name></span>!</h3>
+                <p>Your request is in. Sarah &amp; Sarah will put together your Home Value Report and reach out within 24 hours.</p>
+                <p style="margin:0">Questions sooner? Call <a href="tel:+18503289800">850-328-9800</a> or <a href="tel:+14347131221">434-713-1221</a>.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="lp-hero__art" aria-hidden="true">
+          <div class="mono-art">
+            <div class="mono-board">
+              <!-- House + key, drawn in SVG -->
+              <svg class="mono-house" viewBox="0 0 320 270" xmlns="http://www.w3.org/2000/svg">
+                <ellipse cx="160" cy="252" rx="140" ry="12" fill="#0F1A5E" opacity=".18"/>
+                <!-- trees in planters -->
+                <g>
+                  <rect x="18" y="214" width="34" height="30" rx="3" fill="#2B2B33"/>
+                  <rect x="33" y="186" width="5" height="30" fill="#6B4A2B"/>
+                  <circle cx="35" cy="168" r="26" fill="#3E8E4E"/><circle cx="24" cy="160" r="12" fill="#57A862"/><circle cx="44" cy="176" r="11" fill="#2F7A40"/>
+                  <rect x="268" y="214" width="34" height="30" rx="3" fill="#2B2B33"/>
+                  <rect x="283" y="186" width="5" height="30" fill="#6B4A2B"/>
+                  <circle cx="285" cy="168" r="26" fill="#3E8E4E"/><circle cx="274" cy="160" r="12" fill="#57A862"/><circle cx="294" cy="176" r="11" fill="#2F7A40"/>
+                </g>
+                <!-- chimney -->
+                <rect x="92" y="40" width="22" height="44" fill="#E8DCC0" stroke="#1F2440" stroke-width="3"/>
+                <!-- house body -->
+                <rect x="66" y="108" width="188" height="136" fill="#F3E9D2" stroke="#1F2440" stroke-width="3"/>
+                <!-- roof -->
+                <polygon points="52,112 160,44 268,112" fill="#1A2A8C" stroke="#1F2440" stroke-width="3" stroke-linejoin="round"/>
+                <path d="M78 98 L160 46 L242 98" fill="none" stroke="#3446B0" stroke-width="3" opacity=".7"/>
+                <!-- dormer window -->
+                <rect x="146" y="72" width="28" height="26" rx="13" fill="#0F1A5E" stroke="#F3E9D2" stroke-width="3"/>
+                <!-- windows -->
+                <g fill="#1A2A8C" stroke="#F3E9D2" stroke-width="3">
+                  <rect x="84" y="124" width="36" height="40"/><rect x="200" y="124" width="36" height="40"/>
+                  <rect x="84" y="186" width="36" height="40"/><rect x="200" y="186" width="36" height="40"/>
+                </g>
+                <g stroke="#F3E9D2" stroke-width="2.5">
+                  <line x1="102" y1="124" x2="102" y2="164"/><line x1="84" y1="144" x2="120" y2="144"/>
+                  <line x1="218" y1="124" x2="218" y2="164"/><line x1="200" y1="144" x2="236" y2="144"/>
+                  <line x1="102" y1="186" x2="102" y2="226"/><line x1="84" y1="206" x2="120" y2="206"/>
+                  <line x1="218" y1="186" x2="218" y2="226"/><line x1="200" y1="206" x2="236" y2="206"/>
+                </g>
+                <!-- sign -->
+                <rect x="126" y="124" width="68" height="20" rx="2" fill="#1A2A8C" stroke="#1F2440" stroke-width="2"/>
+                <text x="160" y="138" text-anchor="middle" font-family="League Spartan, sans-serif" font-weight="800" font-size="10.5" fill="#F5EEDC" letter-spacing=".5">PARK PLACE</text>
+                <!-- awning + door -->
+                <path d="M128 160 h64 l-6 14 h-52 z" fill="#1A2A8C" stroke="#1F2440" stroke-width="2"/>
+                <rect x="140" y="174" width="40" height="70" rx="4" fill="#0F1A5E" stroke="#1F2440" stroke-width="2"/>
+                <circle cx="172" cy="212" r="3" fill="#D9A441"/>
+                <rect x="132" y="244" width="56" height="8" fill="#2B2B33"/>
+                <!-- shrubs -->
+                <g fill="#3E8E4E"><circle cx="80" cy="244" r="9"/><circle cx="96" cy="246" r="8"/><circle cx="112" cy="245" r="9"/><circle cx="208" cy="245" r="9"/><circle cx="224" cy="246" r="8"/><circle cx="240" cy="244" r="9"/></g>
+                <!-- gold key -->
+                <g transform="translate(232 18) rotate(32)">
+                  <circle cx="0" cy="0" r="20" fill="#D9A441" stroke="#8F6229" stroke-width="3"/>
+                  <circle cx="0" cy="0" r="8" fill="#F5EEDC" stroke="#8F6229" stroke-width="2.5"/>
+                  <rect x="18" y="-5" width="62" height="10" rx="2" fill="#D9A441" stroke="#8F6229" stroke-width="2.5"/>
+                  <rect x="62" y="5" width="7" height="12" fill="#D9A441" stroke="#8F6229" stroke-width="2.5"/>
+                  <rect x="72" y="5" width="7" height="8" fill="#D9A441" stroke="#8F6229" stroke-width="2.5"/>
+                </g>
+              </svg>
+
+              <!-- Title deed card -->
+              <div class="mono-deed">
+                <div class="mono-deed__band"><small>TITLE DEED</small><b>PARK PLACE</b></div>
+                <ul>
+                  <li><span>More bedrooms</span><span>&#10003;</span></li>
+                  <li><span>Bigger yard</span><span>&#10003;</span></li>
+                  <li><span>Fresh start</span><span>&#10003;</span></li>
+                  <li><span>Your home&rsquo;s value</span><span>?</span></li>
+                </ul>
+                <p class="mono-deed__foot">Home Value Report &mdash; FREE</p>
+              </div>
+            </div>
+
+            <!-- Play money -->
+            <div class="mono-money">
+              <div class="mono-stack mono-stack--500"><div class="mono-bill"></div><div class="mono-bill"></div><div class="mono-bill"><span>500</span></div></div>
+              <div class="mono-stack mono-stack--100"><div class="mono-bill"></div><div class="mono-bill"></div><div class="mono-bill"><span>100</span></div></div>
+              <div class="mono-stack mono-stack--50"><div class="mono-bill"></div><div class="mono-bill"></div><div class="mono-bill"><span>50</span></div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <div class="mono-board-edge" aria-hidden="true"></div>
+
+    <!-- ===== Letter from the team (mailer copy) ===== -->
+    <section class="lp-section">
+      <div class="lp-wrap">
+        <article class="lp-letter">
+          <p class="lp-eyebrow" style="color:var(--lp-primary)">A note from Sarah &amp; Sarah</p>
+          <p>You&rsquo;ve made a lot of great memories in this beautiful house, but if you&rsquo;ve been feeling like your family is outgrowing it, this might be the year to make your move.</p>
+          <p>Whether you&rsquo;re dreaming of more bedrooms, a bigger yard, or just a fresh start, I&rsquo;d love to help you figure out what your next move looks like &mdash; and what your current home is worth in today&rsquo;s market. <span class="mono-spoiler">(Spoiler: it might surprise you.)</span></p>
+          <p class="lp-signoff">-The Sarah&rsquo;s</p>
+          <p class="lp-ps"><strong>P.S.</strong> Keep the little house &mdash; it&rsquo;s yours. When you close on the big one, I&rsquo;ll trade you for the hotel.</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- ===== What's in the report ===== -->
+    <section class="lp-section lp-section--paper">
+      <div class="lp-wrap">
+        <h2 class="lp-h2" style="text-align:center">What&rsquo;s in your free report</h2>
+        <div class="lp-perks">
+          <div class="lp-perk"><div class="lp-perk__band"></div><div class="lp-perk__body">
+            <h3>Today&rsquo;s value</h3>
+            <p>A real number for your home based on recent sales near you &mdash; not a generic online estimate.</p>
+          </div></div>
+          <div class="lp-perk"><div class="lp-perk__band"></div><div class="lp-perk__body">
+            <h3>What&rsquo;s selling nearby</h3>
+            <p>The homes that sold around you, what they went for, and how quickly they went under contract.</p>
+          </div></div>
+          <div class="lp-perk"><div class="lp-perk__band"></div><div class="lp-perk__body">
+            <h3>Your next-move plan</h3>
+            <p>What you could walk away with after a sale, and what that could mean for your next home.</p>
+          </div></div>
+        </div>
+        <div class="lp-cta-row">
+          <a href="#home-value" class="lp-btn lp-btn--accent lp-btn--inline">Get My Free Home Value Report</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <section data-lp-team aria-label="Contact the team"></section>
+  <footer data-lp-footer></footer>
+</body>
+</html>
