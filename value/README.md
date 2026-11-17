@@ -16,21 +16,29 @@ the site (`LEAD_BACKEND_URL` in `site.js`), which emails the team and sends the 
 on, like the Home Value form on `sell.html`. Each lead arrives with:
 
 - **FormType:** `Mailer Home Value Lead`
-- **Subject:** `New Home Value Report Request (January 2027 - Monopoly) - S2 Home Partners`
+- **Subject:** `New Home Value Lead - January 2027 Mailer (Monopoly) - S2 Home Partners`
 - **Name, FirstName, LastName, Address, Phone, Email**
-- **Campaign** (the month and theme), **Source** (`mailer`, `popby` or `direct`), **Page**
+- **MailerMonth** (`January 2027`), **MailerTheme** (`Monopoly`), **Campaign** (both together)
+- **Source** (`mailer`, `popby` or `direct`), **Page**
 - **Message**: a plain-English summary of all of the above, in case a field isn't shown
+
+**How the month is decided:** the mailer month comes from the page's folder name,
+not from anything typed in the page. `/value/2027-01/` is always January 2027, so a
+lead from a January mailer that someone scans in March is still tagged January.
+That's why each month needs its own folder: keep old months live, never reuse or
+rename a folder, because mailers with that QR code are still in people's homes.
 
 Nothing new needs to be set up. If the backend URL in `site.js` ever changes,
 change it in `landing.js` too.
 
 ## Adding a new month (e.g. February 2027)
 
-1. Copy the `_template` folder and name the copy `2027-02`.
+1. Copy the `_template` folder and name the copy `2027-02` (year-month, always two
+   digits for the month). This name is what tags every lead as February 2027.
 2. Open `2027-02/index.html` and replace every `[[...]]` placeholder with the
    mailer's headline, letter and P.S.
-3. Set `data-campaign="February 2027 - <Theme>"` on the form. This is what shows
-   in the lead email subject.
+3. Set `data-theme="<Theme>"` on the form (e.g. `data-theme="Valentine's"`). It's
+   added after the month in the lead email subject.
 4. Change the colors in the `:root { --lp-... }` block at the top to match the
    mailer. For theme artwork, add inline SVG/CSS or put an image in the folder and
    use `<img src="art.png" alt="">` in the `lp-hero__art` box.

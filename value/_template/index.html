@@ -16,8 +16,8 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <!-- Add this month's display font to the Google Fonts link if you change --lp-display -->
   <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Newsreader:opsz,wght@6..72,600;6..72,700;6..72,800&family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="../landing.css?v=1" />
-  <script src="../landing.js?v=1" defer></script>
+  <link rel="stylesheet" href="../landing.css?v=2" />
+  <script src="../landing.js?v=2" defer></script>
 
   <style>
     /* ---------- [[Month YYYY]] theme: [[Theme]] ---------- */
@@ -53,8 +53,9 @@
               <h2 class="lp-card__title">Your Home Value Report</h2>
             </div>
             <div class="lp-card__body">
-              <!-- data-campaign shows up in the lead email subject and in Follow Up Boss -->
-              <form class="lp-form" data-lp-form data-campaign="[[Month YYYY - Theme]]" novalidate>
+              <!-- The lead's mailer month comes from this folder's name (e.g. /value/2027-02/ = February 2027).
+                   data-theme is added to it, e.g. "February 2027 Mailer (Valentine's)". -->
+              <form class="lp-form" data-lp-form data-theme="[[Theme]]" novalidate>
                 <p class="lp-card__intro" style="margin:0">Tell us where to send it. We&rsquo;ll pull the numbers on your home and send your report personally.</p>
                 <div class="lp-form__row lp-form__row--2">
                   <div class="lp-field">

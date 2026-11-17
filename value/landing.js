@@ -89,6 +89,15 @@
       '</div>';
   }
 
+  var MONTHS = ['January', 'February', 'March', 'April', 'May', 'June', 'July',
+    'August', 'September', 'October', 'November', 'December'];
+
+  function mailerMonth() {
+    var m = location.pathname.match(/\/value\/(\d{4})-(\d{2})(?:\/|$)/);
+    if (!m || +m[2] < 1 || +m[2] > 12) return 'Unknown month (' + location.pathname + ')';
+    return MONTHS[+m[2] - 1] + ' ' + m[1];
+  }
+
   function formatPhone(v) {
     var d = v.replace(/\D/g, '');
     if (d.length === 11 && d.charAt(0) === '1') d = d.slice(1);
@@ -97,7 +106,11 @@
   }
 
   function initForm(form) {
-    var campaign = form.getAttribute('data-campaign') || 'Mailer';
+    // The mailer month comes from the page's folder name (/value/2027-01/ -> "January 2027"),
+    // so a copied page can't accidentally report last month. The theme comes from data-theme.
+    var month = mailerMonth();
+    var theme = (form.getAttribute('data-theme') || '').trim();
+    var campaign = month + ' Mailer' + (theme ? ' (' + theme + ')' : '');
     var card = form.closest('[data-lp-form-card]') || form.parentNode;
     var success = card.querySelector('[data-lp-success]');
     var errorBox = form.querySelector('[data-lp-error]');
@@ -138,18 +151,21 @@
 
       var data = new FormData();
       data.append('FormType', FORM_TYPE);
-      data.append('_subject', 'New Home Value Report Request (' + campaign + ') - S2 Home Partners');
+      data.append('_subject', 'New Home Value Lead - ' + campaign + ' - S2 Home Partners');
       data.append('Name', first + ' ' + last);
       data.append('FirstName', first);
       data.append('LastName', last);
       data.append('Address', address);
       data.append('Phone', phone);
       data.append('Email', email);
+      data.append('MailerMonth', month);
+      data.append('MailerTheme', theme);
       data.append('Campaign', campaign);
       data.append('Source', source);
       data.append('Page', location.pathname);
       data.append('Message',
-        'Free Home Value Report request from the ' + campaign + ' landing page (source: ' + source + ').\n' +
+        'Free Home Value Report request from the ' + campaign + ' (source: ' + source + ').\n' +
+        'Mailer month: ' + month + (theme ? '\nMailer theme: ' + theme : '') + '\n' +
         'Name: ' + first + ' ' + last + '\nProperty: ' + address + '\nPhone: ' + phone + '\nEmail: ' + email);
 
       button.disabled = true;
