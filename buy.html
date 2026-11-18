@@ -359,31 +359,15 @@
 
     <section id="home-search" class="bg-white py-16">
       <div class="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
-        <!-- IDX Broker quick search widget 28555; the widget draws its search form where its script tag sits -->
-        <div class="mb-12 rounded-2xl border border-momentum-grayLight bg-white p-6 shadow-xl sm:p-8">
-          <div class="mb-6 text-center">
-            <span class="text-xs font-semibold uppercase tracking-wider text-momentum-gray">Live MLS Listings</span>
-            <h2 class="mt-1 font-serif text-3xl font-bold text-momentum-blue">Search Homes for Sale</h2>
-            <p class="mt-2 text-sm text-slate-600">Pick a city, price range and size to see every home for sale that matches.</p>
-          </div>
-          <style>
-            /* Restyle IDX Broker's quick search form to match the site */
-            .idx-quicksearch-wrap #IDX-quicksearch-28555 { display: block !important; width: auto !important; border: 0 !important; border-radius: 0 !important; box-shadow: none !important; padding: 0 !important; }
-            .idx-quicksearch-wrap #IDX-quicksearch-28555 label { display: block !important; float: none !important; margin: 0 0 4px !important; text-align: left !important; }
-            .idx-quicksearch-wrap #IDX-quicksearch-28555 .IDX-qsFieldWrap { text-align: left !important; }
-            .idx-quicksearch-wrap .IDX-quicksearchForm { display: grid !important; grid-template-columns: 1fr; gap: 14px; margin: 0 !important; padding: 0 !important; border: 0 !important; box-shadow: none !important; background: none !important; }
-            @media (min-width: 640px) { .idx-quicksearch-wrap .IDX-quicksearchForm { grid-template-columns: 1fr 1fr; } }
-            .idx-quicksearch-wrap .IDX-qsFieldWrap { display: block !important; float: none !important; width: auto !important; margin: 0 !important; padding: 0 !important; }
-            .idx-quicksearch-wrap [id^="IDX-qsPtWrap"], .idx-quicksearch-wrap [id^="IDX-qsCityListWrap"], .idx-quicksearch-wrap [id^="IDX-qsSubmitWrap"] { grid-column: 1 / -1; }
-            .idx-quicksearch-wrap .IDX-qsLabel { display: block !important; position: static !important; width: auto !important; height: auto !important; clip: auto !important; margin: 0 0 4px !important; font-size: 12px !important; font-weight: 700 !important; text-transform: uppercase; letter-spacing: .04em; color: #3D4D55 !important; }
-            .idx-quicksearch-wrap .IDX-qsTextInput, .idx-quicksearch-wrap .IDX-qsSelectInput { display: block !important; box-sizing: border-box; width: 100% !important; height: 48px !important; margin: 0 !important; padding: 0 14px !important; font: inherit !important; font-size: 16px !important; color: #293A43 !important; background: #fff !important; border: 1px solid #E6DFD2 !important; border-radius: 12px !important; box-shadow: none !important; }
-            .idx-quicksearch-wrap .IDX-qsTextInput:focus, .idx-quicksearch-wrap .IDX-qsSelectInput:focus { outline: none; border-color: #1E4A5C !important; }
-            .idx-quicksearch-wrap .IDX-qsButtonInput { display: block !important; width: 100% !important; height: 54px !important; margin: 6px 0 0 !important; font: inherit !important; font-size: 16px !important; font-weight: 700 !important; color: #fff !important; background: #1E4A5C !important; border: 0 !important; border-radius: 12px !important; cursor: pointer; box-shadow: 0 4px 10px rgba(17,43,55,.15) !important; }
-            .idx-quicksearch-wrap .IDX-qsButtonInput:hover { background: #153746 !important; }
-          </style>
-          <div class="idx-quicksearch-wrap min-h-[120px]">
-            <script charset="UTF-8" type="text/javascript" id="idxwidgetsrc-28555" src="//search.buyjacksonvillefl.com/idx/quicksearchjs.php?widgetid=28555"></script>
-          </div>
+        <!-- Home search: links to the IDX Broker advanced search page -->
+        <div class="mb-12 rounded-2xl border border-momentum-grayLight bg-white p-6 text-center shadow-xl sm:p-8">
+          <span class="text-xs font-semibold uppercase tracking-wider text-momentum-gray">Live MLS Listings</span>
+          <h2 class="mt-1 font-serif text-3xl font-bold text-momentum-blue">Search Homes for Sale</h2>
+          <p class="mx-auto mt-2 max-w-xl text-sm text-slate-600">Search every home for sale in Northeast Florida by city, price, beds, baths, neighborhood and more.</p>
+          <a href="https://search.buyjacksonvillefl.com/idx/search/advanced" class="mt-6 inline-flex items-center justify-center gap-2 rounded-xl bg-momentum-blue px-8 py-4 text-base font-bold text-white shadow-md transition-all hover:bg-momentum-blueHover">
+            <svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-4.35-4.35M17 10.5a6.5 6.5 0 11-13 0 6.5 6.5 0 0113 0z" /></svg>
+            Start Your Home Search
+          </a>
         </div>
 
         <img src="images/team/house-search.jpg" alt="Sarah Fuller and Sarah Luther scouting a home, one pointing at the camera and one making binoculars with her hands" width="1600" height="1066" loading="lazy" decoding="async" class="mb-6 h-56 w-full rounded-lg object-cover sm:h-72" style="object-position:50% 40%" />
