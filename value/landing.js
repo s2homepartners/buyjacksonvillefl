@@ -19,8 +19,8 @@
     agents: 'Sarah Fuller & Sarah Luther',
     brokerage: 'Momentum Realty',
     phones: [
-      { label: 'Sarah Fuller', display: '850-328-9800', tel: '+18503289800' },
-      { label: 'Sarah Luther', display: '434-713-1221', tel: '+14347131221' }
+      { label: 'Sarah Luther', display: '850-328-9800', tel: '+18503289800' },
+      { label: 'Sarah Fuller', display: '434-713-1221', tel: '+14347131221' }
     ],
     email: 'S2HomePartners@gmail.com',
     site: 'https://buyjacksonvillefl.com/',
@@ -77,6 +77,8 @@
     el.className = 'lp-footer';
     el.innerHTML =
       '<div class="lp-wrap">' +
+        '<p style="margin-bottom:10px;font-size:.8rem;line-height:1.6">S&sup2; Home Partners | Momentum Realty &middot; 13475 Atlantic Blvd, Ste 8, Office S206, Jacksonville, FL 32225<br>' +
+          'Sarah Luther <a href="tel:+18503289800">850-328-9800</a> &middot; Sarah Fuller <a href="tel:+14347131221">434-713-1221</a></p>' +
         '<p>&copy; ' + new Date().getFullYear() + ' S&sup2; Home Partners | Momentum Realty. All rights reserved.</p>' +
         '<nav aria-label="Footer">' +
           '<a href="/index.html">Home</a>' +
