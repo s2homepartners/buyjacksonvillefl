@@ -198,6 +198,9 @@
           <a href="#request-referral" class="inline-block rounded-xl bg-white px-8 py-3.5 font-bold text-momentum-blue shadow-lg transition-all hover:bg-slate-100">
             Request a Referral
           </a>
+          <a href="military-bases.html" class="inline-block rounded-xl border-2 border-white px-8 py-3.5 font-bold text-white transition-all hover:bg-white hover:text-momentum-blue">
+            Browse Every U.S. Base
+          </a>
           <a href="#become-partner" class="inline-block rounded-xl border-2 border-white px-8 py-3.5 font-bold text-white transition-all hover:bg-white hover:text-momentum-blue">
             Become a Referral Partner
           </a>
@@ -210,10 +213,11 @@
       <div class="mx-auto grid max-w-6xl gap-10 px-4 sm:px-6 lg:grid-cols-2 lg:px-8">
         <div>
           <span class="text-xs font-semibold uppercase tracking-wider text-momentum-gray">For Buyers &amp; Sellers</span>
-          <h2 class="mt-1 font-serif text-3xl font-bold text-momentum-blue sm:text-4xl">Request a Realtor Referral</h2>
-          <p class="mt-4 text-base leading-relaxed text-slate-600">
+          <h2 id="referral-heading" class="mt-1 font-serif text-3xl font-bold text-momentum-blue sm:text-4xl">Request a Realtor Referral</h2>
+          <p id="referral-lead" class="mt-4 text-base leading-relaxed text-slate-600">
             Relocating outside of Northeast Florida? Tell us where you're headed and what you need, and we'll personally match you with a vetted, trusted agent in our nationwide network — at no cost to you.
           </p>
+          <p id="referral-base-note" class="mt-4 hidden rounded-xl bg-teal-50 px-4 py-3 text-sm font-semibold text-teal-800"></p>
           <ul class="mt-6 space-y-3 text-sm text-slate-600">
             <li class="flex items-start gap-2"><span class="mt-0.5 text-teal-600">&check;</span> Vetted, experienced agents in every network we refer to</li>
             <li class="flex items-start gap-2"><span class="mt-0.5 text-teal-600">&check;</span> No cost or obligation to you as the buyer or seller</li>
@@ -236,10 +240,15 @@
           <form id="referralRequestForm" action="https://formsubmit.co/S2HomePartners@gmail.com" method="POST" class="space-y-4">
             <input type="hidden" name="_captcha" value="false" />
             <input type="hidden" name="formType" value="referral-request" />
-            <input type="hidden" name="_subject" value="Referral Request — S2 Home Partners" />
+            <input type="hidden" id="ref-subject" name="_subject" value="Referral Request — S2 Home Partners" />
+            <input type="hidden" id="ref-direct" name="servedDirectly" value="no" />
             <input type="hidden" name="_next" value="https://buyjacksonvillefl.com/referral.html#submitted" />
             <input type="text" name="_honey" class="hidden" tabindex="-1" autocomplete="off" />
 
+            <div>
+              <label for="ref-base" class="mb-1 block text-xs font-bold uppercase text-slate-700">Duty station</label>
+              <input id="ref-base" type="text" name="base" placeholder="Base you are PCSing to" class="w-full rounded-xl border border-momentum-grayLight bg-white px-4 py-3 text-sm focus:border-momentum-blue focus:outline-none" />
+            </div>
             <div>
               <label for="ref-name" class="mb-1 block text-xs font-bold uppercase text-slate-700">Name</label>
               <input id="ref-name" type="text" name="name" required class="w-full rounded-xl border border-momentum-grayLight bg-white px-4 py-3 text-sm focus:border-momentum-blue focus:outline-none" />
@@ -484,6 +493,35 @@
         select.appendChild(opt);
       });
     });
+
+    // Base pages link here with ?base=&city=&state=&direct=1
+    (function () {
+      const params = new URLSearchParams(location.search);
+      const baseName = params.get('base');
+      if (!baseName) return;
+      const baseInput = document.getElementById('ref-base');
+      const cityInput = document.getElementById('ref-city');
+      const stateSelect = document.getElementById('ref-state');
+      const subject = document.getElementById('ref-subject');
+      const directInput = document.getElementById('ref-direct');
+      const note = document.getElementById('referral-base-note');
+      const heading = document.getElementById('referral-heading');
+      const lead = document.getElementById('referral-lead');
+      if (baseInput) baseInput.value = baseName;
+      if (cityInput && params.get('city')) cityInput.value = params.get('city');
+      if (stateSelect && params.get('state')) stateSelect.value = params.get('state');
+      const direct = params.get('direct') === '1';
+      if (directInput) directInput.value = direct ? 'yes' : 'no';
+      if (subject) subject.value = (direct ? 'Direct PCS inquiry — ' : 'Referral Request — ') + baseName;
+      if (note) {
+        note.textContent = direct
+          ? 'This request is for ' + baseName + ', an installation S² Home Partners serves directly.'
+          : 'This request is for a vetted agent near ' + baseName + '.';
+        note.classList.remove('hidden');
+      }
+      if (direct && heading) heading.textContent = 'Talk with S² about your PCS';
+      if (direct && lead) lead.textContent = 'You are asking about an installation our team serves directly. Tell us how to reach you and we will take it from here.';
+    })();
 
     // --- Progressive-enhancement form submission ---
     function wireForm(formId, successId) {

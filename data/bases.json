@@ -1,0 +1,2873 @@
+{
+  "readme": "Edit this file, then run python3 scripts/build-bases.py from the site folder. Leave officialSite and housingUrl off unless you have the real official page. servedDirectly should stay true only for installations S2 Home Partners handles itself.",
+  "bases": [
+    {
+      "slug": "nas-jacksonville",
+      "name": "Naval Air Station Jacksonville",
+      "branch": "Navy",
+      "city": "Jacksonville",
+      "state": "Florida",
+      "stateCode": "FL",
+      "towns": [
+        "Orange Park",
+        "Mandarin",
+        "Westside Jacksonville",
+        "Fleming Island"
+      ],
+      "mission": "NAS Jacksonville is a Navy air station on the west side of Jacksonville and a major aviation hub for the Southeast.",
+      "alsoKnownAs": [],
+      "servedDirectly": true,
+      "localGuide": "/military-relocation.html#nas-jacksonville"
+    },
+    {
+      "slug": "ns-mayport",
+      "name": "Naval Station Mayport",
+      "branch": "Navy",
+      "city": "Jacksonville",
+      "state": "Florida",
+      "stateCode": "FL",
+      "towns": [
+        "Atlantic Beach",
+        "Neptune Beach",
+        "East Arlington",
+        "Jacksonville Beach"
+      ],
+      "mission": "Naval Station Mayport is the Navy's third-largest fleet concentration area and sits at the mouth of the St. Johns River.",
+      "alsoKnownAs": [],
+      "servedDirectly": true,
+      "localGuide": "/military-relocation.html#ns-mayport"
+    },
+    {
+      "slug": "nsb-kings-bay",
+      "name": "Naval Submarine Base Kings Bay",
+      "branch": "Navy",
+      "city": "St. Marys",
+      "state": "Georgia",
+      "stateCode": "GA",
+      "towns": [
+        "St. Marys",
+        "Kingsland",
+        "Yulee",
+        "Fernandina Beach"
+      ],
+      "mission": "NSB Kings Bay is the Atlantic home port for the Navy's Ohio-class ballistic-missile submarines.",
+      "alsoKnownAs": [],
+      "servedDirectly": true,
+      "localGuide": "/military-relocation.html#nsb-kings-bay"
+    },
+    {
+      "slug": "blount-island",
+      "name": "Marine Corps Support Facility Blount Island",
+      "branch": "Marine Corps",
+      "city": "Jacksonville",
+      "state": "Florida",
+      "stateCode": "FL",
+      "towns": [
+        "Arlington",
+        "East Arlington",
+        "Mayport",
+        "Jacksonville"
+      ],
+      "mission": "Blount Island is the Marine Corps prepositioning base on the St. Johns River in Jacksonville.",
+      "alsoKnownAs": [],
+      "servedDirectly": true
+    },
+    {
+      "slug": "camp-blanding",
+      "name": "Camp Blanding Joint Training Center",
+      "branch": "National Guard",
+      "city": "Starke",
+      "state": "Florida",
+      "stateCode": "FL",
+      "towns": [
+        "Starke",
+        "Keystone Heights",
+        "Middleburg",
+        "Gainesville"
+      ],
+      "mission": "Camp Blanding is the Florida National Guard's primary training center, between Jacksonville and Gainesville.",
+      "alsoKnownAs": [],
+      "servedDirectly": true
+    },
+    {
+      "slug": "uscg-sector-jacksonville",
+      "name": "Coast Guard Sector Jacksonville",
+      "branch": "Coast Guard",
+      "city": "Jacksonville",
+      "state": "Florida",
+      "stateCode": "FL",
+      "towns": [
+        "Jacksonville",
+        "Mayport",
+        "Atlantic Beach",
+        "Orange Park"
+      ],
+      "mission": "Coast Guard Sector Jacksonville directs Coast Guard missions along the northeast Florida coast.",
+      "alsoKnownAs": [],
+      "servedDirectly": true
+    },
+    {
+      "slug": "fort-bragg",
+      "name": "Fort Bragg",
+      "branch": "Army",
+      "city": "Fayetteville",
+      "state": "North Carolina",
+      "stateCode": "NC",
+      "towns": [
+        "Fayetteville",
+        "Spring Lake",
+        "Hope Mills",
+        "Southern Pines"
+      ],
+      "mission": "Fort Bragg is home of the XVIII Airborne Corps, the 82nd Airborne Division, and U.S. Army Special Operations Command.",
+      "alsoKnownAs": [
+        "Fort Liberty"
+      ],
+      "servedDirectly": false
+    },
+    {
+      "slug": "fort-campbell",
+      "name": "Fort Campbell",
+      "branch": "Army",
+      "city": "Fort Campbell",
+      "state": "Kentucky",
+      "stateCode": "KY",
+      "towns": [
+        "Clarksville",
+        "Oak Grove",
+        "Hopkinsville"
+      ],
+      "mission": "Fort Campbell straddles the Kentucky-Tennessee line and is home of the 101st Airborne Division.",
+      "alsoKnownAs": [],
+      "servedDirectly": false
+    },
+    {
+      "slug": "fort-hood",
+      "name": "Fort Hood",
+      "branch": "Army",
+      "city": "Killeen",
+      "state": "Texas",
+      "stateCode": "TX",
+      "towns": [
+        "Killeen",
+        "Copperas Cove",
+        "Harker Heights",
+        "Temple"
+      ],
+      "mission": "Fort Hood is home of III Armored Corps and a major armor and aviation post in Central Texas.",
+      "alsoKnownAs": [
+        "Fort Cavazos"
+      ],
+      "servedDirectly": false
+    },
+    {
+      "slug": "fort-bliss",
+      "name": "Fort Bliss",
+      "branch": "Army",
+      "city": "El Paso",
+      "state": "Texas",
+      "stateCode": "TX",
+      "towns": [
+        "El Paso",
+        "Horizon City",
+        "Socorro",
+        "Las Cruces"
+      ],
+      "mission": "Fort Bliss is a large Army post in El Paso and home of the 1st Armored Division.",
+      "alsoKnownAs": [],
+      "servedDirectly": false
+    },
+    {
+      "slug": "fort-carson",
+      "name": "Fort Carson",
+      "branch": "Army",
+      "city": "Colorado Springs",
+      "state": "Colorado",
+      "stateCode": "CO",
+      "towns": [
+        "Colorado Springs",
+        "Fountain",
+        "Security-Widefield",
+        "Pueblo"
+      ],
+      "mission": "Fort Carson, south of Colorado Springs, is home of the 4th Infantry Division.",
+      "alsoKnownAs": [],
+      "servedDirectly": false
+    },
+    {
+      "slug": "fort-stewart",
+      "name": "Fort Stewart",
+      "branch": "Army",
+      "city": "Hinesville",
+      "state": "Georgia",
+      "stateCode": "GA",
+      "towns": [
+        "Hinesville",
+        "Richmond Hill",
+        "Savannah",
+        "Pooler"
+      ],
+      "mission": "Fort Stewart is home of the 3rd Infantry Division. Hunter Army Airfield in Savannah is part of the same garrison.",
+      "alsoKnownAs": [],
+      "servedDirectly": false
+    },
+    {
+      "slug": "hunter-army-airfield",
+      "name": "Hunter Army Airfield",
+      "branch": "Army",
+      "city": "Savannah",
+      "state": "Georgia",
+      "stateCode": "GA",
+      "towns": [
+        "Savannah",
+        "Pooler",
+        "Richmond Hill",
+        "Garden City"
+      ],
+      "mission": "Hunter Army Airfield is the Savannah airfield of the Fort Stewart-Hunter Army Airfield garrison.",
+      "alsoKnownAs": [],
+      "servedDirectly": false
+    },
+    {
+      "slug": "fort-benning",
+      "name": "Fort Benning",
+      "branch": "Army",
+      "city": "Columbus",
+      "state": "Georgia",
+      "stateCode": "GA",
+      "towns": [
+        "Columbus",
+        "Phenix City",
+        "Smiths Station"
+      ],
+      "mission": "Fort Benning is home of the Maneuver Center of Excellence, where the Army trains infantry and armor soldiers.",
+      "alsoKnownAs": [
+        "Fort Moore"
+      ],
+      "servedDirectly": false
+    },
+    {
+      "slug": "fort-gordon",
+      "name": "Fort Gordon",
+      "branch": "Army",
+      "city": "Augusta",
+      "state": "Georgia",
+      "stateCode": "GA",
+      "towns": [
+        "Grovetown",
+        "Evans",
+        "Martinez",
+        "Augusta"
+      ],
+      "mission": "Fort Gordon, near Augusta, is the Army's cyber center and home of the Cyber Center of Excellence.",
+      "alsoKnownAs": [
+        "Fort Eisenhower"
+      ],
+      "servedDirectly": false
+    },
+    {
+      "slug": "fort-riley",
+      "name": "Fort Riley",
+      "branch": "Army",
+      "city": "Junction City",
+      "state": "Kansas",
+      "stateCode": "KS",
+      "towns": [
+        "Junction City",
+        "Manhattan",
+        "Ogden",
+        "Milford"
+      ],
+      "mission": "Fort Riley is home of the 1st Infantry Division in the Flint Hills of Kansas.",
+      "alsoKnownAs": [],
+      "servedDirectly": false
+    },
+    {
+      "slug": "fort-sill",
+      "name": "Fort Sill",
+      "branch": "Army",
+      "city": "Lawton",
+      "state": "Oklahoma",
+      "stateCode": "OK",
+      "towns": [
+        "Lawton",
+        "Cache",
+        "Elgin",
+        "Duncan"
+      ],
+      "mission": "Fort Sill is the Army's fires center, training field artillery in Lawton, Oklahoma.",
+      "alsoKnownAs": [],
+      "servedDirectly": false
+    },
+    {
+      "slug": "fort-drum",
+      "name": "Fort Drum",
+      "branch": "Army",
+      "city": "Watertown",
+      "state": "New York",
+      "stateCode": "NY",
+      "towns": [
+        "Watertown",
+        "Carthage",
+        "Calcium",
+        "Sackets Harbor"
+      ],
+      "mission": "Fort Drum is home of the 10th Mountain Division in New York's North Country.",
+      "alsoKnownAs": [],
+      "servedDirectly": false
+    },
+    {
+      "slug": "fort-wainwright",
+      "name": "Fort Wainwright",
+      "branch": "Army",
+      "city": "Fairbanks",
+      "state": "Alaska",
+      "stateCode": "AK",
+      "towns": [
+        "Fairbanks",
+        "North Pole",
+        "Salcha"
+      ],
+      "mission": "Fort Wainwright is the Army's interior Alaska post, next to Fairbanks.",
+      "alsoKnownAs": [],
+      "servedDirectly": false
+    },
+    {
+      "slug": "fort-greely",
+      "name": "Fort Greely",
+      "branch": "Army",
+      "city": "Delta Junction",
+      "state": "Alaska",
+      "stateCode": "AK",
+      "towns": [
+        "Delta Junction",
+        "Fairbanks"
+      ],
+      "mission": "Fort Greely, near Delta Junction, hosts the Army's ground-based missile defense site.",
+      "alsoKnownAs": [],
+      "servedDirectly": false
+    },
+    {
+      "slug": "fort-irwin",
+      "name": "Fort Irwin",
+      "branch": "Army",
+      "city": "Fort Irwin",
+      "state": "California",
+      "stateCode": "CA",
+      "towns": [
+        "Barstow",
+        "Victorville",
+        "Apple Valley",
+        "Hesperia"
+      ],
+      "mission": "Fort Irwin is the National Training Center in the Mojave Desert.",
+      "alsoKnownAs": [],
+      "servedDirectly": false
+    },
+    {
+      "slug": "fort-huachuca",
+      "name": "Fort Huachuca",
+      "branch": "Army",
+      "city": "Sierra Vista",
+      "state": "Arizona",
+      "stateCode": "AZ",
+      "towns": [
+        "Sierra Vista",
+        "Hereford",
+        "Bisbee"
+      ],
+      "mission": "Fort Huachuca is the Army's intelligence center in southeast Arizona.",
+      "alsoKnownAs": [],
+      "servedDirectly": false
+    },
+    {
+      "slug": "fort-leonard-wood",
+      "name": "Fort Leonard Wood",
+      "branch": "Army",
+      "city": "Fort Leonard Wood",
+      "state": "Missouri",
+      "stateCode": "MO",
+      "towns": [
+        "St. Robert",
+        "Waynesville",
+        "Rolla"
+      ],
+      "mission": "Fort Leonard Wood trains Army engineers, military police, and chemical soldiers.",
+      "alsoKnownAs": [],
+      "servedDirectly": false
+    },
+    {
+      "slug": "fort-jackson",
+      "name": "Fort Jackson",
+      "branch": "Army",
+      "city": "Columbia",
+      "state": "South Carolina",
+      "stateCode": "SC",
+      "towns": [
+        "Columbia",
+        "Lexington",
+        "Irmo",
+        "Forest Acres"
+      ],
+      "mission": "Fort Jackson in Columbia is the Army's largest basic combat training post.",
+      "alsoKnownAs": [],
+      "servedDirectly": false
+    },
+    {
+      "slug": "fort-knox",
+      "name": "Fort Knox",
+      "branch": "Army",
+      "city": "Fort Knox",
+      "state": "Kentucky",
+      "stateCode": "KY",
+      "towns": [
+        "Radcliff",
+        "Elizabethtown",
+        "Shepherdsville",
+        "Louisville"
+      ],
+      "mission": "Fort Knox is home of the Army's Human Resources Command and the U.S. Army Cadet Command.",
+      "alsoKnownAs": [],
+      "servedDirectly": false
+    },
+    {
+      "slug": "fort-leavenworth",
+      "name": "Fort Leavenworth",
+      "branch": "Army",
+      "city": "Leavenworth",
+      "state": "Kansas",
+      "stateCode": "KS",
+      "towns": [
+        "Leavenworth",
+        "Lansing",
+        "Basehor",
+        "Kansas City"
+      ],
+      "mission": "Fort Leavenworth is home of the Army's Command and General Staff College.",
+      "alsoKnownAs": [],
+      "servedDirectly": false
+    },
+    {
+      "slug": "fort-belvoir",
+      "name": "Fort Belvoir",
+      "branch": "Army",
+      "city": "Fort Belvoir",
+      "state": "Virginia",
+      "stateCode": "VA",
+      "towns": [
+        "Springfield",
+        "Lorton",
+        "Alexandria",
+        "Woodbridge"
+      ],
+      "mission": "Fort Belvoir is a headquarters post in Fairfax County, south of Washington, D.C.",
+      "alsoKnownAs": [],
+      "servedDirectly": false
+    },
+    {
+      "slug": "fort-meade",
+      "name": "Fort George G. Meade",
+      "branch": "Army",
+      "city": "Fort Meade",
+      "state": "Maryland",
+      "stateCode": "MD",
+      "towns": [
+        "Odenton",
+        "Laurel",
+        "Columbia",
+        "Severn"
+      ],
+      "mission": "Fort Meade is home of U.S. Cyber Command and the National Security Agency.",
+      "alsoKnownAs": [
+        "Fort Meade"
+      ],
+      "servedDirectly": false
+    },
+    {
+      "slug": "fort-detrick",
+      "name": "Fort Detrick",
+      "branch": "Army",
+      "city": "Frederick",
+      "state": "Maryland",
+      "stateCode": "MD",
+      "towns": [
+        "Frederick",
+        "Walkersville",
+        "Urbana"
+      ],
+      "mission": "Fort Detrick in Frederick is a center for Army medical research.",
+      "alsoKnownAs": [],
+      "servedDirectly": false
+    },
+    {
+      "slug": "fort-hamilton",
+      "name": "Fort Hamilton",
+      "branch": "Army",
+      "city": "Brooklyn",
+      "state": "New York",
+      "stateCode": "NY",
+      "towns": [
+        "Bay Ridge",
+        "Dyker Heights",
+        "Staten Island"
+      ],
+      "mission": "Fort Hamilton is the Army's last active post in New York City, at the Brooklyn end of the Verrazzano Bridge.",
+      "alsoKnownAs": [],
+      "servedDirectly": false
+    },
+    {
+      "slug": "fort-lee",
+      "name": "Fort Lee",
+      "branch": "Army",
+      "city": "Fort Lee",
+      "state": "Virginia",
+      "stateCode": "VA",
+      "towns": [
+        "Colonial Heights",
+        "Petersburg",
+        "Hopewell",
+        "Chester"
+      ],
+      "mission": "Fort Lee is home of the Army's Sustainment Center of Excellence, south of Richmond.",
+      "alsoKnownAs": [
+        "Fort Gregg-Adams"
+      ],
+      "servedDirectly": false
+    },
+    {
+      "slug": "fort-polk",
+      "name": "Fort Polk",
+      "branch": "Army",
+      "city": "Leesville",
+      "state": "Louisiana",
+      "stateCode": "LA",
+      "towns": [
+        "Leesville",
+        "DeRidder"
+      ],
+      "mission": "Fort Polk is home of the Joint Readiness Training Center in west-central Louisiana.",
+      "alsoKnownAs": [
+        "Fort Johnson"
+      ],
+      "servedDirectly": false
+    },
+    {
+      "slug": "fort-rucker",
+      "name": "Fort Rucker",
+      "branch": "Army",
+      "city": "Daleville",
+      "state": "Alabama",
+      "stateCode": "AL",
+      "towns": [
+        "Enterprise",
+        "Daleville",
+        "Ozark",
+        "Dothan"
+      ],
+      "mission": "Fort Rucker is the Army's aviation center, where helicopter pilots train.",
+      "alsoKnownAs": [
+        "Fort Novosel"
+      ],
+      "servedDirectly": false
+    },
+    {
+      "slug": "aberdeen-proving-ground",
+      "name": "Aberdeen Proving Ground",
+      "branch": "Army",
+      "city": "Aberdeen",
+      "state": "Maryland",
+      "stateCode": "MD",
+      "towns": [
+        "Aberdeen",
+        "Bel Air",
+        "Havre de Grace",
+        "Edgewood"
+      ],
+      "mission": "Aberdeen Proving Ground is an Army research and test installation on the Chesapeake Bay.",
+      "alsoKnownAs": [],
+      "servedDirectly": false
+    },
+    {
+      "slug": "carlisle-barracks",
+      "name": "Carlisle Barracks",
+      "branch": "Army",
+      "city": "Carlisle",
+      "state": "Pennsylvania",
+      "stateCode": "PA",
+      "towns": [
+        "Carlisle",
+        "Mechanicsburg",
+        "Harrisburg"
+      ],
+      "mission": "Carlisle Barracks is home of the U.S. Army War College.",
+      "alsoKnownAs": [],
+      "servedDirectly": false
+    },
+    {
+      "slug": "fort-ap-hill",
+      "name": "Fort Anderson-Pinn-Hill",
+      "branch": "Army",
+      "city": "Bowling Green",
+      "state": "Virginia",
+      "stateCode": "VA",
+      "towns": [
+        "Bowling Green",
+        "Fredericksburg",
+        "Caroline County"
+      ],
+      "mission": "Fort A.P. Hill is an Army training installation in Caroline County, Virginia.",
+      "alsoKnownAs": [
+        "Fort A.P. Hill",
+        "Fort Walker"
+      ],
+      "servedDirectly": false
+    },
+    {
+      "slug": "fort-pickett",
+      "name": "Fort Pickett",
+      "branch": "National Guard",
+      "city": "Blackstone",
+      "state": "Virginia",
+      "stateCode": "VA",
+      "towns": [
+        "Blackstone",
+        "Farmville",
+        "Crewe"
+      ],
+      "mission": "Fort Pickett is a Virginia National Guard maneuver training center south of Farmville.",
+      "alsoKnownAs": [
+        "Fort Barfoot"
+      ],
+      "servedDirectly": false
+    },
+    {
+      "slug": "redstone-arsenal",
+      "name": "Redstone Arsenal",
+      "branch": "Army",
+      "city": "Huntsville",
+      "state": "Alabama",
+      "stateCode": "AL",
+      "towns": [
+        "Huntsville",
+        "Madison",
+        "Decatur"
+      ],
+      "mission": "Redstone Arsenal in Huntsville is the Army's center for missile and aviation program offices.",
+      "alsoKnownAs": [],
+      "servedDirectly": false
+    },
+    {
+      "slug": "rock-island-arsenal",
+      "name": "Rock Island Arsenal",
+      "branch": "Army",
+      "city": "Rock Island",
+      "state": "Illinois",
+      "stateCode": "IL",
+      "towns": [
+        "Rock Island",
+        "Davenport",
+        "Moline",
+        "Bettendorf"
+      ],
+      "mission": "Rock Island Arsenal is an Army manufacturing arsenal on an island in the Mississippi River.",
+      "alsoKnownAs": [],
+      "servedDirectly": false
+    },
+    {
+      "slug": "picatinny-arsenal",
+      "name": "Picatinny Arsenal",
+      "branch": "Army",
+      "city": "Wharton",
+      "state": "New Jersey",
+      "stateCode": "NJ",
+      "towns": [
+        "Dover",
+        "Rockaway",
+        "Morristown"
+      ],
+      "mission": "Picatinny Arsenal is the Army's armaments research center in northern New Jersey.",
+      "alsoKnownAs": [],
+      "servedDirectly": false
+    },
+    {
+      "slug": "watervliet-arsenal",
+      "name": "Watervliet Arsenal",
+      "branch": "Army",
+      "city": "Watervliet",
+      "state": "New York",
+      "stateCode": "NY",
+      "towns": [
+        "Watervliet",
+        "Albany",
+        "Troy"
+      ],
+      "mission": "Watervliet Arsenal, on the Hudson River, is the Army's cannon foundry.",
+      "alsoKnownAs": [],
+      "servedDirectly": false
+    },
+    {
+      "slug": "dugway-proving-ground",
+      "name": "Dugway Proving Ground",
+      "branch": "Army",
+      "city": "Dugway",
+      "state": "Utah",
+      "stateCode": "UT",
+      "towns": [
+        "Tooele",
+        "Salt Lake City"
+      ],
+      "mission": "Dugway Proving Ground is a remote Army test range in Utah's west desert.",
+      "alsoKnownAs": [],
+      "servedDirectly": false
+    },
+    {
+      "slug": "white-sands",
+      "name": "White Sands Missile Range",
+      "branch": "Army",
+      "city": "White Sands",
+      "state": "New Mexico",
+      "stateCode": "NM",
+      "towns": [
+        "Las Cruces",
+        "Alamogordo",
+        "El Paso"
+      ],
+      "mission": "White Sands Missile Range is the Army's large missile test range in southern New Mexico.",
+      "alsoKnownAs": [],
+      "servedDirectly": false
+    },
+    {
+      "slug": "yuma-proving-ground",
+      "name": "Yuma Proving Ground",
+      "branch": "Army",
+      "city": "Yuma",
+      "state": "Arizona",
+      "stateCode": "AZ",
+      "towns": [
+        "Yuma",
+        "Somerton",
+        "Foothills"
+      ],
+      "mission": "Yuma Proving Ground is an Army desert test range northeast of Yuma.",
+      "alsoKnownAs": [],
+      "servedDirectly": false
+    },
+    {
+      "slug": "presidio-of-monterey",
+      "name": "Presidio of Monterey",
+      "branch": "Army",
+      "city": "Monterey",
+      "state": "California",
+      "stateCode": "CA",
+      "towns": [
+        "Monterey",
+        "Pacific Grove",
+        "Marina",
+        "Seaside"
+      ],
+      "mission": "The Presidio of Monterey is home of the Defense Language Institute.",
+      "alsoKnownAs": [],
+      "servedDirectly": false
+    },
+    {
+      "slug": "west-point",
+      "name": "United States Military Academy",
+      "branch": "Army",
+      "city": "West Point",
+      "state": "New York",
+      "stateCode": "NY",
+      "towns": [
+        "Highland Falls",
+        "Cornwall",
+        "Newburgh",
+        "Cold Spring"
+      ],
+      "mission": "West Point is the U.S. Military Academy on the Hudson River.",
+      "alsoKnownAs": [
+        "West Point"
+      ],
+      "servedDirectly": false,
+      "officialSite": "https://www.westpoint.edu/"
+    },
+    {
+      "slug": "schofield-barracks",
+      "name": "Schofield Barracks",
+      "branch": "Army",
+      "city": "Wahiawa",
+      "state": "Hawaii",
+      "stateCode": "HI",
+      "towns": [
+        "Wahiawa",
+        "Mililani",
+        "Waipahu",
+        "Waipio"
+      ],
+      "mission": "Schofield Barracks is the Army's main post in central Oahu and home of the 25th Infantry Division.",
+      "alsoKnownAs": [],
+      "servedDirectly": false
+    },
+    {
+      "slug": "fort-shafter",
+      "name": "Fort Shafter",
+      "branch": "Army",
+      "city": "Honolulu",
+      "state": "Hawaii",
+      "stateCode": "HI",
+      "towns": [
+        "Honolulu",
+        "Salt Lake",
+        "Moanalua"
+      ],
+      "mission": "Fort Shafter in Honolulu is headquarters of U.S. Army Pacific.",
+      "alsoKnownAs": [],
+      "servedDirectly": false
+    },
+    {
+      "slug": "fort-mccoy",
+      "name": "Fort McCoy",
+      "branch": "Army",
+      "city": "Fort McCoy",
+      "state": "Wisconsin",
+      "stateCode": "WI",
+      "towns": [
+        "Sparta",
+        "Tomah",
+        "La Crosse"
+      ],
+      "mission": "Fort McCoy is a Total Army training and mobilization post in west-central Wisconsin.",
+      "alsoKnownAs": [],
+      "servedDirectly": false
+    },
+    {
+      "slug": "camp-shelby",
+      "name": "Camp Shelby",
+      "branch": "National Guard",
+      "city": "Hattiesburg",
+      "state": "Mississippi",
+      "stateCode": "MS",
+      "towns": [
+        "Hattiesburg",
+        "Petal",
+        "Laurel"
+      ],
+      "mission": "Camp Shelby is a large National Guard training site south of Hattiesburg.",
+      "alsoKnownAs": [],
+      "servedDirectly": false
+    },
+    {
+      "slug": "camp-atterbury",
+      "name": "Camp Atterbury",
+      "branch": "National Guard",
+      "city": "Edinburgh",
+      "state": "Indiana",
+      "stateCode": "IN",
+      "towns": [
+        "Edinburgh",
+        "Franklin",
+        "Columbus",
+        "Indianapolis"
+      ],
+      "mission": "Camp Atterbury is the Indiana National Guard's major training installation south of Indianapolis.",
+      "alsoKnownAs": [],
+      "servedDirectly": false
+    },
+    {
+      "slug": "camp-ripley",
+      "name": "Camp Ripley",
+      "branch": "National Guard",
+      "city": "Little Falls",
+      "state": "Minnesota",
+      "stateCode": "MN",
+      "towns": [
+        "Little Falls",
+        "Brainerd",
+        "St. Cloud"
+      ],
+      "mission": "Camp Ripley is the Minnesota National Guard training center on the Mississippi River.",
+      "alsoKnownAs": [],
+      "servedDirectly": false
+    },
+    {
+      "slug": "fort-indiantown-gap",
+      "name": "Fort Indiantown Gap",
+      "branch": "National Guard",
+      "city": "Annville",
+      "state": "Pennsylvania",
+      "stateCode": "PA",
+      "towns": [
+        "Annville",
+        "Lebanon",
+        "Harrisburg"
+      ],
+      "mission": "Fort Indiantown Gap is the Pennsylvania National Guard's training center east of Harrisburg.",
+      "alsoKnownAs": [],
+      "servedDirectly": false
+    },
+    {
+      "slug": "camp-roberts",
+      "name": "Camp Roberts",
+      "branch": "National Guard",
+      "city": "San Miguel",
+      "state": "California",
+      "stateCode": "CA",
+      "towns": [
+        "Paso Robles",
+        "San Miguel",
+        "Atascadero"
+      ],
+      "mission": "Camp Roberts is a California Army National Guard training site in the Salinas Valley.",
+      "alsoKnownAs": [],
+      "servedDirectly": false
+    },
+    {
+      "slug": "ns-norfolk",
+      "name": "Naval Station Norfolk",
+      "branch": "Navy",
+      "city": "Norfolk",
+      "state": "Virginia",
+      "stateCode": "VA",
+      "towns": [
+        "Norfolk",
+        "Virginia Beach",
+        "Chesapeake",
+        "Portsmouth"
+      ],
+      "mission": "Naval Station Norfolk is the Navy's largest naval station and a major East Coast fleet home port.",
+      "alsoKnownAs": [],
+      "servedDirectly": false
+    },
+    {
+      "slug": "nas-oceana",
+      "name": "Naval Air Station Oceana",
+      "branch": "Navy",
+      "city": "Virginia Beach",
+      "state": "Virginia",
+      "stateCode": "VA",
+      "towns": [
+        "Virginia Beach",
+        "Chesapeake",
+        "Norfolk"
+      ],
+      "mission": "NAS Oceana is the Navy's East Coast master jet base in Virginia Beach.",
+      "alsoKnownAs": [],
+      "servedDirectly": false
+    },
+    {
+      "slug": "jeb-little-creek",
+      "name": "Joint Expeditionary Base Little Creek-Fort Story",
+      "branch": "Joint",
+      "city": "Virginia Beach",
+      "state": "Virginia",
+      "stateCode": "VA",
+      "towns": [
+        "Virginia Beach",
+        "Norfolk",
+        "Chesapeake"
+      ],
+      "mission": "JEB Little Creek-Fort Story is the East Coast home of Navy expeditionary and special warfare forces.",
+      "alsoKnownAs": [
+        "Naval Amphibious Base Little Creek"
+      ],
+      "servedDirectly": false
+    },
+    {
+      "slug": "ns-newport",
+      "name": "Naval Station Newport",
+      "branch": "Navy",
+      "city": "Newport",
+      "state": "Rhode Island",
+      "stateCode": "RI",
+      "towns": [
+        "Newport",
+        "Middletown",
+        "Portsmouth",
+        "Jamestown"
+      ],
+      "mission": "Naval Station Newport is home of the Naval War College and several Navy schools.",
+      "alsoKnownAs": [],
+      "servedDirectly": false
+    },
+    {
+      "slug": "nas-pensacola",
+      "name": "Naval Air Station Pensacola",
+      "branch": "Navy",
+      "city": "Pensacola",
+      "state": "Florida",
+      "stateCode": "FL",
+      "towns": [
+        "Pensacola",
+        "Gulf Breeze",
+        "Milton",
+        "Warrington"
+      ],
+      "mission": "NAS Pensacola is the Navy's home of naval aviation training and the National Naval Aviation Museum.",
+      "alsoKnownAs": [],
+      "servedDirectly": false
+    },
+    {
+      "slug": "nas-whiting-field",
+      "name": "Naval Air Station Whiting Field",
+      "branch": "Navy",
+      "city": "Milton",
+      "state": "Florida",
+      "stateCode": "FL",
+      "towns": [
+        "Milton",
+        "Pace",
+        "Pensacola"
+      ],
+      "mission": "NAS Whiting Field in Milton is a primary Navy and Marine Corps flight training base.",
+      "alsoKnownAs": [],
+      "servedDirectly": false
+    },
+    {
+      "slug": "nsb-new-london",
+      "name": "Naval Submarine Base New London",
+      "branch": "Navy",
+      "city": "Groton",
+      "state": "Connecticut",
+      "stateCode": "CT",
+      "towns": [
+        "Groton",
+        "New London",
+        "Mystic",
+        "Ledyard"
+      ],
+      "mission": "Naval Submarine Base New London is the Navy's first submarine base and home of the Submarine School.",
+      "alsoKnownAs": [],
+      "servedDirectly": false
+    },
+    {
+      "slug": "nas-patuxent-river",
+      "name": "Naval Air Station Patuxent River",
+      "branch": "Navy",
+      "city": "Lexington Park",
+      "state": "Maryland",
+      "stateCode": "MD",
+      "towns": [
+        "Lexington Park",
+        "California",
+        "Leonardtown"
+      ],
+      "mission": "NAS Patuxent River is the Navy's principal aircraft test center.",
+      "alsoKnownAs": [],
+      "servedDirectly": false
+    },
+    {
+      "slug": "usna-annapolis",
+      "name": "United States Naval Academy",
+      "branch": "Navy",
+      "city": "Annapolis",
+      "state": "Maryland",
+      "stateCode": "MD",
+      "towns": [
+        "Annapolis",
+        "Edgewater",
+        "Arnold",
+        "Severna Park"
+      ],
+      "mission": "The U.S. Naval Academy trains Navy and Marine Corps officers on the Severn River in Annapolis.",
+      "alsoKnownAs": [],
+      "servedDirectly": false,
+      "officialSite": "https://www.usna.edu/"
+    },
+    {
+      "slug": "ns-great-lakes",
+      "name": "Naval Station Great Lakes",
+      "branch": "Navy",
+      "city": "North Chicago",
+      "state": "Illinois",
+      "stateCode": "IL",
+      "towns": [
+        "North Chicago",
+        "Gurnee",
+        "Waukegan",
+        "Libertyville"
+      ],
+      "mission": "Naval Station Great Lakes is the Navy's only boot camp.",
+      "alsoKnownAs": [],
+      "servedDirectly": false
+    },
+    {
+      "slug": "nas-corpus-christi",
+      "name": "Naval Air Station Corpus Christi",
+      "branch": "Navy",
+      "city": "Corpus Christi",
+      "state": "Texas",
+      "stateCode": "TX",
+      "towns": [
+        "Corpus Christi",
+        "Portland",
+        "Flour Bluff"
+      ],
+      "mission": "NAS Corpus Christi is a Navy pilot training base on the Texas Gulf Coast.",
+      "alsoKnownAs": [],
+      "servedDirectly": false
+    },
+    {
+      "slug": "nas-kingsville",
+      "name": "Naval Air Station Kingsville",
+      "branch": "Navy",
+      "city": "Kingsville",
+      "state": "Texas",
+      "stateCode": "TX",
+      "towns": [
+        "Kingsville",
+        "Bishop",
+        "Corpus Christi"
+      ],
+      "mission": "NAS Kingsville is a Navy jet training base southwest of Corpus Christi.",
+      "alsoKnownAs": [],
+      "servedDirectly": false
+    },
+    {
+      "slug": "nas-jrb-fort-worth",
+      "name": "Naval Air Station Joint Reserve Base Fort Worth",
+      "branch": "Navy",
+      "city": "Fort Worth",
+      "state": "Texas",
+      "stateCode": "TX",
+      "towns": [
+        "Fort Worth",
+        "Benbrook",
+        "White Settlement",
+        "Arlington"
+      ],
+      "mission": "NAS JRB Fort Worth is a joint reserve air base on the west side of Fort Worth.",
+      "alsoKnownAs": [],
+      "servedDirectly": false
+    },
+    {
+      "slug": "nas-jrb-new-orleans",
+      "name": "Naval Air Station Joint Reserve Base New Orleans",
+      "branch": "Navy",
+      "city": "Belle Chasse",
+      "state": "Louisiana",
+      "stateCode": "LA",
+      "towns": [
+        "Belle Chasse",
+        "Gretna",
+        "Algiers",
+        "New Orleans"
+      ],
+      "mission": "NAS JRB New Orleans is a joint reserve base in Belle Chasse, across the river from New Orleans.",
+      "alsoKnownAs": [],
+      "servedDirectly": false
+    },
+    {
+      "slug": "naval-base-san-diego",
+      "name": "Naval Base San Diego",
+      "branch": "Navy",
+      "city": "San Diego",
+      "state": "California",
+      "stateCode": "CA",
+      "towns": [
+        "San Diego",
+        "National City",
+        "Chula Vista",
+        "Imperial Beach"
+      ],
+      "mission": "Naval Base San Diego is the Navy's principal Pacific surface-ship home port.",
+      "alsoKnownAs": [],
+      "servedDirectly": false
+    },
+    {
+      "slug": "naval-base-coronado",
+      "name": "Naval Base Coronado",
+      "branch": "Navy",
+      "city": "Coronado",
+      "state": "California",
+      "stateCode": "CA",
+      "towns": [
+        "Coronado",
+        "Imperial Beach",
+        "San Diego"
+      ],
+      "mission": "Naval Base Coronado includes NAS North Island and the amphibious base on the Silver Strand.",
+      "alsoKnownAs": [
+        "NAS North Island"
+      ],
+      "servedDirectly": false
+    },
+    {
+      "slug": "naval-base-point-loma",
+      "name": "Naval Base Point Loma",
+      "branch": "Navy",
+      "city": "San Diego",
+      "state": "California",
+      "stateCode": "CA",
+      "towns": [
+        "Point Loma",
+        "Ocean Beach",
+        "San Diego"
+      ],
+      "mission": "Naval Base Point Loma is a submarine and mine-warfare installation on the Point Loma peninsula.",
+      "alsoKnownAs": [],
+      "servedDirectly": false
+    },
+    {
+      "slug": "nas-lemoore",
+      "name": "Naval Air Station Lemoore",
+      "branch": "Navy",
+      "city": "Lemoore",
+      "state": "California",
+      "stateCode": "CA",
+      "towns": [
+        "Lemoore",
+        "Hanford",
+        "Visalia",
+        "Coalinga"
+      ],
+      "mission": "NAS Lemoore is the Navy's West Coast master jet base in California's San Joaquin Valley.",
+      "alsoKnownAs": [],
+      "servedDirectly": false
+    },
+    {
+      "slug": "nas-fallon",
+      "name": "Naval Air Station Fallon",
+      "branch": "Navy",
+      "city": "Fallon",
+      "state": "Nevada",
+      "stateCode": "NV",
+      "towns": [
+        "Fallon",
+        "Fernley",
+        "Reno"
+      ],
+      "mission": "NAS Fallon is home of the Naval Aviation Warfighting Development Center, including TOPGUN.",
+      "alsoKnownAs": [],
+      "servedDirectly": false
+    },
+    {
+      "slug": "nas-whidbey",
+      "name": "Naval Air Station Whidbey Island",
+      "branch": "Navy",
+      "city": "Oak Harbor",
+      "state": "Washington",
+      "stateCode": "WA",
+      "towns": [
+        "Oak Harbor",
+        "Anacortes",
+        "Coupeville",
+        "Mount Vernon"
+      ],
+      "mission": "NAS Whidbey Island is a Navy patrol and electronic-attack aviation base on Whidbey Island.",
+      "alsoKnownAs": [],
+      "servedDirectly": false
+    },
+    {
+      "slug": "ns-everett",
+      "name": "Naval Station Everett",
+      "branch": "Navy",
+      "city": "Everett",
+      "state": "Washington",
+      "stateCode": "WA",
+      "towns": [
+        "Everett",
+        "Marysville",
+        "Mukilteo",
+        "Lake Stevens"
+      ],
+      "mission": "Naval Station Everett is a Navy home port on Port Gardner Bay, north of Seattle.",
+      "alsoKnownAs": [],
+      "servedDirectly": false
+    },
+    {
+      "slug": "naval-base-kitsap",
+      "name": "Naval Base Kitsap",
+      "branch": "Navy",
+      "city": "Bremerton",
+      "state": "Washington",
+      "stateCode": "WA",
+      "towns": [
+        "Bremerton",
+        "Silverdale",
+        "Poulsbo",
+        "Port Orchard"
+      ],
+      "mission": "Naval Base Kitsap includes the Bremerton shipyard and the Bangor submarine base on Puget Sound.",
+      "alsoKnownAs": [],
+      "servedDirectly": false
+    },
+    {
+      "slug": "nas-meridian",
+      "name": "Naval Air Station Meridian",
+      "branch": "Navy",
+      "city": "Meridian",
+      "state": "Mississippi",
+      "stateCode": "MS",
+      "towns": [
+        "Meridian",
+        "Lauderdale",
+        "Collinsville"
+      ],
+      "mission": "NAS Meridian is a Navy jet training base east of Meridian.",
+      "alsoKnownAs": [],
+      "servedDirectly": false
+    },
+    {
+      "slug": "nsa-mid-south",
+      "name": "Naval Support Activity Mid-South",
+      "branch": "Navy",
+      "city": "Millington",
+      "state": "Tennessee",
+      "stateCode": "TN",
+      "towns": [
+        "Millington",
+        "Bartlett",
+        "Memphis"
+      ],
+      "mission": "NSA Mid-South in Millington is a Navy personnel and personnel-support hub north of Memphis.",
+      "alsoKnownAs": [],
+      "servedDirectly": false
+    },
+    {
+      "slug": "nas-key-west",
+      "name": "Naval Air Station Key West",
+      "branch": "Navy",
+      "city": "Key West",
+      "state": "Florida",
+      "stateCode": "FL",
+      "towns": [
+        "Key West",
+        "Stock Island",
+        "Big Coppitt Key"
+      ],
+      "mission": "NAS Key West is a Navy air station used for tactical aviation training at the end of the Florida Keys.",
+      "alsoKnownAs": [],
+      "servedDirectly": false
+    },
+    {
+      "slug": "naval-base-guam",
+      "name": "Naval Base Guam",
+      "branch": "Navy",
+      "city": "Santa Rita",
+      "state": "Guam",
+      "stateCode": "GU",
+      "towns": [
+        "Santa Rita",
+        "Agat",
+        "Hagatna",
+        "Dededo"
+      ],
+      "mission": "Naval Base Guam is the Navy's main installation on Guam, at Apra Harbor.",
+      "alsoKnownAs": [],
+      "servedDirectly": false
+    },
+    {
+      "slug": "portsmouth-naval-shipyard",
+      "name": "Portsmouth Naval Shipyard",
+      "branch": "Navy",
+      "city": "Kittery",
+      "state": "Maine",
+      "stateCode": "ME",
+      "towns": [
+        "Kittery",
+        "Portsmouth",
+        "Eliot",
+        "York"
+      ],
+      "mission": "Portsmouth Naval Shipyard maintains Navy submarines on the Piscataqua River between Maine and New Hampshire.",
+      "alsoKnownAs": [],
+      "servedDirectly": false
+    },
+    {
+      "slug": "norfolk-naval-shipyard",
+      "name": "Norfolk Naval Shipyard",
+      "branch": "Navy",
+      "city": "Portsmouth",
+      "state": "Virginia",
+      "stateCode": "VA",
+      "towns": [
+        "Portsmouth",
+        "Chesapeake",
+        "Norfolk",
+        "Suffolk"
+      ],
+      "mission": "Norfolk Naval Shipyard is the Navy's oldest shipyard, in Portsmouth, Virginia.",
+      "alsoKnownAs": [],
+      "servedDirectly": false
+    },
+    {
+      "slug": "nsa-bethesda",
+      "name": "Naval Support Activity Bethesda",
+      "branch": "Navy",
+      "city": "Bethesda",
+      "state": "Maryland",
+      "stateCode": "MD",
+      "towns": [
+        "Bethesda",
+        "Rockville",
+        "Potomac"
+      ],
+      "mission": "NSA Bethesda is the installation that hosts Walter Reed National Military Medical Center.",
+      "alsoKnownAs": [
+        "Walter Reed"
+      ],
+      "servedDirectly": false
+    },
+    {
+      "slug": "washington-navy-yard",
+      "name": "Washington Navy Yard",
+      "branch": "Navy",
+      "city": "Washington",
+      "state": "District of Columbia",
+      "stateCode": "DC",
+      "towns": [
+        "Washington",
+        "Capitol Hill",
+        "Navy Yard",
+        "Alexandria"
+      ],
+      "mission": "The Washington Navy Yard is the Navy's headquarters installation in Southeast Washington, D.C.",
+      "alsoKnownAs": [],
+      "servedDirectly": false
+    },
+    {
+      "slug": "nsa-panama-city",
+      "name": "Naval Support Activity Panama City",
+      "branch": "Navy",
+      "city": "Panama City",
+      "state": "Florida",
+      "stateCode": "FL",
+      "towns": [
+        "Panama City",
+        "Panama City Beach",
+        "Lynn Haven"
+      ],
+      "mission": "NSA Panama City is a Navy research installation on St. Andrew Bay.",
+      "alsoKnownAs": [],
+      "servedDirectly": false
+    },
+    {
+      "slug": "camp-lejeune",
+      "name": "Marine Corps Base Camp Lejeune",
+      "branch": "Marine Corps",
+      "city": "Jacksonville",
+      "state": "North Carolina",
+      "stateCode": "NC",
+      "towns": [
+        "Jacksonville",
+        "Swansboro",
+        "Sneads Ferry",
+        "Hubert"
+      ],
+      "mission": "Camp Lejeune is the Marine Corps' principal East Coast operating base, home of II Marine Expeditionary Force.",
+      "alsoKnownAs": [],
+      "servedDirectly": false,
+      "officialSite": "https://www.lejeune.marines.mil/"
+    },
+    {
+      "slug": "mcas-new-river",
+      "name": "Marine Corps Air Station New River",
+      "branch": "Marine Corps",
+      "city": "Jacksonville",
+      "state": "North Carolina",
+      "stateCode": "NC",
+      "towns": [
+        "Jacksonville",
+        "Richlands",
+        "Sneads Ferry"
+      ],
+      "mission": "MCAS New River, beside Camp Lejeune, is the Marine Corps' East Coast tiltrotor and helicopter air station.",
+      "alsoKnownAs": [],
+      "servedDirectly": false
+    },
+    {
+      "slug": "mcas-cherry-point",
+      "name": "Marine Corps Air Station Cherry Point",
+      "branch": "Marine Corps",
+      "city": "Havelock",
+      "state": "North Carolina",
+      "stateCode": "NC",
+      "towns": [
+        "Havelock",
+        "New Bern",
+        "Morehead City"
+      ],
+      "mission": "MCAS Cherry Point is a Marine Corps air station and depot on the Neuse River.",
+      "alsoKnownAs": [],
+      "servedDirectly": false
+    },
+    {
+      "slug": "camp-pendleton",
+      "name": "Marine Corps Base Camp Pendleton",
+      "branch": "Marine Corps",
+      "city": "Oceanside",
+      "state": "California",
+      "stateCode": "CA",
+      "towns": [
+        "Oceanside",
+        "San Clemente",
+        "Fallbrook",
+        "Vista"
+      ],
+      "mission": "Camp Pendleton is the Marine Corps' main West Coast base, between Oceanside and San Clemente.",
+      "alsoKnownAs": [],
+      "servedDirectly": false,
+      "officialSite": "https://www.pendleton.marines.mil/"
+    },
+    {
+      "slug": "mcas-miramar",
+      "name": "Marine Corps Air Station Miramar",
+      "branch": "Marine Corps",
+      "city": "San Diego",
+      "state": "California",
+      "stateCode": "CA",
+      "towns": [
+        "Mira Mesa",
+        "Scripps Ranch",
+        "Poway",
+        "San Diego"
+      ],
+      "mission": "MCAS Miramar is a Marine Corps jet base in northern San Diego.",
+      "alsoKnownAs": [],
+      "servedDirectly": false,
+      "officialSite": "https://www.miramar.marines.mil/"
+    },
+    {
+      "slug": "mcrd-san-diego",
+      "name": "Marine Corps Recruit Depot San Diego",
+      "branch": "Marine Corps",
+      "city": "San Diego",
+      "state": "California",
+      "stateCode": "CA",
+      "towns": [
+        "San Diego",
+        "Point Loma",
+        "Liberty Station"
+      ],
+      "mission": "MCRD San Diego is the Marine Corps recruit depot for recruits from west of the Mississippi.",
+      "alsoKnownAs": [],
+      "servedDirectly": false
+    },
+    {
+      "slug": "twentynine-palms",
+      "name": "Marine Corps Air Ground Combat Center Twentynine Palms",
+      "branch": "Marine Corps",
+      "city": "Twentynine Palms",
+      "state": "California",
+      "stateCode": "CA",
+      "towns": [
+        "Twentynine Palms",
+        "Yucca Valley",
+        "Joshua Tree"
+      ],
+      "mission": "Twentynine Palms is the Marine Corps' large desert training base in the Mojave.",
+      "alsoKnownAs": [
+        "29 Palms"
+      ],
+      "servedDirectly": false,
+      "officialSite": "https://www.29palms.marines.mil/"
+    },
+    {
+      "slug": "mcas-yuma",
+      "name": "Marine Corps Air Station Yuma",
+      "branch": "Marine Corps",
+      "city": "Yuma",
+      "state": "Arizona",
+      "stateCode": "AZ",
+      "towns": [
+        "Yuma",
+        "Somerton",
+        "Foothills"
+      ],
+      "mission": "MCAS Yuma is a Marine Corps aviation and weapons training station in southwest Arizona.",
+      "alsoKnownAs": [],
+      "servedDirectly": false
+    },
+    {
+      "slug": "mcb-quantico",
+      "name": "Marine Corps Base Quantico",
+      "branch": "Marine Corps",
+      "city": "Quantico",
+      "state": "Virginia",
+      "stateCode": "VA",
+      "towns": [
+        "Stafford",
+        "Triangle",
+        "Dumfries",
+        "Fredericksburg"
+      ],
+      "mission": "Quantico is home of Marine Corps Officer Candidates School, the FBI Academy, and the Marine Corps University.",
+      "alsoKnownAs": [],
+      "servedDirectly": false,
+      "officialSite": "https://www.quantico.marines.mil/"
+    },
+    {
+      "slug": "mcb-hawaii",
+      "name": "Marine Corps Base Hawaii",
+      "branch": "Marine Corps",
+      "city": "Kaneohe Bay",
+      "state": "Hawaii",
+      "stateCode": "HI",
+      "towns": [
+        "Kailua",
+        "Kaneohe"
+      ],
+      "mission": "Marine Corps Base Hawaii is at Kaneohe Bay on the windward side of Oahu.",
+      "alsoKnownAs": [],
+      "servedDirectly": false
+    },
+    {
+      "slug": "mcrd-parris-island",
+      "name": "Marine Corps Recruit Depot Parris Island",
+      "branch": "Marine Corps",
+      "city": "Parris Island",
+      "state": "South Carolina",
+      "stateCode": "SC",
+      "towns": [
+        "Beaufort",
+        "Port Royal",
+        "Hilton Head Island"
+      ],
+      "mission": "Parris Island is the Marine Corps recruit depot for recruits from east of the Mississippi.",
+      "alsoKnownAs": [],
+      "servedDirectly": false
+    },
+    {
+      "slug": "mcas-beaufort",
+      "name": "Marine Corps Air Station Beaufort",
+      "branch": "Marine Corps",
+      "city": "Beaufort",
+      "state": "South Carolina",
+      "stateCode": "SC",
+      "towns": [
+        "Beaufort",
+        "Port Royal",
+        "Lady's Island"
+      ],
+      "mission": "MCAS Beaufort is a Marine Corps fighter base near Beaufort, South Carolina.",
+      "alsoKnownAs": [],
+      "servedDirectly": false
+    },
+    {
+      "slug": "mclb-albany",
+      "name": "Marine Corps Logistics Base Albany",
+      "branch": "Marine Corps",
+      "city": "Albany",
+      "state": "Georgia",
+      "stateCode": "GA",
+      "towns": [
+        "Albany",
+        "Leesburg",
+        "Putney"
+      ],
+      "mission": "MCLB Albany is a Marine Corps logistics base in southwest Georgia.",
+      "alsoKnownAs": [],
+      "servedDirectly": false
+    },
+    {
+      "slug": "mclb-barstow",
+      "name": "Marine Corps Logistics Base Barstow",
+      "branch": "Marine Corps",
+      "city": "Barstow",
+      "state": "California",
+      "stateCode": "CA",
+      "towns": [
+        "Barstow",
+        "Victorville",
+        "Hesperia"
+      ],
+      "mission": "MCLB Barstow is a Marine Corps logistics base in the Mojave Desert.",
+      "alsoKnownAs": [],
+      "servedDirectly": false
+    },
+    {
+      "slug": "jblm",
+      "name": "Joint Base Lewis-McChord",
+      "branch": "Joint",
+      "city": "Tacoma",
+      "state": "Washington",
+      "stateCode": "WA",
+      "towns": [
+        "Lakewood",
+        "DuPont",
+        "Lacey",
+        "Olympia"
+      ],
+      "mission": "Joint Base Lewis-McChord combines the former Fort Lewis and McChord Air Force Base south of Tacoma.",
+      "alsoKnownAs": [
+        "Fort Lewis",
+        "McChord"
+      ],
+      "servedDirectly": false
+    },
+    {
+      "slug": "jbsa",
+      "name": "Joint Base San Antonio",
+      "branch": "Joint",
+      "city": "San Antonio",
+      "state": "Texas",
+      "stateCode": "TX",
+      "towns": [
+        "San Antonio",
+        "Schertz",
+        "Converse",
+        "Live Oak"
+      ],
+      "mission": "Joint Base San Antonio includes Fort Sam Houston, Lackland, and Randolph and is the military's largest medical training center.",
+      "alsoKnownAs": [
+        "Fort Sam Houston",
+        "Lackland",
+        "Randolph"
+      ],
+      "servedDirectly": false,
+      "officialSite": "https://www.jbsa.mil/"
+    },
+    {
+      "slug": "jbphh",
+      "name": "Joint Base Pearl Harbor-Hickam",
+      "branch": "Joint",
+      "city": "Honolulu",
+      "state": "Hawaii",
+      "stateCode": "HI",
+      "towns": [
+        "Honolulu",
+        "Aiea",
+        "Pearl City",
+        "Ewa Beach"
+      ],
+      "mission": "Joint Base Pearl Harbor-Hickam is the Navy and Air Force joint base at Pearl Harbor.",
+      "alsoKnownAs": [],
+      "servedDirectly": false
+    },
+    {
+      "slug": "jber",
+      "name": "Joint Base Elmendorf-Richardson",
+      "branch": "Joint",
+      "city": "Anchorage",
+      "state": "Alaska",
+      "stateCode": "AK",
+      "towns": [
+        "Anchorage",
+        "Eagle River",
+        "Chugiak"
+      ],
+      "mission": "Joint Base Elmendorf-Richardson combines Elmendorf Air Force Base and Fort Richardson in Anchorage.",
+      "alsoKnownAs": [
+        "Elmendorf",
+        "Fort Richardson"
+      ],
+      "servedDirectly": false
+    },
+    {
+      "slug": "jble",
+      "name": "Joint Base Langley-Eustis",
+      "branch": "Joint",
+      "city": "Hampton",
+      "state": "Virginia",
+      "stateCode": "VA",
+      "towns": [
+        "Hampton",
+        "Newport News",
+        "Yorktown",
+        "Poquoson"
+      ],
+      "mission": "Joint Base Langley-Eustis combines Langley Air Force Base in Hampton and Fort Eustis in Newport News.",
+      "alsoKnownAs": [
+        "Langley",
+        "Fort Eustis"
+      ],
+      "servedDirectly": false
+    },
+    {
+      "slug": "jb-andrews",
+      "name": "Joint Base Andrews",
+      "branch": "Joint",
+      "city": "Camp Springs",
+      "state": "Maryland",
+      "stateCode": "MD",
+      "towns": [
+        "Clinton",
+        "Waldorf",
+        "Upper Marlboro",
+        "Camp Springs"
+      ],
+      "mission": "Joint Base Andrews, in suburban Maryland, is the home base of Air Force One.",
+      "alsoKnownAs": [
+        "Andrews Air Force Base"
+      ],
+      "servedDirectly": false
+    },
+    {
+      "slug": "jb-mdl",
+      "name": "Joint Base McGuire-Dix-Lakehurst",
+      "branch": "Joint",
+      "city": "Wrightstown",
+      "state": "New Jersey",
+      "stateCode": "NJ",
+      "towns": [
+        "Wrightstown",
+        "Browns Mills",
+        "Mount Holly",
+        "Cherry Hill"
+      ],
+      "mission": "Joint Base McGuire-Dix-Lakehurst combines McGuire Air Force Base, Fort Dix, and Naval Air Engineering Station Lakehurst.",
+      "alsoKnownAs": [
+        "McGuire",
+        "Fort Dix",
+        "Lakehurst"
+      ],
+      "servedDirectly": false
+    },
+    {
+      "slug": "jb-charleston",
+      "name": "Joint Base Charleston",
+      "branch": "Joint",
+      "city": "North Charleston",
+      "state": "South Carolina",
+      "stateCode": "SC",
+      "towns": [
+        "Summerville",
+        "Goose Creek",
+        "Hanahan",
+        "North Charleston"
+      ],
+      "mission": "Joint Base Charleston includes Charleston Air Force Base and Naval Weapons Station Charleston.",
+      "alsoKnownAs": [],
+      "servedDirectly": false
+    },
+    {
+      "slug": "jbab",
+      "name": "Joint Base Anacostia-Bolling",
+      "branch": "Joint",
+      "city": "Washington",
+      "state": "District of Columbia",
+      "stateCode": "DC",
+      "towns": [
+        "Washington",
+        "Anacostia",
+        "Alexandria"
+      ],
+      "mission": "Joint Base Anacostia-Bolling is a Navy and Air Force joint base along the Anacostia and Potomac rivers.",
+      "alsoKnownAs": [],
+      "servedDirectly": false
+    },
+    {
+      "slug": "jb-myer",
+      "name": "Joint Base Myer-Henderson Hall",
+      "branch": "Joint",
+      "city": "Arlington",
+      "state": "Virginia",
+      "stateCode": "VA",
+      "towns": [
+        "Arlington",
+        "Alexandria",
+        "Washington"
+      ],
+      "mission": "Joint Base Myer-Henderson Hall includes Fort Myer and Henderson Hall next to Arlington National Cemetery.",
+      "alsoKnownAs": [
+        "Fort Myer"
+      ],
+      "servedDirectly": false
+    },
+    {
+      "slug": "eglin-afb",
+      "name": "Eglin Air Force Base",
+      "branch": "Air Force",
+      "city": "Valparaiso",
+      "state": "Florida",
+      "stateCode": "FL",
+      "towns": [
+        "Niceville",
+        "Fort Walton Beach",
+        "Destin",
+        "Crestview"
+      ],
+      "mission": "Eglin Air Force Base is a large Air Force test and fighter installation on the Florida Panhandle.",
+      "alsoKnownAs": [],
+      "servedDirectly": false
+    },
+    {
+      "slug": "hurlburt-field",
+      "name": "Hurlburt Field",
+      "branch": "Air Force",
+      "city": "Mary Esther",
+      "state": "Florida",
+      "stateCode": "FL",
+      "towns": [
+        "Fort Walton Beach",
+        "Navarre",
+        "Mary Esther",
+        "Niceville"
+      ],
+      "mission": "Hurlburt Field is the Air Force installation next to Eglin that hosts Air Force Special Operations Command.",
+      "alsoKnownAs": [],
+      "servedDirectly": false
+    },
+    {
+      "slug": "tyndall-afb",
+      "name": "Tyndall Air Force Base",
+      "branch": "Air Force",
+      "city": "Panama City",
+      "state": "Florida",
+      "stateCode": "FL",
+      "towns": [
+        "Panama City",
+        "Lynn Haven",
+        "Callaway",
+        "Parker"
+      ],
+      "mission": "Tyndall Air Force Base sits on a peninsula east of Panama City and trains F-22 and F-35 pilots.",
+      "alsoKnownAs": [],
+      "servedDirectly": false
+    },
+    {
+      "slug": "macdill-afb",
+      "name": "MacDill Air Force Base",
+      "branch": "Air Force",
+      "city": "Tampa",
+      "state": "Florida",
+      "stateCode": "FL",
+      "towns": [
+        "South Tampa",
+        "Brandon",
+        "Riverview",
+        "St. Petersburg"
+      ],
+      "mission": "MacDill Air Force Base is on the Interbay Peninsula in South Tampa and hosts U.S. Central Command headquarters.",
+      "alsoKnownAs": [],
+      "servedDirectly": false
+    },
+    {
+      "slug": "nellis-afb",
+      "name": "Nellis Air Force Base",
+      "branch": "Air Force",
+      "city": "Las Vegas",
+      "state": "Nevada",
+      "stateCode": "NV",
+      "towns": [
+        "Las Vegas",
+        "North Las Vegas",
+        "Henderson"
+      ],
+      "mission": "Nellis Air Force Base, northeast of Las Vegas, is home of the Air Force Warfare Center.",
+      "alsoKnownAs": [],
+      "servedDirectly": false
+    },
+    {
+      "slug": "creech-afb",
+      "name": "Creech Air Force Base",
+      "branch": "Air Force",
+      "city": "Indian Springs",
+      "state": "Nevada",
+      "stateCode": "NV",
+      "towns": [
+        "Indian Springs",
+        "Las Vegas"
+      ],
+      "mission": "Creech Air Force Base, northwest of Las Vegas, is a remotely piloted aircraft installation.",
+      "alsoKnownAs": [],
+      "servedDirectly": false
+    },
+    {
+      "slug": "luke-afb",
+      "name": "Luke Air Force Base",
+      "branch": "Air Force",
+      "city": "Glendale",
+      "state": "Arizona",
+      "stateCode": "AZ",
+      "towns": [
+        "Glendale",
+        "Goodyear",
+        "Litchfield Park",
+        "Surprise"
+      ],
+      "mission": "Luke Air Force Base, west of Phoenix, is an F-35 training base.",
+      "alsoKnownAs": [],
+      "servedDirectly": false
+    },
+    {
+      "slug": "davis-monthan",
+      "name": "Davis-Monthan Air Force Base",
+      "branch": "Air Force",
+      "city": "Tucson",
+      "state": "Arizona",
+      "stateCode": "AZ",
+      "towns": [
+        "Tucson",
+        "Marana",
+        "Oro Valley"
+      ],
+      "mission": "Davis-Monthan Air Force Base is in Tucson and hosts the Air Force's aircraft storage and regeneration facility.",
+      "alsoKnownAs": [],
+      "servedDirectly": false
+    },
+    {
+      "slug": "travis-afb",
+      "name": "Travis Air Force Base",
+      "branch": "Air Force",
+      "city": "Fairfield",
+      "state": "California",
+      "stateCode": "CA",
+      "towns": [
+        "Fairfield",
+        "Vacaville",
+        "Dixon",
+        "Suisun City"
+      ],
+      "mission": "Travis Air Force Base is an Air Mobility Command base between San Francisco and Sacramento.",
+      "alsoKnownAs": [],
+      "servedDirectly": false
+    },
+    {
+      "slug": "beale-afb",
+      "name": "Beale Air Force Base",
+      "branch": "Air Force",
+      "city": "Marysville",
+      "state": "California",
+      "stateCode": "CA",
+      "towns": [
+        "Marysville",
+        "Yuba City",
+        "Wheatland"
+      ],
+      "mission": "Beale Air Force Base, north of Sacramento, flies reconnaissance aircraft including the U-2.",
+      "alsoKnownAs": [],
+      "servedDirectly": false
+    },
+    {
+      "slug": "edwards-afb",
+      "name": "Edwards Air Force Base",
+      "branch": "Air Force",
+      "city": "Edwards",
+      "state": "California",
+      "stateCode": "CA",
+      "towns": [
+        "Rosamond",
+        "Lancaster",
+        "Palmdale",
+        "California City"
+      ],
+      "mission": "Edwards Air Force Base is the Air Force flight test center in the Mojave Desert.",
+      "alsoKnownAs": [],
+      "servedDirectly": false
+    },
+    {
+      "slug": "usafa",
+      "name": "United States Air Force Academy",
+      "branch": "Air Force",
+      "city": "Colorado Springs",
+      "state": "Colorado",
+      "stateCode": "CO",
+      "towns": [
+        "Colorado Springs",
+        "Monument",
+        "Air Force Academy"
+      ],
+      "mission": "The U.S. Air Force Academy trains Air Force and Space Force officers north of Colorado Springs.",
+      "alsoKnownAs": [],
+      "servedDirectly": false,
+      "officialSite": "https://www.usafa.edu/"
+    },
+    {
+      "slug": "fe-warren",
+      "name": "F. E. Warren Air Force Base",
+      "branch": "Air Force",
+      "city": "Cheyenne",
+      "state": "Wyoming",
+      "stateCode": "WY",
+      "towns": [
+        "Cheyenne",
+        "Laramie"
+      ],
+      "mission": "F. E. Warren Air Force Base in Cheyenne is a Minuteman III missile wing.",
+      "alsoKnownAs": [],
+      "servedDirectly": false
+    },
+    {
+      "slug": "malmstrom-afb",
+      "name": "Malmstrom Air Force Base",
+      "branch": "Air Force",
+      "city": "Great Falls",
+      "state": "Montana",
+      "stateCode": "MT",
+      "towns": [
+        "Great Falls",
+        "Belt",
+        "Cascade"
+      ],
+      "mission": "Malmstrom Air Force Base in Great Falls is a Minuteman III missile wing.",
+      "alsoKnownAs": [],
+      "servedDirectly": false
+    },
+    {
+      "slug": "minot-afb",
+      "name": "Minot Air Force Base",
+      "branch": "Air Force",
+      "city": "Minot",
+      "state": "North Dakota",
+      "stateCode": "ND",
+      "towns": [
+        "Minot",
+        "Burlington",
+        "Surrey"
+      ],
+      "mission": "Minot Air Force Base hosts both a B-52 bomb wing and a Minuteman III missile wing.",
+      "alsoKnownAs": [],
+      "servedDirectly": false
+    },
+    {
+      "slug": "grand-forks-afb",
+      "name": "Grand Forks Air Force Base",
+      "branch": "Air Force",
+      "city": "Grand Forks",
+      "state": "North Dakota",
+      "stateCode": "ND",
+      "towns": [
+        "Grand Forks",
+        "East Grand Forks",
+        "Emerado"
+      ],
+      "mission": "Grand Forks Air Force Base flies remotely piloted aircraft and refueling missions in the Red River Valley.",
+      "alsoKnownAs": [],
+      "servedDirectly": false
+    },
+    {
+      "slug": "ellsworth-afb",
+      "name": "Ellsworth Air Force Base",
+      "branch": "Air Force",
+      "city": "Box Elder",
+      "state": "South Dakota",
+      "stateCode": "SD",
+      "towns": [
+        "Box Elder",
+        "Rapid City",
+        "Summerset"
+      ],
+      "mission": "Ellsworth Air Force Base, east of Rapid City, is a B-1 bomber base.",
+      "alsoKnownAs": [],
+      "servedDirectly": false
+    },
+    {
+      "slug": "offutt-afb",
+      "name": "Offutt Air Force Base",
+      "branch": "Air Force",
+      "city": "Bellevue",
+      "state": "Nebraska",
+      "stateCode": "NE",
+      "towns": [
+        "Bellevue",
+        "Omaha",
+        "Papillion"
+      ],
+      "mission": "Offutt Air Force Base in Bellevue is headquarters of U.S. Strategic Command.",
+      "alsoKnownAs": [],
+      "servedDirectly": false
+    },
+    {
+      "slug": "whiteman-afb",
+      "name": "Whiteman Air Force Base",
+      "branch": "Air Force",
+      "city": "Knob Noster",
+      "state": "Missouri",
+      "stateCode": "MO",
+      "towns": [
+        "Knob Noster",
+        "Warrensburg",
+        "Sedalia"
+      ],
+      "mission": "Whiteman Air Force Base is the home of the B-2 bomber wing.",
+      "alsoKnownAs": [],
+      "servedDirectly": false
+    },
+    {
+      "slug": "scott-afb",
+      "name": "Scott Air Force Base",
+      "branch": "Air Force",
+      "city": "Belleville",
+      "state": "Illinois",
+      "stateCode": "IL",
+      "towns": [
+        "Belleville",
+        "O'Fallon",
+        "Shiloh",
+        "Fairview Heights"
+      ],
+      "mission": "Scott Air Force Base, east of St. Louis, is headquarters of U.S. Transportation Command.",
+      "alsoKnownAs": [],
+      "servedDirectly": false
+    },
+    {
+      "slug": "wright-patterson",
+      "name": "Wright-Patterson Air Force Base",
+      "branch": "Air Force",
+      "city": "Dayton",
+      "state": "Ohio",
+      "stateCode": "OH",
+      "towns": [
+        "Beavercreek",
+        "Fairborn",
+        "Riverside",
+        "Dayton"
+      ],
+      "mission": "Wright-Patterson Air Force Base is the Air Force's large research and acquisition center in Dayton.",
+      "alsoKnownAs": [],
+      "servedDirectly": false
+    },
+    {
+      "slug": "tinker-afb",
+      "name": "Tinker Air Force Base",
+      "branch": "Air Force",
+      "city": "Oklahoma City",
+      "state": "Oklahoma",
+      "stateCode": "OK",
+      "towns": [
+        "Midwest City",
+        "Del City",
+        "Oklahoma City",
+        "Choctaw"
+      ],
+      "mission": "Tinker Air Force Base is a major Air Force depot and sustainment center in Oklahoma City.",
+      "alsoKnownAs": [],
+      "servedDirectly": false
+    },
+    {
+      "slug": "altus-afb",
+      "name": "Altus Air Force Base",
+      "branch": "Air Force",
+      "city": "Altus",
+      "state": "Oklahoma",
+      "stateCode": "OK",
+      "towns": [
+        "Altus",
+        "Blair"
+      ],
+      "mission": "Altus Air Force Base trains airlift and tanker aircrews in southwest Oklahoma.",
+      "alsoKnownAs": [],
+      "servedDirectly": false
+    },
+    {
+      "slug": "vance-afb",
+      "name": "Vance Air Force Base",
+      "branch": "Air Force",
+      "city": "Enid",
+      "state": "Oklahoma",
+      "stateCode": "OK",
+      "towns": [
+        "Enid",
+        "Waukomis"
+      ],
+      "mission": "Vance Air Force Base is a joint pilot training base in Enid.",
+      "alsoKnownAs": [],
+      "servedDirectly": false
+    },
+    {
+      "slug": "sheppard-afb",
+      "name": "Sheppard Air Force Base",
+      "branch": "Air Force",
+      "city": "Wichita Falls",
+      "state": "Texas",
+      "stateCode": "TX",
+      "towns": [
+        "Wichita Falls",
+        "Burkburnett",
+        "Iowa Park"
+      ],
+      "mission": "Sheppard Air Force Base is a major technical and pilot training base in Wichita Falls.",
+      "alsoKnownAs": [],
+      "servedDirectly": false
+    },
+    {
+      "slug": "dyess-afb",
+      "name": "Dyess Air Force Base",
+      "branch": "Air Force",
+      "city": "Abilene",
+      "state": "Texas",
+      "stateCode": "TX",
+      "towns": [
+        "Abilene",
+        "Tye",
+        "Buffalo Gap"
+      ],
+      "mission": "Dyess Air Force Base in Abilene flies B-1 bombers and C-130 airlift aircraft.",
+      "alsoKnownAs": [],
+      "servedDirectly": false
+    },
+    {
+      "slug": "laughlin-afb",
+      "name": "Laughlin Air Force Base",
+      "branch": "Air Force",
+      "city": "Del Rio",
+      "state": "Texas",
+      "stateCode": "TX",
+      "towns": [
+        "Del Rio"
+      ],
+      "mission": "Laughlin Air Force Base is a pilot training base on the Rio Grande at Del Rio.",
+      "alsoKnownAs": [],
+      "servedDirectly": false
+    },
+    {
+      "slug": "goodfellow-afb",
+      "name": "Goodfellow Air Force Base",
+      "branch": "Air Force",
+      "city": "San Angelo",
+      "state": "Texas",
+      "stateCode": "TX",
+      "towns": [
+        "San Angelo"
+      ],
+      "mission": "Goodfellow Air Force Base in San Angelo trains intelligence and firefighting specialists.",
+      "alsoKnownAs": [],
+      "servedDirectly": false
+    },
+    {
+      "slug": "barksdale-afb",
+      "name": "Barksdale Air Force Base",
+      "branch": "Air Force",
+      "city": "Bossier City",
+      "state": "Louisiana",
+      "stateCode": "LA",
+      "towns": [
+        "Bossier City",
+        "Shreveport",
+        "Haughton"
+      ],
+      "mission": "Barksdale Air Force Base is a B-52 bomber base across the river from Shreveport.",
+      "alsoKnownAs": [],
+      "servedDirectly": false
+    },
+    {
+      "slug": "columbus-afb",
+      "name": "Columbus Air Force Base",
+      "branch": "Air Force",
+      "city": "Columbus",
+      "state": "Mississippi",
+      "stateCode": "MS",
+      "towns": [
+        "Columbus",
+        "West Point"
+      ],
+      "mission": "Columbus Air Force Base is an Air Force pilot training base in northeast Mississippi.",
+      "alsoKnownAs": [],
+      "servedDirectly": false
+    },
+    {
+      "slug": "keesler-afb",
+      "name": "Keesler Air Force Base",
+      "branch": "Air Force",
+      "city": "Biloxi",
+      "state": "Mississippi",
+      "stateCode": "MS",
+      "towns": [
+        "Biloxi",
+        "D'Iberville",
+        "Ocean Springs",
+        "Gulfport"
+      ],
+      "mission": "Keesler Air Force Base in Biloxi is a large Air Force technical training center.",
+      "alsoKnownAs": [],
+      "servedDirectly": false
+    },
+    {
+      "slug": "maxwell-afb",
+      "name": "Maxwell Air Force Base",
+      "branch": "Air Force",
+      "city": "Montgomery",
+      "state": "Alabama",
+      "stateCode": "AL",
+      "towns": [
+        "Montgomery",
+        "Prattville",
+        "Millbrook"
+      ],
+      "mission": "Maxwell Air Force Base in Montgomery is home of Air University.",
+      "alsoKnownAs": [],
+      "servedDirectly": false
+    },
+    {
+      "slug": "robins-afb",
+      "name": "Robins Air Force Base",
+      "branch": "Air Force",
+      "city": "Warner Robins",
+      "state": "Georgia",
+      "stateCode": "GA",
+      "towns": [
+        "Warner Robins",
+        "Perry",
+        "Centerville",
+        "Macon"
+      ],
+      "mission": "Robins Air Force Base is an Air Force sustainment center south of Macon.",
+      "alsoKnownAs": [],
+      "servedDirectly": false
+    },
+    {
+      "slug": "moody-afb",
+      "name": "Moody Air Force Base",
+      "branch": "Air Force",
+      "city": "Valdosta",
+      "state": "Georgia",
+      "stateCode": "GA",
+      "towns": [
+        "Valdosta",
+        "Hahira",
+        "Lake Park"
+      ],
+      "mission": "Moody Air Force Base flies search-and-rescue and attack aircraft near Valdosta.",
+      "alsoKnownAs": [],
+      "servedDirectly": false
+    },
+    {
+      "slug": "shaw-afb",
+      "name": "Shaw Air Force Base",
+      "branch": "Air Force",
+      "city": "Sumter",
+      "state": "South Carolina",
+      "stateCode": "SC",
+      "towns": [
+        "Sumter",
+        "Dalzell",
+        "Columbia"
+      ],
+      "mission": "Shaw Air Force Base near Sumter is headquarters of U.S. Air Forces Central and Ninth Air Force.",
+      "alsoKnownAs": [],
+      "servedDirectly": false
+    },
+    {
+      "slug": "seymour-johnson",
+      "name": "Seymour Johnson Air Force Base",
+      "branch": "Air Force",
+      "city": "Goldsboro",
+      "state": "North Carolina",
+      "stateCode": "NC",
+      "towns": [
+        "Goldsboro",
+        "Pikeville",
+        "Clayton"
+      ],
+      "mission": "Seymour Johnson Air Force Base in Goldsboro flies F-15E Strike Eagles and KC-46 tankers.",
+      "alsoKnownAs": [],
+      "servedDirectly": false
+    },
+    {
+      "slug": "dover-afb",
+      "name": "Dover Air Force Base",
+      "branch": "Air Force",
+      "city": "Dover",
+      "state": "Delaware",
+      "stateCode": "DE",
+      "towns": [
+        "Dover",
+        "Camden",
+        "Smyrna"
+      ],
+      "mission": "Dover Air Force Base is an airlift base and the home of the Air Force mortuary.",
+      "alsoKnownAs": [],
+      "servedDirectly": false
+    },
+    {
+      "slug": "hill-afb",
+      "name": "Hill Air Force Base",
+      "branch": "Air Force",
+      "city": "Ogden",
+      "state": "Utah",
+      "stateCode": "UT",
+      "towns": [
+        "Layton",
+        "Clearfield",
+        "Ogden",
+        "Roy"
+      ],
+      "mission": "Hill Air Force Base is an Air Force depot and F-35 sustainment center north of Salt Lake City.",
+      "alsoKnownAs": [],
+      "servedDirectly": false
+    },
+    {
+      "slug": "mountain-home",
+      "name": "Mountain Home Air Force Base",
+      "branch": "Air Force",
+      "city": "Mountain Home",
+      "state": "Idaho",
+      "stateCode": "ID",
+      "towns": [
+        "Mountain Home",
+        "Boise"
+      ],
+      "mission": "Mountain Home Air Force Base flies fighter aircraft in southwest Idaho.",
+      "alsoKnownAs": [],
+      "servedDirectly": false
+    },
+    {
+      "slug": "fairchild-afb",
+      "name": "Fairchild Air Force Base",
+      "branch": "Air Force",
+      "city": "Airway Heights",
+      "state": "Washington",
+      "stateCode": "WA",
+      "towns": [
+        "Airway Heights",
+        "Spokane",
+        "Medical Lake"
+      ],
+      "mission": "Fairchild Air Force Base, west of Spokane, is an air refueling wing.",
+      "alsoKnownAs": [],
+      "servedDirectly": false
+    },
+    {
+      "slug": "mcconnell-afb",
+      "name": "McConnell Air Force Base",
+      "branch": "Air Force",
+      "city": "Wichita",
+      "state": "Kansas",
+      "stateCode": "KS",
+      "towns": [
+        "Wichita",
+        "Derby",
+        "Haysville"
+      ],
+      "mission": "McConnell Air Force Base is an air refueling wing on the southeast side of Wichita.",
+      "alsoKnownAs": [],
+      "servedDirectly": false
+    },
+    {
+      "slug": "little-rock-afb",
+      "name": "Little Rock Air Force Base",
+      "branch": "Air Force",
+      "city": "Jacksonville",
+      "state": "Arkansas",
+      "stateCode": "AR",
+      "towns": [
+        "Jacksonville",
+        "Sherwood",
+        "Cabot",
+        "North Little Rock"
+      ],
+      "mission": "Little Rock Air Force Base is the Air Force's C-130 training base, northeast of Little Rock.",
+      "alsoKnownAs": [],
+      "servedDirectly": false
+    },
+    {
+      "slug": "cannon-afb",
+      "name": "Cannon Air Force Base",
+      "branch": "Air Force",
+      "city": "Clovis",
+      "state": "New Mexico",
+      "stateCode": "NM",
+      "towns": [
+        "Clovis",
+        "Portales"
+      ],
+      "mission": "Cannon Air Force Base near Clovis is an Air Force special operations wing.",
+      "alsoKnownAs": [],
+      "servedDirectly": false
+    },
+    {
+      "slug": "holloman-afb",
+      "name": "Holloman Air Force Base",
+      "branch": "Air Force",
+      "city": "Alamogordo",
+      "state": "New Mexico",
+      "stateCode": "NM",
+      "towns": [
+        "Alamogordo",
+        "Tularosa"
+      ],
+      "mission": "Holloman Air Force Base, west of Alamogordo, trains F-16 pilots and flies MQ-9 aircraft.",
+      "alsoKnownAs": [],
+      "servedDirectly": false
+    },
+    {
+      "slug": "kirtland-afb",
+      "name": "Kirtland Air Force Base",
+      "branch": "Air Force",
+      "city": "Albuquerque",
+      "state": "New Mexico",
+      "stateCode": "NM",
+      "towns": [
+        "Albuquerque",
+        "Rio Rancho",
+        "South Valley"
+      ],
+      "mission": "Kirtland Air Force Base shares runways with Albuquerque's airport and hosts nuclear and special operations units.",
+      "alsoKnownAs": [],
+      "servedDirectly": false
+    },
+    {
+      "slug": "eielson-afb",
+      "name": "Eielson Air Force Base",
+      "branch": "Air Force",
+      "city": "North Pole",
+      "state": "Alaska",
+      "stateCode": "AK",
+      "towns": [
+        "North Pole",
+        "Fairbanks",
+        "Salcha"
+      ],
+      "mission": "Eielson Air Force Base, southeast of Fairbanks, flies F-35 fighters.",
+      "alsoKnownAs": [],
+      "servedDirectly": false
+    },
+    {
+      "slug": "andersen-afb",
+      "name": "Andersen Air Force Base",
+      "branch": "Air Force",
+      "city": "Yigo",
+      "state": "Guam",
+      "stateCode": "GU",
+      "towns": [
+        "Yigo",
+        "Dededo",
+        "Tamuning"
+      ],
+      "mission": "Andersen Air Force Base is the Air Force's main bomber and airlift base on Guam.",
+      "alsoKnownAs": [],
+      "servedDirectly": false
+    },
+    {
+      "slug": "peterson-sfb",
+      "name": "Peterson Space Force Base",
+      "branch": "Space Force",
+      "city": "Colorado Springs",
+      "state": "Colorado",
+      "stateCode": "CO",
+      "towns": [
+        "Colorado Springs",
+        "Security-Widefield",
+        "Fountain"
+      ],
+      "mission": "Peterson Space Force Base in Colorado Springs is a headquarters installation for U.S. Space Force and NORAD-related commands.",
+      "alsoKnownAs": [
+        "Peterson Air Force Base"
+      ],
+      "servedDirectly": false
+    },
+    {
+      "slug": "schriever-sfb",
+      "name": "Schriever Space Force Base",
+      "branch": "Space Force",
+      "city": "Colorado Springs",
+      "state": "Colorado",
+      "stateCode": "CO",
+      "towns": [
+        "Colorado Springs",
+        "Security-Widefield"
+      ],
+      "mission": "Schriever Space Force Base, east of Colorado Springs, operates military satellite control.",
+      "alsoKnownAs": [
+        "Schriever Air Force Base"
+      ],
+      "servedDirectly": false
+    },
+    {
+      "slug": "buckley-sfb",
+      "name": "Buckley Space Force Base",
+      "branch": "Space Force",
+      "city": "Aurora",
+      "state": "Colorado",
+      "stateCode": "CO",
+      "towns": [
+        "Aurora",
+        "Denver",
+        "Centennial"
+      ],
+      "mission": "Buckley Space Force Base is on the east side of Aurora, in the Denver metro area.",
+      "alsoKnownAs": [
+        "Buckley Air Force Base"
+      ],
+      "servedDirectly": false
+    },
+    {
+      "slug": "vandenberg-sfb",
+      "name": "Vandenberg Space Force Base",
+      "branch": "Space Force",
+      "city": "Lompoc",
+      "state": "California",
+      "stateCode": "CA",
+      "towns": [
+        "Lompoc",
+        "Santa Maria",
+        "Orcutt"
+      ],
+      "mission": "Vandenberg Space Force Base on the California coast launches satellites into polar orbit.",
+      "alsoKnownAs": [
+        "Vandenberg Air Force Base"
+      ],
+      "servedDirectly": false
+    },
+    {
+      "slug": "patrick-sfb",
+      "name": "Patrick Space Force Base",
+      "branch": "Space Force",
+      "city": "Satellite Beach",
+      "state": "Florida",
+      "stateCode": "FL",
+      "towns": [
+        "Satellite Beach",
+        "Cocoa Beach",
+        "Melbourne",
+        "Cape Canaveral"
+      ],
+      "mission": "Patrick Space Force Base supports launches from the adjacent Cape Canaveral Space Force Station.",
+      "alsoKnownAs": [
+        "Patrick Air Force Base"
+      ],
+      "servedDirectly": false
+    },
+    {
+      "slug": "los-angeles-sfb",
+      "name": "Los Angeles Air Force Base",
+      "branch": "Space Force",
+      "city": "El Segundo",
+      "state": "California",
+      "stateCode": "CA",
+      "towns": [
+        "El Segundo",
+        "Manhattan Beach",
+        "Redondo Beach",
+        "Hawthorne"
+      ],
+      "mission": "Los Angeles Air Force Base in El Segundo is the Space Systems Command acquisition installation.",
+      "alsoKnownAs": [],
+      "servedDirectly": false
+    },
+    {
+      "slug": "uscg-base-portsmouth",
+      "name": "Coast Guard Base Portsmouth",
+      "branch": "Coast Guard",
+      "city": "Portsmouth",
+      "state": "Virginia",
+      "stateCode": "VA",
+      "towns": [
+        "Portsmouth",
+        "Chesapeake",
+        "Norfolk",
+        "Suffolk"
+      ],
+      "mission": "Coast Guard Base Portsmouth is a major Atlantic Coast Guard base in the Hampton Roads shipyard district.",
+      "alsoKnownAs": [],
+      "servedDirectly": false
+    },
+    {
+      "slug": "uscg-elizabeth-city",
+      "name": "Coast Guard Base Elizabeth City",
+      "branch": "Coast Guard",
+      "city": "Elizabeth City",
+      "state": "North Carolina",
+      "stateCode": "NC",
+      "towns": [
+        "Elizabeth City",
+        "Hertford",
+        "Camden"
+      ],
+      "mission": "Coast Guard Base Elizabeth City is the Coast Guard's aviation technical and air-station hub in northeast North Carolina.",
+      "alsoKnownAs": [],
+      "servedDirectly": false
+    },
+    {
+      "slug": "uscg-cape-may",
+      "name": "Coast Guard Training Center Cape May",
+      "branch": "Coast Guard",
+      "city": "Cape May",
+      "state": "New Jersey",
+      "stateCode": "NJ",
+      "towns": [
+        "Cape May",
+        "West Cape May",
+        "Rio Grande"
+      ],
+      "mission": "Training Center Cape May is the Coast Guard's only enlisted recruit training center.",
+      "alsoKnownAs": [],
+      "servedDirectly": false
+    },
+    {
+      "slug": "uscg-alameda",
+      "name": "Coast Guard Base Alameda",
+      "branch": "Coast Guard",
+      "city": "Alameda",
+      "state": "California",
+      "stateCode": "CA",
+      "towns": [
+        "Alameda",
+        "Oakland",
+        "San Leandro"
+      ],
+      "mission": "Coast Guard Base Alameda is the Pacific area logistics and cutter base in San Francisco Bay.",
+      "alsoKnownAs": [],
+      "servedDirectly": false
+    },
+    {
+      "slug": "uscg-kodiak",
+      "name": "Coast Guard Base Kodiak",
+      "branch": "Coast Guard",
+      "city": "Kodiak",
+      "state": "Alaska",
+      "stateCode": "AK",
+      "towns": [
+        "Kodiak"
+      ],
+      "mission": "Coast Guard Base Kodiak is the largest Coast Guard base and the main air station for Alaska.",
+      "alsoKnownAs": [],
+      "servedDirectly": false
+    },
+    {
+      "slug": "uscg-clearwater",
+      "name": "Coast Guard Air Station Clearwater",
+      "branch": "Coast Guard",
+      "city": "Clearwater",
+      "state": "Florida",
+      "stateCode": "FL",
+      "towns": [
+        "Clearwater",
+        "Largo",
+        "Dunedin",
+        "Tampa"
+      ],
+      "mission": "Coast Guard Air Station Clearwater is the Coast Guard's largest air station and flies missions over the Gulf and Caribbean.",
+      "alsoKnownAs": [],
+      "servedDirectly": false
+    },
+    {
+      "slug": "uscg-miami",
+      "name": "Coast Guard Base Miami Beach",
+      "branch": "Coast Guard",
+      "city": "Miami Beach",
+      "state": "Florida",
+      "stateCode": "FL",
+      "towns": [
+        "Miami Beach",
+        "Miami",
+        "North Bay Village"
+      ],
+      "mission": "Coast Guard Base Miami Beach supports cutters and Sector Miami at the Port of Miami.",
+      "alsoKnownAs": [],
+      "servedDirectly": false
+    },
+    {
+      "slug": "uscga",
+      "name": "United States Coast Guard Academy",
+      "branch": "Coast Guard",
+      "city": "New London",
+      "state": "Connecticut",
+      "stateCode": "CT",
+      "towns": [
+        "New London",
+        "Groton",
+        "Waterford"
+      ],
+      "mission": "The U.S. Coast Guard Academy trains Coast Guard officers on the Thames River in New London.",
+      "alsoKnownAs": [],
+      "servedDirectly": false,
+      "officialSite": "https://www.uscga.edu/"
+    },
+    {
+      "slug": "uscg-sector-san-juan",
+      "name": "Coast Guard Sector San Juan",
+      "branch": "Coast Guard",
+      "city": "San Juan",
+      "state": "Puerto Rico",
+      "stateCode": "PR",
+      "towns": [
+        "San Juan",
+        "Carolina",
+        "Guaynabo"
+      ],
+      "mission": "Coast Guard Sector San Juan directs Coast Guard missions throughout Puerto Rico and the U.S. Virgin Islands.",
+      "alsoKnownAs": [],
+      "servedDirectly": false
+    }
+  ]
+}
