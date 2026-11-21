@@ -1,0 +1,9 @@
+# The site is already built. Publish this folder as-is.
+[build]
+  publish = "."
+
+# Netlify Pretty URLs sends /page.html to /page. This site’s canonical
+# addresses are the .html files (the homepage is /). Leaving Pretty URLs
+# on would loop with the redirects in _redirects, so it stays off.
+[build.processing.html]
+  pretty_urls = false

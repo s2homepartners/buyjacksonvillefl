@@ -1,0 +1,49 @@
+# Long cache for files that rarely change. HTML is left on Netlify’s normal cache
+# so copy edits show up quickly. CSS and JS are versioned with ?v= when they change.
+/fonts/*
+  Cache-Control: public, max-age=31536000, immutable
+
+/images/*
+  Cache-Control: public, max-age=31536000, immutable
+
+/images/photos/*
+  Cache-Control: public, max-age=31536000, immutable
+
+/images/team/*
+  Cache-Control: public, max-age=31536000, immutable
+
+/images/partners/*
+  Cache-Control: public, max-age=31536000, immutable
+
+/social/*
+  Cache-Control: public, max-age=31536000, immutable
+
+/*.webp
+  Cache-Control: public, max-age=31536000, immutable
+
+/*.avif
+  Cache-Control: public, max-age=31536000, immutable
+
+/*.woff2
+  Cache-Control: public, max-age=31536000, immutable
+
+/*.css
+  Cache-Control: public, max-age=31536000, immutable
+
+/*.js
+  Cache-Control: public, max-age=604800
+
+/*.png
+  Cache-Control: public, max-age=31536000, immutable
+
+/*.jpg
+  Cache-Control: public, max-age=31536000, immutable
+
+/*.svg
+  Cache-Control: public, max-age=31536000, immutable
+
+/*.ico
+  Cache-Control: public, max-age=604800
+
+/*.pdf
+  Cache-Control: public, max-age=604800
