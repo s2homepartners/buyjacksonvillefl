@@ -1264,7 +1264,7 @@
     ],
     "photos": [
       {
-        "role": "hero",
+        "role": "gallery",
         "src": "/images/bases/fort-bragg-2-united-states-army-installation-management-gal.webp",
         "width": 800,
         "height": 143,
@@ -1275,7 +1275,7 @@
         "source": "https://commons.wikimedia.org/wiki/File:United_States_Army_Installation_Management_Command_Bragg_Aerial.jpg"
       },
       {
-        "role": "gallery",
+        "role": "hero",
         "src": "/images/bases/fort-bragg-1-fort-bragg-1st-brigade-barracks-gal.webp",
         "width": 800,
         "height": 514,
@@ -3194,7 +3194,7 @@
     ],
     "photos": [
       {
-        "role": "hero",
+        "role": "gallery",
         "src": "/images/bases/nas-pensacola-1-pensacola-lighthouse-view-from-beach-gal.webp",
         "width": 800,
         "height": 1423,
@@ -3205,7 +3205,7 @@
         "source": "https://commons.wikimedia.org/wiki/File:Pensacola_lighthouse_view_from_beach.JPG"
       },
       {
-        "role": "gallery",
+        "role": "hero",
         "src": "/images/bases/nas-pensacola-0-the-beach-at-gulf-pier-in-pensacola-beach--hero.webp",
         "width": 1600,
         "height": 1200,
