@@ -115,7 +115,7 @@ def load_bases():
     return bases
 
 
-def head(title, description, canonical, breadcrumb_json):
+def head(title, description, canonical, breadcrumb_json, extra_jsonld="", preload="", css_v="1"):
     return f"""<!DOCTYPE html>
 <html lang="en" class="scroll-smooth">
 <head>
@@ -136,19 +136,19 @@ def head(title, description, canonical, breadcrumb_json):
   <meta name="twitter:title" content="{esc(title)}" />
   <meta name="twitter:description" content="{esc(description)}" />
   <meta name="twitter:image" content="{SITE}/og-cover.jpg" />
-  <link rel="preload" href="/fonts/newsreader-normal-latin.woff2" as="font" type="font/woff2" crossorigin />
+  {preload}<link rel="preload" href="/fonts/newsreader-normal-latin.woff2" as="font" type="font/woff2" crossorigin />
   <link rel="preload" href="/fonts/source-sans-3-normal-latin.woff2" as="font" type="font/woff2" crossorigin />
   <link rel="icon" href="/favicon.ico" sizes="any" />
   <link rel="icon" type="image/png" href="/favicon-32.png" sizes="32x32" />
   <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
   <link rel="stylesheet" href="/fonts.css?v=1" />
-  <link rel="stylesheet" href="/tailwind.css?v=1" />
+  <link rel="stylesheet" href="/tailwind.css?v={css_v}" />
   <link rel="stylesheet" href="/coastal.css?v=6" />
   <script src="/site.js" defer></script>
   <script type="application/ld+json">
   {breadcrumb_json}
   </script>
-</head>
+{extra_jsonld}</head>
 """
 
 
@@ -274,7 +274,305 @@ def resource_links(base):
     return "\n            ".join(items)
 
 
+ICON = {
+    "housing": '<path stroke-linecap="round" stroke-linejoin="round" d="M3 10.5 12 3l9 7.5M5 9.5V20h14V9.5"/>',
+    "medical": '<path stroke-linecap="round" stroke-linejoin="round" d="M12 5v14M5 12h14"/>',
+    "schools": '<path stroke-linecap="round" stroke-linejoin="round" d="M3 10 12 4l9 6M5 10v8h14v-8M12 18v-4"/>',
+    "amenities": '<path stroke-linecap="round" stroke-linejoin="round" d="M8 6h8l1 4H7l1-4zM6 10h12v8H6z"/>',
+    "life": '<path stroke-linecap="round" stroke-linejoin="round" d="M4 16c2-4 4-6 8-6s6 2 8 6M12 10V6"/>',
+}
+
+
+def icon(name):
+    path = ICON[name]
+    return (
+        '<svg class="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true">'
+        + path
+        + "</svg>"
+    )
+
+
+def ext_link(href, label):
+    external = href.startswith("http")
+    extra = ' target="_blank" rel="noopener noreferrer"' if external else ""
+    return (
+        f'<a href="{esc(href)}" class="font-semibold text-momentum-blue underline decoration-momentum-grayLight underline-offset-2 '
+        f'hover:decoration-momentum-blue"{extra}>{esc(label)}</a>'
+    )
+
+
+def detail_card(icon_name, title, body):
+    return f"""
+      <article class="group rounded-2xl border border-momentum-grayLight bg-white p-5 shadow-sm transition duration-200 hover:-translate-y-0.5 hover:border-teal-600 hover:shadow-3d">
+        <div class="flex items-center gap-3 text-momentum-blue">
+          <span class="inline-flex h-10 w-10 items-center justify-center rounded-xl bg-teal-50 text-teal-700 transition group-hover:bg-teal-600 group-hover:text-white">{icon(icon_name)}</span>
+          <h2 class="font-serif text-2xl font-semibold">{esc(title)}</h2>
+        </div>
+        <div class="mt-4 space-y-3 text-sm leading-6 text-slate-700">{body}</div>
+      </article>"""
+
+
+def photo_figure(photo, lazy=True):
+    loading = ' loading="lazy"' if lazy else ""
+    caption = esc(photo.get("caption") or "")
+    credit = esc(photo.get("credit") or "")
+    license_name = esc(photo.get("license") or "")
+    source = photo.get("source") or ""
+    credit_html = ""
+    if credit or license_name:
+        bits = [b for b in (credit, license_name) if b]
+        linked = " · ".join(bits)
+        if source:
+            credit_html = f' <a href="{esc(source)}" class="underline underline-offset-2" target="_blank" rel="noopener noreferrer">{linked}</a>'
+        else:
+            credit_html = " " + linked
+    return f"""
+        <figure class="overflow-hidden rounded-2xl border border-white/10 bg-white shadow-sm">
+          <img src="{esc(photo["src"])}" width="{int(photo["width"])}" height="{int(photo["height"])}" alt="{esc(photo["alt"])}"{loading} class="h-52 w-full object-cover transition duration-300 hover:scale-[1.03] sm:h-56" />
+          <figcaption class="px-3 py-2 text-xs leading-5 text-slate-600">{caption}{credit_html}</figcaption>
+        </figure>"""
+
+
+def paragraphs(items):
+    return "".join(f"<p>{esc(text)}</p>" for text in items if text)
+
+
+def link_list(items):
+    if not items:
+        return ""
+    rows = []
+    for item in items:
+        if item.get("url"):
+            rows.append(f"<li>{ext_link(item['url'], item['label'])}</li>")
+        else:
+            rows.append(f"<li>{esc(item['label'])}</li>")
+    return '<ul class="list-disc space-y-1 pl-5">' + "".join(rows) + "</ul>"
+
+
+def housing_html(h):
+    parts = paragraphs(h.get("paragraphs") or [])
+    if h.get("links"):
+        parts += link_list(h["links"])
+    return parts
+
+
+def medical_html(h):
+    return paragraphs(h.get("paragraphs") or []) + link_list(h.get("links") or [])
+
+
+def schools_html(h):
+    return paragraphs(h.get("paragraphs") or []) + link_list(h.get("links") or [])
+
+
+def amenities_html(h):
+    return paragraphs(h.get("paragraphs") or []) + link_list(h.get("links") or [])
+
+
+def life_html(h):
+    parts = paragraphs(h.get("paragraphs") or [])
+    places = h.get("places") or []
+    if places:
+        rows = []
+        for place in places:
+            note = f" — {esc(place['note'])}" if place.get("note") else ""
+            rows.append(f"<li><span class=\"font-semibold\">{esc(place['name'])}</span>{note}</li>")
+        parts += '<ul class="list-disc space-y-1 pl-5">' + "".join(rows) + "</ul>"
+    parts += link_list(h.get("links") or [])
+    return parts
+
+
+def render_detailed(base):
+    detail = base["detail"]
+    canonical = f"{SITE}/bases/{base['slug']}.html"
+    title = f"PCS to {base['name']}: Housing, Schools, and Local Life | S²"
+    description = detail.get("description") or detail.get("summary") or intro_for(base)
+    if len(description) > 170:
+        description = description[:167].rsplit(" ", 1)[0] + "."
+    crumbs = breadcrumb([
+        ("Home", SITE + "/"),
+        ("Military base directory", SITE + "/military-bases.html"),
+        (base["name"], canonical),
+    ])
+    faqs = detail.get("faqs") or []
+    extra_jsonld = ""
+    if faqs:
+        faq_ld = {
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            "mainEntity": [
+                {
+                    "@type": "Question",
+                    "name": item["q"],
+                    "acceptedAnswer": {"@type": "Answer", "text": item["a"]},
+                }
+                for item in faqs
+            ],
+        }
+        extra_jsonld = (
+            "  <script type=\"application/ld+json\">\n  "
+            + json.dumps(faq_ld, ensure_ascii=False)
+            + "\n  </script>\n"
+        )
+    photos = detail.get("photos") or []
+    hero = next((p for p in photos if p.get("role") == "hero"), None)
+    gallery = [p for p in photos if p.get("role") != "hero"]
+    preload = ""
+    if hero:
+        preload = (
+            f'<link rel="preload" as="image" href="{esc(hero["src"])}" fetchpriority="high" />\n  '
+        )
+        hero_html = f"""
+    <section class="relative min-h-[28rem] overflow-hidden bg-momentum-blueDark text-white">
+      <img src="{esc(hero["src"])}" width="{int(hero["width"])}" height="{int(hero["height"])}" alt="{esc(hero["alt"])}" fetchpriority="high" class="absolute inset-0 h-full w-full object-cover" />
+      <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/75 to-slate-950/25"></div>
+      <div class="relative mx-auto flex min-h-[28rem] max-w-7xl flex-col justify-end px-4 pb-10 pt-28 sm:px-6 lg:px-8">
+        {hero_copy(base, detail, hero)}
+      </div>
+    </section>"""
+    else:
+        hero_html = f"""
+    <section class="relative overflow-hidden bg-gradient-to-br from-momentum-blueDark via-teal-800 to-sky-950 text-white">
+      <div class="pointer-events-none absolute inset-0 opacity-30" aria-hidden="true" style="background-image: radial-gradient(circle at 20% 20%, rgba(255,255,255,.18), transparent 35%), linear-gradient(rgba(255,255,255,.08) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,.08) 1px, transparent 1px); background-size: auto, 48px 48px, 48px 48px;"></div>
+      <div class="relative mx-auto flex min-h-[24rem] max-w-7xl flex-col justify-end px-4 pb-10 pt-28 sm:px-6 lg:px-8">
+        {hero_copy(base, detail, None)}
+      </div>
+    </section>"""
+    facts = detail.get("facts") or []
+    fact_html = "".join(
+        f'<li class="rounded-xl bg-white/95 px-4 py-3 text-slate-800 shadow-sm"><p class="text-[11px] font-bold uppercase tracking-wider text-teal-700">{esc(item["label"])}</p><p class="mt-1 text-sm font-semibold leading-5">{esc(item["value"])}</p></li>'
+        for item in facts
+    )
+    sections = []
+    if detail.get("housing"):
+        sections.append(detail_card("housing", "Housing", housing_html(detail["housing"])))
+    if detail.get("medical"):
+        sections.append(detail_card("medical", "Medical", medical_html(detail["medical"])))
+    if detail.get("schools"):
+        sections.append(detail_card("schools", "Schools", schools_html(detail["schools"])))
+    if detail.get("amenities"):
+        sections.append(detail_card("amenities", "Amenities", amenities_html(detail["amenities"])))
+    if detail.get("life"):
+        sections.append(detail_card("life", "Off-base life", life_html(detail["life"])))
+    gallery_html = ""
+    if gallery:
+        figures = "\n".join(photo_figure(p) for p in gallery)
+        gallery_html = f"""
+    <section class="mx-auto max-w-7xl px-4 py-4 sm:px-6 lg:px-8">
+      <h2 class="font-serif text-3xl font-semibold text-momentum-blue">Around the installation</h2>
+      <p class="mt-2 max-w-3xl text-sm text-slate-600">Photos are stored on this site. Each one is public-domain or Creative Commons and credited with its license.</p>
+      <div class="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">{figures}</div>
+    </section>"""
+    faq_html = ""
+    if faqs:
+        items = []
+        for item in faqs:
+            items.append(
+                "<details class=\"group rounded-xl border border-momentum-grayLight bg-white px-4 py-3 open:border-teal-600\">"
+                f"<summary class=\"cursor-pointer font-semibold text-momentum-blue\">{esc(item['q'])}</summary>"
+                f"<p class=\"mt-2 text-sm leading-6 text-slate-700\">{esc(item['a'])}</p></details>"
+            )
+        faq_html = f"""
+    <section class="mx-auto max-w-7xl px-4 py-8 sm:px-6 lg:px-8">
+      <h2 class="font-serif text-3xl font-semibold text-momentum-blue">Questions families ask</h2>
+      <div class="mt-4 space-y-3">{''.join(items)}</div>
+    </section>"""
+    sources = detail.get("sources") or []
+    source_items = "\n".join(
+        f"<li>{ext_link(item['url'], item['label'])}</li>" for item in sources
+    )
+    credits = []
+    for photo in photos:
+        label = photo.get("caption") or photo.get("alt")
+        source = photo.get("source")
+        bit = esc(label)
+        if source:
+            bit += " — " + ext_link(source, f"{photo.get('credit', 'Source')}, {photo.get('license', '')}".strip(", "))
+        credits.append(f"<li>{bit}</li>")
+    if base.get("servedDirectly"):
+        cta_title = f"PCSing to {base['name']}? Work with S² Home Partners"
+        cta_body = "This is one of the installations our team serves directly from Jacksonville. Tell us your timeline and whether you are buying or selling."
+        button = "Start with S²"
+    else:
+        cta_title = "PCSing here? We'll connect you with a vetted local agent."
+        cta_body = "The match is free for you. We send the base name with your request so the local agent knows where you are headed."
+        button = "Request a vetted agent"
+    extras = []
+    if base.get("localGuide"):
+        extras.append(f'<a href="{esc(base["localGuide"])}" class="font-semibold text-white underline underline-offset-2">Read the local PCS guide</a>')
+    extra_links = ""
+    if extras:
+        extra_links = '<p class="mt-4 flex flex-wrap gap-x-4 gap-y-2 text-sm">' + "".join(extras) + "</p>"
+    return (
+        head(title, description, canonical, crumbs, extra_jsonld, preload, css_v="2")
+        + chrome_header("directory")
+        + f"""
+  <main>
+    <nav class="border-b border-momentum-grayLight bg-white" aria-label="Breadcrumb">
+      <ol class="mx-auto flex max-w-7xl flex-wrap gap-x-2 px-4 py-3 text-sm text-slate-600 sm:px-6 lg:px-8">
+        <li><a href="/" class="hover:text-momentum-blue">Home</a></li>
+        <li aria-hidden="true">/</li>
+        <li><a href="/military-bases.html" class="hover:text-momentum-blue">Base directory</a></li>
+        <li aria-hidden="true">/</li>
+        <li class="font-semibold text-momentum-blue">{esc(base["name"])}</li>
+      </ol>
+    </nav>
+    {hero_html}
+    <section class="relative z-10 -mt-6 px-4 sm:px-6 lg:px-8">
+      <ul class="mx-auto grid max-w-7xl grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-5">{fact_html}</ul>
+    </section>
+    <section class="mx-auto max-w-7xl px-4 py-8 sm:px-6 lg:px-8">
+      <div class="grid gap-4 lg:grid-cols-2">
+        {''.join(sections)}
+      </div>
+    </section>
+    {gallery_html}
+    {faq_html}
+    <section class="mx-auto grid max-w-7xl gap-6 px-4 py-8 sm:px-6 lg:grid-cols-2 lg:px-8">
+      <div>
+        <h2 class="font-serif text-2xl font-semibold text-momentum-blue">Sources</h2>
+        <ul class="mt-3 list-disc space-y-2 pl-5 text-sm">{source_items}</ul>
+        <p class="mt-4 text-xs leading-5 text-slate-500">Last updated November 2026. Gate hours, clinic services, school zones, and housing wait lists change. Confirm details with the installation before you travel or sign a lease.</p>
+      </div>
+      <div>
+        <h2 class="font-serif text-2xl font-semibold text-momentum-blue">Photo credits</h2>
+        <ul class="mt-3 space-y-2 text-sm text-slate-700">{''.join(credits)}</ul>
+      </div>
+    </section>
+    <section class="mx-auto max-w-7xl px-4 pb-16 sm:px-6 lg:px-8">
+      <div class="rounded-3xl bg-momentum-blue px-6 py-8 text-white shadow-3d sm:px-10">
+        <h2 class="font-serif text-3xl font-semibold">{esc(cta_title)}</h2>
+        <p class="mt-3 max-w-2xl text-sm leading-6 text-slate-100">{esc(cta_body)}</p>
+        <a href="{esc(cta_href(base))}" class="mt-6 inline-flex rounded-md bg-white px-5 py-3 text-sm font-bold text-momentum-blue hover:bg-slate-100">{esc(button)}</a>
+        {extra_links}
+      </div>
+    </section>
+  </main>
+{FOOTER}
+"""
+    )
+
+
+def hero_copy(base, detail, hero):
+    aka = ""
+    if base.get("alsoKnownAs"):
+        aka = '<p class="mt-3 text-sm text-slate-200">Also known as ' + esc(", ".join(base["alsoKnownAs"])) + ".</p>"
+    credit = ""
+    if hero:
+        credit = (
+            f'<p class="mt-4 text-xs text-slate-200">Photo: {esc(hero.get("credit", ""))}. {esc(hero.get("license", ""))}.</p>'
+        )
+    return f"""
+        <p class="text-xs font-bold uppercase tracking-[0.2em] text-amber-200">{esc(base["branch"])} · {esc(base["city"])}, {esc(base["stateCode"])}</p>
+        <h1 class="mt-3 max-w-4xl font-serif text-4xl font-semibold leading-tight sm:text-6xl">{esc(base["name"])}</h1>
+        <p class="mt-4 max-w-3xl text-base leading-7 text-slate-100 sm:text-lg">{esc(detail.get("summary", ""))}</p>
+        {aka}
+        {credit}
+    """
+
+
 def render_base(base):
+    if base.get("detail"):
+        return render_detailed(base)
     intro = intro_for(base)
     canonical = f"{SITE}/bases/{base['slug']}.html"
     if base.get("servedDirectly"):
@@ -534,7 +832,8 @@ def update_sitemap(bases):
         block.append("  <url>")
         block.append(f"    <loc>{SITE}/bases/{base['slug']}.html</loc>")
         block.append("    <changefreq>monthly</changefreq>")
-        block.append("    <priority>0.5</priority>")
+        priority = "0.7" if base.get("detail") else "0.5"
+        block.append(f"    <priority>{priority}</priority>")
         block.append("  </url>")
     block.append("  <!-- bases:end -->")
     text = text.replace("</urlset>", "\n".join(block) + "\n</urlset>")
@@ -554,8 +853,21 @@ def update_redirects(bases):
     REDIRECTS.write_text(text, encoding="utf-8")
 
 
+def merge_details(bases):
+    path = ROOT / "data" / "base-details.json"
+    if not path.exists():
+        return
+    extra = json.loads(path.read_text(encoding="utf-8"))
+    by_slug = {base["slug"]: base for base in bases}
+    for slug, detail in extra.items():
+        if slug not in by_slug:
+            raise SystemExit(f"base-details.json has unknown slug: {slug}")
+        by_slug[slug]["detail"] = detail
+
+
 def main():
     bases = load_bases()
+    merge_details(bases)
     out_dir = ROOT / "bases"
     out_dir.mkdir(exist_ok=True)
     keep = set()
