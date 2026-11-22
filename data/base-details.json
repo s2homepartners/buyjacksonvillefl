@@ -1,0 +1,629 @@
+{
+  "nas-jacksonville": {
+    "description": "Housing, the naval hospital, schools, and off-base neighborhoods for a PCS to Naval Air Station Jacksonville.",
+    "summary": "Naval Air Station Jacksonville sits in Duval County on the west side of the city. The installation says its job is to sustain, enable, and support warfighter readiness, with a naval hospital, aviation maintenance, and a privatized housing neighborhood on base.",
+    "facts": [
+      {"label": "County", "value": "Duval County, Florida"},
+      {"label": "Visitor control", "value": "Building 9, Main Gate"},
+      {"label": "Visitor hours", "value": "Weekdays 7 a.m.–4 p.m. Saturday 7 a.m.–3 p.m."},
+      {"label": "Housing office", "value": "Mon–Fri 8 a.m.–5 p.m."},
+      {"label": "Hospital ER", "value": "Open 24/7 on base"}
+    ],
+    "housing": {
+      "paragraphs": [
+        "The Navy housing service center is at Building 960, 960 Ballard Street, NAS Jacksonville, FL 32212. Phone 904-542-2996. Email Jacksonville_Housing@us.navy.mil. The office is open Monday through Friday, 8 a.m. to 5 p.m. It processes applications and the wait list.",
+        "Privatized family housing is NAS Jacksonville Homes, run by Balfour Beatty Communities, at the same Ballard Street address. Leasing is 904-908-0821 and maintenance is 904-779-1060. The partner describes three- to five-bedroom plans. This site does not use the partner's photos.",
+        "Unaccompanied housing is at 822 Saratoga Avenue, 904-542-8195. The Navy housing page says most E-1 to E-3 sailors, and E-4 sailors with under four years of service, are required to live in unaccompanied housing. It describes about 639 personnel in two buildings, with check-in at Building 822.",
+        "Ask the housing service center about temporary lodging before you arrive. For off-base rentals, the same Navy page points families to a housing search and to the DoD BAH calculator. This page does not publish BAH dollar amounts because the rates change by year, rank, and dependency status."
+      ],
+      "links": [
+        {"label": "NAS Jacksonville Navy housing", "url": "https://ffr.cnic.navy.mil/Navy-Housing/Housing-By-Region/Southeast/NAS-Jacksonville/"},
+        {"label": "NAS Jacksonville Homes (privatized partner)", "url": "https://www.nasjacksonvillehomes.com/"},
+        {"label": "DoD BAH rate lookup", "url": "https://www.travel.dod.mil/Allowances/Basic-Allowance-for-Housing/BAH-Rate-Lookup/"}
+      ]
+    },
+    "medical": {
+      "paragraphs": [
+        "Naval Hospital Jacksonville is on base at 2080 Child Street, Jacksonville, FL 32214. The hospital quarterdeck, 904-542-7300, is staffed 24/7. Emergency care is on the first floor of the Hospital Central Tower and is open 24/7. The emergency-care line is 904-542-7341. For a life-threatening emergency, call 911.",
+        "Branch Health Clinic Jacksonville, also on the air station, does not have an emergency room. The hospital's clinic page says to use Naval Hospital Jacksonville or the nearest ER.",
+        "Florida is in the TRICARE East Region. Humana Military is the East Region contractor (800-444-5445). Confirm your plan on tricare.mil, because region rules do not apply to every plan.",
+        "Civilian emergency rooms off base include UF Health Jacksonville at 655 W. Eighth Street (a Level I trauma center, open 24 hours), Baptist Medical Center Jacksonville at 800 Prudential Drive (open 24 hours, 904-202-2000), and HCA Florida Orange Park Hospital at 2001 Kingsley Avenue, Orange Park (main ER open 24/7, 904-639-8500). Ask whether the hospital is in your TRICARE network before a non-emergency visit."
+      ],
+      "links": [
+        {"label": "Naval Hospital Jacksonville emergency care", "url": "https://jacksonville.tricare.mil/Health-Services/Urgent-Emergency-Care/"},
+        {"label": "Hospital address and quarterdeck", "url": "https://jacksonville.tricare.mil/Getting-Care/Driving-Directions/"},
+        {"label": "Which TRICARE region am I in?", "url": "https://tricare.mil/FAQs/General/GEN_Regions"},
+        {"label": "UF Health Jacksonville emergency medicine", "url": "https://ufhealthjax.org/specialties/emergency-medicine"},
+        {"label": "Baptist Jacksonville emergency rooms", "url": "https://www.baptistjax.com/immediate-care/er"},
+        {"label": "HCA Florida Orange Park Hospital emergency care", "url": "https://www.hcafloridahealthcare.com/locations/orange-park-hospital/specialties/emergency-care"}
+      ]
+    },
+    "schools": {
+      "paragraphs": [
+        "No Department of Defense school is listed for NAS Jacksonville on the Navy pages below. Children living off base attend the public district for that address.",
+        "The Navy housing office points Jacksonville-area families to Duval, Clay, St. Johns, and Nassau county public schools. Zoning follows the street address, not the base. A school liaison helps with PCS moves, special education, and deployment support. Child and Youth Programs include a child development center, youth activities, and a child-development-home program."
+      ],
+      "links": [
+        {"label": "Child and Youth Programs and school liaison overview", "url": "https://cnrse.cnic.navy.mil/Installations/NAS-Jacksonville/Fleet-and-Family-Readiness/Child-and-Youth-Programs/"},
+        {"label": "NAS Jacksonville school liaison", "url": "https://www.navymwrjacksonville.com/child-youth/school-liaison"},
+        {"label": "Duval County Public Schools", "url": "https://www.duvalschools.org/"},
+        {"label": "Clay County District Schools", "url": "https://www.oneclay.net/"},
+        {"label": "St. Johns County School District", "url": "https://www.stjohns.k12.fl.us/"},
+        {"label": "Nassau County School District", "url": "https://www.nassau.k12.fl.us/"}
+      ]
+    },
+    "amenities": {
+      "paragraphs": [
+        "The tenant-command list includes the NAS Jacksonville commissary and Navy Exchange. Visitor control is Building 9 at the Main Gate: Monday through Friday 7 a.m. to 4 p.m., Saturday 7 a.m. to 3 p.m. Phones are 904-542-4530 and 904-542-8512. Guests need a sponsor and a photo ID. The installation quarterdeck is 904-542-2338 or 904-542-2339.",
+        "Household-goods counseling is at Fleet Logistics Center Jacksonville, Building 110 on Yorktown Avenue, weekdays 8 a.m. to 3 p.m., front desk 904-546-6105. The household-goods help desk is 855-444-6683. Jacksonville International Airport (JAX) is the commercial airport. Confirm chapel, fitness, and MWR hours on the installation site before you count on a specific building."
+      ],
+      "links": [
+        {"label": "Visitor control and gate rules", "url": "https://cnrse.cnic.navy.mil/Installations/NAS-Jacksonville/Operations-and-Management/Security/"},
+        {"label": "Tenant commands, including commissary and NEX", "url": "https://cnrse.cnic.navy.mil/Installations/NAS-Jacksonville/About/Tenant-Commands/"},
+        {"label": "Jacksonville International Airport", "url": "https://www.flyjacksonville.com/"},
+        {"label": "Military OneSource", "url": "https://www.militaryonesource.mil/"},
+        {"label": "MilitaryINSTALLATIONS directory", "url": "https://installations.militaryonesource.mil/"}
+      ]
+    },
+    "life": {
+      "paragraphs": [
+        "The air station is on the west bank of the St. Johns River. Families usually compare Orange Park, Fleming Island, Mandarin, and the Westside. Drive time depends on the address and the time of day, so this page does not publish a commute in minutes.",
+        "Weekends often mean the river, the beaches to the east, or a neighborhood square in town. Cost of living moves with rank, BAH, and whether you buy or rent. Use the DoD calculator for the current allowance instead of a dollar figure copied from an old listing."
+      ],
+      "places": [
+        {"name": "Orange Park and Fleming Island", "note": "Clay County communities the housing office already points families toward. Doctors Lake sits between them."},
+        {"name": "Mandarin and the Westside", "note": "Duval County neighborhoods on the same side of town as the air station."},
+        {"name": "Jacksonville Beach", "note": "The ocean pier is a weekend trip, not a walk from the gate."},
+        {"name": "San Marco", "note": "A downtown-adjacent square south of the river, useful when you want a night in town."}
+      ],
+      "links": [
+        {"label": "DoD BAH rate lookup", "url": "https://www.travel.dod.mil/Allowances/Basic-Allowance-for-Housing/BAH-Rate-Lookup/"}
+      ]
+    },
+    "faqs": [
+      {"q": "Does Naval Hospital Jacksonville have an emergency room?", "a": "Yes. Emergency care is open 24/7 on the first floor of the Hospital Central Tower at 2080 Child Street. The emergency line is 904-542-7341. Call 911 for a life-threatening emergency. Branch Health Clinic Jacksonville does not have an emergency room."},
+      {"q": "Who runs family housing at NAS Jacksonville?", "a": "Balfour Beatty Communities operates NAS Jacksonville Homes. The Navy housing service center, which handles applications and the wait list, is Building 960 at 960 Ballard Street. Phone 904-542-2996, weekdays 8 a.m. to 5 p.m."},
+      {"q": "What are the Main Gate visitor hours?", "a": "Visitor control is Building 9 at the Main Gate. Hours are Monday through Friday, 7 a.m. to 4 p.m., and Saturday, 7 a.m. to 3 p.m. Guests need a sponsor and a photo ID."},
+      {"q": "Which school district do NAS Jacksonville families use?", "a": "There is no DoDEA school listed for the air station. The Navy housing office points families to Duval, Clay, St. Johns, and Nassau county schools. The district follows the home address. The school liaison can help with the move."}
+    ],
+    "sources": [
+      {"label": "NAS Jacksonville security and visitor control", "url": "https://cnrse.cnic.navy.mil/Installations/NAS-Jacksonville/Operations-and-Management/Security/"},
+      {"label": "NAS Jacksonville tenant commands", "url": "https://cnrse.cnic.navy.mil/Installations/NAS-Jacksonville/About/Tenant-Commands/"},
+      {"label": "Navy housing, NAS Jacksonville", "url": "https://ffr.cnic.navy.mil/Navy-Housing/Housing-By-Region/Southeast/NAS-Jacksonville/"},
+      {"label": "Naval Hospital Jacksonville emergency care", "url": "https://jacksonville.tricare.mil/Health-Services/Urgent-Emergency-Care/"},
+      {"label": "TRICARE region FAQ, updated January 2026", "url": "https://tricare.mil/FAQs/General/GEN_Regions"},
+      {"label": "Child and Youth Programs", "url": "https://cnrse.cnic.navy.mil/Installations/NAS-Jacksonville/Fleet-and-Family-Readiness/Child-and-Youth-Programs/"}
+    ],
+    "photos": [
+      {
+        "role": "hero",
+        "src": "/images/bases/nas-jax-aerial-hero.webp",
+        "width": 1600,
+        "height": 1067,
+        "alt": "Aerial view of Naval Air Station Jacksonville along the St. Johns River",
+        "caption": "Aerial of Naval Air Station Jacksonville.",
+        "credit": "U.S. Navy",
+        "license": "Public domain",
+        "source": "https://commons.wikimedia.org/wiki/File:Aerial_view_of_Naval_Air_Station_Jacksonville_(180520-N-BO384-001).jpg"
+      },
+      {
+        "role": "gallery",
+        "src": "/images/bases/doctors-lake-gal.webp",
+        "width": 800,
+        "height": 1067,
+        "alt": "Doctors Lake near Orange Park, Florida, with docks and cypress trees",
+        "caption": "Doctors Lake, near Orange Park.",
+        "credit": "Saraleebread",
+        "license": "CC BY-SA 4.0",
+        "source": "https://commons.wikimedia.org/wiki/File:Doctors_Lake.jpg"
+      },
+      {
+        "role": "gallery",
+        "src": "/images/bases/jax-beach-pier-gal.webp",
+        "width": 800,
+        "height": 287,
+        "alt": "Jacksonville Beach pier extending into the Atlantic Ocean",
+        "caption": "Jacksonville Beach pier.",
+        "credit": "Excel23",
+        "license": "CC BY 4.0",
+        "source": "https://commons.wikimedia.org/wiki/File:Jax_Beach_2024_Pier.jpg"
+      },
+      {
+        "role": "gallery",
+        "src": "/images/bases/san-marco-gal.webp",
+        "width": 800,
+        "height": 598,
+        "alt": "San Marco Square in Jacksonville with shops around a fountain",
+        "caption": "San Marco Square, Jacksonville.",
+        "credit": "Cuchullain",
+        "license": "CC BY-SA 3.0",
+        "source": "https://commons.wikimedia.org/wiki/File:Jacksonville_San_Marco_Square.JPG"
+      }
+    ]
+  },
+  "ns-mayport": {
+    "description": "Housing, the Navy Lodge, the outpatient clinic, and beach towns for a PCS to Naval Station Mayport.",
+    "summary": "Naval Station Mayport is the Navy's fleet concentration on the Atlantic side of Jacksonville, at the mouth of the St. Johns River. Family housing, a Navy Lodge, and an outpatient clinic are on the installation. The clinic does not have an emergency room.",
+    "facts": [
+      {"label": "County", "value": "Duval County, Florida"},
+      {"label": "Housing office", "value": "515 Moale Ave, Bldg 289"},
+      {"label": "Housing hours", "value": "Mon–Fri 8 a.m.–5 p.m."},
+      {"label": "Clinic", "value": "Outpatient only, no ER"},
+      {"label": "Navy Lodge", "value": "1980 Baltimore Street"}
+    ],
+    "housing": {
+      "paragraphs": [
+        "The housing service center is at 515 Moale Avenue, Building 289, Mayport, FL 32228. Phone 904-270-5738. Email Mayport_Housing@us.navy.mil. Hours are Monday through Friday, 8 a.m. to 5 p.m.",
+        "Privatized family housing is NS Mayport Homes, run by Balfour Beatty Communities, at that address. Leasing is 904-270-8870. The Navy also lists an off-base leasing office at the Ribault Bay Community Center, 1201 Assissi Lane, Atlantic Beach, FL 32233. The street is spelled Assissi on the Navy page.",
+        "Unaccompanied housing is Building 2105, Delbert D. Black Hall, on Baltimore Street. Phone 904-270-7579.",
+        "The Navy Lodge is at 1980 Baltimore Street, Mayport, FL 32228. Phone 904-247-3964. The reservation center is 800-628-9466. The lodge lists 64 oceanfront rooms with two queens and 24 single rooms, and it is pet-friendly and smoke-free. BAH rates are not printed here. Use the DoD calculator."
+      ],
+      "links": [
+        {"label": "NAVSTA Mayport Navy housing", "url": "https://ffr.cnic.navy.mil/Navy-Housing/Housing-By-Region/Southeast/NAVSTA-Mayport/"},
+        {"label": "Navy Lodge Mayport", "url": "https://www.navy-lodge.com/mayport"},
+        {"label": "DoD BAH rate lookup", "url": "https://www.travel.dod.mil/Allowances/Basic-Allowance-for-Housing/BAH-Rate-Lookup/"}
+      ]
+    },
+    "medical": {
+      "paragraphs": [
+        "Branch Health Clinic Mayport is Building 2104, 1204 Massey Avenue, Jacksonville, FL 32228. Information lines are 904-270-4446 and 904-270-4303. Published hours are Monday through Thursday 7:30 a.m. to 4 p.m., Friday 7:30 a.m. to noon, closed weekends and holidays. Appointments are 904-270-3248.",
+        "The clinic is outpatient. Its page says it has no emergency room. Call 911 or go to the nearest ER. Naval Hospital Jacksonville, on NAS Jacksonville, has a 24/7 emergency room if that hospital is the closest appropriate facility.",
+        "Florida is in the TRICARE East Region, contracted to Humana Military (800-444-5445). Confirm the current contractor on tricare.mil.",
+        "Off-base emergency rooms include Baptist Beaches at 1350 13th Avenue South, Jacksonville Beach, listed by Baptist Health as open 24 hours (904-627-2900), Baptist Medical Center Jacksonville at 800 Prudential Drive (904-202-2000), and UF Health Jacksonville at 655 W. Eighth Street."
+      ],
+      "links": [
+        {"label": "Branch Health Clinic Mayport", "url": "https://jacksonville.tricare.mil/Clinics/Branch-Health-Clinic-Mayport/"},
+        {"label": "Naval Hospital Jacksonville emergency care", "url": "https://jacksonville.tricare.mil/Health-Services/Urgent-Emergency-Care/"},
+        {"label": "Baptist emergency rooms, including Baptist Beaches", "url": "https://www.baptistjax.com/immediate-care/er"},
+        {"label": "Which TRICARE region am I in?", "url": "https://tricare.mil/FAQs/General/GEN_Regions"}
+      ]
+    },
+    "schools": {
+      "paragraphs": [
+        "Mayport does not have a Department of Defense school listed on the pages used here. Most family housing addresses fall in Duval County. Atlantic Beach and Neptune Beach are also in Duval. Confirm the zoned school with the district after you have a street address.",
+        "The NAS Jacksonville school liaison serves Navy families in the Jacksonville area, including Mayport. Child care and youth programs are run through Navy child and youth programs. Ask the Mayport fleet-and-family office for the current CDC wait list rather than relying on a secondhand number."
+      ],
+      "links": [
+        {"label": "Jacksonville-area Navy school liaison", "url": "https://www.navymwrjacksonville.com/child-youth/school-liaison"},
+        {"label": "Duval County Public Schools", "url": "https://www.duvalschools.org/"}
+      ]
+    },
+    "amenities": {
+      "paragraphs": [
+        "The Navy Lodge covers temporary lodging on Baltimore Street. MWR, the commissary, and the exchange are on the installation. Hours change, so check the installation site before a PCS stop.",
+        "Jacksonville International Airport (JAX) is the commercial airport. The beaches start just outside the gate. Hanna Park sits beside the station entrance shown in the photo above. Gate hours were not republished here because a current official hours page was not confirmed for this update."
+      ],
+      "links": [
+        {"label": "Navy Lodge Mayport", "url": "https://www.navy-lodge.com/mayport"},
+        {"label": "Jacksonville International Airport", "url": "https://www.flyjacksonville.com/"},
+        {"label": "Military OneSource", "url": "https://www.militaryonesource.mil/"},
+        {"label": "MilitaryINSTALLATIONS directory", "url": "https://installations.militaryonesource.mil/"}
+      ]
+    },
+    "life": {
+      "paragraphs": [
+        "Mayport is the beach side of a PCS to Jacksonville. Atlantic Beach, Neptune Beach, and Jacksonville Beach are the towns families compare first. East Arlington is the inland option when beach prices do not fit the allowance.",
+        "This page does not publish drive times. Traffic on Atlantic Boulevard and the Mayport ferry corridor varies by shift and tourist season. Use the BAH calculator for the Mayport duty station. Rates are not printed here."
+      ],
+      "places": [
+        {"name": "Atlantic Beach and Neptune Beach", "note": "The closest beach towns. The off-base leasing office is on Assissi Lane in Atlantic Beach."},
+        {"name": "Jacksonville Beach", "note": "The pier and the boardwalk are a short drive south."},
+        {"name": "East Arlington", "note": "An inland Duval neighborhood families use when they want more house than the beach towns offer."}
+      ],
+      "links": [
+        {"label": "DoD BAH rate lookup", "url": "https://www.travel.dod.mil/Allowances/Basic-Allowance-for-Housing/BAH-Rate-Lookup/"}
+      ]
+    },
+    "faqs": [
+      {"q": "Does the Mayport clinic have an emergency room?", "a": "No. Branch Health Clinic Mayport is outpatient and its page says to call 911 or go to the nearest emergency room. Naval Hospital Jacksonville, on NAS Jacksonville, has an emergency room that is open 24/7."},
+      {"q": "Where is Mayport family housing?", "a": "The housing service center is 515 Moale Avenue, Building 289. Phone 904-270-5738, weekdays 8 a.m. to 5 p.m. Balfour Beatty Communities runs NS Mayport Homes. Leasing is 904-270-8870. An off-base leasing office is at 1201 Assissi Lane, Atlantic Beach."},
+      {"q": "Is there a Navy Lodge at Mayport?", "a": "Yes. 1980 Baltimore Street, Mayport, FL 32228. Phone 904-247-3964. Reservations 800-628-9466. The lodge lists 64 oceanfront rooms and 24 single rooms."},
+      {"q": "Which schools serve Mayport?", "a": "No DoDEA school is listed here. Beach-town addresses are generally in Duval County Public Schools. Confirm the zoned school with the district once you have an address. The Jacksonville Navy school liaison can help with the PCS paperwork."}
+    ],
+    "sources": [
+      {"label": "Navy housing, NAVSTA Mayport", "url": "https://ffr.cnic.navy.mil/Navy-Housing/Housing-By-Region/Southeast/NAVSTA-Mayport/"},
+      {"label": "Navy Lodge Mayport", "url": "https://www.navy-lodge.com/mayport"},
+      {"label": "Branch Health Clinic Mayport", "url": "https://jacksonville.tricare.mil/Clinics/Branch-Health-Clinic-Mayport/"},
+      {"label": "TRICARE region FAQ", "url": "https://tricare.mil/FAQs/General/GEN_Regions"},
+      {"label": "Baptist Health emergency rooms", "url": "https://www.baptistjax.com/immediate-care/er"}
+    ],
+    "photos": [
+      {
+        "role": "hero",
+        "src": "/images/bases/mayport-gate-hero.webp",
+        "width": 1600,
+        "height": 1200,
+        "alt": "Entrance to Naval Station Mayport seen from Kathryn Abbey Hanna Park",
+        "caption": "Entrance to Naval Station Mayport from Hanna Park.",
+        "credit": "The Bushranger",
+        "license": "CC BY-SA 4.0",
+        "source": "https://commons.wikimedia.org/wiki/File:Entrance_to_Naval_Station_Mayport_from_Hanna_Park.jpg"
+      },
+      {
+        "role": "gallery",
+        "src": "/images/bases/mayport-ships-gal.webp",
+        "width": 800,
+        "height": 534,
+        "alt": "Ships at Naval Station Mayport during a presidential visit",
+        "caption": "Ships at Naval Station Mayport.",
+        "credit": "The White House",
+        "license": "Public domain",
+        "source": "https://commons.wikimedia.org/wiki/File:P082212CK-0211_(8000542789).jpg"
+      },
+      {
+        "role": "gallery",
+        "src": "/images/bases/jax-beach-pier-gal.webp",
+        "width": 800,
+        "height": 287,
+        "alt": "Jacksonville Beach pier on the Atlantic Ocean",
+        "caption": "Jacksonville Beach pier, south of the station.",
+        "credit": "Excel23",
+        "license": "CC BY 4.0",
+        "source": "https://commons.wikimedia.org/wiki/File:Jax_Beach_2024_Pier.jpg"
+      },
+      {
+        "role": "gallery",
+        "src": "/images/bases/san-marco-gal.webp",
+        "width": 800,
+        "height": 598,
+        "alt": "San Marco Square in Jacksonville",
+        "caption": "San Marco Square, across town.",
+        "credit": "Cuchullain",
+        "license": "CC BY-SA 3.0",
+        "source": "https://commons.wikimedia.org/wiki/File:Jacksonville_San_Marco_Square.JPG"
+      }
+    ]
+  },
+  "nsb-kings-bay": {
+    "description": "Housing, the clinic, Camden County schools, and St. Marys for a PCS to Naval Submarine Base Kings Bay.",
+    "summary": "Naval Submarine Base Kings Bay, in Camden County, Georgia, is the Atlantic home of the Navy's Ohio-class ballistic-missile submarines. St. Marys is the nearest town. The base has privatized housing and an outpatient clinic with no emergency room.",
+    "facts": [
+      {"label": "County", "value": "Camden County, Georgia"},
+      {"label": "Nearest town", "value": "St. Marys"},
+      {"label": "Housing office", "value": "1083 USS Andrew Jackson Dr"},
+      {"label": "Housing hours", "value": "Mon–Fri 8 a.m.–4:30 p.m."},
+      {"label": "Clinic", "value": "Outpatient, no ER"}
+    ],
+    "housing": {
+      "paragraphs": [
+        "The housing service center is at 1083 USS Andrew Jackson Drive, Building 180, Kings Bay, GA 31547. Phone 912-573-2056. Email KingsBay_Housing@us.navy.mil. Hours are Monday through Friday, 8 a.m. to 4:30 p.m.",
+        "Balfour Beatty Communities is the privatized-housing partner at the same address. Phone 912-882-1211.",
+        "Unaccompanied housing is at 980 USS Tennessee Avenue, Building 1070. Phones 912-573-3112 and 912-573-8953.",
+        "The Navy Lodge is at 1290 USS Jackson Road, Building 0158, at Jackson Gate. Phone 912-319-5919. Email navylodge.kingsbay@nexweb.org. The lodge desk is listed as open 6 a.m. to 10 p.m. every day. BAH is not printed on this page. Look up the Kings Bay rate on the DoD calculator."
+      ],
+      "links": [
+        {"label": "Navy housing, SUBASE Kings Bay", "url": "https://ffr.cnic.navy.mil/Navy-Housing/Housing-By-Region/Southeast/SUBASE-Kings-Bay/"},
+        {"label": "Navy MWR Kings Bay", "url": "https://www.navymwrkingsbay.com/"},
+        {"label": "DoD BAH rate lookup", "url": "https://www.travel.dod.mil/Allowances/Basic-Allowance-for-Housing/BAH-Rate-Lookup/"}
+      ]
+    },
+    "medical": {
+      "paragraphs": [
+        "Naval Branch Health Clinic Kings Bay is Building 1028, 881 USS James Madison Road, Kings Bay, GA 31547. TRICARE lists the main phone as 912-573-4215 and weekday hours as 7 a.m. to 4 p.m. Appointments go through 800-529-4677.",
+        "The clinic does not have an emergency room. The Navy says emergencies are handled at Southeast Georgia Health System – Camden Campus, on Kings Bay Road. That hospital's emergency care center is at 2000 Dan Proctor Drive, St. Marys, GA 31558, open 24/7, phone 912-576-6130. Call 911 for a life-threatening emergency.",
+        "Active-duty dental care is at the branch clinic. The Navy says family members use United Concordia. The older TRICARE Standard and Extra names on one clinic page are out of date. Georgia is in the TRICARE East Region, contracted to Humana Military (800-444-5445)."
+      ],
+      "links": [
+        {"label": "Branch Health Clinic Kings Bay", "url": "https://jacksonville.tricare.mil/Clinics/Branch-Health-Clinic-Kings-Bay/"},
+        {"label": "Navy clinic description, including dental and no ER", "url": "https://cnrse.cnic.navy.mil/Installations/SUBASE-Kings-Bay/About/Installation-Guide/Facilities-and-Resources/Naval-Branch-Health-Clinic-Kings-Bay/"},
+        {"label": "TRICARE facility listing", "url": "https://www.tricare.mil/GettingCare/FindDoctor/MTF/Facilities/Naval-Branch-Health-Clinic-Kings-Bay"},
+        {"label": "Camden Campus emergency care center", "url": "https://www.sghs.org/locations/emergency-care-center-camden-campus/"},
+        {"label": "Which TRICARE region am I in?", "url": "https://tricare.mil/FAQs/General/GEN_Regions"}
+      ]
+    },
+    "schools": {
+      "paragraphs": [
+        "Kings Bay does not have a Department of Defense Education Activity school listed on the sources below. St. Marys and Kingsland addresses are in the Camden County School District. Yulee and Fernandina Beach, on the Florida side of the state line, are in Nassau County.",
+        "Ask the installation school liaison, through Fleet and Family Support, which office is current before you enroll. Do not assume a Florida address and a Georgia address share a district."
+      ],
+      "links": [
+        {"label": "Camden County Schools", "url": "https://www.camden.k12.ga.us/"},
+        {"label": "Nassau County School District", "url": "https://www.nassau.k12.fl.us/"}
+      ]
+    },
+    "amenities": {
+      "paragraphs": [
+        "The Navy Lodge at Jackson Gate is the on-base temporary lodging published for Kings Bay. Commissary, exchange, MWR, and chapel schedules belong on the installation and MWR sites. This page links those sites instead of copying hours that go stale.",
+        "Jacksonville International Airport is the large commercial airport for the area. A smaller regional option is sometimes used, but only JAX is linked here because its official site was confirmed."
+      ],
+      "links": [
+        {"label": "Navy MWR Kings Bay", "url": "https://www.navymwrkingsbay.com/"},
+        {"label": "Kings Bay phone directory", "url": "https://cnrse.cnic.navy.mil/Installations/SUBASE-Kings-Bay/About/Installation-Guide/Phone-Directory/"},
+        {"label": "Jacksonville International Airport", "url": "https://www.flyjacksonville.com/"},
+        {"label": "Military OneSource", "url": "https://www.militaryonesource.mil/"}
+      ]
+    },
+    "life": {
+      "paragraphs": [
+        "St. Marys and Kingsland are the Georgia towns next to the base. Yulee and Fernandina Beach are across the Florida line and can mean a different school district, a different commute, and Florida insurance and tax rules.",
+        "The historic waterfront in St. Marys is the local downtown. This page does not publish commute minutes. BAH for Kings Bay is on the DoD calculator, not as a dollar figure here."
+      ],
+      "places": [
+        {"name": "St. Marys", "note": "The nearest town, with a historic district and a waterfront park."},
+        {"name": "Kingsland", "note": "The other Camden County town families compare for housing."},
+        {"name": "Yulee and Fernandina Beach", "note": "Florida addresses in Nassau County. Confirm schools before you rent across the state line."}
+      ],
+      "links": [
+        {"label": "DoD BAH rate lookup", "url": "https://www.travel.dod.mil/Allowances/Basic-Allowance-for-Housing/BAH-Rate-Lookup/"}
+      ]
+    },
+    "faqs": [
+      {"q": "Does the Kings Bay clinic have an emergency room?", "a": "No. Branch Health Clinic Kings Bay is an outpatient clinic. The Navy directs emergencies to Southeast Georgia Health System – Camden Campus. The hospital's emergency care center is at 2000 Dan Proctor Drive, St. Marys, open 24/7, phone 912-576-6130. Call 911 in a life-threatening emergency."},
+      {"q": "Who do I call about base housing?", "a": "The housing service center is 1083 USS Andrew Jackson Drive, Building 180. Phone 912-573-2056, weekdays 8 a.m. to 4:30 p.m. Balfour Beatty Communities is the privatized partner at 912-882-1211."},
+      {"q": "Where is the Navy Lodge?", "a": "1290 USS Jackson Road, Building 0158, at Jackson Gate. Phone 912-319-5919. The desk is listed as open 6 a.m. to 10 p.m. daily."},
+      {"q": "Which schools serve Kings Bay?", "a": "No DoDEA school is listed for the base. St. Marys and Kingsland are in Camden County Schools. Yulee and Fernandina Beach are in Nassau County, Florida. Zoning follows the address."}
+    ],
+    "sources": [
+      {"label": "Navy housing, SUBASE Kings Bay", "url": "https://ffr.cnic.navy.mil/Navy-Housing/Housing-By-Region/Southeast/SUBASE-Kings-Bay/"},
+      {"label": "Branch Health Clinic Kings Bay", "url": "https://jacksonville.tricare.mil/Clinics/Branch-Health-Clinic-Kings-Bay/"},
+      {"label": "CNIC clinic page (dental and emergency guidance)", "url": "https://cnrse.cnic.navy.mil/Installations/SUBASE-Kings-Bay/About/Installation-Guide/Facilities-and-Resources/Naval-Branch-Health-Clinic-Kings-Bay/"},
+      {"label": "Camden Campus emergency care", "url": "https://www.sghs.org/locations/emergency-care-center-camden-campus/"},
+      {"label": "TRICARE region FAQ", "url": "https://tricare.mil/FAQs/General/GEN_Regions"}
+    ],
+    "photos": [
+      {
+        "role": "hero",
+        "src": "/images/bases/kingsbay-aerial-hero.webp",
+        "width": 1600,
+        "height": 1200,
+        "alt": "Aerial view of Naval Submarine Base Kings Bay and the surrounding water",
+        "caption": "Aerial of Naval Submarine Base Kings Bay.",
+        "credit": "Edibobb",
+        "license": "CC BY 3.0",
+        "source": "https://commons.wikimedia.org/wiki/File:Kingsbay.jpg"
+      },
+      {
+        "role": "gallery",
+        "src": "/images/bases/st-marys-waterfront-gal.webp",
+        "width": 800,
+        "height": 534,
+        "alt": "Waterfront pavilion and marsh at St. Marys, Georgia",
+        "caption": "St. Marys waterfront pavilion.",
+        "credit": "Mjrmtg",
+        "license": "CC BY 4.0",
+        "source": "https://commons.wikimedia.org/wiki/File:St._Marys_Waterfront_Pavilion_full.jpg"
+      },
+      {
+        "role": "gallery",
+        "src": "/images/bases/st-marys-district-gal.webp",
+        "width": 800,
+        "height": 535,
+        "alt": "Oak-lined street in the St. Marys historic district, Georgia",
+        "caption": "St. Marys historic district.",
+        "credit": "Bubba73",
+        "license": "CC BY-SA 3.0",
+        "source": "https://commons.wikimedia.org/wiki/File:St._Marys_Historic_District,_GA,_US_(13).jpg"
+      },
+      {
+        "role": "gallery",
+        "src": "/images/bases/fernandina-courthouse-gal.webp",
+        "width": 800,
+        "height": 1067,
+        "alt": "Nassau County courthouse in Fernandina Beach, Florida",
+        "caption": "Fernandina Beach courthouse, across the Florida line.",
+        "credit": "Georgia Guercio",
+        "license": "CC BY-SA 3.0",
+        "source": "https://commons.wikimedia.org/wiki/File:Fernandina_Beach,_FL,_Courthouse,_Nassau_County,_08-09-2010_(7).JPG"
+      }
+    ]
+  },
+  "blount-island": {
+    "description": "What Marine Corps Support Facility Blount Island does, and where Jacksonville families live, go to school, and get care.",
+    "summary": "Marine Corps Support Facility Blount Island is the Marine Corps prepositioning command on the St. Johns River in Jacksonville. It maintains maritime prepositioning ships. It is not a neighborhood base with family housing, a hospital, or a DoDEA school.",
+    "facts": [
+      {"label": "County", "value": "Duval County, Florida"},
+      {"label": "Role", "value": "Maritime prepositioning"},
+      {"label": "Grounds", "value": "More than 1,200 acres"},
+      {"label": "Family housing", "value": "Not a housing installation"},
+      {"label": "Nearest city", "value": "Jacksonville"}
+    ],
+    "housing": {
+      "paragraphs": [
+        "Blount Island Command does not publish a family-housing neighborhood. Sailors and Marines with families in Jacksonville use the local market, or the Navy housing offices at NAS Jacksonville and Naval Station Mayport if they are assigned to those installations.",
+        "Do not plan a PCS as if this facility had a privatized housing wait list. If your orders are to Blount Island, ask your sponsor where people in your unit actually live, then look up BAH for the duty station on the DoD calculator. Dollar rates are not printed here."
+      ],
+      "links": [
+        {"label": "Blount Island Command", "url": "https://www.bic.marines.mil/"},
+        {"label": "NAS Jacksonville housing", "url": "https://ffr.cnic.navy.mil/Navy-Housing/Housing-By-Region/Southeast/NAS-Jacksonville/"},
+        {"label": "DoD BAH rate lookup", "url": "https://www.travel.dod.mil/Allowances/Basic-Allowance-for-Housing/BAH-Rate-Lookup/"}
+      ]
+    },
+    "medical": {
+      "paragraphs": [
+        "Blount Island is not a military hospital. Emergency care in Jacksonville is at civilian hospitals or, for beneficiaries with access, Naval Hospital Jacksonville on NAS Jacksonville.",
+        "Naval Hospital Jacksonville's emergency room is open 24/7 at 2080 Child Street. Phone 904-542-7341. Call 911 for a life-threatening emergency. UF Health Jacksonville at 655 W. Eighth Street and Baptist Medical Center Jacksonville at 800 Prudential Drive both publish 24-hour emergency rooms.",
+        "Florida is in the TRICARE East Region. Humana Military is the contractor (800-444-5445)."
+      ],
+      "links": [
+        {"label": "Naval Hospital Jacksonville emergency care", "url": "https://jacksonville.tricare.mil/Health-Services/Urgent-Emergency-Care/"},
+        {"label": "UF Health Jacksonville emergency medicine", "url": "https://ufhealthjax.org/specialties/emergency-medicine"},
+        {"label": "Baptist Jacksonville emergency rooms", "url": "https://www.baptistjax.com/immediate-care/er"},
+        {"label": "Which TRICARE region am I in?", "url": "https://tricare.mil/FAQs/General/GEN_Regions"}
+      ]
+    },
+    "schools": {
+      "paragraphs": [
+        "There is no DoDEA school at Blount Island. Families living in Jacksonville use the public district for their address. Duval County covers the city. The Navy school liaison at NAS Jacksonville helps military families with school moves in the area."
+      ],
+      "links": [
+        {"label": "Duval County Public Schools", "url": "https://www.duvalschools.org/"},
+        {"label": "NAS Jacksonville school liaison", "url": "https://www.navymwrjacksonville.com/child-youth/school-liaison"}
+      ]
+    },
+    "amenities": {
+      "paragraphs": [
+        "The command's own history says it began on 1 September 1986 as the Biennial Maintenance Command and was renamed in 1989. The Marine Corps leased 262 acres in 1986 and acquired more than 1,100 acres in 2004. Marine Corps Support Facility Blount Island activated on 21 November 2006 under Marine Corps Installations East.",
+        "The installation covers more than 1,200 acres and about 110 buildings, with a private 1,000-foot marine slipway and five berths. The maintenance cycle is every 42 months. Commissary and exchange shopping for Jacksonville families is at the Navy installations, not on this industrial waterfront. Jacksonville International Airport is the commercial airport."
+      ],
+      "links": [
+        {"label": "Blount Island Command", "url": "https://www.bic.marines.mil/"},
+        {"label": "About Blount Island Command", "url": "https://www.bic.marines.mil/About/"},
+        {"label": "Jacksonville International Airport", "url": "https://www.flyjacksonville.com/"},
+        {"label": "Military OneSource", "url": "https://www.militaryonesource.mil/"}
+      ]
+    },
+    "life": {
+      "paragraphs": [
+        "People assigned here live in Jacksonville. Arlington and East Arlington are the neighborhoods on this side of the river. Mayport and the beaches are farther east. NAS Jacksonville's housing market is west of downtown.",
+        "The photos below show the island and the work, including a 1994 Navy aerial and a later cargo operation. The 2025 Osprey photo was taken at Dames Point Marine Terminal, where Blount Island Command supported the load. It is not a picture of a housing street."
+      ],
+      "places": [
+        {"name": "Arlington and East Arlington", "note": "The residential areas closest to the island on the east side of Jacksonville."},
+        {"name": "Mayport and the beaches", "note": "A separate Navy installation and the Atlantic beaches, farther east."},
+        {"name": "San Marco", "note": "A downtown-adjacent neighborhood when you want a night in town."}
+      ],
+      "links": [
+        {"label": "NAS Jacksonville PCS guide on this site", "url": "/bases/nas-jacksonville.html"}
+      ]
+    },
+    "faqs": [
+      {"q": "Is there family housing on Blount Island?", "a": "No family-housing neighborhood is published for Blount Island Command. It is a maritime prepositioning maintenance facility. Jacksonville families use the local market or, when assigned there, the Navy housing offices at NAS Jacksonville and Naval Station Mayport."},
+      {"q": "What does Blount Island Command do?", "a": "It generates and sustains Marine Corps maritime prepositioning equipment. The installation covers more than 1,200 acres, with a private slipway and five berths, and runs a maintenance cycle of about 42 months."},
+      {"q": "Where do families get medical care?", "a": "There is no hospital on Blount Island. Naval Hospital Jacksonville has a 24/7 emergency room at 2080 Child Street. UF Health Jacksonville and Baptist Medical Center Jacksonville also publish 24-hour emergency rooms. Call 911 in a life-threatening emergency."},
+      {"q": "Which schools apply?", "a": "There is no DoDEA school on the facility. Jacksonville addresses are generally in Duval County Public Schools. Confirm the zoned school with the district."}
+    ],
+    "sources": [
+      {"label": "Blount Island Command", "url": "https://www.bic.marines.mil/"},
+      {"label": "About the command", "url": "https://www.bic.marines.mil/About/"},
+      {"label": "Naval Hospital Jacksonville emergency care", "url": "https://jacksonville.tricare.mil/Health-Services/Urgent-Emergency-Care/"},
+      {"label": "TRICARE region FAQ", "url": "https://tricare.mil/FAQs/General/GEN_Regions"}
+    ],
+    "photos": [
+      {
+        "role": "hero",
+        "src": "/images/bases/blount-1994-hero.webp",
+        "width": 1600,
+        "height": 1168,
+        "alt": "1994 aerial photograph of Blount Island Command on the St. Johns River",
+        "caption": "Aerial of Blount Island Command, 1994.",
+        "credit": "PH1 J.F. Slaughenhaupt, U.S. Navy",
+        "license": "Public domain",
+        "source": "https://commons.wikimedia.org/wiki/File:Overhead_shot_of_BICmd_in_1994.jpg"
+      },
+      {
+        "role": "gallery",
+        "src": "/images/bases/blount-cargo-gal.webp",
+        "width": 800,
+        "height": 501,
+        "alt": "A Marine inspects relief cargo at Blount Island Command before it is loaded aboard a ship",
+        "caption": "Cargo inspection at Blount Island Command.",
+        "credit": "Petty Officer 1st Class Leah Stiles, U.S. Navy",
+        "license": "Public domain",
+        "source": "https://commons.wikimedia.org/wiki/File:Supply_efforts_in_Jacksonville_DVIDS241347.jpg"
+      },
+      {
+        "role": "gallery",
+        "src": "/images/bases/blount-osprey-gal.webp",
+        "width": 800,
+        "height": 534,
+        "alt": "Marines position an MV-22 Osprey for loading at Dames Point with Blount Island Command support",
+        "caption": "Osprey loading at Dames Point, with Blount Island Command support, August 2025.",
+        "credit": "Dustin Senger, U.S. Marines",
+        "license": "Public domain",
+        "source": "https://commons.wikimedia.org/wiki/File:Jax_to_Africa-_Blount_Island_Keeps_Marine_Ospreys_Moving_(9259812).jpg"
+      },
+      {
+        "role": "gallery",
+        "src": "/images/bases/san-marco-gal.webp",
+        "width": 800,
+        "height": 598,
+        "alt": "San Marco Square in Jacksonville",
+        "caption": "San Marco Square, Jacksonville.",
+        "credit": "Cuchullain",
+        "license": "CC BY-SA 3.0",
+        "source": "https://commons.wikimedia.org/wiki/File:Jacksonville_San_Marco_Square.JPG"
+      }
+    ]
+  },
+  "camp-blanding": {
+    "description": "Camp Blanding is the Florida National Guard training center near Starke, not a family housing installation.",
+    "summary": "Camp Blanding Joint Training Center, near Starke in Bradford County, is the Florida National Guard's premier training site. It covers about 73,000 acres. It is a training center, not a family PCS base with housing, a commissary, or a DoDEA school.",
+    "facts": [
+      {"label": "County", "value": "Bradford County, Florida"},
+      {"label": "Nearest town", "value": "Starke"},
+      {"label": "Size", "value": "About 73,000 acres"},
+      {"label": "Role", "value": "National Guard training"},
+      {"label": "Family housing", "value": "Not a PCS housing base"}
+    ],
+    "housing": {
+      "paragraphs": [
+        "The Florida National Guard describes Camp Blanding as its premier training site. It does not publish privatized family housing, a housing wait list, or a housing partner. Do not arrive expecting a neighborhood of family homes on the camp.",
+        "People who live in Starke while working at the camp use the local rental and purchase market. BAH depends on the duty station printed on the orders. Look up the rate on the DoD calculator. This page does not guess a dollar amount.",
+        "The command group phone published in the Florida National Guard directory is (904) 682-3357. Leadership names change. Read the current command group on the camp's official page before you quote a commander."
+      ],
+      "links": [
+        {"label": "Camp Blanding Joint Training Center", "url": "https://fl.ng.mil/Commands/Camp-Blanding-Joint-Training-Center/"},
+        {"label": "Florida National Guard directory", "url": "https://fl.ng.mil/Contact-Us/Directory/"},
+        {"label": "DoD BAH rate lookup", "url": "https://www.travel.dod.mil/Allowances/Basic-Allowance-for-Housing/BAH-Rate-Lookup/"}
+      ]
+    },
+    "medical": {
+      "paragraphs": [
+        "Camp Blanding does not publish a military hospital or emergency room for families. A training-site aid station is not a substitute for an ER. Call 911 for a life-threatening emergency.",
+        "Florida is in the TRICARE East Region, contracted to Humana Military (800-444-5445). Confirm your plan on tricare.mil. For a Jacksonville emergency room with published 24-hour care, UF Health Jacksonville is at 655 W. Eighth Street. Starke is closer to Gainesville than to the Jacksonville naval hospital, so use the nearest ER to the address where you are."
+      ],
+      "links": [
+        {"label": "Which TRICARE region am I in?", "url": "https://tricare.mil/FAQs/General/GEN_Regions"},
+        {"label": "UF Health Jacksonville emergency medicine", "url": "https://ufhealthjax.org/specialties/emergency-medicine"}
+      ]
+    },
+    "schools": {
+      "paragraphs": [
+        "The camp's official page does not list a DoDEA school or a school liaison program. Families living in Starke use Bradford County School District. The district office is at 501 West Washington Street, Starke, FL 32091, phone 904-966-6860. Zoning follows the home address. Keystone Heights and Middleburg can fall in other districts, so check the address before you enroll."
+      ],
+      "links": [
+        {"label": "Bradford County School District", "url": "https://www.bradfordschools.org/"}
+      ]
+    },
+    "amenities": {
+      "paragraphs": [
+        "Camp Blanding is named for Lieutenant General Albert Hazen Blanding. The Florida National Guard calls it the state's premier training site. It is about 73,000 acres near Starke, between Jacksonville and Gainesville.",
+        "There is no published commissary or Navy exchange for family shopping. Jacksonville International Airport is the nearest large commercial airport confirmed for this page. Training schedules, range control, and visitor rules belong on the Florida National Guard site."
+      ],
+      "links": [
+        {"label": "Camp Blanding Joint Training Center", "url": "https://fl.ng.mil/Commands/Camp-Blanding-Joint-Training-Center/"},
+        {"label": "Jacksonville International Airport", "url": "https://www.flyjacksonville.com/"},
+        {"label": "Military OneSource", "url": "https://www.militaryonesource.mil/"}
+      ]
+    },
+    "life": {
+      "paragraphs": [
+        "Starke is the town at the gate. Keystone Heights and Middleburg are the other small-town options between the camp and Jacksonville. Gainesville is the larger city to the south. None of those drive times are printed here, because a sourced minute count was not found.",
+        "The photograph is a June 2023 water-survival class at the camp. It shows the training mission. A current aerial of the cantonment was not available under a license this site can use, so the page does not substitute an unrelated landscape."
+      ],
+      "places": [
+        {"name": "Starke", "note": "The nearest town, in Bradford County."},
+        {"name": "Keystone Heights and Middleburg", "note": "Smaller communities between the camp and the Jacksonville suburbs. Confirm the school district for the specific address."},
+        {"name": "Gainesville", "note": "The larger city south of the camp, not a walk from the training area."}
+      ],
+      "links": [
+        {"label": "DoD BAH rate lookup", "url": "https://www.travel.dod.mil/Allowances/Basic-Allowance-for-Housing/BAH-Rate-Lookup/"}
+      ]
+    },
+    "faqs": [
+      {"q": "Is Camp Blanding a family housing base?", "a": "No. The Florida National Guard describes it as a joint training center of about 73,000 acres near Starke. It does not publish privatized family housing or a family wait list."},
+      {"q": "Where do children go to school?", "a": "No DoDEA school is listed for the camp. Families in Starke use Bradford County School District. The district site is bradfordschools.org, and the district office phone is 904-966-6860. Confirm zoning for any address outside Starke."},
+      {"q": "Is there a military hospital on camp?", "a": "The official camp page does not list a family hospital or emergency room. Call 911 for a life-threatening emergency. Florida is in the TRICARE East Region."},
+      {"q": "How do I reach the camp headquarters?", "a": "The Florida National Guard directory lists the Camp Blanding command group at (904) 682-3357. Confirm the current command group on the camp's official page, because names change."}
+    ],
+    "sources": [
+      {"label": "Camp Blanding Joint Training Center", "url": "https://fl.ng.mil/Commands/Camp-Blanding-Joint-Training-Center/"},
+      {"label": "Florida National Guard directory", "url": "https://fl.ng.mil/Contact-Us/Directory/"},
+      {"label": "Bradford County School District", "url": "https://www.bradfordschools.org/"},
+      {"label": "TRICARE region FAQ", "url": "https://tricare.mil/FAQs/General/GEN_Regions"}
+    ],
+    "photos": [
+      {
+        "role": "hero",
+        "src": "/images/bases/camp-blanding-water-hero.webp",
+        "width": 1400,
+        "height": 934,
+        "alt": "Florida State Guard recruits practice water survival at Camp Blanding in June 2023",
+        "caption": "Water-survival training at Camp Blanding, 14 June 2023.",
+        "credit": "Sgt. Marc Morgenstern",
+        "license": "Public domain",
+        "source": "https://commons.wikimedia.org/wiki/File:Florida_State_Guard_recruits_receive_aquatic_skills_instruction_at_Camp_Blanding.jpg"
+      }
+    ]
+  }
+}
