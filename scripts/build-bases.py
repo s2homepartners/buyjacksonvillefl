@@ -256,6 +256,41 @@ def cta_href(base):
     return "/referral.html?" + urlencode(params) + "#request-referral"
 
 
+def cta_box(base, wide=True):
+    extras = []
+    if base.get("localGuide"):
+        extras.append(
+            f'<a href="{esc(base["localGuide"])}" class="font-semibold text-white underline underline-offset-2">Read the local PCS guide</a>'
+        )
+    if base.get("servedDirectly"):
+        title = f"PCSing to {base['name']}? Work with S² Home Partners"
+        body = (
+            "This is one of the installations our team serves directly from Jacksonville. "
+            "Tell us your timeline and whether you are buying or selling."
+        )
+        button = "Start with S²"
+        extras.append(
+            f'<a href="/get-started.html?base={esc(base["name"].replace(" ", "+"))}" class="font-semibold text-white underline underline-offset-2">Open the buyer and seller intake form</a>'
+        )
+    else:
+        title = "PCSing here? We'll connect you with a vetted local agent."
+        body = "The match is free for you. We send the base name with your request so the local agent knows where you are headed."
+        button = "Request a vetted agent"
+    extra_html = ""
+    if extras:
+        extra_html = '<p class="mt-4 flex flex-wrap gap-x-4 gap-y-2 text-sm">' + "".join(extras) + "</p>"
+    outer = "max-w-7xl" if wide else "max-w-3xl"
+    return f"""
+    <section class="mx-auto {outer} px-4 pt-8 sm:px-6 lg:px-8">
+      <div class="rounded-3xl bg-momentum-blue px-6 py-8 text-white shadow-3d sm:px-10">
+        <h2 class="font-serif text-3xl font-semibold">{esc(title)}</h2>
+        <p class="mt-3 max-w-2xl text-sm leading-6 text-slate-100">{esc(body)}</p>
+        <a href="{esc(cta_href(base))}" class="mt-6 inline-flex rounded-md bg-white px-5 py-3 text-sm font-bold text-momentum-blue hover:bg-slate-100">{esc(button)}</a>
+        {extra_html}
+      </div>
+    </section>"""
+
+
 def resource_links(base):
     links = [
         (INSTALLATIONS, "MilitaryINSTALLATIONS directory"),
@@ -488,20 +523,6 @@ def render_detailed(base):
         if source:
             bit += " — " + ext_link(source, f"{photo.get('credit', 'Source')}, {photo.get('license', '')}".strip(", "))
         credits.append(f"<li>{bit}</li>")
-    if base.get("servedDirectly"):
-        cta_title = f"PCSing to {base['name']}? Work with S² Home Partners"
-        cta_body = "This is one of the installations our team serves directly from Jacksonville. Tell us your timeline and whether you are buying or selling."
-        button = "Start with S²"
-    else:
-        cta_title = "PCSing here? We'll connect you with a vetted local agent."
-        cta_body = "The match is free for you. We send the base name with your request so the local agent knows where you are headed."
-        button = "Request a vetted agent"
-    extras = []
-    if base.get("localGuide"):
-        extras.append(f'<a href="{esc(base["localGuide"])}" class="font-semibold text-white underline underline-offset-2">Read the local PCS guide</a>')
-    extra_links = ""
-    if extras:
-        extra_links = '<p class="mt-4 flex flex-wrap gap-x-4 gap-y-2 text-sm">' + "".join(extras) + "</p>"
     return (
         head(title, description, canonical, crumbs, extra_jsonld, preload, css_v="2")
         + chrome_header("directory")
@@ -517,7 +538,8 @@ def render_detailed(base):
       </ol>
     </nav>
     {hero_html}
-    <section class="relative z-10 -mt-6 px-4 sm:px-6 lg:px-8">
+    {cta_box(base)}
+    <section class="px-4 pt-6 sm:px-6 lg:px-8">
       <ul class="mx-auto grid max-w-7xl grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-5">{fact_html}</ul>
     </section>
     <section class="mx-auto max-w-7xl px-4 py-8 sm:px-6 lg:px-8">
@@ -536,14 +558,6 @@ def render_detailed(base):
       <div>
         <h2 class="font-serif text-2xl font-semibold text-momentum-blue">Photo credits</h2>
         <ul class="mt-3 space-y-2 text-sm text-slate-700">{''.join(credits)}</ul>
-      </div>
-    </section>
-    <section class="mx-auto max-w-7xl px-4 pb-16 sm:px-6 lg:px-8">
-      <div class="rounded-3xl bg-momentum-blue px-6 py-8 text-white shadow-3d sm:px-10">
-        <h2 class="font-serif text-3xl font-semibold">{esc(cta_title)}</h2>
-        <p class="mt-3 max-w-2xl text-sm leading-6 text-slate-100">{esc(cta_body)}</p>
-        <a href="{esc(cta_href(base))}" class="mt-6 inline-flex rounded-md bg-white px-5 py-3 text-sm font-bold text-momentum-blue hover:bg-slate-100">{esc(button)}</a>
-        {extra_links}
       </div>
     </section>
   </main>
@@ -604,32 +618,6 @@ def render_base(base):
     towns = "\n".join(
         f"<li>{esc(town)}</li>" for town in (base.get("towns") or [])
     ) or "<li>Surrounding communities</li>"
-    if base.get("servedDirectly"):
-        cta_title = f"PCSing to {base['name']}? Work with S² Home Partners"
-        cta_body = (
-            "This is one of the installations our team serves directly from Jacksonville. "
-            "Tell us your timeline and whether you are buying or selling. There is no handoff to a stranger."
-        )
-        button = "Start with S²"
-    else:
-        cta_title = f"PCSing to {base['name']}? Get matched with a vetted, military-savvy agent"
-        cta_body = (
-            "S² Home Partners refers families to agents we have vetted in our nationwide network. "
-            "The match is free for you. We send the base name with your request so the team knows where you are headed."
-        )
-        button = "Request a vetted agent"
-    extras = []
-    if base.get("localGuide"):
-        extras.append(
-            f'<a href="{esc(base["localGuide"])}" class="font-semibold text-white underline underline-offset-2">Read the local PCS guide</a>'
-        )
-    if base.get("servedDirectly"):
-        extras.append(
-            f'<a href="/get-started.html?base={esc(base["name"].replace(" ", "+"))}" class="font-semibold text-white underline underline-offset-2">Open the buyer and seller intake form</a>'
-        )
-    extra_html = ""
-    if extras:
-        extra_html = '<p class="mt-4 flex flex-wrap gap-x-4 gap-y-2 text-sm">' + " ".join(extras) + "</p>"
     visible_crumbs = (
         '<nav class="mx-auto max-w-3xl px-4 pt-6 text-sm text-slate-500 sm:px-6" aria-label="Breadcrumb">'
         '<a href="/" class="hover:text-momentum-blue">Home</a>'
@@ -652,6 +640,7 @@ def render_base(base):
         {aka}
       </div>
     </section>
+    {cta_box(base, wide=False)}
     <section class="mx-auto max-w-3xl px-4 py-12 sm:px-6">
       <p class="text-base leading-relaxed text-slate-700">{esc(intro)}</p>
       <h2 class="mt-10 font-serif text-2xl font-semibold text-momentum-blue">Nearby towns</h2>
@@ -662,12 +651,6 @@ def render_base(base):
       <ul class="mt-3 space-y-2 text-sm">
             {resource_links(base)}
       </ul>
-      <div class="mt-12 rounded-2xl bg-momentum-blue px-6 py-8 text-white">
-        <h2 class="font-serif text-2xl font-semibold">{esc(cta_title)}</h2>
-        <p class="mt-3 text-sm leading-relaxed text-slate-200">{esc(cta_body)}</p>
-        <a href="{esc(cta_href(base))}" class="mt-6 inline-block rounded-xl bg-white px-6 py-3 text-sm font-bold text-momentum-blue hover:bg-slate-100">{esc(button)}</a>
-        {extra_html}
-      </div>
     </section>
   </main>
 """
