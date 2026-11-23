@@ -20,7 +20,7 @@ Each record:
   alsoKnownAs     optional former or search names
   officialSite    optional official .mil (or academy) URL. Leave it out if unsure.
   housingUrl      optional housing-office URL. Leave it out if unsure.
-  servedDirectly  true only for installations S² Home Partners serves itself
+  servedDirectly  true only for installations S² Home Partners Real Estate Team serves itself
   localGuide      optional path to an existing on-site guide
   intro           optional full intro. If omitted, the page is written from
                   the mission, city, and towns so it is not a copied paragraph.
@@ -131,7 +131,7 @@ def head(title, description, canonical, breadcrumb_json, extra_jsonld="", preloa
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="630" />
   <meta property="og:type" content="website" />
-  <meta property="og:site_name" content="S² Home Partners" />
+  <meta property="og:site_name" content="S² Home Partners Real Estate Team" />
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="{esc(title)}" />
   <meta name="twitter:description" content="{esc(description)}" />
@@ -161,7 +161,7 @@ def chrome_header(current):
   <header class="sticky top-0 z-50 border-b border-momentum-grayLight bg-white/95 shadow-sm backdrop-blur-md">
     <div class="mx-auto flex h-24 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
       <a href="/">
-        <img src="/s2-home-partners-logo.png" width="1000" height="174" alt="S² Home Partners | Momentum Realty" class="h-12 w-auto max-w-[72vw] object-contain sm:h-16 lg:h-20" />
+        <img src="/s2-home-partners-logo.png" width="1000" height="174" alt="S² Home Partners Real Estate Team | Momentum Realty" class="h-12 w-auto max-w-[72vw] object-contain sm:h-16 lg:h-20" />
       </a>
       <nav class="hidden items-center space-x-5 text-xs font-bold uppercase tracking-wider text-momentum-gray xl:flex" aria-label="Primary">
         {item("/buy.html", "Buy", "buy")}
@@ -192,8 +192,8 @@ def chrome_header(current):
 FOOTER = """
   <footer class="border-t border-slate-800 bg-slate-900 py-8 text-slate-400">
     <div class="mx-auto max-w-7xl px-4 text-center text-sm sm:px-6 lg:px-8">
-      <address class="mb-3 not-italic text-xs leading-relaxed text-slate-400"><span class="font-semibold text-slate-300">S&sup2; Home Partners, brokered by Momentum Realty</span><br />13475 Atlantic Blvd, Ste 8, Office S206, Jacksonville, FL 32225<br /><a href="tel:+18503289800" class="text-slate-300 hover:text-white">850-328-9800</a></address>
-      <p>&copy; <span id="year"></span> S&sup2; Home Partners | Momentum Realty. All rights reserved.</p>
+      <address class="mb-3 not-italic text-xs leading-relaxed text-slate-400"><span class="font-semibold text-slate-300">S² Home Partners Real Estate Team, brokered by Momentum Realty</span><br />13475 Atlantic Blvd, Ste 8, Office S206, Jacksonville, FL 32225<br /><a href="tel:+18503289800" class="text-slate-300 hover:text-white">850-328-9800</a></address>
+      <p>&copy; <span id="year"></span> S² Home Partners Real Estate Team | Momentum Realty. All rights reserved.</p>
       <p class="mt-3 flex flex-wrap justify-center gap-x-4 gap-y-1 text-xs">
         <a href="/military-bases.html" class="text-slate-300 hover:text-white">Base Directory</a>
         <a href="/military-relocation.html" class="text-slate-300 hover:text-white">Military PCS</a>
@@ -263,7 +263,7 @@ def cta_box(base, wide=True):
             f'<a href="{esc(base["localGuide"])}" class="font-semibold text-white underline underline-offset-2">Read the local PCS guide</a>'
         )
     if base.get("servedDirectly"):
-        title = f"PCSing to {base['name']}? Work with S² Home Partners"
+        title = f"PCSing to {base['name']}? Work with S² Home Partners Real Estate Team"
         body = (
             "This is one of the installations our team serves directly from Jacksonville. "
             "Tell us your timeline and whether you are buying or selling."
@@ -419,7 +419,7 @@ def life_html(h):
 def render_detailed(base):
     detail = base["detail"]
     canonical = f"{SITE}/bases/{base['slug']}.html"
-    title = f"PCS to {base['name']}: Housing, Schools, and Local Life | S²"
+    title = f"PCS to {base['name']}: Housing, Schools, and Local Life | S² Home Partners Real Estate Team"
     description = detail.get("description") or detail.get("summary") or intro_for(base)
     if len(description) > 170:
         description = description[:167].rsplit(" ", 1)[0] + "."
@@ -590,19 +590,20 @@ def render_base(base):
     intro = intro_for(base)
     canonical = f"{SITE}/bases/{base['slug']}.html"
     if base.get("servedDirectly"):
-        title = f"PCS to {base['name']}: Homes & Local Realtors | S²"
+        title = f"PCS to {base['name']}: Homes & Local Realtors | S² Home Partners Real Estate Team"
         description = (
-            f"S² Home Partners serves {base['name']} in {base['city']}, {base['state']} directly. "
+            f"S² Home Partners Real Estate Team serves {base['name']} in {base['city']}, {base['state']} directly. "
             f"Nearby towns include {town_phrase((base.get('towns') or [])[:3])}."
         )
     else:
         title = f"PCS to {base['name']}: Homes, Neighborhoods & Realtor Referral"
         description = (
             f"PCSing to {base['name']} in {base['city']}, {base['state']}? "
-            f"See nearby towns and get matched with a vetted agent through S² Home Partners."
+            f"See nearby towns and get matched with a vetted agent through S² Home Partners Real Estate Team."
         )
-    if len(description) > 170:
-        description = description[:167].rsplit(" ", 1)[0] + "."
+    limit = 200 if "S² Home Partners Real Estate Team" in description else 170
+    if len(description) > limit:
+        description = description[: limit - 3].rsplit(" ", 1)[0] + "."
     crumbs = breadcrumb([
         ("Home", SITE + "/"),
         ("Military base directory", SITE + "/military-bases.html"),
@@ -659,10 +660,10 @@ def render_base(base):
 
 
 def render_hub(bases):
-    title = "U.S. Military Base Directory for PCS Moves | S² Home Partners"
+    title = "U.S. Military Base Directory for PCS Moves | S² Home Partners Real Estate Team"
     description = (
         "Search U.S. military installations by name, state, or branch. "
-        "S² Home Partners serves Northeast Florida directly and refers PCSing families to vetted agents nationwide."
+        "S² Home Partners Real Estate Team serves Northeast Florida directly and refers PCSing families to vetted agents nationwide."
     )
     canonical = SITE + "/military-bases.html"
     crumbs = breadcrumb([
@@ -705,7 +706,7 @@ def render_hub(bases):
       <div class="mx-auto max-w-4xl px-4 text-center sm:px-6">
         <p class="text-xs font-semibold uppercase tracking-widest text-teal-200">Nationwide PCS directory</p>
         <h1 class="mt-3 font-serif text-4xl font-semibold sm:text-5xl">Every major U.S. base. One trusted contact.</h1>
-        <p class="mx-auto mt-4 max-w-2xl text-base leading-relaxed text-slate-200">Search by base, state, or branch. S² Home Partners serves NAS Jacksonville, NS Mayport, NSB Kings Bay, Blount Island, Camp Blanding, and Coast Guard Sector Jacksonville directly. Everywhere else, we match you with a vetted agent in our referral network.</p>
+        <p class="mx-auto mt-4 max-w-2xl text-base leading-relaxed text-slate-200">Search by base, state, or branch. S² Home Partners Real Estate Team serves NAS Jacksonville, NS Mayport, NSB Kings Bay, Blount Island, Camp Blanding, and Coast Guard Sector Jacksonville directly. Everywhere else, we match you with a vetted agent in our referral network.</p>
       </div>
     </section>
     <section class="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">

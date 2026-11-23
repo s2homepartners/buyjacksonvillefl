@@ -9,7 +9,7 @@ sheet also feeds the live partner map.
 
 1. Go to [sheets.google.com](https://sheets.google.com) and create a new
    blank spreadsheet.
-2. Name it something like **S2 Home Partners — Referral Program**.
+2. Name it something like **S² Home Partners Real Estate Team — Referral Program**.
 3. Rename the default tab (bottom-left, right-click "Sheet1") to
    **Buyer-Seller Referrals**.
 4. Add a header row (row 1) with these exact columns, in order:

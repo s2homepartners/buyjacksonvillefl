@@ -1,5 +1,5 @@
 {
-  "readme": "Edit this file, then run python3 scripts/build-bases.py from the site folder. Leave officialSite and housingUrl off unless you have the real official page. servedDirectly should stay true only for installations S2 Home Partners handles itself.",
+  "readme": "Edit this file, then run python3 scripts/build-bases.py from the site folder. Leave officialSite and housingUrl off unless you have the real official page. servedDirectly should stay true only for installations S² Home Partners Real Estate Team handles itself.",
   "bases": [
     {
       "slug": "nas-jacksonville",

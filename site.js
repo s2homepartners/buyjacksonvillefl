@@ -150,7 +150,7 @@
 
       var data = new FormData();
       data.append('FormType', current.formType);
-      data.append('_subject', 'New ' + current.formType + ' - S2 Home Partners');
+      data.append('_subject', 'New ' + current.formType + ' - S² Home Partners Real Estate Team');
       data.append('Name', name);
       data.append('Phone', phone);
       data.append('Email', email);
