@@ -1117,4 +1117,46 @@
     <priority>0.5</priority>
   </url>
   <!-- bases:end -->
+  <!-- new-construction:start -->
+  <url>
+    <loc>https://buyjacksonvillefl.com/new-construction.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://buyjacksonvillefl.com/new-construction/yulee-fl.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://buyjacksonvillefl.com/new-construction/st-johns-county-fl.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://buyjacksonvillefl.com/new-construction/clay-county-fl.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://buyjacksonvillefl.com/new-construction/jacksonville-northside-fl.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://buyjacksonvillefl.com/new-construction/jacksonville-beaches-fl.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://buyjacksonvillefl.com/new-construction/jacksonville-westside-fl.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://buyjacksonvillefl.com/new-construction/kingsland-st-marys-ga.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <!-- new-construction:end -->
 </urlset>
