@@ -45,7 +45,7 @@
     el.className = 'lp-topbar';
     el.innerHTML =
       '<div class="lp-wrap">' +
-        '<a class="lp-topbar__logo" href="/"><img src="/s2-home-partners-logo.png" alt="S² Home Partners | Momentum Realty"></a>' +
+        '<a class="lp-topbar__logo" href="/"><img src="/s2-home-partners-logo.png" alt="S² Home Partners Real Estate Team | Momentum Realty"></a>' +
         '<div class="lp-topbar__actions">' +
           '<a class="lp-topbar__site" href="/">Visit our website</a>' +
           '<a class="lp-topbar__call" href="tel:' + p.tel + '">' + PHONE_ICON + '<span>' + esc(p.display) + '</span></a>' +
@@ -77,9 +77,9 @@
     el.className = 'lp-footer';
     el.innerHTML =
       '<div class="lp-wrap">' +
-        '<p style="margin-bottom:10px;font-size:.8rem;line-height:1.6">S&sup2; Home Partners | Momentum Realty<br>13475 Atlantic Blvd, Ste 8, Office S206, Jacksonville, FL 32225<br>' +
+        '<p style="margin-bottom:10px;font-size:.8rem;line-height:1.6">S² Home Partners Real Estate Team | Momentum Realty<br>13475 Atlantic Blvd, Ste 8, Office S206, Jacksonville, FL 32225<br>' +
           '<a href="tel:+18503289800">850-328-9800</a></p>' +
-        '<p>&copy; ' + new Date().getFullYear() + ' S&sup2; Home Partners | Momentum Realty. All rights reserved.</p>' +
+        '<p>&copy; ' + new Date().getFullYear() + ' S² Home Partners Real Estate Team | Momentum Realty. All rights reserved.</p>' +
         '<nav aria-label="Footer">' +
           '<a href="/">Home</a>' +
           '<a href="/sell.html">Sell</a>' +
@@ -147,7 +147,7 @@
     document.body.setAttribute('data-month', active.key);
 
     var label = monthLabel(active.key);
-    document.title = cfg.title.replace(/<[^>]+>/g, '').replace(/&rsquo;/g, '’').replace(/&hellip;/g, '…').replace(/&amp;/g, '&') + ' | S² Home Partners';
+    document.title = cfg.title.replace(/<[^>]+>/g, '').replace(/&rsquo;/g, '’').replace(/&hellip;/g, '…').replace(/&amp;/g, '&') + ' | S² Home Partners Real Estate Team';
 
     function set(sel, html) {
       var el = document.querySelector(sel);
@@ -272,7 +272,7 @@
 
       var data = new FormData();
       data.append('FormType', FORM_TYPE);
-      data.append('_subject', 'New Home Value Lead - ' + campaign + ' - S2 Home Partners');
+      data.append('_subject', 'New Home Value Lead - ' + campaign + ' - S² Home Partners Real Estate Team');
       data.append('Name', first + ' ' + last);
       data.append('FirstName', first);
       data.append('LastName', last);

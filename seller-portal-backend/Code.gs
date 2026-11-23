@@ -1,5 +1,5 @@
 /**
- * S2 Home Partners — Seller Portal nightly updater (Google Apps Script, bound to the "Seller Portal" Sheet).
+ * S² Home Partners Real Estate Team — Seller Portal nightly updater (Google Apps Script, bound to the "Seller Portal" Sheet).
  *
  * Every night it:
  *   1. files new ShowingTime feedback emails into the Feedback tab,

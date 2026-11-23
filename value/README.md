@@ -32,7 +32,7 @@ live in `months.js`, and the artwork images are in `art/`.
 Every lead is tagged with the month whose theme was on screen when the person filled
 in the form:
 
-- **Subject:** `New Home Value Lead - March 2027 Mailer (Lucky Penny) - S2 Home Partners`
+- **Subject:** `New Home Value Lead - March 2027 Mailer (Lucky Penny) - S² Home Partners Real Estate Team`
 - **MailerMonth** (`March 2027`), **MailerTheme** (`Lucky Penny`), **Campaign** (both)
 - **Source:** `mailer`, `popby` or `direct`, from the `?src=` part of the link
 - **Name, FirstName, LastName, Address, Phone, Email, Page**

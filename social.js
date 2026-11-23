@@ -1,4 +1,4 @@
-/* Social strips for S² Home Partners.
+/* Social strips for S² Home Partners Real Estate Team.
    <div class="social-strip" data-eyebrow="Watch" data-title="..." data-text="..." data-ids="id1,id2"></div>   -> section with a scrolling marquee
    <div class="social-strip" data-mode="marquee" data-bare="1"></div>                                         -> marquee only
    <div class="social-strip" data-mode="grid"></div>                                                           -> static video grid
@@ -97,11 +97,11 @@
     });
     while (pi < photos.length) out.push(igItem(photos[pi++], dup));
     out.push(tile('Follow on TikTok', '@s2homepartners', LINKS.TikTok, dup));
-    out.push(tile('Follow on Facebook', 'S&sup2; Home Partners', LINKS.Facebook, dup));
+    out.push(tile('Follow on Facebook', 'S² Home Partners Real Estate Team', LINKS.Facebook, dup));
     return out.join('');
   }
   function marquee(el) {
-    return '<div class="sp-marquee" role="region" aria-label="Videos and photos from S2 Home Partners"><div class="sp-track">' +
+    return '<div class="sp-marquee" role="region" aria-label="Videos and photos from S² Home Partners Real Estate Team"><div class="sp-track">' +
       '<div class="sp-set">' + items(el, false) + '</div><div class="sp-set" aria-hidden="true">' + items(el, true) + '</div></div></div>';
   }
   function tune(el) {
@@ -156,7 +156,7 @@
   document.body.appendChild(lb);
   var slot = lb.querySelector('.sp-lb-slot');
   function openVideo(id) {
-    slot.innerHTML = '<iframe src="https://www.youtube-nocookie.com/embed/' + id + '?autoplay=1&rel=0" title="S2 Home Partners video" allow="autoplay; encrypted-media; picture-in-picture; fullscreen" allowfullscreen></iframe>';
+    slot.innerHTML = '<iframe src="https://www.youtube-nocookie.com/embed/' + id + '?autoplay=1&rel=0" title="S² Home Partners Real Estate Team video" allow="autoplay; encrypted-media; picture-in-picture; fullscreen" allowfullscreen></iframe>';
     lb.classList.add('open');
   }
   function closeVideo() { lb.classList.remove('open'); slot.innerHTML = ''; }

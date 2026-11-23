@@ -1,5 +1,5 @@
 /**
- * S2 Home Partners — Referral Program backend.
+ * S² Home Partners Real Estate Team — Referral Program backend.
  * Paste this into an Apps Script project (either via script.google.com
  * directly, or Extensions > Apps Script inside the Sheet), then deploy
  * as a Web App. See SETUP.md in this folder for the full step-by-step.
@@ -102,7 +102,7 @@ function doGet(e) {
       .setMimeType(ContentService.MimeType.JSON);
   }
 
-  return ContentService.createTextOutput('S2 Home Partners referral backend is running.');
+  return ContentService.createTextOutput('S² Home Partners Real Estate Team referral backend is running.');
 }
 
 function sendNotification(subject, name, fields) {
@@ -110,5 +110,5 @@ function sendNotification(subject, name, fields) {
   fields.forEach(function (f) {
     body += f[0] + ': ' + (f[1] || '-') + '\n';
   });
-  MailApp.sendEmail(NOTIFY_EMAIL, subject + ' — S2 Home Partners', body);
+  MailApp.sendEmail(NOTIFY_EMAIL, subject + ' — S² Home Partners Real Estate Team', body);
 }

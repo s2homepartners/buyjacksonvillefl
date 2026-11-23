@@ -45,8 +45,8 @@ NAV_MOBILE_NEW = NAV_MOBILE_OLD + (
     '\n        <a href="new-construction.html" class="mobile-link py-1 pl-4 text-sm text-momentum-gray">'
     "New Construction</a>"
 )
-FOOTER_OLD = "S&sup2; Home Partners | Momentum Realty"
-FOOTER_NEW = "S&sup2; Home Partners, brokered by Momentum Realty"
+FOOTER_OLD = "S² Home Partners Real Estate Team | Momentum Realty"
+FOOTER_NEW = "S² Home Partners Real Estate Team, brokered by Momentum Realty"
 
 
 def esc(value):
@@ -62,12 +62,12 @@ def paras(items):
 def buying_section(area_name):
     return f"""
     <section class="mx-auto max-w-7xl px-4 py-14 sm:px-6 lg:px-8" aria-labelledby="buying-with-s2">
-      <h2 id="buying-with-s2" class="font-serif text-3xl font-semibold text-momentum-blue">Buying new construction with S&sup2;</h2>
-      <p class="mt-4 max-w-3xl text-base leading-relaxed text-slate-700">S&sup2; Home Partners represents you, the buyer, at new-home communities in {esc(area_name)}. We are not the builder&rsquo;s sales team and we are not a partner of any builder on this page.</p>
+      <h2 id="buying-with-s2" class="font-serif text-3xl font-semibold text-momentum-blue">Buying new construction with S² Home Partners Real Estate Team</h2>
+      <p class="mt-4 max-w-3xl text-base leading-relaxed text-slate-700">S² Home Partners Real Estate Team represents you, the buyer, at new-home communities in {esc(area_name)}. We are not the builder&rsquo;s sales team and we are not a partner of any builder on this page.</p>
       <div class="mt-6 grid gap-4 md:grid-cols-2">
         <article class="rounded-2xl border border-momentum-grayLight bg-white p-5 shadow-sm">
           <h3 class="font-serif text-xl font-semibold text-momentum-blue">Register us on your first visit</h3>
-          <p class="mt-2 text-sm leading-relaxed text-slate-700">The on-site agent works for the builder. If you walk in and register alone, that builder may not let you add your own agent later. Tell them S&sup2; Home Partners is your buyer&rsquo;s agent before you sign a registration card, tour a model, or put your name on a VIP list. Our representation does not add a fee on top of the builder&rsquo;s price.</p>
+          <p class="mt-2 text-sm leading-relaxed text-slate-700">The on-site agent works for the builder. If you walk in and register alone, that builder may not let you add your own agent later. Tell them S² Home Partners Real Estate Team is your buyer&rsquo;s agent before you sign a registration card, tour a model, or put your name on a VIP list. Our representation does not add a fee on top of the builder&rsquo;s price.</p>
         </article>
         <article class="rounded-2xl border border-momentum-grayLight bg-white p-5 shadow-sm">
           <h3 class="font-serif text-xl font-semibold text-momentum-blue">VA loans and builder incentives</h3>
@@ -102,7 +102,7 @@ def form_section(page):
           <form id="newConstructionLeadForm" action="https://formsubmit.co/S2HomePartners@gmail.com" method="POST" class="mt-6 space-y-4">
             <input type="hidden" name="_captcha" value="false" />
             <input type="hidden" name="_next" value="{esc(canonical)}#thanks" />
-            <input type="hidden" name="_subject" value="New Construction inquiry - {esc(page["short"])} - S2 Home Partners" />
+            <input type="hidden" name="_subject" value="New Construction inquiry - {esc(page["short"])} - S² Home Partners Real Estate Team" />
             <input type="hidden" name="Interest" value="New Construction" />
             <input type="hidden" name="Area" value="{esc(page["area_label"])}" />
             <div>
@@ -265,7 +265,7 @@ def head(page, faqs):
   <meta property="og:url" content="{esc(canonical)}" />
   <meta property="og:image" content="{esc(image)}" />
   <meta property="og:type" content="website" />
-  <meta property="og:site_name" content="S² Home Partners" />
+  <meta property="og:site_name" content="S² Home Partners Real Estate Team" />
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="{esc(title)}" />
   <meta name="twitter:description" content="{esc(description)}" />
@@ -295,7 +295,7 @@ def header():
   <header class="sticky top-0 z-50 border-b border-momentum-grayLight bg-white/95 shadow-sm backdrop-blur-md">
     <div class="mx-auto flex h-24 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
       <a href="/">
-        <img src="/s2-home-partners-logo.png" width="1000" height="174" alt="S² Home Partners | Momentum Realty" class="h-12 w-auto max-w-[72vw] object-contain sm:h-16 lg:h-20" />
+        <img src="/s2-home-partners-logo.png" width="1000" height="174" alt="S² Home Partners Real Estate Team | Momentum Realty" class="h-12 w-auto max-w-[72vw] object-contain sm:h-16 lg:h-20" />
       </a>
       <nav class="hidden items-center space-x-5 text-xs font-bold uppercase tracking-wider text-momentum-gray xl:flex" aria-label="Primary">
         <div class="group relative">
@@ -371,8 +371,8 @@ def header():
 FOOTER = """
   <footer class="border-t border-slate-800 bg-slate-900 py-8 text-slate-400">
     <div class="mx-auto max-w-7xl px-4 text-center text-sm sm:px-6 lg:px-8">
-      <address class="mb-3 not-italic text-xs leading-relaxed text-slate-400"><span class="font-semibold text-slate-300">S&sup2; Home Partners, brokered by Momentum Realty</span><br />13475 Atlantic Blvd, Ste 8, Office S206, Jacksonville, FL 32225<br /><a href="tel:+18503289800" class="text-slate-300 hover:text-white">850-328-9800</a></address>
-      <p>&copy; <span id="year"></span> S&sup2; Home Partners | Momentum Realty. All rights reserved.</p>
+      <address class="mb-3 not-italic text-xs leading-relaxed text-slate-400"><span class="font-semibold text-slate-300">S² Home Partners Real Estate Team, brokered by Momentum Realty</span><br />13475 Atlantic Blvd, Ste 8, Office S206, Jacksonville, FL 32225<br /><a href="tel:+18503289800" class="text-slate-300 hover:text-white">850-328-9800</a></address>
+      <p>&copy; <span id="year"></span> S² Home Partners Real Estate Team | Momentum Realty. All rights reserved.</p>
       <p class="mt-3 flex flex-wrap justify-center gap-x-4 gap-y-1 text-xs">
         <a href="/new-construction.html" class="text-slate-300 hover:text-white">New Construction</a>
         <a href="/military-bases.html" class="text-slate-300 hover:text-white">Base Directory</a>
@@ -486,7 +486,7 @@ def render_page(page):
 
 
 def render_hub(pages):
-    title = "New Construction Homes in Northeast Florida | S² Home Partners"
+    title = "New Construction Homes in Northeast Florida | S² Home Partners Real Estate Team"
     description = (
         "New construction in Yulee, St. Johns County, Clay County, Jacksonville, "
         "and Kingsland and St. Marys. Builder lineups checked November 2026."
@@ -505,7 +505,7 @@ def render_hub(pages):
     faqs = [
         {
             "q": "Does new construction representation cost the buyer extra?",
-            "a": "No. S² Home Partners represents you at no cost to you. The builder's site agent represents the builder. Register S² on your first visit, before you sign a registration card.",
+            "a": "No. S² Home Partners Real Estate Team represents you at no cost to you. The builder's site agent represents the builder. Register S² Home Partners Real Estate Team on your first visit, before you sign a registration card.",
         },
         {
             "q": "Can I use a VA loan on a new construction home?",
@@ -574,7 +574,7 @@ def render_hub(pages):
     <section class="mx-auto max-w-3xl px-4 py-12 sm:px-6">
       <h2 class="font-serif text-3xl font-semibold text-momentum-blue">Start with the area, then the builder</h2>
       <p class="mt-4 text-base leading-relaxed text-slate-700">Military families searching &ldquo;new construction in Yulee,&rdquo; &ldquo;new homes in St. Johns County,&rdquo; or &ldquo;new construction near NAS Jacksonville&rdquo; are usually comparing a commute, a school zone, and a builder incentive at the same time. These pages keep the three separate. The price on a card is the builder&rsquo;s published start, not a promise that the home you want is still at that number.</p>
-      <p class="mt-4 text-base leading-relaxed text-slate-700">S&sup2; Home Partners, brokered by Momentum Realty, represents you at no cost to you. Register us on the first visit. We do not have a partnership with any builder listed here.</p>
+      <p class="mt-4 text-base leading-relaxed text-slate-700">S² Home Partners Real Estate Team, brokered by Momentum Realty, represents you at no cost to you. Register us on the first visit. We do not have a partnership with any builder listed here.</p>
       <p class="mt-6 rounded-xl border border-amber-200 bg-amber-50 p-4 text-sm leading-relaxed text-amber-950">{esc(NOTE)}</p>
     </section>
     <section id="areas" class="border-t border-momentum-grayLight bg-white py-14">
@@ -899,8 +899,8 @@ PAGES = [
                 "a": "Wildlight says HOA fees vary by neighborhood and that shared assets are handled through the East Nassau Stewardship District. Tributary and the Dream Finders and D.R. Horton pages we checked do not publish one fee for every lot. Get the number for the homesite.",
             },
             {
-                "q": "Can S² represent me at a Yulee model home?",
-                "a": "Yes. Representation is at no cost to you. Register S² Home Partners on your first visit, before you sign the builder's registration card. We are not a partner of Wildlight, Tributary, or any builder.",
+                "q": "Can S² Home Partners Real Estate Team represent me at a Yulee model home?",
+                "a": "Yes. Representation is at no cost to you. Register S² Home Partners Real Estate Team on your first visit, before you sign the builder's registration card. We are not a partner of Wildlight, Tributary, or any builder.",
             },
         ],
         sources=[
@@ -911,7 +911,7 @@ PAGES = [
             {"label": "D.R. Horton, Liberty Cove townhomes", "url": "https://www.drhorton.com/florida/jacksonville-area/yulee/liberty-cove-townhomes"},
             {"label": "Dream Finders Homes in Yulee, Pirates Bluff", "url": "https://dreamfindershomes.com/new-homes/fl/yulee/"},
             {"label": "Tuesday 8 a.m. drive-time table, measured September 23, 2026", "url": "https://www.kristafracke.com/commute-map"},
-            {"label": "S² Wildlight guide, off-peak drive times, reviewed October 2026", "url": "https://buyjacksonvillefl.com/wildlight.html"},
+            {"label": "S² Home Partners Real Estate Team Wildlight guide, off-peak drive times, reviewed October 2026", "url": "https://buyjacksonvillefl.com/wildlight.html"},
         ],
         base_links=[
             {"href": "/bases/nsb-kings-bay.html", "label": "NSB Kings Bay guide"},
@@ -1001,7 +1001,7 @@ def more_pages():
                 },
                 {
                     "q": "Who represents me at a St. Johns model home?",
-                    "a": "S² Home Partners can, at no cost to you, if we are registered on your first visit. The site agent represents the builder. We are not partners with SilverLeaf, Nocatee, or their builders.",
+                    "a": "S² Home Partners Real Estate Team can, at no cost to you, if we are registered on your first visit. The site agent represents the builder. We are not partners with SilverLeaf, Nocatee, or their builders.",
                 },
             ],
             sources=[
@@ -1077,7 +1077,7 @@ def more_pages():
                     "amenities": "GreenPointe describes multi-purpose trails, pocket parks, a resort-style pool and splash zone, a fitness center, pickleball, a play park, and a dog park, on a 750-acre community of about 1,800 homesites along Henley Road, next to Ronnie Van Zant Memorial Park.",
                     "schools": "Pulte says Clay County schools and does not name the zoned campus on the page we checked. Confirm the address with Clay County District Schools.",
                     "bases": "Green Cove Springs / Lake Asbury. The developer describes access toward downtown Jacksonville and a 15-minute drive to the two Clay hospitals. NAS Jacksonville is the nearer of the three local bases. Mayport and Kings Bay are not short drives from Henley Road.",
-                    "extra": "Hyland Trail is on our weekly new-construction visit rotation. Several builders sell here, so register with S&sup2; once and we can walk more than one model without you signing in alone at each trailer.",
+                    "extra": "Hyland Trail is on our weekly new-construction visit rotation. Several builders sell here, so register with S² Home Partners Real Estate Team once and we can walk more than one model without you signing in alone at each trailer.",
                     "url": "https://greenpointellc.com/communities/hyland-trail/",
                     "link_label": "GreenPointe on Hyland Trail",
                 },
@@ -1149,7 +1149,7 @@ def more_pages():
                 },
                 {
                     "q": "Can I use a VA loan and still bring my own agent?",
-                    "a": "Yes. Register S² Home Partners on the first visit so the builder does not lock you to the site agent. We will check whether that builder's incentive stacks with VA. Representation is at no cost to you.",
+                    "a": "Yes. Register S² Home Partners Real Estate Team on the first visit so the builder does not lock you to the site agent. We will check whether that builder's incentive stacks with VA. Representation is at no cost to you.",
                 },
             ],
             sources=[
@@ -1276,7 +1276,7 @@ def more_pages():
                 },
                 {
                     "q": "Do I need my own agent at a Northside model?",
-                    "a": "Yes, if you want someone whose job is your side of the contract. Register S² on the first visit. It is at no cost to you, and we are not partners with D.R. Horton or Lennar.",
+                    "a": "Yes, if you want someone whose job is your side of the contract. Register S² Home Partners Real Estate Team on the first visit. It is at no cost to you, and we are not partners with D.R. Horton or Lennar.",
                 },
             ],
             sources=[
@@ -1331,7 +1331,7 @@ def more_pages():
                     "amenities": "Dream Finders lists a community pool with a shaded deck, grills, a location 10 blocks from the beach, and a site adjacent to Gonzales Park. The same page says residents will soon enjoy the pool, so confirm it is open before you count on swimming there.",
                     "schools": "Dream Finders lists nearby schools as San Pablo Elementary, Fletcher Middle, and Fletcher High. Confirm the address with Duval County Public Schools.",
                     "bases": "Dream Finders says the townhomes are near A1A, Beach Boulevard, Atlantic Boulevard, I-295, and J. Turner Butler Boulevard, and about a 30-minute drive to downtown Jacksonville and Jacksonville International Airport. It does not print a Mayport or NAS Jacksonville time. Mayport is the nearer Navy gate for a Jacksonville Beach address.",
-                    "extra": "This is one of the communities on our weekly new-construction visit rotation. Register S&sup2; before the first tour. The page also points to Seawalk Pavilion for festivals and a weekly farmers market.",
+                    "extra": "This is one of the communities on our weekly new-construction visit rotation. Register S² Home Partners Real Estate Team before the first tour. The page also points to Seawalk Pavilion for festivals and a weekly farmers market.",
                     "url": "https://dreamfindershomes.com/new-homes/fl/jacksonville-beach/north-beach-townhomes/",
                     "link_label": "Dream Finders at North Beach Townhomes",
                 },
@@ -1379,7 +1379,7 @@ def more_pages():
                 },
                 {
                     "q": "Should I register my agent before I visit eTown or Seven Pines?",
-                    "a": "Yes. Register S² Home Partners on the first visit, at no cost to you. The model-home agent represents the builder. We are not partners with eTown, Seven Pines, David Weekley, or ICI.",
+                    "a": "Yes. Register S² Home Partners Real Estate Team on the first visit, at no cost to you. The model-home agent represents the builder. We are not partners with eTown, Seven Pines, David Weekley, or ICI.",
                 },
             ],
             sources=[
@@ -1482,7 +1482,7 @@ def more_pages():
                     "a": "The Jacksonville Daily Record reported a groundbreaking for the lagoon on October 28, 2026. Dream Finders lists the lagoon and several amenities as planned. Do not assume they are finished.",
                 },
                 {
-                    "q": "Can S² represent me with these builders?",
+                    "q": "Can S² Home Partners Real Estate Team represent me with these builders?",
                     "a": "Yes, at no cost to you, if you register us on the first visit. We are not partners with Dream Finders, SEDA, D.R. Horton, Lennar, DRB, or Metro Development Group.",
                 },
             ],
@@ -1597,7 +1597,7 @@ def more_pages():
                 },
                 {
                     "q": "Can a Florida agent write a Georgia new-construction contract?",
-                    "a": "Ask us before you register at the model. S² Home Partners is brokered by Momentum Realty in Florida. If a Kings Bay purchase needs a Georgia license on the contract, we will tell you that up front and set it up properly. Either way, do not register with the builder alone on the first visit.",
+                    "a": "Ask us before you register at the model. S² Home Partners Real Estate Team is brokered by Momentum Realty in Florida. If a Kings Bay purchase needs a Georgia license on the contract, we will tell you that up front and set it up properly. Either way, do not register with the builder alone on the first visit.",
                 },
             ],
             sources=[
