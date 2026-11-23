@@ -341,7 +341,7 @@
   <url>
     <loc>https://buyjacksonvillefl.com/bases/maxwell-afb.html</loc>
     <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
+    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://buyjacksonvillefl.com/bases/redstone-arsenal.html</loc>
@@ -351,7 +351,7 @@
   <url>
     <loc>https://buyjacksonvillefl.com/bases/uscg-kodiak.html</loc>
     <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
+    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://buyjacksonvillefl.com/bases/eielson-afb.html</loc>
@@ -371,7 +371,7 @@
   <url>
     <loc>https://buyjacksonvillefl.com/bases/jber.html</loc>
     <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
+    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://buyjacksonvillefl.com/bases/davis-monthan.html</loc>
@@ -416,7 +416,7 @@
   <url>
     <loc>https://buyjacksonvillefl.com/bases/uscg-alameda.html</loc>
     <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
+    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://buyjacksonvillefl.com/bases/edwards-afb.html</loc>
@@ -436,7 +436,7 @@
   <url>
     <loc>https://buyjacksonvillefl.com/bases/twentynine-palms.html</loc>
     <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
+    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://buyjacksonvillefl.com/bases/mcas-miramar.html</loc>
@@ -451,7 +451,7 @@
   <url>
     <loc>https://buyjacksonvillefl.com/bases/mclb-barstow.html</loc>
     <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
+    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://buyjacksonvillefl.com/bases/mcrd-san-diego.html</loc>
@@ -481,7 +481,7 @@
   <url>
     <loc>https://buyjacksonvillefl.com/bases/presidio-of-monterey.html</loc>
     <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
+    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://buyjacksonvillefl.com/bases/travis-afb.html</loc>
@@ -496,7 +496,7 @@
   <url>
     <loc>https://buyjacksonvillefl.com/bases/buckley-sfb.html</loc>
     <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
+    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://buyjacksonvillefl.com/bases/fort-carson.html</loc>
@@ -516,7 +516,7 @@
   <url>
     <loc>https://buyjacksonvillefl.com/bases/usafa.html</loc>
     <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
+    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://buyjacksonvillefl.com/bases/nsb-new-london.html</loc>
@@ -636,17 +636,17 @@
   <url>
     <loc>https://buyjacksonvillefl.com/bases/andersen-afb.html</loc>
     <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
+    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://buyjacksonvillefl.com/bases/naval-base-guam.html</loc>
     <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
+    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://buyjacksonvillefl.com/bases/fort-shafter.html</loc>
     <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
+    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://buyjacksonvillefl.com/bases/jbphh.html</loc>
@@ -656,12 +656,12 @@
   <url>
     <loc>https://buyjacksonvillefl.com/bases/mcb-hawaii.html</loc>
     <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
+    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://buyjacksonvillefl.com/bases/schofield-barracks.html</loc>
     <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
+    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://buyjacksonvillefl.com/bases/mountain-home.html</loc>
@@ -761,12 +761,12 @@
   <url>
     <loc>https://buyjacksonvillefl.com/bases/nsa-bethesda.html</loc>
     <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
+    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://buyjacksonvillefl.com/bases/usna-annapolis.html</loc>
     <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
+    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://buyjacksonvillefl.com/bases/camp-ripley.html</loc>
@@ -861,7 +861,7 @@
   <url>
     <loc>https://buyjacksonvillefl.com/bases/white-sands.html</loc>
     <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
+    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://buyjacksonvillefl.com/bases/fort-drum.html</loc>
@@ -876,7 +876,7 @@
   <url>
     <loc>https://buyjacksonvillefl.com/bases/west-point.html</loc>
     <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
+    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://buyjacksonvillefl.com/bases/watervliet-arsenal.html</loc>
@@ -1026,7 +1026,7 @@
   <url>
     <loc>https://buyjacksonvillefl.com/bases/jbsa.html</loc>
     <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
+    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://buyjacksonvillefl.com/bases/laughlin-afb.html</loc>
@@ -1096,7 +1096,7 @@
   <url>
     <loc>https://buyjacksonvillefl.com/bases/jb-myer.html</loc>
     <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
+    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://buyjacksonvillefl.com/bases/jeb-little-creek.html</loc>
