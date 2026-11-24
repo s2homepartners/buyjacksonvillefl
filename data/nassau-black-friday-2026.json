@@ -1,6 +1,6 @@
 {
   "updated": "2026-11-24",
-  "note": "Shop the Deal uses ltk_url when it is filled in, otherwise deal_url. Leave ltk_url as an empty string until the LTK link exists. Do not invent sale prices here.",
+  "note": "National retailer cards use ltk_url for Shop This Deal and deal_url for See all Black Friday deals. Local cards leave ltk_url empty and keep Shop the Deal on deal_url. Prices were checked Nov 24, 2026.",
   "deals": [
     {
       "id": "target-yulee",
@@ -10,10 +10,13 @@
       "deal": "Black Friday deals run Nov 22–29, 2026, with more weekend deals Nov 26–29. Target says shoppers can save up to 50% on thousands of gifts. The Yulee store follows chain hours: closed Thanksgiving, open at 6 a.m. local time on Nov 27 and closing at its regular time. The first 100 eligible guests in line get a Target GiftCard of $25, $50, $100, or, for one guest per store, $1,000. Official rules are on Target’s giveaway page.",
       "source_url": "https://corporate.target.com/press/release/2026/11/target-announces-black-friday-deals-and-giveaways-to-help-families-save-big-on-gifts-they-ll-love-to",
       "deal_url": "https://www.target.com/weekly-ad",
-      "ltk_url": "",
+      "ltk_url": "https://on.ltk.com/+H5bIwzKpI-s5pBb6QG9onw",
       "location": "463737 State Road 200, Yulee, FL 32097",
       "maps_url": "https://www.google.com/maps/search/?api=1&query=Target+463737+State+Road+200+Yulee+FL+32097",
-      "store_url": "https://www.target.com/sl/yulee/2155"
+      "store_url": "https://www.target.com/sl/yulee/2155",
+      "featured_product": "LEGO Star Wars SMART Play: AT-ST Attack on Endor 75424",
+      "price_was": "39.99",
+      "price_sale": "27.99"
     },
     {
       "id": "walmart-yulee",
@@ -23,10 +26,13 @@
       "deal": "Walmart’s Black Friday deals run Nov 23–29, 2026. Online starts at 12:01 a.m. ET on Nov 23. In stores, the event opens Nov 27 at 6 a.m. local time. U.S. stores are closed Thanksgiving. Walmart says hours may vary by location, so check the Yulee store before you drive.",
       "source_url": "https://corporate.walmart.com/news/2026/10/walmart-unwraps-three-major-holiday-shopping-events",
       "deal_url": "https://www.walmart.com/shop/deals/black-friday",
-      "ltk_url": "",
+      "ltk_url": "https://on.ltk.com/+PVifQROHmeMcVn_HSP_p9w",
       "location": "Walmart Supercenter, 464016 State Road 200 E, Yulee, FL 32097",
       "maps_url": "https://www.google.com/maps/search/?api=1&query=Walmart+464016+State+Road+200+E+Yulee+FL+32097",
-      "store_url": "https://www.walmart.com/store/5037-yulee-fl"
+      "store_url": "https://www.walmart.com/store/5037-yulee-fl",
+      "featured_product": "4.5L Air Fryer with Electronic Control and Non-stick Basket",
+      "price_was": "56.98",
+      "price_sale": "52.97"
     },
     {
       "id": "walmart-fernandina",
@@ -36,10 +42,13 @@
       "deal": "Same national Black Friday event as the Yulee Supercenter: deals Nov 23–29, in-store opening Nov 27 at 6 a.m. local time, closed Thanksgiving. Hours may vary by store. This card is the Amelia Plaza Supercenter.",
       "source_url": "https://corporate.walmart.com/askwalmart/what-are-walmarts-holiday-2026-store-hours",
       "deal_url": "https://www.walmart.com/shop/deals/black-friday",
-      "ltk_url": "",
+      "ltk_url": "https://on.ltk.com/+PVifQROHmeMcVn_HSP_p9w",
       "location": "Walmart Supercenter #977, 1385 Amelia Plaza, Fernandina Beach, FL 32034",
       "maps_url": "https://www.google.com/maps/search/?api=1&query=Walmart+1385+Amelia+Plaza+Fernandina+Beach+FL+32034",
-      "store_url": "https://www.walmart.com/store/977-fernandina-beach-fl"
+      "store_url": "https://www.walmart.com/store/977-fernandina-beach-fl",
+      "featured_product": "4.5L Air Fryer with Electronic Control and Non-stick Basket",
+      "price_was": "56.98",
+      "price_sale": "52.97"
     },
     {
       "id": "home-depot-yulee",
@@ -49,10 +58,13 @@
       "deal": "The named Black Friday Savings Event is Nov 5–25, 2026, so it ends the day before Thanksgiving. Home Depot’s Oct 29 announcement includes select power-tool BOGOs (RYOBI, Milwaukee, DEWALT) and holiday décor prices such as 6.5-foot pre-lit trees at $49.98. Offers vary by store. Separately, the holiday-hours page says stores are closed Thanksgiving and open at 6 a.m. on Nov 27. The Yulee store’s regular Monday–Saturday hours already start at 6 a.m.",
       "source_url": "https://corporate.homedepot.com/news/products/home-depot-kicks-black-friday-season",
       "deal_url": "https://corporate.homedepot.com/news/products/home-depot-kicks-black-friday-season",
-      "ltk_url": "",
+      "ltk_url": "https://on.ltk.com/+cca2xfhJ5D-J6k3rWqhabg",
       "location": "463785 State Road, Yulee, FL 32097",
       "maps_url": "https://www.google.com/maps/search/?api=1&query=Home+Depot+463785+State+Road+Yulee+FL+32097",
-      "store_url": "https://www.homedepot.com/l/Yulee/FL/Yulee/32097/6921"
+      "store_url": "https://www.homedepot.com/l/Yulee/FL/Yulee/32097/6921",
+      "featured_product": "7.5 ft Realistic Hinged Prelit Artificial Christmas Tree with Foot Pedal, 600 Warm Lights",
+      "price_was": "244.99",
+      "price_sale": "181.95"
     },
     {
       "id": "amazon-black-friday",
@@ -62,10 +74,13 @@
       "deal": "Amazon’s Black Friday Week runs through Nov 30, 2026. The company says new daily deal drops continue through that date, and Today’s Big Deals include savings of up to 60% off, posted twice on Black Friday (midnight and 8 a.m. PST). Deals change and sell out. There is no Amazon store in Nassau County; this is the online sale.",
       "source_url": "https://www.aboutamazon.com/news/retail/amazon-black-friday-cyber-monday-deals-2026",
       "deal_url": "https://www.amazon.com/blackfriday",
-      "ltk_url": "",
+      "ltk_url": "https://on.ltk.com/+lOb0sJY4zmTHTnf6sAjsBg",
       "location": "Online",
       "maps_url": "",
-      "store_url": ""
+      "store_url": "",
+      "featured_product": "Amazon Echo Dot (newest model)",
+      "price_was": "99.99",
+      "price_sale": "49.99"
     },
     {
       "id": "best-buy-black-friday",
@@ -75,10 +90,13 @@
       "deal": "Best Buy’s Black Friday sale started Nov 19, 2026. The sale page says Black Friday deals and doorbusters end Nov 28 at 11:59 p.m. CT. The Nov 17 announcement lists Black Friday store hours of 6 a.m.–10 p.m., and says hours may vary. In store on Nov 27, My Best Buy members can buy a $100 Best Buy gift card for $60 while limited quantities last. There is no Best Buy in Nassau County. The nearest stores are in Jacksonville.",
       "source_url": "https://corporate.bestbuy.com/2026/black-friday-sale-deals/",
       "deal_url": "https://www.bestbuy.com/black-friday",
-      "ltk_url": "",
+      "ltk_url": "https://on.ltk.com/+IHl2B-13p7yyxcqIp42vZA",
       "location": "Online, or Best Buy stores in Jacksonville",
       "maps_url": "",
-      "store_url": ""
+      "store_url": "",
+      "featured_product": "Apple AirPods Max",
+      "price_was": "549.99",
+      "price_sale": "499.99"
     },
     {
       "id": "kohls-black-friday",
@@ -88,10 +106,13 @@
       "deal": "Kohl’s Black Friday Week is Nov 22–28, 2026. The company says many deals start at 50% off, stores open at 5 a.m. local time on Nov 27, and the first 200 shoppers that morning receive Kohl’s Cash of $5 to $100 while supplies last. Online doorbusters start at 12:01 a.m. CT on Thanksgiving. No Kohl’s store was confirmed in Nassau County. Kohl’s own site blocked an automated check, so the verified page is this corporate announcement.",
       "source_url": "https://corporate.kohls.com/kohls-holiday-news/kohls-unveils-black-friday-deals-starting-at-50-off-faltb",
       "deal_url": "https://corporate.kohls.com/kohls-holiday-news/kohls-unveils-black-friday-deals-starting-at-50-off-faltb",
-      "ltk_url": "",
+      "ltk_url": "https://on.ltk.com/+Db-gSJNX8hYDl2h-QWAPAA",
       "location": "Online. No Nassau County store confirmed.",
       "maps_url": "",
-      "store_url": ""
+      "store_url": "",
+      "featured_product": "Ninja Air Fryer Pro 4-in-1, 5 QT",
+      "price_was": "129.99",
+      "price_sale": "78.99"
     },
     {
       "id": "ulta-black-friday",
@@ -101,10 +122,13 @@
       "deal": "Ulta’s Black Friday page says the sale runs through midnight CT on Nov 28, 2026, with up to 50% off select products. The live list on that page is the offer. No Ulta store was confirmed in Nassau County.",
       "source_url": "https://www.ulta.com/promotion/black-friday",
       "deal_url": "https://www.ulta.com/promotion/black-friday",
-      "ltk_url": "",
+      "ltk_url": "https://on.ltk.com/+-s3A5YjUg024hsfNqFJpxg",
       "location": "Online. No Nassau County store confirmed.",
       "maps_url": "",
-      "store_url": ""
+      "store_url": "",
+      "featured_product": "Hawkins & Brimble Facial Gift Set Box",
+      "price_was": "55.00",
+      "price_sale": "44.00"
     },
     {
       "id": "old-navy-black-friday",
@@ -114,10 +138,13 @@
       "deal": "Old Navy publishes a Black Friday page at this address. Item prices on it load in the browser, so this card does not copy a discount we could not read in the page source. No Old Navy store was confirmed in Nassau County.",
       "source_url": "https://oldnavy.gap.com/browse/black-friday",
       "deal_url": "https://oldnavy.gap.com/browse/black-friday",
-      "ltk_url": "",
+      "ltk_url": "https://on.ltk.com/+tZ0jzvgARCnymaQq61AS9g",
       "location": "Online. No Nassau County store confirmed.",
       "maps_url": "",
-      "store_url": ""
+      "store_url": "",
+      "featured_product": "Pittsburgh Steelers Cropped Sweater for Women",
+      "price_was": "84.99",
+      "price_sale": "42.49"
     },
     {
       "id": "bealls-florida-island-walk",
@@ -130,7 +157,10 @@
       "ltk_url": "",
       "location": "1525 Sadler Road, Fernandina Beach, FL 32034",
       "maps_url": "https://www.google.com/maps/search/?api=1&query=Bealls+Florida+1525+Sadler+Road+Fernandina+Beach+FL",
-      "store_url": "https://stores.beallsflorida.com/fl/fernandina-beach/1525-sadler-road"
+      "store_url": "https://stores.beallsflorida.com/fl/fernandina-beach/1525-sadler-road",
+      "featured_product": "",
+      "price_was": "",
+      "price_sale": ""
     },
     {
       "id": "fernandina-pajama-party",
@@ -143,7 +173,10 @@
       "ltk_url": "",
       "location": "Centre Street, Historic Downtown Fernandina Beach, FL 32034",
       "maps_url": "https://www.google.com/maps/search/?api=1&query=Centre+Street+Fernandina+Beach+FL+32034",
-      "store_url": ""
+      "store_url": "",
+      "featured_product": "",
+      "price_was": "",
+      "price_sale": ""
     },
     {
       "id": "l-moore-aesthetics-sbs",
@@ -156,7 +189,10 @@
       "ltk_url": "",
       "location": "1815 S 8th Street, Fernandina Beach, FL 32034",
       "maps_url": "https://www.google.com/maps/search/?api=1&query=1815+S+8th+Street+Fernandina+Beach+FL+32034",
-      "store_url": "https://www.lmooreaesthetics.com/upcoming-events"
+      "store_url": "https://www.lmooreaesthetics.com/upcoming-events",
+      "featured_product": "",
+      "price_was": "",
+      "price_sale": ""
     }
   ]
 }
